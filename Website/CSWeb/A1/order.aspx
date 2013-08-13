@@ -16,7 +16,7 @@
 		
 		<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
 		
-		<link rel="stylesheet" href="https://mojo.blob.core.windows.net/ce586e65105649c09968b7f7aA1b77dc/style/style.css">
+		<link rel="stylesheet" href="https://mojo.blob.core.windows.net/ce586e65105649c09968b7f7aa2b77dc/style/style.css">
 		
 		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		
