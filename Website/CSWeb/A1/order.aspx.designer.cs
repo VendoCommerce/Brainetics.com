@@ -28,6 +28,6 @@ namespace CSWeb.A1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CSWeb.A1.UserControls.NewBillingShippingCreditForm ucBillingShippingCreditForm;
+        protected global::CSWeb.A1.UserControls.BillingShippingCreditForm ucBillingShippingCreditForm;
     }
 }

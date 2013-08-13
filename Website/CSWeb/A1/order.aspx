@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="order.aspx.cs" Inherits="CSWeb.A1.order" EnableSessionState="True" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
-<%@ Register Src="UserControls/NewBillingShippingCreditForm.ascx" TagName="BillingShippingCreditForm"
+<%@ Register Src="UserControls/BillingShippingCreditForm.ascx" TagName="BillingShippingCreditForm"
     TagPrefix="uc" %>
 
 <!doctype html>
@@ -14,7 +14,7 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+		<title>Brainetics&reg; by Mike Byster-Award Winning-Guaranteed!</title>
 		
 		<link rel="stylesheet" href="Styles/style.css">
 		

@@ -1,4 +1,4 @@
-<%@Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.A1.UserControls.NewBillingShippingCreditForm" CodeBehind="NewBillingShippingCreditForm.ascx.cs" %>
+<%@Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.A1.UserControls.BillingShippingCreditForm" CodeBehind="BillingShippingCreditForm.ascx.cs" %>
 
       <asp:ScriptManager ID="ScriptManager1" runat="server">
       </asp:ScriptManager>
@@ -30,6 +30,24 @@
           }
         
 </script>--%>
+
+
+
+<script type="text/javascript">
+
+    var ShippingDifferentChange = function (o) {        
+        <asp:Literal ID="litValidationScripts" runat="server" />
+
+        return false;
+    }
+
+    $(document).ready(function () {
+        var chk = new Object();
+        chk.checked = false;
+        ShippingDifferentChange(chk);
+    });
+
+</script>
 
     <div class="check-section clearfix">
 					
@@ -209,10 +227,12 @@
 							
 						</div>
 						
+                        
+
 						<div class="checkbox">
 							<input type="checkbox" style="display:none">
 
-                            <input id="chkShippingDifferent" name="chkShippingDifferent" type="checkbox" class="shippingdifferent" value="1">
+                            <input id="chkShippingDifferent" name="chkShippingDifferent" type="checkbox" class="shippingdifferent" value="1" onchange="return ShippingDifferentChange(this);">
 
 							<p>Check if your shipping address is different <br>from your billing address</p>
 						</div>
@@ -221,7 +241,7 @@
 							
 							<h3 class="check-section-title">Shipping Information</h3>
 							
-							<div class="line">
+                            <div class="line">
                             <div class="error-1">
                                 <asp:RequiredFieldValidator ID="rfvShippingFirstName" runat="server" Display="Dynamic"
                                     ControlToValidate="txtShippingFirstName"></asp:RequiredFieldValidator>
@@ -229,7 +249,7 @@
                                 </asp:Label>
                             </div>
                                 <asp:TextBox ID="txtShippingFirstName" runat="server" MaxLength="14" CssClass="defaultText" placeholder="First Name"></asp:TextBox>
-							</div>
+						    </div>
 							
 							<div class="line">				
                             <div class="error-1">
@@ -269,12 +289,14 @@
 							
 							<div class="line">
                             <div class="error-1">
-                            <asp:Label ID="lblShippingStateError" runat="server" Visible="false"></asp:Label></div>
+                                <asp:Label ID="lblShippingStateError" runat="server" Visible="false"></asp:Label></div>
 								<asp:DropDownList ID="ddlShippingState" runat="server" DataTextField="Abbreviation" CssClass="text-1" size="1" AutoPostBack="true">
                                 </asp:DropDownList>
 							</div>
 							
 							<div class="line">
+                                <div class="error-1">
+                                    <asp:Label ID="lblShippingCountryError" runat="server" Visible="false"></asp:Label></div>
 								<asp:DropDownList ID="ddlShippingCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
                                     AutoPostBack="true" OnSelectedIndexChanged="ShippingCountry_SelectedIndexChanged"
                                     CssClass="text-1">
@@ -308,12 +330,10 @@ Get the Brainetics Enhanced Package for just $14.95 Trial + $14.95 S&H (then 5 e
                             
                             </div>
                             
-                            
-
 
 						<div class="compline-btn order-btn-for-spinner">
 							<%--<a href="upsell_enhanced1pay.aspx" class="CheckoutSubmit"></a>--%>
-                            <asp:LinkButton ID="imgBtnSubmit" runat="server" OnClick="imgBtn_OnClick" CausesValidation="true">COMPLETE ORDER!</asp:LinkButton>
+                            <asp:LinkButton ID="imgBtnSubmit" runat="server" OnClick="imgBtn_OnClick" CausesValidation="true" >COMPLETE ORDER!</asp:LinkButton>
 						</div>
 
 						<div class="thawte">

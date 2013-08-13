@@ -11,7 +11,7 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+		<title>Brainetics&reg; by Mike Byster-Award Winning-Guaranteed!</title>
 		
 		<link rel="stylesheet" href="Styles/style.css">
 		

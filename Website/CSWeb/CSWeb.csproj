@@ -199,13 +199,12 @@
     <Content Include="A1\sub-work.aspx" />
     <Content Include="A1\UserControls\BillingCreditForm.ascx" />
     <Content Include="A1\UserControls\BillingForm.ascx" />
-    <Content Include="A1\UserControls\oldBillingShippingCreditForm.ascx" />
     <Content Include="A1\UserControls\CardDecline.ascx" />
     <Content Include="A1\UserControls\CheckoutSummary.ascx" />
     <Content Include="A1\UserControls\CheckoutThankYouModule.ascx" />
     <Content Include="A1\UserControls\CheckoutThankYouModule2.ascx" />
     <Content Include="A1\UserControls\CheckoutThankYouModulePrint2.ascx" />
-    <Content Include="A1\UserControls\NewBillingShippingCreditForm.ascx" />
+    <Content Include="A1\UserControls\BillingShippingCreditForm.ascx" />
     <Content Include="A1\UserControls\Footer.ascx" />
     <Content Include="A1\UserControls\Header.ascx" />
     <Content Include="A1\UserControls\ShippingCreditForm.ascx" />
@@ -592,13 +591,6 @@
     <Compile Include="A1\UserControls\BillingForm.ascx.designer.cs">
       <DependentUpon>BillingForm.ascx</DependentUpon>
     </Compile>
-    <Compile Include="A1\UserControls\oldBillingShippingCreditForm.ascx.cs">
-      <DependentUpon>oldBillingShippingCreditForm.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\oldBillingShippingCreditForm.ascx.designer.cs">
-      <DependentUpon>oldBillingShippingCreditForm.ascx</DependentUpon>
-    </Compile>
     <Compile Include="A1\UserControls\CardDecline.ascx.cs">
       <DependentUpon>CardDecline.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -628,12 +620,12 @@
     <Compile Include="A1\UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
       <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
     </Compile>
-    <Compile Include="A1\UserControls\NewBillingShippingCreditForm.ascx.cs">
-      <DependentUpon>NewBillingShippingCreditForm.ascx</DependentUpon>
+    <Compile Include="A1\UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="A1\UserControls\NewBillingShippingCreditForm.ascx.designer.cs">
-      <DependentUpon>NewBillingShippingCreditForm.ascx</DependentUpon>
+    <Compile Include="A1\UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="A1\UserControls\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
