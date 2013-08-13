@@ -17,8 +17,6 @@
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		
-		<script language='javascript' type='text/javascript' src='Scripts/tracker/track.min.js'></script>
-						
 		<script src="Scripts/window-popup.js"></script>
 		<script src="Scripts/main.js"></script>
 
