@@ -2,38 +2,42 @@
 
       <asp:ScriptManager ID="ScriptManager1" runat="server">
       </asp:ScriptManager>
+      
+      <script type="text/javascript">
+          var stateIds = { "billing": "<%= ddlState.ClientID  %>", "shipping": "<%= ddlShippingState.ClientID  %>" };
+          stateIds = JSON.stringify(stateIds);
 
-<%--      <script type="text/javascript">
-
-          function validateForm() {
-
-              alert($("select").serialize());
-
-              var success = 0;
+          function populateStates(o,id) {
               $.ajax({
                   type: "POST",
-                  url: "/A1/order.aspx/validateInputAjax",
-                  data: "{data:'" + $("select").serialize() + "'}",
+                  url: "order.aspx/populateStates",
+                  data: "{data:'" + $('#' + o.id).val() + "'}",
                   contentType: "application/json; charset=utf-8",
-                  dataType: "text",
+                  dataType: "json",
                   async: false,
                   success: function (msg) {                      
-                      success = msg;
+                      var listItems = "";
+                      var jsonData = jQuery.parseJSON(msg.d);
+                      listItems += "<option value=''>State/Province</option>"
+                      for (var i = 0; i < jsonData.length; i++) {
+                          listItems += "<option value='" + jsonData[i].StateProvinceId + "'>" + jsonData[i].Name + "</option>";
+                      }
+                      $('#' + stateIds[id]).html(listItems);
                   }
               });
-              
-              if (success = "1")
-                return true;
-             else
-                 return false;
-                
           }
-        
-</script>--%>
+          
+        </script>
 
 
 
 <script type="text/javascript">
+
+    var ValidationSubmit = function (o) {        
+        <asp:Literal ID="litValidationSubmitScripts" runat="server" />        
+
+        return true;
+    }
 
     var ShippingDifferentChange = function (o) {        
         <asp:Literal ID="litValidationScripts" runat="server" />
@@ -200,12 +204,13 @@
 							</div>
 							
 							<div class="line">
+                            <%--AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged"--%>
                             <div class="error-1">
                                 <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
-								<asp:DropDownList ID="ddlCountry" runat="server" DataTextField="Name" DataValueField="COUNTRYID"
-                                    AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged"
-                                    CssClass="text-1">
+								<asp:DropDownList ID="ddlCountry" runat="server" DataTextField="Name" DataValueField="COUNTRYID"                                    
+                                    CssClass="text-1" onchange="populateStates(this, 'billing');">
                                 </asp:DropDownList>
+                                
 							</div>
 
 							<div class="line">			
@@ -290,7 +295,7 @@
 							<div class="line">
                             <div class="error-1">
                                 <asp:Label ID="lblShippingStateError" runat="server" Visible="false"></asp:Label></div>
-								<asp:DropDownList ID="ddlShippingState" runat="server" DataTextField="Abbreviation" CssClass="text-1" size="1" AutoPostBack="true">
+								<asp:DropDownList ID="ddlShippingState" runat="server" DataTextField="Abbreviation" CssClass="text-1" size="1">
                                 </asp:DropDownList>
 							</div>
 							
@@ -298,7 +303,7 @@
                                 <div class="error-1">
                                     <asp:Label ID="lblShippingCountryError" runat="server" Visible="false"></asp:Label></div>
 								<asp:DropDownList ID="ddlShippingCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
-                                    AutoPostBack="true" OnSelectedIndexChanged="ShippingCountry_SelectedIndexChanged"
+                                    onchange="populateStates(this, 'shipping');"
                                     CssClass="text-1">
                                 </asp:DropDownList>
 							</div>
@@ -333,7 +338,7 @@ Get the Brainetics Enhanced Package for just $14.95 Trial + $14.95 S&H (then 5 e
 
 						<div class="compline-btn order-btn-for-spinner">
 							<%--<a href="upsell_enhanced1pay.aspx" class="CheckoutSubmit"></a>--%>
-                            <asp:LinkButton ID="imgBtnSubmit" runat="server" OnClick="imgBtn_OnClick" CausesValidation="true" >COMPLETE ORDER!</asp:LinkButton>
+                            <asp:LinkButton ID="imgBtnSubmit" runat="server" OnClick="imgBtn_OnClick" CausesValidation="true" OnClientClick="return ValidationSubmit(this);">COMPLETE ORDER!</asp:LinkButton>
 						</div>
 
 						<div class="thawte">

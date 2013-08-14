@@ -9,6 +9,8 @@ using CSWeb.A1.UserControls;
 using System.IO;
 using System.Web.Script.Serialization;
 using System.Collections.Specialized;
+using System.Dynamic;
+using CSBusiness;
 
 namespace CSWeb.A1
 {
@@ -19,11 +21,26 @@ namespace CSWeb.A1
             base.Page_Load(sender, e);
         }
 
-        //[WebMethod]
-        //public static string validateInputAjax()
-        //{
+        [WebMethod]
+        public static string populateStates()
+        {
+            string jsonPost = null;
+            HttpContext.Current.Request.InputStream.Position = 0;
+            using (StreamReader inputStream = new StreamReader(HttpContext.Current.Request.InputStream))
+            {
+                jsonPost = inputStream.ReadToEnd();
+            }
 
-        //    return CSWebBase.ValidationHelper.validateInputAjax(new order().Page.Form);
-        //}
+            if (jsonPost != null)
+            {
+                var serializer = new JavaScriptSerializer();
+                dynamic obj = serializer.Deserialize(jsonPost, typeof(object));
+                string countryId = obj["data"];
+                List<StateProvince> states = StateManager.GetCacheStates(Convert.ToInt32(countryId));
+                return serializer.Serialize(states);
+            }
+
+            return null;
+        }
     }
 }

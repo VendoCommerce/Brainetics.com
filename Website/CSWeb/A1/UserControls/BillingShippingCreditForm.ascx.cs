@@ -67,6 +67,21 @@ namespace CSWeb.A1.UserControls
             }
         }
 
+        public List<BaseValidator> ShippingValidators
+        {
+            get
+            {
+                return new List<BaseValidator>()
+                {
+                    rfvShippingFirstName,
+                    rfvShippingLastName,
+                    rfvShippingZipCode, 
+                    rfvShippingAddress1, 
+                    rfvShippingCity
+                };
+            }
+        }
+
         #endregion Variable and Events Declaration
 
         #region Page Events
@@ -112,9 +127,6 @@ namespace CSWeb.A1.UserControls
                 BindCreditCard();
                 BindValidationScripts();
             }
-
-            
-
         }
 
         protected override void OnPreRender(EventArgs e)
@@ -216,28 +228,28 @@ namespace CSWeb.A1.UserControls
         {
             StringBuilder sbJs = new StringBuilder();
 
-            string format = "ValidatorEnable(document.getElementById('{0}'), o.checked);";
-
-            sbJs.Append(string.Format(format, rfvShippingFirstName.ClientID));
-            sbJs.Append(string.Format(format, rfvShippingLastName.ClientID));
-            sbJs.Append(string.Format(format, rfvShippingAddress1.ClientID));
-            sbJs.Append(string.Format(format, rfvShippingCity.ClientID));
-            sbJs.Append(string.Format(format, rfvShippingZipCode.ClientID));
+            string format = "document.getElementById('{0}').enable = o.checked; ValidatorUpdateDisplay(document.getElementById('{0}')); ";
             
+            foreach (BaseValidator validator in ShippingValidators)
+                sbJs.Append(string.Format(format, validator.ClientID));
+
             litValidationScripts.Text = sbJs.ToString();
+
+            format = "ValidatorEnable(document.getElementById('{0}'), $('#chkShippingDifferent').is(':checked'));";
+            sbJs = new StringBuilder();
+
+            foreach (BaseValidator validator in ShippingValidators)
+                sbJs.Append(string.Format(format, validator.ClientID));
+
+            litValidationSubmitScripts.Text = sbJs.ToString();
         }
 
-        //public bool validateInput()
-        //{
-        //    return validateInputHelper(txtFirstName, txtLastName, txtAddress1, txtCity, ddlState, txtPhoneNumber, txtZipCode, txtEmail, pnlShippingAddress, txtShippingFirstName,
-        //        txtShippingLastName, txtShippingAddress1, txtShippingCity, ddlShippingState, txtShippingZipCode, ddlCCType, ddlExpYear, ddlExpMonth, txtCCNumber, txtCvv);
-        //}
+        public void PageValidate()
+        {
+            foreach (BaseValidator validator in ShippingValidators)
+                validator.Enabled  = pnlShippingAddress.Visible;
+        }
 
-        //public static bool validateInputHelper(TextBox txtFirstName, TextBox txtLastName, TextBox txtAddress1, TextBox txtCity, DropDownList ddlState,
-        //    TextBox txtPhoneNumber, TextBox txtZipCode, TextBox txtEmail, Panel pnlShippingAddress,
-        //    TextBox txtShippingFirstName, TextBox txtShippingLastName, TextBox txtShippingAddress1, TextBox txtShippingCity, DropDownList ddlShippingState,
-        //    TextBox txtShippingZipCode,
-        //    DropDownList ddlCCType, DropDownList ddlExpYear, DropDownList ddlExpMonth, TextBox txtCCNumber, TextBox txtCvv)
         public bool validateInput()    
         {
             // validate            
@@ -444,12 +456,12 @@ namespace CSWeb.A1.UserControls
 
             if (ddlCCType.SelectedIndex < 0)
             {
-                //lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeErrorMsg");
-                //lblCCType.Visible = true;
+                lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeErrorMsg");
+                lblCCType.Visible = true;
                 _bError = true;
             }
-            //else
-            //    lblCCType.Visible = false;
+            else
+                lblCCType.Visible = false;
 
             DateTime expire = new DateTime();
             if (ddlExpYear.SelectedIndex > 0 && ddlExpMonth.SelectedIndex > 0)
@@ -459,18 +471,18 @@ namespace CSWeb.A1.UserControls
             DateTime today = DateTime.Today;
             if (expire.Year <= today.Year && expire.Month <= today.Month)
             {
-                //lblExpDate.Text = ResourceHelper.GetResoureValue("ExpDateErrorMsg");
-                //lblExpDate.Visible = true;
+                lblExpDate.Text = ResourceHelper.GetResoureValue("ExpDateErrorMsg");
+                lblExpDate.Visible = true;
                 _bError = true;
             }
-            //else
-            //    lblExpDate.Visible = false;
+            else
+                lblExpDate.Visible = false;
 
             string c = txtCCNumber.Text;
             if (c.Equals(""))
             {
-                //lblCCNumberError.Text = ResourceHelper.GetResoureValue("CCErrorMsg");
-                //lblCCNumberError.Visible = true;
+                lblCCNumberError.Text = ResourceHelper.GetResoureValue("CCErrorMsg");
+                lblCCNumberError.Visible = true;
                 _bError = true;
             }
             else
@@ -479,19 +491,19 @@ namespace CSWeb.A1.UserControls
                 {
                     if (!CommonHelper.ValidateCardNumber(c))
                     {
-                        //lblCCNumberError.Text = ResourceHelper.GetResoureValue("CCErrorMsg");
-                        //lblCCNumberError.Visible = true;
+                        lblCCNumberError.Text = ResourceHelper.GetResoureValue("CCErrorMsg");
+                        lblCCNumberError.Visible = true;
                         _bError = true;
                     }
-                    //else
-                    //    lblCCNumberError.Visible = false;
+                    else
+                        lblCCNumberError.Visible = false;
                 }
             }
 
             if (CommonHelper.EnsureNotNull(txtCvv.Text) == String.Empty)
             {
-                //lblCvvError.Text = ResourceHelper.GetResoureValue("CVVErrorMsg");
-                //lblCvvError.Visible = true;
+                lblCvvError.Text = ResourceHelper.GetResoureValue("CVVErrorMsg");
+                lblCvvError.Visible = true;
                 _bError = true;
             }
             else
@@ -499,50 +511,50 @@ namespace CSWeb.A1.UserControls
 
                 if (CommonHelper.onlynums(txtCvv.Text) == false)
                 {
-                    //lblCvvError.Text = ResourceHelper.GetResoureValue("CVVErrorMsg");
-                    //lblCvvError.Visible = true;
+                    lblCvvError.Text = ResourceHelper.GetResoureValue("CVVErrorMsg");
+                    lblCvvError.Visible = true;
                     _bError = true;
                 }
 
                 if ((CommonHelper.CountNums(txtCvv.Text) != 3) && (CommonHelper.CountNums(txtCvv.Text) != 4))
                 {
-                    //lblCvvError.Text = ResourceHelper.GetResoureValue("CVVErrorMsg");
-                    //lblCvvError.Visible = true;
+                    lblCvvError.Text = ResourceHelper.GetResoureValue("CVVErrorMsg");
+                    lblCvvError.Visible = true;
                     _bError = true;
                 }
-                //else
-                //    lblCvvError.Visible = false;
+                else
+                    lblCvvError.Visible = false;
 
                 if ((c[0].ToString() == "5") && (ddlCCType.SelectedItem.Text.ToString() != CreditCardTypeEnum.MasterCard.ToString()))
                 {
-                    //lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
-                    //lblCCType.Visible = true;
+                    lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
+                    lblCCType.Visible = true;
                     _bError = true;
                 }
                 else if ((c[0].ToString() == "4") && (ddlCCType.SelectedItem.Text.ToString() != CreditCardTypeEnum.VISA.ToString()))
                 {
-                    //lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
-                    //lblCCType.Visible = true;
+                    lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
+                    lblCCType.Visible = true;
                     _bError = true;
 
                 }
                 else if ((c[0].ToString() == "6") && (ddlCCType.SelectedItem.Text.ToString() != CreditCardTypeEnum.Discover.ToString()))
                 {
-                    //lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
-                    //lblCCType.Visible = true;
+                    lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
+                    lblCCType.Visible = true;
                     _bError = true;
 
                 }
                 else if ((c[0].ToString() == "3") && (ddlCCType.SelectedItem.Text.ToString() != CreditCardTypeEnum.AmericanExpress.ToString()))
                 {
-                    //lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
-                    //lblCCType.Visible = true;
+                    lblCCType.Text = ResourceHelper.GetResoureValue("CCTypeValidationErrorMsg");
+                    lblCCType.Visible = true;
                     _bError = true;
 
                 }
                 else
                 {
-                    //lblCCType.Visible = false;
+                    lblCCType.Visible = false;
                 }
 
             }
@@ -570,7 +582,7 @@ namespace CSWeb.A1.UserControls
         }
 
         protected void imgBtn_OnClick(object sender, EventArgs e)
-        {
+        {            
             if (!validateInput())
             {
                 SaveData();
@@ -634,9 +646,6 @@ namespace CSWeb.A1.UserControls
                     shippingAddress.ZipPostalCode = CommonHelper.fixquotesAccents(txtShippingZipCode.Text);
 
                     CustData.ShippingAddress = shippingAddress;
-
-
-
                 }
 
 
