@@ -14,12 +14,11 @@
                   contentType: "application/json; charset=utf-8",
                   dataType: "json",
                   async: false,
-                  success: function (msg) {                      
+                  success: function (msg) {
                       var listItems = "";
                       var jsonData = jQuery.parseJSON(msg.d);
-                      listItems += "<option value=''>State/Province</option>"
-                      for (var i = 0; i < jsonData.length; i++) {
-                          //alert(jsonData[i].StateProvinceId);
+                      listItems += "<option value='0'>State/Province</option>";
+                      for (var i = 0; i < jsonData.length; i++) {                      
                           listItems += "<option value='" + jsonData[i].StateProvinceId + "'>" + jsonData[i].Name + "</option>";
                       }
                       $('#' + stateIds[id]).html(listItems);
@@ -194,7 +193,7 @@
 							<div class="line">
                             <div class="error-1">
                                 <asp:RequiredFieldValidator ID="rfvState" runat="server" Display="Dynamic"
-                                    ControlToValidate="ddlState"></asp:RequiredFieldValidator>
+                                    ControlToValidate="ddlState" InitialValue="0"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lblStateError" runat="server" Visible="false"></asp:Label></div>
 								<asp:DropDownList ID="ddlState" runat="server" DataTextField="Abbreviation" CssClass="text-1"
                                     size="1">

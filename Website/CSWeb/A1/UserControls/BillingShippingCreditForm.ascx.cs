@@ -189,7 +189,7 @@ namespace CSWeb.A1.UserControls
             ddlState.DataValueField = "StateProvinceId";
             ddlState.DataTextField = "Name";            
             ddlState.DataBind();
-            ddlState.Items.Insert(0, new ListItem("State/Province", string.Empty));
+            ddlState.Items.Insert(0, new ListItem("State/Province", "0"));
         }
 
         private void BindCreditCard()
@@ -212,7 +212,7 @@ namespace CSWeb.A1.UserControls
             ddlShippingState.DataValueField = "StateProvinceId";
             ddlShippingState.DataTextField = "Name";            
             ddlShippingState.DataBind();
-            ddlShippingState.Items.Insert(0, new ListItem("State/Province", string.Empty));
+            ddlShippingState.Items.Insert(0, new ListItem("State/Province", "0"));
         }
 
 
@@ -244,8 +244,22 @@ namespace CSWeb.A1.UserControls
 
         public void PageValidate()
         {
+            // update dynamically modified dropdowns so rfv's can work
+            RePopulateModifiedStates(ddlState, BindRegions);
+            RePopulateModifiedStates(ddlShippingState, BindShippingRegions);
+
             foreach (BaseValidator validator in ShippingValidators)
                 validator.Enabled  = pnlShippingAddress.Visible;
+        }
+
+        public void RePopulateModifiedStates(DropDownList stateDdl, Action bindMethod)
+        {
+            string postedValue = Request.Form[stateDdl.UniqueID];
+            if (postedValue != stateDdl.Items[stateDdl.SelectedIndex].Value) //... indicates list was modified
+            {
+                bindMethod();
+                stateDdl.SelectedIndex = stateDdl.Items.IndexOf(stateDdl.Items.FindByValue(postedValue));
+            }
         }
 
         public bool validateInput()    
@@ -289,14 +303,14 @@ namespace CSWeb.A1.UserControls
                 lblCityError.Visible = false;
 
 
-            if (ddlState.SelectedValue.Equals(""))
-            {
-                lblStateError.Text = ResourceHelper.GetResoureValue("BillingStateErrorMsg");
-                lblStateError.Visible = true;
-                _bError = true;
-            }
-            else
-                lblStateError.Visible = false;
+            //if (ddlState.SelectedValue.Equals(""))
+            //{
+            //    lblStateError.Text = ResourceHelper.GetResoureValue("BillingStateErrorMsg");
+            //    lblStateError.Visible = true;
+            //    _bError = true;
+            //}
+            //else
+            //    lblStateError.Visible = false;
 
             if (ddlCountry.SelectedValue.Equals(""))
             {
@@ -320,18 +334,18 @@ namespace CSWeb.A1.UserControls
 
             if (CommonHelper.EnsureNotNull(txtZipCode.Text) == String.Empty)
             {
-                lblZiPError.Text = ResourceHelper.GetResoureValue("ZipCodeErrorMsg");
+                lblZiPError.Text = ResourceHelper.GetResoureValue("BillingZipCodeErrorMsg");
                 lblZiPError.Visible = true;
                 _bError = true;
             }
             else
             {
-                if (!CommonHelper.IsValidZipCode(txtZipCode.Text))
+                if ((ddlCountry.SelectedValue == "231" && !CommonHelper.IsValidZipCodeUS(txtZipCode.Text))
+                    || (ddlCountry.SelectedValue == "46" && !CommonHelper.IsValidZipCodeCanadian(txtZipCode.Text)))
                 {
-                    lblZiPError.Text = ResourceHelper.GetResoureValue("ZipCodeValidationErrorMsg");
+                    lblZiPError.Text = ResourceHelper.GetResoureValue("BillingZipCodeValidationErrorMsg");
                     lblZiPError.Visible = true;
                     _bError = true;
-
                 }
                 else
                     lblZiPError.Visible = false;
@@ -409,14 +423,14 @@ namespace CSWeb.A1.UserControls
                     lblShippingCityError.Visible = false;
 
 
-                if (ddlShippingState.SelectedValue.Equals(""))
-                {
-                    lblShippingStateError.Text = ResourceHelper.GetResoureValue("ShippingStateErrorMsg");
-                    lblShippingStateError.Visible = true;
-                    _bError = true;
-                }
-                else
-                    lblShippingStateError.Visible = false;
+                //if (ddlShippingState.SelectedValue.Equals(""))
+                //{
+                //    lblShippingStateError.Text = ResourceHelper.GetResoureValue("ShippingStateErrorMsg");
+                //    lblShippingStateError.Visible = true;
+                //    _bError = true;
+                //}
+                //else
+                //    lblShippingStateError.Visible = false;
 
                 if (ddlShippingCountry.SelectedValue.Equals(""))
                 {
@@ -430,15 +444,16 @@ namespace CSWeb.A1.UserControls
 
                 if (CommonHelper.EnsureNotNull(txtShippingZipCode.Text) == String.Empty)
                 {
-                    lblShippingZiPError.Text = ResourceHelper.GetResoureValue("ZipCodeErrorMsg");
+                    lblShippingZiPError.Text = ResourceHelper.GetResoureValue("ShippingZipCodeErrorMsg");
                     lblShippingZiPError.Visible = true;
                     _bError = true;
                 }
                 else
                 {
-                    if (!CommonHelper.IsValidZipCode(txtShippingZipCode.Text))
+                    if ((ddlShippingCountry.SelectedValue == "231" && !CommonHelper.IsValidZipCodeUS(txtShippingZipCode.Text))
+                        || (ddlShippingCountry.SelectedValue == "46" && !CommonHelper.IsValidZipCodeCanadian(txtShippingZipCode.Text)))
                     {
-                        lblShippingZiPError.Text = ResourceHelper.GetResoureValue("ZipCodeValidationErrorMsg");
+                        lblShippingZiPError.Text = ResourceHelper.GetResoureValue("ShippingZipCodeValidationErrorMsg");
                         lblShippingZiPError.Visible = true;
                         _bError = true;
 
@@ -669,6 +684,22 @@ namespace CSWeb.A1.UserControls
                 contextData.CustomerInfo = CustData;
                 contextData.CartAbandonmentId = CSResolve.Resolve<ICustomerService>().InsertCartAbandonment(CustData, contextData);
                 Session["ClientOrderData"] = contextData;
+            }
+        }
+
+        protected override void Render(HtmlTextWriter writer)
+        {
+            RegisterDyanmicDropDownItems(ddlState);
+            RegisterDyanmicDropDownItems(ddlShippingState);
+            
+            base.Render(writer);
+        }
+
+        public void RegisterDyanmicDropDownItems(DropDownList ddl)
+        {            
+            foreach (StateProvince state in StateManager.GetCacheStates())
+            {
+                Page.ClientScript.RegisterForEventValidation(ddl.UniqueID, state.StateProvinceId.ToString());
             }
         }
 
