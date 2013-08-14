@@ -24,9 +24,9 @@
             
             <div class="receipt_row rowheader clearfix shaded2">
                 <div class="receipt_row1">
-                    Description</div>
-                <div class="receipt_row2">
                     Quantity</div>
+                <div class="receipt_row2">
+                    Description</div>
                 <div class="receipt_row3">
                   Price per item  </div>
                 <div class="receipt_row4">
@@ -37,11 +37,11 @@
             <div class="receipt_row clearfix">
                 <asp:DataList runat="server" ID="dlordersList" RepeatLayout="Flow" RepeatDirection="Horizontal">
                     <ItemTemplate>
-                        <div class="receipt_row1">
-                            <%# DataBinder.Eval(Container.DataItem, "LongDescription")%>
+                        <div class="receipt_row1">                            
+                            <%# DataBinder.Eval(Container.DataItem, "Quantity")%>
                         </div>
                         <div class="receipt_row2">
-                            <%# DataBinder.Eval(Container.DataItem, "Quantity")%>
+                            <%# DataBinder.Eval(Container.DataItem, "Title")%>
                         </div>
                         <div class="receipt_row3">
                            $<%# Math.Round(Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%> 
@@ -50,7 +50,8 @@
                             $<%# Math.Round(CalculateSkuBaseShipping(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "skuid"))), 2).ToString()%>
                         </div>
                         <div class="receipt_row5">
-                           $<%# Math.Round(CalculateSkuBaseShipping(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "skuid"))) + Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%>
+                           $<%# Math.Round(CalculateSkuBaseShipping(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "skuid"))) 
+                                + Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%>
                         </div>
                             <br clear="all" />
                     </ItemTemplate>

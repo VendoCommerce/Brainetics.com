@@ -31,15 +31,6 @@ namespace CSWeb.A1.UserControls {
         protected global::System.Web.UI.WebControls.Literal litValidationSubmitScripts;
         
         /// <summary>
-        /// litValidationScripts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litValidationScripts;
-        
-        /// <summary>
         /// lblCCNumberError control.
         /// </summary>
         /// <remarks>
@@ -310,6 +301,15 @@ namespace CSWeb.A1.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtCity;
         
         /// <summary>
+        /// rfvState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvState;
+        
+        /// <summary>
         /// lblStateError control.
         /// </summary>
         /// <remarks>
@@ -551,6 +551,15 @@ namespace CSWeb.A1.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtShippingCity;
+        
+        /// <summary>
+        /// rfvShippingState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvShippingState;
         
         /// <summary>
         /// lblShippingStateError control.

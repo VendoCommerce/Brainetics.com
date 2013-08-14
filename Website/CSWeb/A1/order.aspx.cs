@@ -42,5 +42,12 @@ namespace CSWeb.A1
 
             return null;
         }
+
+        public override void Validate()
+        {
+            ucBillingShippingCreditForm.PageValidate();
+            
+            base.Validate();
+        }
     }
 }

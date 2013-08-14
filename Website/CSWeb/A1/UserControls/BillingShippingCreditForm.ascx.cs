@@ -77,7 +77,8 @@ namespace CSWeb.A1.UserControls
                     rfvShippingLastName,
                     rfvShippingZipCode, 
                     rfvShippingAddress1, 
-                    rfvShippingCity
+                    rfvShippingCity,
+                    rfvShippingState
                 };
             }
         }
@@ -99,9 +100,10 @@ namespace CSWeb.A1.UserControls
                 rfvLastName.ErrorMessage = ResourceHelper.GetResoureValue("LastNameErrorMsg");
                 rfvAddress1.ErrorMessage = ResourceHelper.GetResoureValue("BillingAddress1ErrorMsg");
                 rfvCity.ErrorMessage = ResourceHelper.GetResoureValue("BillingCityErrorMsg");
+                rfvState.ErrorMessage = ResourceHelper.GetResoureValue("BillingStateErrorMsg");
                 rfvZipCode.ErrorMessage = ResourceHelper.GetResoureValue("BillingZipCodeErrorMsg");
                 rfvEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailErrorMsg");
-                revEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailValidationErrorMsg");
+                revEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailValidationErrorMsg");                
                 rfvPhoneNumber.ErrorMessage = ResourceHelper.GetResoureValue("PhoneNumberErrorMsg");
 
                 rfvShippingFirstName.ErrorMessage = ResourceHelper.GetResoureValue("FirstNameErrorMsg");
@@ -109,7 +111,7 @@ namespace CSWeb.A1.UserControls
                 rfvShippingAddress1.ErrorMessage = ResourceHelper.GetResoureValue("ShippingAddress1ErrorMsg");
                 rfvShippingCity.ErrorMessage = ResourceHelper.GetResoureValue("ShippingCityErrorMsg");
                 rfvShippingZipCode.ErrorMessage = ResourceHelper.GetResoureValue("ShippingZipCodeErrorMsg");
-
+                rfvShippingState.ErrorMessage = ResourceHelper.GetResoureValue("ShippingStateErrorMsg");
 
                 rfvCreditCard.ErrorMessage = ResourceHelper.GetResoureValue("CCErrorMsg");
                 rfvExpMonth.ErrorMessage = ResourceHelper.GetResoureValue("ExpDateMonthErrorMsg") + "<br/>";
@@ -227,20 +229,16 @@ namespace CSWeb.A1.UserControls
         protected void BindValidationScripts()
         {
             StringBuilder sbJs = new StringBuilder();
+            string format = null;
 
-            string format = "document.getElementById('{0}').enable = o.checked; ValidatorUpdateDisplay(document.getElementById('{0}')); ";
+            //format = "document.getElementById('{0}').enable = o.checked; ValidatorUpdateDisplay(document.getElementById('{0}')); ";
             
-            foreach (BaseValidator validator in ShippingValidators)
-                sbJs.Append(string.Format(format, validator.ClientID));
-
-            litValidationScripts.Text = sbJs.ToString();
-
             format = "ValidatorEnable(document.getElementById('{0}'), $('#chkShippingDifferent').is(':checked'));";
-            sbJs = new StringBuilder();
+            //sbJs = new StringBuilder();
 
             foreach (BaseValidator validator in ShippingValidators)
                 sbJs.Append(string.Format(format, validator.ClientID));
-
+            
             litValidationSubmitScripts.Text = sbJs.ToString();
         }
 

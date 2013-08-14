@@ -4,9 +4,8 @@
       </asp:ScriptManager>
       
       <script type="text/javascript">
-          var stateIds = { "billing": "<%= ddlState.ClientID  %>", "shipping": "<%= ddlShippingState.ClientID  %>" };
-          stateIds = JSON.stringify(stateIds);
-
+          var stateIds = jQuery.parseJSON('{ "billing": "<%= ddlState.ClientID  %>", "shipping": "<%= ddlShippingState.ClientID  %>" }');
+          
           function populateStates(o,id) {
               $.ajax({
                   type: "POST",
@@ -20,6 +19,7 @@
                       var jsonData = jQuery.parseJSON(msg.d);
                       listItems += "<option value=''>State/Province</option>"
                       for (var i = 0; i < jsonData.length; i++) {
+                          //alert(jsonData[i].StateProvinceId);
                           listItems += "<option value='" + jsonData[i].StateProvinceId + "'>" + jsonData[i].Name + "</option>";
                       }
                       $('#' + stateIds[id]).html(listItems);
@@ -40,15 +40,11 @@
     }
 
     var ShippingDifferentChange = function (o) {        
-        <asp:Literal ID="litValidationScripts" runat="server" />
-
-        return false;
+        return true;
     }
 
     $(document).ready(function () {
-        var chk = new Object();
-        chk.checked = false;
-        ShippingDifferentChange(chk);
+        
     });
 
 </script>
@@ -197,6 +193,8 @@
 							
 							<div class="line">
                             <div class="error-1">
+                                <asp:RequiredFieldValidator ID="rfvState" runat="server" Display="Dynamic"
+                                    ControlToValidate="ddlState"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lblStateError" runat="server" Visible="false"></asp:Label></div>
 								<asp:DropDownList ID="ddlState" runat="server" DataTextField="Abbreviation" CssClass="text-1"
                                     size="1">
@@ -294,6 +292,8 @@
 							
 							<div class="line">
                             <div class="error-1">
+                                <asp:RequiredFieldValidator ID="rfvShippingState" runat="server" Display="Dynamic"
+                                    ControlToValidate="ddlShippingState"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lblShippingStateError" runat="server" Visible="false"></asp:Label></div>
 								<asp:DropDownList ID="ddlShippingState" runat="server" DataTextField="Abbreviation" CssClass="text-1" size="1">
                                 </asp:DropDownList>

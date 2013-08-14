@@ -99,6 +99,7 @@ namespace CSWeb.A1.UserControls
 
                 dlordersList.DataSource = orderData.SkuItems;
                 dlordersList.DataBind();
+
                 LiteralSubTotal.Text = Math.Round(orderData.SubTotal, 2).ToString();
                 LiteralShipping.Text = Math.Round(orderData.ShippingCost, 2).ToString();
                 LiteralTax.Text = Math.Round(orderData.Tax, 2).ToString();
