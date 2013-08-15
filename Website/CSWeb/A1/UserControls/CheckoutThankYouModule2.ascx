@@ -32,6 +32,11 @@
 				</section>
 				
 				<section class="table-wr">
+                
+                
+
+<!-- Please replace this with table markup from sample here - it is the <table></table> portion of sample receipt ONLY -->
+
             
             <div class="receipt_row rowheader clearfix shaded2">
                 <div class="receipt_row1">
@@ -145,6 +150,10 @@
                     Country:
                     <asp:Literal ID="LiteralCountry" runat="server"></asp:Literal></p>
             </div>
+            
+  <!-- ************ </table> at this point - the rest is done ************** -->          
+            
+            
           	</section>
 
 				<section class="order-info">
