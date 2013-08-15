@@ -37,7 +37,12 @@
             <div class="receipt_row clearfix">
                 <asp:DataList runat="server" ID="dlordersList" RepeatLayout="Flow" RepeatDirection="Horizontal">
                     <ItemTemplate>
+
+                        <img src="<%# DataBinder.Eval(Container.DataItem, "ImagePath")%>" />
+
                         <div class="receipt_row1">
+                            
+
                             <%# DataBinder.Eval(Container.DataItem, "LongDescription")%>
                         </div>
                         <div class="receipt_row2">

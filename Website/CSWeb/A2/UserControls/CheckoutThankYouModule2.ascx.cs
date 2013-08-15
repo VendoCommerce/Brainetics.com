@@ -95,8 +95,8 @@ namespace CSWeb.A2.UserControls
         {
             if (orderId > 0)
             {
-                Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId);
-
+                Order orderData = CSWebBase.CustomOrderManager.GetOrderDetails(orderId);
+                
                 dlordersList.DataSource = orderData.SkuItems;
                 dlordersList.DataBind();
                 LiteralSubTotal.Text = Math.Round(orderData.SubTotal, 2).ToString();
