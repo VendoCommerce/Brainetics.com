@@ -289,7 +289,7 @@ namespace CSWeb.A2.Store
         private string BindLinks(string templateBody)
         {
             //"<sku id='5' />Do you want to take advantage of this offer <a href='javascript:void(0)' bind='yes'>Yes</a> no <a href='javascript:void(0)' bind='no'>No</a>";
-            MatchCollection links = Regex.Matches(templateBody, "<a.*?</a>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            MatchCollection links = Regex.Matches(templateBody, "<a\\s.*?</a>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
 
             int totalMatches = links.Count;
             for (int i = 0; i < totalMatches; i++)
