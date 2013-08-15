@@ -27,7 +27,8 @@ namespace CSWeb.A1.UserControls
 
         protected DataList dlordersList;
         protected Label lblPurchaseName, lblPromotionPrice;
-        protected System.Web.UI.WebControls.Panel pnlRushLabel, pnlRush, pnlPromotionalAmount, pnlPromotionLabel, pnlBAddress2, pnlSAddress2;
+        protected System.Web.UI.WebControls.Panel pnlRushLabel, pnlRush, pnlPromotionalAmount, pnlPromotionLabel, pnlBAddress2;
+        protected PlaceHolder phSAddress2;
         protected HyperLink hlPrintLink;
         public int orderId = 0;
 
@@ -128,11 +129,11 @@ namespace CSWeb.A1.UserControls
                 LiteralAddress2.Text = orderData.CustomerInfo.ShippingAddress.Address2;
                 if (LiteralAddress2.Text.Equals(""))
                 {
-                    pnlSAddress2.Visible = false;
+                    phSAddress2.Visible = false;
                 }
                 else
                 {
-                    pnlSAddress2.Visible = true;
+                    phSAddress2.Visible = true;
                 }
                 LiteralCity.Text = orderData.CustomerInfo.ShippingAddress.City;
                 LiteralZip.Text = orderData.CustomerInfo.ShippingAddress.ZipPostalCode;

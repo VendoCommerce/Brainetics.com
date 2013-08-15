@@ -26,9 +26,18 @@
 					
 					<ul class="people-info iib">
 						<li>Ship to:</li>
-                        <li>Void Test</li><li><span>|</span> Conversion Systems 1999 Ave of the Stars, Ste 1830</li><li><span>|</span> Los Angeles, CA 90067</li><li><span>|</span> mshahbaz@conversionsystems.com</li>
+                        <li><asp:Literal ID="LiteralName" runat="server"></asp:Literal></li>
+                        <li><span>|</span> <asp:Literal ID="LiteralAddress" runat="server"></asp:Literal>
+                            <asp:PlaceHolder ID="phSAddress2" runat="server">
+                                <asp:Literal ID="LiteralAddress2" runat="server"></asp:Literal>
+                            </asp:PlaceHolder>
+                        </li>
+                        <li><span>|</span> <asp:Literal ID="LiteralCity" runat="server"></asp:Literal>, <asp:Literal ID="LiteralState" runat="server"></asp:Literal> <asp:Literal ID="LiteralZip" runat="server"></asp:Literal></li>
+                        <li><span>|</span> <asp:Literal ID="LiteralEmail" runat="server"></asp:Literal></li>
 					</ul>
 					
+                    <asp:Literal ID="LiteralCountry" runat="server" Visible="false"></asp:Literal>
+
 				</section>
 				
 				<section class="table-wr">
@@ -38,43 +47,65 @@
 <!-- Please replace this with table markup from sample here - it is the <table></table> portion of sample receipt ONLY -->
 
             
-            <div class="receipt_row rowheader clearfix shaded2">
-                <div class="receipt_row1">
-                    Quantity</div>
-                <div class="receipt_row2">
-                    Description</div>
-                <div class="receipt_row3">
-                  Price per item  </div>
-                <div class="receipt_row4">
-                  S&H </div>
-                <div class="receipt_row5">
-                    Total</div>
-            </div>
-            <div class="receipt_row clearfix">
-                <asp:DataList runat="server" ID="dlordersList" RepeatLayout="Flow" RepeatDirection="Horizontal">
-                    <ItemTemplate>
-                        <div class="receipt_row1">                            
+			<table>
+				<tr>
+
+					<th class="one">QTY</th>
+					<th class="two">Item Description</th>
+					<th class="three">Price</th>
+					<th class="four">P&amp;H</th>
+					<th class="five">Total</th>
+				</tr>            
+            <asp:DataList runat="server" ID="dlordersList" RepeatLayout="Flow" RepeatDirection="Horizontal">
+                <ItemTemplate>
+                    <tr>
+                        <td>
                             <%# DataBinder.Eval(Container.DataItem, "Quantity")%>
-                        </div>
-                        <div class="receipt_row2">
+                        </td>
+                        <td class='left'>
                             <%# DataBinder.Eval(Container.DataItem, "Title")%>
-                        </div>
-                        <div class="receipt_row3">
-                           $<%# Math.Round(Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%> 
-                        </div>
-                        <div class="receipt_row4">
+                        </td>
+                        <td>
+                            $<%# Math.Round(Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%> 
+                        </td>
+                        <td>
                             $<%# Math.Round(CalculateSkuBaseShipping(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "skuid"))), 2).ToString()%>
-                        </div>
-                        <div class="receipt_row5">
-                           $<%# Math.Round(CalculateSkuBaseShipping(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "skuid"))) 
+                        </td>
+                        <td>
+                            $<%# Math.Round(CalculateSkuBaseShipping(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "skuid"))) 
                                 + Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%>
-                        </div>
-                            <br clear="all" />
-                    </ItemTemplate>
-                </asp:DataList>
-                <asp:Literal ID="LiteralTableRows" runat="server"></asp:Literal>
-            </div>
-            <div class="receipt_row clearfix shaded2">
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:DataList>
+            
+                <tr class="total">
+					<td class="one" colspan="2">Item Total:</td>
+					<td class="three">$<asp:Literal ID="LiteralSubTotal" runat="server"></asp:Literal></td>
+					<td class="four"></td>
+					<td class="five"></td>
+				</tr>    
+                <tr class="total">
+					<td class="one" colspan="2">Shipping Total:</td>
+					<td class="three"></td>
+					<td class="four">$<asp:Literal ID="LiteralShipping" runat="server"></asp:Literal></td>
+					<td class="five"></td>
+				</tr>
+				<tr class="total">
+					<td class="one" colspan="2">Tax:</td>
+					<td class="three"></td>
+					<td class="four"></td>
+					<td class="five">$<asp:Literal ID="LiteralTax" runat="server"></asp:Literal></td>
+				</tr>
+				<tr class="total">
+					<td class="one" colspan="2">Total:</td>
+					<td class="three"></td>
+					<td class="four"></td>
+					<td class="five">$<asp:Literal ID="LiteralTotal" runat="server"></asp:Literal></td>
+				</tr>
+            </table>
+                
+            <div style="display: none">
                 <div class="receipt_row_totaldescription">
                     Subtotal:<br />
                     <asp:Panel ID="pnlPromotionLabel" runat="server" Visible="false">
@@ -87,19 +118,20 @@
                     Est. Tax:<br />
                     <span class="black">Total:</span></div>
                 <div class="receipt_row_total">
-                    $<asp:Literal ID="LiteralSubTotal" runat="server"></asp:Literal><br />
+                    <br />
                     <asp:Panel ID="pnlPromotionalAmount" runat="server" Visible="false">
                         <asp:Label runat="server" ID="lblPromotionPrice"></asp:Label><br />
                     </asp:Panel>
-                    $<asp:Literal ID="LiteralShipping" runat="server"></asp:Literal><br />
+                    <br />
                     <asp:Panel ID="pnlRush" runat="server" Visible="false">
                     </asp:Panel>
-                    $<asp:Literal ID="LiteralTax" runat="server"></asp:Literal><br />
-                    $<asp:Literal ID="LiteralTotal" runat="server"></asp:Literal></div>
+                    <br />
+                    </div>
             </div>
-            <div class="receipt_divider">
-            </div>
-            <div class="billing_left">
+            
+
+
+            <div class="billing_left" style="display: none">
                 <h4 class="billinghead1">
                     billing address</h4>
                 <p>
@@ -126,31 +158,9 @@
                      Phone:
                     <asp:Literal ID="LiteralPhone" runat="server"></asp:Literal><br/>
                     Email:
-                    <asp:Literal ID="LiteralEmail" runat="server"></asp:Literal></p>
-            </div>
-            <div class="billing_right">
-                <h4 class="billinghead1">
-                    SHIPPING ADDRESS</h4>
-                <p>
-                    Name:
-                    <asp:Literal ID="LiteralName" runat="server"></asp:Literal><br />
-                    Address:
-                    <asp:Literal ID="LiteralAddress" runat="server"></asp:Literal><br />
-                    <asp:Panel ID="pnlSAddress2" Font-Size="11px" CssClass="panel" runat="server">
-                        <asp:Literal ID="LiteralAddress2" runat="server"></asp:Literal><br />
-                    </asp:Panel>
                     </p>
-                    <p>
-                    City:
-                    <asp:Literal ID="LiteralCity" runat="server"></asp:Literal><br />
-                    State:
-                    <asp:Literal ID="LiteralState" runat="server"></asp:Literal><br />
-                    Zip/Postal Code:
-                    <asp:Literal ID="LiteralZip" runat="server"></asp:Literal><br />
-                    Country:
-                    <asp:Literal ID="LiteralCountry" runat="server"></asp:Literal></p>
+
             </div>
-            
   <!-- ************ </table> at this point - the rest is done ************** -->          
             
             
