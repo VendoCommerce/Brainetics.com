@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="receipt_friendly.aspx.cs" Inherits="CSWeb.A2.receipt_friendly" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="receipt_friendly.aspx.cs" Inherits="CSWeb.A2.receipt_friendly" EnableEventValidation="true" %>
 <%@ Register Src="UserControls/CheckoutThankYouModulePrint2.ascx" TagName="Receipt" TagPrefix="uc" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 

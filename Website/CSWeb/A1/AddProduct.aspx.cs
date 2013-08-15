@@ -42,7 +42,7 @@ namespace CSWeb.A1.Store
                     if (cId == (int)ShoppingCartType.SingleCheckout)
                     {
                         clientData = (ClientCartContext)Session["ClientOrderData"];
-                        cartObject = new Cart();
+                        cartObject = clientData.CartInfo;
                         cartObject.AddItem(skuId, qId, true, false);
                         if (dId > 0)
                         {

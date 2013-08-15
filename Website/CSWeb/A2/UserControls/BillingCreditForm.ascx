@@ -14,6 +14,30 @@
     <div class="vertical_dots">
     </div>
     <div class="cart_right">
+        
+        <div>
+            Quantity: 
+            <asp:TextBox ID="txtQuantity" runat="server" MaxLength="3" />
+            <asp:RegularExpressionValidator ID="revQuantity" runat="server" ControlToValidate="txtQuantity"
+                Display="Dynamic" ValidationExpression="^[1-999]$" ValidationGroup="QuantityUpdate" ErrorMessage="Please enter a valid quantity." />
+            
+            <asp:LinkButton ID="lbUpdate" runat="server" OnClick="lbUpdate_Click" CausesValidation="true" ValidationGroup="QuantityUpdate">Update</asp:LinkButton>
+        <br /><br />
+        </div>
+
+<div class="radio_options clearfix">
+<div class="cart_callout"><img src="../Content/Images/cart_callout.png" width="186" height="115" /></div>
+<div class="radiooo" style="padding-bottom: 35px">
+<asp:RadioButton ID="rbEnhancedPackage" runat="server" GroupName="PackageOption" AutoPostBack="true" OnCheckedChanged="Package_CheckedChanged"/> 
+<label><span class="red">Enhanced Package</span></label>
+</div>
+
+<div class="radiooo">
+<asp:RadioButton ID="rbAcceleratedPackage" runat="server" GroupName="PackageOption" AutoPostBack="true" OnCheckedChanged="Package_CheckedChanged" />
+<label><span class="red">Accelerated Package</span></label>
+</div>
+</div> 
+        
         <div class="cartB">
             <h2>
                 Billing Address</h2>
@@ -110,6 +134,27 @@
                 <asp:DropDownList ID="ddlCCType" runat="server" CssClass="text-2">
                 </asp:DropDownList>
             </div>
+            
+            <div class="form_line clearfix">
+                <label class="label-3">
+                    Card Number*</label>
+                <div class="error-2">
+                    <asp:Label ID="lblCCNumberError" runat="server" Visible="false"></asp:Label></div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td><asp:TextBox ID="txtCCNumber" runat="server" MaxLength="16"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtCCNumber" runat="server" Display="Dynamic" ErrorMessage="*" /></td>                        
+                    </tr>
+                </table>
+            </div>
+            <div class="form_line clearfix">
+                <label class="label-3">
+                    Card Verification #* <a class="cvv" href="#" style="display:none">what's this?</a>
+                </label>
+                <div class="error-2">
+                    <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />
+                    <asp:Label ID="lblCvvError" runat="server" Visible="false"></asp:Label></div>
+                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox>
+            </div>
             <div class="form_line clearfix">
                 <label class="label-3">
                     Exp Date*</label>
@@ -135,8 +180,7 @@
                     <asp:ListItem Value="12">12</asp:ListItem>
                 </asp:DropDownList>
                 <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-3">
-                    <asp:ListItem Value="" Text=""></asp:ListItem>
-                    <asp:ListItem Value="2012">2012</asp:ListItem>
+                    <asp:ListItem Value="" Text=""></asp:ListItem>                    
                     <asp:ListItem Value="2013">2013</asp:ListItem>
                     <asp:ListItem Value="2014">2014</asp:ListItem>
                     <asp:ListItem Value="2015">2015</asp:ListItem>
@@ -145,30 +189,8 @@
                     <asp:ListItem Value="2018">2018</asp:ListItem>
                     <asp:ListItem Value="2019">2019</asp:ListItem>
                     <asp:ListItem Value="2020">2020</asp:ListItem>
+                    <asp:ListItem Value="2021">2021</asp:ListItem>
                 </asp:DropDownList>
-            </div>
-            <div class="form_line clearfix">
-                <label class="label-3">
-                    Card Number*</label>
-                <div class="error-2">
-                    <asp:Label ID="lblCCNumberError" runat="server" Visible="false"></asp:Label></div>
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td><asp:TextBox ID="txtCCNumber1" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtCCNumber1" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber2" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtCCNumber2" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber3" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtCCNumber3" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber4" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="txtCCNumber4" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="form_line clearfix">
-                <label class="label-3">
-                    Card Verification #* <a class="cvv" href="#" style="display:none">what's this?</a>
-                </label>
-                <div class="error-2">
-                    <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />
-                    <asp:Label ID="lblCvvError" runat="server" Visible="false"></asp:Label></div>
-                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox>
             </div>
             <div class="form_line clearfix">
                 <label class="label-2">

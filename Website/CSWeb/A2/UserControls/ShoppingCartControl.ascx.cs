@@ -84,7 +84,7 @@ namespace CSWeb.A2.UserControls
 
                 //Sri Comments on 11/15: Need to Plug-in to Custom Shipping option Model
                 SitePreference shippingGetShippingPref = CSFactory.GetCacheSitePref();
-                holderRushShipping.Visible = shippingGetShippingPref.IncludeRushShipping ?? false;
+                //holderRushShipping.Visible = shippingGetShippingPref.IncludeRushShipping ?? false;
                 holderRushShippingTotal.Visible = chkIncludeRushShipping.Checked = (CartContext.CartInfo.ShippingMethod == UserShippingMethodType.Rush);
             }
             else

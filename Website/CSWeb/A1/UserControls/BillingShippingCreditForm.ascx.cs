@@ -15,6 +15,7 @@ using CSBusiness.Payment;
 using CSBusiness.Attributes;
 using System.Web.Services;
 using System.Collections.Specialized;
+using System.Linq;
 
 namespace CSWeb.A1.UserControls
 {
@@ -599,6 +600,7 @@ namespace CSWeb.A1.UserControls
             if (!validateInput())
             {
                 SaveData();
+                
                 //SaveAdditionaInfo();
                 //int qId = 1;
                 Response.Redirect(string.Format("AddProduct.aspx?PId={0}&CId={1}",
@@ -676,6 +678,17 @@ namespace CSWeb.A1.UserControls
                 {
                     clientData.OrderAttributeValues.AddOrUpdateAttributeValue("OptInMailingList", new AttributeValue(chkMailingListOptIn.Checked));
                 }
+
+                if (CustData.ShippingAddress.CountryId == 46 ||
+                    (CustData.ShippingAddress.CountryId == 231
+                        && "|AK|HI|PR|GU|VI|".Contains(StateManager.GetCacheStates().First(x =>
+                        {
+                            return x.StateProvinceId == CustData.ShippingAddress.StateProvinceId;
+                        }).Abbreviation.Trim().ToUpper())))
+                                {
+                                    clientData.CartInfo.AddOrUpdate((int)CSWebBase.SiteBasePage.SkuEnum.Surcharge, 1, true, false, false);
+
+                                }
 
                 ClientOrderData = clientData;
 

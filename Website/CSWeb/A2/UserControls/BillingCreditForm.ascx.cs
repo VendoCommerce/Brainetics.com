@@ -13,7 +13,7 @@ using CSCore.Utils;
 using CSCore.DataHelper;
 using CSBusiness.ShoppingManagement;
 using System.Web;
-
+using System.Linq;
 
 namespace CSWeb.A2.UserControls
 {
@@ -29,6 +29,10 @@ namespace CSWeb.A2.UserControls
             get
             {
                 return Session["ClientOrderData"] as ClientCartContext;
+            }
+            set
+            {
+                Session["ClientOrderData"] = value;
             }
         }
         #endregion Variable and Events Declaration
@@ -73,6 +77,8 @@ namespace CSWeb.A2.UserControls
                     BindCreditCard();
                     BindCountries(true);
                     BindRegions();
+                    BindPackageOptions();
+                    BindCart();
                 }
 
             }
@@ -83,12 +89,7 @@ namespace CSWeb.A2.UserControls
             base.OnPreRender(e);
             ScriptManager.RegisterClientScriptInclude(Page, Page.GetType(), "jquery", Page.ResolveUrl("~/Scripts/jquery-1.6.4.min.js"));
             ScriptManager.RegisterClientScriptInclude(Page, Page.GetType(), "jquery.autotab", Page.ResolveUrl("~/Scripts/jquery.autotab-1.1b.js"));
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "autotab" + this.ClientID,
-                String.Format(@"$(function() {{$('#{0}, #{1}, #{2}, #{3}').autotab_magic().autotab_filter('numeric')}});",
-                    txtCCNumber1.ClientID, txtCCNumber2.ClientID, txtCCNumber3.ClientID, txtCCNumber4.ClientID), true);
-
-
-
+            
         }
         #endregion Page Events
 
@@ -168,7 +169,57 @@ namespace CSWeb.A2.UserControls
             ddlState.DataBind();
         }
 
+        protected void BindPackageOptions()
+        {
+            ClientCartContext cartContext = CartContext;
 
+            if (cartContext.CartInfo.CartItems.FirstOrDefault(x => { return x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.EnhancedMultiPay; }) != null)
+                rbEnhancedPackage.Checked = true;
+            else if (cartContext.CartInfo.CartItems.FirstOrDefault(x => { return x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.AcceleratedMultiPay; }) != null)
+                rbAcceleratedPackage.Checked = true;
+        }
+
+        private void BindCart()
+        {
+            List<Sku> skus = ((CSWebBase.SiteBasePage)Page).ClientOrderData.CartInfo.CartItems;
+
+            txtQuantity.Text = skus.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); }).Quantity.ToString();
+        }
+
+        public void lbUpdate_Click(object sender, EventArgs e)
+        {
+            ClientCartContext cartContext = ((CSWebBase.SiteBasePage)Page).ClientOrderData;
+
+            cartContext.CartInfo.AddOrUpdate(cartContext.CartInfo.CartItems.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); }).SkuId,
+                Math.Abs(Convert.ToInt32(txtQuantity.Text)), true, false, false);
+            cartContext.CartInfo.Compute();
+
+            ((CSWebBase.SiteBasePage)Page).ClientOrderData = cartContext;
+
+            ShoppingCartControl1.BindControls();
+        }
+
+        protected void Package_CheckedChanged(object sender, EventArgs e)
+        {
+            ClientCartContext cartContext = CartContext;
+
+            Sku currentMainSku = cartContext.CartInfo.CartItems.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
+            cartContext.CartInfo.RemoveSku(currentMainSku.SkuId);
+            
+            if (rbEnhancedPackage.Checked)
+            {   
+                cartContext.CartInfo.AddOrUpdate((int)CSWebBase.SiteBasePage.SkuEnum.EnhancedMultiPay, currentMainSku.Quantity, true, false, false);
+            }
+            else if (rbAcceleratedPackage.Checked)
+            {                
+                cartContext.CartInfo.AddOrUpdate((int)CSWebBase.SiteBasePage.SkuEnum.AcceleratedMultiPay, currentMainSku.Quantity, true, false, false);
+            }
+
+            cartContext.CartInfo.Compute();
+            CartContext = cartContext;
+
+            ShoppingCartControl1.BindControls();
+        }
 
         //public void BindBillingCountries(bool setValue)
         //{
@@ -367,7 +418,8 @@ namespace CSWeb.A2.UserControls
                 }
                 else
                 {
-                    if (!CommonHelper.IsValidZipCode(txtZipCode.Text))
+                    if ((ddlCountry.SelectedValue == "231" && !CommonHelper.IsValidZipCodeUS(txtZipCode.Text))
+                        || (ddlCountry.SelectedValue == "46" && !CommonHelper.IsValidZipCodeCanadian(txtZipCode.Text)))
                     {
                         lblZiPError.Text = ResourceHelper.GetResoureValue("ZipCodeValidationErrorMsg");
                         lblZiPError.Visible = true;
@@ -414,7 +466,7 @@ namespace CSWeb.A2.UserControls
             else
                 lblExpDate.Visible = false;
 
-            string c = txtCCNumber1.Text + txtCCNumber2.Text + txtCCNumber3.Text + txtCCNumber4.Text;
+            string c = txtCCNumber.Text;
             if (c.Equals(""))
             {
                 lblCCNumberError.Text = ResourceHelper.GetResoureValue("CCErrorMsg");
@@ -537,7 +589,7 @@ namespace CSWeb.A2.UserControls
 
 
             PaymentInformation paymentDataInfo = new PaymentInformation();
-            string CardNumber = txtCCNumber1.Text + txtCCNumber2.Text + txtCCNumber3.Text + txtCCNumber4.Text;
+            string CardNumber = txtCCNumber.Text;
             paymentDataInfo.CreditCardNumber = CommonHelper.Encrypt(CardNumber);
             paymentDataInfo.CreditCardType = Convert.ToInt32(ddlCCType.SelectedValue);
             paymentDataInfo.CreditCardName = ddlCCType.SelectedItem.Text;
@@ -545,6 +597,17 @@ namespace CSWeb.A2.UserControls
             paymentDataInfo.CreditCardCSC = txtCvv.Text;
 
             CartContext.PaymentInfo = paymentDataInfo;
+
+            if (clientData.CustomerInfo.ShippingAddress.CountryId == 46 ||
+                (clientData.CustomerInfo.ShippingAddress.CountryId == 231
+                    && "|AK|HI|PR|GU|VI|".Contains(StateManager.GetCacheStates().First(x =>
+                    {
+                        return x.StateProvinceId == clientData.CustomerInfo.ShippingAddress.StateProvinceId;
+                    }).Abbreviation.Trim().ToUpper())))
+                        {
+                            clientData.CartInfo.AddOrUpdate((int)CSWebBase.SiteBasePage.SkuEnum.Surcharge, 1, true, false, false);
+                            clientData.CartInfo.Compute();
+                        }
 
             int orderId = 0;
 

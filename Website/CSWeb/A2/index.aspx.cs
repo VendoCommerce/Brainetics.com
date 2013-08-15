@@ -11,7 +11,7 @@ using CSBusiness.Web;
 
 namespace CSWeb.A2.Store
 {
-    public partial class index : CSBasePage
+    public partial class index : CSWebBase.SiteBasePage
     {
         protected override bool IsLandingPage
         {
@@ -21,7 +21,6 @@ namespace CSWeb.A2.Store
             }
         }
 
-        
         protected override void Page_Load(object sender, EventArgs e)
         {
             base.Page_Load(sender, e);
@@ -41,21 +40,14 @@ namespace CSWeb.A2.Store
             {
 
                 SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
-                if (Request.Url.ToString().ToLower().Contains("plugnsafe.ca") || Request.Url.ToString().ToLower().Contains("plugandsafe.ca"))
-                {
-                    Response.Redirect("https://www.plugnsafe.com/canada?" + Request.QueryString);
-                }
-                if (Request.Url.ToString().ToLower().Contains("plugandsafe.com"))
-                {
-                    Response.Redirect("https://www.plugnsafe.com?" + Request.QueryString);
-                }
+                
                 if (!sitePrefCache.GeoLocationService)
                 {
                     string GeoCoountry = "";
                     GeoCoountry = CommonHelper.GetGeoTargetLocation(CommonHelper.IpAddress(HttpContext.Current));
                     if (GeoCoountry.Equals("canada"))
                     {
-                        Response.Redirect("https://www.plugnsafe.com/canada/?" + Request.QueryString);
+                        //Response.Redirect("https://www.plugnsafe.com/canada/?" + Request.QueryString);
                     }
                 }
                 if (Request.Headers["X-HTTPS"] != null)
