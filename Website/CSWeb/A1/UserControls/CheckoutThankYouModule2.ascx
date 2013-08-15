@@ -1,26 +1,37 @@
 <%@Control Language="C#" Inherits="CSWeb.A1.UserControls.CheckoutThankYouModule2" %>
-<%@ Register Src="../UserControls/Header.ascx" TagName="Header" TagPrefix="uc" %>
-<%@ Register Src="../UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
-<%@ Register Src="../UserControls/Footer.ascx" TagName="Footer" TagPrefix="uc" %>
-	<div id="header_bg">
-    <uc:Header ID="Header" runat="server" />
-  </div>
-  <div id="main" class="receipt">
-    
-    <div class="page_receipt">
-        <div class="printfriendly">
-            <a href="receipt_friendly.aspx" target="_blank">
-                <img src="../Content/Images/printer_icon.jpg" />Printer Friendly Version</a></div>
-        <h2>
-            Order Confirmation</h2>
-        <div class="shoppingmain clearfix">
-            <h4>
-                THANK YOU!
-            </h4>
-            <p class="your_order_number">
-                Your order number is
-                <%=orderId.ToString()%>, and an email confirmation will be sent to <span class="receipt_email">
-                    <%=LiteralEmail.Text%>.</span></p>
+ 		<div class="all-wr">
+			
+			<div class="header-wr">
+			
+				<header class="header clearfix">
+					
+					<a href="index.aspx" class="logo"><img src="content/images/logo.png" alt="Brainetics"></a>
+					
+				</header>
+				
+				<div class="header-second-wr">
+					<div class="header-second"></div>
+				</div>
+				
+			</div>
+			
+			<div class="thank-wr">
+				
+				<section class="order-info">
+			
+					<h3 class="order-thank">Thank you for your order - we appreciate your business!</h3>
+					<h4 class="order-number">Your order number is <%=orderId.ToString()%></h4>
+		 
+					<p class="order-description">You will receive a confirmation email shortly with this order information <span>(check your Junk Mail if you don't see it soon)</span> but be sure to write down your confirmation number to be safe.</p>
+					
+					<ul class="people-info iib">
+						<li>Ship to:</li>
+                        <li>Void Test</li><li><span>|</span> Conversion Systems 1999 Ave of the Stars, Ste 1830</li><li><span>|</span> Los Angeles, CA 90067</li><li><span>|</span> mshahbaz@conversionsystems.com</li>
+					</ul>
+					
+				</section>
+				
+				<section class="table-wr">
             
             <div class="receipt_row rowheader clearfix shaded2">
                 <div class="receipt_row1">
@@ -134,10 +145,15 @@
                     Country:
                     <asp:Literal ID="LiteralCountry" runat="server"></asp:Literal></p>
             </div>
-            <div class="clear">
-            </div>
-        </div>
-    </div>
-</div><!--- /main --->
-  <uc:Footer ID="Footer" runat="server" />
-  <uc:TrackingPixels ID="TrackingPixels" runat="server" />
+          	</section>
+
+				<section class="order-info">
+					
+					<p class="people-contact">If you have questions about this order, please email <a href="mailto:brainetics@customerstatus.com" target="_blank">brainetics@customerstatus.com</a> or call us at <span>877-444-3776</span> <br>Please note that your order may not appear in our customer service system for another 24-48 hours.</p>
+					
+					
+				</section>
+				
+			</div>
+			
+		</div>

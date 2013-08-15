@@ -1,27 +1,31 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PostSale.aspx.cs" Inherits="CSWeb.A1.Store.PostSale"
     EnableEventValidation="false" EnableSessionState="true" %>
-    <%@ Register Src="UserControls/header.ascx" TagName="Header_Cart" TagPrefix="uc" %>
-<%@ Register Src="UserControls/Footer.ascx" TagName="Footer" TagPrefix="uc" %>
+
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!doctype html><html lang="en">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>OFFICIAL Plug & Safe Home Security - Plug-in Home Safety Device</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="description" content="Plug and Safe Home Security is the latest technology to protect your home from burglers and intruders. ">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<head>
+		<meta charset="UTF-8">
+		<meta name="robots" content="index,follow_all">
+		<meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+		
+		<link rel="stylesheet" href="Styles/style.css">
+		
+		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-<link href="/Styles/plugnsafe_b2.css" rel="stylesheet" type="text/css" media="all" />
-<!-- add popup plugin -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
-<link href="/Scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
 
-<script type="text/javascript" src="/Scripts/global.js"></script>
+		<script src="Scripts/qzy1qcz.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
 
-</head>
-<body>
+	</head>
+	
+	<body class="upsell">
     <form id="form1" runat="server">
 <asp:ScriptManager ID="ScriptManager1" runat="server">
 </asp:ScriptManager>    
@@ -31,7 +35,6 @@
 
     </asp:Panel>
 
-<uc:Header_Cart ID="Header_Upsell" runat="server" />  
     <div runat="server" id="mainContainer">
     </div>
     <asp:Button ID="btnYes" runat="server" Text="Button" OnClick="btnYes_OnClick" Visible="false" />

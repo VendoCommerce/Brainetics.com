@@ -59,7 +59,7 @@
                         <asp:Label ID="lblCCNumberError" runat="server" Visible="false"></asp:Label>
                            <asp:RequiredFieldValidator ID="rfvCreditCard" ControlToValidate="txtCCNumber" runat="server" Display="Dynamic" ErrorMessage="Please enter card number" />                           
                         </div>		
-                            <asp:TextBox ID="txtCCNumber" runat="server" CssClass="defaultText" MaxLength="16"></asp:TextBox>
+                            <asp:TextBox ID="txtCCNumber" runat="server" CssClass="defaultText" MaxLength="16" placeholder="Credit card number"></asp:TextBox>
 						</div>
 						
 						<div class="line">
@@ -67,19 +67,19 @@
                     <asp:RequiredFieldValidator ID="rfvCCType" runat="server" Display="Dynamic"
                             ControlToValidate="ddlCCType"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblCCType" runat="server" Visible="false"></asp:Label></div>
-							<asp:DropDownList ID="ddlCCType" runat="server" CssClass="text-2">
+							<asp:DropDownList ID="ddlCCType" runat="server">
                             </asp:DropDownList>
 						</div>
 						
 						<div class="line multi-line clearfix">
-						<asp:RequiredFieldValidator ID="rfvExpMonth" runat="server" Display="Dynamic"
+						  <div class="error-1"><asp:RequiredFieldValidator ID="rfvExpMonth" runat="server" Display="Dynamic"
                             ControlToValidate="ddlExpMonth"></asp:RequiredFieldValidator>
                 <asp:RequiredFieldValidator ID="rfvExpYear" runat="server" Display="Dynamic"
                     ControlToValidate="ddlExpYear"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblExpDate" runat="server" Visible="false"></asp:Label></div>
 
 							<div class="line-part">
-								<asp:DropDownList ID="ddlExpMonth" runat="server" CssClass="text-3">
+								<asp:DropDownList ID="ddlExpMonth" runat="server">
                                     <asp:ListItem Value="" Text="Month"></asp:ListItem>
                                     <asp:ListItem Value="1">01</asp:ListItem>
                                     <asp:ListItem Value="2">02</asp:ListItem>
@@ -97,7 +97,7 @@
 							</div>
 							
 							<div class="line-part">
-                                <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-3">
+                                <asp:DropDownList ID="ddlExpYear" runat="server">
                                     <asp:ListItem Value="" Text="Year"></asp:ListItem>
                                     <asp:ListItem Value="2012">2012</asp:ListItem>
                                     <asp:ListItem Value="2013">2013</asp:ListItem>
@@ -119,7 +119,7 @@
                             <div class="error-1">
                     <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />
                     <asp:Label ID="lblCvvError" runat="server" Visible="false"></asp:Label></div>
-								<asp:TextBox ID="txtCvv" runat="server" CssClass="defaultText" MaxLength="4"></asp:TextBox>
+								<asp:TextBox ID="txtCvv" runat="server" CssClass="defaultText" MaxLength="4" placeholder="Security Code"></asp:TextBox>
 							</div>
 							
 							<div class="line-part">	
@@ -135,7 +135,7 @@
 					<div class="spinner-for-order-btn" style="display: none">
 						<img src="content/images/loading-gif-animation.gif"> <span>Processing. Please wait.</span>
 					</div>
-						
+						</div>
 					
 					<div class="left">
 						
@@ -171,7 +171,7 @@
 							</div>
 							
 							<div class="line">								
-                                <asp:TextBox ID="txtAddress2" runat="server" MaxLength="30" CssClass="defaultText"></asp:TextBox>
+                                <asp:TextBox ID="txtAddress2" runat="server" MaxLength="30" CssClass="defaultText" placeholder="Address 2"></asp:TextBox>
 							</div>
 							
 							<div class="line">
