@@ -58,7 +58,7 @@ protected Label lblPurchaseName, lblPromotionPrice;
         {
             if (orderId > 0)
             {
-                Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId);
+                Order orderData = CSWebBase.CustomOrderManager.GetOrderDetails(orderId);
 
                 dlordersList.DataSource = orderData.SkuItems;
                 dlordersList.DataBind();

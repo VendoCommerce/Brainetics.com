@@ -34,6 +34,8 @@
                     <ItemTemplate>
                         <tr>
                              <td width="76%" valign="top" style="padding-bottom: 20px">
+                                <img src="<%# DataBinder.Eval(Container.DataItem, "ImagePath")%>" />
+
                                 <%# DataBinder.Eval(Container.DataItem, "LongDescription")%>
                             </td>
                             <td width="12%" valign="top" align="center">
