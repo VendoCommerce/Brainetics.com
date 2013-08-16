@@ -17,7 +17,7 @@
         <div class="cartB"><img src="/Content/images/a2/cart_form_top.jpg" width="293" height="56" />
            
            <div class="form_line clearfix" style="width: 200px; padding: 10px 0 20px">
-<div class="cart_callout"><img src="../Content/Images/cart_callout.png" width="186" height="115" /></div>
+
 <div class="radiooo" style="padding-bottom: 14px">
 <asp:RadioButton ID="rbEnhancedPackage" runat="server" GroupName="PackageOption" AutoPostBack="true" OnCheckedChanged="Package_CheckedChanged"/> 
 <label><span class="black bold">Enhanced Package</span></label>
