@@ -1,6 +1,16 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.A2.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
-
-<div class="cartB">
+<a name="tryitnow" id="tryitnow"></a>
+<div class="cartB"><img src="/Content/images/a2/form_top.jpg" />
+    <div class="form_line clearfix" style="padding-top: 10px">
+        <div class="error-1">
+            <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
+        <label class="label-1">
+            Country*</label>
+        <asp:DropDownList ID="ddlCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID" TabIndex="8"
+            AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged" CssClass="text-1">
+        </asp:DropDownList><div class="clear"></div>
+        <div class="helper" style="display: none">A $20 Shipping Fee Applies</div>
+    </div>
     <div class="form_line clearfix">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" Display="Dynamic" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
@@ -25,7 +35,7 @@
             <asp:RequiredFieldValidator ID="rfvAddress1" runat="server" Display="Dynamic" ControlToValidate="txtAddress1"></asp:RequiredFieldValidator>
             <asp:Label ID="lblAddress1Error" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
-            Shipping Address*</label>
+            Address*</label>
         <asp:TextBox ID="txtAddress1" runat="server" MaxLength="30" CssClass="text-1" TabIndex="3"></asp:TextBox>
     </div>
     <div class="form_line clearfix" runat="server" visible="false">
@@ -51,21 +61,13 @@
         <asp:DropDownList ID="ddlState" runat="server" DataTextField="NAME" CssClass="text-1" TabIndex="7">
         </asp:DropDownList>
     </div>
-    <div class="form_line clearfix" runat="server" visible="false">
-        <div class="error-1">
-            <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
-        <label class="label-1">
-            Country*</label>
-        <asp:DropDownList ID="ddlCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID" TabIndex="8"
-            AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged" CssClass="text-1">
-        </asp:DropDownList>
-    </div>
+
     <div class="form_line clearfix">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvZipCode" runat="server" Display="Dynamic" ControlToValidate="txtZipCode"></asp:RequiredFieldValidator>
             <asp:Label ID="lblZiPError" runat="server" ForeColor="Red" Visible="false"></asp:Label></div>
         <label class="label-1">
-            Zip Code*</label>
+            ZIP Code*</label>
         <asp:TextBox ID="txtZipCode" runat="server" MaxLength="7" CssClass="text-1" TabIndex="9"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
@@ -73,8 +75,8 @@
             <asp:RequiredFieldValidator ID="rfvPhone" runat="server" Display="Dynamic" ControlToValidate="txtPhone"></asp:RequiredFieldValidator>
             <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
-            Phone Number*</label>
-        <asp:TextBox ID="txtPhone" runat="server" MaxLength="10" CssClass="text-2" TabIndex="10"></asp:TextBox>
+            Phone*</label>
+        <asp:TextBox ID="txtPhone" runat="server" MaxLength="10" CssClass="text-1" TabIndex="10"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
@@ -104,9 +106,13 @@
    
   
     <div class="form_line_btn">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/ordernow_btn.jpg" OnClick="imgBtn_OnClick" />
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/a2/tryitnow_btn.png" OnClick="imgBtn_OnClick" />
    </div>
      <div class="form_line_guarantee">
-        <a href="#guarantee" class="guarantee">60-Day Money-Back Guarantee!</a>
+        <a href="#guarantee" class="guarantee">30-Day Money-Back Guarantee!</a>
         </div>
+        
+         <div class="form_line_guarantee">
+         <img src="/Content/images/a2/truste.png" />&nbsp;&nbsp;<img src="" alt="norton">
+         </div>
 </div>

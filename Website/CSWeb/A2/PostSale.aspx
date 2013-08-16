@@ -1,28 +1,27 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PostSale.aspx.cs" Inherits="CSWeb.A2.Store.PostSale"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PostSale.aspx.cs" Inherits="CSWeb.A2.Store.PostSale"
     EnableEventValidation="false" EnableSessionState="true" %>
     <%@ Register Src="UserControls/header.ascx" TagName="Header_Cart" TagPrefix="uc" %>
 <%@ Register Src="UserControls/Footer.ascx" TagName="Footer" TagPrefix="uc" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
 <head>
-<title>OFFICIAL Plug & Safe Home Security - Plug-in Home Safety Device</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="description" content="Plug and Safe Home Security is the latest technology to protect your home from burglers and intruders. ">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-
-<link href="/Styles/plugnsafe_b2.css" rel="stylesheet" type="text/css" media="all" />
-<!-- add popup plugin -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
-<link href="/Scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
-
-<script type="text/javascript" src="/Scripts/global.js"></script>
-
+<meta charset="utf-8">    
+<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
+<meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Scripts/fancybox/jquery.fancybox.css">
+<script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
+<script src="/Scripts/global_a2.js"></script>
+<link href="../Styles/global_a2.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
+    <div class="container_upsell">
 <asp:ScriptManager ID="ScriptManager1" runat="server">
 </asp:ScriptManager>    
     <asp:Panel ID="pnlManual" runat="server">
@@ -31,12 +30,14 @@
 
     </asp:Panel>
 
-<uc:Header_Cart ID="Header_Upsell" runat="server" />  
     <div runat="server" id="mainContainer">
     </div>
     <asp:Button ID="btnYes" runat="server" Text="Button" OnClick="btnYes_OnClick" Visible="false" />
     <asp:Button ID="btnNo" runat="server" Text="Button" OnClick="btnNo_OnClick" Visible="false" />
     
+</div>
+
+<!--#include file="footer_upsell.html"-->
     
 <uc:TrackingPixels ID="TrackingPixels" runat="server" />
     </form>

@@ -1,14 +1,24 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppingCartControl.ascx.cs"
-    Inherits="CSWeb.A2.UserControls.ShoppingCartControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppingCartControl.ascx.cs" Inherits="CSWeb.A2.UserControls.ShoppingCartControl" %>
+
+
 <asp:LinkButton ID="refresh" runat="server" CausesValidation="false"></asp:LinkButton>
 <asp:Repeater runat="server" ID="rptShoppingCart" OnItemDataBound="rptShoppingCart_OnItemDataBound"
     OnItemCommand="rptShoppingCart_OnItemCommand">
     <HeaderTemplate>
     </HeaderTemplate>
     <ItemTemplate>
+    <div class="cart_table clearfix bold">
+    <div class="cart_image">Item</div>
+    <div class="cart_text">&nbsp;</div>
+    <div class="cart_select">Qty</div>
+    <div class="product_price">Price</div>
+    <div class="clear"></div>
+    <div class="horizontal_dots"></div>
+    </div>
         <div class="cart_table clearfix">
+        
             <div class="cart_image">
-                <asp:Image runat="server" ID="imgProduct" Width="111" Height="74" />
+                <asp:Image runat="server" ID="imgProduct" />
             </div>
             <div class="cart_text">
                 <p class="basket_title">
@@ -18,7 +28,7 @@
             </div>
             <div class="cart_select">
            
-                <asp:TextBox runat="server" ID="txtQuantity" Font-Size="8pt" Text='1' MaxLength="3"
+                <asp:TextBox runat="server" ID="txtQuantity" Text='1' MaxLength="3"
                     Columns="2" OnTextChanged="OnTextChanged_Changed"></asp:TextBox>
                 <asp:Label runat="server" ID="lblQuantity" CssClass="cart_select">
                 </asp:Label>
@@ -39,8 +49,8 @@
         </div>
         <div class="cart_totals clearfix">
             <div class="cart_totals_left">
-                Subtotal<br />
-                S&amp;H:<br />
+                Subtotal:<br />
+                Shipping & Handling:<br />
                 Tax:
                 <br />
                 Total:</div>
