@@ -22,7 +22,7 @@ namespace CSWebBase
         {
 
             Order item = new Order();
-            using (SqlDataReader reader = CustomOrderDAL.GetOrderDetails(orderId))
+            using (SqlDataReader reader = OrderDAL.GetOrderDetails(orderId))
             {
                 while (reader.Read())
                 {
