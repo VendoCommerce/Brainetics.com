@@ -48,6 +48,8 @@ namespace CSWeb.A1
             ucBillingShippingCreditForm.PageValidate();
             
             base.Validate();
+
+            // TODO: show alert message on page
         }
     }
 }

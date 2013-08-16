@@ -1143,7 +1143,7 @@
     </Compile>
     <Compile Include="App_Code\FulfillmentHouse\Acmg.cs" />
     <Compile Include="App_Code\FulfillmentHouse\Chargify.cs" />
-    <Content Include="App_Code\FulfillmentHouse\DataPak.cs" />
+    <Compile Include="App_Code\FulfillmentHouse\DataPak.cs" />
     <Compile Include="App_Code\FulfillmentHouse\Webgistix.cs" />
     <Compile Include="App_Code\FulfillmentHouse\PyxConnect.cs" />
     <Compile Include="App_Code\FulfillmentHouse\ShipWire.cs" />

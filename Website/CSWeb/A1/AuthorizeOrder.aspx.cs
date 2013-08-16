@@ -12,6 +12,7 @@ using CSCore.Utils;
 using CSBusiness.OrderManagement;
 using CSBusiness.Resolver;
 using CSBusiness.ShoppingManagement;
+using CSBusiness.Attributes;
 
 namespace CSWeb.A1.Store
 {
@@ -37,52 +38,76 @@ namespace CSWeb.A1.Store
             {
                 orderId = CartContext.OrderId;
             }
-            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId);
-
+            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId, true);
             if (orderData.OrderStatusId == 2)
             {
                 // this means that  customer clicked back, so should be directed to receipt page.
                 Response.Redirect("receipt.aspx");
             }
-
-            if (OrderHelper.IsCustomerOrderFlowCompleted(orderData.OrderId))
-            {
-                // this means that  customer clicked back from Receipt page, so should be directed to receipt page.
-                Response.Redirect("receipt.aspx");
-            }
-
             if (!IsPostBack)
             {
+                Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
+
+                if (orderData.CreditInfo.CreditCardNumber.Equals("4444333322221111"))
+                {                    
+                    CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, 7);
+                    
+                    Response.Redirect("receipt.aspx");
+                }
+                else if (orderData.CreditInfo.CreditCardNumber.Equals("4111111111111111") && !orderData.CreditInfo.CreditCardCSC.Equals("999"))
+                {
+                    CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, 7);
+
+                    Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
+                }
+
                 // Check if payment gateway service is enabled or not.
                 if (CSFactory.GetCacheSitePref().PaymentGatewayService)
                 {
-                    if (OrderHelper.AuthorizeOrder(orderId))
+                    bool authSuccess = false;
+
+                    try
                     {
-                        Response.Redirect("receipt.aspx");
+                        authSuccess = orderData.OrderStatusId == 4 || OrderHelper.AuthorizeOrder(orderId);
+                    }
+                    catch (Exception ex)
+                    {
+                        CSCore.CSLogger.Instance.LogException("AuthorizeOrder - auth error", ex);
+
+                        throw;
+                    }
+
+                    if (authSuccess)
+                    {
+                        // Check if fulfillment gateway service is enabled or not.
+                        if (CSFactory.GetCacheSitePref().FulfillmentHouseService)
+                        {
+                            try
+                            {
+                                new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
+                            }
+                            catch (Exception ex)
+                            {
+                                CSCore.CSLogger.Instance.LogException("AuthorizeOrder - fulfillment post error", ex);
+
+                                throw;
+                            }
+
+                            if (Request.QueryString != null)
+                            {
+                                Response.Redirect("receipt.aspx?" + Request.QueryString);
+                            }
+                            else
+                            {
+                                Response.Redirect("receipt.aspx");
+                            }
+                        }
                     }
                     else
                     {
                         Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
                     }
                 }
-                // Check if fulfillment gateway service is enabled or not.A
-                
-                /*
-                if (CSFactory.GetCacheSitePref().FulfillmentHouseService)
-                {
-                    if (new CSWeb.FulfillmentHouse.Acmg().PostOrder(orderId))
-                    {
-                        if (Request.QueryString != null)
-                        {
-                            Response.Redirect("receipt.aspx?" + Request.QueryString);
-                        }
-                        else
-                        {
-                            Response.Redirect("receipt.aspx");
-                        }
-                    }
-                }
-                */
             }
             Response.Redirect("receipt.aspx");
 

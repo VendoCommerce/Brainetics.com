@@ -65,33 +65,25 @@ namespace CSWeb
             {
                 _request.CardType = CreditCardType.AmericanExpress;
             }
-            
-            if (_request.CardNumber == "4444333322221111")
+
+            //Read information from client DB setting
+            Response _response = PaymentProviderRepository.Instance.Get().PerformRequest(_request);
+
+            Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
+            orderAttributes.Add("AuthRequest", new CSBusiness.Attributes.AttributeValue(_response.GatewayRequestRaw));
+            orderAttributes.Add("AuthResponse", new CSBusiness.Attributes.AttributeValue(_response.GatewayResponseRaw));
+            CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, 7);
+
+            if (_response != null && _response.ResponseType != TransactionResponseType.Approved)
             {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, "", "", 7);
-                return true;
-            }
-            else if (_request.CardNumber == "4111111111111111")
-            {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, "", "", 7);
+                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 7);
+
                 return false;
             }
-            else
+            else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
             {
-                //Read information from client DB setting
-                Response _response = PaymentProviderRepository.Instance.Get().PerformRequest(_request);
-
-                if (_response != null && _response.ResponseType != TransactionResponseType.Approved)
-                {
-                    CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 7);
-
-                    return false;
-                }
-                else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
-                {
-                    CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 4);
-                    return true;
-                }
+                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 4);
+                return true;
             }
 
             return true;
