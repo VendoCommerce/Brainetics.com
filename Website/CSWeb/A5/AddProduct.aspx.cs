@@ -76,6 +76,9 @@ namespace CSWeb.A5.Store
                             bool settingVal = Convert.ToBoolean(ConfigHelper.ReadAppSetting("DisCountCardDisplay", "false"));
                             cartObject.AddItem(dId, qId, settingVal, false);
                         }
+
+                        CSWebBase.SiteBasePage.AddAdditionalItems(cartObject);
+
                         cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
                         cartObject.Compute();
                         cartObject.ShowQuantity = false;

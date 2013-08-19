@@ -509,7 +509,7 @@ namespace CSWeb.A2.Store
                         {
                             int skuId = Convert.ToInt32(s.Attribute("id").Value);
                             string fieldName = null;
-
+                            
                             // read quantity
                             int quantity = 0;
                             XElement quantField = s.XPathSelectElement("field[@what = 'quantity']");
@@ -521,6 +521,19 @@ namespace CSWeb.A2.Store
 
                                     if (int.TryParse(Request.Form[fieldName], out quantity))
                                         skusAndQuantities.Add(skuId, quantity);
+                                }
+                                else if (quantField.Attribute("skuid") != null)
+                                {
+                                    Sku matchSku = CartContext.CartInfo.CartItems.FirstOrDefault(x => { return x.SkuId == int.Parse(quantField.Attribute("skuid").Value); });
+
+                                    if (matchSku != null)
+                                    {
+                                        skusAndQuantities.Add(skuId, matchSku.Quantity);
+                                    }
+                                    else
+                                    {
+                                        skusAndQuantities.Add(skuId, Convert.ToInt32((quantField.Attribute("defaultvalue") ?? new XAttribute("0", "0")).Value));
+                                    }
                                 }
                                 else
                                     skusAndQuantities.Add(skuId, Convert.ToInt32((quantField.Attribute("defaultvalue") ?? new XAttribute("0", "0")).Value));

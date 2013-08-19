@@ -14,6 +14,8 @@ using CSBusiness.FulfillmentHouse;
 using System.Xml.Linq;
 using CSBusiness.Attributes;
 using CSPaymentProvider;
+using CSBusiness.Preference;
+using CSData;
 
 namespace CSWeb.FulfillmentHouse
 {
@@ -225,19 +227,24 @@ namespace CSWeb.FulfillmentHouse
                     xml.WriteWhitespace("\n");
                     xml.WriteElementString("CVV", orderItem.CreditInfo.CreditCardCSC);
                     xml.WriteWhitespace("\n");
-                    
+
+                    decimal rushShippingCharge = GetRushShippingCost(orderItem.SkuItems);
+                    decimal surchargeAmt = GetSurchargeAmt(orderItem);
                     int maxNumOfPayments = 0; // here, number of payments correspond to additional payments after the initial payment (ie. first payment is excluded from this number).
                     foreach (Sku sku in orderItem.SkuItems)
                     {
                         if (!sku.AttributeValuesLoaded)
                             sku.LoadAttributeValues();
 
+                        if (sku.GetAttributeValue("RushSku", false) || sku.SkuCode.ToUpper().Contains("SURCHARGE"))
+                            continue;
+
                         int numOfPayment = sku.GetAttributeValue("NumberOfPayments", 0);
 
                         maxNumOfPayments = Math.Max(numOfPayment, maxNumOfPayments);
                     }
 
-                    xml.WriteElementString("NumberOfPayments", maxNumOfPayments.ToString());
+                    xml.WriteElementString("NumberOfPayments", (maxNumOfPayments+1).ToString());
                     xml.WriteWhitespace("\n");
 
                     // write out the initial payment
@@ -258,6 +265,9 @@ namespace CSWeb.FulfillmentHouse
 
                             if (!sku.AttributeValuesLoaded)                            
                                 sku.LoadAttributeValues();
+
+                            if (sku.GetAttributeValue("RushSku", false) || sku.SkuCode.ToUpper().Contains("SURCHARGE"))
+                                continue;
                             
                             decimal numOfPayment = sku.GetAttributeValue("NumberOfPayments", 0m); 
 
@@ -287,15 +297,18 @@ namespace CSWeb.FulfillmentHouse
                     // Order Costs
                     xml.WriteElementString("MerchandiseTotal", orderItem.FullPriceSubTotal.ToString("n2"));
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("ShippingCharge", orderItem.ShippingCost.ToString("n2"));
+                    xml.WriteElementString("ShippingCharge", (orderItem.ShippingCost - rushShippingCharge).ToString("n2"));
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("RushCharge", orderItem.RushShippingCost.ToString("n2"));
+                    xml.WriteElementString("RushCharge", rushShippingCharge.ToString("n2"));
                     xml.WriteWhitespace("\n");
                     xml.WriteElementString("PriorityHandling", "0.00");
                     xml.WriteWhitespace("\n");
                     xml.WriteElementString("SalesTax", orderItem.FullPriceTax.ToString("n2"));
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("OrderTotal", (orderItem.FullPriceSubTotal + orderItem.ShippingCost + orderItem.RushShippingCost + orderItem.FullPriceTax).ToString("n2"));
+                    xml.WriteElementString("OrderTotal", (orderItem.FullPriceSubTotal // (this amount excludes rush shipping and surcharge)
+                        + orderItem.ShippingCost //+ surchargeAmt // surchargeAmt = surcharge amount
+                        + orderItem.RushShippingCost //+ rushShippingCharge // rushShippingCharge = rush shipping charge
+                        + orderItem.FullPriceTax).ToString("n2"));
                     xml.WriteWhitespace("\n");
 
 
@@ -308,6 +321,12 @@ namespace CSWeb.FulfillmentHouse
 
                     foreach (Sku Item in orderItem.SkuItems)
                     {
+                        if (!Item.AttributeValuesLoaded)
+                            Item.LoadAttributeValues();
+
+                        if (Item.GetAttributeValue("RushSku", false) || Item.SkuCode.ToUpper().Contains("SURCHARGE"))
+                            continue;
+
                         xml.WriteStartElement("Item");
                         xml.WriteWhitespace("\n");
 
@@ -402,6 +421,96 @@ namespace CSWeb.FulfillmentHouse
         private XmlNode GetConfig()
         {
             return OrderHelper.GetDefaultFulFillmentHouseConfig();
+        }
+
+        private decimal GetRushShippingCost(List<Sku> skuItems)
+        {
+            SitePreference sitePreference = CSFactory.GetCartPrefrence();
+
+            List<SkuShipping> shippingCosts = ShippingDAL.GetSkuShipping();
+
+            decimal rushCharge = 0;
+            foreach (Sku sku in skuItems)
+            {
+                if (!sku.AttributeValuesLoaded)
+                    sku.LoadAttributeValues();
+
+                if (!sku.GetAttributeValue("RushSku", false))
+                    continue;
+
+                CSData.SkuShipping skuShipping = shippingCosts.FirstOrDefault(x =>
+                        {
+                            return x.PrefId == sitePreference.ShippingPrefID
+                                && x.SkuId == sku.SkuId;
+                        });
+
+                if (skuShipping != null)
+                {
+                    rushCharge += (skuShipping.Cost * sku.Quantity);
+                }
+            }
+
+            return rushCharge;
+        }
+
+        private decimal GetMerchandiseSubtotal(Order orderItem)
+        {
+            SitePreference sitePreference = CSFactory.GetCartPrefrence();
+
+            List<SkuShipping> shippingCosts = ShippingDAL.GetSkuShipping();
+
+            decimal rushCharge = 0;
+            foreach (Sku sku in orderItem.SkuItems)
+            {
+                if (!sku.AttributeValuesLoaded)
+                    sku.LoadAttributeValues();
+
+                if (!sku.GetAttributeValue("RushSku", false))
+                    continue;
+
+                CSData.SkuShipping skuShipping = shippingCosts.FirstOrDefault(x =>
+                {
+                    return x.PrefId == sitePreference.ShippingPrefID
+                        && x.SkuId == sku.SkuId;
+                });
+
+                if (skuShipping != null)
+                {
+                    rushCharge += (skuShipping.Cost * sku.Quantity);
+                }
+            }
+
+            return rushCharge;
+        }
+
+        private decimal GetSurchargeAmt(Order orderItem)
+        {
+            SitePreference sitePreference = CSFactory.GetCartPrefrence();
+
+            List<SkuShipping> shippingCosts = ShippingDAL.GetSkuShipping();
+
+            decimal surcharge = 0;
+            foreach (Sku sku in orderItem.SkuItems)
+            {
+                if (!sku.AttributeValuesLoaded)
+                    sku.LoadAttributeValues();
+
+                if (!sku.SkuCode.ToUpper().Contains("SURCHARGE"))
+                    continue;
+
+                CSData.SkuShipping skuShipping = shippingCosts.FirstOrDefault(x =>
+                {
+                    return x.PrefId == sitePreference.ShippingPrefID
+                        && x.SkuId == sku.SkuId;
+                });
+
+                if (skuShipping != null)
+                {
+                    surcharge += (skuShipping.Cost * sku.Quantity);
+                }
+            }
+
+            return surcharge;
         }
     }
 }

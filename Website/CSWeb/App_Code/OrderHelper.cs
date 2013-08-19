@@ -76,13 +76,13 @@ namespace CSWeb
 
             if (_response != null && _response.ResponseType != TransactionResponseType.Approved)
             {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 7);
+                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID ?? string.Empty, _response.AuthCode ?? string.Empty, 7);
 
                 return false;
             }
             else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
             {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 4);
+                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID ?? string.Empty, _response.AuthCode ?? string.Empty, 4);
                 return true;
             }
 

@@ -190,8 +190,20 @@ namespace CSWeb.A3.UserControls
         {
             ClientCartContext cartContext = ((CSWebBase.SiteBasePage)Page).ClientOrderData;
 
-            cartContext.CartInfo.AddOrUpdate(cartContext.CartInfo.CartItems.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); }).SkuId,
-                Math.Abs(Convert.ToInt32(txtQuantity.Text)), true, false, false);
+            Sku currentSku = cartContext.CartInfo.CartItems.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
+
+            int quantity = Convert.ToInt32(txtQuantity.Text);
+
+            if (quantity < 1 || quantity > 99)
+            {
+                txtQuantity.Text = Convert.ToString(currentSku.Quantity);
+                return;
+            }
+
+            cartContext.CartInfo.AddOrUpdate(currentSku.SkuId, quantity, true, false, false);
+
+            CSWebBase.SiteBasePage.AddAdditionalItems(cartContext.CartInfo);
+
             cartContext.CartInfo.Compute();
 
             ((CSWebBase.SiteBasePage)Page).ClientOrderData = cartContext;

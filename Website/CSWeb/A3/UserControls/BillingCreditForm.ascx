@@ -16,7 +16,7 @@
        
         <div class="cartB"><img src="/Content/images/A3/cart_form_top.jpg" width="293" height="56" />
            
-           <div class="form_line clearfix" style="width: 200px; padding: 10px 0 20px">
+           <div class="form_line clearfix" style="width: 200px; padding: 10px 0 20px" runat="server" visible="false">
 
 <div class="radiooo" style="padding-bottom: 14px">
 <asp:RadioButton ID="rbEnhancedPackage" runat="server" GroupName="PackageOption" AutoPostBack="true" OnCheckedChanged="Package_CheckedChanged"/> 
@@ -31,10 +31,11 @@
 
    <div class="form_line clearfix" style="padding: 0 0 10px 0;">
       <div class="error-1"> <asp:RegularExpressionValidator ID="revQuantity" runat="server" ControlToValidate="txtQuantity"
-                Display="Dynamic" ValidationExpression="^[1-999]$" ValidationGroup="QuantityUpdate" ErrorMessage="Please enter a valid quantity." /></div>
+                Display="Dynamic" ValidationExpression="^[1-9]{1,1}[0-9]{0,1}$" ValidationGroup="QuantityUpdate" ErrorMessage="Please enter a valid quantity." /></div>
    <label class="label-1" style="width: 70px">Quantity: </label>
-            <asp:TextBox ID="txtQuantity" runat="server" MaxLength="3" CssClass="text-4" />
-                <asp:LinkButton ID="lbUpdate" runat="server" OnClick="lbUpdate_Click" CausesValidation="true" ValidationGroup="QuantityUpdate" CssClass="scored bold f12 fleft" Style="padding-top: 3px; margin-left: 5px;">Update</asp:LinkButton>
+            <asp:TextBox ID="txtQuantity" runat="server" MaxLength="2" CssClass="text-4" />
+                <asp:LinkButton ID="lbUpdate" runat="server" OnClick="lbUpdate_Click" CausesValidation="true" ValidationGroup="QuantityUpdate" 
+                    CssClass="scored bold f12 fleft" Style="padding-top: 3px; margin-left: 5px;">Update</asp:LinkButton>
             
            </div>
             
