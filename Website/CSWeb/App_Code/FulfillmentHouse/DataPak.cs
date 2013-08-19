@@ -98,6 +98,8 @@ namespace CSWeb.FulfillmentHouse
                     xml.WriteEndElement();
                     xml.WriteWhitespace("\n");
 
+                    bool isRush;
+                    decimal rushShippingCharge = GetRushShippingCost(orderItem.SkuItems, out isRush);
                     string ShippingMethod = "01";
 
                     if (orderItem.CustomerInfo.ShippingAddress.CountryId == 46) // Canada
@@ -113,6 +115,10 @@ namespace CSWeb.FulfillmentHouse
                              orderItem.CustomerInfo.ShippingAddress.StateProvinceId == 390)
                         {
                             ShippingMethod = "09";
+                        }
+                        else if (isRush)
+                        {
+                            ShippingMethod = "03"; // 2nd Day
                         }
                     }
 
@@ -228,7 +234,6 @@ namespace CSWeb.FulfillmentHouse
                     xml.WriteElementString("CVV", orderItem.CreditInfo.CreditCardCSC);
                     xml.WriteWhitespace("\n");
 
-                    decimal rushShippingCharge = GetRushShippingCost(orderItem.SkuItems);
                     decimal surchargeAmt = GetSurchargeAmt(orderItem);
                     int maxNumOfPayments = 0; // here, number of payments correspond to additional payments after the initial payment (ie. first payment is excluded from this number).
                     foreach (Sku sku in orderItem.SkuItems)
@@ -319,6 +324,8 @@ namespace CSWeb.FulfillmentHouse
                     //SkuItems
 
 
+                    Sku trialSku = orderItem.SkuItems.FirstOrDefault(x => { return x.SkuCode.ToUpper() == "TRIAL"; });
+
                     foreach (Sku Item in orderItem.SkuItems)
                     {
                         if (!Item.AttributeValuesLoaded)
@@ -327,26 +334,43 @@ namespace CSWeb.FulfillmentHouse
                         if (Item.GetAttributeValue("RushSku", false) || Item.SkuCode.ToUpper().Contains("SURCHARGE"))
                             continue;
 
+                        if (!Item.ContainsAttribute("DataPakItemCode"))
+                            continue;
+
                         xml.WriteStartElement("Item");
                         xml.WriteWhitespace("\n");
 
                         Item.LoadAttributeValues();
-                        xml.WriteElementString("ItemCode", Item.SkuCode);
+                        xml.WriteElementString("ItemCode", Item.GetAttributeValue("DataPakItemCode"));
                         xml.WriteWhitespace("\n");
-                        xml.WriteElementString("Sequence", Item.OfferCode);
+                        xml.WriteElementString("Sequence", Item.GetAttributeValue("DataPakSequence", "01"));
                         xml.WriteWhitespace("\n");
                         xml.WriteElementString("Quantity", Item.Quantity.ToString());
                         xml.WriteWhitespace("\n");
-                        xml.WriteElementString("Price", Item.FullPrice.ToString("n2"));
+
+                        if (trialSku == null)
+                            xml.WriteElementString("Price", Item.FullPrice.ToString("n2"));
+                        else
+                        {
+                            if (Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.EnhancedMultiPay || 
+                                Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.AcceleratedMultiPay)
+                                xml.WriteElementString("Price", (Item.FullPrice + trialSku.FullPrice).ToString("n2"));
+                            else
+                                xml.WriteElementString("Price", Item.FullPrice.ToString("n2"));
+                        }
+                        
                         xml.WriteWhitespace("\n");
                         if (Item.AttributeValues.ContainsKey("isupsell"))
                         {
                             if (Item.AttributeValues["isupsell"].Value != "")
                             {
-                                xml.WriteElementString("Upsell", Item.AttributeValues["isupsell"].Value);
+                                xml.WriteElementString("Upsell", Item.GetAttributeValueObj("isupsell").BooleanValue ? "Y" : "N");
                                 xml.WriteWhitespace("\n");
                             }
                         }
+                        else
+                            xml.WriteElementString("Upsell", "N");
+
                         xml.WriteElementString("GiftWrap", "N");
                         xml.WriteWhitespace("\n");
                         xml.WriteElementString("GiftWrapCharge", "N");
@@ -423,8 +447,9 @@ namespace CSWeb.FulfillmentHouse
             return OrderHelper.GetDefaultFulFillmentHouseConfig();
         }
 
-        private decimal GetRushShippingCost(List<Sku> skuItems)
+        private decimal GetRushShippingCost(List<Sku> skuItems, out bool rush)
         {
+            rush = false;
             SitePreference sitePreference = CSFactory.GetCartPrefrence();
 
             List<SkuShipping> shippingCosts = ShippingDAL.GetSkuShipping();
@@ -446,6 +471,7 @@ namespace CSWeb.FulfillmentHouse
 
                 if (skuShipping != null)
                 {
+                    rush = true;
                     rushCharge += (skuShipping.Cost * sku.Quantity);
                 }
             }
