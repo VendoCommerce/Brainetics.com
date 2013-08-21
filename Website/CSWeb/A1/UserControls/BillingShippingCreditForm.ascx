@@ -25,10 +25,22 @@
                   }
               });
           }
-          
+
         </script>
 
+        
 
+        <asp:PlaceHolder ID="phCardError" runat="server" Visible="false">
+        
+            <script type="text/javascript">
+
+                var popUpMsg = '<asp:Literal ID="litPopUpMsg" runat="server" EnableViewState="false" />';
+
+                if (popUpMsg != '')
+                    alert(popUpMsg);
+
+            </script>
+        </asp:PlaceHolder>
 
 <script type="text/javascript">
 
@@ -347,3 +359,12 @@ Get the Brainetics Enhanced Package for just $14.95 Trial + $14.95 S&H (then 5 e
 					</div>
 					
 		</div>
+
+        <asp:PlaceHolder ID="phExpandShippingDifferent" runat="server" Visible="false" EnableViewState="false">
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $(".shippingdifferent").click();
+                });
+            </script>
+
+        </asp:PlaceHolder>

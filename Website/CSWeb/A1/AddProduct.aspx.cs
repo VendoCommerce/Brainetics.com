@@ -58,15 +58,19 @@ namespace CSWeb.A1.Store
                         clientData.CartInfo = cartObject;
 
                         if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess)
-                        {
+                        {   
                             int orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
 
                             clientData.OrderId = orderId;
                             clientData.ResetData();
+                            
                             Session["ClientOrderData"] = clientData;
                         }
 
-                        Response.Redirect("PostSale.aspx");
+                        // When we hit this page, we need to do a $1 test charge only to see if card is valid before going to postsale (upsells). 
+                        Response.Redirect("AuthorizeOrder.aspx?card_check=1", true);
+
+                        //Response.Redirect("PostSale.aspx");
                     }
                     else if(cId == (int)ShoppingCartType.ShippingCreditCheckout)
                     {

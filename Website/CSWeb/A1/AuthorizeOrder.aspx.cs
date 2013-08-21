@@ -61,6 +61,8 @@ namespace CSWeb.A1.Store
                     Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
                 }
 
+                bool cardCheckOnly = Request.QueryString["card_check"] == "1"; 
+
                 // Check if payment gateway service is enabled or not.
                 if (CSFactory.GetCacheSitePref().PaymentGatewayService)
                 {
@@ -68,13 +70,21 @@ namespace CSWeb.A1.Store
 
                     try
                     {
-                        authSuccess = orderData.OrderStatusId == 4 || OrderHelper.AuthorizeOrder(orderId);
+                        authSuccess = orderData.OrderStatusId == 4 || OrderHelper.AuthorizeOrder(orderId, cardCheckOnly);
                     }
                     catch (Exception ex)
                     {
                         CSCore.CSLogger.Instance.LogException("AuthorizeOrder - auth error", ex);
 
                         throw;
+                    }
+
+                    if (cardCheckOnly)
+                    {
+                        if (authSuccess)
+                            Response.Redirect("PostSale.aspx", true);
+                        else
+                            Response.Redirect("Order.aspx?err_card=1&oid=" + HttpUtility.UrlEncode(CSCore.Utils.CommonHelper.Encrypt(orderId.ToString() + "|" + new Random().Next(100))), true);
                     }
 
                     if (authSuccess)

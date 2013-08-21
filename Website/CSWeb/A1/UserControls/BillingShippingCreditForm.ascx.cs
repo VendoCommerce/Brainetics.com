@@ -16,6 +16,7 @@ using CSBusiness.Attributes;
 using System.Web.Services;
 using System.Collections.Specialized;
 using System.Linq;
+using CSBusiness.OrderManagement;
 
 namespace CSWeb.A1.UserControls
 {
@@ -129,6 +130,7 @@ namespace CSWeb.A1.UserControls
                 BindShippingRegions();
                 BindCreditCard();
                 BindValidationScripts();
+                BindReturnFields();
             }
         }
 
@@ -225,6 +227,70 @@ namespace CSWeb.A1.UserControls
         protected void ShippingCountry_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             BindShippingRegions();
+        }
+
+        protected void BindReturnFields()
+        {
+            if (Request.QueryString["err_card"] == "1")
+            {
+                phCardError.Visible = true;
+                litPopUpMsg.Text = "--Invalid credit card number.";
+
+                PopulateFormFromSession();
+            }
+        }
+
+        private void PopulateFormFromSession()
+        {
+            int orderId = 0;
+
+            try
+            {
+                orderId = Convert.ToInt32(CommonHelper.Decrypt(Request.QueryString["oid"]).Split('|')[0]);
+            }
+            catch
+            {
+            }
+
+            if (orderId == 0)
+                return;
+
+            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId, true);
+
+            if (!orderData.AttributeValuesLoaded)
+                orderData.LoadAttributeValues();
+
+            // billing fields
+            txtFirstName.Text = orderData.CustomerInfo.BillingAddress.FirstName;
+            txtLastName.Text = orderData.CustomerInfo.BillingAddress.LastName;
+            txtAddress1.Text = orderData.CustomerInfo.BillingAddress.Address1;
+            txtAddress2.Text = orderData.CustomerInfo.BillingAddress.Address2;
+            txtZipCode.Text = orderData.CustomerInfo.BillingAddress.ZipPostalCode;
+            txtCity.Text = orderData.CustomerInfo.BillingAddress.City;
+            ddlState.SelectedIndex = ddlState.Items.IndexOf(ddlState.Items.FindByValue(Convert.ToString(orderData.CustomerInfo.BillingAddress.StateProvinceId)));
+            ddlCountry.SelectedIndex = ddlCountry.Items.IndexOf(ddlCountry.Items.FindByValue(Convert.ToString(orderData.CustomerInfo.BillingAddress.CountryId)));
+            txtEmail.Text = orderData.CustomerInfo.Email;
+            txtPhoneNumber.Text = orderData.CustomerInfo.BillingAddress.PhoneNumber;
+
+            if (orderData.ContainsAttribute("ShippingDifferent") && orderData.GetAttributeValue("ShippingDifferent", false))
+            {
+                txtShippingFirstName.Text = orderData.CustomerInfo.ShippingAddress.FirstName;
+                txtShippingLastName.Text = orderData.CustomerInfo.ShippingAddress.LastName;
+                txtShippingAddress1.Text = orderData.CustomerInfo.ShippingAddress.Address1;
+                txtShippingAddress2.Text = orderData.CustomerInfo.ShippingAddress.Address2;
+                txtShippingZipCode.Text = orderData.CustomerInfo.ShippingAddress.ZipPostalCode;
+                txtShippingCity.Text = orderData.CustomerInfo.ShippingAddress.City;
+                ddlShippingState.SelectedIndex = ddlShippingState.Items.IndexOf(ddlShippingState.Items.FindByValue(Convert.ToString(orderData.CustomerInfo.ShippingAddress.StateProvinceId)));
+                ddlShippingCountry.SelectedIndex = ddlShippingCountry.Items.IndexOf(ddlShippingCountry.Items.FindByValue(Convert.ToString(orderData.CustomerInfo.ShippingAddress.CountryId)));
+
+                phExpandShippingDifferent.Visible = true;
+            }
+
+            txtCCNumber.Text = orderData.CreditInfo.CreditCardNumber;
+            ddlCCType.SelectedIndex = ddlCCType.Items.IndexOf(ddlCCType.Items.FindByValue(orderData.CreditInfo.CreditCardType.ToString()));
+            ddlExpMonth.SelectedIndex = ddlExpMonth.Items.IndexOf(ddlExpMonth.Items.FindByValue(Convert.ToString(orderData.CreditInfo.CreditCardExpired.Month)));
+            ddlExpYear.SelectedIndex = ddlExpYear.Items.IndexOf(ddlExpYear.Items.FindByValue(Convert.ToString(orderData.CreditInfo.CreditCardExpired.Year)));
+            txtCvv.Text = orderData.CreditInfo.CreditCardCSC;
         }
 
         protected void BindValidationScripts()
@@ -674,10 +740,8 @@ namespace CSWeb.A1.UserControls
 
                 clientData.PaymentInfo = paymentDataInfo;
 
-                if (chkMailingListOptIn.Checked)
-                {
-                    clientData.OrderAttributeValues.AddOrUpdateAttributeValue("OptInMailingList", new AttributeValue(chkMailingListOptIn.Checked));
-                }
+                clientData.OrderAttributeValues.AddOrUpdateAttributeValue("OptInMailingList", new AttributeValue(chkMailingListOptIn.Checked));
+                clientData.OrderAttributeValues.AddOrUpdateAttributeValue("ShippingDifferent", new AttributeValue(pnlShippingAddress.Visible));
 
                 if (CustData.ShippingAddress.CountryId == 46 ||
                     (CustData.ShippingAddress.CountryId == 231
