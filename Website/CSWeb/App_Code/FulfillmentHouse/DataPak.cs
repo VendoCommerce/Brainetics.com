@@ -21,6 +21,14 @@ namespace CSWeb.FulfillmentHouse
 {
     public class DataPak
     {
+        public enum ShippingMethodEnum
+        {
+            Ground = 1,
+            NextDay = 2,
+            SecondDay = 3,
+            USPSPriority = 4
+        }
+
         XmlNode config = null;
         public DataPak()
         {
@@ -98,29 +106,36 @@ namespace CSWeb.FulfillmentHouse
                     xml.WriteEndElement();
                     xml.WriteWhitespace("\n");
 
-                    bool isRush;
-                    decimal rushShippingCharge = GetRushShippingCost(orderItem.SkuItems, out isRush);
-                    string ShippingMethod = "01";
+                    /*
+
+01 = Ground (Sure Post)
+02 = Next Day
+03 = 2nd Day
+09 = USPS PRIORITY MAIL
+
+                     * */
+
+                    ShippingMethodEnum shippingMethod = ShippingMethodEnum.Ground;
+
+                    decimal rushShippingCharge = GetRushShippingCost(orderItem.SkuItems, ref shippingMethod);
 
                     if (orderItem.CustomerInfo.ShippingAddress.CountryId == 46) // Canada
-                    {
-                        ShippingMethod = "09";
+                    {                        
+                        shippingMethod = ShippingMethodEnum.USPSPriority;
                     }
                     else if (orderItem.CustomerInfo.ShippingAddress.CountryId == 231) //US
                     {
-                        if (orderItem.CustomerInfo.ShippingAddress.StateProvinceId == 1 ||
+                        if (orderItem.CustomerInfo.ShippingAddress.StateProvinceId == 1 ||  // AK, HI, etc. states
                              orderItem.CustomerInfo.ShippingAddress.StateProvinceId == 389 ||
                              orderItem.CustomerInfo.ShippingAddress.StateProvinceId == 388 ||
                              orderItem.CustomerInfo.ShippingAddress.StateProvinceId == 11 ||
                              orderItem.CustomerInfo.ShippingAddress.StateProvinceId == 390)
                         {
-                            ShippingMethod = "09";
-                        }
-                        else if (isRush)
-                        {
-                            ShippingMethod = "03"; // 2nd Day
-                        }
+                            shippingMethod = ShippingMethodEnum.USPSPriority;
+                        }                        
                     }
+
+                    string ShippingMethod = GetShippingMethod(shippingMethod);
 
                     //if (config.SelectSingleNode("@ShippingMethod_" + orderItem.CustomerInfo.ShippingAddress.CountryId.ToString()) != null)
                     //{
@@ -447,9 +462,8 @@ namespace CSWeb.FulfillmentHouse
             return OrderHelper.GetDefaultFulFillmentHouseConfig();
         }
 
-        private decimal GetRushShippingCost(List<Sku> skuItems, out bool rush)
+        private decimal GetRushShippingCost(List<Sku> skuItems, ref ShippingMethodEnum shippingMethod)
         {
-            rush = false;
             SitePreference sitePreference = CSFactory.GetCartPrefrence();
 
             List<SkuShipping> shippingCosts = ShippingDAL.GetSkuShipping();
@@ -471,7 +485,17 @@ namespace CSWeb.FulfillmentHouse
 
                 if (skuShipping != null)
                 {
-                    rush = true;
+                    // this will set shippingmethod to last one in list - there should really be on rush sku in cart, however
+                    switch (sku.SkuCode.ToUpper())
+                    {
+                        case "OVERNIGHT":
+                            shippingMethod = ShippingMethodEnum.NextDay;
+                            break;
+                        case "002UPS":
+                            shippingMethod = ShippingMethodEnum.SecondDay;
+                            break;
+                    }
+
                     rushCharge += (skuShipping.Cost * sku.Quantity);
                 }
             }
@@ -537,6 +561,23 @@ namespace CSWeb.FulfillmentHouse
             }
 
             return surcharge;
+        }
+
+        private string GetShippingMethod(ShippingMethodEnum shippingMethod)
+        {
+            switch (shippingMethod)
+            {
+                case ShippingMethodEnum.Ground:
+                    return "01";                    
+                case ShippingMethodEnum.NextDay:
+                    return "02";                    
+                case ShippingMethodEnum.SecondDay:
+                    return "03";                    
+                case ShippingMethodEnum.USPSPriority:
+                    return "09";                    
+            }
+
+            return "01";
         }
     }
 }

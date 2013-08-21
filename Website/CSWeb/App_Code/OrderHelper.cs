@@ -28,7 +28,13 @@ namespace CSWeb
     public class OrderHelper
     {
         #region Order Validation
+
         public static bool AuthorizeOrder(int orderID)
+        {
+            return AuthorizeOrder(orderID, false);
+        }
+
+        public static bool AuthorizeOrder(int orderID, bool cardCheckOnly)
         {
             Request _request = new Request();
 
@@ -38,7 +44,7 @@ namespace CSWeb
             _request.CardCvv = orderData.CreditInfo.CreditCardCSC;
             _request.CurrencyCode = "$";
             _request.ExpireDate = orderData.CreditInfo.CreditCardExpired;
-            _request.Amount = (double)orderData.Total;
+            _request.Amount = cardCheckOnly ? (double)1.00 : (double)orderData.Total;
             _request.FirstName = orderData.CustomerInfo.BillingAddress.FirstName;
             _request.LastName = orderData.CustomerInfo.BillingAddress.LastName;
             _request.Address1 = orderData.CustomerInfo.BillingAddress.Address1;
@@ -82,7 +88,11 @@ namespace CSWeb
             }
             else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
             {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID ?? string.Empty, _response.AuthCode ?? string.Empty, 4);
+                if (cardCheckOnly)
+                    CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, (_response.TransactionID ?? string.Empty) + " _c", (_response.AuthCode ?? string.Empty) + " _c", 7); // for card validation only, keep order marked invalid
+                else 
+                    CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID ?? string.Empty, _response.AuthCode ?? string.Empty, 4);
+
                 return true;
             }
 

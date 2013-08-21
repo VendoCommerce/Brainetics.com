@@ -286,6 +286,8 @@ namespace CSWeb.A3.UserControls
             else
             {
                 CartContext.CartInfo.ShippingAddress = CartContext.CustomerInfo.ShippingAddress;
+                CartContext.CustomerInfo.BillingAddress = CartContext.CartInfo.ShippingAddress;
+
                 ddlCountry.SelectedValue = CartContext.CartInfo.ShippingAddress.CountryId.ToString();
 
                 if (CartContext.CartInfo.ShippingAddress.StateProvinceId != 0 &&
@@ -574,7 +576,8 @@ namespace CSWeb.A3.UserControls
             //clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
             //clientData.OrderAttributeValues.Add("ref_url", new CSBusiness.Attributes.AttributeValue("http://www.google.com"));
 
-            clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
+            if (clientData.OrderAttributeValues == null)
+                clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
             clientData.OrderAttributeValues.Add("CustomOrderId", new CSBusiness.Attributes.AttributeValue("CS" + CommonHelper.GetRandonOrderNumber(DateTime.Now)));
             //Recapture billing information if the user modified the information
             if (rId == 0)
