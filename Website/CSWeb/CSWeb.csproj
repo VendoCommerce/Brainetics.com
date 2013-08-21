@@ -110,108 +110,6 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="A1\AddProduct.aspx" />
-    <Content Include="A1\AuthorizeOrder.aspx" />
-    <Content Include="A1\CardDecline.aspx" />
-    <Content Include="A1\Content\images\20-20.png" />
-    <Content Include="A1\Content\images\a-plus.png" />
-    <Content Include="A1\Content\images\about-bull.png" />
-    <Content Include="A1\Content\images\ages.png" />
-    <Content Include="A1\Content\images\awards.jpg" />
-    <Content Include="A1\Content\images\badge-new.png" />
-    <Content Include="A1\Content\images\bg-about.jpg" />
-    <Content Include="A1\Content\images\bg-checkout-2.png" />
-    <Content Include="A1\Content\images\bg-footer-2.jpg" />
-    <Content Include="A1\Content\images\bg-footer.jpg" />
-    <Content Include="A1\Content\images\bg-header-2.jpg" />
-    <Content Include="A1\Content\images\bg-header.jpg" />
-    <Content Include="A1\Content\images\bg-kit.jpg" />
-    <Content Include="A1\Content\images\bg-media-2.jpg" />
-    <Content Include="A1\Content\images\bg-media.jpg" />
-    <Content Include="A1\Content\images\bg-upsell.jpg" />
-    <Content Include="A1\Content\images\box-shadow.png" />
-    <Content Include="A1\Content\images\btn-10.png" />
-    <Content Include="A1\Content\images\btn-12.jpg" />
-    <Content Include="A1\Content\images\btn-5.png" />
-    <Content Include="A1\Content\images\btns.png" />
-    <Content Include="A1\Content\images\card.jpg" />
-    <Content Include="A1\Content\images\devider.png" />
-    <Content Include="A1\Content\images\down-arrow-1.png" />
-    <Content Include="A1\Content\images\f-photo-1.jpg" />
-    <Content Include="A1\Content\images\f-photo-10.jpg" />
-    <Content Include="A1\Content\images\f-photo-11.jpg" />
-    <Content Include="A1\Content\images\f-photo-12.jpg" />
-    <Content Include="A1\Content\images\f-photo-13.jpg" />
-    <Content Include="A1\Content\images\f-photo-14.jpg" />
-    <Content Include="A1\Content\images\f-photo-15.jpg" />
-    <Content Include="A1\Content\images\f-photo-16.jpg" />
-    <Content Include="A1\Content\images\f-photo-2.jpg" />
-    <Content Include="A1\Content\images\f-photo-3.jpg" />
-    <Content Include="A1\Content\images\f-photo-4.jpg" />
-    <Content Include="A1\Content\images\f-photo-5.jpg" />
-    <Content Include="A1\Content\images\f-photo-6.jpg" />
-    <Content Include="A1\Content\images\f-photo-7.jpg" />
-    <Content Include="A1\Content\images\f-photo-8.jpg" />
-    <Content Include="A1\Content\images\f-photo-9.jpg" />
-    <Content Include="A1\Content\images\footer-money.png" />
-    <Content Include="A1\Content\images\footer-text.png" />
-    <Content Include="A1\Content\images\guarantee.png" />
-    <Content Include="A1\Content\images\how.jpg" />
-    <Content Include="A1\Content\images\list-bull.png" />
-    <Content Include="A1\Content\images\loading-gif-animation.gif" />
-    <Content Include="A1\Content\images\logo.png" />
-    <Content Include="A1\Content\images\medal-3.jpg" />
-    <Content Include="A1\Content\images\medal-phone.jpg" />
-    <Content Include="A1\Content\images\product-11.jpg" />
-    <Content Include="A1\Content\images\product-12.jpg" />
-    <Content Include="A1\Content\images\product-13.jpg" />
-    <Content Include="A1\Content\images\product-14.jpg" />
-    <Content Include="A1\Content\images\product-15.jpg" />
-    <Content Include="A1\Content\images\rating.png" />
-    <Content Include="A1\Content\images\select.png" />
-    <Content Include="A1\Content\images\shadow.png" />
-    <Content Include="A1\Content\images\social.png" />
-    <Content Include="A1\Content\images\subpages-aside-2.jpg" />
-    <Content Include="A1\Content\images\subpages-aside.jpg" />
-    <Content Include="A1\Content\images\subpages-bg.jpg" />
-    <Content Include="A1\Content\images\upsell-10.jpg" />
-    <Content Include="A1\Content\images\upsell-3.jpg" />
-    <Content Include="A1\Content\images\upsell-7.jpg" />
-    <Content Include="A1\Content\images\upsell-8.jpg" />
-    <Content Include="A1\Content\images\upsell-9.jpg" />
-    <Content Include="A1\details-accelerated-package.aspx" />
-    <Content Include="A1\details-enhanced-package.aspx" />
-    <Content Include="A1\ext-customer.aspx" />
-    <Content Include="A1\ext-privacy.aspx" />
-    <Content Include="A1\index.aspx" />
-    <Content Include="A1\order.aspx" />
-    <Content Include="A1\PostSale.aspx" />
-    <Content Include="A1\receipt.aspx" />
-    <Content Include="A1\receipt_friendly.aspx" />
-    <Content Include="A1\Scripts\main.js" />
-    <Content Include="A1\Scripts\qzy1qcz.js" />
-    <Content Include="A1\Scripts\tracker\track.min.js" />
-    <Content Include="A1\Scripts\window-popup.js" />
-    <Content Include="A1\Styles\reset.css" />
-    <Content Include="A1\Styles\style.css" />
-    <Content Include="A1\sub-faq.aspx" />
-    <Content Include="A1\sub-features.aspx" />
-    <Content Include="A1\sub-stories.aspx" />
-    <Content Include="A1\sub-work.aspx" />
-    <Content Include="A1\UserControls\BillingCreditForm.ascx" />
-    <Content Include="A1\UserControls\BillingForm.ascx" />
-    <Content Include="A1\UserControls\CardDecline.ascx" />
-    <Content Include="A1\UserControls\CheckoutSummary.ascx" />
-    <Content Include="A1\UserControls\CheckoutThankYouModule.ascx" />
-    <Content Include="A1\UserControls\CheckoutThankYouModule2.ascx" />
-    <Content Include="A1\UserControls\CheckoutThankYouModulePrint2.ascx" />
-    <Content Include="A1\UserControls\BillingShippingCreditForm.ascx" />
-    <Content Include="A1\UserControls\Footer.ascx" />
-    <Content Include="A1\UserControls\Header.ascx" />
-    <Content Include="A1\UserControls\ShippingCreditForm.ascx" />
-    <Content Include="A1\UserControls\ShippingForm.ascx" />
-    <Content Include="A1\UserControls\ShoppingCartControl.ascx" />
-    <Content Include="A1\UserControls\TrackingPixels.ascx" />
     <Content Include="A2\bottomcta.html" />
     <Content Include="A2\contact.aspx" />
     <Content Include="A2\faq.aspx" />
@@ -228,6 +126,7 @@
     <Content Include="A2\receipt_friendly.aspx" />
     <Content Include="A2\testimonials.aspx" />
     <Content Include="A2\upsells.aspx" />
+    <Content Include="AddProduct.aspx" />
     <Content Include="Admin\Attributes.aspx" />
     <Content Include="Admin\Country.aspx" />
     <Content Include="Admin\CountryList.aspx" />
@@ -276,6 +175,7 @@
     <Content Include="Admin\VersionCategoryList.aspx" />
     <Content Include="Admin\VersionList.aspx" />
     <Content Include="Admin\VersionReport.aspx" />
+    <Content Include="AuthorizeOrder.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="A2\AuthorizeOrder.aspx" />
     <Content Include="A2\CardDecline.aspx" />
@@ -297,6 +197,7 @@
     <Content Include="A2\UserControls\ShippingForm.ascx" />
     <Content Include="A2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="A2\UserControls\TrackingPixels.ascx" />
+    <Content Include="CardDecline.aspx" />
     <Content Include="Content\Images\a1\20-20.png" />
     <Content Include="Content\Images\a1\a-plus.png" />
     <Content Include="Content\Images\a1\about-bull.png" />
@@ -547,6 +448,10 @@
     <Content Include="A5\UserControls\ShippingForm.ascx" />
     <Content Include="A5\UserControls\ShoppingCartControl.ascx" />
     <Content Include="A5\UserControls\TrackingPixels.ascx" />
+    <Content Include="details-accelerated-package.aspx" />
+    <Content Include="details-enhanced-package.aspx" />
+    <Content Include="ext-customer.aspx" />
+    <Content Include="ext-privacy.aspx" />
     <Content Include="GetTotals.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="contactform\contact_form.html" />
@@ -580,6 +485,7 @@
     <Content Include="Content\Images\yes_btn.png" />
     <Content Include="cvv.html" />
     <Content Include="index.aspx" />
+    <Content Include="oldindex.aspx" />
     <Content Include="FusionCharts\FCF_Area2D.swf" />
     <Content Include="FusionCharts\FCF_Column2D.swf" />
     <Content Include="FusionCharts\FCF_Column3D.swf" />
@@ -592,6 +498,10 @@
     <Content Include="appsettings.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="order.aspx" />
+    <Content Include="PostSale.aspx" />
+    <Content Include="receipt.aspx" />
+    <Content Include="receipt_friendly.aspx" />
     <Content Include="Scripts\autoTab.js" />
     <Content Include="Scripts\bootstrap-collapse.js" />
     <Content Include="Scripts\bootstrap-transition.js" />
@@ -607,11 +517,6 @@
     <Content Include="Scripts\jwplayer\five.xml" />
     <Content Include="Scripts\jwplayer\glow.xml" />
     <Content Include="Scripts\jwplayer\glow2.zip" />
-    <None Include="A1\Content\images\78393c47ebe34f65b0ec8d4bfd913292" />
-    <None Include="A1\Content\images\895e5bcb46594344b95650bb76ce09de" />
-    <None Include="A1\Content\images\90688c53-5ae6-48b3-8d14-4b00774a376b" />
-    <None Include="A1\Content\images\df012ffe779e4009a614e93a6aa04a81" />
-    <None Include="A1\Content\images\getthawteseal" />
     <None Include="Content\Images\a1\78393c47ebe34f65b0ec8d4bfd913292" />
     <None Include="Content\Images\a1\895e5bcb46594344b95650bb76ce09de" />
     <None Include="Content\Images\a1\90688c53-5ae6-48b3-8d14-4b00774a376b" />
@@ -711,7 +616,21 @@
     <Content Include="Styles\midstyles.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Styles\style.css" />
+    <Content Include="sub-faq.aspx" />
+    <Content Include="sub-features.aspx" />
+    <Content Include="sub-stories.aspx" />
+    <Content Include="sub-work.aspx" />
+    <Content Include="UserControls\BillingCreditForm.ascx" />
+    <Content Include="UserControls\BillingForm.ascx" />
+    <Content Include="UserControls\BillingShippingCreditForm.ascx" />
+    <Content Include="UserControls\CardDecline.ascx" />
+    <Content Include="UserControls\CheckoutSummary.ascx" />
+    <Content Include="UserControls\CheckoutThankYouModule.ascx" />
+    <Content Include="UserControls\CheckoutThankYouModule2.ascx" />
+    <Content Include="UserControls\CheckoutThankYouModulePrint2.ascx" />
     <Content Include="UserControls\DateControl.ascx" />
+    <Content Include="UserControls\Footer.ascx" />
+    <Content Include="UserControls\Header.ascx" />
     <Content Include="UserControls\PageControl.ascx" />
     <Content Include="UserControls\RangeDateControl.ascx" />
     <Content Include="UserControls\RangeDateControlV1.ascx" />
@@ -744,6 +663,10 @@
     <Content Include="Global.asax" />
     <Content Include="Styles\validation\template.css" />
     <Content Include="Styles\validation\validationEngine.jquery.css" />
+    <Content Include="UserControls\ShippingCreditForm.ascx" />
+    <Content Include="UserControls\ShippingForm.ascx" />
+    <Content Include="UserControls\ShoppingCartControl.ascx" />
+    <Content Include="UserControls\TrackingPixels.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -824,210 +747,6 @@
     <None Include="Styles\fontawesome\scss\_variables.scss" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="A1\AddProduct.aspx.cs">
-      <DependentUpon>AddProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\AddProduct.aspx.designer.cs">
-      <DependentUpon>AddProduct.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\AuthorizeOrder.aspx.cs">
-      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\AuthorizeOrder.aspx.designer.cs">
-      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\CardDecline.aspx.cs">
-      <DependentUpon>CardDecline.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\CardDecline.aspx.designer.cs">
-      <DependentUpon>CardDecline.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\details-accelerated-package.aspx.cs">
-      <DependentUpon>details-accelerated-package.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\details-accelerated-package.aspx.designer.cs">
-      <DependentUpon>details-accelerated-package.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\details-enhanced-package.aspx.cs">
-      <DependentUpon>details-enhanced-package.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\details-enhanced-package.aspx.designer.cs">
-      <DependentUpon>details-enhanced-package.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\ext-customer.aspx.cs">
-      <DependentUpon>ext-customer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\ext-customer.aspx.designer.cs">
-      <DependentUpon>ext-customer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\ext-privacy.aspx.cs">
-      <DependentUpon>ext-privacy.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\ext-privacy.aspx.designer.cs">
-      <DependentUpon>ext-privacy.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\order.aspx.cs">
-      <DependentUpon>order.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\order.aspx.designer.cs">
-      <DependentUpon>order.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\PostSale.aspx.cs">
-      <DependentUpon>PostSale.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\PostSale.aspx.designer.cs">
-      <DependentUpon>PostSale.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\receipt.aspx.cs">
-      <DependentUpon>receipt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\receipt.aspx.designer.cs">
-      <DependentUpon>receipt.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\receipt_friendly.aspx.cs">
-      <DependentUpon>receipt_friendly.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\receipt_friendly.aspx.designer.cs">
-      <DependentUpon>receipt_friendly.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\sub-faq.aspx.cs">
-      <DependentUpon>sub-faq.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\sub-faq.aspx.designer.cs">
-      <DependentUpon>sub-faq.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\sub-features.aspx.cs">
-      <DependentUpon>sub-features.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\sub-features.aspx.designer.cs">
-      <DependentUpon>sub-features.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\sub-stories.aspx.cs">
-      <DependentUpon>sub-stories.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\sub-stories.aspx.designer.cs">
-      <DependentUpon>sub-stories.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\sub-work.aspx.cs">
-      <DependentUpon>sub-work.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\sub-work.aspx.designer.cs">
-      <DependentUpon>sub-work.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\BillingCreditForm.ascx.cs">
-      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\BillingCreditForm.ascx.designer.cs">
-      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\BillingForm.ascx.cs">
-      <DependentUpon>BillingForm.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\BillingForm.ascx.designer.cs">
-      <DependentUpon>BillingForm.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\CardDecline.ascx.cs">
-      <DependentUpon>CardDecline.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\CardDecline.ascx.designer.cs">
-      <DependentUpon>CardDecline.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\CheckoutSummary.ascx.cs">
-      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\CheckoutSummary.ascx.designer.cs">
-      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\CheckoutThankYouModule.ascx.cs">
-      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\CheckoutThankYouModule2.ascx.cs">
-      <DependentUpon>CheckoutThankYouModule2.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\CheckoutThankYouModulePrint2.ascx.cs">
-      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
-      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\BillingShippingCreditForm.ascx.cs">
-      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\BillingShippingCreditForm.ascx.designer.cs">
-      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\Footer.ascx.cs">
-      <DependentUpon>Footer.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\Footer.ascx.designer.cs">
-      <DependentUpon>Footer.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\Header.ascx.cs">
-      <DependentUpon>Header.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\Header.ascx.designer.cs">
-      <DependentUpon>Header.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\ShippingCreditForm.ascx.cs">
-      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\ShippingCreditForm.ascx.designer.cs">
-      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\ShippingForm.ascx.cs">
-      <DependentUpon>ShippingForm.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\ShippingForm.ascx.designer.cs">
-      <DependentUpon>ShippingForm.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\ShoppingCartControl.ascx.cs">
-      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\ShoppingCartControl.ascx.designer.cs">
-      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="A1\UserControls\TrackingPixels.ascx.cs">
-      <DependentUpon>TrackingPixels.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="A1\UserControls\TrackingPixels.ascx.designer.cs">
-      <DependentUpon>TrackingPixels.ascx</DependentUpon>
-    </Compile>
     <Compile Include="A2\receipt.aspx.cs">
       <DependentUpon>receipt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1041,6 +760,13 @@
     </Compile>
     <Compile Include="A2\receipt_friendly.aspx.designer.cs">
       <DependentUpon>receipt_friendly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Attributes.aspx.cs">
       <DependentUpon>Attributes.aspx</DependentUpon>
@@ -1934,6 +1660,48 @@
     <Compile Include="A5\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
     </Compile>
+    <Compile Include="AuthorizeOrder.aspx.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizeOrder.aspx.designer.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CardDecline.aspx.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CardDecline.aspx.designer.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="details-accelerated-package.aspx.cs">
+      <DependentUpon>details-accelerated-package.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="details-accelerated-package.aspx.designer.cs">
+      <DependentUpon>details-accelerated-package.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="details-enhanced-package.aspx.cs">
+      <DependentUpon>details-enhanced-package.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="details-enhanced-package.aspx.designer.cs">
+      <DependentUpon>details-enhanced-package.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ext-customer.aspx.cs">
+      <DependentUpon>ext-customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ext-customer.aspx.designer.cs">
+      <DependentUpon>ext-customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ext-privacy.aspx.cs">
+      <DependentUpon>ext-privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ext-privacy.aspx.designer.cs">
+      <DependentUpon>ext-privacy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GetTotals.aspx.cs">
       <DependentUpon>GetTotals.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1949,6 +1717,41 @@
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldindex.aspx.cs">
+      <DependentUpon>oldindex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order.aspx.cs">
+      <DependentUpon>order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order.aspx.designer.cs">
+      <DependentUpon>order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostSale.aspx.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostSale.aspx.designer.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="receipt.aspx.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="receipt.aspx.designer.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="receipt_friendly.aspx.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="receipt_friendly.aspx.designer.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\HitLinks\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1961,12 +1764,104 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="SiteHelper.cs" />
+    <Compile Include="sub-faq.aspx.cs">
+      <DependentUpon>sub-faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sub-faq.aspx.designer.cs">
+      <DependentUpon>sub-faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sub-features.aspx.cs">
+      <DependentUpon>sub-features.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sub-features.aspx.designer.cs">
+      <DependentUpon>sub-features.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sub-stories.aspx.cs">
+      <DependentUpon>sub-stories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sub-stories.aspx.designer.cs">
+      <DependentUpon>sub-stories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sub-work.aspx.cs">
+      <DependentUpon>sub-work.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sub-work.aspx.designer.cs">
+      <DependentUpon>sub-work.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BillingCreditForm.ascx.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\BillingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BillingForm.ascx.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\BillingForm.ascx.designer.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CardDecline.ascx.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CardDecline.ascx.designer.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CheckoutSummary.ascx.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CheckoutSummary.ascx.designer.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CheckoutThankYouModule.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CheckoutThankYouModule2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CheckoutThankYouModulePrint2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\DateControl.ascx.cs">
       <DependentUpon>DateControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\DateControl.ascx.designer.cs">
       <DependentUpon>DateControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\PageControl.ascx.cs">
       <DependentUpon>PageControl.ascx</DependentUpon>
@@ -1995,9 +1890,36 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="App_Code\OrderHelper.cs" />
+    <Compile Include="UserControls\ShippingCreditForm.ascx.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ShoppingCartControl.ascx.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShoppingCartControl.ascx.designer.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TrackingPixels.ascx.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TrackingPixels.ascx.designer.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="A1\images\" />
     <Folder Include="A2\Store\" />
     <Folder Include="A3\Store\" />
     <Folder Include="A4\Store\" />

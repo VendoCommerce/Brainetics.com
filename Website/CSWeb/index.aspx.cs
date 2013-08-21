@@ -1,51 +1,35 @@
-using System;
-using System.Text;
-using CSCore;
-using CSCore.Utils;
-using CSBusiness.Preference;
-using CSBusiness;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
-using CSBusiness.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using CSBusiness;
 
-namespace CSWeb.Root.Store
+namespace CSWeb
 {
-    public partial class index : CSBasePage
+    public partial class index : CSWebBase.SiteBasePage
     {
         protected override void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
-                base.Page_Load(sender, e);
-                SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
+            base.Page_Load(sender, e);
+        }
 
-                if (!sitePrefCache.GeoLocationService)
-                {
-                    string GeoCoountry = "";
-                    GeoCoountry = CommonHelper.GetGeoTargetLocation(CommonHelper.IpAddress(HttpContext.Current));
-                    if (GeoCoountry.Equals("canada"))
-                    {
-                        //Response.Redirect("https://www.plugnsafe.com/canada/?" + Request.QueryString);
-                    }
-                }
+        protected void lbOrderNowAccelerated_Click(object sender, EventArgs e)
+        {
+            AddProduct(47);
+        }
 
-                if (Request.Headers["X-HTTPS"] != null)
-                {
-                    if (Request.Headers["X-HTTPS"].ToLower().Equals("no"))
-                    {
-                        if (Request.Url.ToString().Contains("www"))
-                        {
-                            Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("index.aspx", "")));
-                        }
-                        else
-                        {
-                            Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("https://", "https://www.").Replace("index.aspx", "")));
-                        }
-                    }
-                }
+        protected void lbOrderNowEnhanced_Click(object sender, EventArgs e)
+        {
+            AddProduct(44);
+        }
 
-                Response.Redirect("/A1/?" + Request.QueryString, true);
-            }
+        public void AddProduct(int skuId)
+        {
+            MainSkuAdd = skuId;
 
+            Response.Redirect("Order.aspx", true);
         }
     }
 }
