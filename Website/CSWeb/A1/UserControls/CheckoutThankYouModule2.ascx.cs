@@ -87,8 +87,7 @@ namespace CSWeb.A1.UserControls
                 //Fire OrderConfirmation Test
                 OrderHelper.SendOrderCompletedEmail(orderId);
 
-                //reset entire Context object
-                //this.CartContext.EmptyData();
+                CartContext.ResetData();
             }
         }
 

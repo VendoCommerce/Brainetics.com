@@ -46,13 +46,18 @@ namespace CSWeb.A1.Store
             }
             if (!IsPostBack)
             {
+                bool cardCheckOnly = Request.QueryString["card_check"] == "1"; 
+
                 Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
 
                 if (orderData.CreditInfo.CreditCardNumber.Equals("4444333322221111"))
                 {                    
                     CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, 7);
                     
-                    Response.Redirect("receipt.aspx");
+                    if (cardCheckOnly)
+                        Response.Redirect("PostSale.aspx", true);
+                    else
+                        Response.Redirect("receipt.aspx");
                 }
                 else if (orderData.CreditInfo.CreditCardNumber.Equals("4111111111111111") && !orderData.CreditInfo.CreditCardCSC.Equals("999"))
                 {
@@ -61,8 +66,6 @@ namespace CSWeb.A1.Store
                     Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
                 }
 
-                bool cardCheckOnly = Request.QueryString["card_check"] == "1"; 
-
                 // Check if payment gateway service is enabled or not.
                 if (CSFactory.GetCacheSitePref().PaymentGatewayService)
                 {
@@ -70,7 +73,9 @@ namespace CSWeb.A1.Store
 
                     try
                     {
-                        authSuccess = orderData.OrderStatusId == 4 || OrderHelper.AuthorizeOrder(orderId, cardCheckOnly);
+                        authSuccess = orderData.OrderStatusId == 4 // auth payment success
+                            || orderData.OrderStatusId == 5 // fulfillment failure (fulfillment was attempted after payment success), so don't charge again.
+                            || OrderHelper.AuthorizeOrder(orderId, cardCheckOnly);
                     }
                     catch (Exception ex)
                     {
@@ -84,7 +89,8 @@ namespace CSWeb.A1.Store
                         if (authSuccess)
                             Response.Redirect("PostSale.aspx", true);
                         else
-                            Response.Redirect("Order.aspx?err_card=1&oid=" + HttpUtility.UrlEncode(CSCore.Utils.CommonHelper.Encrypt(orderId.ToString() + "|" + new Random().Next(100))), true);
+                            Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
+                            //Response.Redirect("Order.aspx?err_card=1&oid=" + HttpUtility.UrlEncode(CSCore.Utils.CommonHelper.Encrypt(orderId.ToString() + "|" + new Random().Next(100))), true);
                     }
 
                     if (authSuccess)

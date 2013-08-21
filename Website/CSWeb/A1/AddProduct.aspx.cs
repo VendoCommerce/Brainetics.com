@@ -62,15 +62,14 @@ namespace CSWeb.A1.Store
                             int orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
 
                             clientData.OrderId = orderId;
-                            clientData.ResetData();
-                            
+                            //clientData.ResetData();
+                                                        
                             Session["ClientOrderData"] = clientData;
                         }
 
-                        // When we hit this page, we need to do a $1 test charge only to see if card is valid before going to postsale (upsells). 
-                        Response.Redirect("AuthorizeOrder.aspx?card_check=1", true);
+                        Response.Redirect("PostSale.aspx");
 
-                        //Response.Redirect("PostSale.aspx");
+                        //Response.Redirect("AuthorizeOrder.aspx?card_check=1", true); // When we hit this page, we need to do a $1 test charge only to see if card is valid before going to postsale (upsells). 
                     }
                     else if(cId == (int)ShoppingCartType.ShippingCreditCheckout)
                     {

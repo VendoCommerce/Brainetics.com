@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSWeb.A2.Store {
+namespace CSWeb.A1.Store {
     
     
     public partial class CardDecline {
@@ -37,6 +37,6 @@ namespace CSWeb.A2.Store {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CSWeb.A2.UserControls.CardDecline ucCardDecline;
+        protected global::CSWeb.A1.UserControls.CardDecline ucCardDecline;
     }
 }

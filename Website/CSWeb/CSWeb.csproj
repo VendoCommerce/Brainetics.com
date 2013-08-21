@@ -112,6 +112,7 @@
   <ItemGroup>
     <Content Include="A1\AddProduct.aspx" />
     <Content Include="A1\AuthorizeOrder.aspx" />
+    <Content Include="A1\CardDecline.aspx" />
     <Content Include="A1\Content\images\20-20.png" />
     <Content Include="A1\Content\images\a-plus.png" />
     <Content Include="A1\Content\images\about-bull.png" />
@@ -296,6 +297,72 @@
     <Content Include="A2\UserControls\ShippingForm.ascx" />
     <Content Include="A2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="A2\UserControls\TrackingPixels.ascx" />
+    <Content Include="Content\Images\a1\20-20.png" />
+    <Content Include="Content\Images\a1\a-plus.png" />
+    <Content Include="Content\Images\a1\about-bull.png" />
+    <Content Include="Content\Images\a1\ages.png" />
+    <Content Include="Content\Images\a1\awards.jpg" />
+    <Content Include="Content\Images\a1\badge-new.png" />
+    <Content Include="Content\Images\a1\bg-about.jpg" />
+    <Content Include="Content\Images\a1\bg-checkout-2.png" />
+    <Content Include="Content\Images\a1\bg-footer-2.jpg" />
+    <Content Include="Content\Images\a1\bg-footer.jpg" />
+    <Content Include="Content\Images\a1\bg-header-2.jpg" />
+    <Content Include="Content\Images\a1\bg-header.jpg" />
+    <Content Include="Content\Images\a1\bg-kit.jpg" />
+    <Content Include="Content\Images\a1\bg-media-2.jpg" />
+    <Content Include="Content\Images\a1\bg-media.jpg" />
+    <Content Include="Content\Images\a1\bg-upsell.jpg" />
+    <Content Include="Content\Images\a1\box-shadow.png" />
+    <Content Include="Content\Images\a1\btn-10.png" />
+    <Content Include="Content\Images\a1\btn-12.jpg" />
+    <Content Include="Content\Images\a1\btn-5.png" />
+    <Content Include="Content\Images\a1\btns.png" />
+    <Content Include="Content\Images\a1\card.jpg" />
+    <Content Include="Content\Images\a1\devider.png" />
+    <Content Include="Content\Images\a1\down-arrow-1.png" />
+    <Content Include="Content\Images\a1\f-photo-1.jpg" />
+    <Content Include="Content\Images\a1\f-photo-10.jpg" />
+    <Content Include="Content\Images\a1\f-photo-11.jpg" />
+    <Content Include="Content\Images\a1\f-photo-12.jpg" />
+    <Content Include="Content\Images\a1\f-photo-13.jpg" />
+    <Content Include="Content\Images\a1\f-photo-14.jpg" />
+    <Content Include="Content\Images\a1\f-photo-15.jpg" />
+    <Content Include="Content\Images\a1\f-photo-16.jpg" />
+    <Content Include="Content\Images\a1\f-photo-2.jpg" />
+    <Content Include="Content\Images\a1\f-photo-3.jpg" />
+    <Content Include="Content\Images\a1\f-photo-4.jpg" />
+    <Content Include="Content\Images\a1\f-photo-5.jpg" />
+    <Content Include="Content\Images\a1\f-photo-6.jpg" />
+    <Content Include="Content\Images\a1\f-photo-7.jpg" />
+    <Content Include="Content\Images\a1\f-photo-8.jpg" />
+    <Content Include="Content\Images\a1\f-photo-9.jpg" />
+    <Content Include="Content\Images\a1\footer-money.png" />
+    <Content Include="Content\Images\a1\footer-text.png" />
+    <Content Include="Content\Images\a1\guarantee.png" />
+    <Content Include="Content\Images\a1\how.jpg" />
+    <Content Include="Content\Images\a1\list-bull.png" />
+    <Content Include="Content\Images\a1\loading-gif-animation.gif" />
+    <Content Include="Content\Images\a1\logo.png" />
+    <Content Include="Content\Images\a1\medal-3.jpg" />
+    <Content Include="Content\Images\a1\medal-phone.jpg" />
+    <Content Include="Content\Images\a1\product-11.jpg" />
+    <Content Include="Content\Images\a1\product-12.jpg" />
+    <Content Include="Content\Images\a1\product-13.jpg" />
+    <Content Include="Content\Images\a1\product-14.jpg" />
+    <Content Include="Content\Images\a1\product-15.jpg" />
+    <Content Include="Content\Images\a1\rating.png" />
+    <Content Include="Content\Images\a1\select.png" />
+    <Content Include="Content\Images\a1\shadow.png" />
+    <Content Include="Content\Images\a1\social.png" />
+    <Content Include="Content\Images\a1\subpages-aside-2.jpg" />
+    <Content Include="Content\Images\a1\subpages-aside.jpg" />
+    <Content Include="Content\Images\a1\subpages-bg.jpg" />
+    <Content Include="Content\Images\a1\upsell-10.jpg" />
+    <Content Include="Content\Images\a1\upsell-3.jpg" />
+    <Content Include="Content\Images\a1\upsell-7.jpg" />
+    <Content Include="Content\Images\a1\upsell-8.jpg" />
+    <Content Include="Content\Images\a1\upsell-9.jpg" />
     <Content Include="Content\Images\a2\2020.JPG" />
     <Content Include="Content\Images\a2\admin_logo.jpg" />
     <Content Include="Content\Images\a2\asotv.png" />
@@ -545,6 +612,11 @@
     <None Include="A1\Content\images\90688c53-5ae6-48b3-8d14-4b00774a376b" />
     <None Include="A1\Content\images\df012ffe779e4009a614e93a6aa04a81" />
     <None Include="A1\Content\images\getthawteseal" />
+    <None Include="Content\Images\a1\78393c47ebe34f65b0ec8d4bfd913292" />
+    <None Include="Content\Images\a1\895e5bcb46594344b95650bb76ce09de" />
+    <None Include="Content\Images\a1\90688c53-5ae6-48b3-8d14-4b00774a376b" />
+    <None Include="Content\Images\a1\df012ffe779e4009a614e93a6aa04a81" />
+    <None Include="Content\Images\a1\getthawteseal" />
     <None Include="Service References\HitLinks\CSWeb.HitLinks.Data.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -576,8 +648,14 @@
     <Content Include="Scripts\jwplayer\six.xml" />
     <Content Include="Scripts\jwplayer\stormtrooper.xml" />
     <Content Include="Scripts\jwplayer\vapor.xml" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\qzy1qcz.js" />
     <Content Include="Scripts\snippet.js" />
     <Content Include="Scripts\s_code.js" />
+    <Content Include="Scripts\tracker\track.min.js" />
+    <Content Include="Scripts\window-popup.js" />
+    <Content Include="Styles\A1\reset.css" />
+    <Content Include="Styles\A1\style.css" />
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\cart_styles.css" />
     <Content Include="Styles\fontawesome\css\font-awesome-ie7.css" />
@@ -759,6 +837,13 @@
     </Compile>
     <Compile Include="A1\AuthorizeOrder.aspx.designer.cs">
       <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A1\CardDecline.aspx.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A1\CardDecline.aspx.designer.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
     </Compile>
     <Compile Include="A1\details-accelerated-package.aspx.cs">
       <DependentUpon>details-accelerated-package.aspx</DependentUpon>
