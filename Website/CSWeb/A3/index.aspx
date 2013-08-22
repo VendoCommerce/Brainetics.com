@@ -23,53 +23,20 @@
 <div class="container">
 <!--#include file="headernav.html"-->
 <!--#include file="header.html"-->
-<div class="page">
-<div class="home_left"><img src="../Content/images/A3/home_leftside.png" width="664" height="914" style="margin-left: -25px"/>
-<div class="hometoptext gray">
-<ul>
-<li>Imagine storing, processing, and recalling information faster than ever!</li>
-<li>Boost your child's confidence</li>
-
-<li>Obliterate learning anxieties 
-that hold kids back</li>
-
-</ul>
-<p class="bold">It doesn’t matter if you’re 9 or 99. 
-Brainetics is guaranteed to give you better 
-focus, concentration, and problem solving skills. 
-Best of all, you’ll be able to memorize ANYTHING. </p>
-</div>
-<div class="whatsincluded"><a href="#included" class="included gray scored">What's Included?</a></div>
-<div class="video2020">
-<div id="video2020"></div>
-  <script type='text/javascript'>
-  	jwplayer('video2020').setup({
-    file: "/content/video/2020_how1.mp4",
-	autostart: false,
-	image: "/content/images/A3/2020.jpg",
-    primary: "flash",   
-	controls: true,
-    width: 351, height: 263,
-	stretching: 'exactfit',
-	skin: '/scripts/jwplayer/five.xml',
-	events:{
-	onPlay: function() {
-   	jwplayer('ctavideo').stop();
-	}}
-  });
-</script>
-</div>
-</div>
-<div class="right">
+<div class="page" style="background: url(../content/images/a3/home_top_bg.jpg) repeat-x bottom #fff">
+<div class="home_left"><img src="../Content/images/A3/home_leftside.png" width="664" height="735" usemap="#Map" style="margin-left: -25px"/>
+  <map name="Map">
+    <area shape="rect" coords="502,136,647,264" href="video_2020.html" class="video2020">
+  </map>
 <div class="homevideo">
-<div id="ctavideo"></div>
+  <div id="ctavideo"></div>
   <script type='text/javascript'>
   	jwplayer('ctavideo').setup({
     file: "/content/video/ctavideo.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
-    width: 295, height: 221,
+    width: 363, height: 272,
 	stretching: 'exactfit',
 	skin: '/scripts/jwplayer/five.xml',
 	events:{
@@ -80,8 +47,21 @@ Best of all, you’ll be able to memorize ANYTHING. </p>
 </script>
 </div>
 
+<div class="hometoptext black">
+<ul>
+<li>Sharpness that will give them pride and joy</li>
+<li>Confidence translating into higher achievement</li>
+
+<li>Power to overcome learning anxieties that hold kids back!</li>
+</ul>
+</div>
+<div class="whatsincluded"><a href="#included" onclick="javascript:void(0);" class="included gray scored">What's Included?</a></div>
+</div>
+<div class="right">
+
+
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
-<div class="clear"></div>
+<div class="clear"></div></div>
 <div class="home_bottom"><img src="../Content/images/A3/home_bottom.jpg" width="950" height="1612" usemap="#Maphomebtm" />
   <map name="Maphomebtm">
     <area shape="rect" coords="574,1457,795,1520" href="#tryitnow" class="try">
@@ -95,7 +75,7 @@ Best of all, you’ll be able to memorize ANYTHING. </p>
   </div>
 </div>
 <!--#include file="bottomcta.html"-->
-</div>
+
 
 
 

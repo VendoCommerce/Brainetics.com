@@ -20,26 +20,22 @@
 </head>
 <body>
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
+ 
+<!--#include file="header_main.html"-->
 <div class="container">
-<!--#include file="headernav.html"-->
-<!--#include file="header.html"-->
-<div class="page">
-<div class="home_left"><img src="../Content/images/A4/home_leftside.png" width="664" height="914" style="margin-left: -25px"/>
+
+
+<div class="page" style="background: url(../content/images/a4/home_bg.jpg) no-repeat #fff">
+<div class="home_left"><img src="../Content/images/A4/home_leftside.png" width="667" height="1047" style="margin-left: -32px"/>
 <div class="hometoptext gray">
 <ul>
-<li>Imagine storing, processing, and recalling information faster than ever!</li>
-<li>Boost your child's confidence</li>
+<li>Turbo charge your memory for better performance!</li>
+<li>Increase confidence which translates into better grades</li>
 
-<li>Obliterate learning anxieties 
-that hold kids back</li>
-
+<li>Improve Focus and Concentration to make learning more fun!</li>
 </ul>
-<p class="bold">It doesn’t matter if you’re 9 or 99. 
-Brainetics is guaranteed to give you better 
-focus, concentration, and problem solving skills. 
-Best of all, you’ll be able to memorize ANYTHING. </p>
 </div>
-<div class="whatsincluded"><a href="#included" class="included gray scored">What's Included?</a></div>
+<div class="whatsincluded"><a href="#included" onclick="javascript:void(0);" class="included gray scored">What's Included?</a></div>
 <div class="video2020">
 <div id="video2020"></div>
   <script type='text/javascript'>
@@ -80,12 +76,14 @@ Best of all, you’ll be able to memorize ANYTHING. </p>
 </script>
 </div>
 
- <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
+ <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />
+ <p class="text-center"><img src="../Content/images/a4/underform_certs.png" width="263" height="171" /></p>
+ 
+ </div>
 <div class="clear"></div>
-<div class="home_bottom"><img src="../Content/images/A4/home_bottom.jpg" width="950" height="1612" usemap="#Maphomebtm" />
+<div class="home_bottom"><img src="../Content/images/A4/home_bottom.png" usemap="#Maphomebtm" class="block" />
   <map name="Maphomebtm">
-    <area shape="rect" coords="574,1457,795,1520" href="#tryitnow" class="try">
-    <area shape="rect" coords="681,329,931,401" href="#tryitnow" class="try">
+    <area shape="rect" coords="579,1036,791,1095" href="#tryitnow" class="try">
   </map>
   <div class="homebtmtext black lh20">
     <p><strong>Brainetics TRAINS two different parts of the MIND</strong> to work simultaneously yet independently of each other. One part of your mind memorizes information while another part is sorting and processing new information. The mind will begin to work more efficiently and become more powerful <strong>giving Brainetics kids a huge advantage</strong> throughout their academic lives 

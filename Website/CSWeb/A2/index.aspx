@@ -39,7 +39,7 @@ Brainetics is guaranteed to give you better
 focus, concentration, and problem solving skills. 
 Best of all, you’ll be able to memorize ANYTHING. </p>
 </div>
-<div class="whatsincluded"><a href="#included" class="included gray scored">What's Included?</a></div>
+<div class="whatsincluded"><a href="#included" onclick="javascript:void(0);" class="included gray scored">What's Included?</a></div>
 <div class="video2020">
 <div id="video2020"></div>
   <script type='text/javascript'>

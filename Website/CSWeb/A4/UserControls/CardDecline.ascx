@@ -333,7 +333,7 @@
             </div>
             <div class="form_line clearfix">
                 <label class="label-3">
-                    Card Verification #* <a class="cvv" href="#" style="display:none">what's this?</a>
+                    Card Verification #* <a class="cvv" href="/content/images/a4/cvv.png" style="display:none">what's this?</a>
                 </label>
                 <div class="error-2">
                     <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />

@@ -31,7 +31,7 @@
 
 </div>
 
-<!--#include file="footer.html"-->
+<!--#include file="footer_receipt.html"-->
 
   <uc:TrackingPixels ID="TrackingPixels" runat="server" />
     </form>

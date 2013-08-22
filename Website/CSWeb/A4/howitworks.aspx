@@ -24,14 +24,14 @@
 </head>
 <body>
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
+<!--#include file="header_main.html"-->
 <div class="container">
-<!--#include file="headernav.html"-->
-<!--#include file="header.html"-->
-<div class="page">
+<div class="page" style="background: url(../content/images/a4/page_bg.jpg) repeat-x top #fff">
 <div class="left">
-<h2>How It Works</h2>
+<h2>Get the Brainetics advantage <br>
+  for School, Work – For Life!</h2>
 <div>
-<img src="../Content/images/A4/howitworks_top.jpg" width="627" height="610" usemap="#Map" style="margin-left: -34px" />
+<img src="../Content/images/A4/howitworks_top.png" usemap="#Map" style="margin-left: -34px" />
 <map name="Map">
   <area shape="rect" coords="16,35,125,140" href="javascript:void(0);" class="showhow1">
   <area shape="rect" coords="17,145,125,247" href="javascript:void(0);" class="showhow2">
@@ -47,7 +47,7 @@
     primary: "flash",   
 	image: "/content/images/A4/2020.jpg",
 	controls: true,
-    width: 380, height: 285,
+    width: 448, height: 336,
 	stretching: 'exactfit',
 	skin: '/scripts/jwplayer/five.xml',
 	events:{
@@ -65,7 +65,7 @@
 	autostart: true,
     primary: "flash",   
 	controls: true,
-    width: 380, height: 285,
+    width: 448, height: 336,
 	stretching: 'exactfit',
 	skin: '/scripts/jwplayer/five.xml',
 	events:{
@@ -85,7 +85,7 @@
 
 </div>
 </div>
-<div class="right">
+<div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <div class="lh20">

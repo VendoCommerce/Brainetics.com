@@ -29,7 +29,7 @@
 <!--#include file="header.html"-->
 <div class="page">
 <div class="left">
-<h2>How It Works</h2>
+<h2 style="margin-left: 90px">Get the Brainetics advantage for School, Work - For Life!</h2>
 <div>
 <img src="../Content/images/A3/howitworks_top.jpg" width="627" height="610" usemap="#Map" style="margin-left: -34px" />
 <map name="Map">
@@ -77,10 +77,8 @@
 </div>
 </div>
 <div class="how1">
-  <p><span class="webfont1 black f24 block pad6 lh">Develop Savvy Skills -
-    Not Taught in the Classroom</span>
-    Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales tempus lectus. In porta diam id diam bibendum, eget convallis sem porttitor. Aliquam justo turpis, vulputate quis scelerisque non, lobortis vel arcu. Maecenas at purus mauris.
-  </p>
+  <p><span class="webfont1 black f24 block pad6 lh">Brainetics is the key to soaring confidence... and grades!</span>
+    You're getting the edge on every other student in the classroom and every other co-worker in your office with Brainetics! That's because <strong>Brainetics techniques are not taught in classrooms</strong>, so you're processing ifnormation faster than anyone, because you've got the Brainetics secret!</p>
 </div>
 
 </div>
@@ -91,17 +89,13 @@
 <div class="lh20">
 <img src="../Content/images/A3/howitworks_bottom.jpg" width="950" height="1561" />
 <div class="how2">
-  <p><span class="webfont1 black f24 block pad6 lh">Muscle Memory -
-Amazing Exercises for the Brain</span>
-    Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales tempus lectus. In porta diam id diam bibendum, eget convallis sem porttitor. Aliquam justo turpis, vulputate quis scelerisque non, lobortis vel arcu. Maecenas at purus mauris.
-  </p>
+  <p><span class="webfont1 black f24 block pad6 lh">Muscle Memory</span>
+    With Brainetics, you're practicing tricks for doing math quickly and correctly in a way that becomes second nature. In time, you're rattling off answers to math problems you never thought possible - all because you've practiced Brainetics techniques!</p>
 </div>
 
 <div class="how3">
-  <p><span class="webfont1 black f24 block pad6 lh">Muscle Memory -
-Amazing Exercises for the Brain</span>
-    Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales tempus lectus. In porta diam id diam bibendum, eget convallis sem porttitor. Aliquam justo turpis, vulputate quis scelerisque non, lobortis vel arcu. Maecenas at purus mauris.
-  </p>
+  <p><span class="webfont1 black f24 block pad6 lh">Get Your Brain Working Fast!</span>
+    By learning Brainetics techniques, you're training 2 parts of your brain to work independently yet at the same time, so while one part is memorizing, the other part of your brain is processing new information. Your brain is more powerful this way because it's working so efficiently - giving you an edge for life!</p>
 </div>
 
 </div>

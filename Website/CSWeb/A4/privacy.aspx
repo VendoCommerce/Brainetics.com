@@ -20,10 +20,9 @@
 </head>
 <body>
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
+<!--#include file="header_main.html"-->
 <div class="container">
-<!--#include file="headernav.html"-->
-<!--#include file="header.html"-->
-<div class="page">
+<div class="page" style="background: url(../content/images/a4/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Privacy Policy</h2>
   <p>For each visitor to our Web page, our Web server automatically recognizes only the consumer's domain name, but not the e-mail address (where possible).</p>
@@ -52,7 +51,7 @@
   <p><strong>Changes</strong><br>
     This Privacy Policy may be changed at any time. Visitors should check the Privacy Policy each time they visit the Website. Use of the Website constitutes acceptance of the Privacy Policy and changes. The last update was made on April 15, 2010.</p>
 </div>
-<div class="right">
+<div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <!--#include file="bottomcta.html"-->

@@ -33,10 +33,8 @@
       <div class="error-1"> <asp:RegularExpressionValidator ID="revQuantity" runat="server" ControlToValidate="txtQuantity"
                 Display="Dynamic" ValidationExpression="^[1-9]{1,1}[0-9]{0,1}$" ValidationGroup="QuantityUpdate" ErrorMessage="Please enter a valid quantity." /></div>
    <label class="label-1" style="width: 70px">Quantity: </label>
-            <asp:TextBox ID="txtQuantity" runat="server" MaxLength="2" CssClass="text-4" />
-                <asp:LinkButton ID="lbUpdate" runat="server" OnClick="lbUpdate_Click" CausesValidation="true" ValidationGroup="QuantityUpdate" 
-                    CssClass="scored bold f12 fleft" Style="padding-top: 3px; margin-left: 5px;">Update</asp:LinkButton>
-            
+            <asp:TextBox ID="txtQuantity" runat="server" MaxLength="3" CssClass="text-4" />
+  <asp:LinkButton ID="lbUpdate" runat="server" OnClick="lbUpdate_Click" CausesValidation="true" ValidationGroup="QuantityUpdate" CssClass="update_btn">Update</asp:LinkButton>
            </div>
             
            
@@ -152,7 +150,7 @@
                     Card Verification 
                 </label>
                
-                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-2" MaxLength="4"></asp:TextBox><a class="cvv" href="/content/images/A4/cvv.png">What's this?</a>
+                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-2" MaxLength="4"></asp:TextBox><a class="cvv" onclick="javascript:void(0);" href="/content/images/A4/cvv.png">What's this?</a>
             </div>
             <div class="form_line clearfix"> <div class="error-1">
                 <asp:RequiredFieldValidator ID="rfvExpMonth" runat="server" Display="Dynamic"
@@ -196,10 +194,10 @@
                   I would like to get product updates and special offers</label>
             </div>
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A4/complete_btn.png"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A4/tryitnow_btn.png"
                     CssClass="form_line_center" OnClick="imgBtn_OnClick" />
             </div>
-            <div class="form_line_guarantee"><a href="#guarantee" class="guarantee">30-Day Money-Back Guarantee!</a></div>
+            <div class="form_line_guarantee"><a href="#guarantee" onclick="javascript:void(0);" class="guarantee">30-Day Money-Back Guarantee!</a></div>
                      <div class="form_line_guarantee">
          <img src="/Content/images/A4/truste.png" />&nbsp;&nbsp;<img src="" alt="norton">
          </div>

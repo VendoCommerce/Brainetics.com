@@ -23,10 +23,10 @@
 </head>
 <body>
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
+<!--#include file="header_main.html"-->
 <div class="container">
-<!--#include file="headernav.html"-->
-<!--#include file="header.html"-->
-<div class="page">
+
+<div class="page" style="background: url(../content/images/a4/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Contact Us</h2>
   <p>We are committed to providing the best products and friendliest customer service. If you should have any questions about ordering or about any of our great products, please feel free to contact us via the information provided below:</p>
@@ -41,7 +41,7 @@
     Your Credit Card will not be charged until your order ships.</p>
   <p>For all customers looking to return, please visit <a href="http://www.customerstatus.com" target="_blank">www.customerstatus.com</a>. For your convenience, please have your order information handy.</p>
 </div>
-<div class="right">
+<div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <!--#include file="bottomcta.html"-->

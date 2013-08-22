@@ -36,6 +36,13 @@
 </ul>
 </div>
 <div class="whatsincluded"><a href="#included" onclick="javascript:void(0);" class="included gray scored">What's Included?</a></div>
+
+<div class="aboutmike">
+  <p style="color: #525252">Mike Byster is the creator of the entertaining and engaging multi-disk 
+    DVD program to build increased mental capacity called Brainetics, winner of the 2008 Parent’s Choice Award & 2012 Mom’s Best Award. <a href="aboutmike.aspx">Read more...</a> </p>
+</div>
+
+
 <div class="video2020">
 <div id="video2020"></div>
   <script type='text/javascript'>

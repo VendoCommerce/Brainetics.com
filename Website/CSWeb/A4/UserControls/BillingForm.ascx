@@ -140,5 +140,5 @@
             CssClass="form_line_center" OnClick="imgBtn_OnClick" />
     </div>
     <div class="form_line_guarantee">
-        <a href="#">View 30-Day Guarantee</a></div>
+        <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">View 30-Day Guarantee</a></div>
 </div>

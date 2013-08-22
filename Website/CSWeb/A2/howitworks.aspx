@@ -29,7 +29,8 @@
 <!--#include file="header.html"-->
 <div class="page">
 <div class="left">
-<h2>How It Works</h2>
+<h2>Get the Brainetics advantage <br>
+for School, Work – For Life!</h2>
 <div>
 <img src="../Content/images/a2/howitworks_top.jpg" width="627" height="610" usemap="#Map" style="margin-left: -34px" />
 <map name="Map">

@@ -29,31 +29,32 @@
 <!--#include file="header.html"-->
 <div class="page">
 <div class="left">
-<h2>Testimonials</h2>
+<h2>These People Got the Brainetics Advantage and Love It!</h2>
 <div class="testleft clearfix">
-<div class="testpic"><img src="../Content/images/a2/testimonial1.jpg" /></div>
+<div class="testpic"><img src="../Content/images/A2/testimonial1.jpg" /></div>
 <div class="testtext">
-  <p class="pad0">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital bold pad0">Name L. </p>
+  <p class="pad0">I was really surprised that I liked it – math isn't my favorite subject, so I wasn't expecting it to be super fun!
+ </p>
+  <p class="text-right ital bold pad0">
+- Brittany B.</p>
 </div>
 </div>
 
 <div class="testleft clearfix">
-<div class="testpic"><img src="../Content/images/a2/testimonial2.jpg" /></div>
+<div class="testpic"><img src="../Content/images/A2/testimonial2.jpg" /></div>
 <div class="testtext">
-  <p class="pad0">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital bold pad0">Name L. </p>
+  <p class="pad0">The transition to college was made that much easier by the fact that I was a step ahead of everyone!
+</p>
+  <p class="text-right ital bold pad0">- Samantha C. </p>
 </div>
 </div>
 
 <div class="testleft clearfix">
-<div class="testpic"><img src="../Content/images/a2/testimonial3.jpg" /></div>
+<div class="testpic"><img src="../Content/images/A2/testimonial3.jpg" /></div>
 <div class="testtext">
-  <p class="pad0">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital bold pad0">Name L. </p>
+  <p class="pad0">There's not only one way to learn, and there's not only one way to arrive at the answer to a problem!
+</p>
+  <p class="text-right ital bold pad0">- Woody G. </p>
 </div>
 </div>
 
@@ -63,30 +64,41 @@
 <div class="clear"></div>
 <div class="lh20">
 <div class="morestories">
-<div class="storiesheader"><img src="../Content/images/a2/more_amazing_stories.png" width="574" height="63" /></div>
+<div class="storiesheader"><img src="../Content/images/A2/more_amazing_stories.png" width="574" height="63" /></div>
 <div class="stories_block"><div>
- <p class="pad0 blue f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 blue f16 webfont1">Name L. </p>
+ <p class="pad0 blue f16 webfont1">The biggest benefit is the confidence my son now has about math. If you have a child who is struggling in math, giving them Brainetics is one of the smartest things you can do for them, and yourself.
+
+
+
+</p>
+  <p class="text-right ital pad0 blue f16 webfont1">- Susie J Blog</p>
 </div></div>
 
 <div class="stories_block_blue"><div>
- <p class="pad0 white f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 white f16 webfont1">Name L. </p>
+ <p class="pad0 white f16 webfont1">I think Brainetics would make a fantastic homeschool purchase. Not only is it educational, but a fun DVD/Game to watch. It'll definitely exercise your mind.
+
+</p>
+  <p class="text-right ital pad0 white f16 webfont1">- Mom Gadget Blog</p>
 </div></div>
 <div class="clear"></div>
-<div class="stories_block"><div>
-<p class="pad0 blue f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 blue f16 webfont1">Name L. </p>
-</div></div>
+
 
 <div class="stories_block_blue"><div>
-<p class="pad0 white f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 white f16 webfont1">Name L. </p>
+<p class="pad0 white f16 webfont1">Numbers ARE fun. My son enjoyed and continues to enjoy the Brainetics system. Mike Byster, you are my hero. Thank you for coming up with something that keeps kids excited about being SMART.
+
+  </p>
+  <p class="text-right ital pad0 white f16 webfont1">
+- Sunshine Reviews Blog</p>
 </div></div>
+
+<div class="stories_block"><div>
+<p class="pad0 blue f16 webfont1">This is the first time ever that a teacher hasn't expressed concern over my daughter's apparent fear and loathing over math testing. That alone is worth its weight in gold… I just want her to like the process of learning. 
+
+
+</p>
+  <p class="text-right ital pad0 blue f16 webfont1">- Get in the car Blog</p>
+</div></div>
+
 <div class="clear"></div>
 
 </div>
@@ -94,34 +106,41 @@
 
 
 <div class="teachers">
-<div class="teachersheader text-center"><img src="../Content/images/a2/teachersaying.png" width="663" height="66" /></div>
+<div class="teachersheader text-center"><img src="../Content/images/A2/teachersaying.png" width="663" height="66" /></div>
 <div class="stories_block"><div>
-<p class="pad0 blue f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 blue f16 webfont1">Name L. </p>
+<p class="pad0 blue f16 webfont1">I have used Mike Byster's Brainetics in my classroom for the past 4 years. I have seen how it excites and motivates students to excel... It empowers them …and gives them the tools to succeed in any setting.
+</p>
+  <p class="text-right ital pad0 blue f16 webfont1">- Kerry DiFusco<br>
+Gifted Resource Teacher</p>
 </div></div>
 
 <div class="stories_block"><div>
-<p class="pad0 blue f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 blue f16 webfont1">Name L. </p>
+<p class="pad0 blue f16 webfont1">Michael Byster came to our district three years ago offering to work with our students on a volunteer basis. He quickly proved himself to be an asset to our school curriculum as well as to our students. 
+
+</p>
+  <p class="text-right ital pad0 blue f16 webfont1"> - Ellen Gruenberg<br>
+Teacher</p>
 </div></div>
 <div class="clear"></div>
 <div class="stories_block"><div>
-<p class="pad0 blue f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 blue f16 webfont1">Name L. </p>
+<p class="pad0 blue f16 webfont1">Dear Mike, On behalf of the faculty of Bronx High School for Law and Community Service; thank you! Your techniques and capabilities are impressive; however, far more impressive is your devotion to making learning fun.
+
+</p>
+  <p class="text-right ital pad0 blue f16 webfont1">- Michael Barakat<br>
+Principal</p>
 </div></div>
 
 <div class="stories_block"><div>
-<p class="pad0 blue f16 webfont1">Morbi pretium sem felis, bibendum luctus sapien aliquet ac. Nulla lobortis eleifend pulvinar. Maecenas id dictum risus, a bibendum nulla. Nam lacus justo, ultrices ac ligula eu, sodales.
-    -</p>
-  <p class="text-right ital pad0 blue f16 webfont1">Name L. </p>
+<p class="pad0 blue f16 webfont1">I am a first grade teacher at Fair Haven Grade School. The concept of engaging both brain hemispheres simultaneously has been proven to show a greater increase in learning… we not only increase our knowledge with math, but within other subject areas too. 
+
+</p>
+  <p class="text-right ital pad0 blue f16 webfont1">- Renee Kittler<br>
+Teacher</p>
 </div></div>
 <div class="clear"></div>
 
 </div>
-<img src="../Content/images/a2/testimonial_bottompic.jpg" width="950" height="297" class="block" />
+<img src="../Content/images/A2/testimonial_bottompic.jpg" width="950" height="297" class="block" />
 
 </div>
 <!--#include file="bottomcta.html"-->

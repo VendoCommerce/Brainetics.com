@@ -23,14 +23,13 @@
 </head>
 <body>
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
+<!--#include file="header_main.html"-->
 <div class="container">
-<!--#include file="headernav.html"-->
-<!--#include file="header.html"-->
-<div class="page">
+<div class="page" style="background: url(../content/images/a4/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Product Details</h2>
 <div>
-<img src="../Content/images/A4/product_details_left.jpg" width="253" height="1641" />
+<img src="../Content/images/A4/product_details_left.png" />
 <div class="step1">
 <p><span class="pink f15 webfont1 block">Focus & Concentration DVD (Level 1)</span>
 Are you constantly distracted by Facebook or your mobile phone while at work or doing homework? In today's "always on" world, getting distracted is easier than ever. The Brainetics Focus & Concentration DVD has everything you'll need to improve your focus and concentration! Get your work done faster and more accurately than you ever thought possible!</p>
@@ -68,7 +67,7 @@ Ever wanted to get good at memorizing names, faces, dates, birthdays, and meetin
 
 </div>  
 </div>
-<div class="right">
+<div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <div class="lh20">

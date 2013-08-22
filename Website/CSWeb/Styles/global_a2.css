@@ -2,7 +2,11 @@
 /* CSS Document...Conversion Systems */
 
 /* REF FONT STUFF */
-
+html,body,p,td,table,tr,th,tbody,thead,ol,ul,li,form,fieldset,img,a,span,div,sub,sup,strong,b,i,em {
+	margin: 0;
+	padding: 0;
+	border: none;	
+}
 
 a {
 	color: #ec3384;	
@@ -835,6 +839,22 @@ body {
 	color: #242424;	
 }
 
+/* guarantee stuff */
+
+.guaranteetxt {
+  height: 363px;
+  left: 320px;
+  position: absolute;
+  top: 120px;
+  width: 510px;
+}
+
+.guaranteetxt p {
+	color: #242424;	
+	line-height: 20px;
+	padding-bottom: 20px;
+}
+
 /* upsells */
 
 .container_upsell {
@@ -903,4 +923,17 @@ body {
 }
 .btns img {
 	margin-left: 10px;	
+}
+
+.update_btn {
+  background: none repeat scroll 0 0 #EA3C9F;
+  border: 1px solid #CD0055;
+  color: #FFFFFF;
+  display: block;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-top: 2px;
+  padding: 2px 10px;
 }

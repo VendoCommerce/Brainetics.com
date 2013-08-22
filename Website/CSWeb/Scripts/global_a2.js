@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
    
-
+   $(this).scrollTop(0);
 /* try scroll functionality */
 	
 $('a.try,area.try').click(function(){
@@ -49,6 +49,7 @@ $(function() {
         scrolling: 'no',
         helpers: {
             overlay: {
+				locked: false,
 				css : {
 					'background' : 'rgba(255,255,255,.8)'
 					}
@@ -57,17 +58,18 @@ $(function() {
     });
 
     $(".guarantee").fancybox({
-        closeBtn: false,
+        closeBtn: true,
         fitToView: false,
         wrapCSS: 'nowrapper',
         padding: 0,
-        width: 850,
-        height: 330,
+        width: 915,
+        height: 352,
         autoSize: false,
         closeClick: false,
         scrolling: 'no',
         helpers: {
             overlay: {
+				locked: false,
 				css : {
 					'background' : 'rgba(255,255,255,.8)'
 					}
@@ -88,6 +90,7 @@ $(function() {
         helpers: {
             overlay: {
 				css : {
+				locked: false,
 					'background' : 'rgba(255,255,255,.8)'
 					}
             }

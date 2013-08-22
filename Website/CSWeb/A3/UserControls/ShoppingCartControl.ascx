@@ -81,11 +81,7 @@
     </asp:PlaceHolder>
 </asp:Panel>
    <div class="cart_offer">
-            <strong>*Offer Details:</strong> offer details offer details offer details offer
-            details offer details offer details offer details offer details offer details offer
-            details offer details offer details offer details offer details offer details offer
-            details offer details offer details offer details offer details offer details offer
-            details offer details offer details offer details offer details offer details offer
-            details offer details offer details offer details offer details offer details offer
-            details offer details offer details offer details offer details offer details offer
-            details offer details offer details</div>
+            <strong>Offer Details:</strong> As part of the Special TV Offer – you will have the convenience of a 5 installment payment plan. You will be initially charged a $14.95 trial fee + free S&H. In 30 days, the same method of payment you use to make your purchase will automatically be charged the second of five payments in the amount of $39.95 for the Enhanced Package and $59.90 for the Accelerated Package. The grand total that will be charged for the Enhanced Package will be $199.75 and $299.50 for the Accelerated Package.<br>
+<br>
+
+The full purchase of this product has a 30 day money-back guarantee (less S&H).</div>
