@@ -1,4 +1,4 @@
-<%@Control Language="C#" Inherits="CSWeb.UserControls.CheckoutThankYouModule2" %>
+<%@Control Language="C#" Inherits="CSWeb.A1.UserControls.CheckoutThankYouModule2" %>
  		<div class="all-wr">
 			
 			<div class="header-wr">

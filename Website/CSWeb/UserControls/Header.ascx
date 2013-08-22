@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="CSWeb.UserControls.Header" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="CSWeb.A1.UserControls.Header" %>
 <div id="header">
 <a id="nav-home" href="/index.aspx"></a>
 <a id="nav-how" href="/howitworks.aspx"></a>

@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppingCartControl.ascx.cs"
-    Inherits="CSWeb.UserControls.ShoppingCartControl" %>
+    Inherits="CSWeb.A1.UserControls.ShoppingCartControl" %>
 <asp:LinkButton ID="refresh" runat="server" CausesValidation="false"></asp:LinkButton>
 <asp:Repeater runat="server" ID="rptShoppingCart" OnItemDataBound="rptShoppingCart_OnItemDataBound"
     OnItemCommand="rptShoppingCart_OnItemCommand">

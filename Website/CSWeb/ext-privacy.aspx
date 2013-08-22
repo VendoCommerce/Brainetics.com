@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ext-privacy.aspx.cs" Inherits="CSWeb.ext_privacy" EnableSessionState="True" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ext-privacy.aspx.cs" Inherits="CSWeb.A1.ext_privacy" EnableSessionState="True" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 
 <!doctype html><html lang="en">

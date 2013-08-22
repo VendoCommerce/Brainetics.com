@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.ascx.cs" Inherits="CSWeb.UserControls.CardDecline" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.ascx.cs" Inherits="CSWeb.A1.UserControls.CardDecline" %>
 
 <asp:ScriptManager runat="server" ID="sm1">
 </asp:ScriptManager>
@@ -308,21 +308,15 @@
                 </asp:DropDownList>
                 <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-3">
                     <asp:ListItem Value="" Text=""></asp:ListItem>
-                    <asp:ListItem Value="2013">13</asp:ListItem>
-                    <asp:ListItem Value="2014">14</asp:ListItem>
-                    <asp:ListItem Value="2015">15</asp:ListItem>
-                    <asp:ListItem Value="2016">16</asp:ListItem>
-                    <asp:ListItem Value="2017">17</asp:ListItem>
-                    <asp:ListItem Value="2018">18</asp:ListItem>
-                    <asp:ListItem Value="2019">19</asp:ListItem>
-                    <asp:ListItem Value="2020">20</asp:ListItem>
-                    <asp:ListItem Value="2021">21</asp:ListItem>
-                    <asp:ListItem Value="2022">22</asp:ListItem>
-                    <asp:ListItem Value="2023">23</asp:ListItem>
-                    <asp:ListItem Value="2024">24</asp:ListItem>
-                    <asp:ListItem Value="2025">25</asp:ListItem>
-                    <asp:ListItem Value="2026">26</asp:ListItem>
-                    <asp:ListItem Value="2027">27</asp:ListItem>
+                    <asp:ListItem Value="2012">2012</asp:ListItem>
+                    <asp:ListItem Value="2013">2013</asp:ListItem>
+                    <asp:ListItem Value="2014">2014</asp:ListItem>
+                    <asp:ListItem Value="2015">2015</asp:ListItem>
+                    <asp:ListItem Value="2016">2016</asp:ListItem>
+                    <asp:ListItem Value="2017">2017</asp:ListItem>
+                    <asp:ListItem Value="2018">2018</asp:ListItem>
+                    <asp:ListItem Value="2019">2019</asp:ListItem>
+                    <asp:ListItem Value="2020">2020</asp:ListItem>
                 </asp:DropDownList>
             </div>
             <div class="form_line clearfix">

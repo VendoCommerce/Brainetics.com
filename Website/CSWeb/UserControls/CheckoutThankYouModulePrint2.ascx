@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CheckoutThankYouModulePrint2.ascx.cs" Inherits="CSWeb.UserControls.CheckoutThankYouModulePrint2" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CheckoutThankYouModulePrint2.ascx.cs" Inherits="CSWeb.A1.UserControls.CheckoutThankYouModulePrint2" %>
 <%@ Register Src="Header.ascx" TagName="Header_Cart" TagPrefix="uc" %>
 <%@ Register Src="TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 <uc:Header_Cart ID="Header_Cart" runat="server" />
