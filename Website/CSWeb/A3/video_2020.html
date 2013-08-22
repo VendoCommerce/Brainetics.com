@@ -1,0 +1,20 @@
+<script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
+<script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
+
+
+ <div id="video2020"></div>
+  <script type='text/javascript'>
+  	jwplayer('video2020').setup({
+    file: "/content/video/2020_how1.mp4",
+	autostart: true,
+    primary: "flash",   
+	controls: true,
+    width: 363, height: 272,
+	stretching: 'exactfit',
+	skin: '/scripts/jwplayer/five.xml',
+	events:{
+	onPlay: function() {
+   	jwplayer('ctavideo').stop();
+	}}
+  });
+</script>
