@@ -107,7 +107,7 @@ namespace CSWeb.UserControls
                 rfvEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailErrorMsg");
                 revEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailValidationErrorMsg");                
                 rfvPhoneNumber.ErrorMessage = ResourceHelper.GetResoureValue("PhoneNumberErrorMsg");
-
+                
                 rfvShippingFirstName.ErrorMessage = ResourceHelper.GetResoureValue("FirstNameErrorMsg");
                 rfvShippingLastName.ErrorMessage = ResourceHelper.GetResoureValue("LastNameErrorMsg");
                 rfvShippingAddress1.ErrorMessage = ResourceHelper.GetResoureValue("ShippingAddress1ErrorMsg");
@@ -704,7 +704,7 @@ namespace CSWeb.UserControls
                 Customer CustData = new Customer();
                 CustData.FirstName = CommonHelper.fixquotesAccents(txtFirstName.Text);
                 CustData.LastName = CommonHelper.fixquotesAccents(txtLastName.Text);
-                CustData.PhoneNumber = txtPhoneNumber.Text;
+                CustData.PhoneNumber = txtPhoneNumber.Text.Replace("-", string.Empty).Replace("x", string.Empty);
                 CustData.Email = CommonHelper.fixquotesAccents(txtEmail.Text);
                 CustData.Username = CommonHelper.fixquotesAccents(txtEmail.Text);
                 CustData.BillingAddress = billingAddress;

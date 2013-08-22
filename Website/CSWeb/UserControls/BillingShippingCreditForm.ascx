@@ -53,8 +53,207 @@
         return true;
     }
 
+    function SetCursorAtTheBeginning(element) {
+        if (element.setSelectionRange) {
+            element.setSelectionRange(0, 0);
+
+        } else if (element.createTextRange) {
+            var range = element.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', 0);
+            range.moveStart('character', 0);
+            range.select();
+        };
+    };
+
     $(document).ready(function () {
+        $('#<%= txtPhoneNumber.ClientID %>').keydown(function (data) {
+            if (data.keyCode == 86 && data.ctrlKey) {
+                var $this = $(this);
+                setTimeout(function () {
+                    var val = $this.val();
+                    var newVal = '';
+                    for (var index in val) {
+
+                        if (newVal.length > 11)
+                            break;
+
+                        var char = val[index];
+
+                        if (validator.numbers.indexOf(char) > -1) {
+                            if (newVal.length == 3 || newVal.length == 7) {
+                                newVal = newVal + '-';
+                            };
+                            newVal = newVal + char;
+                        } else if ((newVal.length == 3 || newVal.length == 7) && char == '-') {
+                            newVal = newVal + char;
+                        };
+                    };
+
+                    $this.val(newVal);
+                }, 0);
+            };
+        });
+
+        var phoneCharCodes = [0, 45, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
+        var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
         
+	    if ($.browser.msie && $.browser.version < 9){
+		
+	    } else {
+            $('#<%= txtPhoneNumber.ClientID %>').keypress(function (data) {
+                var $this = $(this);
+                if (((data.charCode == 99 || data.charCode == 118 || data.charCode == 120) && data.ctrlKey) || data.charCode == 0) {
+                    return true;
+                };
+
+                if (phoneCharCodes.indexOf(data.charCode) == -1) {
+                    return false;
+                };
+
+                var val = $this.val();
+
+                if ((val.length != 3 && val.length != 7) && data.charCode == 45) {
+                    return false;
+                };
+
+                if ((val.length == 3 || val.length == 7) && data.charCode != 45) {
+                    $(this).val(val + '-');
+                };
+
+                if (val.length > 11 && val != $this.attr('format') && val != $this.attr('hidingLabel')) {
+                    return false;
+                };
+            });
+	    };
+
+        // initialize inputs
+        var selectDivClass;
+        var notDefaultTextClass;
+        var inputs = jQuery('input[hidingLabel]');
+
+        inputs.focusin(function () {
+            var curElement = jQuery(this);
+            var format = curElement.attr('format');
+        
+            if (curElement.val() == curElement.attr('hidingLabel') || curElement.val() == curElement.attr('format')) {
+                if (format != undefined) {
+                    curElement.val(format);
+                } else if (hideLabelOnFocusin) {
+                    curElement.val('');
+                    return;
+                }
+                setTimeout(function () {
+                    SetCursorAtTheBeginning(curElement[0]);
+                }, 0);
+            };
+        });
+
+    //    inputs.keypress(function (data) {
+    //        var obj = data;
+    //        return false;
+        //    });
+
+
+        var specKeys = [8, 9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 35, 36, 37,
+                        38, 39, 40, 45, 46, 91, 92, 93, 112, 113, 114, 115, 116, 
+                        117, 118, 119, 120, 121, 122, 123, 144, 145, 186, 187];
+
+        inputs.keydown(function (data) {
+            var curElement = jQuery(this);
+
+            var hl = curElement.attr('hidingLabel');
+            var format = curElement.attr('format');
+
+            if (specKeys.indexOf(data.keyCode)  == -1) {
+                var val = curElement.val();    
+                if (val.indexOf(hl) > -1) {
+                    curElement.val('');
+                    if (notDefaultTextClass != undefined) {
+                        curElement.addClass(notDefaultTextClass);
+                    };
+                } else if (format != undefined && val.indexOf(format) > -1) {
+                    curElement.val('');
+                    if (notDefaultTextClass != undefined) {
+                        curElement.addClass(notDefaultTextClass);
+                    };
+                }
+            }
+
+            setTimeout(function () {
+                if (curElement.val() == '') {
+                    curElement.removeClass(notDefaultTextClass);
+                    if (format != undefined) {
+                        curElement.val(format);
+                    } else {
+                        if (hideLabelOnFocusin) {
+                            curElement.val('');
+                            return;
+                        }
+                        curElement.val(hl);
+                    }
+                    SetCursorAtTheBeginning(curElement[0]);
+                };
+            }, 0);
+        });
+
+        inputs.change(function () {
+            var curElement = jQuery(this);
+            if (notDefaultTextClass && curElement.val() != curElement.attr('hidingLabel') && curElement.val() != curElement.attr('format') && !curElement.hasClass(notDefaultTextClass)) {
+                    curElement.addClass(notDefaultTextClass);
+            };
+        });
+
+        inputs.focusout(function () {
+            var curElement = jQuery(this);
+            if (curElement.val() == '' || curElement.val() == curElement.attr('hidingLabel') || curElement.val() == curElement.attr('format')) {
+                if (notDefaultTextClass) {
+                    curElement.removeClass(notDefaultTextClass);
+                };
+                curElement.val(curElement.attr('hidingLabel'));
+            };
+        });
+
+        inputs.each(function () {
+            var curElement = jQuery(this);
+            if (curElement.val() == '' || curElement.val() == curElement.attr('format')) {
+                curElement.val(curElement.attr('hidingLabel'));
+            } else if (notDefaultTextClass != undefined && curElement.val() != curElement.attr('hidingLabel')) {
+                curElement.addClass(notDefaultTextClass);
+            };
+        });
+
+        if (notDefaultTextClass != undefined) {
+            var selector = ".";
+            if (selectDivClass != null && selectDivClass != undefined) {
+                selector = selector + selectDivClass;
+            } else {
+                selector = selector + 'selectWr';
+            };
+            var selectsBlock = $('.' + selectDivClass);
+		
+		    if (selectsBlock.find('.jqTransformSelectWrapper').length) {
+			    selectsBlock.on('change', 'select', function(){
+				    if ($(this).val() == 0) {
+					    $(this).parent().find('span').removeClass(notDefaultTextClass);
+				    }
+				    else {
+					    $(this).parent().find('span').addClass(notDefaultTextClass);
+				    }
+			    });
+		    }
+		    else {
+			    selectsBlock.on('change', 'select', function(){
+				    if ($(this).val() == 0) {
+					    $(this).removeClass(notDefaultTextClass);
+				    }
+				    else {
+					    $(this).addClass(notDefaultTextClass);
+				    }
+			    });
+		    }
+		    selectsBlock.find('select').trigger('change');
+        };
     });
 
 </script>
@@ -239,9 +438,11 @@
 							<div class="line">			
                                 <div class="error-1">
                                 <asp:RequiredFieldValidator ID="rfvPhoneNumber" runat="server" Display="Dynamic"
-                                    ControlToValidate="txtPhoneNumber"></asp:RequiredFieldValidator>                                
+                                    ControlToValidate="txtPhoneNumber"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="rev" runat="server" ControlToValidate="txtPhoneNumber"
+                                    Display="Dynamic" ValidationExpression="^[0-9]{3}\-[0-9]{3}\-[0-9]{4}$" ErrorMessage="Please check phone number format (XXX-XXX-XXXX)" />
                                 <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label></div>					
-                                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="10" CssClass="defaultText" placeholder="Phone Number"></asp:TextBox>
+                                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="12" CssClass="defaultText" placeholder="Phone Number" hidingLabel="Phone Number" format="xxx-xxx-xxxx" validation="required:phone"></asp:TextBox>
 							</div>
 							
 						</div>
