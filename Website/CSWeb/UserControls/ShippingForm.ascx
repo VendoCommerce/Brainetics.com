@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.A1.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
 
 <div class="cartB">
     <div class="form_line clearfix">

@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CheckoutSummary.ascx.cs"
-    Inherits="CSWeb.A1.UserControls.CheckoutSummary" %>
+    Inherits="CSWeb.UserControls.CheckoutSummary" %>
 <table width="350" border="0" cellspacing="0" cellpadding="0" class="address_table"
     style="margin: 0 auto;">
     <tr>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="details-accelerated-package.aspx.cs" Inherits="CSWeb.A1.details_accelerated_package" EnableSessionState="True" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="details-accelerated-package.aspx.cs" Inherits="CSWeb.details_accelerated_package" EnableSessionState="True" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 
 <!doctype html><html lang="en">

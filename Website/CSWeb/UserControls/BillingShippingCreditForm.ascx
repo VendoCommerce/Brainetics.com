@@ -1,4 +1,4 @@
-<%@Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.A1.UserControls.BillingShippingCreditForm" CodeBehind="BillingShippingCreditForm.ascx.cs" %>
+<%@Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.UserControls.BillingShippingCreditForm" CodeBehind="BillingShippingCreditForm.ascx.cs" %>
 
       <asp:ScriptManager ID="ScriptManager1" runat="server">
       </asp:ScriptManager>

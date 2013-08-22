@@ -1,4 +1,4 @@
-<%@ Control Language="C#" Inherits="CSWeb.A1.UserControls.CheckoutThankYouModule" %>
+<%@ Control Language="C#" Inherits="CSWeb.UserControls.CheckoutThankYouModule" %>
 <%@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc" %>
 <%@ Register Src="TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 

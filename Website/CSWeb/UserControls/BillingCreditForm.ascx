@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BillingCreditForm.ascx.cs"
-    Inherits="CSWeb.A1.UserControls.BillingCreditForm" %>
+    Inherits="CSWeb.UserControls.BillingCreditForm" %>
 <%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl"
     TagPrefix="uc" %>
         

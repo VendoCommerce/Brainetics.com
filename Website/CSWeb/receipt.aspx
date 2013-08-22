@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="receipt.aspx.cs" Inherits="CSWeb.A1.receipt" EnableSessionState="True" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="receipt.aspx.cs" Inherits="CSWeb.receipt" EnableSessionState="True" %>
 <%@ Register Src="UserControls/CheckoutThankYouModule2.ascx" TagName="Receipt" TagPrefix="uc" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 

@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.A1.UserControls.BillingForm" CodeBehind="BillingForm.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.UserControls.BillingForm" CodeBehind="BillingForm.ascx.cs" %>
 <div class="cartB">
     <div class="form_line clearfix">
         <div class="error-1">

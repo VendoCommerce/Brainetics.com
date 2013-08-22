@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.ascx.cs" Inherits="CSWeb.A1.UserControls.CardDecline" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.ascx.cs" Inherits="CSWeb.UserControls.CardDecline" %>
 
 <asp:ScriptManager runat="server" ID="sm1">
 </asp:ScriptManager>

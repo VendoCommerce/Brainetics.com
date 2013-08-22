@@ -1,4 +1,4 @@
-<%@Control Language="C#" AutoEventWireup="true" CodeBehind="ShippingCreditForm.ascx.cs" Inherits="CSWeb.A1.UserControls.ShippingCreditForm" %>
+<%@Control Language="C#" AutoEventWireup="true" CodeBehind="ShippingCreditForm.ascx.cs" Inherits="CSWeb.UserControls.ShippingCreditForm" %>
     <%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl"
     TagPrefix="uc" %>
     <asp:ScriptManager runat="server" ID="sm1">
