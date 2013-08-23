@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomOrderManager.cs" />
+    <Compile Include="DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiteBasePage.cs">
       <SubType>ASPXCodeBehind</SubType>

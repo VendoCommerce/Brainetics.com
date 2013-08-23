@@ -125,15 +125,23 @@
     <Content Include="A2\productdetails.aspx" />
     <Content Include="A2\receipt.aspx" />
     <Content Include="A2\receipt_friendly.aspx" />
+    <Content Include="A2\send_email.aspx" />
     <Content Include="A2\testimonials.aspx" />
     <Content Include="A2\upsells.aspx" />
+    <Content Include="A2\UserControls\Contact.ascx" />
     <Content Include="A3\footer_receipt.html" />
+    <Content Include="A3\send_email.aspx" />
+    <Content Include="A3\UserControls\Contact.ascx" />
     <Content Include="A3\video_2020.html" />
     <Content Include="A4\footer_receipt.html" />
     <Content Include="A4\header_main.html" />
+    <Content Include="A4\send_email.aspx" />
+    <Content Include="A4\UserControls\Contact.ascx" />
     <Content Include="A5\aboutmike.aspx" />
     <Content Include="A5\footer_receipt.html" />
     <Content Include="A5\header_main.html" />
+    <Content Include="A5\send_email.aspx" />
+    <Content Include="A5\UserControls\Contact.ascx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="Admin\Attributes.aspx" />
     <Content Include="Admin\Country.aspx" />
@@ -930,6 +938,62 @@
     </Compile>
     <Compile Include="A2\receipt_friendly.aspx.designer.cs">
       <DependentUpon>receipt_friendly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A2\send_email.aspx.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A2\send_email.aspx.designer.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A2\UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A2\UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="A3\send_email.aspx.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A3\send_email.aspx.designer.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A3\UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A3\UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="A4\send_email.aspx.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A4\send_email.aspx.designer.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A4\UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A4\UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="A5\send_email.aspx.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A5\send_email.aspx.designer.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="A5\UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A5\UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
     </Compile>
     <Compile Include="AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>

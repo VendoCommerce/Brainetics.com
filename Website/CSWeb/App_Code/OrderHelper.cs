@@ -781,6 +781,40 @@ namespace CSWeb
 
             return OrderFlowCompleted;
         }
+
+        public static bool SendWriteToMikeEmail(string firstName, string lastName, string email, string subject, string message)
+        {
+            //pull Specific Email Template            
+            EmailSetting emailTemplate = EmailManager.GetEmail(4);
+
+            if (emailTemplate.Body != null)
+            {
+                try
+                {
+                    String BodyTemplate = emailTemplate.Body.Replace("&", "&amp;");
+
+                    BodyTemplate = BodyTemplate.Replace("{FIRST_NAME}", firstName);
+                    BodyTemplate = BodyTemplate.Replace("{LAST_NAME}", lastName);
+                    BodyTemplate = BodyTemplate.Replace("{EMAIL}", email);
+                    BodyTemplate = BodyTemplate.Replace("{SUBJECT}", subject);
+                    BodyTemplate = BodyTemplate.Replace("{MESSAGE}", message);
+
+                    //Prepare Mail Message
+                    MailMessage _oMailMessage = new MailMessage(emailTemplate.FromAddress, emailTemplate.ToAddress, emailTemplate.Subject, BodyTemplate);
+                    _oMailMessage.IsBodyHtml = true;
+                    SendMail(_oMailMessage);
+                                        
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    CSCore.CSLogger.Instance.LogException("Error sending email at SendWriteToMikeEmail() method", ex);
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
  
