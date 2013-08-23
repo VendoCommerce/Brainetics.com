@@ -56,6 +56,22 @@ namespace CSWebBase
             return false;
         }
 
+        public static bool IsKitBundleItem(int skuId)
+        {
+            switch ((SkuEnum)skuId)
+            {
+                case SkuEnum.Trial:
+                case SkuEnum.BrainBoosting:
+                case SkuEnum.DigitalPowerLicense:
+                case SkuEnum.ChallengeGameMultiPay:
+                case SkuEnum.QuickCardSet:
+                case SkuEnum.ChallengeGameSinglePay:
+                    return true;
+            }
+
+            return false;
+        }
+
         public static bool AddAdditionalItems(CSBusiness.ShoppingManagement.Cart cart)
         {
             bool updated = false;

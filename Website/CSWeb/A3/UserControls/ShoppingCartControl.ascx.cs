@@ -71,7 +71,8 @@ namespace CSWeb.A3.UserControls
         {
             if (CartContext.CartInfo.CartItems.Count > 0)
             {
-                rptShoppingCart.DataSource = CartContext.CartInfo.CartItems.FindAll(x => x.Visible==true);
+                rptShoppingCart.DataSource = CartContext.CartInfo.CartItems.FindAll(x => x.Visible == true
+                     && !CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)); // dont show kit bundle items
                 rptShoppingCart.DataBind();
 
                 pnlTotal.Visible = true;
@@ -113,7 +114,19 @@ namespace CSWeb.A3.UserControls
 				
                 lblSkuDescription.Text = cartItem.ShortDescription;
 				lblQuantity.Text = txtQuantity.Text = cartItem.Quantity.ToString();
-                lblSkuInitialPrice.Text = String.Format("${0:0.##}", cartItem.InitialPrice);
+                decimal initialPrice = cartItem.InitialPrice;
+
+                if (CSWebBase.SiteBasePage.IsMainSku(cartItem.SkuId))
+                {
+                    // add up all initial prices of all kit bundle items
+                    foreach (Sku bundleSku in CartContext.CartInfo.CartItems.FindAll(x => x.Visible == true
+                        && CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)))
+                    {
+                        initialPrice += bundleSku.InitialPrice;
+                    }
+                }
+
+                lblSkuInitialPrice.Text = String.Format("${0:0.##}", initialPrice);
                 if (cartItem.ImagePath.Length > 0)
                 {
                     imgProduct.ImageUrl = cartItem.ImagePath;
