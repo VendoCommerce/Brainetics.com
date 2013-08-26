@@ -171,6 +171,9 @@ namespace CSWeb
         #region Emails
         public static bool SendOrderCompletedEmail(int orderId)
         {
+            if (!CSFactory.GetCacheSitePref().GetAttributeValue("ConfirmationEmailEnabled", true))
+                return true;
+
             //pull Specific Email Template
             int emailId = ConfigHelper.EmailAppSetting("EmailId");
 
