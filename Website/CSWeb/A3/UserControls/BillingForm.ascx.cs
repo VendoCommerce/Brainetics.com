@@ -40,13 +40,12 @@ namespace CSWeb.A3.UserControls
                 {
                     if (Request.Url.ToString().Contains("www"))
                     {
-                        Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("www", "secure")));
+                        Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("index.aspx", "")));
                     }
                     else
                     {
-                        Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("secure.", "").Replace("https://", "https://secure.")));
+                        Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("https://", "https://www.").Replace("index.aspx", "")));
                     }
-
                 }
             }
             if (!IsPostBack)

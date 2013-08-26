@@ -36,15 +36,18 @@ namespace CSWeb.UserControls
         #region Page Events
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!CommonHelper.IsHttps(HttpContext.Current))
+            if (Request.Headers["X-HTTPS"] != null)
             {
-                if (Request.Url.ToString().Contains("www"))
+                if (Request.Headers["X-HTTPS"].ToLower().Equals("no"))
                 {
-                    Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("www", "secure")));
-                }
-                else
-                {
-                    Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("secure.", "").Replace("https://", "https://secure.")));
+                    if (Request.Url.ToString().Contains("www"))
+                    {
+                        Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("index.aspx", "")));
+                    }
+                    else
+                    {
+                        Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("https://", "https://www.").Replace("index.aspx", "")));
+                    }
                 }
             }
             if (Request.Params["rId"] != null)

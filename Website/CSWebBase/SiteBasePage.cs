@@ -22,7 +22,11 @@ namespace CSWebBase
             ChallengeGameSinglePay = 49,
             OnlineLanguageBundle = 50,
             QuickCardSet = 51,
-            ChallengeGameMultiPay = 60
+            ChallengeGameMultiPay = 60,
+            ShippingRush1 = 57,
+            ShippingRush2 = 61,
+            ShippingOvernight = 62,
+            ShippingSurcharge = 58
         }
 
         public int MainSkuAdd
@@ -70,6 +74,16 @@ namespace CSWebBase
             }
 
             return false;
+        }
+
+        public static bool IsShippingSku(Sku sku)
+        {
+            if (!sku.AttributeValuesLoaded)
+            {
+                sku.LoadAttributeValues();
+            }
+
+            return sku.GetAttributeValue("ShippingSku", false);
         }
 
         public static bool AddAdditionalItems(CSBusiness.ShoppingManagement.Cart cart)

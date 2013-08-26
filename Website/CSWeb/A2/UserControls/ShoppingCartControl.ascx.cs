@@ -72,7 +72,8 @@ namespace CSWeb.A2.UserControls
             if (CartContext.CartInfo.CartItems.Count > 0)
             {
                 rptShoppingCart.DataSource = CartContext.CartInfo.CartItems.FindAll(x => x.Visible==true
-                     && !CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)); // dont show kit bundle items
+                     && !CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)
+                     && !CSWebBase.SiteBasePage.IsShippingSku(x)); // dont show kit bundle and shipping items
                 rptShoppingCart.DataBind();
 
                 pnlTotal.Visible = true;

@@ -184,6 +184,21 @@ namespace CSWeb.A3.UserControls
             List<Sku> skus = ((CSWebBase.SiteBasePage)Page).ClientOrderData.CartInfo.CartItems;
 
             txtQuantity.Text = skus.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); }).Quantity.ToString();
+
+            ClientCartContext clientData = ((CSWebBase.SiteBasePage)Page).ClientOrderData;
+
+            if (clientData.CustomerInfo.ShippingAddress.CountryId == 46 ||
+                (clientData.CustomerInfo.ShippingAddress.CountryId == 231
+                    && "|AK|HI|PR|GU|VI|".Contains(StateManager.GetCacheStates().First(x =>
+                    {
+                        return x.StateProvinceId == clientData.CustomerInfo.ShippingAddress.StateProvinceId;
+                    }).Abbreviation.Trim().ToUpper())))
+            {
+                clientData.CartInfo.AddOrUpdate((int)CSWebBase.SiteBasePage.SkuEnum.Surcharge, 1, true, false, false);
+                clientData.CartInfo.Compute();
+            }
+
+            ((CSWebBase.SiteBasePage)Page).ClientOrderData = clientData;
         }
 
         public void lbUpdate_Click(object sender, EventArgs e)
@@ -612,17 +627,6 @@ namespace CSWeb.A3.UserControls
             paymentDataInfo.CreditCardCSC = txtCvv.Text;
 
             CartContext.PaymentInfo = paymentDataInfo;
-
-            if (clientData.CustomerInfo.ShippingAddress.CountryId == 46 ||
-                (clientData.CustomerInfo.ShippingAddress.CountryId == 231
-                    && "|AK|HI|PR|GU|VI|".Contains(StateManager.GetCacheStates().First(x =>
-                    {
-                        return x.StateProvinceId == clientData.CustomerInfo.ShippingAddress.StateProvinceId;
-                    }).Abbreviation.Trim().ToUpper())))
-                        {
-                            clientData.CartInfo.AddOrUpdate((int)CSWebBase.SiteBasePage.SkuEnum.Surcharge, 1, true, false, false);
-                            clientData.CartInfo.Compute();
-                        }
 
             int orderId = 0;
 
