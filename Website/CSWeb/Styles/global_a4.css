@@ -2,10 +2,11 @@
 /* CSS Document...Conversion Systems */
 
 /* REF FONT STUFF */
-html,body,p,td,table,tr,th,tbody,thead,ol,ul,li,form,fieldset,img,a,span,div,sub,sup,strong,b,i,em {
+html,body,p,td,table,tr,th,tbody,thead,ol,ul,li,form,fieldset,img,a,span,div,sub,sup,strong,b,i,em,area {
 	margin: 0;
 	padding: 0;
-	border: none;	
+	border: none;
+	outline: none;
 }
 
 
@@ -58,13 +59,16 @@ sub { top: 0.4em; }
 .pad6 {padding-bottom: 6px !important;}
 .pad12 {padding-bottom: 12px !important;}
 .pad20 {padding-bottom: 20px !important;}
+.pad25 {padding-bottom: 25px !important;}
 .white {color: #fff !important;}
 .black {color: #000 !important;}
 .blue {color: #0e81c0 !important;}
 .gray {color: #717171 !important;}
+.gray2 {color: #242424 !important;}
 .green {color: #50b948 !important;}
 .pink {color: #ec3384 !important;}
 .red {color: #f06833 !important;}
+.lh18 {line-height: 18px !important;}
 .lh20 {line-height: 20px !important;}
 .lh {line-height: normal !important;}
 /* FONT SIZES - from 5px - 100px - add class f[x] to an element where x is font size to force a different font size */
@@ -87,7 +91,7 @@ div {position:relative;}
 body {
 	background: #0062a8;
 	color: #242424;
-	font-size: 13px;
+	font-size: 14px;
 }
 .container {
 	-webkit-box-shadow:  0px 0px 5px 2px rgba(0, 0, 0, .6);
@@ -136,6 +140,8 @@ body {
 	margin-left: 30px;	
 }
 
+.norton_ssl {display: inline-block; margin-left: 15px;}
+
 .nav2 {
 	position: absolute;
 	top: 94px;
@@ -154,7 +160,7 @@ body {
 	position: absolute;
 	right: 0;
 	width: 500px;
-	top: 14px;
+	top: 10px;
 	text-align: right;
 }
 
@@ -220,14 +226,14 @@ body {
 
 .left {
 	float:left;
-	width: 553px;	
+	width: 593px;	
 	padding-top: 20px;
-	margin: 0 50px 34px 34px;
+	margin: 0 10px 34px 34px;
 }
 
 .left p {
-	font-size: 13px;
-	line-height: 20px;
+	font-size: 14px;
+	line-height: 21px;
 	padding-bottom: 20px;
 }
 
@@ -241,11 +247,13 @@ body {
 .left h2 {
 	font-size: 34px;
 	font-weight: bold;
+	line-height: 41px;
 	color: #ec3384;
 	text-shadow: -3px 0 #fff, 0 3px #fff, 3px 0 #fff, 0 -3px #fff;
 	font-family: "Nunito", sans-serif;
 	font-weight: 700;
-	padding-bottom: 24px;
+	padding-bottom: 20px;
+	margin: 10px 0 0 0;
 }
 	
 .left a {
@@ -258,8 +266,7 @@ body {
 }
 .home_left {
 	float:left;
-	width: 639px;	
-	padding-top: 20px;
+	width: 639px;
 }
 .right {
 	float:left;
@@ -285,27 +292,12 @@ body {
 .step3 {
 	position: absolute;
 	left: 213px;
-	top: 927px;
-	width: 338px;
-	height: 204px;
-}
-
-.step4 {
-	position: absolute;
-	left: 213px;
-	top: 1434px;
-	width: 340px;
-}
-
-.step5 {
-	position: absolute;
-	left: 213px;
 	top: 482px;
 	width: 339px;
 	height: 187px;
 }
 
-.step6 {
+.step4 {
 	position: absolute;
 	left: 213px;
 	top: 703px;
@@ -313,11 +305,26 @@ body {
 	height: 180px;
 }
 
-.step7 {
+.step5 {
+	position: absolute;
+	left: 213px;
+	top: 927px;
+	width: 338px;
+	height: 204px;
+}
+
+.step6 {
 	position: absolute;
 	left: 213px;
 	top: 1174px;
 	height: 177px;
+}
+
+.step7 {
+	position: absolute;
+	left: 213px;
+	top: 1434px;
+	width: 340px;
 }
 
 .detail1 {
@@ -405,11 +412,18 @@ body {
 
 .testtext {
 	float:right;
-	width: 340px;	
-	padding: 10px 40px;
-	margin-top: 30px;
-	background: url(/content/images/a4/openquote_orange.jpg) no-repeat top left, url(/content/images/a4/closequote_orange.jpg) no-repeat bottom right;
+	width: 325px;
+	padding: 10px 0 10px 40px;
+	margin-top: 50px;
+	margin-right: 40px;
+	color: #7f7f7f;
+	/*background: url(/content/images/a2/openquote_orange.jpg) no-repeat top left, url(/content/images/a2/closequote_orange.jpg) no-repeat bottom right;*/
+	background: url(/content/images/a2/openquote_orange.jpg) no-repeat top left;
 }
+
+.testtext_inner1 {background: url(/content/images/a2/closequote_orange.jpg) no-repeat 130px 45px;}
+.testtext_inner2 {background: url(/content/images/a2/closequote_orange.jpg) no-repeat 100px 45px;}
+.testtext_inner3 {background: url(/content/images/a2/closequote_orange.jpg) no-repeat 150px 45px;}
 
 .morestories {
 	border: 5px solid #0e81c0;
@@ -428,15 +442,20 @@ body {
 .stories_block {
 	float:left;
 	width: 354px;
-	padding: 30px 10px;
+	padding: 30px 10px 30px 0;
 	margin-left: 58px;
 	margin-bottom: 30px;
 
 }
-.stories_block div {	background: url(/content/images/a4/openquote_blue.png) no-repeat top left, url(/content/images/a4/closequote_blue.png) no-repeat bottom right;	
-  padding: 12px 46px;
+.stories_block .open_quote {	
+	/*background: url(/content/images/a2/openquote_blue.png) no-repeat top left, url(/content/images/a2/closequote_blue.png) no-repeat bottom right;*/
+	background: url(/content/images/a2/openquote_blue.png) no-repeat top left;	
+	padding: 12px 15px 12px 46px;
 
 }
+
+.testtext2_inner {background: url(/content/images/a2/closequote_blue.png) no-repeat 240px 122px;}
+.stories_block_blue .testtext2_inner {background: url(/content/images/a2/closequote_light.jpg) no-repeat 220px 128px;}
 
 .stories_block_blue {
 	float:left;
@@ -449,33 +468,74 @@ body {
 	background: #0e81c0;	
 }
 
-.stories_block_blue div {
-  background: url("/content/images/a4/openquote_light.jpg") no-repeat scroll left top, url("/content/images/a4/closequote_light.jpg") no-repeat scroll right bottom #0E81C0;
-  padding: 12px 46px;
+.stories_block_blue div.open_quote {
+ /* background: url("/content/images/a2/openquote_light.jpg") no-repeat scroll left top, url("/content/images/a2/closequote_light.jpg") no-repeat scroll right bottom #0E81C0;*/
+  background: url("/content/images/a2/openquote_light.jpg") no-repeat scroll left top;
+  padding: 12px 15px 12px 46px;
+}
+
+.how_intro {
+	position: absolute;
+	left: 88px;
+	top: 428px;
+	height: 224px;
+	width: 475px;
 }
 
 .how1 {
 	position: absolute;
 	left: 194px;
-	top: 544px;
+	top: 560px;
 	height: 224px;
-	width: 358px;
+	width: 395px;
 }
 
 .how2 {
 	position: absolute;
 	left: 226px;
-	top: 42px;
+	top: 62px;
 	height: 236px;
-	width: 396px;
+	width: 390px;
 }
 
 .how3 {
 	position: absolute;
 	left: 226px;
-	top: 344px;
-	width: 394px;
+	top: 360px;
+	width: 390px;
 	height: 223px;
+}
+
+.how4 {
+	position: absolute;
+	left: 38px;
+	top: 600px;
+	width: 390px;
+	height: 50px;
+}
+
+.how5 {
+	position: absolute;
+	left: 68px;
+	top: 732px;
+	width: 470px;
+	height: auto;
+}
+
+.how6 {
+	position: absolute;
+	left: 68px;
+	top: 1008px;
+	width: 435px;
+	height: auto;
+}
+
+.how7 {
+	position: absolute;
+	left: 68px;
+	top: 1295px;
+	width: 350px;
+	height: auto;
 }
 
 /* FAQ LIST STYLES */
@@ -493,6 +553,7 @@ body {
 	margin-bottom: -1px;
 	color: #303030;
 	text-decoration: none;
+	font-weight: bold;
 }
 .collapse.in {
 	height: auto;
@@ -528,7 +589,7 @@ body {
 .hometoptext {
 	position: absolute;
 	left: 22px;
-	top: 189px;
+	top: 169px;
 	height: 162px;
 	width: 410px;
 }
@@ -546,15 +607,16 @@ body {
 
 .whatsincluded {
 	position: absolute;
-	left: 39px;
-	top: 568px;
+	left: 74px;
+	top: 545px;
 	width: 113px;
 	height: 27px;
+	font-size: 12px;
 }
 .video2020 {
 	position: absolute;
 	left: 237px;
-	top: 752px;
+	top: 855px;
 	width: 351px;
 	height: 263px;
 }
@@ -562,8 +624,8 @@ body {
 .homebtmtext {
 	position: absolute;
 	left: 497px;
-	top: 749px;
-	width: 382px;
+	top: 745px;
+	width: 402px;
 	height: 286px;
 }
 
@@ -620,8 +682,30 @@ body {
 }
 
 .basket_description {
-	font-size: 11px;
-	
+	font-size: 13px;
+}
+
+.ul_cart {
+	list-style: none;
+	margin: 3px 0 10px 0;
+	font-size: 12px;
+	color: #666;
+}
+
+.ul_cart li {
+	padding: 0 0 2px 8px;
+	background: url(/content/images/li_dot_gray_sm.png) no-repeat 0 6px;
+}
+
+.ul_upsell {
+	list-style: none;
+	margin: 3px 0 10px 0;
+	font-size: 12px;
+}
+
+.ul_upsell li {
+	padding: 0 0 22px 16px;
+	background: url(/content/images/li_dot_gray_sm2.png) no-repeat 7px 6px;
 }
 
 .cart_table {
@@ -633,53 +717,62 @@ body {
 .cart_image {
 	float:left;
 	position:relative;
-	width: 120px;	
+	width: 110px;	
+	font-size: 13px;
 }
 
 .cart_text {
   float: left;
-  padding: 0 90px 0 0;
+  padding: 0 15px 0 0;
   position: relative;
-  width: 310px;
+  width: 315px;
 }
 
 .cart_select {
 	float:left;
 	position:relative;
-	width: 85px;	
+	width: 65px;
+	text-align: center;	
+	font-size: 13px;
 }
 
 .product_price {
 	float:left;
 	position:relative;
-	width: 64px;	
+	width: 64px;
+	padding-left: 20px;
+	font-size: 13px;
 }
 
 .cart_totals {
 	position:relative;
 	display:block;
 	width: 100%;
+	font-size: 13px;
 }
 
 .cart_totals_left {
   float: left;
   position: relative;
   text-align: right;
-  width: 450px;
+  width: 465px;
   font-weight:  bold;
+  font-size: 13px;
 }
 .cart_totals_right {
   float: left;
-  margin-left: 64px;
+  margin-left: 50px;
   position: relative;
   width: 64px;
+  font-size: 13px;
 }
 
 
 .cart_offer {
 	font-size: 11px;
 	line-height: 16px;
-	padding-top: 40px;	
+	padding: 40px 0;
+	color: #6a6a6a;
 }
 
 .horizontal_dots {
@@ -692,8 +785,8 @@ body {
 .cartB {
 	width: 295px;
 	border: 1px solid #d0d0d0;
-	border-radius: 0 0 5px 5px;
-	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 16px 16px;
+	-webkit-border-radius: 0 0 16px 16px;
 	color: #2c2c2c;
 	font-size: 14px;
 	background: #fff;
@@ -740,6 +833,7 @@ body {
 }
 .cartB .helper {
 	font-size: 11px;
+	line-height: 15px;
 	margin-left: 124px;
 	display: block;
 	width: 144px;
@@ -847,15 +941,16 @@ body {
 
 .includedtxt {
 	position: absolute;
-	left: 457px;
-	top: 120px;
-	width: 403px;
+	left: 440px;
+	top: 85px;
+	width: 430px;
 	height: 363px;
 }
 
 .includedtxt p {
 	color: #242424;	
-	line-height: 20px;
+	font-size: 14px;
+	line-height: 21px;
 	padding-bottom: 20px;
 }
 
@@ -866,6 +961,8 @@ body {
 
 .includedtxt li {
 	color: #ec3384;	
+	font-size: 14px;
+	line-height: 21px;
 }
 
 .includedtxt li span {
@@ -883,7 +980,8 @@ body {
 
 .guaranteetxt p {
 	color: #242424;	
-	line-height: 20px;
+	font-size: 14px;
+	line-height: 21px;
 	padding-bottom: 20px;
 }
 
@@ -938,11 +1036,27 @@ body {
 	margin-bottom: 20px;
 }
 
+.comparison_link {
+	text-align: center;
+}
+
+.comparison_link a {text-decoration: underline;}
+
 .ask {
 	font-weight: bold;
 	font-size: 25px;
 	line-height: normal;
 	display: inline-block;	
+}
+
+.ask_arrow {
+	font-weight: bold;
+	font-size: 25px;
+	line-height: normal;
+	display: inline-block;	
+	padding-right: 40px;
+	background: url(/content/images/upsell_arrow.png) no-repeat right 12px;
+	min-height: 90px;
 }
 
 .btns {

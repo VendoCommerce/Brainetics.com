@@ -22,14 +22,21 @@ $('a.try,area.try').click(function(){
 
 // toggle shipping price if Canada
 
+//$(function() {
+//    $('#ctl00_ddlCountry').change(function(){
+//        if ($(this).val() == "46") {
+//            $('.helper').show();
+//        } else {
+//           $('.helper').hide();
+//        }
+//    });
+//});
 $(function() {
-    $('#ctl00_ddlCountry').change(function(){
-        if ($(this).val() == "46") {
+        if ($('#ctl00_ddlCountry').val() == "46") {
             $('.helper').show();
         } else {
             $('.helper').hide();
-        }
-    });
+		}
 });
 
 
@@ -43,7 +50,48 @@ $(function() {
         wrapCSS: 'nowrapper',
         padding: 0,
         width: 915,
-        height: 515,
+        height: 550,
+        autoSize: false,
+        closeClick: false,
+        scrolling: 'no',
+        helpers: {
+            overlay: {
+				locked: false,
+				css : {
+					'background' : 'rgba(255,255,255,.8)'
+					}
+            }
+        }
+    });
+	
+	$(".comparison").fancybox({
+        closeBtn: true,
+        fitToView: false,
+        wrapCSS: 'nowrapper',
+        padding: 0,
+        width: 887,
+        height: 656,
+        autoSize: false,
+        closeClick: false,
+        scrolling: 'no',
+        helpers: {
+            overlay: {
+				locked: false,
+				css : {
+					'background' : 'rgba(255,255,255,.8)'
+					}
+            }
+        }
+    });
+	
+	$(".send_email").fancybox({
+        closeBtn: true,
+        fitToView: false,
+        wrapCSS: 'nowrapper',
+        padding: 0,
+        width: 777,
+        height: 487,
+		type: 'iframe',
         autoSize: false,
         closeClick: false,
         scrolling: 'no',

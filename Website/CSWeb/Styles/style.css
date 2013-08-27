@@ -5,6 +5,7 @@
 body {
 	background: #fff;
 	font-family: Georgia, "Century Schoolbook L", serif;
+	margin: 0; padding: 0;
 }
 	.all-wr {}
 	
@@ -79,6 +80,7 @@ body {
 			}
 				.header-menu a {
 					color: #fff;
+					text-decoration: none;
 				}
 				.header-menu .active{ color: #bbee2a; }
 			
