@@ -308,11 +308,20 @@ namespace CSWeb.FulfillmentHouse
                         xml.WriteWhitespace("\n");
                     }
 
+
                     // Payment auth info
-                    xml.WriteElementString("TransactionID", orderItem.CreditInfo.TransactionCode);
-                    xml.WriteWhitespace("\n");
-                    xml.WriteElementString("AuthCode", orderItem.CreditInfo.AuthorizationCode);
-                    xml.WriteWhitespace("\n");
+
+                    if (!string.IsNullOrEmpty(orderItem.CreditInfo.TransactionCode))
+                    {
+                        xml.WriteElementString("TransactionID", orderItem.CreditInfo.TransactionCode);
+                        xml.WriteWhitespace("\n");
+                    }
+
+                    if (!string.IsNullOrEmpty(orderItem.CreditInfo.AuthorizationCode))
+                    {
+                        xml.WriteElementString("AuthCode", orderItem.CreditInfo.AuthorizationCode);
+                        xml.WriteWhitespace("\n");
+                    }
 
                     // Order Costs
                     xml.WriteElementString("MerchandiseTotal", orderItem.FullPriceSubTotal.ToString("n2"));

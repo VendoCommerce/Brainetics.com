@@ -66,11 +66,12 @@ namespace CSWeb.Store
                     Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
                 }
 
+                
+                bool authSuccess = false;
+
                 // Check if payment gateway service is enabled or not.
                 if (CSFactory.GetCacheSitePref().PaymentGatewayService)
                 {
-                    bool authSuccess = false;
-
                     try
                     {
                         authSuccess = orderData.OrderStatusId == 4 // auth payment success
@@ -90,40 +91,45 @@ namespace CSWeb.Store
                             Response.Redirect("PostSale.aspx", true);
                         else
                             Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
-                            //Response.Redirect("Order.aspx?err_card=1&oid=" + HttpUtility.UrlEncode(CSCore.Utils.CommonHelper.Encrypt(orderId.ToString() + "|" + new Random().Next(100))), true);
-                    }
-
-                    if (authSuccess)
-                    {
-                        // Check if fulfillment gateway service is enabled or not.
-                        if (CSFactory.GetCacheSitePref().FulfillmentHouseService)
-                        {
-                            try
-                            {
-                                new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
-                            }
-                            catch (Exception ex)
-                            {
-                                CSCore.CSLogger.Instance.LogException("AuthorizeOrder - fulfillment post error", ex);
-
-                                throw;
-                            }
-
-                            if (Request.QueryString != null)
-                            {
-                                Response.Redirect("receipt.aspx?" + Request.QueryString);
-                            }
-                            else
-                            {
-                                Response.Redirect("receipt.aspx");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
+                        //Response.Redirect("Order.aspx?err_card=1&oid=" + HttpUtility.UrlEncode(CSCore.Utils.CommonHelper.Encrypt(orderId.ToString() + "|" + new Random().Next(100))), true);
                     }
                 }
+                else
+                {
+                    authSuccess = true;
+                }
+
+                if (authSuccess)
+                {
+                    // Check if fulfillment gateway service is enabled or not.
+                    if (CSFactory.GetCacheSitePref().FulfillmentHouseService)
+                    {
+                        try
+                        {
+                            new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
+                        }
+                        catch (Exception ex)
+                        {
+                            CSCore.CSLogger.Instance.LogException("AuthorizeOrder - fulfillment post error", ex);
+
+                            throw;
+                        }
+
+                        if (Request.QueryString != null)
+                        {
+                            Response.Redirect("receipt.aspx?" + Request.QueryString);
+                        }
+                        else
+                        {
+                            Response.Redirect("receipt.aspx");
+                        }
+                    }
+                }
+                else
+                {
+                    Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
+                }
+                
             }
             Response.Redirect("receipt.aspx");
 
