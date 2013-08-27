@@ -83,6 +83,9 @@
     <Reference Include="FusionCharts">
       <HintPath>..\CSDLL\FusionCharts.dll</HintPath>
     </Reference>
+    <Reference Include="Intelligencia.UrlRewriter">
+      <HintPath>..\CSDLL\Intelligencia.UrlRewriter.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\CSDLL\Newtonsoft.Json.dll</HintPath>
