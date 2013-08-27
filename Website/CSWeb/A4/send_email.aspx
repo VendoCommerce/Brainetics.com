@@ -6,14 +6,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+<link href="../Styles/global_a2.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-            <uc:Contact runat="server" />
-    </div>
-    </form>
+<body style="background: none;">
+<form id="form1" runat="server">
+<div id="write_to_mike">
+        <uc:Contact runat="server" />
+</div>
+</form>
 
     <uc:TrackingPixels ID="TrackingPixels" runat="server" />
 </body>

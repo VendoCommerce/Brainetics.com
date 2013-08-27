@@ -1,4 +1,4 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.A2.Store.index" EnableSessionState="True" %>
+<%@ Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.A2.Store.index" EnableSessionState="True" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 <%@ Register Src="UserControls/ShippingForm.ascx" TagName="ShippingFormControl" TagPrefix="uc" %>
 
@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="utf-8">    
-<title>BraineticsÂ® by Mike Byster-Award Winning-Guaranteed!</title>
+<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -25,7 +26,10 @@
 <!--#include file="headernav.html"-->
 <!--#include file="header.html"-->
 <div class="page">
-<div class="home_left"><img src="../Content/images/a2/home_leftside.png" width="664" height="914" style="margin-left: -25px"/>
+<div class="home_left"><img src="../Content/images/a2/home_leftside.png" width="664" height="994" style="margin-left: -25px" usemap="#Maphometop" />
+<map name="Maphometop">
+    <area shape="circle" coords="595,114,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
+  </map>
 <div class="hometoptext gray">
 <ul>
 <li>Imagine storing, processing, and recalling information faster than ever!</li>
@@ -35,10 +39,10 @@
 that hold kids back</li>
 
 </ul>
-<p class="bold">It doesnâ€™t matter if youâ€™re 9 or 99. 
-Brainetics is guaranteed to give you better 
-focus, concentration, and problem solving skills. 
-Best of all, youâ€™ll be able to memorize ANYTHING. </p>
+<p class="bold f13 lh18">It doesn’t matter if you’re 9 or 99. <br>
+Brainetics is guaranteed to give you better <br>
+focus, concentration, and problem solving skills. <br>
+Best of all, you’ll be able to memorize ANYTHING. </p>
 </div>
 <div class="whatsincluded"><a href="#included" onclick="javascript:void(0);" class="included gray scored">What's Included?</a></div>
 <div class="video2020">
@@ -66,11 +70,11 @@ Best of all, youâ€™ll be able to memorize ANYTHING. </p>
 <div id="ctavideo"></div>
   <script type='text/javascript'>
   	jwplayer('ctavideo').setup({
-    file: "/content/video/ctavideo.mp4",
+    file: "/content/video/ctavideo1.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
-    width: 295, height: 221,
+    width: 296, height: 200,
 	stretching: 'exactfit',
 	skin: '/scripts/jwplayer/five.xml',
 	events:{
@@ -83,16 +87,16 @@ Best of all, youâ€™ll be able to memorize ANYTHING. </p>
 
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
-<div class="home_bottom"><img src="../Content/images/a2/home_bottom.jpg" width="950" height="1612" usemap="#Maphomebtm" />
+<div class="home_bottom"><img src="../Content/images/a2/home_bottom.jpg" width="950" height="1532" usemap="#Maphomebtm" />
   <map name="Maphomebtm">
-    <area shape="rect" coords="574,1457,795,1520" href="#tryitnow" class="try">
-    <area shape="rect" coords="681,329,931,401" href="#tryitnow" class="try">
+    <area shape="rect" coords="574,1430,795,1480" href="#tryitnow" class="try">
+    <area shape="rect" coords="681,320,931,401" href="#tryitnow" class="try">
   </map>
-  <div class="homebtmtext black lh20">
+  <div class="homebtmtext black f14 lh20">
     <p><strong>Brainetics TRAINS two different parts of the MIND</strong> to work simultaneously yet independently of each other. One part of your mind memorizes information while another part is sorting and processing new information. The mind will begin to work more efficiently and become more powerful <strong>giving Brainetics kids a huge advantage</strong> throughout their academic lives 
       and beyond. <br>
 <br>
-<strong>Your child HAS THE POTENTIAL to SUCCEED</strong>, and Brainetics unlocks that hidden cognitive ability! The BraineticsÂ® Complete System increases your child's <strong>Comprehension and Memory</strong>, and re-introduces <strong>learning</strong> through an increasingly challenging step- by- step program, enabling progress with a fun and easy to use process. </p>
+<strong>Your child HAS THE POTENTIAL to SUCCEED</strong>, and Brainetics unlocks that hidden cognitive ability! The Brainetics® Complete System increases your child's <strong>Comprehension and Memory</strong>, and re-introduces <strong>learning</strong> through an increasingly challenging step- by- step program, enabling progress with a fun and easy to use process. </p>
   </div>
 </div>
 <!--#include file="bottomcta.html"-->

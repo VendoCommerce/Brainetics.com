@@ -8,6 +8,7 @@
 <head>
 <meta charset="utf-8">    
 <title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -27,13 +28,16 @@
 
 
 <div class="page" style="background: url(../content/images/A5/home_bg.jpg) no-repeat #fff">
-<div class="home_left"><img src="../Content/images/A5/home_leftside.png" width="667" height="1047" style="margin-left: -32px"/>
+<div class="home_left"><img src="../Content/images/A5/home_leftside.png" width="667" height="1155" style="margin-left: -32px" usemap="#Maphometop" />
+<map name="Maphometop">
+    <area shape="circle" coords="329,356,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
+  </map>
 <div class="hometoptext gray">
 <ul>
 <li>Turbo charge your memory for better performance!</li>
-<li>Increase confidence which translates into better grades</li>
+<li>Increase confidence which translates into <br>better grades</li>
 
-<li>Improve Focus and Concentration to make learning more fun!</li>
+<li>Improve Focus and Concentration to make <br>learning more fun!</li>
 </ul>
 </div>
 <div class="whatsincluded"><a href="#included" onclick="javascript:void(0);" class="included gray scored">What's Included?</a></div>
@@ -69,11 +73,11 @@
 <div id="ctavideo"></div>
   <script type='text/javascript'>
   	jwplayer('ctavideo').setup({
-    file: "/content/video/ctavideo.mp4",
+    file: "/content/video/ctavideo1.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
-    width: 295, height: 221,
+    width: 296, height: 222,
 	stretching: 'exactfit',
 	skin: '/scripts/jwplayer/five.xml',
 	events:{
@@ -93,7 +97,7 @@
   <map name="Maphomebtm">
     <area shape="rect" coords="579,1036,791,1095" href="#tryitnow" class="try">
   </map>
-  <div class="homebtmtext black lh20">
+  <div class="homebtmtext black f14 lh20">
     <p><strong>Brainetics TRAINS two different parts of the MIND</strong> to work simultaneously yet independently of each other. One part of your mind memorizes information while another part is sorting and processing new information. The mind will begin to work more efficiently and become more powerful <strong>giving Brainetics kids a huge advantage</strong> throughout their academic lives 
       and beyond. <br>
 <br>

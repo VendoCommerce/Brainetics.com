@@ -1,11 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.ascx.cs" Inherits="CSWeb.A2.UserControls.CardDecline" %>
 <asp:ScriptManager runat="server" ID="sm1">
 </asp:ScriptManager>
-
-    <p style="color: red">Sorry your card was declined.  Please see below.</p>
+<div id="receipt_content"  style="height: auto; width: 950px; position:relative;padding: 30px 60px;color: #5c5c5c;">
+    <p style="color: red; font-size: 14px;">Sorry your card was declined.  Please see below.</p>
     <table width="819" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
-<tr><td class="horizontal_dots2" colspan="3"></td></tr>
-<tr>
+	<tr>
 
                 <td width="76%" valign="top" style="padding-bottom: 20px">
                     <strong>Description</strong>
@@ -72,7 +71,7 @@
             <tr><td class="horizontal_dots2" colspan="3"></td></tr>
         </table>
 
-        <div class="cartB">
+        <div class="cartB" style="border: none; width: 500px;">
         <div class="form_line clearfix">
     <div class="error-2">
         <asp:Label ID="Label2" ForeColor="Red" runat="server" Text="" Visible="false"></asp:Label></div>
@@ -270,7 +269,7 @@
                     <asp:TextBox ID="txtZipCode" runat="server" MaxLength="7" CssClass="text-1"></asp:TextBox>
                 </div>
             </asp:Panel>
-            <div class="form_line clearfix">
+            <div class="form_line clearfix" style="padding-top: 12px;">
                 <label class="label-3">
                     Credit Card*</label>
                 <div class="error-2">
@@ -347,9 +346,10 @@
                     and Special Offers.</strong></label>
                 <input type="checkbox" checked="checked" class="checkbox-right" />
             </div>
-            <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/try_it_now_btn.gif"
+            <div class="form_line_btn" style="text-align: left; width: 100%;">
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/a2/tryitnow_btn.png"
                   OnClick="imgBtn_OnClick" />
             </div>
             <div class="form_line_guarantee" style="display:none"><a href="#">View 30-Day Guarantee</a></div>
         </div>
+</div>

@@ -9,6 +9,7 @@
 <head>
 <meta charset="utf-8">    
 <title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -20,6 +21,7 @@
 <link href="../Styles/global_A4.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<!--#include file="popups.html"-->
     <form id="form1" runat="server">
     <div class="container_upsell">
 <asp:ScriptManager ID="ScriptManager1" runat="server">

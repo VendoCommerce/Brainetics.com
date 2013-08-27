@@ -8,6 +8,7 @@
 <head>
 <meta charset="utf-8">    
 <title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -31,9 +32,9 @@
   <p>The information we collect is used to improve the content of our Web page, used to customize the content and/or layout of our page for each individual visitor, used by us to contact consumers for marketing purposes, shared with other reputable organizations to help them contact consumers for marketing purposes, disclosed when legally required to do so, at the request of governmental authorities conducting an investigation, to verify or enforce compliance with the policies governing our Website and applicable laws or to protect against misuse or unauthorized use of our Website.</p>
   <p>With respect to cookies: We use cookies to record session information, such as items that consumers add to their shopping cart, record user-specific information on what pages users access or visit, record past activity at a site in order to provide better service when visitors return to our site , ensure that visitors are not repeatedly sent the same banner ads, customize Web page content based on visitors' browser type or other information that the visitor sends.</p>
   <p>If you do not want to receive e-mail from us in the future, please let us know by 
-    visiting us <a href="#">here</a>.</p>
-  <p>From time to time, we make the e-mail addresses of those who access our site available to other reputable organizations whose products or services we think you might find interesting. If you do not want us to share your e-mail address with other companies or organizations, please let us know by visiting us <a href="#">here</a>.</p>
-  <p>From time to time, we make our customer e-mail list available to other reputable organizations whose products or services we think you might find interesting. If you do not want us to share your e-mail address with other companies or organizations, please let us know by visiting us <a href="#">here</a>.</p>
+    visiting us <a href="contact.aspx">here</a>.</p>
+  <p>From time to time, we make the e-mail addresses of those who access our site available to other reputable organizations whose products or services we think you might find interesting. If you do not want us to share your e-mail address with other companies or organizations, please let us know by visiting us <a href="contact.aspx">here</a>.</p>
+  <p>From time to time, we make our customer e-mail list available to other reputable organizations whose products or services we think you might find interesting. If you do not want us to share your e-mail address with other companies or organizations, please let us know by visiting us <a href="contact.aspx">here</a>.</p>
   <p>If you supply us with your postal address on-line you may receive periodic mailings from us with information on new products and services or upcoming events. If you do not wish to receive such mailings, please let us know by emailing us at web support.<br>
     Please provide us with your exact name and address. We will be sure your name is removed from the list we share with other organizations.</p>
   <p>Persons who supply us with their telephone numbers on-line may receive telephone contact from us with information regarding new products and services or upcoming events. If you do not wish to receive such telephone calls, please let us know by sending us e-mail at the below address.</p>
@@ -47,7 +48,7 @@
   <p>Consumers can have this information corrected by sending us e-mail at 
     the above address.</p>
   <p>With respect to security: We have appropriate security measures in place in our physical facilities to protect against the loss, misuse or alteration of information that we have collected from you at our site.</p>
-  <p>We can be reached via e-mail at <a href="#">web support</a>.</p>
+  <p>We can be reached via e-mail at <a href="mailto:brainetics@customerstatus.com">web support</a>.</p>
   <p>If you feel that this site is not following its stated information policy, you may contact us at the above addresses or phone number.</p>
   <p><strong>Changes</strong><br>
     This Privacy Policy may be changed at any time. Visitors should check the Privacy Policy each time they visit the Website. Use of the Website constitutes acceptance of the Privacy Policy and changes. The last update was made on April 15, 2010.</p>

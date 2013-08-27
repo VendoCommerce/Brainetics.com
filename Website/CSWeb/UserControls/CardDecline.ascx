@@ -4,18 +4,21 @@
 </asp:ScriptManager>
 <asp:UpdatePanel ID="upShippingForm" runat="server">
     <ContentTemplate>
-    <p style="color: red">Sorry your card was declined.  Please see below.</p>
-    <table width="819" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
+    
+    <div class="check-section clearfix" style="font-size: 13px;">
+    
+    <p style="color: red; padding-bottom: 1em;">Sorry your card was declined.  Please see below.</p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
 <tr><td class="horizontal_dots2" colspan="3"></td></tr>
 <tr>
 
-                <td width="76%" valign="top" style="padding-bottom: 20px">
+                <td width="72%" valign="top" style="padding-bottom: 20px">
                     <strong>Description</strong>
                 </td>
-                <td width="12%" valign="top" align="center">
+                <td width="14%" valign="top" align="center">
                     <strong>Quantity</strong>
                 </td>
-                <td width="12%" valign="top">
+                <td width="14%" valign="top">
                     <strong>Total</strong>
                 </td>
             </tr>
@@ -75,16 +78,16 @@
         </table>
 
         <div class="cartB">
-        <div class="form_line clearfix">
+        <div class="form_line clearfix" style="padding-bottom: 12px;">
     <div class="error-2">
         <asp:Label ID="Label2" ForeColor="Red" runat="server" Text="" Visible="false"></asp:Label></div>
     <label class="label-2">
-        Do you want to review your shipping address?</label><div
-            class="clear">
+        Do you want to review your shipping address?</label>
+        <div class="clear">
         </div>
     <asp:RadioButtonList ID="rblUpdateShippingAddress" runat="server" OnSelectedIndexChanged="rblUpdateShippingAddress_CheckedChanged"
         CssClass="checkbox-right" AutoPostBack="true" RepeatDirection="Horizontal" TabIndex="124">
-        <asp:ListItem Value="true">Yes</asp:ListItem>
+        <asp:ListItem Value="true">Yes</asp:ListItem> 
         <asp:ListItem Value="false" Selected="True">No</asp:ListItem>
     </asp:RadioButtonList>
 </div>
@@ -132,7 +135,7 @@
             <div class="form_line clearfix">
                 <div class="error-1">
                 </div>
-                <label class="label-1">
+                <label class="label-1">&nbsp;
                 </label>
                 <asp:TextBox ID="txtShippingAddress2" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
             </div>
@@ -185,7 +188,7 @@
                 
                          
         </asp:Panel>
-        <div class="form_line clearfix">
+        <div class="form_line clearfix" style="padding-bottom: 12px;">
     <div class="error-2">
         <asp:Label ID="LabelError" ForeColor="Red" runat="server" Text="" Visible="false"></asp:Label></div>
     <label class="label-2">
@@ -194,7 +197,7 @@
         </div>
     <asp:RadioButtonList ID="rblUpdateBillingAddress" runat="server" OnSelectedIndexChanged="rblUpdateBillingAddress_CheckedChanged"
         CssClass="checkbox-right" AutoPostBack="true" RepeatDirection="Horizontal" TabIndex="124">
-        <asp:ListItem Value="true">Yes</asp:ListItem>
+        <asp:ListItem Value="true">Yes</asp:ListItem> 
         <asp:ListItem Value="false" Selected="True">No</asp:ListItem>
     </asp:RadioButtonList>
 </div>
@@ -241,7 +244,7 @@
                 <div class="form_line clearfix">
                     <div class="error-1">
                     </div>
-                    <label class="label-1">
+                    <label class="label-1">&nbsp;
                     </label>
                     <asp:TextBox ID="txtAddress2" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
                 </div>
@@ -272,7 +275,7 @@
                     <asp:TextBox ID="txtZipCode" runat="server" MaxLength="7" CssClass="text-1"></asp:TextBox>
                 </div>
             </asp:Panel>
-            <div class="form_line clearfix">
+            <div class="form_line clearfix" style="padding-top: 12px;">
                 <label class="label-3">
                     Credit Card*</label>
                 <div class="error-2">
@@ -326,10 +329,10 @@
                     <asp:Label ID="lblCCNumberError" runat="server" Visible="false"></asp:Label></div>
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                        <td><asp:TextBox ID="txtCCNumber1" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtCCNumber1" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber2" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtCCNumber2" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber3" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtCCNumber3" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber4" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="txtCCNumber4" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
+                        <td><asp:TextBox ID="txtCCNumber1" runat="server" CssClass="text-4" MaxLength="4" style="width: 55px;"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtCCNumber1" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
+                        <td><asp:TextBox ID="txtCCNumber2" runat="server" CssClass="text-4" MaxLength="4" style="width: 55px;"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtCCNumber2" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
+                        <td><asp:TextBox ID="txtCCNumber3" runat="server" CssClass="text-4" MaxLength="4" style="width: 55px;"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtCCNumber3" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
+                        <td><asp:TextBox ID="txtCCNumber4" runat="server" CssClass="text-4" MaxLength="4" style="width: 55px;"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="txtCCNumber4" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
                     </tr>
                 </table>
             </div>
@@ -340,22 +343,23 @@
                 <div class="error-2">
                     <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />
                     <asp:Label ID="lblCvvError" runat="server" Visible="false"></asp:Label></div>
-                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox>
+                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4" style="width: 55px;"></asp:TextBox>
             </div>
             <div class="form_line clearfix">
-                <label class="label-2">
+                <div style="float: left; width: 23px; padding-top: 10px;"><input type="checkbox" checked="checked" class="checkbox-right" /></div>
+                <label class="label-2" style="float: left; width: 250px;">
                     Send me new Product Updates
                     <br />
                     and Special Offers.</strong></label>
-                <input type="checkbox" checked="checked" class="checkbox-right" />
+                
             </div>
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/try_it_now_btn.gif"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/btn_submit.png"
                   OnClick="imgBtn_OnClick" />
             </div>
             <div class="form_line_guarantee" style="display:none"><a href="#">View 30-Day Guarantee</a></div>
         </div>
   
-
+</div>
     </ContentTemplate>
 </asp:UpdatePanel>

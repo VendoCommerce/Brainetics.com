@@ -11,6 +11,7 @@
 <head>
 <meta charset="utf-8">    
 <title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -37,7 +38,7 @@ Are you constantly distracted by Facebook or your mobile phone while at work or 
 </div>
 
 <div class="step2">
-<p><span class="pink f15 webfont1 block">Ease Math & Learning Anxieties DVD (Level 2)</span>
+<p><span class="pink f15 webfont1 block" style="width: 355px;">Ease Math & Learning Anxieties DVD (Level 2)</span>
 One of our favorite DVD's! Did you know that anxiety is the most common disorder in the US? Anxiety affects your learning and focus significantly. The Ease Math & Learning Anxieties DVD allows you to ease math and learning anxieties and gain confidence. When you decrease anxiety levels and become more confident in your abilities, studying and test taking become so much easier!</p>
 </div>
 

@@ -8,6 +8,7 @@
 <head>
 <meta charset="utf-8">    
 <title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -25,7 +26,12 @@
 <div class="page" style="background: url(../content/images/A5/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>About Mike</h2>
-  <p><img src="../Content/images/a5/mike.jpg" width="208" height="321" class="fright" style="margin: 0 0 20px 20px" />Quisque et rhoncus arcu. Etiam lobortis, ligula ut imperdiet porttitor, lorem quam consequat urna, non congue velit ligula sed tellus. Vivamus placerat mauris scelerisque justo vulputate laoreet. Vestibulum posuere felis eget tellus gravida, eu bibendum orci malesuada. Integer feugiat, metus eget cursus lobortis, turpis velit feugiat tortor, non sagittis mauris risus id nulla. Nulla facilisi. Aenean tempor eros vel dictum pulvinar. Sed convallis fringilla leo, in ullamcorper sem tincidunt nec. Nunc laoreet molestie odio eu lacinia. In vel venenatis nisl, a bibendum nisl. Vivamus commodo, lorem in tempus interdum, lectus sem aliquet nisi, eget mattis risus magna quis elit.</p>
+  <p><img src="../Content/images/a5/mike.jpg" width="208" height="321" class="fright" style="margin: 0 0 20px 20px" />Mike Byster is one of the fastest mathematical minds 
+in the world. But his real passion is in teaching kids to have the academic confidence that both sets them apart from the crowd, and sets them up for success in all parts of life for decades to come. </p>
+
+<p>Featured on 20/20 for his ground breaking techniques 
+to help kids master complex math concepts, Mike has traveled the country working with kids and painstakingly refining the Brainetics programs to make it the most fun, and the most effective it can be.</p>
+
 </div>
 <div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
