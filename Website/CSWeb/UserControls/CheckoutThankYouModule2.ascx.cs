@@ -97,7 +97,11 @@ namespace CSWeb.UserControls
             {
                 Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId);
 
-                dlordersList.DataSource = orderData.SkuItems;
+                List<Sku> skus = orderData.SkuItems;
+
+                skus.Sort(new CSWebBase.SkuSortComparer());
+
+                dlordersList.DataSource = skus;
                 dlordersList.DataBind();
 
                 LiteralSubTotal.Text = Math.Round(orderData.SubTotal, 2).ToString();
