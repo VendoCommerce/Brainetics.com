@@ -140,7 +140,12 @@ body {
 	margin-left: 30px;	
 }
 
-.norton_ssl {display: inline-block; margin-left: 15px;}
+.norton_ssl {
+	display: inline-block; 
+	margin-left: 15px;
+	height: 51px;
+	overflow: hidden;
+}
 
 .nav2 {
 	position: absolute;
