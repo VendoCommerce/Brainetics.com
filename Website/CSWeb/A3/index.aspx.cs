@@ -50,20 +50,20 @@ namespace CSWeb.A3.Store
                         //Response.Redirect("https://www.plugnsafe.com/canada/?" + Request.QueryString);
                     }
                 }
-                if (Request.Headers["X-HTTPS"] != null)
-                {
-                    if (Request.Headers["X-HTTPS"].ToLower().Equals("no"))
-                    {
-                        if (Request.Url.ToString().Contains("www"))
-                        {
-                            Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("index.aspx", "")));
-                        }
-                        else
-                        {
-                            Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("https://", "https://www.").Replace("index.aspx", "")));
-                        }
-                    }
-                }
+                //if (Request.Headers["X-HTTPS"] != null)
+                //{
+                //    if (Request.Headers["X-HTTPS"].ToLower().Equals("no"))
+                //    {
+                //        if (Request.Url.ToString().Contains("www"))
+                //        {
+                //            Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("index.aspx", "")));
+                //        }
+                //        else
+                //        {
+                //            Response.Redirect((Request.Url.ToString().Replace("http:/", "https:/").Replace("https://", "https://www.").Replace("index.aspx", "")));
+                //        }
+                //    }
+                //}
 
             }
 

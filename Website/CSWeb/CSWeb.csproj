@@ -748,6 +748,7 @@
     <Content Include="Content\Images\save.gif" />
     <Content Include="Content\Images\yes_btn.png" />
     <Content Include="cvv.html" />
+    <Content Include="A1_index.aspx" />
     <Content Include="index.aspx" />
     <Content Include="oldindex.aspx" />
     <Content Include="FusionCharts\FCF_Area2D.swf" />
@@ -2045,6 +2046,13 @@
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A1_index.aspx.cs">
+      <DependentUpon>A1_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A1_index.aspx.designer.cs">
+      <DependentUpon>A1_index.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
