@@ -40,7 +40,12 @@ namespace Com.ConversionSystems
                 {
                     try
                     {
-                        CommonHelper.HttpPost(Helper.AppSettings["SiteUrl"] + orderItem.VersionName + "/authorizeorder.aspx?oid=" + orderItem.OrderId, "");                        
+                        string version = "/" + orderItem.VersionName;
+
+                        if (version.ToUpper() == "/A1")
+                            version = string.Empty;
+
+                        CommonHelper.HttpPost(Helper.AppSettings["SiteUrl"] + version + "/authorizeorder.aspx?oid=" + orderItem.OrderId, "");                        
                     }
                     catch (Exception e)
                     {   
