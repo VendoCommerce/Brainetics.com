@@ -91,7 +91,7 @@ Ever wanted to get good at memorizing names, faces, dates, birthdays, and meetin
     Mike Byster, the producer of Brainetics, is an American mathematician, mental calculator and math educator. He worked as a stockbroker until he quit his job and income to devote himself to teaching children his methods. Want to talk to him?! No problem! You can send Mike an email and ask him any questions you may have about the Brainetics Program and he'll happily respond!</p>
 </div>
 <div class="detail5">
-  <p><span class="pink f15 webfont1 block">Parents Manual</span>
+  <p><span class="pink f15 webfont1 block">Parents' Manual</span>
     We know parents at times may struggle with how to approach their child and keep their child motivated. The Parent Manual was created to give parents a clear view of the Brainetics System and how they can coach and teach their child through each mile-stone.</p>
 </div>
 <div class="detail6">

@@ -22,6 +22,7 @@
 <body>
  <form runat="server" id="fm1">
    <div class="container">
+<!--#include file="popups.html"-->
 <!--#include file="header.html"-->
 <div class="page">
  <uc:BillingCreditForm runat="server" RedirectUrl="AddProduct.aspx" />

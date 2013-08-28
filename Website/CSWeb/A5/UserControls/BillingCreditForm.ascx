@@ -164,7 +164,7 @@
                     Expiration Date</label>
                
                 <asp:DropDownList ID="ddlExpMonth" runat="server" CssClass="text-2">
-                    <asp:ListItem Value="" Text=""></asp:ListItem>
+                    <asp:ListItem Value="" Text="">Month</asp:ListItem>
                     <asp:ListItem Value="1">01</asp:ListItem>
                     <asp:ListItem Value="2">02</asp:ListItem>
                     <asp:ListItem Value="3">03</asp:ListItem>
@@ -179,7 +179,7 @@
                     <asp:ListItem Value="12">12</asp:ListItem>
                 </asp:DropDownList>
                 <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-2">
-                    <asp:ListItem Value="" Text=""></asp:ListItem>                    
+                    <asp:ListItem Value="" Text="">Year</asp:ListItem>                    
                     <asp:ListItem Value="2013">2013</asp:ListItem>
                     <asp:ListItem Value="2014">2014</asp:ListItem>
                     <asp:ListItem Value="2015">2015</asp:ListItem>
