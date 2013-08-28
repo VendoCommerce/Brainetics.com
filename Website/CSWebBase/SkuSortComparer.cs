@@ -31,7 +31,7 @@ namespace CSWebBase
             int xOrder = x.GetAttributeValue<int>("Order");
             int yOrder = y.GetAttributeValue<int>("Order");
 
-            return xOrder.CompareTo(xOrder);
+            return xOrder.CompareTo(yOrder);
         }
     }
 }

@@ -9,6 +9,8 @@ using CSCore.DataHelper;
 using CSWeb.Root.Store;
 using System.Web;
 using CSBusiness.Resolver;
+using CSBusiness.Preference;
+using CSWebBase;
 
 namespace CSWeb.A2.UserControls
 {
@@ -229,6 +231,23 @@ namespace CSWeb.A2.UserControls
                 if (!CommonHelper.IsValidEmail(txtEmail.Text))
                 {
                     lblEmailError.Text = ResourceHelper.GetResoureValue("EmailValidationErrorMsg");
+                    lblEmailError.Visible = true;
+                    _bError = true;
+                }
+                else
+                    lblEmailError.Visible = false;
+            }
+
+            SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
+
+            if (!sitePrefCache.AttributeValuesLoaded)
+                sitePrefCache.LoadAttributeValues();
+
+            if (sitePrefCache.GetAttributeValue<bool>("DuplicateOrderCheck", true))
+            {
+                if (DuplicateOrderDAL.IsDuplicateOrder(txtEmail.Text))
+                {
+                    lblEmailError.Text = ResourceHelper.GetResoureValue("DuplicateEmailCheck") + "<br /><br />";
                     lblEmailError.Visible = true;
                     _bError = true;
                 }

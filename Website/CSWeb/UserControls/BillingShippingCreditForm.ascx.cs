@@ -17,6 +17,8 @@ using System.Web.Services;
 using System.Collections.Specialized;
 using System.Linq;
 using CSBusiness.OrderManagement;
+using CSBusiness.Preference;
+using CSWebBase;
 
 namespace CSWeb.UserControls
 {
@@ -436,6 +438,24 @@ namespace CSWeb.UserControls
                 else
                     lblEmailError.Visible = false;
             }
+
+            SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
+
+            if (!sitePrefCache.AttributeValuesLoaded)
+                sitePrefCache.LoadAttributeValues();
+
+            if (sitePrefCache.GetAttributeValue<bool>("DuplicateOrderCheck", true))
+            {
+                if (DuplicateOrderDAL.IsDuplicateOrder(txtEmail.Text))
+                {
+                    lblEmailError.Text = ResourceHelper.GetResoureValue("DuplicateEmailCheck") + "<br /><br />";
+                    lblEmailError.Visible = true;
+                    _bError = true;
+                }
+                else
+                    lblEmailError.Visible = false;
+            }
+
             //if (pnlQuantity.Visible)
             //{
             //    if (ddlQuantityList.SelectedValue.Equals("select"))
