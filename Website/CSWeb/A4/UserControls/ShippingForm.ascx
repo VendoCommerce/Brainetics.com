@@ -6,7 +6,7 @@
             <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
             Country*</label>
-        <asp:DropDownList ID="ddlCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID" TabIndex="8"
+        <asp:DropDownList ID="ddlCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
             AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged" CssClass="text-1">
         </asp:DropDownList><div class="clear"></div>
         <div class="helper" style="display: none">A $20 Shipping Fee Applies</div>
@@ -19,7 +19,7 @@
         </div>
         <label class="label-1">
             First Name*</label>
-        <asp:TextBox ID="txtFirstName" runat="server" MaxLength="14" CssClass="text-1" TabIndex="1"></asp:TextBox>
+        <asp:TextBox ID="txtFirstName" runat="server" MaxLength="14" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
@@ -28,7 +28,7 @@
         </div>
         <label class="label-1">
             Last Name*</label>
-        <asp:TextBox ID="txtLastName" runat="server" MaxLength="14" CssClass="text-1" TabIndex="2"></asp:TextBox>
+        <asp:TextBox ID="txtLastName" runat="server" MaxLength="14" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
@@ -36,14 +36,14 @@
             <asp:Label ID="lblAddress1Error" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
             Address*</label>
-        <asp:TextBox ID="txtAddress1" runat="server" MaxLength="30" CssClass="text-1" TabIndex="3"></asp:TextBox>
+        <asp:TextBox ID="txtAddress1" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix" runat="server" visible="false">
         <div class="error-1">
         </div>
         <label class="label-1">
         	Address 2</label>
-        <asp:TextBox ID="txtAddress2" runat="server" MaxLength="30" CssClass="text-1" TabIndex="5"></asp:TextBox>
+        <asp:TextBox ID="txtAddress2" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
@@ -51,14 +51,14 @@
             <asp:Label ID="lblCityError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
             City*</label>
-        <asp:TextBox ID="txtCity" runat="server" MaxLength="30" CssClass="text-1" TabIndex="6"></asp:TextBox>
+        <asp:TextBox ID="txtCity" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
             <asp:Label ID="lblStateError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
             State*</label>
-        <asp:DropDownList ID="ddlState" runat="server" DataTextField="NAME" CssClass="text-1" TabIndex="7">
+        <asp:DropDownList ID="ddlState" runat="server" DataTextField="NAME" CssClass="text-1">
         </asp:DropDownList>
     </div>
 
@@ -68,7 +68,7 @@
             <asp:Label ID="lblZiPError" runat="server" ForeColor="Red" Visible="false"></asp:Label></div>
         <label class="label-1">
             ZIP Code*</label>
-        <asp:TextBox ID="txtZipCode" runat="server" MaxLength="7" CssClass="text-1" TabIndex="9"></asp:TextBox>
+        <asp:TextBox ID="txtZipCode" runat="server" MaxLength="7" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">            
@@ -76,7 +76,7 @@
             <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
             Phone*</label>
-        <asp:TextBox ID="txtPhone" runat="server" MaxLength="10" CssClass="text-1" TabIndex="10"></asp:TextBox>
+        <asp:TextBox ID="txtPhone" runat="server" MaxLength="10" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
@@ -86,7 +86,7 @@
             <asp:Label ID="lblEmailError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
             Email Address*</label>
-        <asp:TextBox ID="txtEmail" runat="server" MaxLength="30" CssClass="text-1" TabIndex="13"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix" style="display: none">
         <div class="error-1">
@@ -106,7 +106,7 @@
    
   
     <div class="form_line_btn">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A4/tryitnow_btn.png" TabIndex="14" OnClick="imgBtn_OnClick" />
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A4/tryitnow_btn.png" OnClick="imgBtn_OnClick" />
    </div>
      <div class="form_line_guarantee">
         <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a>
