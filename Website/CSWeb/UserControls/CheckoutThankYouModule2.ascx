@@ -168,7 +168,7 @@
 
 				<section class="order-info">
 					
-					<p class="people-contact">If you have questions about this order, please email <a href="mailto:brainetics@customerstatus.com" target="_blank">brainetics@customerstatus.com</a> or call us at <span>877-444-3776</span> <br>Please note that your order may not appear in our customer service system for another 24-48 hours.</p>
+					<p class="people-contact">If you have questions about this order, please email <a href="mailto:brainetics@datapakservices.com" target="_blank">brainetics@datapakservices.com</a> or call us at <span>877-444-3776</span> <br>Please note that your order may not appear in our customer service system for another 24-48 hours.</p>
 					
 					
 				</section>

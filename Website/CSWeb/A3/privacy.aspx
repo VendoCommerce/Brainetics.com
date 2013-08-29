@@ -49,7 +49,7 @@
   <p>Consumers can have this information corrected by sending us e-mail at 
     the above address.</p>
   <p>With respect to security: We have appropriate security measures in place in our physical facilities to protect against the loss, misuse or alteration of information that we have collected from you at our site.</p>
-  <p>We can be reached via e-mail at <a href="mailto:brainetics@customerstatus.com">web support</a>.</p>
+  <p>We can be reached via e-mail at <a href="mailto:brainetics@datapakservices.com">web support</a>.</p>
   <p>If you feel that this site is not following its stated information policy, you may contact us at the above addresses or phone number.</p>
   <p><strong>Changes</strong><br>
     This Privacy Policy may be changed at any time. Visitors should check the Privacy Policy each time they visit the Website. Use of the Website constitutes acceptance of the Privacy Policy and changes. The last update was made on April 15, 2010.</p>
