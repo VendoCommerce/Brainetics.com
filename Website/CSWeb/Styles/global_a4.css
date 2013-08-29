@@ -141,7 +141,7 @@ body {
 }
 
 .norton_ssl {
-	display: inline-block; 
+	float: right;
 	margin-left: 15px;
 	height: 51px;
 	overflow: hidden;
