@@ -206,10 +206,10 @@ namespace CSWeb.A2.UserControls
             ClientCartContext cartContext = ((CSWebBase.SiteBasePage)Page).ClientOrderData;
 
             Sku currentSku = cartContext.CartInfo.CartItems.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
-            
-            int quantity = Convert.ToInt32(txtQuantity.Text);
 
-            if (quantity < 1 || quantity > 99)
+            int quantity = currentSku.Quantity;
+
+            if (!int.TryParse(txtQuantity.Text, out quantity) || (quantity < 1 || quantity > 99))
             {
                 txtQuantity.Text = Convert.ToString(currentSku.Quantity);
                 return;

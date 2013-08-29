@@ -207,13 +207,13 @@ namespace CSWeb.A3.UserControls
 
             Sku currentSku = cartContext.CartInfo.CartItems.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
 
-            int quantity = Convert.ToInt32(txtQuantity.Text);
+            int quantity = currentSku.Quantity;
 
-            if (quantity < 1 || quantity > 99)
+            if (!int.TryParse(txtQuantity.Text, out quantity) || (quantity < 1 || quantity > 99))
             {
                 txtQuantity.Text = Convert.ToString(currentSku.Quantity);
                 return;
-            }
+            } 
 
             cartContext.CartInfo.AddOrUpdate(currentSku.SkuId, quantity, true, false, false);
 

@@ -13,6 +13,15 @@ namespace CSWeb.A3.UserControls {
     public partial class BillingCreditForm {
         
         /// <summary>
+        /// LoaderOverlay1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CSWeb.A2.UserControls.LoaderOverlay LoaderOverlay1;
+        
+        /// <summary>
         /// ShoppingCartControl1 control.
         /// </summary>
         /// <remarks>

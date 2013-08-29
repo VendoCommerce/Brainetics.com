@@ -2,6 +2,9 @@
     Inherits="CSWeb.A5.UserControls.BillingCreditForm" %>
 <%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl"
     TagPrefix="uc" %>
+<%@ Register TagPrefix="uc" TagName="LoaderOverlay" Src="LoaderOverlay.ascx" %>
+        
+<uc:LoaderOverlay runat="server" />
         
 <div class="cart_content_B clearfix">
     <div class="cart_left">
@@ -197,7 +200,7 @@
             </div>
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/tryitnow_btn.png"
-                    CssClass="form_line_center" OnClick="imgBtn_OnClick" />
+                    CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
             </div>
             <div class="form_line_guarantee"><a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a></div>
                      <div class="form_line_guarantee">

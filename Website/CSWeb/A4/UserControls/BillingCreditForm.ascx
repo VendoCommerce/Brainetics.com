@@ -2,6 +2,9 @@
     Inherits="CSWeb.A4.UserControls.BillingCreditForm" %>
 <%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl"
     TagPrefix="uc" %>
+<%@ Register TagPrefix="uc" TagName="LoaderOverlay" Src="LoaderOverlay.ascx" %>
+        
+<uc:LoaderOverlay runat="server" />
         
 <div class="cart_content_B clearfix">
     <div class="cart_left">
@@ -33,7 +36,7 @@
       <div class="error-1"> <asp:RegularExpressionValidator ID="revQuantity" runat="server" ControlToValidate="txtQuantity"
                 Display="Dynamic" ValidationExpression="^[1-9]{1,1}[0-9]{0,1}$" ValidationGroup="QuantityUpdate" ErrorMessage="Please enter a valid quantity." /></div>
    <label class="label-1" style="width: 70px">Quantity: </label>
-            <asp:TextBox ID="txtQuantity" runat="server" MaxLength="3" CssClass="text-4" />
+            <asp:TextBox ID="txtQuantity" runat="server" MaxLength="2" CssClass="text-4" />
   <asp:LinkButton ID="lbUpdate" runat="server" OnClick="lbUpdate_Click" CausesValidation="true" ValidationGroup="QuantityUpdate" CssClass="update_btn">Update</asp:LinkButton>
            </div>
             
@@ -195,7 +198,7 @@
             </div>
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A4/tryitnow_btn.png"
-                    CssClass="form_line_center" OnClick="imgBtn_OnClick" />
+                    CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
             </div>
             <div class="form_line_guarantee"><a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a></div>
                      <div class="form_line_guarantee">
