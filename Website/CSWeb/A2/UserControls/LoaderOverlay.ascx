@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LoaderOverlay.ascx.cs" Inherits="CSWeb.A3.UserControls.LoaderOverlay" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LoaderOverlay.ascx.cs" Inherits="CSWeb.A2.UserControls.LoaderOverlay" %>
 
 <script type="text/javascript">
 

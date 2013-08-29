@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSWeb.A3.UserControls {
+namespace CSWeb.A2.UserControls {
     
     
     public partial class LoaderOverlay {
