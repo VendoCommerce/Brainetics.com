@@ -148,6 +148,78 @@ namespace CSWeb.A3.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtEmailConfirm;
         
         /// <summary>
+        /// lblSchoolNameError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSchoolNameError;
+        
+        /// <summary>
+        /// txtSchoolName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSchoolName;
+        
+        /// <summary>
+        /// lblCityError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCityError;
+        
+        /// <summary>
+        /// txtCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCity;
+        
+        /// <summary>
+        /// lblStateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStateError;
+        
+        /// <summary>
+        /// txtState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtState;
+        
+        /// <summary>
+        /// lblPhoneNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPhoneNumberError;
+        
+        /// <summary>
+        /// txtPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
+        
+        /// <summary>
         /// rfvSubject control.
         /// </summary>
         /// <remarks>

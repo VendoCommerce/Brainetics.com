@@ -785,7 +785,8 @@ namespace CSWeb
             return OrderFlowCompleted;
         }
 
-        public static bool SendWriteToMikeEmail(string firstName, string lastName, string email, string subject, string message)
+        public static bool SendWriteToMikeEmail(string firstName, string lastName, string email, string subject, string message, string schoolName,
+            string city, string state, string phoneNumber)
         {
             //pull Specific Email Template            
             EmailSetting emailTemplate = EmailManager.GetEmail(4);
@@ -799,6 +800,10 @@ namespace CSWeb
                     BodyTemplate = BodyTemplate.Replace("{FIRST_NAME}", firstName);
                     BodyTemplate = BodyTemplate.Replace("{LAST_NAME}", lastName);
                     BodyTemplate = BodyTemplate.Replace("{EMAIL}", email);
+                    BodyTemplate = BodyTemplate.Replace("{SCHOOL_NAME}", schoolName);
+                    BodyTemplate = BodyTemplate.Replace("{CITY}", city);
+                    BodyTemplate = BodyTemplate.Replace("{STATE}", state);
+                    BodyTemplate = BodyTemplate.Replace("{PHONE_NUMBER}", phoneNumber);
                     BodyTemplate = BodyTemplate.Replace("{SUBJECT}", subject);
                     BodyTemplate = BodyTemplate.Replace("{MESSAGE}", message);
 
@@ -806,7 +811,7 @@ namespace CSWeb
                     MailMessage _oMailMessage = new MailMessage(emailTemplate.FromAddress, emailTemplate.ToAddress, emailTemplate.Subject, BodyTemplate);
                     _oMailMessage.IsBodyHtml = true;
                     SendMail(_oMailMessage);
-                                        
+
                     return true;
                 }
                 catch (Exception ex)

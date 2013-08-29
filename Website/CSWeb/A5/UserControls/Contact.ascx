@@ -44,6 +44,38 @@
     <div class="clear" style="height: 17px;">
     </div>
     <div class="input_wrap">
+        <span class="error-1">            
+            <asp:Label ID="lblSchoolNameError" runat="server" Visible="false"></asp:Label>
+        </span>
+        <asp:TextBox ID="txtSchoolName" runat="server" MaxLength="100" CssClass="input_1" placeholder="SCHOOL NAME"></asp:TextBox>
+    </div>
+    <div class="input_wrap">
+        <span class="error-1">
+            <asp:Label ID="lblCityError" runat="server" Visible="false"></asp:Label>
+        </span>
+        <asp:TextBox ID="txtCity" runat="server" MaxLength="100" CssClass="input_1" placeholder="CITY"></asp:TextBox>
+    </div>
+
+    <div class="clear" style="height: 17px;">
+    </div>
+
+    <div class="input_wrap">
+        <span class="error-1">            
+            <asp:Label ID="lblStateError" runat="server" Visible="false"></asp:Label>
+        </span>
+        <asp:TextBox ID="txtState" runat="server" MaxLength="50" CssClass="input_1" placeholder="STATE"></asp:TextBox>
+    </div>
+
+    <div class="input_wrap">
+        <span class="error-1">            
+            <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label>
+        </span>
+        <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="20" CssClass="input_1" placeholder="PHONE NUMBER"></asp:TextBox>
+    </div>
+
+    <div class="clear" style="height: 17px;">
+    </div>
+    <div class="input_wrap">
         <span class="error-1">
             <asp:RequiredFieldValidator ID="rfvSubject" runat="server" Display="Dynamic" ControlToValidate="txtSubject" ErrorMessage="Please enter a subject"></asp:RequiredFieldValidator>
             <asp:Label ID="lblSubject" runat="server" Visible="false"></asp:Label>

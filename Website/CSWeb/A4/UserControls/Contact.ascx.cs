@@ -75,14 +75,14 @@ namespace CSWeb.A4.UserControls
             {
                 try
                 {
-                    CSWebBase.DAL.InsertContactMike(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtSubject.Text, txtMessage.Text);
+                    CSWebBase.DAL.InsertContactMike(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtSubject.Text, txtMessage.Text, txtSchoolName.Text, txtCity.Text, txtState.Text, txtPhoneNumber.Text);
                 }
                 catch (Exception ex)
                 {
                     CSCore.CSLogger.Instance.LogException("Error trying to save contact email", ex);
                 }
 
-                if (OrderHelper.SendWriteToMikeEmail(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtSubject.Text, txtMessage.Text))
+                if (OrderHelper.SendWriteToMikeEmail(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtSubject.Text, txtMessage.Text, txtSchoolName.Text, txtCity.Text, txtState.Text, txtPhoneNumber.Text))
                 {
                     lblStatus.Text = string.Empty;
                     Response.Redirect("send_email.aspx?success=1", true);
