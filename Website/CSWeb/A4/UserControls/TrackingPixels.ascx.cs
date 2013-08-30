@@ -200,7 +200,7 @@ namespace CSWeb.A4.UserControls
 
         public string GetVersionName()
         {
-            return CSFactory.GetAllVersion().First(x => { return x.VersionId == CartContext.VersionId; }).Title.Trim().ToUpper();
+            return versionName;
         }
 
     }
