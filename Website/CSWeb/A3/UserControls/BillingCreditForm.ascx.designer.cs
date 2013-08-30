@@ -19,7 +19,7 @@ namespace CSWeb.A3.UserControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CSWeb.A2.UserControls.LoaderOverlay LoaderOverlay1;
+        protected global::CSWeb.A3.UserControls.LoaderOverlay LoaderOverlay1;
         
         /// <summary>
         /// ShoppingCartControl1 control.
