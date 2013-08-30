@@ -70,6 +70,7 @@ namespace CSWebBase
                 case SkuEnum.ChallengeGameMultiPay:
                 case SkuEnum.QuickCardSet:
                 case SkuEnum.ChallengeGameSinglePay:
+                case SkuEnum.OnlineLanguageBundle:
                     return true;
             }
 
@@ -120,6 +121,9 @@ namespace CSWebBase
 
                 if (AddIfDoesNotExist(cart, SkuEnum.QuickCardSet, sku.Quantity))
                     updated = true;
+
+                if (AddIfDoesNotExist(cart, SkuEnum.OnlineLanguageBundle, sku.Quantity))
+                    updated = true;
             }
 
             // Enhanced One Pay
@@ -144,6 +148,9 @@ namespace CSWebBase
                     updated = true;
 
                 if (AddIfDoesNotExist(cart, SkuEnum.QuickCardSet, sku.Quantity))
+                    updated = true;
+
+                if (AddIfDoesNotExist(cart, SkuEnum.OnlineLanguageBundle, sku.Quantity))
                     updated = true;
             }
 

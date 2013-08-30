@@ -27,8 +27,6 @@
                                 <img src="<%# DataBinder.Eval(Container.DataItem, "ImagePath")%>" />
                             </td>
                              <td valign="top">
-                            
-
                                 <%# DataBinder.Eval(Container.DataItem, "LongDescription")%>
                             </td>
                             <td valign="top" class="black bold text-center">

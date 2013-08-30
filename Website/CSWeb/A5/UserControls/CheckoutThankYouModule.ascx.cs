@@ -60,7 +60,23 @@ protected Label lblPurchaseName, lblPromotionPrice;
             {
                 Order orderData = CSWebBase.CustomOrderManager.GetOrderDetails(orderId);
 
-                List<Sku> skus = orderData.SkuItems;
+                List<Sku> skus = orderData.SkuItems.FindAll(x => !CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId));
+
+                foreach (Sku sku in skus)
+                {
+                    if (CSWebBase.SiteBasePage.IsMainSku(sku.SkuId))
+                    {
+                        decimal totalPrice = 0;
+
+                        // add up all initial prices of all kit bundle items
+                        foreach (Sku bundleSku in orderData.SkuItems.FindAll(x => CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)))
+                        {
+                            totalPrice += bundleSku.TotalPrice;
+                        }
+
+                        sku.TotalPrice = totalPrice;
+                    }
+                }
 
                 skus.Sort(new CSWebBase.SkuSortComparer());
 
