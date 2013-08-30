@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using CSBusiness.Web;
 using CSBusiness;
+using CSBusiness.Attributes;
 
 namespace CSWebBase
 {
@@ -58,6 +59,20 @@ namespace CSWebBase
             }
 
             base.Page_Load(sender, e);
+        }
+
+        protected override ClientCartContext GetSiteInitializedCart(ClientCartContext cart)
+        {
+            try
+            {
+                cart.OrderAttributeValues.AddOrUpdateAttributeValue("UserAgent", new AttributeValue(Request.UserAgent));
+                cart.OrderAttributeValues.AddOrUpdateAttributeValue("SessionId", new AttributeValue(Session.SessionID));                
+            }
+            catch
+            {
+            }
+
+            return cart;
         }
 
         public static bool IsMainSku(int skuId)
