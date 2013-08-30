@@ -41,8 +41,22 @@ namespace CSWebBase
             }
         }
 
+        public virtual bool EnableEmptySessionRedirect
+        {
+            get
+            {
+                return false;
+            }
+        }
+
         protected override void Page_Load(object sender, EventArgs e)
         {
+            if (EnableEmptySessionRedirect)
+            {
+                if (ClientOrderData == null && string.IsNullOrEmpty(Request.QueryString["empsess"]))
+                    Response.Redirect("index.aspx?empsess=true", true);
+            }
+
             base.Page_Load(sender, e);
         }
 
