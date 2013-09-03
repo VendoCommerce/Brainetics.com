@@ -5,6 +5,7 @@ using System.Text;
 using CSBusiness.Web;
 using CSBusiness;
 using CSBusiness.Attributes;
+using System.Web;
 
 namespace CSWebBase
 {
@@ -74,8 +75,8 @@ namespace CSWebBase
         {
             if (EnableEmptySessionRedirect)
             {
-                if (ClientOrderData == null && string.IsNullOrEmpty(Request.QueryString["empsess"]))
-                    Response.Redirect("index.aspx?empsess=true", true);
+                if (ClientOrderData == null && string.IsNullOrEmpty(Request.QueryString["emppage"]))
+                    Response.Redirect("CheckoutSessionExpired.aspx?emppage=" + HttpUtility.UrlEncode(Request.Url.LocalPath), true);
             }
 
             base.Page_Load(sender, e);
