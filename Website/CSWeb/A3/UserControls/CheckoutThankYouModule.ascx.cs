@@ -66,7 +66,7 @@ protected Label lblPurchaseName, lblPromotionPrice;
                 {
                     if (CSWebBase.SiteBasePage.IsMainSku(sku.SkuId))
                     {
-                        decimal totalPrice = 0;
+                        decimal totalPrice = sku.TotalPrice;
 
                         // add up all initial prices of all kit bundle items
                         foreach (Sku bundleSku in orderData.SkuItems.FindAll(x => CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)))
