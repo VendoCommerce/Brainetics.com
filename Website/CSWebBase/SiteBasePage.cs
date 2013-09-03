@@ -30,6 +30,8 @@ namespace CSWebBase
             ShippingSurcharge = 58
         }
 
+        #region Properties
+
         public int MainSkuAdd
         {
             get
@@ -50,6 +52,24 @@ namespace CSWebBase
             }
         }
 
+        protected int SessionExpireRedirectSeconds
+        {
+            get
+            {
+                return 4;
+            }
+        }
+
+        protected string LinkFromSessExpPage
+        {
+            get
+            {
+                return "index.aspx?sessexp=true";
+            }
+        }
+
+        #endregion
+
         protected override void Page_Load(object sender, EventArgs e)
         {
             if (EnableEmptySessionRedirect)
@@ -59,6 +79,13 @@ namespace CSWebBase
             }
 
             base.Page_Load(sender, e);
+        }
+
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+
+
         }
 
         protected override ClientCartContext GetSiteInitializedCart(ClientCartContext cart)

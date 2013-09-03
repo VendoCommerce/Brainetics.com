@@ -74,7 +74,7 @@ namespace CSWeb.A5.Store
                     }
                     catch (Exception ex)
                     {
-                        CSCore.CSLogger.Instance.LogException("AuthorizeOrder - auth error", ex);
+                        CSCore.CSLogger.Instance.LogException("AuthorizeOrder - auth error - orderid: " + Convert.ToString(orderId), ex);
 
                         throw;
                     }
@@ -95,7 +95,7 @@ namespace CSWeb.A5.Store
                         }
                         catch (Exception ex)
                         {
-                            CSCore.CSLogger.Instance.LogException("AuthorizeOrder - fulfillment post error", ex);
+                            CSCore.CSLogger.Instance.LogException("AuthorizeOrder - fulfillment post error - orderid: " + Convert.ToString(orderId), ex);
 
                             throw;
                         }

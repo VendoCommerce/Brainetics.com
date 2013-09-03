@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="A2\bottomcta.html" />
+    <Content Include="A2\CheckoutSessionExpired.aspx" />
     <Content Include="A2\contact.aspx" />
     <Content Include="A2\faq.aspx" />
     <Content Include="A2\footer.html" />
@@ -141,17 +142,20 @@
     <Content Include="A2\upsells.aspx" />
     <Content Include="A2\UserControls\Contact.ascx" />
     <Content Include="A2\UserControls\LoaderOverlay.ascx" />
+    <Content Include="A3\CheckoutSessionExpired.aspx" />
     <Content Include="A3\footer_receipt.html" />
     <Content Include="A3\send_email.aspx" />
     <Content Include="A3\UserControls\Contact.ascx" />
     <Content Include="A3\UserControls\LoaderOverlay.ascx" />
     <Content Include="A3\video_2020.html" />
+    <Content Include="A4\CheckoutSessionExpired.aspx" />
     <Content Include="A4\footer_receipt.html" />
     <Content Include="A4\header_main.html" />
     <Content Include="A4\send_email.aspx" />
     <Content Include="A4\UserControls\Contact.ascx" />
     <Content Include="A4\UserControls\LoaderOverlay.ascx" />
     <Content Include="A5\aboutmike.aspx" />
+    <Content Include="A5\CheckoutSessionExpired.aspx" />
     <Content Include="A5\footer_receipt.html" />
     <Content Include="A5\header_main.html" />
     <Content Include="A5\send_email.aspx" />
@@ -1037,6 +1041,13 @@
     <None Include="Styles\fontawesome\scss\_variables.scss" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A2\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A2\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
     <Compile Include="A2\receipt.aspx.cs">
       <DependentUpon>receipt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1072,6 +1083,13 @@
     <Compile Include="A2\UserControls\LoaderOverlay.ascx.designer.cs">
       <DependentUpon>LoaderOverlay.ascx</DependentUpon>
     </Compile>
+    <Compile Include="A3\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A3\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
     <Compile Include="A3\send_email.aspx.cs">
       <DependentUpon>send_email.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1093,6 +1111,13 @@
     <Compile Include="A3\UserControls\LoaderOverlay.ascx.designer.cs">
       <DependentUpon>LoaderOverlay.ascx</DependentUpon>
     </Compile>
+    <Compile Include="A4\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A4\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
     <Compile Include="A4\send_email.aspx.cs">
       <DependentUpon>send_email.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1113,6 +1138,13 @@
     </Compile>
     <Compile Include="A4\UserControls\LoaderOverlay.ascx.designer.cs">
       <DependentUpon>LoaderOverlay.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="A5\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="A5\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
     </Compile>
     <Compile Include="A5\send_email.aspx.cs">
       <DependentUpon>send_email.aspx</DependentUpon>
