@@ -293,7 +293,7 @@ namespace CSWeb.FulfillmentHouse
 
                             if (numOfPayment > 0 && i <= numOfPayment)
                             {
-                                skuPmt = (sku.FullPrice - sku.InitialPrice) / numOfPayment; // this assumes regualr payments are evenly spread out
+                                skuPmt = ((sku.FullPrice - sku.InitialPrice) / numOfPayment) * sku.Quantity; // this assumes regualr payments are evenly spread out
                             }
 
                             paymentAmt += skuPmt;
