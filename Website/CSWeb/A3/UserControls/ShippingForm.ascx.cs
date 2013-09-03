@@ -310,6 +310,10 @@ namespace CSWeb.A3.UserControls
                 //Set the Client Order objects
                 //Set the Client Order objects
                 ClientCartContext contextData = (ClientCartContext)Session["ClientOrderData"];
+
+                if (contextData == null) // indicates session timeout
+                    Response.Redirect("CheckoutSessionExpired.aspx?page=index.aspx", true);
+
                 contextData.CustomerInfo = CustData;
                 contextData.CartAbandonmentId = CSResolve.Resolve<ICustomerService>().InsertCartAbandonment(CustData, contextData);
                 Session["ClientOrderData"] = contextData;
