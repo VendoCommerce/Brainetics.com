@@ -270,7 +270,7 @@ namespace CSWeb.FulfillmentHouse
                     // write out the initial payment
                     xml.WriteStartElement("Payment");
                         xml.WriteAttributeString("number", "1");
-                        xml.WriteValue(orderItem.Total.ToString("n2"));
+                        xml.WriteValue(GetMoneyStr(orderItem.Total));
                     xml.WriteEndElement();
                     xml.WriteWhitespace("\n");
 
@@ -302,7 +302,7 @@ namespace CSWeb.FulfillmentHouse
                         xml.WriteStartElement("Payment");
                         xml.WriteAttributeString("number", (i + 1).ToString());
 
-                        xml.WriteValue(paymentAmt.ToString("n2"));
+                        xml.WriteValue(GetMoneyStr(paymentAmt));
 
                         xml.WriteEndElement();
                         xml.WriteWhitespace("\n");
@@ -324,20 +324,20 @@ namespace CSWeb.FulfillmentHouse
                     }
 
                     // Order Costs
-                    xml.WriteElementString("MerchandiseTotal", orderItem.FullPriceSubTotal.ToString("n2"));
+                    xml.WriteElementString("MerchandiseTotal", GetMoneyStr(orderItem.FullPriceSubTotal));
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("ShippingCharge", (orderItem.ShippingCost - rushShippingCharge).ToString("n2"));
+                    xml.WriteElementString("ShippingCharge", GetMoneyStr(orderItem.ShippingCost - rushShippingCharge));
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("RushCharge", rushShippingCharge.ToString("n2"));
+                    xml.WriteElementString("RushCharge", GetMoneyStr(rushShippingCharge));
                     xml.WriteWhitespace("\n");
                     xml.WriteElementString("PriorityHandling", "0.00");
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("SalesTax", orderItem.FullPriceTax.ToString("n2"));
+                    xml.WriteElementString("SalesTax", GetMoneyStr(orderItem.FullPriceTax));
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("OrderTotal", (orderItem.FullPriceSubTotal // (this amount excludes rush shipping and surcharge)
+                    xml.WriteElementString("OrderTotal", GetMoneyStr(orderItem.FullPriceSubTotal // (this amount excludes rush shipping and surcharge)
                         + orderItem.ShippingCost //+ surchargeAmt // surchargeAmt = surcharge amount
                         + orderItem.RushShippingCost //+ rushShippingCharge // rushShippingCharge = rush shipping charge
-                        + orderItem.FullPriceTax).ToString("n2"));
+                        + orderItem.FullPriceTax));
                     xml.WriteWhitespace("\n");
 
 
@@ -373,14 +373,14 @@ namespace CSWeb.FulfillmentHouse
                         xml.WriteWhitespace("\n");
 
                         if (trialSku == null)
-                            xml.WriteElementString("Price", Item.FullPrice.ToString("n2"));
+                            xml.WriteElementString("Price", GetMoneyStr(Item.FullPrice));
                         else
                         {
                             if (Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.EnhancedMultiPay || 
                                 Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.AcceleratedMultiPay)
-                                xml.WriteElementString("Price", (Item.FullPrice + trialSku.FullPrice).ToString("n2"));
+                                xml.WriteElementString("Price", GetMoneyStr(Item.FullPrice + trialSku.FullPrice));
                             else
-                                xml.WriteElementString("Price", Item.FullPrice.ToString("n2"));
+                                xml.WriteElementString("Price", GetMoneyStr(Item.FullPrice));
                         }
                         
                         xml.WriteWhitespace("\n");
@@ -419,6 +419,11 @@ namespace CSWeb.FulfillmentHouse
                 }
             }
             return strXml;
+        }
+
+        public static string GetMoneyStr(decimal amount)
+        {
+            return Math.Round(amount, 2).ToString();
         }
 
         public static string UpdateCreditCardType(string cardtype)
