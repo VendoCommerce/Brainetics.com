@@ -823,6 +823,37 @@ namespace CSWeb
 
             return true;
         }
+
+        public static bool SendWriteToMikeEmailConfirm(string customerEmail, string firstName)
+        {
+            //pull Specific Email Template            
+            EmailSetting emailTemplate = EmailManager.GetEmail(5);
+
+            if (emailTemplate.Body != null)
+            {
+                try
+                {
+                    String BodyTemplate = emailTemplate.Body.Replace("&", "&amp;");
+
+                    BodyTemplate = BodyTemplate.Replace("{FIRST_NAME}", firstName);
+                    
+                    //Prepare Mail Message
+                    MailMessage _oMailMessage = new MailMessage(emailTemplate.FromAddress, customerEmail, emailTemplate.Subject, BodyTemplate);
+                    _oMailMessage.IsBodyHtml = true;
+                    SendMail(_oMailMessage);
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    CSCore.CSLogger.Instance.LogException("Error sending email at SendWriteToMikeEmailConfirm() method", ex);
+
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
  

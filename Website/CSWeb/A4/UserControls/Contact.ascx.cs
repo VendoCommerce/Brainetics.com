@@ -84,6 +84,8 @@ namespace CSWeb.A4.UserControls
 
                 if (OrderHelper.SendWriteToMikeEmail(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtSubject.Text, txtMessage.Text, txtSchoolName.Text, txtCity.Text, txtState.Text, txtPhoneNumber.Text))
                 {
+                    OrderHelper.SendWriteToMikeEmailConfirm(txtEmail.Text, txtFirstName.Text);
+
                     lblStatus.Text = string.Empty;
                     Response.Redirect("send_email.aspx?success=1", true);
                 }
