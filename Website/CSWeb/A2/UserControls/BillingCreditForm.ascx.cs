@@ -14,6 +14,7 @@ using CSCore.DataHelper;
 using CSBusiness.ShoppingManagement;
 using System.Web;
 using System.Linq;
+using CSBusiness.Attributes;
 
 namespace CSWeb.A2.UserControls
 {
@@ -183,7 +184,12 @@ namespace CSWeb.A2.UserControls
         {
             List<Sku> skus = ((CSWebBase.SiteBasePage)Page).ClientOrderData.CartInfo.CartItems;
 
-            txtQuantity.Text = skus.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); }).Quantity.ToString();
+            Sku currentSku = skus.FirstOrDefault(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
+
+            if (currentSku == null)
+                Response.Redirect("index.aspx?empcart=true", true);
+
+            txtQuantity.Text = currentSku.Quantity.ToString();
 
             ClientCartContext clientData = ((CSWebBase.SiteBasePage)Page).ClientOrderData;
 
@@ -592,8 +598,8 @@ namespace CSWeb.A2.UserControls
             //clientData.OrderAttributeValues.Add("ref_url", new CSBusiness.Attributes.AttributeValue("http://www.google.com"));
 
             if (clientData.OrderAttributeValues == null)
-                clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
-            clientData.OrderAttributeValues.Add("CustomOrderId", new CSBusiness.Attributes.AttributeValue("CS" + CommonHelper.GetRandonOrderNumber(DateTime.Now)));
+                clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();            
+            clientData.OrderAttributeValues.AddOrUpdateAttributeValue("CustomOrderId", new CSBusiness.Attributes.AttributeValue("CS" + CommonHelper.GetRandonOrderNumber(DateTime.Now)));
             //Recapture billing information if the user modified the information
 
             if (rId == 0)
