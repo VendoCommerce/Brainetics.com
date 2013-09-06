@@ -585,6 +585,7 @@
     <Content Include="Content\Images\li_dot_gray_sm2.png" />
     <Content Include="Content\Images\loading-gif-animation.gif" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\mask_bg.png" />
     <Content Include="Content\Images\medal-3.jpg" />
     <Content Include="Content\Images\medal-phone.jpg" />
     <Content Include="Content\Images\product-11.jpg" />

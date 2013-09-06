@@ -32,16 +32,15 @@
 <div class="left">
 <h2>Contact Us</h2>
   <p>We are committed to providing the best products and friendliest customer service. If you should have any questions about ordering or about any of our great products, please feel free to contact us via the information provided below:</p>
-  <p>You can also check your order status 24 hours a day at <a href="http://www.customerstatus.com" target="_blank">www.customerstatus.com</a>.</p>
   <p><strong>Send checks or money orders to:</strong><br>
     Brainetics<br>
-    P.O. Box 3062<br>
-    Wallingford, CT 06494<br>
+    PO Box 48<br>
+    Howell, MI 48844<br>
     Phone: 877-444-3776</p>
   <p>Customer service is available Monday through Friday from 8:00am to 10:00pm Eastern Time. If you have any questions regarding your order that can not be answered by going to www.customerstatus.com, please feel free to email us <a href="mailto:brainetics@datapakservices.com">brainetics@datapakservices.com</a>.</p>
   <p>Please allow 24-48 hours for customer service to have information on your order.<br>
     Your Credit Card will not be charged until your order ships.</p>
-  <p>For all customers looking to return, please visit <a href="http://www.customerstatus.com" target="_blank">www.customerstatus.com</a>. For your convenience, please have your order information handy.</p>
+  <p>For your convenience, please have your order information handy.</p>
 </div>
 <div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
