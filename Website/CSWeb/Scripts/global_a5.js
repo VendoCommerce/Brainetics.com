@@ -90,7 +90,7 @@ $(function() {
         wrapCSS: 'nowrapper',
         padding: 0,
         width: 777,
-        height: 487,
+        height: 547,
 		type: 'iframe',
         autoSize: false,
         closeClick: false,

@@ -796,6 +796,7 @@
     <Content Include="Scripts\global_a4.js" />
     <Content Include="Scripts\global_a5.js" />
     <Content Include="Scripts\jquery.cycle.all.js" />
+    <Content Include="Scripts\jquery.watermark.min.js" />
     <Content Include="Scripts\jwplayer\beelden.xml" />
     <Content Include="Scripts\jwplayer\bekle.xml" />
     <Content Include="Scripts\jwplayer\five.xml" />
@@ -843,7 +844,10 @@
     <Content Include="Scripts\jwplayer\stormtrooper.xml" />
     <Content Include="Scripts\jwplayer\vapor.xml" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr.custom.32854.js" />
+    <Content Include="Scripts\placeholder-shiv.jquery.js" />
     <Content Include="Scripts\placeholder.js" />
+    <Content Include="Scripts\placeholder2.js" />
     <Content Include="Scripts\qzy1qcz.js" />
     <Content Include="Scripts\snippet.js" />
     <Content Include="Scripts\s_code.js" />

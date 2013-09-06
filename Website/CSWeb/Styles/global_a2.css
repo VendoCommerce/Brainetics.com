@@ -1072,8 +1072,13 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 
 #write_to_mike {
 	width: 777px;
-	height: 487px;
+	height: 547px;
 	background: url(/content/images/write_to_mike.png) no-repeat 0 0;
+}
+
+#write_to_mike span.error-1 {
+	position: absolute;
+	top: -17px
 }
 
 #contact_form {
