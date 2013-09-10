@@ -808,7 +808,7 @@ namespace CSWeb
                     BodyTemplate = BodyTemplate.Replace("{MESSAGE}", message);
 
                     //Prepare Mail Message
-                    MailMessage _oMailMessage = new MailMessage(emailTemplate.FromAddress, emailTemplate.ToAddress, emailTemplate.Subject, BodyTemplate);
+                    MailMessage _oMailMessage = new MailMessage(email.Trim().ToLower(), emailTemplate.ToAddress, emailTemplate.Subject, BodyTemplate);
                     _oMailMessage.IsBodyHtml = true;
                     SendMail(_oMailMessage);
 
