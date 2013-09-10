@@ -43,6 +43,10 @@ namespace CSWeb.FulfillmentHouse
                 using (XmlTextWriter xml = new XmlTextWriter(str))
                 {
                     Order orderItem = new OrderManager().GetBatchProcessOrders(orderId);
+
+                    if (!orderItem.AttributeValuesLoaded)
+                        orderItem.LoadAttributeValues();
+
                     //root node
                     xml.WriteStartDocument();
                     xml.WriteWhitespace("\n");
@@ -118,6 +122,34 @@ namespace CSWeb.FulfillmentHouse
                     ShippingMethodEnum shippingMethod = ShippingMethodEnum.Ground;
 
                     decimal rushShippingCharge = GetRushShippingCost(orderItem.SkuItems, ref shippingMethod);
+
+                    // use USPS shipping method for PO box shipping address
+                    if (orderItem.GetAttributeValue("IsPOBoxShipping", false))
+                    {
+                        shippingMethod = ShippingMethodEnum.USPSPriority;
+
+                        // validation check (rush cost should be 0)
+                        if (rushShippingCharge != 0)
+                        {
+                            try
+                            {
+                                CSCore.CSLogger.Instance.LogException("Rush shipping validation error in DataPak", new Exception("custom error"));
+                            }
+                            catch
+                            {
+                            }
+
+                            try
+                            {
+                                OrderHelper.SendOrderFailedEmail(orderId);
+                            }
+                            catch
+                            {
+                            }
+
+                            return null;
+                        }
+                    }
 
                     if (orderItem.CustomerInfo.ShippingAddress.CountryId == 46) // Canada
                     {                        

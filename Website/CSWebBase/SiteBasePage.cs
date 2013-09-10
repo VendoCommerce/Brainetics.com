@@ -6,6 +6,9 @@ using CSBusiness.Web;
 using CSBusiness;
 using CSBusiness.Attributes;
 using System.Web;
+using CSBusiness.PostSale;
+using System.Text.RegularExpressions;
+using CSBusiness.Resolver;
 
 namespace CSWebBase
 {
@@ -144,6 +147,14 @@ namespace CSWebBase
             return sku.GetAttributeValue("ShippingSku", false);
         }
 
+        public static bool IsRushSku(Sku sku)
+        {
+            if (!sku.AttributeValuesLoaded)
+                sku.LoadAttributeValues();
+
+            return sku.GetAttributeValue("RushSku", false);
+        }
+
         public static bool AddAdditionalItems(CSBusiness.ShoppingManagement.Cart cart)
         {
             bool updated = false;
@@ -218,6 +229,26 @@ namespace CSWebBase
         {
             cart.AddOrUpdate((int)skuEnum, quantity, true, false, false);
             return true;            
+        }
+
+        public static bool IsPOBoxAddress(string address)
+        {
+            Regex regex = new Regex("^(\\s{0,}p\\.{0,}o\\.{0,}\\s{0,})?(box)\\s{1,}[0-9]{1,}\\s{0,}$", RegexOptions.IgnoreCase);
+
+            return regex.IsMatch(address.ToLower());
+        }
+
+        public static bool CanUseTemplate(Template template, ClientCartContext cartContext)
+        {
+            if (template.Items.FirstOrDefault(x => { return x.TypeId == TemplateItemTypeEnum.ListItems 
+                && IsRushSku(CSResolve.Resolve<ISkuService>().GetSkuByID(x.SkuId)); }) != null)
+            {
+                // Don't show template for PO box shipping address
+                return !IsPOBoxAddress(cartContext.CustomerInfo.ShippingAddress.Address1 + " " + cartContext.CustomerInfo.ShippingAddress.Address2)
+                    && template.CanUseTemplate(cartContext);
+            }
+            else
+                return template.CanUseTemplate(cartContext);
         }
     }
 }

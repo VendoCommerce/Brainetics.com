@@ -11,6 +11,7 @@ using System.Web;
 using CSBusiness.Resolver;
 using CSBusiness.Preference;
 using CSWebBase;
+using CSBusiness.Attributes;
 
 namespace CSWeb.A2.UserControls
 {
@@ -306,10 +307,18 @@ namespace CSWeb.A2.UserControls
                 CustData.Username = CommonHelper.fixquotesAccents(txtEmail.Text);
                 CustData.BillingAddress = billingAddress;
                 CustData.ShippingAddress = billingAddress;
-
+                
                 //Set the Client Order objects
                 //Set the Client Order objects
                 ClientCartContext contextData = (ClientCartContext)Session["ClientOrderData"];
+
+                if (SiteBasePage.IsPOBoxAddress(billingAddress.Address1 + " " + billingAddress.Address2))
+                {
+                    if (contextData.OrderAttributeValues == null)
+                        contextData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
+
+                    contextData.OrderAttributeValues.AddOrUpdateAttributeValue("IsPOBoxShipping", new AttributeValue(true));
+                }
 
                 if (contextData == null) // indicates session timeout
                     Response.Redirect("CheckoutSessionExpired.aspx?page=index.aspx", true);

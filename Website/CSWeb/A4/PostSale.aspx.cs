@@ -159,7 +159,7 @@ namespace CSWeb.A4.Store
                 {
                     Session["PostSaleLabelName"] = "";
                 }
-                if (currentTemplate.CanUseTemplate(CartContext))
+                if (CSWebBase.SiteBasePage.CanUseTemplate(currentTemplate, CartContext))
                 {
                     //decimal orderTotal = 0;
                     //decimal neworderTotal = 0;
