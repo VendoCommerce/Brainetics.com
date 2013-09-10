@@ -29,5 +29,49 @@ namespace CSWebBase
             BaseSqlHelper.ExecuteScalar(connectionString, ProcName, parameters.ToArray());
         }
 
+        public static string GetOrderPromo(int orderId)
+        {
+            string connectionString = ConfigHelper.GetDBConnection();
+            String ProcName = "pr_custom_get_order_promo";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            parameters.Add(new SqlParameter("OrderId", orderId));
+
+            using (SqlDataReader reader = BaseSqlHelper.ExecuteReader(connectionString, ProcName, parameters.ToArray()))
+            {
+                while (reader.Read())
+                {
+                    if (!Convert.IsDBNull(reader["DiscountCode"]))
+                        return Convert.ToString(reader["DiscountCode"]);
+                    
+                    break;
+                }
+            }
+
+            return null;
+        }
+
+        public static decimal GetDiscountAmount(int orderId)
+        {
+            string connectionString = ConfigHelper.GetDBConnection();
+            String ProcName = "pr_custom_get_discount_amount";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            parameters.Add(new SqlParameter("OrderId", orderId));
+
+            using (SqlDataReader reader = BaseSqlHelper.ExecuteReader(connectionString, ProcName, parameters.ToArray()))
+            {
+                while (reader.Read())
+                {
+                    if (!Convert.IsDBNull(reader["DiscountAmount"]))
+                        return Convert.ToDecimal(reader["DiscountAmount"]);
+
+                    break;
+                }
+            }
+
+            return 0;
+        }
+
     }
 }

@@ -94,7 +94,18 @@ namespace CSWeb.FulfillmentHouse
                     xml.WriteEndElement();
                     xml.WriteWhitespace("\n");
                     xml.WriteStartElement("TrackingCode");
-                    xml.WriteValue(config.Attributes["TrackingCode"].Value);
+
+                    string trackingCode = config.Attributes["TrackingCode"].Value;
+                    decimal shippingDiscount = 0;
+                    if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(orderItem.OrderId))
+                    {
+                        shippingDiscount = CSWebBase.DAL.GetDiscountAmount(orderItem.OrderId);;
+
+                        trackingCode = "002";
+                    }
+
+                    xml.WriteValue(trackingCode);
+                    
                     xml.WriteEndElement();
                     xml.WriteWhitespace("\n");
                     //xml.WriteStartElement("MediaCode");
@@ -358,7 +369,7 @@ namespace CSWeb.FulfillmentHouse
                     // Order Costs
                     xml.WriteElementString("MerchandiseTotal", GetMoneyStr(orderItem.FullPriceSubTotal));
                     xml.WriteWhitespace("\n");
-                    xml.WriteElementString("ShippingCharge", GetMoneyStr(orderItem.ShippingCost - rushShippingCharge));
+                    xml.WriteElementString("ShippingCharge", GetMoneyStr(orderItem.ShippingCost - rushShippingCharge - shippingDiscount));
                     xml.WriteWhitespace("\n");
                     xml.WriteElementString("RushCharge", GetMoneyStr(rushShippingCharge));
                     xml.WriteWhitespace("\n");
@@ -369,7 +380,8 @@ namespace CSWeb.FulfillmentHouse
                     xml.WriteElementString("OrderTotal", GetMoneyStr(orderItem.FullPriceSubTotal // (this amount excludes rush shipping and surcharge)
                         + orderItem.ShippingCost //+ surchargeAmt // surchargeAmt = surcharge amount
                         + orderItem.RushShippingCost //+ rushShippingCharge // rushShippingCharge = rush shipping charge
-                        + orderItem.FullPriceTax));
+                        + orderItem.FullPriceTax
+                        - shippingDiscount));
                     xml.WriteWhitespace("\n");
 
 

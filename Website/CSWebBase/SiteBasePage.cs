@@ -9,6 +9,8 @@ using System.Web;
 using CSBusiness.PostSale;
 using System.Text.RegularExpressions;
 using CSBusiness.Resolver;
+using CSBusiness.ShoppingManagement;
+using CSBusiness.OrderManagement;
 
 namespace CSWebBase
 {
@@ -69,6 +71,14 @@ namespace CSWebBase
             get
             {
                 return "index.aspx?sessexp=true";
+            }
+        }
+
+        public static string FreeShipDiscountCodeMainSku
+        {
+            get
+            {
+                return "FREESHIP468651384";
             }
         }
 
@@ -249,6 +259,37 @@ namespace CSWebBase
             }
             else
                 return template.CanUseTemplate(cartContext);
+        }
+
+        public static void CallCartCompute(Cart cart)
+        {
+            if (CSFactory.GetCacheSitePref().GetAttributeValue("EnableFreeShipMainSku", false))
+            {
+                cart.DiscountCode = FreeShipDiscountCodeMainSku;
+            }
+
+            cart.Compute();
+        }
+
+        public static bool IsFreeShipOrderMainSku(int orderId)
+        {
+            string discountCode = DAL.GetOrderPromo(orderId);
+            if (discountCode != null && discountCode.ToUpper() == FreeShipDiscountCodeMainSku)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool IsFreeShipOrderMainSku(Cart cart)
+        {
+            if (cart.DiscountCode != null && cart.DiscountCode.ToUpper() == FreeShipDiscountCodeMainSku)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

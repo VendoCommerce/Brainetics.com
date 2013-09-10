@@ -80,7 +80,10 @@ namespace CSWeb.A4.Store
                         CSWebBase.SiteBasePage.AddAdditionalItems(cartObject);
 
                         cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
-                        cartObject.Compute();
+                        
+                        CSWebBase.SiteBasePage.CallCartCompute(cartObject);
+                        //cartObject.Compute();
+
                         cartObject.ShowQuantity = false;
                         clientData.CartInfo = cartObject;
                         Session["ClientOrderData"] = clientData;
