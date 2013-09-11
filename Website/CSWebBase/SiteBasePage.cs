@@ -243,7 +243,7 @@ namespace CSWebBase
 
         public static bool IsPOBoxAddress(string address)
         {
-            Regex regex = new Regex("^((\\s{0,}p\\.{0,}o\\.{0,}\\s{0,})|(post\\s{1,}office\\s{1,}))?(box)\\s{1,}[0-9]{1,}\\s{0,}$", RegexOptions.IgnoreCase);
+            Regex regex = new Regex("^((\\s{0,}p\\.{0,}o\\.{0,}\\s{0,})|(post\\s{1,}office\\s{1,}))?(box)\\s{1,}\\#?[0-9]{1,}\\s{0,}$", RegexOptions.IgnoreCase);
 
             return regex.IsMatch(address.ToLower());
         }
