@@ -6,6 +6,7 @@ using CSBusiness;
 using System.Web.UI.HtmlControls;
 using CSBusiness.Preference;
 using CSBusiness.Shipping;
+using CSBusiness.ShoppingManagement;
 
 namespace CSWeb.A2.UserControls
 {
@@ -80,7 +81,9 @@ namespace CSWeb.A2.UserControls
                 
                 lblSubtotal.Text = String.Format("${0:0.00}", CartContext.CartInfo.SubTotal);
                 lblTax.Text = String.Format("${0:0.00}", CartContext.CartInfo.TaxCost);
-                lblShipping.Text = String.Format("${0:0.00}", CartContext.CartInfo.ShippingCost);
+
+                lblShipping.Text = String.Format("${0:0.00}", CSWebBase.SiteBasePage.GetShippingCost(CartContext.CartInfo));
+
                 lblRushShipping.Text = String.Format("${0:0.00}", CartContext.CartInfo.RushShippingCost);
                 lblOrderTotal.Text = String.Format("${0:0.00}", CartContext.CartInfo.Total);
 

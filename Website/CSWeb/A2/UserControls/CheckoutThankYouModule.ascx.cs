@@ -83,7 +83,7 @@ protected Label lblPurchaseName, lblPromotionPrice;
                 dlordersList.DataSource = skus;
                 dlordersList.DataBind();
                 LiteralSubTotal.Text = Math.Round(orderData.SubTotal, 2).ToString();
-                LiteralShipping.Text = Math.Round(orderData.ShippingCost, 2).ToString();
+                LiteralShipping.Text = Math.Round(CSWebBase.SiteBasePage.GetShippingCost(orderData), 2).ToString();
                 LiteralTax.Text = Math.Round(orderData.Tax, 2).ToString();
                 LiteralTotal.Text = Math.Round(orderData.Total, 2).ToString();
                 if (orderData.RushShippingCost > 0)
@@ -94,7 +94,7 @@ protected Label lblPurchaseName, lblPromotionPrice;
                 }
 
              
-                if (orderData.DiscountCode.Length > 0)
+                if (orderData.DiscountCode.Length > 0 && (CSWebBase.SiteBasePage.FreeShipDiscountCodeMainSku ?? string.Empty).ToUpper() != orderData.DiscountCode.ToUpper())
                 {
                     pnlPromotionLabel.Visible = true;
                     pnlPromotionalAmount.Visible = true;
