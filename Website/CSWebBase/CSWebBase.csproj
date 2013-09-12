@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomOrderManager.cs" />
+    <Compile Include="CustomTaxCalculator.cs" />
     <Compile Include="CustomUnityDependencyResolver.cs" />
     <Compile Include="DAL.cs" />
     <Compile Include="CustomDiscountCalculator.cs" />

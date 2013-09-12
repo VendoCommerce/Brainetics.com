@@ -11,6 +11,8 @@ using System.Text.RegularExpressions;
 using CSBusiness.Resolver;
 using CSBusiness.ShoppingManagement;
 using CSBusiness.OrderManagement;
+using CSBusiness.Preference;
+using CSData;
 
 namespace CSWebBase
 {
@@ -290,6 +292,36 @@ namespace CSWebBase
             }
 
             return false;
+        }
+
+        public static decimal GetMainSkuShippingCost(Cart cart)
+        {
+            decimal shippingCost = 0;            
+            List<SkuShipping> skuShippingList = ShippingDAL.GetSkuShipping();
+
+            SitePreference sitePreference = CSFactory.GetCartPrefrence(cart);
+            if (sitePreference != null)
+            {
+                foreach (Sku sku in cart.CartItems)
+                {
+                    if (SiteBasePage.IsMainSku(sku.SkuId))
+                    {
+                        CSData.SkuShipping skuShipping = skuShippingList.FirstOrDefault(x =>
+                        {
+                            return x.PrefId == sitePreference.ShippingPrefID
+                                && x.SkuId == sku.SkuId;
+                        });
+
+                        if (skuShipping != null)
+                        {
+                            shippingCost += (skuShipping.Cost * sku.Quantity);                            
+                        }
+                    }
+                }
+            }
+
+            return shippingCost;
+            // TODO: add rush sku cost support
         }
     }
 }

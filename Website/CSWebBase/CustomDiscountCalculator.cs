@@ -43,31 +43,9 @@ namespace CSWebBase
                         // Discount shipping cost of only main skus
                         if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(cart))
                         {
-                            List<SkuShipping> skuShippingList = ShippingDAL.GetSkuShipping();
-                            decimal discountAmount = 0;
+                            decimal discountAmount = SiteBasePage.GetMainSkuShippingCost(cart);
 
-                            SitePreference sitePreference = CSFactory.GetCartPrefrence(cart);
-                            if (sitePreference != null)
-                            {
-                                foreach (Sku sku in cart.CartItems)
-                                {
-                                    if (SiteBasePage.IsMainSku(sku.SkuId))
-                                    {
-                                        CSData.SkuShipping skuShipping = skuShippingList.FirstOrDefault(x =>
-                                        {
-                                            return x.PrefId == sitePreference.ShippingPrefID
-                                                && x.SkuId == sku.SkuId;
-                                        });
-
-                                        if (skuShipping != null)
-                                        {
-                                            discountAmount += (skuShipping.Cost * sku.Quantity);
-                                        }
-                                    }
-                                }
-
-                                cart.DiscountAmount = discountAmount;
-                            }
+                            cart.DiscountAmount = discountAmount;                            
                         }
                         else
                         {   

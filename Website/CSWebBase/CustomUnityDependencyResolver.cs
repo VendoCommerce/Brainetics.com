@@ -5,6 +5,7 @@ using System.Text;
 using CSBusiness.Resolver;
 using CSBusiness.Discount;
 using Microsoft.Practices.Unity;
+using CSBusiness.Tax;
 
 namespace CSWebBase
 {
@@ -19,6 +20,10 @@ namespace CSWebBase
                 return new CustomDiscountCalculator();
             }));
 
+            container.RegisterType<ITaxCalculator, CustomTaxCalculator>(new InjectionFactory(x =>
+            {
+                return new CustomTaxCalculator();
+            }));
         }
     }
 }
