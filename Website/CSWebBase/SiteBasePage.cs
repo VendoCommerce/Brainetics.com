@@ -323,5 +323,25 @@ namespace CSWebBase
             return shippingCost;
             // TODO: add rush sku cost support
         }
+
+        public static decimal GetShippingCost(Cart cart)
+        {
+            if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(cart))
+            {
+                return cart.ShippingCost - cart.DiscountAmount;
+            }
+
+            return cart.ShippingCost;
+        }
+
+        public static decimal GetShippingCost(Order order)
+        {
+            if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(order.OrderId))
+            {
+                return order.ShippingCost - order.DiscountAmount;
+            }
+
+            return order.ShippingCost;
+        }
     }
 }
