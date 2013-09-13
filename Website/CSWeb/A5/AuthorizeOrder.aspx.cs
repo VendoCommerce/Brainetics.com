@@ -46,7 +46,7 @@ namespace CSWeb.A5.Store
             }
             if (!IsPostBack)
             {
-                CSWebBase.SiteBasePage.TempOrderFix(CartContext);
+                CSWebBase.SiteBasePage.TempOrderFix(CartContext, orderData.OrderStatusId);
 
                 Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
 

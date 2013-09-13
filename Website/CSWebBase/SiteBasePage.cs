@@ -348,7 +348,7 @@ namespace CSWebBase
             return order.ShippingCost;
         }
 
-        public static void TempOrderFix(ClientCartContext cartContext)
+        public static void TempOrderFix(ClientCartContext cartContext, int orderStatusId)
         {
             try
             {
@@ -365,6 +365,16 @@ namespace CSWebBase
                         cartContext.CartInfo.Compute();
 
                         CSResolve.Resolve<IOrderService>().UpdateOrder(cartContext.OrderId, cartContext);
+
+                        try
+                        {
+                            CSResolve.Resolve<IOrderService>().UpdateOrderStatus(cartContext.OrderId, orderStatusId);
+                        }
+                        catch (Exception ex)
+                        {
+                            CSCore.CSLogger.Instance.LogException("Could not update orderstatus after updating order. orderId " + cartContext.OrderId.ToString(),
+                                  new Exception("custom error"));
+                        }
                     }
                 }
                 else
