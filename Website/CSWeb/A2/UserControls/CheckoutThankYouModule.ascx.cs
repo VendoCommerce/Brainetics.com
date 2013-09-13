@@ -42,7 +42,12 @@ protected Label lblPurchaseName, lblPromotionPrice;
             if (Request.Params["oId"] != null)
                 orderId = Convert.ToInt32(Request.Params["oId"]);
             else
+            {
+                if (CartContext == null)
+                    Response.Redirect("CheckoutSessionExpired.aspx?emppage=" + HttpUtility.UrlEncode(Request.Url.LocalPath), true);
+
                 orderId = CartContext.OrderId;
+            }
             if (!this.IsPostBack)
             {
                 BindData();
