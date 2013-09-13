@@ -52,6 +52,9 @@ namespace CSWeb.A4.UserControls
 
         private void WriteGAPixel()
         {
+            if (CurrentOrder.OrderId == 0)
+                return;
+
             StringBuilder sbGAPixel = new StringBuilder();
             sbGAPixel.AppendFormat("pageTracker._addTrans('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}' );\n",
                CurrentOrder.OrderId.ToString(), "", Math.Round(CurrentOrder.Total, 2), Math.Round(CurrentOrder.Tax, 2), Math.Round(CurrentOrder.ShippingCost, 2),
@@ -155,6 +158,9 @@ namespace CSWeb.A4.UserControls
 
         private void SetConversionListrakPixel()
         {
+            if (CurrentOrder.OrderId == 0)
+                return;
+
             StringBuilder sbListrakPixel = new StringBuilder();
             sbListrakPixel.AppendLine("<script type=\"text/javascript\">");
             sbListrakPixel.AppendLine("_ltk.Order.SetCustomer('" + CurrentOrder.Email + "', '" + CurrentOrder.CustomerInfo.BillingAddress.FirstName + "', '" + CurrentOrder.CustomerInfo.BillingAddress.LastName + "')");
