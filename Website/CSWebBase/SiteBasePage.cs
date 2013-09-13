@@ -265,15 +265,38 @@ namespace CSWebBase
 
         public static void CallCartCompute(Cart cart)
         {
-            if (CSFactory.GetCacheSitePref().GetAttributeValue("EnableFreeShipMainSku", false))
+            try
             {
-                cart.DiscountCode = FreeShipDiscountCodeMainSku;
+                if (CSFactory.GetCacheSitePref().GetAttributeValue("EnableFreeShipMainSku", false))
+                {
+                }
+                else
+                {
+                    CSCore.CSLogger.Instance.LogException("EnableFreeShipMainSku is not set", new Exception("custom error"));
+
+                    CSCore.CSLogger.Instance.LogException("CSFactory.GetCacheSitePref().VersionItems: " + (CSFactory.GetCacheSitePref().VersionItems == null).ToString(), new Exception("custom error"));
+
+                    if (CSFactory.GetCacheSitePref().VersionItems == null)
+                    {
+                        CSCore.CSLogger.Instance.LogException("CSFactory.GetCacheSitePref().VersionItems.Count: " + (CSFactory.GetCacheSitePref().VersionItems.Count).ToString(), new Exception("custom error"));
+                    }
+
+                    CSCore.CSLogger.Instance.LogException("CSFactory.GetCacheSitePref().AttributeValues: " + (CSFactory.GetCacheSitePref().AttributeValues == null).ToString(), new Exception("custom error"));
+
+                    CSCore.CSLogger.Instance.LogException("CSFactory.GetCacheSitePref().AttributeValuesLoaded: " + (CSFactory.GetCacheSitePref().AttributeValuesLoaded).ToString(), new Exception("custom error"));
+
+                    if (CSFactory.GetCacheSitePref().AttributeValues != null)
+                    {
+                        CSCore.CSLogger.Instance.LogException("CSFactory.GetCacheSitePref().AttributeValues.Count: " + (CSFactory.GetCacheSitePref().AttributeValues.Count).ToString(), new Exception("custom error"));
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                CSCore.CSLogger.Instance.LogException("EnableFreeShipMainSku is not set", new Exception("custom error"));
+                CSCore.CSLogger.Instance.LogException("Error logging tests", ex);
             }
 
+            cart.DiscountCode = FreeShipDiscountCodeMainSku;
             cart.Compute();
         }
 
