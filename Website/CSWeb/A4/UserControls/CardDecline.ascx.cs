@@ -480,8 +480,16 @@ namespace CSWeb.A4.UserControls
         {
             ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
 
+            ddlShippingCountry.ClearSelection();
+            ddlCountry.ClearSelection();
+            ddlShippingState.ClearSelection();
+            ddlState.ClearSelection();
+
             ddlShippingCountry.Items.FindByValue(clientData.CustomerInfo.ShippingAddress.CountryId.ToString()).Selected = true;
             ddlCountry.Items.FindByValue(clientData.CustomerInfo.BillingAddress.CountryId.ToString()).Selected = true;
+
+            ShippingCountry_SelectedIndexChanged(null, null);
+            Country_SelectedIndexChanged(null, null);
 
             ddlShippingState.Items.FindByValue(clientData.CustomerInfo.ShippingAddress.StateProvinceId.ToString()).Selected = true;
             ddlState.Items.FindByValue(clientData.CustomerInfo.BillingAddress.StateProvinceId.ToString()).Selected = true;

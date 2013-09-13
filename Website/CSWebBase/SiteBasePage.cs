@@ -269,6 +269,10 @@ namespace CSWebBase
             {
                 cart.DiscountCode = FreeShipDiscountCodeMainSku;
             }
+            else
+            {
+                CSCore.CSLogger.Instance.LogException("EnableFreeShipMainSku is not set", new Exception("custom error"));
+            }
 
             cart.Compute();
         }
@@ -342,6 +346,36 @@ namespace CSWebBase
             }
 
             return order.ShippingCost;
+        }
+
+        public static void TempOrderFix(ClientCartContext cartContext)
+        {
+            try
+            {
+                // TODO: check site pref attribute "EnableFreeShipMainSku" too -- this is a temp fix.            
+                if (cartContext != null)
+                {
+                    if (string.IsNullOrEmpty(cartContext.CartInfo.DiscountCode))
+                    {
+                        CSCore.CSLogger.Instance.LogException(string.Format("Promo code was blank. EnableFreeShipMainSku = {0}",
+                                CSFactory.GetCacheSitePref().GetAttributeValue("EnableFreeShipMainSku", false).ToString()),
+                            new Exception("custom error"));
+                    
+                        cartContext.CartInfo.DiscountCode = FreeShipDiscountCodeMainSku;
+                        cartContext.CartInfo.Compute();
+
+                        CSResolve.Resolve<IOrderService>().UpdateOrder(cartContext.OrderId, cartContext);
+                    }
+                }
+                else
+                {
+                    CSCore.CSLogger.Instance.LogException("Cart context was null. Could not fix and and recalculate", new Exception("custom error"));
+                }
+            }
+            catch (Exception ex)            
+            {
+                CSCore.CSLogger.Instance.LogException("TempOrderFix method failure", ex);
+            }
         }
     }
 }

@@ -46,6 +46,8 @@ namespace CSWeb.A5.Store
             }
             if (!IsPostBack)
             {
+                CSWebBase.SiteBasePage.TempOrderFix(CartContext);
+
                 Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
 
                 if (orderData.CreditInfo.CreditCardNumber.Equals("4444333322221111"))
