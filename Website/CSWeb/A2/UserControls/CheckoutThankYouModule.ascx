@@ -43,7 +43,7 @@
 
            
             <asp:Literal ID="LiteralTableRows" runat="server"></asp:Literal>
-            <tr><td colspan="4"><p><strong>Offer Details:</strong> As part of our special TV Offer you can try Brainetics in the comfort of your home for only $14.95 plus $14.95 shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 5 easy monthly payments of $39.95, plus tax. All orders are backed by our 60-Day Money-Back Guarantee!</p></td></tr>
+            <tr><td colspan="4"><p><strong>Offer Details:</strong> As part of our special TV Offer you can try Brainetics in the comfort of your home for only $14.95 plus free shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 5 easy monthly payments of $39.95, plus tax. All orders are backed by our 60-Day Money-Back Guarantee!</p></td></tr>
 <tr class="horzline2">
                 <td valign="top">&nbsp;
                     

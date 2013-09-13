@@ -45,10 +45,7 @@
 
            
             <asp:Literal ID="LiteralTableRows" runat="server"></asp:Literal>
-              <tr><td colspan="4"><p><strong>Offer Details:</strong> As part of the Special TV Offer – you will have the convenience of a 5 installment payment plan. You will be initially charged a $14.95 trial fee + free S&H. In 30 days, the same method of payment you use to make your purchase will automatically be charged the second of five payments in the amount of $39.95 for the Enhanced Package and $59.90 for the Accelerated Package. The grand total that will be charged for the Enhanced Package will be $199.75 and $299.50 for the Accelerated Package.<br>
-<br>
-
-The full purchase of this product has a 30 day money-back guarantee (less S&amp;H).</p></td></tr>
+              <tr><td colspan="4"><p>< As part of our special TV Offer you can try Brainetics in the comfort of your home for only $14.95 plus free shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 5 easy monthly payments of $39.95, plus tax. All orders are backed by our 60-Day Money-Back Guarantee!</p></td></tr>
 <tr class="horzline2">
                 <td valign="top">&nbsp;
                     
@@ -56,6 +53,7 @@ The full purchase of this product has a 30 day money-back guarantee (less S&amp;
                     
                 </td>
                 <td valign="top" class="black bold">
+                    Subtotal:
                     Subtotal:<br />
                     S &amp; H:
                     <br />
