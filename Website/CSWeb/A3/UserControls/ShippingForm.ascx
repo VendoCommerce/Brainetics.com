@@ -9,7 +9,7 @@
         <asp:DropDownList ID="ddlCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
             AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged" CssClass="text-1">
         </asp:DropDownList><div class="clear"></div>
-        <div class="helper" style="display: none">A $20 Shipping Fee Applies</div>
+        <div class="helper" style="display: none">A $10 Shipping Fee Applies</div>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
