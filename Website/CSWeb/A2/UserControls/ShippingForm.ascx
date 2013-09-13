@@ -1,6 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.A2.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
 <a name="tryitnow" id="tryitnow"></a>
-<div class="cartB"><img src="/Content/images/a2/form_top.jpg" />
+<div class="cartB"><img src="/Content/images/a2/form_top.png" />
     <div class="form_line clearfix" style="padding-top: 10px">
         <div class="error-1">
             <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
