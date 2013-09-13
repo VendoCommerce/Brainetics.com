@@ -315,6 +315,7 @@
     <Content Include="Content\Images\a2\complete_btn.png" />
     <Content Include="Content\Images\a2\cvv.png" />
     <Content Include="Content\Images\a2\form_top.jpg" />
+    <Content Include="Content\Images\a2\form_top.png" />
     <Content Include="Content\Images\a2\home_bottom.jpg" />
     <Content Include="Content\Images\a2\home_leftside.png" />
     <Content Include="Content\Images\a2\howitworks_bottom.jpg" />
@@ -363,6 +364,7 @@
     <Content Include="Content\Images\a3\complete_btn.png" />
     <Content Include="Content\Images\a3\cvv.png" />
     <Content Include="Content\Images\a3\form_top.jpg" />
+    <Content Include="Content\Images\a3\form_top.png" />
     <Content Include="Content\Images\a3\header_guarantee_badge.jpg" />
     <Content Include="Content\Images\a3\home_bottom.jpg" />
     <Content Include="Content\Images\a3\home_leftside.png" />
@@ -412,6 +414,7 @@
     <Content Include="Content\Images\a4\complete_btn.png" />
     <Content Include="Content\Images\a4\cvv.png" />
     <Content Include="Content\Images\a4\form_top.jpg" />
+    <Content Include="Content\Images\a4\form_top.png" />
     <Content Include="Content\Images\a4\header_main.png" />
     <Content Include="Content\Images\a4\home_bg.jpg" />
     <Content Include="Content\Images\a4\home_bottom.jpg" />
@@ -466,6 +469,7 @@
     <Content Include="Content\Images\a5\complete_btn.png" />
     <Content Include="Content\Images\a5\cvv.png" />
     <Content Include="Content\Images\a5\form_top.jpg" />
+    <Content Include="Content\Images\a5\form_top.png" />
     <Content Include="Content\Images\a5\header_main.png" />
     <Content Include="Content\Images\a5\home_bg.jpg" />
     <Content Include="Content\Images\a5\home_bottom.jpg" />
