@@ -10,6 +10,7 @@ using CSWeb.HitLinks;
 using CSBusiness.OrderManagement;
 using CSCore;
 using CSData;
+using CSBusiness.Preference;
 
 namespace CSWeb.Admin
 {
@@ -18,8 +19,32 @@ namespace CSWeb.Admin
         public Hashtable HitLinkVisitor = new Hashtable();
         public decimal CategoryUniqueVistiors = 0, totalRevenue = 0;
         public int totalOrders = 0;
+        public string hitsLinkUserName
+        {
+            get
+            {
+                return Convert.ToString(Session["hitsLinkUserName"] ?? string.Empty);
+            }
+            set
+            {
+                Session["hitsLinkUserName"] = value;
+            }
+        }
+
+        public string hitsLinkPassword
+        {
+            get
+            {
+                return Convert.ToString(Session["hitsLinkPassword"] ?? string.Empty);
+            }
+            set
+            {
+                Session["hitsLinkPassword"] = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            BindSettings();
             if (!IsPostBack)
             {                
                 liHeader.Text = DateTime.Now.ToString("MMMM") + " " + DateTime.Now.Day.ToString() + ", " + DateTime.Now.Year.ToString();
@@ -37,9 +62,6 @@ namespace CSWeb.Admin
                     rangeDateControlCriteria.EndDateValueLocal = DateTime.Now.Date;
 
                 }
-                SitePref PrefObject = CSFactory.GetSitePreference();
-                
-                imgLogo.ImageUrl = PrefObject.LogoPath;
 
                 BindData(rangeDateControlCriteria.StartDateValueLocal, rangeDateControlCriteria.EndDateValueLocal);
             }
@@ -52,7 +74,7 @@ namespace CSWeb.Admin
             DateTime? timezoneEndDate = DateTimeUtil.GetEndDate(rangeDateControlCriteria.EndDateValueLocal);
             List<ReportFields> ItemList = new OrderManager().GetOrderCustomFieldReport(timezoneStartDate, timezoneEndDate, 1, false);
 
-            Data rptData = new ReportWSSoapClient().GetDataFromTimeframe("brainetics", "china2006", ReportsEnum.eCommerceActivitySummary, TimeFrameEnum.Daily, Convert.ToDateTime(startDate), Convert.ToDateTime(endDate), 100000000, 0, 0);
+            Data rptData = new ReportWSSoapClient().GetDataFromTimeframe(hitsLinkUserName, hitsLinkPassword, ReportsEnum.eCommerceActivitySummary, TimeFrameEnum.Daily, Convert.ToDateTime(startDate), Convert.ToDateTime(endDate), 100000000, 0, 0);
             for (int i = 0; i <= rptData.Rows.GetUpperBound(0); i++)
             {
                 HitLinkVisitor.Add(rptData.Rows[i].Columns[0].Value.ToLower(), rptData.Rows[i].Columns[7].Value);
@@ -186,6 +208,25 @@ namespace CSWeb.Admin
             }
 
 
+        }
+
+        public void BindSettings()
+        {
+            if (!Page.IsPostBack)
+            {
+                SitePref PrefObject = CSFactory.GetSitePreference();                
+                imgLogo.ImageUrl = PrefObject.LogoPath;
+                SitePreference sitePreference = CSFactory.GetCacheSitePref();
+                sitePreference.LoadAttributeValues();
+                if (sitePreference.AttributeValues["hitslinkusername"] != null)
+                {
+                    hitsLinkUserName = sitePreference.AttributeValues["hitslinkusername"].Value;
+                }
+                if (sitePreference.AttributeValues["hitslinkpassword"] != null)
+                {
+                    hitsLinkPassword = sitePreference.AttributeValues["hitslinkpassword"].Value;
+                }
+            }
         }
     }
 }
