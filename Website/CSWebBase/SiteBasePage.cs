@@ -35,7 +35,8 @@ namespace CSWebBase
             ShippingRush1 = 57,
             ShippingRush2 = 61,
             ShippingOvernight = 62,
-            ShippingSurcharge = 58
+            ShippingSurcharge = 58,
+            DestinationReward = 63
         }
 
         #region Properties
@@ -143,6 +144,7 @@ namespace CSWebBase
                 case SkuEnum.QuickCardSet:
                 case SkuEnum.ChallengeGameSinglePay:
                 case SkuEnum.OnlineLanguageBundle:
+                case SkuEnum.DestinationReward:
                     return true;
             }
 

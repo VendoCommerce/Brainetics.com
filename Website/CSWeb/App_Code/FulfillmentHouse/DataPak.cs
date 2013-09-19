@@ -99,9 +99,14 @@ namespace CSWeb.FulfillmentHouse
                     decimal shippingDiscount = 0;
                     if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(orderItem.OrderId))
                     {
-                        shippingDiscount = CSWebBase.DAL.GetDiscountAmount(orderItem.OrderId);;
+                        shippingDiscount = CSWebBase.DAL.GetDiscountAmount(orderItem.OrderId);
 
                         trackingCode = "002";
+                    }
+
+                    if (orderItem.SkuItems.FirstOrDefault(x => { return x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.DestinationReward; }) != null)
+                    {
+                        trackingCode = "BONUS";
                     }
 
                     xml.WriteValue(trackingCode);
