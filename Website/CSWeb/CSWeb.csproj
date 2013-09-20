@@ -614,6 +614,10 @@
     <Content Include="Content\Images\upsell_accelerated.jpg" />
     <Content Include="Content\Images\upsell_arrow.png" />
     <Content Include="Content\Images\upsell_comparison.png" />
+    <Content Include="Content\Images\upsell_discountcard.jpg" />
+    <Content Include="Content\Images\upsell_discountcard250.jpg" />
+    <Content Include="Content\Images\upsell_dr_singlepay.jpg" />
+    <Content Include="Content\Images\upsell_dr_singlepay_accel.jpg" />
     <Content Include="Content\Images\upsell_onlinelab.jpg" />
     <Content Include="Content\Images\upsell_playbook.jpg" />
     <Content Include="Content\Images\upsell_radio_btn_box.png" />
