@@ -269,6 +269,8 @@ namespace CSWebBase
         {
             try
             {
+                /*
+                 * // Use for logging
                 if (CSFactory.GetCacheSitePref().GetAttributeValue("EnableFreeShipMainSku", false))
                 {
                 }
@@ -292,6 +294,7 @@ namespace CSWebBase
                         CSCore.CSLogger.Instance.LogException("CSFactory.GetCacheSitePref().AttributeValues.Count: " + (CSFactory.GetCacheSitePref().AttributeValues.Count).ToString(), new Exception("custom error"));
                     }
                 }
+                */
             }
             catch (Exception ex)
             {
@@ -380,6 +383,9 @@ namespace CSWebBase
                 // TODO: check site pref attribute "EnableFreeShipMainSku" too -- this is a temp fix.            
                 if (cartContext != null)
                 {
+                    /*/
+                     * NOTE: This is a temporary fix that needs to be taken out when modifying promo codes.
+                     * */
                     if (string.IsNullOrEmpty(cartContext.CartInfo.DiscountCode))
                     {
                         CSCore.CSLogger.Instance.LogException(string.Format("Promo code was blank. EnableFreeShipMainSku = {0}",
@@ -404,7 +410,8 @@ namespace CSWebBase
                 }
                 else
                 {
-                    CSCore.CSLogger.Instance.LogException("Cart context was null. Could not fix and and recalculate", new Exception("custom error"));
+                    // We are here when batch processes orders. No need to log.
+                    //CSCore.CSLogger.Instance.LogException("Cart context was null. Could not fix and and recalculate", new Exception("custom error"));
                 }
             }
             catch (Exception ex)            
