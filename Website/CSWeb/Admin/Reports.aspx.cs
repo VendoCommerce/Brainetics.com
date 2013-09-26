@@ -40,11 +40,11 @@ namespace CSWeb.Admin
                 ddlVersion.DataBind();
                 ddlVersion.Items.Insert(0, new ListItem("All", "0"));
 
-                //ddlPaths.DataSource = new PathManager().GetAllPaths(false);
-                //ddlPaths.DataTextField = "Title";
-                //ddlPaths.DataValueField = "PathId";
-                //ddlPaths.DataBind();
-                //ddlPaths.Items.Insert(0, new ListItem("Select", "0"));
+                ddlPaths.DataSource = new PathManager().GetAllPaths(0, false);
+                ddlPaths.DataTextField = "Title";
+                ddlPaths.DataValueField = "PathId";
+                ddlPaths.DataBind();
+                ddlPaths.Items.Insert(0, new ListItem("Select", "0"));
 
                 if (Session["FilterFromDate"] != null && Session["FilterToDate"] != null)
                 {
@@ -184,7 +184,7 @@ namespace CSWeb.Admin
             Session["FilterFromDate"] = rangeDateControlCriteria.StartDateValueLocal.Value.ToShortDateString();
             Session["FilterToDate"] = rangeDateControlCriteria.EndDateValueLocal.Value.ToShortDateString();
 
-            BindData(DateTimeUtil.GetEastCoastStartDate(rangeDateControlCriteria.StartDateValueLocal), DateTimeUtil.GetEastCoastDate(rangeDateControlCriteria.EndDateValueLocal), Convert.ToInt32(ddlVersion.SelectedValue), 0);
+            BindData(DateTimeUtil.GetEastCoastStartDate(rangeDateControlCriteria.StartDateValueLocal), DateTimeUtil.GetEastCoastDate(rangeDateControlCriteria.EndDateValueLocal), Convert.ToInt32(ddlVersion.SelectedValue), Convert.ToInt32(ddlPaths.SelectedValue));
 
         }
         public void BindSettings()
