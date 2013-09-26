@@ -409,7 +409,7 @@ padding: 9px 0 3px 0;
                             </asp:DropDownList>
                             </div>
                             <br />
-                            div align="left">
+                            <div align="left">
                                 Upsell Path:
                                 <br />
                                 <asp:DropDownList Width="138" ID="ddlPaths" runat="server">
