@@ -13,7 +13,16 @@ namespace CSWeb
         {
             base.Page_Load(sender, e);
 
-            Response.Redirect("/A5");
+            if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
+            {
+                 Response.Redirect("/A5?" + Request.QueryString + "&referrer=" + Request.Url);
+            }
+            else
+            {
+                 Response.Redirect("/A5?referrer=" + Request.Url);
+            }
+
+           
         }
     }
 }
