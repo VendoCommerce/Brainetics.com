@@ -13,7 +13,7 @@ namespace CSWeb
         {
             base.Page_Load(sender, e);
 
-            Response.Redirect("/A2");
+            Response.Redirect("/A5");
         }
     }
 }
