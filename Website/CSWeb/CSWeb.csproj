@@ -326,6 +326,7 @@
     <Content Include="Content\Images\a2\mbg.png" />
     <Content Include="Content\Images\a2\more_amazing_stories.png" />
     <Content Include="Content\Images\a2\nav_bg.png" />
+    <Content Include="Content\Images\a2\nothanks2_btn.png" />
     <Content Include="Content\Images\a2\nothanks_btn.png" />
     <Content Include="Content\Images\a2\openquote_blue.png" />
     <Content Include="Content\Images\a2\openquote_light.jpg" />
@@ -344,6 +345,7 @@
     <Content Include="Content\Images\a2\tryitnow_btn.png" />
     <Content Include="Content\Images\a2\upsell_accelerated.jpg" />
     <Content Include="Content\Images\a2\upsell_acceleratedsinglepay.jpg" />
+    <Content Include="Content\Images\a2\upsell_girl_singlepay.jpg" />
     <Content Include="Content\Images\a2\upsell_onlinelab.jpg" />
     <Content Include="Content\Images\a2\upsell_playbook.jpg" />
     <Content Include="Content\Images\a2\upsell_rush.jpg" />
@@ -352,6 +354,7 @@
     <Content Include="Content\Images\a2\upsell_top.jpg" />
     <Content Include="Content\Images\a2\write_to_mike.png" />
     <Content Include="Content\Images\a2\yes_btn.png" />
+    <Content Include="Content\Images\a2\yes_continue_btn.png" />
     <Content Include="Content\Images\a3\2020.JPG" />
     <Content Include="Content\Images\a3\admin_logo.jpg" />
     <Content Include="Content\Images\a3\asotv.png" />
