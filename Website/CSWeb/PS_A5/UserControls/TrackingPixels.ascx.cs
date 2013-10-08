@@ -8,7 +8,7 @@ using CSBusiness.OrderManagement;
 using CSBusiness;
 using System.Text;
 
-namespace CSWeb.UserControls
+namespace CSWeb.PS_A5.UserControls
 {
     public partial class TrackingPixels : System.Web.UI.UserControl
     {
@@ -42,22 +42,33 @@ namespace CSWeb.UserControls
             SetAllPagesPnl();
             SetReceiptPagePnl();
         }
+        private string GetEncodedJS(string str)
+        {
+            if (str == null)
+                return string.Empty;
+
+            return str.Replace("'", "\\'").Replace("\r", " ").Replace("\n", " ");
+        }
+
         private void WriteGAPixel()
         {
+            if (CurrentOrder.OrderId == 0)
+                return;
+
             StringBuilder sbGAPixel = new StringBuilder();
             sbGAPixel.AppendFormat("pageTracker._addTrans('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}' );\n",
                CurrentOrder.OrderId.ToString(), "", Math.Round(CurrentOrder.Total, 2), Math.Round(CurrentOrder.Tax, 2), Math.Round(CurrentOrder.ShippingCost, 2),
-               CurrentOrder.CustomerInfo.BillingAddress.City, CurrentOrder.CustomerInfo.BillingAddress.StateProvinceName, CurrentOrder.CustomerInfo.BillingAddress.CountryCode);
+               GetEncodedJS(CurrentOrder.CustomerInfo.BillingAddress.City), GetEncodedJS(CurrentOrder.CustomerInfo.BillingAddress.StateProvinceName), CurrentOrder.CustomerInfo.BillingAddress.CountryCode);
 
             foreach (Sku sku in CurrentOrder.SkuItems)
             {
                 sbGAPixel.AppendFormat("pageTracker._addItem('{0}','{1}','{2}','{3}','{4}','{5}');\n",
-                    CurrentOrder.OrderId.ToString(), sku.SkuCode, sku.LongDescription, "",
+                    CurrentOrder.OrderId.ToString(), GetEncodedJS(sku.SkuCode), GetEncodedJS(sku.LongDescription), "",
                     Math.Round(Convert.ToDouble(sku.InitialPrice), 2), sku.Quantity.ToString());
             }
 
 
-           // litGAReceiptPixel.Text = sbGAPixel.ToString();
+            litGAReceiptPixel.Text = sbGAPixel.ToString();
         }
         private void SetHomePagePnl()
         {
@@ -133,8 +144,8 @@ namespace CSWeb.UserControls
             if (Request.RawUrl.ToLower().Contains("checkoutthankyou") || Request.RawUrl.ToLower().Contains("receipt"))
             {
                 SetCurrentOrder();
-                WriteGAPixel();                
-                pnlReceiptPage.Visible = true;                
+                WriteGAPixel();
+                pnlReceiptPage.Visible = true;
                 SetConversionListrakPixel();
                 SetTotalsForAdwardsAndBing();
                 //reset entire Context object
@@ -147,6 +158,9 @@ namespace CSWeb.UserControls
 
         private void SetConversionListrakPixel()
         {
+            if (CurrentOrder.OrderId == 0)
+                return;
+
             StringBuilder sbListrakPixel = new StringBuilder();
             sbListrakPixel.AppendLine("<script type=\"text/javascript\">");
             sbListrakPixel.AppendLine("_ltk.Order.SetCustomer('" + CurrentOrder.Email + "', '" + CurrentOrder.CustomerInfo.BillingAddress.FirstName + "', '" + CurrentOrder.CustomerInfo.BillingAddress.LastName + "')");
@@ -199,8 +213,8 @@ namespace CSWeb.UserControls
         }
 
         public string GetVersionName()
-        {            
-            return CSFactory.GetAllVersion().First(x => { return x.VersionId == CartContext.VersionId; }).Title.Trim().ToUpper();
+        {
+            return versionName;
         }
 
     }
