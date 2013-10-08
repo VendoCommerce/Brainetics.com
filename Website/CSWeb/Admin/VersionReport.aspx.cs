@@ -83,11 +83,11 @@ namespace CSWeb.Admin
         protected void BindData(DateTime? startDate, DateTime? endDate)
         {
 
-            DateTime? timezoneStartDate = rangeDateControlCriteria.StartDateValueLocal;
-            DateTime? timezoneEndDate = DateTimeUtil.GetEndDate(rangeDateControlCriteria.EndDateValueLocal);
+            DateTime? timezoneStartDate = DateTimeUtil.GetEastCoastStartDate(rangeDateControlCriteria.StartDateValueLocal);
+            DateTime? timezoneEndDate = DateTimeUtil.GetEastCoastDate(rangeDateControlCriteria.EndDateValueLocal);
             dtCollectionList = new OrderManager().GetVersionSummary(timezoneStartDate, timezoneEndDate, false);
 
-            Data rptData = new ReportWSSoapClient().GetDataFromTimeframe(hitsLinkUserName, hitsLinkPassword, ReportsEnum.MultiVariate, TimeFrameEnum.Daily, Convert.ToDateTime(startDate), Convert.ToDateTime(endDate), 100000000, 0, 0);
+            Data rptData = new ReportWSSoapClient().GetDataFromTimeframe(hitsLinkUserName, hitsLinkPassword, ReportsEnum.MultiVariate, TimeFrameEnum.Daily, Convert.ToDateTime(DateTimeUtil.GetEastCoastStartDate(startDate)), Convert.ToDateTime(DateTimeUtil.GetEastCoastDate(endDate)), 100000000, 0, 0);
             for (int i = 0; i <= rptData.Rows.GetUpperBound(0); i++)
             {
                 HitLinkVisitor.Add(rptData.Rows[i].Columns[0].Value.ToLower(), rptData.Rows[i].Columns[9].Value);
