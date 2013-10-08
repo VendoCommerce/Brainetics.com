@@ -74,7 +74,7 @@ namespace CSWeb.Admin
             DateTime? timezoneEndDate = DateTimeUtil.GetEndDate(rangeDateControlCriteria.EndDateValueLocal);
             List<ReportFields> ItemList = new OrderManager().GetOrderCustomFieldReport(timezoneStartDate, timezoneEndDate, 1, false);
 
-            Data rptData = new ReportWSSoapClient().GetDataFromTimeframe(hitsLinkUserName, hitsLinkPassword, ReportsEnum.eCommerceActivitySummary, TimeFrameEnum.Daily, Convert.ToDateTime(startDate), Convert.ToDateTime(endDate), 100000000, 0, 0);
+            Data rptData = new ReportWSSoapClient().GetDataFromTimeframe(hitsLinkUserName, hitsLinkPassword, ReportsEnum.eCommerceActivitySummary, TimeFrameEnum.Daily, Convert.ToDateTime(DateTimeUtil.GetEastCoastStartDate(startDate)), Convert.ToDateTime(DateTimeUtil.GetEastCoastDate(endDate)), 100000000, 0, 0);
             for (int i = 0; i <= rptData.Rows.GetUpperBound(0); i++)
             {
                 HitLinkVisitor.Add(rptData.Rows[i].Columns[0].Value.ToLower(), rptData.Rows[i].Columns[7].Value);
