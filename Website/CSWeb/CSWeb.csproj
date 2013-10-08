@@ -969,6 +969,7 @@
     <Content Include="Styles\A1\style.css" />
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\cart_styles.css" />
+    <Content Include="Styles\global_ps_a5.css" />
     <Content Include="Styles\fontawesome\css\font-awesome-ie7.css" />
     <Content Include="Styles\fontawesome\css\font-awesome-ie7.min.css" />
     <Content Include="Styles\fontawesome\css\font-awesome.css" />
