@@ -14,14 +14,14 @@
 <script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_PS_A5.js"></script>
-<link href="../Styles/global_PS_A5.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/global_A5.js"></script>
+<link href="../Styles/global_A5.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
  <form runat="server" id="fm1">
 <div class="container_upsell">
 <div class="page_upsell">
-<div class="upsell_head"><img src="../Content/images/PS_A5/upsell_top.jpg" width="902" height="149" class="block" /></div>
+<div class="upsell_head"><img src="../content/images/A5/upsell_top.jpg" width="902" height="149" class="block" /></div>
 
 <div class="upsell_txt">
 <h2>Upgrade to the Accelerated Package</h2>
@@ -29,12 +29,12 @@
   <p>Morbi luctus tristique mollis. Duis faucibus nulla vel vestibulum convallis. Sed tempus nibh vel elit facilisis pharetra. Vivamus commodo tellus at elit laoreet, sit amet ornare libero dictum. Integer egestas arcu ipsum, dapibus sollicitudin mi condimentum id.    </p>
   <p>Vivamus commodo tellus at elit laoreet, sit amet ornare libero dictum. Integer egestas arcu ipsum, dapibus sollicitudin mi condimentum id. </p>
 </div>
-<div class="upsell_right"><img src="../Content/images/PS_A5/upsell_accelerated.jpg" width="391" height="353" />
+<div class="upsell_right"><img src="../content/images/A5/upsell_accelerated.jpg" width="391" height="353" />
 </div>
 <div class="clear"></div>
 
 <span class="ask">Would you like to take advantage of this special offer?
-<span class="btns"><a><img src="../Content/images/PS_A5/nothanks_btn.png" width="74" height="39" /></a><a><img src="../Content/images/PS_A5/yes_btn.png" width="113" height="39" /></a></span>
+<span class="btns"><a><img src="../content/images/A5/nothanks_btn.png" width="74" height="39" /></a><a><img src="../content/images/A5/yes_btn.png" width="113" height="39" /></a></span>
 </span>
 
 

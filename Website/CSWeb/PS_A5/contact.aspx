@@ -19,8 +19,8 @@
 <script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_PS_A5.js"></script>
-<link href="../Styles/global_PS_A5.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/global_A5.js"></script>
+<link href="../Styles/global_A5.css" rel="stylesheet" type="text/css" />
 <script src="//cdn.optimizely.com/js/77045885.js"></script>
 </head>
 <body>
@@ -28,7 +28,7 @@
 <!--#include file="header_main.html"-->
 <div class="container">
 
-<div class="page" style="background: url(../content/images/PS_A5/page_bg.jpg) repeat-x top #fff">
+<div class="page" style="background: url(../content/images/A5/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Contact Us</h2>
   <p>We are committed to providing the best products and friendliest customer service. If you should have any questions about ordering or about any of our great products, please feel free to contact us via the information provided below:</p>

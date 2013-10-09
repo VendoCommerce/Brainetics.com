@@ -16,8 +16,8 @@
 <script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_PS_A5.js"></script>
-<link href="../Styles/global_PS_A5.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/global_A5.js"></script>
+<link href="../Styles/global_A5.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">

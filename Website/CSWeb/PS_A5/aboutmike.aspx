@@ -16,17 +16,17 @@
 <script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_PS_A5.js"></script>
-<link href="../Styles/global_PS_A5.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/global_A5.js"></script>
+<link href="../Styles/global_A5.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
 <!--#include file="header_main.html"-->
 <div class="container">
-<div class="page" style="background: url(../content/images/PS_A5/page_bg.jpg) repeat-x top #fff">
+<div class="page" style="background: url(../content/images/A5/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>About Mike</h2>
-  <p><img src="../Content/images/PS_A5/mike.jpg" width="208" height="321" class="fright" style="margin: 0 0 20px 20px" />Mike Byster is one of the fastest mathematical minds 
+  <p><img src="../content/images/A5/mike.jpg" width="208" height="321" class="fright" style="margin: 0 0 20px 20px" />Mike Byster is one of the fastest mathematical minds 
 in the world. But his real passion is in teaching kids to have the academic confidence that both sets them apart from the crowd, and sets them up for success in all parts of life for decades to come. </p>
 
 <p>Featured on 20/20 for his ground breaking techniques 

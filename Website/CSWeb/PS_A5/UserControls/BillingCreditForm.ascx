@@ -17,7 +17,7 @@
     <div class="cart_right">
         
        
-        <div class="cartB"><img src="/Content/images/PS_A5/cart_form_top.jpg" width="293" height="56" />
+        <div class="cartB"><img src="/content/images/A5/cart_form_top.jpg" width="293" height="56" />
            
            <div class="form_line clearfix" style="width: 200px; padding: 10px 0 20px" runat="server" visible="false">
 
@@ -43,7 +43,7 @@
            </div>
             
            
-           <div class="form_line text-center"><img src="/Content/images/PS_A5/cards.jpg" width="246" height="41" /></div>
+           <div class="form_line text-center"><img src="/content/images/A5/cards.jpg" width="246" height="41" /></div>
            
             <div class="form_line clearfix" style="padding: 10px 0">
          <asp:CheckBox ID="cbBillingDifferent" runat="server" CssClass="checkbox-left" OnCheckedChanged="cbBillingDifferent_CheckedChanged"
@@ -155,7 +155,7 @@
                     Card Verification 
                 </label>
                
-                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-2" MaxLength="4"></asp:TextBox><a class="cvv" onclick="javascript:void(0);" href="/content/images/PS_A5/cvv.png">What's this?</a>
+                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-2" MaxLength="4"></asp:TextBox><a class="cvv" onclick="javascript:void(0);" href="/content/images/A5/cvv.png">What's this?</a>
             </div>
             <div class="form_line clearfix"> <div class="error-1">
                 <asp:RequiredFieldValidator ID="rfvExpMonth" runat="server" Display="Dynamic"
@@ -199,7 +199,7 @@
                   I would like to get product updates and special offers</label>
             </div>
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/PS_A5/tryitnow_btn.png"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/tryitnow_btn.png"
                     CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
             </div>
             <div class="form_line_guarantee"><a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a></div>

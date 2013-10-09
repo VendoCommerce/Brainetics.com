@@ -16,15 +16,15 @@
 <script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_PS_A5.js"></script>
-<link href="../Styles/global_PS_A5.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/global_A5.js"></script>
+<link href="../Styles/global_A5.css" rel="stylesheet" type="text/css" />
 <script src="//cdn.optimizely.com/js/77045885.js"></script>
 </head>
 <body>
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
 <!--#include file="header_main.html"-->
 <div class="container">
-<div class="page" style="background: url(../content/images/PS_A5/page_bg.jpg) repeat-x top #fff">
+<div class="page" style="background: url(../content/images/A5/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Privacy Policy</h2>
   <p>For each visitor to our Web page, our Web server automatically recognizes only the consumer's domain name, but not the e-mail address (where possible).</p>
