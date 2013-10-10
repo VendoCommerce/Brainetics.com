@@ -345,7 +345,12 @@
     <Content Include="Content\Images\a2\tryitnow_btn.png" />
     <Content Include="Content\Images\a2\upsell_accelerated.jpg" />
     <Content Include="Content\Images\a2\upsell_acceleratedsinglepay.jpg" />
+    <Content Include="Content\Images\a2\upsell_arrow_pink.png" />
     <Content Include="Content\Images\a2\upsell_girl_singlepay.jpg" />
+    <Content Include="Content\Images\a2\upsell_new_singlepay_v1.jpg" />
+    <Content Include="Content\Images\a2\upsell_new_singlepay_v2.jpg" />
+    <Content Include="Content\Images\a2\upsell_new_singlepay_v3.jpg" />
+    <Content Include="Content\Images\a2\upsell_new_singlepay_v4.jpg" />
     <Content Include="Content\Images\a2\upsell_onlinelab.jpg" />
     <Content Include="Content\Images\a2\upsell_playbook.jpg" />
     <Content Include="Content\Images\a2\upsell_rush.jpg" />
