@@ -741,7 +741,6 @@
     <Content Include="A5\UserControls\ShippingForm.ascx" />
     <Content Include="A5\UserControls\ShoppingCartControl.ascx" />
     <Content Include="A5\UserControls\TrackingPixels.ascx" />
-    <Content Include="PS\cart1.aspx" />
     <Content Include="PS\contact.aspx" />
     <Content Include="PS\privacy.aspx" />
     <Content Include="PS\send_email.aspx" />
@@ -2155,13 +2154,6 @@
     </Compile>
     <Compile Include="CardDecline.aspx.designer.cs">
       <DependentUpon>CardDecline.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PS\cart1.aspx.cs">
-      <DependentUpon>cart1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PS\cart1.aspx.designer.cs">
-      <DependentUpon>cart1.aspx</DependentUpon>
     </Compile>
     <Compile Include="PS\contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
