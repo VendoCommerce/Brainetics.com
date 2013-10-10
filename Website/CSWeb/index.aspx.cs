@@ -17,7 +17,9 @@ namespace CSWeb
             {
                  Response.Redirect("/A5?" + Request.QueryString + "&referrer=" + Request.Url);
             }
+
             else
+            
             {
                  Response.Redirect("/A5?referrer=" + Request.Url);
             }
