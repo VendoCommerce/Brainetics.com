@@ -21,11 +21,11 @@ namespace CSWeb.PS
                 if (!redirect_version.Equals(""))
                     if (Request.QueryString.ToString().Length > 0)
                     {
-                        Response.Redirect("http://brainetics.csdevsites.com/" + redirect_version + "/" + GetCurrentPageName() + "?" + Request.QueryString);
+                        Response.Redirect("https://brainetics.com/" + redirect_version + "/" + GetCurrentPageName() + "?" + Request.QueryString);
                     }
                     else
                     {
-                        Response.Redirect("http://brainetics.csdevsites.com/" + redirect_version + "/" + GetCurrentPageName());
+                        Response.Redirect("https://brainetics.com/" + redirect_version + "/" + GetCurrentPageName());
                     }
             }
 
