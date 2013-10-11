@@ -14,8 +14,8 @@ namespace CSWeb.PS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string page_name = OrderHelper.GetCurrentPageName();
-            OrderHelper.PS_redirect(page_name);
+            //string page_name = OrderHelper.GetCurrentPageName();
+            //OrderHelper.PS_redirect(page_name);
         }
       
     }
