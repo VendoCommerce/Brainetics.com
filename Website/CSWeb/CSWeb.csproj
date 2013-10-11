@@ -748,7 +748,6 @@
     <Content Include="A5\UserControls\TrackingPixels.ascx" />
     <Content Include="PS\contact.aspx" />
     <Content Include="PS\privacy.aspx" />
-    <Content Include="PS\send_email.aspx" />
     <Content Include="PS\faq.aspx" />
     <Content Include="PS\index.aspx" />
     <Content Include="PS\productdetails.aspx" />
@@ -2173,13 +2172,6 @@
     </Compile>
     <Compile Include="PS\privacy.aspx.designer.cs">
       <DependentUpon>privacy.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PS\send_email.aspx.cs">
-      <DependentUpon>send_email.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PS\send_email.aspx.designer.cs">
-      <DependentUpon>send_email.aspx</DependentUpon>
     </Compile>
     <Compile Include="PS\faq.aspx.cs">
       <DependentUpon>faq.aspx</DependentUpon>
