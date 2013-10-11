@@ -14,30 +14,11 @@ namespace CSWeb.PS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
-
-            if (sitePrefCache.GetAttributeValue("PS_Redirect_Ver").ToString() != null)
-            {
-                string redirect_version = sitePrefCache.GetAttributeValue("PS_Redirect_Ver").ToString();
-                if (!redirect_version.Equals(""))
-                    if (Request.QueryString.ToString().Length > 0)
-                    {
-                        Response.Redirect("https://www.brainetics.com/" + redirect_version + "/" + GetCurrentPageName() + "?" + Request.QueryString);
-                    }
-                    else
-                    {
-                        Response.Redirect("https://www.brainetics.com/" + redirect_version + "/" + GetCurrentPageName());
-                    }
-            }
+            string page_name = OrderHelper.GetCurrentPageName();
+            OrderHelper.PS_redirect(page_name);
 
 
         }
-        public string GetCurrentPageName()
-        {
-            string sPath = System.Web.HttpContext.Current.Request.Url.AbsolutePath;
-            System.IO.FileInfo oInfo = new System.IO.FileInfo(sPath);
-            string sRet = oInfo.Name;
-            return sRet;
-        }
+        
     }
 }

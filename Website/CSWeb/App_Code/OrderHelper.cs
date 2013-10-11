@@ -18,6 +18,8 @@ using System.Xml;
 using CSBusiness.FulfillmentHouse;
 using System.Collections;
 using CSBusiness.Attributes;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 /// <summary>
 /// Summary description for OrderHelper
@@ -439,6 +441,7 @@ namespace CSWeb
             return versionId;
         }
 
+       
         public static XmlNode GetDefaultFulFillmentHouseConfig()
         {
             XmlDocument doc = new XmlDocument();
@@ -854,6 +857,40 @@ namespace CSWeb
 
             return true;
         }
+        
+        
+        //Garo: PS redirect  section
+        public static void PS_redirect(string page_name)
+        {
+            SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
+
+            if (sitePrefCache.GetAttributeValue("PS_Redirect_Ver").ToString() != null)
+            {
+                string redirect_version = sitePrefCache.GetAttributeValue("PS_Redirect_Ver").ToString();
+                Page zpage = HttpContext.Current.Handler as Page;
+                if (!redirect_version.Equals(""))
+
+
+                    if (zpage.Request.QueryString.ToString().Length > 0)
+                    {
+                        zpage.Response.Redirect("https://www.brainetics.com/" + redirect_version + "/" + page_name + "?" + zpage.Request.QueryString);
+                    }
+                    else
+                    {
+                        zpage.Response.Redirect("https://www.brainetics.com/" + redirect_version + "/" + page_name);
+                    }
+            }
+        }
+        public static string GetCurrentPageName()
+        {
+            string sPath = System.Web.HttpContext.Current.Request.Url.AbsolutePath;
+            System.IO.FileInfo oInfo = new System.IO.FileInfo(sPath);
+            string sRet = oInfo.Name;
+            return sRet;
+        }
+         //end of Garo: PS redirect  section
     }
+
+
 }
  
