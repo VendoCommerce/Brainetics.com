@@ -494,12 +494,14 @@ namespace CSWeb.FulfillmentHouse
 
         public void PostOrderToDataPak(int orderId)
         {
-
+        //    string req="";
+        //    string res="";
             string req = new DataPak().GetRequest(orderId, false, false); // Posting order to OMX
             string res = CommonHelper.HttpPost(config.Attributes["transactionUrl"].Value, req);
             Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
             orderAttributes.Add("Request", new CSBusiness.Attributes.AttributeValue(req));
             orderAttributes.Add("Response", new CSBusiness.Attributes.AttributeValue(res));
+            orderAttributes.Add("DataPak_Submit_Date", new CSBusiness.Attributes.AttributeValue(DateTime.Now.ToString()));
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(res);
