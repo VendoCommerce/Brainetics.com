@@ -12,6 +12,9 @@ $('a.try,area.try').click(function(){
     return false;
 });
 
+$('.showcard,#mikecard').hover(function(){
+	$('#mikecard').toggle();
+});
 /* faq functionality */
 
 	$('.collapse').on('show', function(){

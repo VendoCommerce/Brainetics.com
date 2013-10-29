@@ -619,6 +619,11 @@
     <Content Include="Content\Images\upsell-7.jpg" />
     <Content Include="Content\Images\upsell-8.jpg" />
     <Content Include="Content\Images\upsell-9.jpg" />
+    <Content Include="Content\Images\upsell2_arrow.png" />
+    <Content Include="Content\Images\upsell_1paynew_ask.jpg" />
+    <Content Include="Content\Images\upsell_1paynew_content.jpg" />
+    <Content Include="Content\Images\upsell_1pay_new.jpg" />
+    <Content Include="Content\Images\upsell_1pay_overlay.png" />
     <Content Include="Content\Images\upsell_accelerated.jpg" />
     <Content Include="Content\Images\upsell_arrow.png" />
     <Content Include="Content\Images\upsell_comparison.png" />
@@ -634,6 +639,7 @@
     <Content Include="Content\Images\upsell_singlepay_accel.jpg" />
     <Content Include="Content\Images\upsell_soundhealth_cd.jpg" />
     <Content Include="Content\Images\write_to_mike.png" />
+    <Content Include="Content\Images\yes_continue_btn.jpg" />
     <Content Include="Content\Video\2020_how1.mp4" />
     <Content Include="Content\Video\ctavideo1.mp4" />
     <Content Include="Content\Video\ctavideo1_440x298.mp4" />
