@@ -307,6 +307,7 @@
     <Content Include="Content\Images\a2\asotv.png" />
     <Content Include="Content\Images\a2\brainetics_logo.png" />
     <Content Include="Content\Images\a2\btn_tryitnow_hdr.png" />
+    <Content Include="Content\Images\a2\btn_yesiwantosave.png" />
     <Content Include="Content\Images\a2\cards.jpg" />
     <Content Include="Content\Images\a2\cart_form_top.jpg" />
     <Content Include="Content\Images\a2\cart_product_pic.jpg" />
