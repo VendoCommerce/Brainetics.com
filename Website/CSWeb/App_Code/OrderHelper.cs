@@ -299,7 +299,7 @@ namespace CSWeb
                             .Replace("{SKU}", sku.SkuCode)
                             .Replace("{SKU_QTY}", sku.Quantity.ToString())
                             .Replace("{SKU_DESCR}", sku.LongDescription)
-                            .Replace("{SKU_PRICE}", sku.FullPrice.ToString("N2"));
+                            .Replace("{SKU_PRICE}", sku.TotalPrice.ToString("N2"));
 
                         sb.Append(resultString);
                     }
