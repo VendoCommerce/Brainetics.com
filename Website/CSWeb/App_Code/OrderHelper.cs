@@ -182,8 +182,47 @@ namespace CSWeb
             EmailSetting emailTemplate = EmailManager.GetEmail(emailId);
             OrderManager orderMgr = new OrderManager();
             Order orderData = orderMgr.GetOrderDetails(orderId);
+            string orderSubtotal = "", orderShipping = "", orderTax = "", orderTotal = "";
+            // added to customize the confirmation mail to match the customized reciept page
+           
 
 
+                List<Sku> skus = orderData.SkuItems.FindAll(x => !CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId));
+
+                foreach (Sku sku in skus)
+                {
+                    if (CSWebBase.SiteBasePage.IsMainSku(sku.SkuId))
+                    {
+                        decimal totalPrice = sku.TotalPrice;
+
+                        // add up all initial prices of all kit bundle items
+                        foreach (Sku bundleSku in orderData.SkuItems.FindAll(x => CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)))
+                        {
+                            totalPrice += bundleSku.TotalPrice;
+                        }
+
+                        sku.TotalPrice = totalPrice;
+                    }
+                }
+
+                skus.Sort(new CSWebBase.SkuSortComparer());
+
+               
+                orderSubtotal = Math.Round(orderData.SubTotal, 2).ToString();
+                orderShipping = Math.Round(CSWebBase.SiteBasePage.GetShippingCost(orderData), 2).ToString();
+                orderTax = Math.Round(orderData.Tax, 2).ToString();
+                orderTotal = Math.Round(orderData.Total, 2).ToString();
+
+                if (orderData.RushShippingCost > 0)
+                {
+                    orderShipping = Math.Round(orderData.RushShippingCost, 2).ToString();
+                }
+                //if (orderData.DiscountCode.Length > 0 && (CSWebBase.SiteBasePage.FreeShipDiscountCodeMainSku ?? string.Empty).ToUpper() != orderData.DiscountCode.ToUpper())
+                //{
+                //    orderPromotionalAmount = String.Format("(${0:0.00})", orderData.DiscountAmount);
+                //}
+
+            
             if (emailTemplate.Body != null)
             {
                 //Subject Translation
@@ -192,14 +231,23 @@ namespace CSWeb
                 //Body Translation
                 String BodyTemplate = emailTemplate.Body.Replace("&", "&amp;");
 
-                BodyTemplate = BodyTemplate.Replace("{SUBTOTAL}", orderData.SubTotal.ToString("N2"));
-                BodyTemplate = BodyTemplate.Replace("{SHIPPING_HANDLING}", orderData.ShippingCost.ToString("N2"));
-                BodyTemplate = BodyTemplate.Replace("{TAX}", orderData.Tax.ToString("N2"));
-                BodyTemplate = BodyTemplate.Replace("{TOTAL}", orderData.Total.ToString("N2"));
+                BodyTemplate = BodyTemplate.Replace("{SUBTOTAL}", string.Format (orderSubtotal,"N2"));
+                BodyTemplate = BodyTemplate.Replace("{SHIPPING_HANDLING}", string.Format (orderShipping,"N2"));
+                BodyTemplate = BodyTemplate.Replace("{TAX}", string.Format (orderTax,"N2"));
+                BodyTemplate = BodyTemplate.Replace("{TOTAL}", string.Format (orderTotal,"N2"));
+               // BodyTemplate = BodyTemplate.Replace("{RushShipping}", orderRushShipping.ToString("N2"));
+               // BodyTemplate = BodyTemplate.Replace("{PromotionalAmount}", orderPromotionalAmount.ToString("N2"));
                 BodyTemplate = BodyTemplate.Replace("{ORDER_ID}", orderData.OrderId.ToString());
                 BodyTemplate = BodyTemplate.Replace("{ORDER_NUMBER}", orderData.OrderId.ToString());
                 BodyTemplate = BodyTemplate.Replace("{ORDER_DATE}", orderData.CreatedDate.ToString("dd MMM yyyy hh:mm:ss"));
 
+                //BodyTemplate = BodyTemplate.Replace("{SUBTOTAL}", orderData.SubTotal.ToString("N2"));
+                //BodyTemplate = BodyTemplate.Replace("{SHIPPING_HANDLING}", orderData.ShippingCost.ToString("N2"));
+                //BodyTemplate = BodyTemplate.Replace("{TAX}", orderData.Tax.ToString("N2"));
+                //BodyTemplate = BodyTemplate.Replace("{TOTAL}", orderData.Total.ToString("N2"));
+                //BodyTemplate = BodyTemplate.Replace("{ORDER_ID}", orderData.OrderId.ToString());
+                //BodyTemplate = BodyTemplate.Replace("{ORDER_NUMBER}", orderData.OrderId.ToString());
+                //BodyTemplate = BodyTemplate.Replace("{ORDER_DATE}", orderData.CreatedDate.ToString("dd MMM yyyy hh:mm:ss"));
                 CSBusiness.CustomerManagement.Address billing = orderData.CustomerInfo.BillingAddress;
                 if (billing != null)
                 {
@@ -242,10 +290,10 @@ namespace CSWeb
                 {
                     string originalString = node.ToString();
 
-                    int totalSkuItems = orderData.SkuItems.Count;
+                    int totalSkuItems = skus.Count ;
                     for (int i = 0; i < totalSkuItems; i++)
                     {
-                        Sku sku = orderData.SkuItems[i];
+                        Sku sku = skus[i];
                         string resultString = originalString;
                         resultString = resultString
                             .Replace("{SKU}", sku.SkuCode)
