@@ -470,6 +470,7 @@
     <Content Include="Content\Images\a5\admin_logo.jpg" />
     <Content Include="Content\Images\a5\asotv.png" />
     <Content Include="Content\Images\a5\brainetics_logo.png" />
+    <Content Include="Content\Images\a5\btn_ordernow.png" />
     <Content Include="Content\Images\a5\cards.jpg" />
     <Content Include="Content\Images\a5\cart_form_top.jpg" />
     <Content Include="Content\Images\a5\cart_product_pic.jpg" />
