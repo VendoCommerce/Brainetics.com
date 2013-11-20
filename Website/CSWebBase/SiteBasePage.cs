@@ -36,7 +36,11 @@ namespace CSWebBase
             ShippingRush2 = 61,
             ShippingOvernight = 62,
             ShippingSurcharge = 58,
-            DestinationReward = 63
+            DestinationReward = 63,
+            Enhanced4MultiPay = 64,
+            Enhanced4OnePay = 65,
+            Accelerated4MultiPay = 66,
+            Accelerated4OnePay = 67
         }
 
         #region Properties
@@ -127,6 +131,10 @@ namespace CSWebBase
                 case SkuEnum.AcceleratedOnePay:
                 case SkuEnum.EnhancedMultiPay:
                 case SkuEnum.EnhancedOnePay:
+                case SkuEnum.Accelerated4MultiPay:
+                case SkuEnum.Accelerated4OnePay:
+                case SkuEnum.Enhanced4MultiPay:
+                case SkuEnum.Enhanced4OnePay:
                     return true;
             }
 
@@ -175,7 +183,7 @@ namespace CSWebBase
             Sku sku;
 
             // Enhanced Multi Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return x.SkuId == (int)SkuEnum.EnhancedMultiPay; });
+            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.EnhancedMultiPay) || (x.SkuId == (int)SkuEnum.Enhanced4MultiPay); });
             if (sku != null) 
             {
                 if (AddIfDoesNotExist(cart, SkuEnum.Trial, sku.Quantity))
@@ -186,7 +194,7 @@ namespace CSWebBase
             }
 
             // Accelerated Multi Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return x.SkuId == (int)SkuEnum.AcceleratedMultiPay; });
+            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.AcceleratedMultiPay) || (x.SkuId == (int)SkuEnum.Accelerated4MultiPay); });
             if (sku != null)
             {
                 if (AddIfDoesNotExist(cart, SkuEnum.Trial, sku.Quantity))
@@ -209,7 +217,7 @@ namespace CSWebBase
             }
 
             // Enhanced One Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return x.SkuId == (int)SkuEnum.EnhancedOnePay; });
+            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.EnhancedOnePay) || (x.SkuId == (int)SkuEnum.Enhanced4OnePay); });
             if (sku != null)
             {
                 if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
@@ -217,7 +225,7 @@ namespace CSWebBase
             }
 
             // Accelerated One Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return x.SkuId == (int)SkuEnum.AcceleratedOnePay; });
+            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.AcceleratedOnePay) || (x.SkuId == (int)SkuEnum.Accelerated4OnePay); });
             if (sku != null)
             {
                 if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))

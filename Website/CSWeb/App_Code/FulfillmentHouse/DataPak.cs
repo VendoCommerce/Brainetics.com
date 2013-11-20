@@ -104,6 +104,16 @@ namespace CSWeb.FulfillmentHouse
                         trackingCode = "002";
                     }
 
+                    // This will look at TrackingCode Value by VersinName e.g TrackingCode_B2="003"; Added on 11/20/2013
+                    string TrackingCodeByVersion = orderItem.VersionName.ToUpper();
+                    if (!TrackingCodeByVersion.Equals(""))
+                    {
+                        if (config.SelectSingleNode("@TrackingCode_" + TrackingCodeByVersion) != null)
+                        {
+                            trackingCode = config.Attributes["TrackingCode_" + TrackingCodeByVersion].Value;
+                        }
+                    }
+
                     if (orderItem.SkuItems.FirstOrDefault(x => { return x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.DestinationReward; }) != null)
                     {
                         trackingCode = "BONUS";
