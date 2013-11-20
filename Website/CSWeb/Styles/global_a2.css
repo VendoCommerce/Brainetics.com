@@ -1009,6 +1009,13 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 	font-family: "Nunito", sans-serif;		
 }
 
+.page_upsell h3 {
+	color: #000;
+	padding-bottom: 30px;
+	font-size: 27px;
+	line-height: 32px;
+}
+
 .upsell_left {
 	float:left;
 	width: 420px;
@@ -1042,6 +1049,16 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 	display: inline-block;	
 	padding-right: 40px;
 	background: url(/content/images/upsell_arrow.png) no-repeat right 12px;
+	min-height: 90px;
+}
+
+.ask_arrow2 {
+	font-weight: bold;
+	font-size: 25px;
+	line-height: normal;
+	display: inline-block;	
+	padding-right: 35px;
+	background: url(/content/images/a2/upsell_arrow_pink.png) no-repeat right 12px;
 	min-height: 90px;
 }
 
