@@ -436,7 +436,9 @@ namespace CSWeb.FulfillmentHouse
                         else
                         {
                             if (Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.EnhancedMultiPay || 
-                                Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.AcceleratedMultiPay)
+                                Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.AcceleratedMultiPay ||
+                                Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.Enhanced4MultiPay ||
+                                Item.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.Accelerated4MultiPay )
                                 xml.WriteElementString("Price", GetMoneyStr(Item.FullPrice + trialSku.FullPrice));
                             else
                                 xml.WriteElementString("Price", GetMoneyStr(Item.FullPrice));
