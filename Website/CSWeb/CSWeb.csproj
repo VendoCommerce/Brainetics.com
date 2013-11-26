@@ -598,6 +598,12 @@
     <Content Include="Content\Images\admin\yes_btn.png" />
     <Content Include="Content\Images\ages.png" />
     <Content Include="Content\Images\awards.jpg" />
+    <Content Include="Content\Images\b2\upsell_1paynew_ask.png" />
+    <Content Include="Content\Images\b2\upsell_1paynew_content.jpg" />
+    <Content Include="Content\Images\b2\upsell_1pay_new.jpg" />
+    <Content Include="Content\Images\b2\upsell_new_singlepay_v1.jpg" />
+    <Content Include="Content\Images\b2\upsell_new_singlepay_v3.jpg" />
+    <Content Include="Content\Images\b2\upsell_new_singlepay_v4.jpg" />
     <Content Include="Content\Images\badge-new.png" />
     <Content Include="Content\Images\bg-about.jpg" />
     <Content Include="Content\Images\bg-checkout-2.png" />
