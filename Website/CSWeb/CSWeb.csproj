@@ -688,6 +688,7 @@
     <Content Include="Content\Images\upsell_rush.jpg" />
     <Content Include="Content\Images\upsell_singlepay.jpg" />
     <Content Include="Content\Images\upsell_singlepay_accel.jpg" />
+    <Content Include="Content\Images\upsell_singlepay_accel_rev.jpg" />
     <Content Include="Content\Images\upsell_soundhealth_cd.jpg" />
     <Content Include="Content\Images\write_to_mike.png" />
     <Content Include="Content\Images\yes_continue_btn.jpg" />
