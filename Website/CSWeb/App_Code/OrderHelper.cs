@@ -20,6 +20,8 @@ using System.Collections;
 using CSBusiness.Attributes;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CSWebBase;
+
 
 /// <summary>
 /// Summary description for OrderHelper
@@ -937,6 +939,204 @@ namespace CSWeb
             return sRet;
         }
          //end of Garo: PS redirect  section
+
+
+        public static string GetDynamicVersionData(string dataName)
+        {
+            string radioVersionData = "";
+            ClientCartContext context = (ClientCartContext)HttpContext.Current.Session["ClientOrderData"];
+            if (context.OrderAttributeValues != null && context.OrderAttributeValues.ContainsKey("DynamicVerionData"))
+            {
+                radioVersionData = context.OrderAttributeValues["DynamicVerionData"].Value;
+            }
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(radioVersionData);
+            doc.SelectSingleNode("version");
+
+            string returnData = "";
+            switch (dataName)
+            {
+                case "phone":
+                    returnData = doc.SelectSingleNode("Version")["Phone"].InnerText;
+                    break;
+
+                case "image1":
+                    returnData = doc.SelectSingleNode("Version")["Image1"].InnerText;
+                    break;
+
+                case "MainKitBlack":
+                    returnData = doc.SelectSingleNode("Version")["MainKitBlack"].InnerText;
+                    break;
+
+                case "MainKitDarkGray":
+                    returnData = doc.SelectSingleNode("Version")["MainKitDarkGray"].InnerText;
+                    break;
+
+                case "MainKitLightGray":
+                    returnData = doc.SelectSingleNode("Version")["MainKitLightGray"].InnerText;
+                    break;
+
+                case "imageSelector":
+                    returnData = doc.SelectSingleNode("Version")["imageSelector"].InnerText;
+                    break;
+
+                case "homepageimage":
+                    returnData = doc.SelectSingleNode("Version")["Image1"].InnerText;
+                    break;
+
+                case "ctaimage":
+                    returnData = doc.SelectSingleNode("Version")["Image2"].InnerText;
+                    break;
+
+                case "cartimage":
+                    returnData = doc.SelectSingleNode("Version")["Image3"].InnerText;
+                    break;
+            }
+            return returnData;
+        }
+
+        public static string GetVersionNameByReferrer(ClientCartContext CartContext)
+        {
+            string versionName = "";
+            try
+            {
+                versionName = HttpContext.Current.Request.Url.Host.ToUpper().Replace("WWW.", "");
+                if (CartContext.OrderAttributeValues != null)
+                {
+                    Uri uri = new Uri(CartContext.OrderAttributeValues["ref_url"].Value);
+                    versionName = uri.Host.ToUpper().Replace("WWW.", "");
+                    SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
+                    if (!sitePrefCache.AttributeValuesLoaded)
+                        sitePrefCache.LoadAttributeValues();
+                    string[] strRedirectDomains = sitePrefCache.AttributeValues["redirectdomainnames"].Value.ToLower().Split(';');
+                    if (strRedirectDomains.Any(versionName.ToLower().Contains))
+                    {
+                        versionName += "-" + GetDynamicVersionName();
+                    }
+                    else if (versionName.StartsWith("TRYKYRO.COM"))
+                    {
+                        versionName = "Direct" + "-" + GetDynamicVersionName();
+                    }
+                    else
+                    {
+                        versionName = "Referral-" + GetDynamicVersionName();
+                    }
+                }
+            }
+            catch { versionName = "Direct" + "-" + GetDynamicVersionName(); }
+            return versionName.ToUpper();
+        }
+
+        public static bool SetDynamicLandingPageVersion(string version, ClientCartContext context)
+        {
+            string radioVersionData = "";
+            if (context.OrderAttributeValues != null && context.OrderAttributeValues.ContainsKey("DynamicVerionData"))
+            {
+                radioVersionData = context.OrderAttributeValues["DynamicVerionData"].Value;
+            }
+            else
+            {
+                radioVersionData = DynamicVersionDAL.GetDynamicVersion(version);
+                context.OrderAttributeValues.Add("DynamicVerionData", new AttributeValue(radioVersionData));
+                HttpContext.Current.Session["ClientOrderData"] = context;
+            }
+            return true;
+        }
+
+        public static string GetDynamicVersionName()
+        {
+            string strDynamicVersion = "";
+            ClientCartContext clientData = (ClientCartContext)HttpContext.Current.Session["ClientOrderData"];
+            if (clientData.OrderAttributeValues != null)
+            {
+                if (clientData.OrderAttributeValues.ContainsKey("DynamicVerionName"))
+                {
+                    strDynamicVersion = clientData.OrderAttributeValues["DynamicVerionName"].Value;
+                }
+                else
+                {
+                    strDynamicVersion = CSBusiness.Web.CSBasePage.GetVersionName();
+                }
+            }
+            return strDynamicVersion.ToUpper();
+        }
+
+        public static bool IsMobileBrowser()
+        {
+            bool result = false;
+            try
+            {
+                string ua = HttpContext.Current.Request.UserAgent.ToLower();
+                if (ua != null && (ua.Contains("iphone") || ua.Contains("blackberry") || ua.Contains("android")))
+                {
+                    result = true;
+                }
+            }
+            catch { }
+            return result;
+        }
+
+        public static int CountNums(string s)
+        {
+            string s1 = s;
+
+            int i;
+            int j = 0;
+            for (i = 0; i < s1.Length; i++)
+            {
+                if (isnum(s1[i]) == true) { j++; }
+            }
+
+            return j;
+
+        }
+
+        public static bool isnum(char c)
+        {
+            bool b = false;
+            if ((((int)c) >= 48) && (((int)c) <= 57)) b = true;
+            return b;
+        }
+
+        public static bool onlynums(string s)
+        {
+            string s1 = s;
+
+            int i;
+            bool b = true;
+
+            for (i = 0; i < s1.Length; i++)
+            {
+                if (isnum(s1[i]) != true) { b = false; }
+            }
+
+            return b;
+
+        }
+
+        public static string GetCleanPhoneNumber(string phone)
+        {
+            string result = string.Empty;
+
+            int i = 0;
+            if (phone.Length > 0)
+            {
+                i = CountNums(phone);
+            }
+
+            int cnum = 0;
+
+            foreach (char c in phone)
+            {
+                cnum++;
+                if (!((i > 10) && (cnum == 1) && (c == '1')))
+                {
+                    if (char.IsDigit(c))
+                        result += c;
+                }
+            }
+            return result;
+        }
     }
 
 
