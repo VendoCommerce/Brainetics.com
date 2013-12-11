@@ -442,7 +442,7 @@ namespace CSWebBase
                     if (currentVersion != null && !currentVersion.Title.ToUpper().Contains("MOBILE")) // mobile device not viewing the mobile version
                     {
                         if (Request.QueryString.Count > 0)
-                            Response.Redirect("/MOBILE" + Request.QueryString, true);
+                            Response.Redirect("/MOBILE?" + Request.QueryString, true);
                         else
                             Response.Redirect("/MOBILE", true);
                     }
