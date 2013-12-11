@@ -4,16 +4,16 @@
 <asp:Repeater runat="server" ID="rptShoppingCart" OnItemDataBound="rptShoppingCart_OnItemDataBound"
     OnItemCommand="rptShoppingCart_OnItemCommand">
     <HeaderTemplate><div class="cart_table clearfix">
-                 <div class="cart_text"><strong>Item</strong>
-                 </div>
-           
-                     <div class="cart_select">Quantity
-                     </div>
-                        <div class="product_price">Price
-                        </div>
+                             <div class="cart_text"><strong>Item</strong>
+                             </div>
+                       
+                             <div class="cart_select">Quantity
+                             </div>
+                             <div class="product_price">Price
+                             </div>
                         </div>   
                         <div class="horizontal_dots">
-        </div>
+                    </div>
     </HeaderTemplate>
     <ItemTemplate>
         <div class="cart_table clearfix">
@@ -22,8 +22,8 @@
             <div class="cart_text">
            
                     <asp:Label runat="server" ID="lblSkuCode"></asp:Label>
-                <p class="basket_description">
-                    <asp:Label runat="server" ID='lblSkuDescription'></asp:Label></p>
+                <div class="basket_description">
+                    <asp:Label runat="server" ID='lblSkuDescription'></asp:Label></div>
             </div>
             <div class="cart_select">
               <%--   <asp:DropDownList ID="ddlQty" runat="server" CssClass="text-4" AutoPostBack="true"  onselectedindexchanged="ddlQty_SelectedIndexChanged" Visible="false">
@@ -53,33 +53,32 @@
         <div class="cart_totals clearfix">
             <div class="cart_totals_left">
                 Subtotal<br />
-                S&amp;H:<br />
-                Tax:
-                <br />
-                Total:</div>
+                S&amp;H<br />
+                Tax <br />
+                Total</div>
             <div class="cart_totals_right">
                 <asp:Literal runat="server" ID='lblSubtotal'></asp:Literal><br />
                 <asp:Literal runat="server" ID="lblShipping"></asp:Literal><br />
-                <asp:Literal runat="server" ID="lblTax"></asp:Literal>
-                <br />
+                <asp:Literal runat="server" ID="lblTax"></asp:Literal><br />
                 <asp:Literal runat="server" ID="lblOrderTotal"></asp:Literal>
                 <asp:Literal runat="server" ID="lblRushShipping" Visible="false"></asp:Literal>
-                <table>
+                
+            </div>
+            <table style="display: none;">
                     <tr id='holderRushShippingTotal' runat="server">
-                        <td class='cartSubtotalTitle' align="right" colspan="3">
-                            Rush Shipping:
+                        <td class='cartSubtotalTitle' align="right" colspan="3" style="font-size: 24px; font-weight: normal;">
+                            Rush Shipping:&nbsp;
                         </td>
                         <td class='cartSubtotalValue' align="center">
                         </td>
                     </tr>
                     <tr id='holderRushShipping' runat="server" visible="false">
-                        <td colspan="4" class="rushShipping">
+                        <td colspan="4" class="rushShipping" style="font-size: 24px; font-weight: normal;">
                             <asp:CheckBox runat="server" ID="chkIncludeRushShipping" OnCheckedChanged="chkIncludeRushShipping_OnCheckedChanged"
                                 AutoPostBack="true" Text="Rush Shipping" />
                         </td>
                     </tr>
                 </table>
-            </div>
         </div>
     </asp:PlaceHolder>
 </asp:Panel>

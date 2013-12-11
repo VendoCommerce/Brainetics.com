@@ -1,8 +1,7 @@
 <%@Control Language="C#" Inherits="CSWeb.Mobile.UserControls.CheckoutThankYouModule2" %>
-<%@ Register Src="../UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 
-<p class="red bold f32 caps" style="padding-top: 30px">
-          Thank you for ordering!</p>
+<h1 class="blue f34" style="padding-left: 28px; text-transform: uppercase;">
+          Thank you for ordering!</h1>
        
          
 <p> Your order number is
@@ -83,7 +82,7 @@
                     </ItemTemplate>
                 </asp:DataList>
                 <asp:Literal ID="LiteralTableRows" runat="server"></asp:Literal>
-          <tr><td colspan="4" style="text-align:right; padding-right: 5px;">
+          <tr><td colspan="4" style="text-align:right; padding-right: 5px; line-height: 38px;">
                     SUBTOTAL:<br />
                     <asp:Panel ID="pnlPromotionLabel" runat="server" Visible="false">
                         Discount:<br />
@@ -95,7 +94,7 @@
                     ESTIMATED TAX:<br />
                     <strong>TOTAL:</strong></td>
                     
-               <td>
+               <td style="line-height: 38px;">
                     <strong>$<asp:Literal ID="LiteralSubTotal" runat="server"></asp:Literal></strong><br />
                     <asp:Panel ID="pnlPromotionalAmount" runat="server" Visible="false">
                         <asp:Label runat="server" ID="lblPromotionPrice"></asp:Label><br />
@@ -110,5 +109,3 @@
          
                    
 
-
-  <uc:TrackingPixels ID="TrackingPixels" runat="server" />

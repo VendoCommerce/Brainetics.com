@@ -1,6 +1,7 @@
 ﻿<%@Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.Mobile.Store.receipt" EnableViewState="true" EnableSessionState="True" %>
 <%@ Register Src="UserControls/CheckoutThankYouModule2.ascx" TagName="Form"
     TagPrefix="uc1" %>
+<%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 <!doctype html>
 <html>
 <head>
@@ -17,7 +18,7 @@
 <link href="/styles/global_mobile.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/scripts/NoBack.js"></script>
 </head>
-    <body>
+<body id="receipt">
 
 <div class="container">
 <!--#include file="popups.html"-->
@@ -28,6 +29,6 @@
 </div>
 <!--#include file="footer.html"-->
 </div>
-
+<uc:TrackingPixels ID="TrackingPixels" runat="server" />
 </body>
 </html>

@@ -4,10 +4,8 @@
 </asp:ScriptManager>
 <asp:UpdatePanel ID="upBillingForm" runat="server">
     <ContentTemplate>
-        <img src="<%= GetDynamicVersionData("cartimage")%>" usemap="#Mapcart" />
-    <map name="Mapcart">
-      <area shape="circle" coords="108,113,86" href="returns.aspx">
-    </map>
+        <img src="<%= GetDynamicVersionData("cartimage")%>" alt="Brainetics&reg;" />
+
         <div class="cart_mobile">
      
            <div class="form_line clearfix" runat="server">
@@ -84,7 +82,7 @@
                                                 ControlToValidate="txtPhoneNumber"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblShippingPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
                 
-                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone Number"></asp:TextBox>
+                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone"></asp:TextBox>
             </div>
           
             <asp:Panel ID="pnlQuantity" runat="server" Visible="false">
@@ -111,7 +109,7 @@
                    
                      
                     </div>
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/continue_btn.jpg" OnClick="imgBtn_OnClick" />
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/btn_continue.png" OnClick="imgBtn_OnClick" />
                
             </div>
  

@@ -22,9 +22,9 @@
     <ContentTemplate>
 
 
-  <img src="/Content/Images/mobile/cart2_top.jpg" style="margin-bottom: 20px" />
+  <img src="/Content/Images/mobile/cart2_top.png" alt="Brainetics&reg;" style="margin-bottom: 20px" />
    <uc:ShoppingCartControl ID="ShoppingCartControl1" runat="server" OnUpdateShipping="Shipping_OnUpdateShipping"></uc:ShoppingCartControl>     
-   <img src="/Content/Images/mobile/paymentinfo.jpg" />
+   <img src="/Content/Images/mobile/paymentinfo.png" alt="Payment Information" style="margin-bottom: 20px" />
 <div class="cart_mobile">
 
             <div class="form_line clearfix">
@@ -97,8 +97,15 @@ as my shipping address.</label>
                   <asp:TextBox ID="txtZipCode" runat="server" MaxLength="7" CssClass="text-1" placeholder="ZIP Code"></asp:TextBox>
                 </div>
             </asp:Panel>
-              <div class="form_line">
-            <img src="/Content/Images/mobile/cards.jpg" />
+              
+            <div class="form_line clearfix" style="padding-top: 20px;">
+              
+              <div class="form_ssl"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=NO&amp;use_transparent=YES&amp;lang=en"></script><br />
+  <a href="http://www.symantec.com/ssl-certificates" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a>
+  </div>
+              
+              <div class="form_cards"><img src="/Content/Images/mobile/cards.jpg" alt="Accepted Credit Cards" /></div>
+            
             </div>
             <div class="form_line clearfix" runat="server" Visible="False" >
                 <div class="error-2">
@@ -106,6 +113,13 @@ as my shipping address.</label>
                     <asp:Label ID="lblCCType" runat="server" Visible="false"></asp:Label></div>
               <asp:DropDownList ID="ddlCCType" runat="server" CssClass="text-1">
                 </asp:DropDownList>
+            </div>
+            <div class="form_line clearfix">
+                <div class="error-2">
+                    <asp:RequiredFieldValidator ID="RfvCCNumberError" ControlToValidate="txtCCNumber1" runat="server" Display="Dynamic" ErrorMessage="*" />
+                    <asp:Label ID="lblCCNumberError" runat="server" Visible="false"></asp:Label></div>
+              <asp:TextBox ID="txtCCNumber1" runat="server" CssClass="text-1" MaxLength="16" placeholder="Credit Card Number"></asp:TextBox>
+              
             </div>
             <div class="form_line clearfix">
                 <div class="error-2">
@@ -120,25 +134,18 @@ as my shipping address.</label>
                 </asp:DropDownList>
             </div>
             <div class="form_line clearfix">
-            
-                <div class="error-2">
-                    <asp:Label ID="lblCCNumberError" runat="server" Visible="false"></asp:Label></div>
-              <asp:TextBox ID="txtCCNumber1" runat="server" CssClass="text-1" MaxLength="16" placeholder="Credit Card Number"></asp:TextBox><asp:RequiredFieldValidator ID="RfvCCNumberError" ControlToValidate="txtCCNumber1" runat="server" Display="Dynamic" ErrorMessage="*" />
-              
-            </div>
-            <div class="form_line clearfix">
              
                
                 <div class="error-2">
                     <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />
                     <asp:Label ID="lblEmailError" runat="server" Visible="false"></asp:Label>
                     <asp:Label ID="lblCvvError" runat="server" Visible="false"></asp:Label></div>
-                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4" placeholder="CVV"></asp:TextBox>    <a class="cvv" href="/content/images/mobile/cvv.png">What is this?</a>
+                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4" placeholder="CVV"></asp:TextBox>    <a class="cvv" href="#cvv">What is this?</a>
             </div>
             <div class="form_line clearfix" runat="Server" visible="false">
               <asp:CheckBox CssClass="checkbox-left" Checked="true" id="chkboxOffers" runat="server" />
                 <label class="label-2" for="specialoffers">
-                    Yes, I’d like to receive news and savings from Kyrobak!</label>
+                    Yes, I’d like to receive news and savings from Brainetics&reg;!</label>
             </div>
             <div class="form_line clearfix" runat="server" Visible="false">
                 <div class="error-2">
@@ -152,12 +159,12 @@ as my shipping address.</label>
               
 
             </div>
-            <div class="form_line_btn">
+            <div class="form_line_btn" style="padding-bottom: 70px;">
                 <div class="error-2">
                     <asp:Label ID="lblValidation" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                      
                     </div>
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/completeorder_btn.jpg" OnClick="imgBtn_OnClick" />
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
             </div>
           
       </div>
