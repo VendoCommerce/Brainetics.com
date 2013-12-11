@@ -1,17 +1,16 @@
 using System;
 using System.Web;
 using System.Web.UI;
-using CSBusiness.Preference;
 using CSBusiness.Resolver;
 using CSBusiness.OrderManagement;
 using CSBusiness.Cache;
 using System.Collections.Generic;
 using CSBusiness;
 using System.Web.UI.WebControls;
-using CSWeb.Mobile.Store;
+using CSWeb.Root.Store;
 using System.Text;
+using CSBusiness.Preference;
 using CSData;
-using CSBusiness.Attributes;
 
 namespace CSWeb.Mobile.UserControls
 {
@@ -23,13 +22,13 @@ namespace CSWeb.Mobile.UserControls
         protected Literal LiteralSubTotal, LiteralShipping, LiteralTax, LiteralTotal,
             LiteralName, LiteralAddress, LiteralCity, LiteralEmail, LiteralZip, LiteralState, LiteralCountry,
             LiteralName_b, LiteralAddress_b, LiteralCity_b, LiteralZip_b, LiteralState_b, LiteralCountry_b, LiteralRushShipping, LiteralGoogleAnalytics, LiteralID, LiteralSid, LiteralOfferId,
-            LiteralAddress2, LiteralAddress2_b, LiteralPhone;
+            LiteralAddress2, LiteralAddress2_b;
 
         protected DataList dlordersList;
         protected Label lblPurchaseName, lblPromotionPrice;
-        protected System.Web.UI.WebControls.Panel pnlRushLabel, pnlRush, pnlPromotionalAmount, pnlPromotionLabel, pnlBAddress2, pnlSAddress2;
+        protected System.Web.UI.WebControls.Panel pnlRushLabel, pnlRush, pnlPromotionalAmount, pnlPromotionLabel;
         protected HyperLink hlPrintLink;
-        public int orderId = 0;
+         public int orderId = 0;
 
         private ClientCartContext CartContext
         {
@@ -59,28 +58,19 @@ namespace CSWeb.Mobile.UserControls
             return shippingCost;
 
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Params["oId"] != null)
                 orderId = Convert.ToInt32(Request.Params["oId"]);
             else
+            {
+                if (CartContext == null)
+                    Response.Redirect("CheckoutSessionExpired.aspx?emppage=" + HttpUtility.UrlEncode(Request.Url.LocalPath), true);
+
                 orderId = CartContext.OrderId;
+            }
             if (!this.IsPostBack)
             {
-                if (orderId > 0)
-                {
-                    Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId);
-                    if (!orderData.AttributeValuesLoaded)
-                        orderData.LoadAttributeValues();
-
-                    if (!orderData.AttributeValues.ContainsAttribute("OrderFlowCompleted"))
-                    {
-                        Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
-                        orderAttributes.Add("OrderFlowCompleted", new CSBusiness.Attributes.AttributeValue("1"));
-                        CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, orderData.OrderStatusId);
-                    }
-                }
                 BindData();
                 //Fire OrderConfirmation Test
                 OrderHelper.SendOrderCompletedEmail(orderId);
@@ -94,12 +84,32 @@ namespace CSWeb.Mobile.UserControls
         {
             if (orderId > 0)
             {
-                Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId);
+                Order orderData = CSWebBase.CustomOrderManager.GetOrderDetails(orderId);
 
-                dlordersList.DataSource = orderData.SkuItems;
+                List<Sku> skus = orderData.SkuItems.FindAll(x => !CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId));
+
+                foreach (Sku sku in skus)
+                {
+                    if (CSWebBase.SiteBasePage.IsMainSku(sku.SkuId))
+                    {
+                        decimal totalPrice = sku.TotalPrice;
+
+                        // add up all initial prices of all kit bundle items
+                        foreach (Sku bundleSku in orderData.SkuItems.FindAll(x => CSWebBase.SiteBasePage.IsKitBundleItem(x.SkuId)))
+                        {
+                            totalPrice += bundleSku.TotalPrice;
+                        }
+
+                        sku.TotalPrice = totalPrice;
+                    }
+                }
+
+                skus.Sort(new CSWebBase.SkuSortComparer());
+
+                dlordersList.DataSource = skus;
                 dlordersList.DataBind();
                 LiteralSubTotal.Text = Math.Round(orderData.SubTotal, 2).ToString();
-                LiteralShipping.Text = Math.Round(orderData.ShippingCost, 2).ToString();
+                LiteralShipping.Text = Math.Round(CSWebBase.SiteBasePage.GetShippingCost(orderData), 2).ToString();
                 LiteralTax.Text = Math.Round(orderData.Tax, 2).ToString();
                 LiteralTotal.Text = Math.Round(orderData.Total, 2).ToString();
                 if (orderData.RushShippingCost > 0)
@@ -110,7 +120,7 @@ namespace CSWeb.Mobile.UserControls
                 }
 
 
-                if (orderData.DiscountCode.Length > 0)
+                if (orderData.DiscountCode.Length > 0 && (CSWebBase.SiteBasePage.FreeShipDiscountCodeMainSku ?? string.Empty).ToUpper() != orderData.DiscountCode.ToUpper())
                 {
                     pnlPromotionLabel.Visible = true;
                     pnlPromotionalAmount.Visible = true;
@@ -124,14 +134,6 @@ namespace CSWeb.Mobile.UserControls
                 LiteralEmail.Text = orderData.CustomerInfo.Email;
                 LiteralAddress.Text = orderData.CustomerInfo.ShippingAddress.Address1;
                 LiteralAddress2.Text = orderData.CustomerInfo.ShippingAddress.Address2;
-                if (LiteralAddress2.Text.Equals(""))
-                {
-                    pnlSAddress2.Visible = false;
-                }
-                else
-                {
-                    pnlSAddress2.Visible = true;
-                }
                 LiteralCity.Text = orderData.CustomerInfo.ShippingAddress.City;
                 LiteralZip.Text = orderData.CustomerInfo.ShippingAddress.ZipPostalCode;
                 LiteralState.Text = StateManager.GetStateName(orderData.CustomerInfo.ShippingAddress.StateProvinceId);
@@ -140,19 +142,11 @@ namespace CSWeb.Mobile.UserControls
                 LiteralName_b.Text = String.Format("{0} {1}", orderData.CustomerInfo.BillingAddress.FirstName, orderData.CustomerInfo.BillingAddress.LastName);
                 LiteralAddress_b.Text = orderData.CustomerInfo.BillingAddress.Address1;
                 LiteralAddress2_b.Text = orderData.CustomerInfo.BillingAddress.Address2;
-                if (LiteralAddress2_b.Text.Equals(""))
-                {
-                    pnlBAddress2.Visible = false;
-                }
-                else
-                {
-                    pnlBAddress2.Visible = true;
-                }
                 LiteralCity_b.Text = orderData.CustomerInfo.BillingAddress.City;
                 LiteralZip_b.Text = orderData.CustomerInfo.BillingAddress.ZipPostalCode;
                 LiteralState_b.Text = StateManager.GetStateName(orderData.CustomerInfo.BillingAddress.StateProvinceId);
                 LiteralCountry_b.Text = CountryManager.CountryName(orderData.CustomerInfo.BillingAddress.CountryId);
-                LiteralPhone.Text = orderData.CustomerInfo.BillingAddress.PhoneNumber;
+
                 //Google Analutics E-Commerce Pixel
                 //LoadGoogleAnalytics(orderData);
 
