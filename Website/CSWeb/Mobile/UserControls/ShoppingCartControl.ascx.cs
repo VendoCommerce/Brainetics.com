@@ -113,7 +113,7 @@ namespace CSWeb.Mobile.UserControls
 
                 Sku cartItem = e.Item.DataItem as Sku;
 
-                lblSkuDescription.Text = cartItem.ShortDescription;
+                lblSkuDescription.Text = cartItem.Title;
                 lblQuantity.Text = txtQuantity.Text = cartItem.Quantity.ToString();
                 decimal initialPrice = cartItem.InitialPrice;
 
@@ -220,8 +220,15 @@ namespace CSWeb.Mobile.UserControls
             int skuID = Convert.ToInt32(btnRemoveItem.CommandArgument);
             Sku cartItem = CartContext.CartInfo.CartItems.First(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
             int newQuantity = 0;
+            int OldQuantity = 0;
+            OldQuantity = cartItem.Quantity;
             if (int.TryParse(txtQuantity.Text, out newQuantity))
                 cartItem.Quantity = newQuantity;
+
+            if ((newQuantity < 1 || newQuantity > 99))
+            {
+                cartItem.Quantity = OldQuantity;
+            }
 
             CSWebBase.SiteBasePage.AddAdditionalItems(CartContext.CartInfo);
             CartContext.CartInfo.Compute();

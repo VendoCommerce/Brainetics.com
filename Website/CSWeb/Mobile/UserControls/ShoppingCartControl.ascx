@@ -18,7 +18,7 @@
     
         <div class="cart_table clearfix">
         
-            <div class="cart_image">
+            <div class="cart_image" runat="server" visible="false">
                 <asp:Image runat="server" ID="imgProduct" />
             </div>
             <div class="cart_text">
@@ -27,10 +27,10 @@
                 <p class="basket_description">
                     <asp:Label runat="server" ID='lblSkuDescription'></asp:Label></p>
             </div>
-            <div class="cart_select">
+            <div class="cart_select" style="padding-left: 40px;">
            
                 <asp:TextBox runat="server" ID="txtQuantity" Text='1' MaxLength="3"
-                    Columns="2" OnTextChanged="OnTextChanged_Changed"></asp:TextBox>
+                    Columns="2" OnTextChanged="OnTextChanged_Changed" CssClass="text_qty"></asp:TextBox>
                 <asp:Label runat="server" ID="lblQuantity" CssClass="cart_select">
                 </asp:Label>
               </div>
