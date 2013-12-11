@@ -100,6 +100,9 @@ namespace CSWebBase
             }
 
             base.Page_Load(sender, e);
+
+            if (!Page.IsPostBack)
+                DoDeviceRedirect(ClientOrderData.VersionId);
         }
 
         protected override void OnInit(EventArgs e)
@@ -425,6 +428,29 @@ namespace CSWebBase
             catch (Exception ex)            
             {
                 CSCore.CSLogger.Instance.LogException("TempOrderFix method failure", ex);
+            }
+        }
+
+        private void DoDeviceRedirect(int currentVersionId)
+        {
+            if (!Page.IsPostBack)
+            {
+                if (ClientDeviceType == CSBusiness.Enum.DeviceType.Mobile)
+                {
+                    CSBusiness.Version currentVersion = (CSFactory.GetCacheSitePref()).VersionItems.FirstOrDefault(x => { return x.VersionId == currentVersionId; });
+
+                    if (currentVersion != null && !currentVersion.Title.ToUpper().Contains("MOBILE")) // mobile device not viewing the mobile version
+                    {
+                        if (Request.QueryString.Count > 0)
+                            Response.Redirect("/MOBILE" + Request.QueryString, true);
+                        else
+                            Response.Redirect("/MOBILE", true);
+                    }
+                    else if (currentVersion == null)
+                    {
+                        CSCore.CSLogger.Instance.LogException("No version found given current version Id. DoDeviceRedirect of sitebasepage.", new Exception("Currentversion null"));
+                    }
+                }
             }
         }
     }
