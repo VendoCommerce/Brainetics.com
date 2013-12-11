@@ -497,6 +497,20 @@ h2 {
 	margin-top: 8px;
 	margin-right: 10px;
 }
+.text_qty {
+	width: 65px;
+	position:relative;
+	float:left;
+	font-size: 30px;
+	color: #666666;
+	padding: 4px 15px 10px 4px;
+	border-color: #5D605D #CCCCCC #CCCCCC #5D605D;
+	border-radius: 7px 7px 7px 7px;
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 1px 1px 2px 0 #666666 inset;
+	text-align: center;
+}
 .cart_mobile .text-1 {
 	width: 590px;
 	position:relative;
@@ -848,7 +862,9 @@ padding-bottom: 20px;
 }
 
 .content .basket_description {
-	padding: 0 0 24px 0;	
+	padding: 0 0 24px 0;
+	font-weight: bold;
 }
 
 #receipt #footer_phone {display: none;}
+p.basket_title {display: none;}
