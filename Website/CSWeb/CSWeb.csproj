@@ -1031,6 +1031,7 @@
     <Content Include="PS_B2\receipt.aspx" />
     <Content Include="PS_B2\receipt_friendly.aspx" />
     <Content Include="PS_B2\send_email.aspx" />
+    <Content Include="PS_B2\terms.aspx" />
     <Content Include="PS_B2\testimonials.aspx" />
     <Content Include="PS_B2\upsells.aspx" />
     <Content Include="PS_B2\UserControls\BillingCreditForm.ascx" />
