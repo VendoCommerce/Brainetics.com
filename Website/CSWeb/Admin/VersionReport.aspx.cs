@@ -16,6 +16,8 @@ using CSCore.Utils;
 using System.Web.UI.HtmlControls;
 using CSData;
 using CSBusiness.Preference;
+using System.Text;
+using System.IO;
 
 
 namespace CSWeb.Admin
@@ -77,6 +79,7 @@ namespace CSWeb.Admin
                 }
 
                 BindData(rangeDateControlCriteria.StartDateValueLocal, rangeDateControlCriteria.EndDateValueLocal);
+              
             }
         }
 
@@ -85,6 +88,7 @@ namespace CSWeb.Admin
 
             DateTime? timezoneStartDate = DateTimeUtil.GetEastCoastStartDate(rangeDateControlCriteria.StartDateValueLocal);
             DateTime? timezoneEndDate = DateTimeUtil.GetEastCoastDate(rangeDateControlCriteria.EndDateValueLocal);
+           
             dtCollectionList = new OrderManager().GetVersionSummary(timezoneStartDate, timezoneEndDate, false);
 
             Data rptData = new ReportWSSoapClient().GetDataFromTimeframe(hitsLinkUserName, hitsLinkPassword, ReportsEnum.MultiVariate, TimeFrameEnum.Daily, Convert.ToDateTime(startDate), Convert.ToDateTime(endDate), 100000000, 0, 0);
@@ -140,6 +144,92 @@ namespace CSWeb.Admin
 
         }
 
+        //Garo:This function was written for Icon Media to pull unqiue visitors data per version for any range of dates , and store it in c:\ 
+        //Not to be used unless requested
+        //the call is in btn_submit , marked as comment
+        protected void get_unique_visitors(DateTime? startDate, DateTime? endDate)
+        {
+
+            DateTime? timezoneStartDate = DateTimeUtil.GetEastCoastStartDate(rangeDateControlCriteria.StartDateValueLocal);
+            DateTime? timezoneEndDate = DateTimeUtil.GetEastCoastDate(rangeDateControlCriteria.EndDateValueLocal);
+            DateTime date1 = Convert.ToDateTime(timezoneStartDate);
+            DateTime date2 = Convert.ToDateTime(timezoneEndDate);
+
+            string filename = "c:\\" + date1.AddDays(1).ToString("MM") + date1.AddDays(1).ToString("dd") + date1.AddDays(1).ToString("yy") + "-" + date2.ToString("MM") + date2.ToString("dd") + date2.ToString("yy") + ".txt";
+            WriteHeaderCSVFile(filename);
+            TimeSpan span = Convert.ToDateTime(date2) - Convert.ToDateTime(date1);
+            for (int j = 0; j < Convert.ToInt16(span.TotalDays); j++)
+            {
+                HitLinkVisitor.Clear();
+                DateTime zdate1 = date1.AddDays(j);
+                DateTime zdate2 = date1.AddDays(j+1);
+                DateTime hdate1 = Convert.ToDateTime(startDate).AddDays(j);
+                DateTime hdate2 = Convert.ToDateTime(startDate).AddDays(j+1);
+                if (dtCollectionList!= null )
+                    dtCollectionList.Clear();
+                dtCollectionList = new OrderManager().GetVersionSummary(zdate1, zdate2, false);
+                Data rptData = new ReportWSSoapClient().GetDataFromTimeframe(hitsLinkUserName, hitsLinkPassword, ReportsEnum.MultiVariate, TimeFrameEnum.Daily, hdate1, hdate1, 100000000, 0, 0);
+                for (int i = 0; i <= rptData.Rows.GetUpperBound(0); i++)
+                {
+                    HitLinkVisitor.Add(rptData.Rows[i].Columns[0].Value.ToLower(), rptData.Rows[i].Columns[9].Value);
+
+                    foreach (ReportFields item in dtCollectionList[1])
+                    {
+                        decimal visitor = 0;
+                        if (item.Title.ToLower().Equals(item.ShortName.ToLower()))
+                        {
+                            if (HitLinkVisitor.ContainsKey(item.Title))
+                            {
+                                visitor += Convert.ToDecimal(HitLinkVisitor[item.Title].ToString());
+                                visitor = Math.Abs(visitor);
+                            }
+                        }
+                        else
+                        {
+                            //Added this to fix bug of orderhelper.getversionname()
+                            if (HitLinkVisitor.ContainsKey(item.Title))
+                            {
+                                visitor += Convert.ToDecimal(HitLinkVisitor[item.Title].ToString());
+                            }
+                            if (HitLinkVisitor.ContainsKey(item.ShortName.ToLower()))
+                            {
+                                visitor += Convert.ToDecimal(HitLinkVisitor[item.ShortName.ToLower()].ToString());
+                            }
+                            visitor = Math.Abs(visitor);
+                        }
+                        item.UniqueVisitors = visitor;
+
+                        if (visitor > 0)
+                        {
+                            item.Conversion = Math.Round((Convert.ToDecimal(item.TotalOrders) * 100) / visitor, 1);
+                            item.RevenuePerVisit = Convert.ToDecimal(item.TotalRevenue) / visitor;
+                        }
+                        else
+                        {
+                            item.Conversion = 0;
+                            item.RevenuePerVisit = 0;
+                        }
+
+                    }
+                  
+
+                }
+
+
+                WritetoCSVFile(dtCollectionList[1], filename, Convert.ToDateTime(hdate1));
+
+            }
+
+            //Update Version List information
+           
+
+
+            dlVersionCategoryList.DataSource = CSFactory.GetAllVersionCateogry();
+            dlVersionCategoryList.DataBind();
+
+            //FCLiteral.Text = CreateCharts(dtCollectionList[1dtCollectionList
+
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             //TimeSpan ts = new TimeSpan(24, 0, 0);
@@ -150,8 +240,79 @@ namespace CSWeb.Admin
             Session["FilterToDate"] = rangeDateControlCriteria.EndDateValueLocal.Value.ToShortDateString();
 
             BindData(rangeDateControlCriteria.StartDateValueLocal, rangeDateControlCriteria.EndDateValueLocal);
+            //Garo:This function was written for Icon Media to pull unqiue visitors data per version for any range of dates , and store it in c:\ 
+            //   get_unique_visitors(rangeDateControlCriteria.StartDateValueLocal, rangeDateControlCriteria.EndDateValueLocal);
 
         }
+        public void WritetoCSVFile(List<ReportFields> zList, string strFilePath,DateTime zdate)
+        {
+            try
+            {
+                // Create the CSV file to which grid data will be exported.
+                StreamWriter sw;
+
+                sw = new StreamWriter(strFilePath, true);
+
+              
+               // char pad = '0';
+               foreach (ReportFields RF in zList )
+               {
+
+                 
+                   sw.Write(zdate.ToShortDateString()  +","+ RF.Title.ToString() + "," + RF.TotalOrders.ToString() + "," + RF.UniqueVisitors.ToString());  
+   sw.Write(sw.NewLine);
+                
+               }
+               
+               
+                    
+
+
+
+
+                
+                sw.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void WriteHeaderCSVFile (string strFilePath)
+        {
+            try
+            {
+                // Create the CSV file to which grid data will be exported.
+                StreamWriter sw;
+
+                sw = new StreamWriter(strFilePath, false);
+
+
+                // char pad = '0';
+              
+
+                
+                    sw.WriteLine("Date,Version,TotalOrders,UniqueVisitors");
+
+
+                
+
+
+
+
+
+
+
+
+                sw.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+       
 
 
         protected void dlVersionCategoryList_ItemDataBound(object sender, DataListItemEventArgs e)
