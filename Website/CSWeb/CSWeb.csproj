@@ -237,6 +237,7 @@
     <Content Include="B2\receipt.aspx" />
     <Content Include="B2\receipt_friendly.aspx" />
     <Content Include="B2\send_email.aspx" />
+    <Content Include="B2\terms.aspx" />
     <Content Include="B2\testimonials.aspx" />
     <Content Include="B2\upsells.aspx" />
     <Content Include="B2\UserControls\BillingCreditForm.ascx" />
@@ -879,6 +880,7 @@
     <Content Include="Mobile\receipt.aspx" />
     <Content Include="Mobile\receipt_friendly.aspx" />
     <Content Include="Mobile\ReviewOrder.aspx" />
+    <Content Include="Mobile\terms.aspx" />
     <Content Include="Mobile\testimonials.aspx" />
     <Content Include="Mobile\upsells.aspx" />
     <Content Include="Mobile\UserControls\BillingCreditForm.ascx" />
