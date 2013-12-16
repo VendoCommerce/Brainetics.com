@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\CSCore.dll</HintPath>
+    </Reference>
     <Reference Include="DiffieHellman, Version=0.0.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\DiffieHellman.dll</HintPath>
@@ -90,6 +94,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLL\CSCore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DLL\CSCore.pdb" />
     <Content Include="DLL\DiffieHellman.dll" />
     <Content Include="DLL\Org.Mentalis.Security.dll" />
     <Content Include="DLL\Tamir.SharpSSH.dll" />

@@ -15,10 +15,9 @@ using Com.ConversionSystems.DataAccess;
 using Com.ConversionSystems.Utility;
 using System.Threading;
 using System.Configuration ;
-
 using Tamir.SharpSsh;
 
-namespace StonedineWarrantyDB_MyDataTree
+namespace Brainetics_IconMedia
 {
     class Batch  
     {
@@ -142,7 +141,7 @@ namespace StonedineWarrantyDB_MyDataTree
             return dt;
         }
 
-        static DataSet  getDataTables(string StoredProcedureName, string StartDate, string EndDate, int selection)
+        static DataSet getDataTables(string StoredProcedureName, DateTime StartDate, DateTime EndDate, int selection)
         {
             DataSet ds = new DataSet();
             string connstr = "";
@@ -170,9 +169,9 @@ namespace StonedineWarrantyDB_MyDataTree
                 oCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter[] para = new SqlParameter[2];
-                para[0] = new SqlParameter("@startdate", SqlDbType.VarChar);
+                para[0] = new SqlParameter("@startdate", SqlDbType.DateTime );
                 para[0].Value = StartDate;
-                para[1] = new SqlParameter("@enddate", SqlDbType.VarChar);
+                para[1] = new SqlParameter("@enddate", SqlDbType.DateTime);
                 para[1].Value = EndDate;
                 oCmd.Parameters.AddRange(para);
 
@@ -217,73 +216,125 @@ namespace StonedineWarrantyDB_MyDataTree
                      sw = new StreamWriter(strFilePath, false);
                 }
                 
-                
-                // First we will write the headers.
-                //DataTable dt = m_dsProducts.Tables[0];
                
-                //int iColCount = dt.Columns.Count;
-                //for (int i = 0; i < iColCount; i++)
-                //{
-                //    sw.Write(dt.Columns[i]);
-                //    if (i < iColCount - 1)
-                //    {
-                //        sw.Write(",");
-                //    }
-                //}
-                //sw.Write(sw.NewLine);
-
-                // Now write all the rows.
-
+                string[] aLine;
+                aLine = new string[21];
                 foreach (DataRow dr in OrdersInfo.Rows)
                 {
 
-
+                    string strTemp = "";
                     char pad = '0';
-                    sw.Write("CS".PadRight(6) );    
-                    sw.Write("WEB".PadRight(6) );    
-                    sw.Write("8888888888");    
 
-                    //!Convert.IsDBNull(dr["Pcode"]) ? sw.Write(dr["Pcode"].ToString().PadRight(12)): sw.Write("".toString().PadRight(12));
-                    sw.Write("".PadRight(12));
-                   sw.Write("".ToString().PadRight(2));
-                   DateTime OrderDate = Convert.ToDateTime(dr["CreatedDate"]);
-                   sw.Write(OrderDate.ToString("yyyyMMddhhmm"));
-                   sw.Write(dr["SkuCode"].ToString().PadRight(15));
-                   
-                   string temp = dr["IsUpSell"].ToString();
-                   if  (temp == "False") 
-                   {temp = "R";
-                   }
-                   else
-                   {
-                        temp = "U";
-                   }
-                   sw.Write(temp);
-                   sw.Write(dr["FullAmount"].ToString().PadLeft(6, pad));
-                   sw.Write(dr["Quantity"].ToString().PadLeft(4, pad));
-                   sw.Write("0001");
-                   sw.Write(OrderDate.ToString("mm"));
-                   sw.Write(dr["City"].ToString().PadRight(28));
-                   sw.Write(dr["Province"].ToString());
-                    sw.Write(dr["ZipPostalCode"].ToString());
-                    
-                    temp = dr["Country"].ToString();
-                    if (temp == "USA")
-                    { temp = "U";
+                    aLine[0] = "";
+
+
+                    aLine[1] = "LAUN".PadRight(6);
+                    aLine[2] = "WEB".PadRight(6);
+                    aLine[3] = "8888888888";
+                    aLine[4] = "BTS4".PadRight(12);// dr["ProductCode"].ToString().Trim().PadRight(12);
+                    aLine[5] = "".ToString().PadRight(2);
+                    DateTime OrderDate = Convert.ToDateTime(dr["CreatedDate"]);
+                    aLine[6] = OrderDate.ToString("yyyyMMdd");
+                    aLine[7] = OrderDate.ToString("HH");
+                    aLine[8] = dr["SkuCode"].ToString().Trim().PadRight(15);
+                    string skuCode = aLine[8].Trim ();
+                     string isUpsell ="";
+                    switch (skuCode.ToLower())
+                    { 
+                        case "main" :
+                            isUpsell="R";
+                            break;
+                        case "onep":
+                            isUpsell = "R";
+                            break;
+                        case "dlx1":
+                            isUpsell = "R";
+                            break;
+                        case "dl1p":
+                            isUpsell = "R";
+                            break;
+                        case "dcbc":
+                            isUpsell = "U";
+                            break;
+                        case "sndh":
+                            isUpsell = "U";
+                            break;
+                        case "brp1":
+                            isUpsell = "U";
+                            break;
+                        case "bdlx":
+                            isUpsell = "U";
+                            break;
+                        case "dl1b":
+                            isUpsell = "U";
+                            break;
+                        case "rush":
+                            isUpsell = "U";
+                            break;
+                        case "rus2":
+                            isUpsell = "U";
+                            break;
+                        case "schg":
+                            isUpsell = "U";
+                            break;
+
+                    }
+
+
+                    aLine[9] = isUpsell;
+                    string[] tempArr ;
+                        tempArr= new string[2];
+                    decimal FAmmount,shipping;
+                    string specifier = "0.00";
+                    decimal.TryParse(dr["FullAmount"].ToString(), out FAmmount);
+                    decimal.TryParse(dr["Shipping"].ToString(), out shipping);
+                    if (FAmmount == 0 && shipping != 0)
+                    {
+                        strTemp = shipping.ToString(specifier);
                     }
                     else
                     {
-                        temp = "C";
+                        strTemp = FAmmount.ToString(specifier);
                     }
+                    tempArr = strTemp.Split(new Char[] { '.' });
+                    if (tempArr.Length > 1)
+                    {
+                        strTemp = tempArr[0].ToString() + tempArr[1].ToString();
+                    }
+                    strTemp = strTemp.PadLeft(6, pad);
+                    aLine[10] = strTemp;
+                    aLine[11] = dr["Quantity"].ToString().PadLeft(4, pad);
+                    aLine[12] = "0001";
+                    aLine[13] = OrderDate.ToString("mm");
+                    aLine[14] = dr["City"].ToString().Trim().PadRight(28);
+                    aLine[15] = dr["Province"].ToString().Trim ();
+                    aLine[16] = dr["ZipPostalCode"].ToString().Trim().PadRight(9); ;
+                    strTemp = dr["Country"].ToString();
+                    if (strTemp.Trim().Equals( "US"))
+                    {
+                        strTemp = "U";
+                    }
+                    else
+                    {
+                        strTemp = "C";
+                    }
+
+                    aLine[17] = strTemp;
+                    aLine[18] = "".PadLeft(9);//3x 3 spaces for last 3 unused fields
+                    aLine[19] = "";
+                    aLine[20] = "";
+
+                    for (int i = 1; i < 20; i++)
+                    {
+                        sw.Write(aLine[i].ToString());
+                    }
+
+
+
+                    sw.WriteLine(); 
                     
-                    sw.Write(temp.ToString());
-                    sw.Write ("".PadLeft (9));
-sw.WriteLine ();
-
-
-
                 }
-                
+               
                 sw.Write ("/*");
 
                 
@@ -292,6 +343,7 @@ sw.WriteLine ();
             catch (Exception ex)
             {
                 throw ex;
+
             }
         }
          public void WriteHeaderCSVFile( DataSet  DS , string strFilePath)
@@ -300,34 +352,34 @@ sw.WriteLine ();
             {
                 // Create the CSV file to which grid data will be exported.
                StreamWriter sw  ;
-                if (File.Exists (strFilePath )) 
-                {
-                     sw = new StreamWriter(strFilePath, true );
-                }
-                else
-                {
+               
                      sw = new StreamWriter(strFilePath, false);
-                }
+              
+                
                 char pad = '0';
                 DataTable dt1,dt2,dt3 = new DataTable ();
                 dt1= DS.Tables[0];
                 dt2= DS.Tables[1];
-                dt3= DS.Tables[2];
+    
 
-                sw.Write("CS".PadRight(10) );
+                if ( !DS.Tables[0].Rows[0][0].ToString().Equals ("0") )
+                {
+                sw.Write("CVSS".PadRight(10) );
                 sw.Write("04");
-                sw.Write(dt1.Rows[0]["orderCount"].ToString().PadLeft(9, pad));
-                sw.Write(dt2.Rows[0]["InquiryCount"].ToString().PadLeft(9, pad));
+                sw.Write(dt2.Rows.Count.ToString().PadLeft(9, pad));
+                sw.Write(dt1.Rows[0]["InquiryCount"].ToString().PadLeft(9, pad));
                 sw.Write(DateTime.Today.ToString("yyyyMMdd".ToString()));
                 sw.Write(DateTime.Now.ToString("hhmm".ToString()));
                 
-                DateTime OrderDate = Convert.ToDateTime(dt3.Rows[0]["CreatedDate"]);
+                DateTime OrderDate = Convert.ToDateTime(dt2.Rows[0]["CreatedDate"]);
                    sw.Write(OrderDate.ToString("yyyyMMddhhmm"));
 
 
 
                     sw.Write(sw.NewLine);
                 
+                
+                }
                 sw.Close();
             }
             catch (Exception ex)
@@ -445,9 +497,9 @@ sw.WriteLine ();
             message.To.Add(Helper.AppSettings["AdminEmail"]);
             message.From = new MailAddress("info@ConversionSystems.com");
 
-            message.Subject = subject;             
-            sb.Append("Here is the response from MyDataTree API for Warranty Database. Please address this Warranty import:");
-            sb.Append(ErrorMSg);
+            message.Subject = subject;
+            sb.Append("Brainetics.Com , error sending Icon Media report file. ");
+            
 
             string st;
             st = sb.ToString();
@@ -459,6 +511,37 @@ sw.WriteLine ();
             Helper.SendMail(message);
         }
 
+        public void SendEmailToClient(string path)
+        {
+            try
+            {
+                StringBuilder _sbEmailMessageBody = new StringBuilder();
+                _sbEmailMessageBody.Append("<html><body><table>");
+                _sbEmailMessageBody.Append("<tr><td><b>Brainetics.com   - Icon Media Daily Report: </b></td></tr>");
+                _sbEmailMessageBody.Append("<tr><td>This report was generated at " + DateTime.Now.ToString("MM/dd/yyyy-HH:mm") + "</td></tr>");
+                _sbEmailMessageBody.Append("<tr><td> Please do not reply to this email.</b></td></tr>");
+                _sbEmailMessageBody.Append("</table></body></html>");
+                MailMessage _oMailMessage = new MailMessage(Helper.AppSettings["FromEmail"].ToString(), Helper.AppSettings["ClientEmail"].ToString(), "Brainetics - IconMedia Report", _sbEmailMessageBody.ToString());
+                _oMailMessage.IsBodyHtml = true;
+                _oMailMessage.Body = _sbEmailMessageBody.ToString();
+                Attachment a = new Attachment(path);
+                _oMailMessage.Attachments.Add(a);
+                bool status= Helper.SendMail(_oMailMessage);
+                if (status  )
+                {
+                log.LogToFile( "Email sent successfully to :" + _oMailMessage.To.ToString() + " on :"  + DateTime.Now.ToString()); 
+                }
+                else
+                {
+                log.LogToFile( "Email NOT sent to :" + _oMailMessage.To.ToString() + " on :"  + DateTime.Now.ToString());
+                }
+
+            }
+            catch (Exception e)
+            {
+                log.LogToFile("Error sending email---" + e.Message);
+            }
+        }
         public string CheckSQLInjection(string input)
         {
             input = input.Replace("'", "''"); //' espace the single quote
@@ -478,108 +561,42 @@ sw.WriteLine ();
             try
             {
                 log.LogToFile("***************************************************************************");
-                log.LogToFile("Start Weekly File for Icon Media Batch " + ImportDateStart.ToShortDateString() + " to " + ImportDateEnd.ToShortDateString());
-               
+                log.LogToFile("Start Weekly File for Icon Media Batch " + ImportDateStart.ToString() + " to " + ImportDateEnd.ToString());
 
-              
 
-                Console.WriteLine("Loading Brainetics data from Date: " + ImportDateStart.ToShortDateString());
-                Console.WriteLine("Loading Brainetics data to Date: " + ImportDateEnd.ToShortDateString());
+
+
+                Console.WriteLine("Loading Brainetics data from Date: " + ImportDateStart.ToString());
+                Console.WriteLine("Loading Brainetics data to Date: " + ImportDateEnd.ToString());
        
 
                
            
-                String DatePart = DateTime.Now.ToString("yyyyMMddhhmmss", CultureInfo.InvariantCulture);
+                String DatePart = DateTime.Now.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
 
                 string SavePath = Helper.AppSettings["FileDirectoryPath"].ToString();
                 string procName = Helper.AppSettings["ProcName"].ToString();
                 DataSet DS = new DataSet();
-                DS = getDataTables(procName, ImportDateStart.ToShortDateString(), ImportDateEnd.ToShortDateString(), 1);
+                DS = getDataTables(procName, ImportDateStart, ImportDateEnd, 1);
                  
                 
-                string fullPathFileName = SavePath + "\\" + DatePart + ".csv";
+                string fullPathFileName = SavePath + "\\" +"BRN_CVSS" +DatePart + ".txt";
+                if (! DBNull.Value.Equals ( DS.Tables[0].Rows[0][0]))
+                {
                 WriteHeaderCSVFile(DS, fullPathFileName);
-                WriteToCSVFile(DS.Tables[2], fullPathFileName);
-                
-                //write_file_header(sw);
-                //DataTable dt_stoneDine = getDataTable("ReportWarrantyMyDataTree", startDate.ToShortDateString(), endDate.ToShortDateString(), 1);
-                //DataTable dt_stoneDineShop = getDataTable("ReportWarrantyMyDataTree", startDate.ToShortDateString(), endDate.ToShortDateString(), 2);
-                //if (dt_stoneDine.Rows.Count > 0)
-                //{
-                //    Console.WriteLine("Record Found = " + dt_stoneDine.Rows.Count.ToString());
+                WriteToCSVFile(DS.Tables[1], fullPathFileName);
 
-                //    foreach (DataRow dr in dt_stoneDine.Rows)
-                //    {
-                //        Console.WriteLine(DateTime.Now.ToLongTimeString());
-                //        add_Order_totxtFile(dr, sw);
+                SendEmailToClient(fullPathFileName);
 
-                //        Thread.Sleep(1000);
-
-
-                //    }
-                //}
-                //else
-                //{
-                //    log.LogToFile("No Record Found for importing data to MyDataTree from StoneDine");
-                //    Console.WriteLine("No Record Found  on StoneDine");
-                //}
-
-                //Console.WriteLine("Record Found = " + dt_stoneDineShop.Rows.Count.ToString());
-                //if (dt_stoneDineShop.Rows.Count > 0)
-                //{
-                //    foreach (DataRow dr in dt_stoneDineShop.Rows)
-                //    {
-                //        Console.WriteLine(DateTime.Now.ToLongTimeString());
-                //        add_Order_totxtFile(dr, sw);
-
-                //        Thread.Sleep(1000);
-
-
-                //    }
-                //}
-                //else
-                //{
-                //    log.LogToFile("No Record Found for importing data to MyDataTree  from StoneDineShop");
-                //    Console.WriteLine("No Record Found  on StoneDineShop");
-                //}
-
-
-                //sw.Close();
-                //bool upload_status = upload_FTP(fullPathFileName);
-
-                //string statusID;
-                //if (upload_status)
-                //{
-                //    statusID = "2";
-                //}
-                //else
-                //{
-                //    statusID = "3";
-                //}
-                //foreach (DataRow dr in dt_stoneDine.Rows)
-                //{
-                //    string id = dr["id"].ToString();
-
-                //    string update_sql = "update WarrantyRegistration set MDT_Response='" + upload_status.ToString() + "', MDT_Submitted=getdate(), MDT_Status= " + statusID + " where id=" + id.ToString();
-                //    runsql_stoneDine(update_sql);
-
-                //}
-                //foreach (DataRow dr in dt_stoneDineShop.Rows)
-                //{
-                //    string id = dr["id"].ToString();
-
-                //    string update_sql = "update WarrantyRegistration set MDT_Response='" + upload_status.ToString() + "', MDT_Submitted=getdate(), MDT_Status= " + statusID + " where WarrantyRegistrationId=" + id.ToString();
-                //    runsql_stoneDineShop(update_sql);
-                //}
-
-                log.LogToFile("Finished Importing data to MyDataTree");
+                log.LogToFile("Finished Importing data to IconMedia");
+                }
             }
             catch (Exception ex)
             {
                 string error = "ERROR: Catch Block " + ex.Message + " StackTrace :: " + ex.StackTrace;
                 log.LogToFile(error);
 
-                sendEmailToAdmin(error, "Alert - StoneDine.com - Error generating MyDataTree report.");
+                sendEmailToAdmin(error, "Alert - Barinetics.com - Error generating IconMedia report." + error);
             }
         }
         
@@ -663,25 +680,58 @@ sw.WriteLine ();
                 
                 string error =  "FTP ERROR: Catch Block " + ex.Message + " StackTrace :: " + ex.StackTrace;
                 log.LogToFile(error);
-              
-                sendEmailToAdmin(error, "Alert - StoneDine.com - Error uploading data to MyDataTree FTP.");
+
+                sendEmailToAdmin(error, "Alert - Brainetics.com - Error uploading data to IconMedia FTP.");
             
                 return false;
             }
         
         }
-           
 
-        
+        public static DateTime GetEndDate(DateTime input)
+        {
+            DateTime val = input;
+            val = val.AddHours(23).AddMinutes(59).AddSeconds(59);
+
+            return val;
+        }
+
+        public static DateTime GetEastCoastStartDate(DateTime input)
+        {
+            DateTime val = input;
+           
+                val = val.AddDays(-1).AddHours(21).AddMinutes(00).AddSeconds(00);
+
+            return val;
+        }
+
+        public static DateTime GetEastCoastDate(DateTime input)
+        {
+            DateTime val = input;
+           
+                val = val.AddHours(21).AddMinutes(00).AddSeconds(00);
+
+            return val;
+        }
+
+       
    
         static void Main(string[] args)
         {            
-            Console.WriteLine("Start Importing data to MyDataTree : " + DateTime.Now.ToString()  );
+            Console.WriteLine("Start Importing data to IconMedia : " + DateTime.Now.ToString()  );
             Batch StartBatch = new Batch();
-            DateTime ImportDateStart = DateTime.Now.AddDays(-7);
-            DateTime ImportDateEnd = DateTime.Today ;
-            StartBatch.LoadMediaIconData(ImportDateStart, ImportDateEnd);
-            Console.WriteLine("End Importing data to MyDataTree : " + DateTime.Now.ToString() );
+            DateTime ImportDate = DateTime.Today.AddDays(-1) ;
+           // DateTime ImportDate1 = DateTime.Parse("08/01/2013");
+            //DateTime ImportDate2 = DateTime.Today.AddDays(-1);
+
+
+            DateTime timezoneStartDate = GetEastCoastStartDate(ImportDate);
+            DateTime timezoneEndDate = GetEastCoastDate(ImportDate);
+
+
+
+            StartBatch.LoadMediaIconData(timezoneStartDate, timezoneEndDate);
+            Console.WriteLine("End Importing data to IconMedia : " + DateTime.Now.ToString());
             
         }
     }
