@@ -54,7 +54,6 @@
                     
                 </td>
                 <td valign="top" class="black bold">
-                    Subtotal:
                     Subtotal:<br />
                     S &amp; H:
                     <br />
