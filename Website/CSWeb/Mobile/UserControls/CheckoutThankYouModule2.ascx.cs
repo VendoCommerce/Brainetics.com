@@ -122,10 +122,13 @@ namespace CSWeb.Mobile.UserControls
 
                 if (orderData.DiscountCode.Length > 0 && (CSWebBase.SiteBasePage.FreeShipDiscountCodeMainSku ?? string.Empty).ToUpper() != orderData.DiscountCode.ToUpper())
                 {
-                    pnlPromotionLabel.Visible = true;
-                    pnlPromotionalAmount.Visible = true;
+                    if (orderData.DiscountAmount > 0)
+                    {
+                        pnlPromotionLabel.Visible = true;
+                        pnlPromotionalAmount.Visible = true;
 
-                    lblPromotionPrice.Text = String.Format("(${0:0.00})", orderData.DiscountAmount);
+                        lblPromotionPrice.Text = String.Format("(${0:0.00})", orderData.DiscountAmount);
+                    }
                 }
 
 
