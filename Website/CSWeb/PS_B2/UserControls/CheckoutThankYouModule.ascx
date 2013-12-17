@@ -36,8 +36,7 @@
                             </td>
                         
                              <td valign="top" class="black bold">
-                                $<%# Math.Round(Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%>
-                            </td>
+                                $<%# Math.Round(Convert.ToDecimal(DataBinder.Eval(Container.DataItem, "TotalPrice")), 2).ToString()%></td>
                            
                         </tr>
                     </ItemTemplate>
@@ -45,7 +44,7 @@
 
            
             <asp:Literal ID="LiteralTableRows" runat="server"></asp:Literal>
-              <tr><td colspan="4"><p>< As part of our special TV Offer you can try Brainetics in the comfort of your home for only $14.95 plus 
+              <tr><td colspan="4"><p>As part of our special TV Offer you can try Brainetics in the comfort of your home for only $14.95 plus 
                   $14.95 shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 4 easy monthly payments of $49.95, plus tax. All orders are backed by our 60-Day Money-Back Guarantee!</p></td></tr>
 <tr class="horzline2">
                 <td valign="top">&nbsp;
@@ -54,6 +53,7 @@
                     
                 </td>
                 <td valign="top" class="black bold">
+                    Subtotal:
                     Subtotal:<br />
                     S &amp; H:
                     <br />
