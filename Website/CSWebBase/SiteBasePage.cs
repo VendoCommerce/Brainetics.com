@@ -306,14 +306,26 @@ namespace CSWebBase
                     }
                 }
                 */
-            }
+                SitePreference sitePreference = CSFactory.GetCacheSitePref();
+
+          
+          
+                sitePreference.LoadAttributeValues();
+                if (sitePreference.AttributeValuesLoaded && sitePreference.ContainsAttribute("AutoDiscountCode"))
+                {
+                    if (sitePreference.GetAttributeValue("AutoDiscountCode") != null)
+                    {
+                        cart.DiscountCode = sitePreference.GetAttributeValue("AutoDiscountCode");
+                       cart.Compute();
+                    
+                    }
+                }
+            
+                }
             catch (Exception ex)
             {
                 CSCore.CSLogger.Instance.LogException("Error logging tests", ex);
             }
-
-            cart.DiscountCode = FreeShipDiscountCodeMainSku;
-            cart.Compute();
         }
 
         public static bool IsFreeShipOrderMainSku(int orderId)
