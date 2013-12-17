@@ -599,11 +599,15 @@
     <Content Include="Content\Images\admin\yes_btn.png" />
     <Content Include="Content\Images\ages.png" />
     <Content Include="Content\Images\awards.jpg" />
+    <Content Include="Content\Images\b2\form_top.png" />
     <Content Include="Content\Images\b2\upsell_1paynew_ask.png" />
+    <Content Include="Content\Images\b2\upsell_1paynew_ask_b.png" />
     <Content Include="Content\Images\b2\upsell_1paynew_content.jpg" />
     <Content Include="Content\Images\b2\upsell_1pay_new.jpg" />
     <Content Include="Content\Images\b2\upsell_new_singlepay_v1.jpg" />
+    <Content Include="Content\Images\b2\upsell_new_singlepay_v1b.jpg" />
     <Content Include="Content\Images\b2\upsell_new_singlepay_v3.jpg" />
+    <Content Include="Content\Images\b2\upsell_new_singlepay_v3b.jpg" />
     <Content Include="Content\Images\b2\upsell_new_singlepay_v4.jpg" />
     <Content Include="Content\Images\badge-new.png" />
     <Content Include="Content\Images\bg-about.jpg" />
@@ -690,6 +694,7 @@
     <Content Include="Content\Images\mobile\upsell_accelerated.jpg" />
     <Content Include="Content\Images\mobile\upsell_accelerated_1pay.jpg" />
     <Content Include="Content\Images\mobile\upsell_new_singlepay_v1.jpg" />
+    <Content Include="Content\Images\mobile\upsell_new_singlepay_v1b.jpg" />
     <Content Include="Content\Images\mobile\upsell_playbook.jpg" />
     <Content Include="Content\Images\mobile\upsell_radio_btn_box.png" />
     <Content Include="Content\Images\mobile\upsell_soundhealth_cd.jpg" />
