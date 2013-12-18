@@ -28,7 +28,7 @@
 
 
 <div class="page" style="background: url(../content/images/A5/home_bg.jpg) no-repeat #fff">
-<div class="home_left"><img src="../Content/images/A5/home_leftside.png" width="667" height="1155" style="margin-left: -32px" usemap="#Maphometop" />
+<div class="home_left"><img src="../Content/images/b2/home_leftside.png" width="667" height="1155" style="margin-left: -32px" usemap="#Maphometop" />
 <map name="Maphometop">
     <area shape="circle" coords="329,356,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
   </map>

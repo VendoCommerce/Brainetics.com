@@ -109,7 +109,7 @@
         <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png" OnClick="imgBtn_OnClick" />
    </div>
      <div class="form_line_guarantee">
-        <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a>
+        <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">30-Day Money-Back Guarantee!</a>
         </div>
         
          <div class="form_line_guarantee">

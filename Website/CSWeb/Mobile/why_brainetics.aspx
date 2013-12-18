@@ -65,14 +65,14 @@
           <li>Flash and Play Cards</li>
           <li>Quick Start Guide</li>
       </ul>
-      <p class="hotpink f30 webfont1 lh36">PLUS 5 Bonuses Worth Over $80</p>
+      <p class="hotpink f30 webfont1 lh36">PLUS 4 Bonuses Worth Over $70</p>
       <ul>
-      	<li>Brain Games</li>
+      	<li>On the Move Brain Games</li>
       	<li>Brain Boosting Guide</li>
-      	<li>2 Bonus DVD's (Levels 6-7)</li>
-      	<li>Additional Playbook</li>
+      	<li>Disc 6</li>
+      	<li>Disc 7</li>
       </ul>
-      <p class="hotpink f30 webfont1 lh36">PLUS we're extending our 30-Day Money Back Guarantee to 60 Days.</p>
+      <p class="hotpink f30 webfont1 lh36">PLUS our 30-Day Money Back Guarantee!</p>
     </div>
     <img src="../content/images/mobile/why5.jpg" width="640" height="566" class="block" alt="What You Get" />
 </div>
