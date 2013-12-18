@@ -600,6 +600,10 @@
     <Content Include="Content\Images\ages.png" />
     <Content Include="Content\Images\awards.jpg" />
     <Content Include="Content\Images\b2\form_top.png" />
+    <Content Include="Content\Images\b2\home_leftside.png" />
+    <Content Include="Content\Images\b2\included.png" />
+    <Content Include="Content\Images\b2\mbg_30.png" />
+    <Content Include="Content\Images\b2\site_bottom.jpg" />
     <Content Include="Content\Images\b2\upsell_1paynew_ask.png" />
     <Content Include="Content\Images\b2\upsell_1paynew_ask_b.png" />
     <Content Include="Content\Images\b2\upsell_1paynew_content.jpg" />
@@ -668,6 +672,7 @@
     <Content Include="Content\Images\mobile\btn_return.png" />
     <Content Include="Content\Images\mobile\cards.jpg" />
     <Content Include="Content\Images\mobile\cart2_top.png" />
+    <Content Include="Content\Images\mobile\cart_top - Copy.jpg" />
     <Content Include="Content\Images\mobile\cart_top.jpg" />
     <Content Include="Content\Images\mobile\cta.jpg" />
     <Content Include="Content\Images\mobile\cvv_cards.jpg" />
@@ -680,6 +685,7 @@
     <Content Include="Content\Images\mobile\how3.png" />
     <Content Include="Content\Images\mobile\icon_lock.png" />
     <Content Include="Content\Images\mobile\logo_brainetics.png" />
+    <Content Include="Content\Images\mobile\mbg_30day.png" />
     <Content Include="Content\Images\mobile\mbg_60day.png" />
     <Content Include="Content\Images\mobile\nav.png" />
     <Content Include="Content\Images\mobile\nav2.png" />
