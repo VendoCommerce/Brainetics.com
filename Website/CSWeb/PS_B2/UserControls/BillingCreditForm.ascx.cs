@@ -279,7 +279,7 @@ namespace CSWeb.PS_B2.UserControls
 
         protected void cbBillingDifferent_CheckedChanged(object sender, EventArgs e)
         {
-            if (!cbBillingDifferent.Checked)
+            if (cbBillingDifferent.Checked)
                 pnlBillingAddress.Visible = true;
             else
                 pnlBillingAddress.Visible = false;

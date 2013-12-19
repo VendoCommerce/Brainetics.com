@@ -47,9 +47,9 @@
            
             <div class="form_line clearfix" style="padding: 10px 0">
          <asp:CheckBox ID="cbBillingDifferent" runat="server" CssClass="checkbox-left" OnCheckedChanged="cbBillingDifferent_CheckedChanged"
-                    AutoPostBack="true" Checked="true" />
+                    AutoPostBack="true" Checked="false" />
                 <label class="label-2">
-                   My billing address is the same as shipping</label>
+                   My billing address is different than shipping</label>
               
             </div>
             <asp:Panel ID="pnlBillingAddress" runat="server" Visible="false">
@@ -194,7 +194,7 @@
                     <asp:ListItem Value="2021">2021</asp:ListItem>
                 </asp:DropDownList>
             </div>
-              <div class="form_line clearfix" style="padding: 10px 0"><input type="checkbox" checked="checked" class="checkbox-left" />
+              <div class="form_line clearfix" style="padding: 10px 0"><input type="checkbox"  class="checkbox-left" />
                 <label class="label-2">
                   I would like to get product updates and special offers</label>
             </div>

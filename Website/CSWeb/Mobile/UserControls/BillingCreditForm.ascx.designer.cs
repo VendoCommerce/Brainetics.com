@@ -31,6 +31,15 @@ namespace CSWeb.Mobile.UserControls {
         protected global::System.Web.UI.UpdatePanel upBillingForm;
         
         /// <summary>
+        /// ShoppingCartControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CSWeb.Mobile.UserControls.ShoppingCartControl ShoppingCartControl1;
+        
+        /// <summary>
         /// cbBillingDifferent control.
         /// </summary>
         /// <remarks>
@@ -256,6 +265,33 @@ namespace CSWeb.Mobile.UserControls {
         protected global::System.Web.UI.WebControls.DropDownList ddlCCType;
         
         /// <summary>
+        /// RfvCCNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCCNumberError;
+        
+        /// <summary>
+        /// lblCCNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCCNumberError;
+        
+        /// <summary>
+        /// txtCCNumber1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCCNumber1;
+        
+        /// <summary>
         /// rfvExpMonth control.
         /// </summary>
         /// <remarks>
@@ -299,33 +335,6 @@ namespace CSWeb.Mobile.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlExpYear;
-        
-        /// <summary>
-        /// lblCCNumberError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCCNumberError;
-        
-        /// <summary>
-        /// txtCCNumber1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCCNumber1;
-        
-        /// <summary>
-        /// RfvCCNumberError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RfvCCNumberError;
         
         /// <summary>
         /// rfvCVV control.

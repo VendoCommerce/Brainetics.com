@@ -30,10 +30,9 @@
             <div class="form_line clearfix">
                 <div class="error-2">
               </div>
-                <asp:CheckBox ID="cbBillingDifferent" runat="server" CssClass="checkbox-left" OnCheckedChanged="cbBillingDifferent_CheckedChanged" AutoPostBack="true" Checked="true" />
+                <asp:CheckBox ID="cbBillingDifferent" runat="server" CssClass="checkbox-left" OnCheckedChanged="cbBillingDifferent_CheckedChanged" AutoPostBack="true" Checked="false" />
               <label class="label-2" for="bcfBillingCreditInfo_cbBillingDifferent">
-                My billing address is the same 
-as my shipping address.</label>
+               My billing address is different than shipping.</label>
             
             </div>
           
@@ -143,7 +142,7 @@ as my shipping address.</label>
                 <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4" placeholder="CVV"></asp:TextBox>    <a class="cvv" href="#cvv">What is this?</a>
             </div>
             <div class="form_line clearfix" runat="Server" visible="false">
-              <asp:CheckBox CssClass="checkbox-left" Checked="true" id="chkboxOffers" runat="server" />
+              <asp:CheckBox CssClass="checkbox-left" Checked="false" id="chkboxOffers" runat="server" />
                 <label class="label-2" for="specialoffers">
                     Yes, I’d like to receive news and savings from Brainetics&reg;!</label>
             </div>

@@ -234,7 +234,7 @@ namespace CSWeb.Mobile.UserControls
 
         protected void cbBillingDifferent_CheckedChanged(object sender, EventArgs e)
         {
-            pnlBillingAddress.Visible = !cbBillingDifferent.Checked;
+            pnlBillingAddress.Visible = cbBillingDifferent.Checked;
            
                 SetBillingAddress();
                 BindCartSummary();
