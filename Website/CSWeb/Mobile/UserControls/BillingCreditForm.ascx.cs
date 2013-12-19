@@ -247,7 +247,7 @@ namespace CSWeb.Mobile.UserControls
         public void SetBillingAddress()
         {
            
-                if (!cbBillingDifferent.Checked)
+                if (cbBillingDifferent.Checked)
                 {
                     Address billingAddress = new Address();
                     billingAddress.FirstName = CommonHelper.fixquotesAccents(txtFirstName.Text);
@@ -943,7 +943,7 @@ namespace CSWeb.Mobile.UserControls
             //Recapture billing information if the user modified the information
             if (rId == 0)
             {
-                if (!cbBillingDifferent.Checked) //override if the user select yes button
+                if (cbBillingDifferent.Checked) //override if the user select yes button
                 {
                     Address billingAddress = new Address();
                     billingAddress.FirstName = CommonHelper.fixquotesAccents(txtFirstName.Text);
