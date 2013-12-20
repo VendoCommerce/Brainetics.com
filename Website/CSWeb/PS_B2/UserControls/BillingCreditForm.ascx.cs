@@ -396,7 +396,7 @@ namespace CSWeb.PS_B2.UserControls
 
         public bool validateInput()
         {
-            if (!cbBillingDifferent.Checked)
+            if (cbBillingDifferent.Checked)
             {
                 if (CommonHelper.EnsureNotNull(txtFirstName.Text) == String.Empty)
                 {

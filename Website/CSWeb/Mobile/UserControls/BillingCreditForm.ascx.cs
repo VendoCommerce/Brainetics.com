@@ -357,7 +357,7 @@ namespace CSWeb.Mobile.UserControls
         public bool validateInput()
         {
             //_bError = false;
-            if (!cbBillingDifferent.Checked)
+            if (cbBillingDifferent.Checked)
             {
                 if (CommonHelper.EnsureNotNull(txtFirstName.Text) == String.Empty)
                 {
