@@ -89,6 +89,15 @@ namespace CSWebBase
             }
         }
 
+        public ClientCartContext CartContext
+        {
+            get
+            {
+                return HttpContext.Current.Session["ClientOrderData"] != null ? HttpContext.Current.Session["ClientOrderData"] as ClientCartContext : null;
+            }
+            set { HttpContext.Current.Session["ClientOrderData"] = value; }
+        }
+
         #endregion
 
         protected override void Page_Load(object sender, EventArgs e)
@@ -107,6 +116,7 @@ namespace CSWebBase
             AbTestingVersionUpdate updateVersionInfo = new AbTestingVersionUpdate();
             updateVersionInfo.LoadScripts(Page);
             updateVersionInfo.UpdateVersionNameWhileAbTesting();
+            CheckTermsAndContitionsRequirement();
         }
 
         protected override void OnInit(EventArgs e)
@@ -468,6 +478,32 @@ namespace CSWebBase
                     }
                 }
             }
+        }
+
+        public void CheckTermsAndContitionsRequirement()
+        {
+            string data = "";
+            if (CartContext != null && CartContext.OrderAttributeValues != null)
+            {
+                CSBusiness.Version item = (CSFactory.GetCacheSitePref()).VersionItems.FirstOrDefault(x => { return x.VersionId == CartContext.VersionId; });
+                if (item != null)
+                {
+                    if (item.Title.ToLower().Equals("c2") || item.Title.ToLower().Equals("ps_c2"))
+                    {
+                        data = "True";
+                    }
+                    else
+                    {
+                        data = "False";
+                    }
+                    if (!CartContext.OrderAttributeValues.ContainsKey("termsandconditions"))
+                        CartContext.OrderAttributeValues.Add("termsandconditions", new CSBusiness.Attributes.AttributeValue(data));
+                    else
+                        CartContext.OrderAttributeValues["termsandconditions"].Value = data;
+
+                    HttpContext.Current.Session["ClientOrderData"] = CartContext;
+                }
+            }        
         }
     }
 }

@@ -68,7 +68,7 @@ namespace CSWeb.B2.UserControls
                 rfvExpMonth.ErrorMessage = ResourceHelper.GetResoureValue("ExpDateMonthErrorMsg") + "<br/>";
                 rfvExpYear.ErrorMessage = ResourceHelper.GetResoureValue("ExpDateYearErrorMsg");
                 rfvCVV.ErrorMessage = ResourceHelper.GetResoureValue("CVVErrorMsg");
-
+                lblTermsError.Text = ResourceHelper.GetResoureValue("TermsErrorMsg");
                 if (rId == 0)
                 {
                     //ReloadCartData();
@@ -80,6 +80,7 @@ namespace CSWeb.B2.UserControls
                     BindRegions();
                     BindPackageOptions();
                     BindCart();
+                    IsCheckBoxNeeded();
                 }
 
             }
@@ -584,6 +585,20 @@ namespace CSWeb.B2.UserControls
                 }
 
             }
+
+            if (IsCheckBoxNeeded())
+            {
+
+                if (!cbTerms.Checked)
+                {
+                    lblTermsError.Visible = true;
+                    _bError = true;
+                }
+                else
+                    lblTermsError.Visible = false;
+            }
+            else
+                lblTermsError.Visible = false;
             return _bError;
         }
 
@@ -671,6 +686,25 @@ namespace CSWeb.B2.UserControls
                 SaveData();
             }
 
+        }
+
+        public bool IsCheckBoxNeeded()
+        {
+            bool bresult = false;
+            if (CartContext != null && CartContext.OrderAttributeValues != null)
+            {
+                if (CartContext.OrderAttributeValues.ContainsKey("termsandconditions"))
+                {
+                    if (CartContext.OrderAttributeValues["termsandconditions"].Value.ToLower().Equals("true"))
+                    {
+                        bresult = true;
+                        divTerms.Visible = true;
+                    }
+                    else
+                        divTerms.Visible = false;
+                }
+            }
+            return bresult;
         }
 
         #endregion General Methods
