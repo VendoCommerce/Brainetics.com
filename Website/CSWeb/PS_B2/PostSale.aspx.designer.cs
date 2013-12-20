@@ -40,15 +40,6 @@ namespace CSWeb.PS_B2.Store {
         protected global::System.Web.UI.WebControls.Panel pnlManual;
         
         /// <summary>
-        /// Header_Upsell control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CSWeb.PS_B2.UserControls.Header Header_Upsell;
-        
-        /// <summary>
         /// mainContainer control.
         /// </summary>
         /// <remarks>

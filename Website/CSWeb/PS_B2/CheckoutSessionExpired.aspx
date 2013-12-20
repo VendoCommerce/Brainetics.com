@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    
 </head>
 <body>
     <form id="form1" runat="server">

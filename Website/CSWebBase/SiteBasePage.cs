@@ -103,6 +103,10 @@ namespace CSWebBase
 
             if (!Page.IsPostBack)
                 DoDeviceRedirect(ClientOrderData.VersionId);
+
+            AbTestingVersionUpdate updateVersionInfo = new AbTestingVersionUpdate();
+            updateVersionInfo.LoadScripts(Page);
+            updateVersionInfo.UpdateVersionNameWhileAbTesting();
         }
 
         protected override void OnInit(EventArgs e)

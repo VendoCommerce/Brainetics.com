@@ -11,17 +11,18 @@ using CSBusiness.Resolver;
 using CSBusiness.OrderManagement;
 using CSWeb.B2.Store;
 using CSCore.DataHelper;
+using CSWebBase;
 
 namespace CSWeb.B2.Store
 {
-    public partial class AddProduct : System.Web.UI.Page
+    public partial class AddProduct : SiteBasePage
     {
         protected int skuId, cId, dId=0, qId=1;
         protected Cart cartObject;
         public ClientCartContext clientData;
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void Page_Load(object sender, EventArgs e)
         {
-           
+            base.Page_Load(sender, e);
             if(!Page.IsPostBack)
             {
                 if (Request.Params["PId"] != null)

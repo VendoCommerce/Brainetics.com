@@ -8,6 +8,12 @@
 </asp:Panel>
 
 <asp:Panel ID="pnlAllPages" runat="server" Visible="false">
+
+<script type="text/javascript">
+    var newPageName = '/' +
+    <%=versionNameClientFunction %> + window.location.pathname +
+    window.location.search;    
+    </script>
     
     <!-- Google Code for Brainetics 10/03/2013 RG -->
 <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
@@ -32,7 +38,7 @@ var google_remarketing_only = true;
     <script type="text/javascript" async>//<![CDATA[
         var wa_pageName = location.pathname;    // customize the page name here;
         wa_account = "9D8D9E96919A8B969C8C"; wa_location = 214;
-        wa_MultivariateKey = '<%= GetVersionName() %>';    //  Set this variable to perform multivariate testing
+        wa_MultivariateKey = <%=versionNameClientFunction %>;    //  Set this variable to perform multivariate testing
         var wa_c = new RegExp('__wa_v=([^;]+)').exec(document.cookie), wa_tz = new Date(),
             wa_rf = document.referrer, wa_sr = location.search, wa_hp = 'http' + (location.protocol == 'https:' ? 's' : '');
         if (top !== self) { wa_rf = top.document.referrer; wa_sr = top.location.search }
@@ -58,7 +64,7 @@ var google_remarketing_only = true;
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-42891472-2', 'brainetics.com');
-        ga('send', 'pageview');
+        ga('send', 'pageview', { 'page': newPageName });
 
     </script>
 
@@ -77,7 +83,7 @@ var google_remarketing_only = true;
 <script type="text/javascript" async>//<![CDATA[
     var wa_pageName = location.pathname;    // customize the page name here;
     wa_account = "9D8D9E96919A8B969C8C"; wa_location = 214;
-    wa_MultivariateKey = '<%= GetVersionName() %>';    //  Set this variable to perform multivariate testing
+    wa_MultivariateKey = <%=versionNameClientFunction %>;    //  Set this variable to perform multivariate testing
     ec_Orders_orderID = '<%= CurrentOrder.OrderId.ToString() %>';      //  Enter the Orders unique ID
     ec_Orders_orderAmt = '<%= CurrentOrder.Total.ToString() %>';  //  Enter the amount of the Orders
     var wa_c = new RegExp('__wa_v=([^;]+)').exec(document.cookie), wa_tz = new Date(),
@@ -96,6 +102,12 @@ escape(navigator.appName) + '&sr=' + escape(wa_sr) + '&rf=' + escape(wa_rf) + '&
 ; document.getElementById('wa_u').src = wa_hp + '://counter.hitslink.com/track.js';//]]>
 </script>
 
+<script type="text/javascript">
+    var newPageName = '/' +
+    <%=versionNameClientFunction %> + window.location.pathname +
+    window.location.search;    
+    </script>
+
         <!-- Google Analytics Ecommerce Pixel -->
     <script type="text/javascript">
         
@@ -108,7 +120,7 @@ if (typeof(_gat) == 'object')
 window.clearTimeout(hndl);
 var pageTracker =_gat._getTracker('UA-42891472-2');
 pageTracker._initData();
-pageTracker._trackPageview();
+pageTracker._trackPageview(newPageName);
     <asp:Literal ID="litGAReceiptPixel" runat="server" />
 
         pageTracker._trackTrans();

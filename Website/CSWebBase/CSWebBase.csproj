@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbTestingVersionUpdate.cs" />
     <Compile Include="CustomOrderManager.cs" />
     <Compile Include="CustomTaxCalculator.cs" />
     <Compile Include="CustomUnityDependencyResolver.cs" />

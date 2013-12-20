@@ -9,8 +9,8 @@
 <title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 <link href="../Styles/global_a2.css" rel="stylesheet" type="text/css" />
-<script src="//cdn.optimizely.com/js/77045885.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+
 <!--[if IE ]>
 
 <script type="text/javascript" src="/scripts/jquery.watermark.min.js"></script>

@@ -3,6 +3,7 @@ using System.Web;
 using System.Globalization;
 using System.Threading;
 using CSCore.DataHelper;
+using CSWebBase;
 
 namespace CSWeb
 {
@@ -19,6 +20,8 @@ namespace CSWeb
             }
 
             base.OnLoad(e);
+            AbTestingVersionUpdate updateVersionInfo = new AbTestingVersionUpdate();
+            updateVersionInfo.LoadScripts(Page);  
         }
 	}
 }
