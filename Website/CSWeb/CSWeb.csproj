@@ -1067,6 +1067,7 @@
     <Content Include="Scripts\autoTab.js" />
     <Content Include="Scripts\bootstrap-collapse.js" />
     <Content Include="Scripts\bootstrap-transition.js" />
+    <Content Include="Scripts\cstracking.js" />
     <Content Include="Scripts\fancybox\fancybox_loading%402x.gif" />
     <Content Include="Scripts\fancybox\fancybox_overlay.png" />
     <Content Include="Scripts\fancybox\fancybox_sprite%402x.png" />
@@ -1077,6 +1078,7 @@
     <Content Include="Scripts\global_a4.js" />
     <Content Include="Scripts\global_a5.js" />
     <Content Include="Scripts\global_mobile.js" />
+    <Content Include="Scripts\jquery.cookie.min.js" />
     <Content Include="Scripts\jquery.cycle.all.js" />
     <Content Include="Scripts\jquery.watermark.min.js" />
     <Content Include="Scripts\jwplayer\beelden.xml" />
