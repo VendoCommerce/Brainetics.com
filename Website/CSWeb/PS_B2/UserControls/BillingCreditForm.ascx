@@ -197,14 +197,7 @@
               <div class="form_line clearfix" style="padding: 10px 0"><input type="checkbox"  class="checkbox-left" />
                 <label class="label-2">
                   I would like to get product updates and special offers</label>
-            </div>
-            <div class="form_line clearfix" style="padding: 10px 0" id="divTerms" runat="server">
-               <div class="error-2">                     
-                    <asp:Label ID="lblTermsError" runat="server" Visible="false"></asp:Label></div>
-            <asp:CheckBox ID="cbTerms" runat="server"  CssClass="checkbox-left" />            
-                <label class="label-2">
-                  I agree to the Terms and Conditions</label>
-            </div>
+            </div>             
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png"
                     CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
