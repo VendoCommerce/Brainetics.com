@@ -674,6 +674,7 @@
     <Content Include="Content\Images\btn-5.png" />
     <Content Include="Content\Images\btns.png" />
     <Content Include="Content\Images\btn_submit.png" />
+    <Content Include="Content\Images\c2\terms_overlay.png" />
     <Content Include="Content\Images\card.jpg" />
     <Content Include="Content\Images\devider.png" />
     <Content Include="Content\Images\down-arrow-1.png" />
