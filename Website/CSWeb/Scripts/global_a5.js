@@ -67,6 +67,26 @@ $(function() {
         }
     });
 	
+	    $(".terms").fancybox({
+        closeBtn: true,
+        fitToView: false,
+        wrapCSS: 'nowrapper',
+        padding: 0,
+        width: 877,
+        height: 489,
+        autoSize: false,
+        closeClick: false,
+        scrolling: 'no',
+        helpers: {
+            overlay: {
+				locked: false,
+				css : {
+					'background' : 'rgba(255,255,255,.8)'
+					}
+            }
+        }
+    });
+	
 	$(".comparison").fancybox({
         closeBtn: true,
         fitToView: false,

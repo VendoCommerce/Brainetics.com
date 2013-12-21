@@ -202,8 +202,8 @@
                <div class="error-2">                     
                     <asp:Label ID="lblTermsError" runat="server" Visible="false"></asp:Label></div>
             <asp:CheckBox ID="cbTerms" runat="server"  CssClass="checkbox-left" />            
-                <label class="label-2">
-                  I agree to the Terms and Conditions</label>
+               <label class="label-2">
+                I agree to the <a href="#terms" class="terms">Terms and Conditions and Privacy Policy</a>.</label>
             </div>
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png"

@@ -1129,3 +1129,32 @@ body {
 	width: 236px;
 	height: 111px;
 }
+
+.termstxt {
+  height: 400px;
+  left: 30px;
+  overflow-y: auto;
+  position: absolute;
+  top: 50px;
+  width: 830px;
+  padding-right:  20px;
+}
+
+.termstxt p {
+	line-height: 20px;
+	padding-bottom: 20px;	
+}
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+}
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(57,57,57, .6);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgba(156, 156, 156, .6);
+}
