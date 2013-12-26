@@ -14,6 +14,7 @@ using CSBusiness.OrderManagement;
 using CSBusiness.Preference;
 using CSData;
 
+
 namespace CSWebBase
 {
     public class SiteBasePage : CSBasePage
@@ -289,6 +290,24 @@ namespace CSWebBase
                 return template.CanUseTemplate(cartContext);
         }
 
+        public static string VersionName()
+        {
+            string versionName = GetVersionName();
+            if (versionName == "")
+            {
+                versionName = "control";
+                List<CSBusiness.Version> list = (CSFactory.GetCacheSitePref()).VersionItems;
+                CSBusiness.Version item = list.Find(x => x.Title.ToLower() == versionName.ToLower());
+                if (item != null)
+                    versionName = item.Title.ToUpper();
+            }
+            return versionName;
+        }
+        public static string GetVersionName()
+        {
+            return CSBusiness.Web.CSBasePage.GetVersionName();
+        }
+
         public static void CallCartCompute(Cart cart)
         {
             try
@@ -324,17 +343,40 @@ namespace CSWebBase
           
           
                 sitePreference.LoadAttributeValues();
-                if (sitePreference.AttributeValuesLoaded && sitePreference.ContainsAttribute("AutoDiscountCode"))
+                if (sitePreference.AttributeValuesLoaded && sitePreference.ContainsAttribute("AutoDiscountCode") )
                 {
-                    if (sitePreference.GetAttributeValue("AutoDiscountCode") != null)
-                    {
-                        cart.DiscountCode = sitePreference.GetAttributeValue("AutoDiscountCode");
-                       cart.Compute();
                     
+                    string[] versions ;
+                    string versionsListing = "";
+                    if (sitePreference.ContainsAttribute("AutoDiscountVersions"))
+                    {
+                    if (sitePreference.GetAttributeValue("AutoDiscountVersions") != null)
+                    {
+                        versionsListing= sitePreference.GetAttributeValue("AutoDiscountVersions");
+                    
+                        versions=  versionsListing.Split(new char[]{',',' '});
+                        string PageVersion = VersionName();
+                        if (versions.Contains(PageVersion))
+                        {
+                            cart.DiscountCode = sitePreference.GetAttributeValue("AutoDiscountCode");
+                            
+                        }
+                    }
                     }
                 }
-            
-                }
+
+                cart.Compute();
+            }
+               
+
+                    //if (sitePreference.GetAttributeValue("AutoDiscountCode") != null)
+                    //{
+                       
+                    //    cart.DiscountCode = sitePreference.GetAttributeValue("AutoDiscountCode");
+                    //   cart.Compute();
+                    
+                    //}
+                
             catch (Exception ex)
             {
                 CSCore.CSLogger.Instance.LogException("Error logging tests", ex);
@@ -354,12 +396,42 @@ namespace CSWebBase
 
         public static bool IsFreeShipOrderMainSku(Cart cart)
         {
-            if (cart.DiscountCode != null && cart.DiscountCode.ToUpper() == FreeShipDiscountCodeMainSku)
-            {
-                return true;
-            }
+            //if (cart.DiscountCode != null && cart.DiscountCode.ToUpper() == FreeShipDiscountCodeMainSku)
+            //{
+            //    return true;
+            //}
 
-            return false;
+            //return false;
+
+            SitePreference sitePreference = CSFactory.GetCacheSitePref();
+
+  bool result = false;
+
+            sitePreference.LoadAttributeValues();
+            if (sitePreference.AttributeValuesLoaded && sitePreference.ContainsAttribute("AutoDiscountCode"))
+            {
+
+                string[] versions;
+                string versionsListing = "";
+              
+                if (sitePreference.ContainsAttribute("AutoDiscountVersions"))
+                {
+                    if (sitePreference.GetAttributeValue("AutoDiscountVersions") != null)
+                    {
+                        versionsListing = sitePreference.GetAttributeValue("AutoDiscountVersions");
+
+                        versions = versionsListing.Split(new char[] { ',', ' ' });
+                        string PageVersion = VersionName();
+                        if (versions.Contains(PageVersion))
+                        {
+                            result = true; 
+                        }
+                    }
+                }
+            }
+            return result;
+
+
         }
 
         public static decimal GetMainSkuShippingCost(Cart cart)
@@ -404,12 +476,40 @@ namespace CSWebBase
 
         public static decimal GetShippingCost(Order order)
         {
-            if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(order.OrderId))
-            {
-                return order.ShippingCost - order.DiscountAmount;
-            }
 
-            return order.ShippingCost;
+            decimal shippingValue = order.ShippingCost;
+            SitePreference sitePreference = CSFactory.GetCartPrefrence();
+            sitePreference.LoadAttributeValues();
+            if (sitePreference.AttributeValuesLoaded && sitePreference.ContainsAttribute("AutoDiscountCode"))
+            {
+
+                string[] versions;
+                string versionsListing = "";
+
+                if (sitePreference.ContainsAttribute("AutoDiscountVersions"))
+                {
+                    if (sitePreference.GetAttributeValue("AutoDiscountVersions") != null)
+                    {
+                        versionsListing = sitePreference.GetAttributeValue("AutoDiscountVersions");
+
+                        versions = versionsListing.Split(new char[] { ',', ' ' });
+                        string PageVersion = VersionName();
+                        if (versions.Contains(PageVersion))
+                        {
+                            shippingValue = order.ShippingCost - order.DiscountAmount;
+                        }
+                    }
+                }
+            }
+            return shippingValue;
+
+            //if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(order.OrderId))
+            //{
+            //    return order.ShippingCost - order.DiscountAmount;
+            //}
+
+            //return order.ShippingCost;
+
         }
 
         public static void TempOrderFix(ClientCartContext cartContext, int orderStatusId)
