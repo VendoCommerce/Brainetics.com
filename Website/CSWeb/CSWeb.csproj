@@ -676,6 +676,13 @@
     <Content Include="Content\Images\btn_submit.png" />
     <Content Include="Content\Images\c2\terms_overlay.png" />
     <Content Include="Content\Images\card.jpg" />
+    <Content Include="Content\Images\d2\cart_product_pic.jpg" />
+    <Content Include="Content\Images\d2\home_leftside.png" />
+    <Content Include="Content\Images\d2\included.png" />
+    <Content Include="Content\Images\d2\site_bottom.jpg" />
+    <Content Include="Content\Images\d2\upsell_accelerated.jpg" />
+    <Content Include="Content\Images\d2\upsell_comparison.png" />
+    <Content Include="Content\Images\d2\upsell_singlepay_accel_rev.jpg" />
     <Content Include="Content\Images\devider.png" />
     <Content Include="Content\Images\down-arrow-1.png" />
     <Content Include="Content\Images\f-photo-1.jpg" />
