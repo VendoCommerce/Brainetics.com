@@ -100,8 +100,8 @@ namespace CSWeb.FulfillmentHouse
                     if (CSWebBase.SiteBasePage.IsFreeShipOrderMainSku(orderItem.OrderId))
                     {
                         shippingDiscount = CSWebBase.DAL.GetDiscountAmount(orderItem.OrderId);
-
-                        trackingCode = "002";
+                        trackingCode = config.Attributes["TrackingCode_FreeShipping"].Value;
+                        //trackingCode = "002";
                     }
 
                     // This will look at TrackingCode Value by VersinName e.g TrackingCode_B2="003"; Added on 11/20/2013
