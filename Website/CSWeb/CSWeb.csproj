@@ -959,6 +959,11 @@
     <Content Include="D2\UserControls\ShippingForm.ascx" />
     <Content Include="D2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="D2\UserControls\TrackingPixels.ascx" />
+    <Content Include="email\images\index_01.jpg" />
+    <Content Include="email\images\index_02.jpg" />
+    <Content Include="email\images\index_04.jpg" />
+    <Content Include="email\images\index_05.jpg" />
+    <Content Include="email\index.html" />
     <Content Include="PS_D2\aboutmike.aspx" />
     <Content Include="PS_D2\AddProduct.aspx" />
     <Content Include="PS_D2\AuthorizeOrder.aspx" />
