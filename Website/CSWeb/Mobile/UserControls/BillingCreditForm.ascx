@@ -21,7 +21,18 @@
 <asp:UpdatePanel ID="upBillingForm" runat="server">
     <ContentTemplate>
 
-
+    <!-- implement this expire soon code on all versions needed -->
+<a href="#expiresoon" class="openexpiresoon"></a>
+<div style="display: none">
+<div id="expiresoon" style="width: 563px;
+	height: 449px;
+	background: #fff;
+	padding: 30px;
+	border: 9px solid #5375b6;">
+<iframe height="470" frameborder="0" width="580" scrolling="no" src="OfferChange.aspx"></iframe>
+</div>
+</div>
+<!-- END implement this expire soon code on all versions needed -->
   <img src="/Content/Images/mobile/cart2_top.png" alt="Brainetics&reg;" style="margin-bottom: 20px" />
    <uc:ShoppingCartControl ID="ShoppingCartControl1" runat="server" OnUpdateShipping="Shipping_OnUpdateShipping"></uc:ShoppingCartControl>     
    <img src="/Content/Images/mobile/paymentinfo.png" alt="Payment Information" style="margin-bottom: 20px" />

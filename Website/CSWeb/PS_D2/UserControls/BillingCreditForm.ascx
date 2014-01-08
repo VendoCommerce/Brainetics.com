@@ -4,7 +4,25 @@
     TagPrefix="uc" %>
 <%@ Register TagPrefix="uc" TagName="LoaderOverlay" Src="LoaderOverlay.ascx" %>
         
-<uc:LoaderOverlay runat="server" />
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+
+</asp:ScriptManager>       
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
+<uc:LoaderOverlay ID="LoaderOverlay1" runat="server" />
+
+<!-- implement this expire soon code on all versions needed -->
+<a href="#expiresoon" class="openexpiresoon"></a>
+<div style="display: none">
+<div id="expiresoon" style="width: 563px;
+	height: 449px;
+	background: #fff;
+	padding: 30px;
+	border: 9px solid #5375b6;">
+<iframe height="470" frameborder="0" width="580" scrolling="no" src="OfferChange.aspx"></iframe>
+</div>
+</div>
+<!-- END implement this expire soon code on all versions needed -->
         
 <div class="cart_content_B clearfix">
     <div class="cart_left">
@@ -221,3 +239,5 @@
 </div>
 <!-- end cart_content -->
     
+     </ContentTemplate>
+</asp:UpdatePanel>

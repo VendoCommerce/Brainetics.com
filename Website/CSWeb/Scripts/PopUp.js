@@ -1,24 +1,21 @@
-﻿function pageLoad() {
-    $(".openexpiresoon").fancybox({
-        fitToView: false,
-        closeBtn: false,
-        width: 641,
-        height: 527,
-        padding: 30,
-        scrolling: 'no',
-        autoSize: false,
-        wrapCSS: 'nowrapper',
-        modal: true,
-        helpers: {
-            overlay: {
-                opacity: 0.6
-            }
-        },
-        afterClose: function () {
-            parent.location.reload(true);
-        }
-    });
-}
+﻿//function pageLoad() {
+//    $(".openexpiresoon").fancybox({
+//        fitToView: false,
+//        closeBtn: false,
+//        width: 641,
+//        height: 527,
+//        padding: 30,
+//        scrolling: 'no',
+//        autoSize: false,
+//        wrapCSS: 'nowrapper',
+//        modal: true,
+//        helpers: {
+//            overlay: {
+//                opacity: 0.6
+//            }
+//        }
+//    });
+//}
 
 function open_expire_soon() {
     $(".openexpiresoon").trigger('click');
@@ -38,7 +35,11 @@ $(".openexpiresoon").fancybox({
         overlay: {
             opacity: 0.6
         }
-    }
+    },
+afterClose: function () {
+    parent.location.reload(true);
+}
+
 }); 
 
 

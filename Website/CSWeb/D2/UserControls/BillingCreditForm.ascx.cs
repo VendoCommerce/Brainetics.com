@@ -78,9 +78,10 @@ namespace CSWeb.D2.UserControls
                     BindCreditCard();
                     BindCountries(true);
                     BindRegions();
+                    ReloadCartData();
                     BindPackageOptions();
                     BindCart();
-                    ReloadCartData();
+                    
                 }
 
             }
@@ -633,7 +634,7 @@ namespace CSWeb.D2.UserControls
                 ddlCountry.Items.FindByValue(clientData.CustomerInfo.BillingAddress.CountryId.ToString()).Selected = true;
                 ddlCountry.SelectedValue = clientData.CustomerInfo.BillingAddress.CountryId.ToString();
 
-                Country_SelectedIndexChanged(null, null);
+                BindRegions();
 
 
                 ddlState.Items.FindByValue(clientData.CustomerInfo.BillingAddress.StateProvinceId.ToString()).Selected = true;
@@ -641,6 +642,7 @@ namespace CSWeb.D2.UserControls
 
 
                 //Payment information
+                ddlCCType.SelectedValue = clientData.PaymentInfo.CreditCardType.ToString();
                 string ccNumber = CommonHelper.Decrypt(clientData.PaymentInfo.CreditCardNumber);
                 txtCCNumber.Text = ccNumber;
 
@@ -658,6 +660,7 @@ namespace CSWeb.D2.UserControls
                 txtAddress2.Text = clientData.CustomerInfo.BillingAddress.Address2;
                 txtCity.Text = clientData.CustomerInfo.BillingAddress.City;
                 txtZipCode.Text = clientData.CustomerInfo.BillingAddress.ZipPostalCode;
+                
             }
             catch
             {
@@ -762,10 +765,13 @@ namespace CSWeb.D2.UserControls
 
         protected void imgBtn_OnClick(object sender, ImageClickEventArgs e)
         {
-            if (!validateInput())
-            {
-                SaveData();
-            }
+            
+                if (!validateInput())
+                {
+                    SaveData();
+                }    
+            
+            
 
         }
         #endregion General Methods

@@ -17,7 +17,7 @@
 <script type="text/javascript" src="/Scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript" src="/Scripts/global_mobile.js"></script>
 <link href="/styles/global_mobile.css" rel="stylesheet" type="text/css" />
-
+ <script src="/Scripts/popup.js"></script>
 </head>
 <body>
  <form runat="server" id="fm1">

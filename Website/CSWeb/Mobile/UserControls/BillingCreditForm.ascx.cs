@@ -84,6 +84,7 @@ namespace CSWeb.Mobile.UserControls
                     BindCreditCard();
                     BindCountries(true);
                     BindRegions();
+                    ReloadCartData();
                     
                 }
 
@@ -929,6 +930,80 @@ namespace CSWeb.Mobile.UserControls
         //}
 
 
+        public void ReloadCartData()
+        {
+            ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
+
+
+            if (OrderHelper.IsMainKit() && OrderHelper.IsOnePay())
+            {
+                int orderId = 0;
+
+                if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
+                    || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder)
+                {
+                    //Save Order information before upsale process
+
+
+                    orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
+
+                    if (orderId > 1)
+                    {
+                        clientData.OrderId = orderId;
+                        Session["ClientOrderData"] = clientData;
+                        Response.Redirect("PostSale.aspx");
+                    }
+                }
+            }
+
+            try
+            {
+                ddlCountry.ClearSelection();
+
+                ddlState.ClearSelection();
+
+
+                ddlCountry.Items.FindByValue(clientData.CustomerInfo.BillingAddress.CountryId.ToString()).Selected = true;
+                ddlCountry.SelectedValue = clientData.CustomerInfo.BillingAddress.CountryId.ToString();
+
+                BindRegions();
+
+
+                ddlState.Items.FindByValue(clientData.CustomerInfo.BillingAddress.StateProvinceId.ToString()).Selected = true;
+
+
+
+                //Payment information
+                ddlCCType.SelectedValue = clientData.PaymentInfo.CreditCardType.ToString();
+                string ccNumber = CommonHelper.Decrypt(clientData.PaymentInfo.CreditCardNumber);
+                txtCCNumber1.Text = ccNumber;
+                
+
+                txtCvv.Text = clientData.PaymentInfo.CreditCardCSC;
+                DateTime expireDate = DateTime.MinValue;
+                DateTime.TryParse(clientData.PaymentInfo.CreditCardExpired.ToString(), out expireDate);
+                ddlExpMonth.Items.FindByValue(expireDate.Month.ToString()).Selected = true;
+                ddlExpYear.Items.FindByValue(expireDate.Year.ToString()).Selected = true;
+
+                //Billing informarion
+                txtFirstName.Text = clientData.CustomerInfo.BillingAddress.FirstName;
+                txtLastName.Text = clientData.CustomerInfo.BillingAddress.LastName;
+                txtAddress1.Text = clientData.CustomerInfo.BillingAddress.Address1;
+                txtAddress2.Text = clientData.CustomerInfo.BillingAddress.Address2;
+                txtCity.Text = clientData.CustomerInfo.BillingAddress.City;
+                txtZipCode.Text = clientData.CustomerInfo.BillingAddress.ZipPostalCode;
+
+            }
+            catch
+            {
+
+
+            }
+
+
+        }
+
+
 
         public void SaveData()
         {
@@ -938,7 +1013,8 @@ namespace CSWeb.Mobile.UserControls
             //clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
             //clientData.OrderAttributeValues.Add("ref_url", new CSBusiness.Attributes.AttributeValue("http://www.google.com"));
 
-            //clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
+            if (clientData.OrderAttributeValues == null)
+                clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
             clientData.OrderAttributeValues.AddOrUpdateAttributeValue("CustomOrderId", new CSBusiness.Attributes.AttributeValue("CS" + CommonHelper.GetRandonOrderNumber(DateTime.Now)));
             //Recapture billing information if the user modified the information
             if (rId == 0)
@@ -974,45 +1050,136 @@ namespace CSWeb.Mobile.UserControls
 
             CartContext.PaymentInfo = paymentDataInfo;
 
-            //Slight Version manipulation just for dynamic radio versions. - Start
-            int tempVersionid = CartContext.VersionId;
-            List<CSBusiness.Version> list = (CSFactory.GetCacheSitePref()).VersionItems;
-            CSBusiness.Version item = list.Find(x => x.Title.ToLower() == OrderHelper.GetDynamicVersionName().ToLower());
-            if (item != null)
-                CartContext.VersionId = item.VersionId;
-            //Slight Version manipulation just for dynamic radio versions. - End
+            Session["ClientOrderData"] = clientData;
 
-            int orderId = 0;
 
-            if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
-                || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder
-                || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableUpsellReviewOrder)
+            ////// Prepaid Card OverLay //////
+
+            int cardNo = Convert.ToInt32(CardNumber.Substring(0, 6));
+            bool isPrepaid = CSWebBase.PrepaidCardDAL.IsPrepaidCard(cardNo);
+            if (isPrepaid && OrderHelper.IsMainKit() && !OrderHelper.IsOnePay())
             {
-                //Save Order information before upsale process
-                
-                if (rId == 1)
-                    orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
-                else
-                {
-                    //update order with modified customer shipping and billing and credit card information
-                    orderId = clientData.OrderId;
-                    CSResolve.Resolve<IOrderService>().UpdateOrder(orderId, clientData);
-                }
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "popup", "open_expire_soon();", true);
+            }
+            else
+            {
 
-                if (orderId > 1)
-                {
-                    clientData.OrderId = orderId;
-                    Session["ClientOrderData"] = clientData;
+                int orderId = 0;
 
-                    
+                if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
+                    || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder
+                    || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableUpsellReviewOrder)
+                {
+                    //Save Order information before upsale process
 
                     if (rId == 1)
-                        Response.Redirect("PostSale.aspx");
+                        orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
                     else
-                        Response.Redirect("CardDecline.aspx");
+                    {
+                        //update order with modified customer shipping and billing and credit card information
+                        orderId = clientData.OrderId;
+                        CSResolve.Resolve<IOrderService>().UpdateOrder(orderId, clientData);
+                    }
+
+                    if (orderId > 1)
+                    {
+                        clientData.OrderId = orderId;
+                        Session["ClientOrderData"] = clientData;
+
+                        if (rId == 1)
+                            Response.Redirect("PostSale.aspx");
+                        else
+                            Response.Redirect("CardDecline.aspx");
+                    }
                 }
             }
         }
+
+
+
+        //public void SaveData()
+        //{
+        //    ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
+
+        //    // attribute save example            
+        //    //clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
+        //    //clientData.OrderAttributeValues.Add("ref_url", new CSBusiness.Attributes.AttributeValue("http://www.google.com"));
+
+        //    //clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
+        //    clientData.OrderAttributeValues.AddOrUpdateAttributeValue("CustomOrderId", new CSBusiness.Attributes.AttributeValue("CS" + CommonHelper.GetRandonOrderNumber(DateTime.Now)));
+        //    //Recapture billing information if the user modified the information
+        //    if (rId == 0)
+        //    {
+        //        if (cbBillingDifferent.Checked) //override if the user select yes button
+        //        {
+        //            Address billingAddress = new Address();
+        //            billingAddress.FirstName = CommonHelper.fixquotesAccents(txtFirstName.Text);
+        //            billingAddress.LastName = CommonHelper.fixquotesAccents(txtLastName.Text);
+        //            billingAddress.Address1 = CommonHelper.fixquotesAccents(txtAddress1.Text);
+        //            billingAddress.Address2 = CommonHelper.fixquotesAccents(txtAddress2.Text);
+        //            billingAddress.City = CommonHelper.fixquotesAccents(txtCity.Text);
+        //            billingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
+        //            billingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
+        //            billingAddress.ZipPostalCode = txtZipCode.Text;
+
+        //            clientData.CustomerInfo.FirstName = CommonHelper.fixquotesAccents(txtFirstName.Text);
+        //            clientData.CustomerInfo.LastName = CommonHelper.fixquotesAccents(txtLastName.Text);
+        //            clientData.CustomerInfo.BillingAddress = billingAddress;
+        //        }
+        //    }
+
+        //    SetBillingAddress();
+
+
+        //    PaymentInformation paymentDataInfo = new PaymentInformation();
+        //    string CardNumber = txtCCNumber1.Text;
+        //    paymentDataInfo.CreditCardNumber = CommonHelper.Encrypt(CardNumber);
+        //    paymentDataInfo.CreditCardType = Convert.ToInt32(ddlCCType.SelectedValue);
+        //    paymentDataInfo.CreditCardName = ddlCCType.SelectedItem.Text;
+        //    paymentDataInfo.CreditCardExpired = new DateTime(int.Parse(ddlExpYear.SelectedValue), int.Parse(ddlExpMonth.SelectedValue), 1);
+        //    paymentDataInfo.CreditCardCSC = txtCvv.Text;
+
+        //    CartContext.PaymentInfo = paymentDataInfo;
+
+        //    //Slight Version manipulation just for dynamic radio versions. - Start
+        //    int tempVersionid = CartContext.VersionId;
+        //    List<CSBusiness.Version> list = (CSFactory.GetCacheSitePref()).VersionItems;
+        //    CSBusiness.Version item = list.Find(x => x.Title.ToLower() == OrderHelper.GetDynamicVersionName().ToLower());
+        //    if (item != null)
+        //        CartContext.VersionId = item.VersionId;
+        //    //Slight Version manipulation just for dynamic radio versions. - End
+
+        //    int orderId = 0;
+
+        //    if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
+        //        || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder
+        //        || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableUpsellReviewOrder)
+        //    {
+        //        //Save Order information before upsale process
+                
+        //        if (rId == 1)
+        //            orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
+        //        else
+        //        {
+        //            //update order with modified customer shipping and billing and credit card information
+        //            orderId = clientData.OrderId;
+        //            CSResolve.Resolve<IOrderService>().UpdateOrder(orderId, clientData);
+        //        }
+
+        //        if (orderId > 1)
+        //        {
+        //            clientData.OrderId = orderId;
+        //            Session["ClientOrderData"] = clientData;
+
+                    
+
+        //            if (rId == 1)
+        //                Response.Redirect("PostSale.aspx");
+        //            else
+        //                Response.Redirect("CardDecline.aspx");
+        //        }
+        //    }
+        //}
 
         protected void imgBtn_OnClick(object sender, ImageClickEventArgs e)
         {

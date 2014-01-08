@@ -965,6 +965,7 @@
     <Content Include="email\images\index_04.jpg" />
     <Content Include="email\images\index_05.jpg" />
     <Content Include="email\index.html" />
+    <Content Include="Mobile\OfferChange.aspx" />
     <Content Include="PS_D2\aboutmike.aspx" />
     <Content Include="PS_D2\AddProduct.aspx" />
     <Content Include="PS_D2\AuthorizeOrder.aspx" />
@@ -983,6 +984,7 @@
     <Content Include="PS_D2\header_main.html" />
     <Content Include="PS_D2\howitworks.aspx" />
     <Content Include="PS_D2\index.aspx" />
+    <Content Include="PS_D2\OfferChange.aspx" />
     <Content Include="PS_D2\popups.html" />
     <Content Include="PS_D2\PostSale.aspx" />
     <Content Include="PS_D2\privacy.aspx" />
@@ -3082,6 +3084,10 @@
     <Compile Include="D2\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Mobile\OfferChange.aspx.cs">
+      <DependentUpon>OfferChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="PS_D2\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3116,6 +3122,10 @@
     </Compile>
     <Compile Include="PS_D2\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PS_D2\OfferChange.aspx.cs">
+      <DependentUpon>OfferChange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PS_D2\PostSale.aspx.cs">

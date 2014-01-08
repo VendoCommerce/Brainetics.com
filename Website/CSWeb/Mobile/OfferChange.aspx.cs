@@ -12,7 +12,7 @@ using CSBusiness;
 using System.Web;
 using CSWebBase;
 
-namespace CSWeb.D2.Store
+namespace CSWeb.Mobile.Store
 {
     public partial class OfferChange : SiteBasePage
     {

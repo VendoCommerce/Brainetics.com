@@ -18,6 +18,7 @@
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
 <script src="/Scripts/global_A5.js"></script>
+<script src="/Scripts/popup.js"></script>
 <link href="../Styles/global_A5.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
