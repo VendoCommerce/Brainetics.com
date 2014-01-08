@@ -79,7 +79,8 @@ namespace CSWeb.D2.UserControls
                     BindCountries(true);
                     BindRegions();
                     BindPackageOptions();
-                    BindCart();                    
+                    BindCart();
+                    ReloadCartData();
                 }
 
             }
@@ -596,6 +597,77 @@ namespace CSWeb.D2.UserControls
             return _bError;
         }
 
+        public void ReloadCartData()
+        {
+            ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
+
+
+           if (OrderHelper.IsMainKit() && OrderHelper.IsOnePay())
+                    {
+                        int orderId = 0;
+
+                        if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
+                            || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder)
+                        {
+                            //Save Order information before upsale process
+
+
+                            orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
+
+                            if (orderId > 1)
+                            {
+                                clientData.OrderId = orderId;
+                                Session["ClientOrderData"] = clientData;
+                                Response.Redirect("PostSale.aspx");
+                            }
+                        }
+                    }
+
+            try
+            {
+                ddlCountry.ClearSelection();
+
+                ddlState.ClearSelection();
+
+
+                ddlCountry.Items.FindByValue(clientData.CustomerInfo.BillingAddress.CountryId.ToString()).Selected = true;
+                ddlCountry.SelectedValue = clientData.CustomerInfo.BillingAddress.CountryId.ToString();
+
+                Country_SelectedIndexChanged(null, null);
+
+
+                ddlState.Items.FindByValue(clientData.CustomerInfo.BillingAddress.StateProvinceId.ToString()).Selected = true;
+
+
+
+                //Payment information
+                string ccNumber = CommonHelper.Decrypt(clientData.PaymentInfo.CreditCardNumber);
+                txtCCNumber.Text = ccNumber;
+
+
+                txtCvv.Text = clientData.PaymentInfo.CreditCardCSC;
+                DateTime expireDate = DateTime.MinValue;
+                DateTime.TryParse(clientData.PaymentInfo.CreditCardExpired.ToString(), out expireDate);
+                ddlExpMonth.Items.FindByValue(expireDate.Month.ToString()).Selected = true;
+                ddlExpYear.Items.FindByValue(expireDate.Year.ToString()).Selected = true;
+
+                //Billing informarion
+                txtFirstName.Text = clientData.CustomerInfo.BillingAddress.FirstName;
+                txtLastName.Text = clientData.CustomerInfo.BillingAddress.LastName;
+                txtAddress1.Text = clientData.CustomerInfo.BillingAddress.Address1;
+                txtAddress2.Text = clientData.CustomerInfo.BillingAddress.Address2;
+                txtCity.Text = clientData.CustomerInfo.BillingAddress.City;
+                txtZipCode.Text = clientData.CustomerInfo.BillingAddress.ZipPostalCode;
+            }
+            catch
+            {
+                
+                
+            }
+            
+           
+        }
+
 
 
         public void SaveData()
@@ -643,32 +715,47 @@ namespace CSWeb.D2.UserControls
 
             CartContext.PaymentInfo = paymentDataInfo;
 
-            int orderId = 0;
+            Session["ClientOrderData"] = clientData;
 
-            if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
-                || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder
-                || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableUpsellReviewOrder)
+
+            ////// Prepaid Card OverLay //////
+
+            int cardNo = Convert.ToInt32(CardNumber.Substring(0, 6));
+            bool isPrepaid = CSWebBase.PrepaidCardDAL.IsPrepaidCard(cardNo);
+            if (isPrepaid && OrderHelper.IsMainKit() && !OrderHelper.IsOnePay())
             {
-                //Save Order information before upsale process
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "popup", "open_expire_soon();", true);
+            }
+            else
+            {
 
-                if (rId == 1)
-                    orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
-                else
-                {
-                    //update order with modified customer shipping and billing and credit card information
-                    orderId = clientData.OrderId;
-                    CSResolve.Resolve<IOrderService>().UpdateOrder(orderId, clientData);
-                }
+                int orderId = 0;
 
-                if (orderId > 1)
+                if (CSFactory.OrderProcessCheck() == (int) OrderProcessTypeEnum.InstantOrderProcess
+                    || CSFactory.OrderProcessCheck() == (int) OrderProcessTypeEnum.EnableReviewOrder
+                    || CSFactory.OrderProcessCheck() == (int) OrderProcessTypeEnum.EnableUpsellReviewOrder)
                 {
-                    clientData.OrderId = orderId;
-                    Session["ClientOrderData"] = clientData;
+                    //Save Order information before upsale process
 
                     if (rId == 1)
-                        Response.Redirect("PostSale.aspx");
+                        orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
                     else
-                        Response.Redirect("CardDecline.aspx");
+                    {
+                        //update order with modified customer shipping and billing and credit card information
+                        orderId = clientData.OrderId;
+                        CSResolve.Resolve<IOrderService>().UpdateOrder(orderId, clientData);
+                    }
+
+                    if (orderId > 1)
+                    {
+                        clientData.OrderId = orderId;
+                        Session["ClientOrderData"] = clientData;
+
+                        if (rId == 1)
+                            Response.Redirect("PostSale.aspx");
+                        else
+                            Response.Redirect("CardDecline.aspx");
+                    }
                 }
             }
         }

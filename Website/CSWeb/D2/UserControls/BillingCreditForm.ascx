@@ -3,8 +3,25 @@
 <%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl"
     TagPrefix="uc" %>
 <%@ Register TagPrefix="uc" TagName="LoaderOverlay" Src="LoaderOverlay.ascx" %>
-        
+<asp:ScriptManager runat="server">
+
+</asp:ScriptManager>       
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
 <uc:LoaderOverlay runat="server" />
+
+<!-- implement this expire soon code on all versions needed -->
+<a href="#expiresoon" class="openexpiresoon"></a>
+<div style="display: none">
+<div id="expiresoon" style="width: 563px;
+	height: 449px;
+	background: #fff;
+	padding: 30px;
+	border: 9px solid #5375b6;">
+<iframe height="470" frameborder="0" width="580" scrolling="no" src="OfferChange.aspx"></iframe>
+</div>
+</div>
+<!-- END implement this expire soon code on all versions needed -->
         
 <div class="cart_content_B clearfix">
     <div class="cart_left">
@@ -207,8 +224,14 @@
             </div>
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png"
-                    CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
+                                 CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
             </div>
+            
+              <!-- delete form_line div once implemented -->
+            <div class="form_line">
+            <a href="javascript:void(0);" onclick="open_expire_soon();">OPEN EXPIRE SOON OVERLAY</a>
+            </div>
+            
             <div class="form_line_guarantee"><a href="#guarantee" onclick="javascript:void(0);" class="guarantee">30-Day Money-Back Guarantee!</a></div>
                      <div class="form_line_guarantee">
          <div class="norton_ssl_cart"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script><br />
@@ -221,3 +244,5 @@
 </div>
 <!-- end cart_content -->
     
+    </ContentTemplate>
+</asp:UpdatePanel>

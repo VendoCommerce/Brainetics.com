@@ -1,0 +1,92 @@
+﻿/* CSS Document */
+
+
+/* expire soon styles */
+body, html, p, td, tr, table, span, a, div, li, ol, ul, img, h1, h2, h3, h4, h5, em, form {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;	
+}
+
+body {
+	font-family: arial, sans-serif;	
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix {
+	zoom: 1;
+} /* IE6 */ 
+*:first-child+html .clearfix {
+	zoom: 1;
+} /* IE7 */ 
+.purple {
+	color: #b93a7c !important;	
+}
+
+#expire p {
+	color: #5f5f5f;
+	font-size: 15px;
+	line-height: 23px;
+	padding-bottom: 24px;	
+}
+
+#expire h2 {
+	color: #0c2e81;	
+	font-weight: bold;	
+	font-size: 40px;
+	line-height: normal;
+	text-transform: none;
+	padding-bottom: 20px;
+}
+
+#expire h3 {
+	color: #0c2e81;
+	font-size: 20px;
+	text-transform: none;
+	line-height: normal;
+	font-weight: bold;	
+	padding-bottom: 20px;
+}
+#expire {
+	width: 	554px;
+}
+#expiresoon {
+	width: 563px;
+	height: 449px;
+	background: #fff;
+	padding: 30px;
+	border: 9px solid #5375b6;	
+}
+
+.formline_expire {
+	display: block;
+	position:relative;
+	padding-bottom: 20px;	
+}
+
+.formline_expire input[type=radio] {
+	float:left;
+	position:relative;
+	margin-right: 4px;	
+}
+
+.formline_expire label {
+	float:left;	
+	position:relative;
+	width: 524px;
+	color: #5f5f5f;
+	font-size: 16px;
+	line-height: 23px;
+	font-weight: bold;
+}

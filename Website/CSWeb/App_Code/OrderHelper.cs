@@ -838,6 +838,50 @@ namespace CSWeb
             return OrderFlowCompleted;
         }
 
+        public static bool IsMainKit()
+        {
+            bool IsMainKit = false;
+            ClientCartContext clientData = (ClientCartContext)HttpContext.Current.Session["ClientOrderData"];
+
+            foreach (Sku sku in clientData.CartInfo.CartItems)
+            {
+                if (!sku.AttributeValuesLoaded)
+                {
+                    sku.LoadAttributeValues();
+                }
+
+                if (sku.ContainsAttribute("MainKit") && sku.GetAttributeValue<bool>("MainKit", false))
+                {
+                        IsMainKit = true;
+                }
+
+
+            }
+
+            return IsMainKit;
+        }
+
+        public static bool IsOnePay()
+        {
+            bool IsOnePay = false;
+            ClientCartContext clientData = (ClientCartContext)HttpContext.Current.Session["ClientOrderData"];
+
+            foreach (Sku sku in clientData.CartInfo.CartItems)
+            {
+                if (!sku.AttributeValuesLoaded)
+                {
+                    sku.LoadAttributeValues();
+                }
+
+                if (sku.ContainsAttribute("OnePay") && sku.GetAttributeValue<bool>("OnePay", false))
+                {
+                    IsOnePay = true;
+                }
+            }
+
+            return IsOnePay;
+        }
+
         public static bool SendWriteToMikeEmail(string firstName, string lastName, string email, string subject, string message, string schoolName,
             string city, string state, string phoneNumber)
         {

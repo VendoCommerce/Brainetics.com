@@ -933,6 +933,7 @@
     <Content Include="D2\header_main.html" />
     <Content Include="D2\howitworks.aspx" />
     <Content Include="D2\index.aspx" />
+    <Content Include="D2\OfferChange.aspx" />
     <Content Include="D2\popups.html" />
     <Content Include="D2\PostSale.aspx" />
     <Content Include="D2\privacy.aspx" />
@@ -1321,6 +1322,7 @@
     <Content Include="Scripts\placeholder-shiv.jquery.js" />
     <Content Include="Scripts\placeholder.js" />
     <Content Include="Scripts\placeholder2.js" />
+    <Content Include="Scripts\PopUp.js" />
     <Content Include="Scripts\qzy1qcz.js" />
     <Content Include="Scripts\snippet.js" />
     <Content Include="Scripts\s_code.js" />
@@ -1330,6 +1332,7 @@
     <Content Include="Styles\A1\style.css" />
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\cart_styles.css" />
+    <Content Include="Styles\expirestyles.css" />
     <Content Include="Styles\fontawesome\css\font-awesome-ie7.css" />
     <Content Include="Styles\fontawesome\css\font-awesome-ie7.min.css" />
     <Content Include="Styles\fontawesome\css\font-awesome.css" />
@@ -2939,6 +2942,10 @@
     </Compile>
     <Compile Include="D2\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="D2\OfferChange.aspx.cs">
+      <DependentUpon>OfferChange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="D2\PostSale.aspx.cs">

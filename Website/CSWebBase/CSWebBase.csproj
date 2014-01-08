@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbTestingVersionUpdate.cs" />
+    <Compile Include="PrepaidCardDAL.cs" />
     <Compile Include="CustomOrderManager.cs" />
     <Compile Include="CustomTaxCalculator.cs" />
     <Compile Include="CustomUnityDependencyResolver.cs" />
