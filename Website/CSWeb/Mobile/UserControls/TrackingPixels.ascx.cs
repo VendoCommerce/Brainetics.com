@@ -17,6 +17,7 @@ namespace CSWeb.Mobile.UserControls
         public Order CurrentOrder = null;
         public string versionName = "";
         public string versionNameReferrer = "";
+        public string versionNameClientFunction = ""; 
         public decimal cartTotal = 0;
         public ClientCartContext CartContext
         {
@@ -37,6 +38,7 @@ namespace CSWeb.Mobile.UserControls
                 if (item != null)
                     versionName = item.Title.ToUpper();
             }
+            versionNameClientFunction = "GetClientVersionName('" + versionName + "')";
             //versionNameReferrer = CSWeb.OrderHelper.GetVersionNameByReferrer(CartContext);
             SetHomePagePnl();
             SetHomeAndSubPagesPnl();
