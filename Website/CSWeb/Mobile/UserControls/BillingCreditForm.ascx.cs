@@ -58,7 +58,7 @@ namespace CSWeb.Mobile.UserControls
 
             if (!IsPostBack)
             {
-                txtFirstName.Focus();
+                
                 rfvFirstName.ErrorMessage = ResourceHelper.GetResoureValue("FirstNameErrorMsg");
                 rfvLastName.ErrorMessage = ResourceHelper.GetResoureValue("LastNameErrorMsg");
                 rfvAddress1.ErrorMessage = ResourceHelper.GetResoureValue("BillingAddress1ErrorMsg");

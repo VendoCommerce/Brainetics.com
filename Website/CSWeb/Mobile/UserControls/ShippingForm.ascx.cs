@@ -51,7 +51,7 @@ namespace CSWeb.Mobile.UserControls
             }
             if (!IsPostBack)
             {
-                txtShippingFirstName.Focus();
+                
                 rfvShippingFirstName.ErrorMessage = ResourceHelper.GetResoureValue("FirstNameErrorMsg");
                 rfvShippingLastName.ErrorMessage = ResourceHelper.GetResoureValue("LastNameErrorMsg");
                 rfvShippingAddress1.ErrorMessage = ResourceHelper.GetResoureValue("ShippingAddress1ErrorMsg");
