@@ -5,14 +5,15 @@ using CSCore.Utils;
 using CSBusiness.Preference;
 using CSBusiness;
 using System.Web;
+using CSWebBase;
 
 namespace CSWeb.Mobile.Store
 {
-    public partial class cart2 : System.Web.UI.Page
+    public partial class cart2 : SiteBasePage
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {           
-           
+        protected override void Page_Load(object sender, EventArgs e)
+        {
+            base.Page_Load(sender, e);
         }
 
         public string GetCleanPhoneNumber(string data)

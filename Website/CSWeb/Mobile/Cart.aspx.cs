@@ -6,10 +6,11 @@ using CSBusiness.Preference;
 using CSBusiness;
 using System.Web;
 using CSBusiness.Web;
+using CSWebBase;
 
 namespace CSWeb.Mobile.Store
 {
-    public partial class cart : CSBasePage
+    public partial class cart : SiteBasePage
     {
          
         protected override void Page_Load(object sender, EventArgs e)
