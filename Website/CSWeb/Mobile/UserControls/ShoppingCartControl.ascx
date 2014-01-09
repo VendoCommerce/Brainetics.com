@@ -6,8 +6,8 @@
     OnItemCommand="rptShoppingCart_OnItemCommand">
     <HeaderTemplate>
     <div class="cart_table clearfix bold">
-    <div class="cart_image">Item</div>
-    <div class="cart_text">&nbsp;</div>
+    <div class="cart_image">&nbsp;</div>
+    <div class="cart_text">Item</div>
     <div class="cart_select">Quantity</div>
     <div class="product_price">Price</div>
     <div class="clear"></div>
