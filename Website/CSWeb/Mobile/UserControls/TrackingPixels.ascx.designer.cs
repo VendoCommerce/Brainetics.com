@@ -65,23 +65,5 @@ namespace CSWeb.Mobile.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litGAReceiptPixel;
-        
-        /// <summary>
-        /// litMdgConfirm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litMdgConfirm;
-        
-        /// <summary>
-        /// litGAReceiptPixel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litGAReceiptPixel2;
     }
 }

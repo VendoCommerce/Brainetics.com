@@ -3,7 +3,7 @@
 <%@ Register Src="UserControls/CardDecline.ascx" TagName="Form" TagPrefix="uc1" %>
 <!doctype html>
 <html>
-<head>
+<head runat="server">
 <meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 

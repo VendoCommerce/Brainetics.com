@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html>
-<head>
+<head runat="server">
 <meta charset="utf-8">
 <meta name="viewport" content="width=640px, initial-scale=.5, maximum-scale=.5" />
 <title>Upsells</title>
