@@ -27,7 +27,7 @@
 <body>
     <form id="form1" runat="server">
   <div class="container">
-<!--#include file="header.html"-->
+<!--#include file="header_nonav.html"-->
 <div class="page">
         <uc1:Form id="ucCardDecline" runat="server" />
 
@@ -36,7 +36,7 @@
 
 </div>
 
-<!--#include file="footer_receipt.html"-->
+<!--#include file="footer_upsell.html"-->
     </form>
 </body>
 </html>

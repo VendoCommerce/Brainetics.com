@@ -933,6 +933,7 @@
     <Content Include="D2\header.html" />
     <Content Include="D2\headernav.html" />
     <Content Include="D2\header_main.html" />
+    <Content Include="D2\header_nonav.html" />
     <Content Include="D2\howitworks.aspx" />
     <Content Include="D2\index.aspx" />
     <Content Include="D2\OfferChange.aspx" />
@@ -984,6 +985,7 @@
     <Content Include="PS_D2\header.html" />
     <Content Include="PS_D2\headernav.html" />
     <Content Include="PS_D2\header_main.html" />
+    <Content Include="PS_D2\header_nonav.html" />
     <Content Include="PS_D2\howitworks.aspx" />
     <Content Include="PS_D2\index.aspx" />
     <Content Include="PS_D2\OfferChange.aspx" />
