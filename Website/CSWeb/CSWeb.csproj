@@ -724,8 +724,10 @@
     <Content Include="Content\Images\mobile\btn_return.png" />
     <Content Include="Content\Images\mobile\cards.jpg" />
     <Content Include="Content\Images\mobile\cart2_top.png" />
+    <Content Include="Content\Images\mobile\cart2_top2.jpg" />
     <Content Include="Content\Images\mobile\cart_top - Copy.jpg" />
     <Content Include="Content\Images\mobile\cart_top.jpg" />
+    <Content Include="Content\Images\mobile\cart_top2.png" />
     <Content Include="Content\Images\mobile\cta.jpg" />
     <Content Include="Content\Images\mobile\cvv_cards.jpg" />
     <Content Include="Content\Images\mobile\hdr_brainetics_enhanced.png" />
