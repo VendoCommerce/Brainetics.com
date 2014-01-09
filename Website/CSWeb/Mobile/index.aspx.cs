@@ -7,10 +7,11 @@ using CSBusiness.Preference;
 using CSBusiness;
 using System.Web;
 using CSBusiness.Web;
+using CSWebBase;
 
 namespace CSWeb.Mobile.Store
 {
-    public partial class index : CSBasePage
+    public partial class index : SiteBasePage
     {
         public string Version = "mobile";
         protected override bool IsLandingPage
