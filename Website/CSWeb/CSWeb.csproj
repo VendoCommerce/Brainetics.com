@@ -728,11 +728,13 @@
     <Content Include="Content\Images\mobile\cart_top - Copy.jpg" />
     <Content Include="Content\Images\mobile\cart_top.jpg" />
     <Content Include="Content\Images\mobile\cart_top2.png" />
+    <Content Include="Content\Images\mobile\cta - Copy.jpg" />
     <Content Include="Content\Images\mobile\cta.jpg" />
     <Content Include="Content\Images\mobile\cvv_cards.jpg" />
     <Content Include="Content\Images\mobile\hdr_brainetics_enhanced.png" />
     <Content Include="Content\Images\mobile\hdr_more_amazing_stories.png" />
     <Content Include="Content\Images\mobile\hdr_whatyouget.png" />
+    <Content Include="Content\Images\mobile\home_bg - Copy.jpg" />
     <Content Include="Content\Images\mobile\home_bg.jpg" />
     <Content Include="Content\Images\mobile\how1.jpg" />
     <Content Include="Content\Images\mobile\how2.png" />
@@ -807,6 +809,8 @@
     <Content Include="Content\Video\2020_how1.mp4" />
     <Content Include="Content\Video\ctavideo1.mp4" />
     <Content Include="Content\Video\ctavideo1_440x298.mp4" />
+    <Content Include="Content\Video\ctavideo1_60day.mp4" />
+    <Content Include="Content\Video\ctavideo1_old.mp4" />
     <Content Include="Content\Video\ctavideo_1213.mp4" />
     <Content Include="Content\Video\how2.mp4" />
     <Content Include="A3\AddProduct.aspx" />

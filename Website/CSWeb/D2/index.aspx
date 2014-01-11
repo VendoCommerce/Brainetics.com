@@ -73,7 +73,7 @@
 <div id="ctavideo"></div>
   <script type='text/javascript'>
   	jwplayer('ctavideo').setup({
-    file: "/content/video/ctavideo_1213.mp4",
+    file: "/content/video/ctavideo1_60day.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
