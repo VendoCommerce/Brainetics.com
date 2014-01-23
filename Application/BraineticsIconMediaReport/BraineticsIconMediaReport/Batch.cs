@@ -201,6 +201,28 @@ namespace Brainetics_IconMedia
             oCmd = null;
             return ds;
         }
+        public void WriteToCSVFile(string strFilePath)
+        {
+            try
+            {
+                // Create the CSV file to which grid data will be exported.
+                StreamWriter sw;
+                if (File.Exists(strFilePath))
+                {
+                    sw = new StreamWriter(strFilePath, true);
+                }
+                else
+                {
+                    sw = new StreamWriter(strFilePath, false);
+                }
+                sw.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+        }
         public void WriteToCSVFile(DataTable OrdersInfo, string strFilePath)
         {
             try
@@ -589,6 +611,14 @@ namespace Brainetics_IconMedia
                 SendEmailToClient(fullPathFileName);
 
                 log.LogToFile("Finished Importing data to IconMedia");
+                }
+                else
+                {
+                    WriteToCSVFile(fullPathFileName);
+
+                    SendEmailToClient(fullPathFileName);
+
+                    log.LogToFile("Finished Importing data to IconMedia");
                 }
             }
             catch (Exception ex)
