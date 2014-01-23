@@ -24,8 +24,8 @@ function open_expire_soon() {
 $(".openexpiresoon").fancybox({
     fitToView: false,
     closeBtn: false,
-    width: 641,
-    height: 527,
+    width: 740,
+    height: 500,
     padding: 30,
     scrolling: 'no',
     autoSize: false,

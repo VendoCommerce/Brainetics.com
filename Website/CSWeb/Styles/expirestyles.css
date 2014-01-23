@@ -6,6 +6,8 @@ body, html, p, td, tr, table, span, a, div, li, ol, ul, img, h1, h2, h3, h4, h5,
 	border: none;
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 body, html {
@@ -42,27 +44,29 @@ body {
 }
 
 #expire h2 {
-	color: #0c2e81;	
-	font-weight: bold;	
+	color: #ec3384;	
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;	
 	font-size: 40px;
 	line-height: normal;
 	text-transform: none;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 }
 
 #expire h3 {
-	color: #0c2e81;
-	font-size: 20px;
+	color: #ec3384;
+	font-family: "Nunito", sans-serif;
+	font-size: 28px;
 	text-transform: none;
 	line-height: normal;
-	font-weight: bold;	
-	padding-bottom: 20px;
+	font-weight: 400;	
+	padding-bottom: 5px;
 }
 #expire {
-	width: 	554px;
+	width: 	620px;
 }
 #expiresoon {
-	width: 563px;
+	width: 620px;
 	height: 449px;
 	background: #fff;
 	padding: 30px;
@@ -84,9 +88,15 @@ body {
 .formline_expire label {
 	float:left;	
 	position:relative;
-	width: 524px;
+	width: 580px;
 	color: #5f5f5f;
-	font-size: 16px;
-	line-height: 23px;
-	font-weight: bold;
+	font-size: 14px;
+	line-height: 21px;
+	font-weight: normal;
 }
+
+.formline_expire label strong {
+	color: #000;
+}
+
+#rblPaymentOption td {padding-bottom: 8px;}

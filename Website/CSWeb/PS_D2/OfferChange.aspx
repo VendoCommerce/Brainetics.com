@@ -17,19 +17,19 @@
     <form runat="server" id="fm1">
 <div id="expire">
 <h2>Attention!</h2>
- <p><strong>Dear Customer, </strong><br />
-   The card you have entered <span class="purple">is not allowed to place order with multile payments</span>. To take advantage of our <span class="purple">4 easy monthly payments</span> you may enter a different card, or you may choose to <span class="purple">pay in full today!</span>
+ <p>Dear Customer, <br />
+   The card you have entered is a <strong>prepaid credit card</strong>. To take advantage of our <strong>special installment offer,</strong> a regular credit card with a valid expiration date must be used. Otherwise a prepaid card may only be used to pay in full today.
  </p>
- <h3><img src="/content/images/expire_arrow.jpg" width="33" height="31" style="float:left" />&nbsp;Please select your preference:</h3>
+ <h3><img src="/content/images/d2/expire_arrow.png" width="31" height="28" style="float:left; margin-top: 8px; margin-left: 2px;" />&nbsp;Please select your preference:</h3>
  
     <div class="formline_expire clearfix">
         <asp:RadioButtonList runat="server" ID="rblPaymentOption">
-            <asp:ListItem Selected="True" Text="Yes, convert my order to a single-pay." Value="change"></asp:ListItem>
-            <asp:ListItem Text="No, let me re-enter another credit card for the installment pay plan." Value="same"></asp:ListItem>
+            <asp:ListItem Selected="True" Text="<strong>Yes, convert my order to a single-pay on the prepaid card I already entered.</strong> <br>I understand that I will receive a 30-day trial and save $64.90 on my Brainetics Enhanced Package for a total charge of $149.85 including free shipping." Value="change"></asp:ListItem>
+            <asp:ListItem Text="<strong>No, let me re-enter a different credit card for the installment pay plan.</strong>" Value="same"></asp:ListItem>
         </asp:RadioButtonList>
        
     </div>
- <div class="formline_expire"> <asp:ImageButton runat="server" ImageUrl="/content/images/expire_continue_btn.jpg" width="202" height="69" OnClick="BindSkus"/> 
+ <div class="formline_expire"> <asp:ImageButton runat="server" ImageUrl="/content/images/d2/btn_continue.png" width="195" height="53" OnClick="BindSkus"/> 
  </div>
 </div>  
  

@@ -1158,3 +1158,14 @@ body {
     border-radius: 8px;
     background-color: rgba(156, 156, 156, .6);
 }
+
+#expiresoon {
+	width: 740px;
+	height: 500px;
+	background: #fff;
+	padding: 26px 60px;
+	border: 9px solid #0e81c0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 20px;
+}
