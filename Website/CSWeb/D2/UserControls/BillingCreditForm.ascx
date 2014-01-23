@@ -3,6 +3,7 @@
 <%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl"
     TagPrefix="uc" %>
 <%@ Register TagPrefix="uc" TagName="LoaderOverlay" Src="LoaderOverlay.ascx" %>
+
 <asp:ScriptManager runat="server">
 
 </asp:ScriptManager>       
@@ -13,12 +14,8 @@
 <!-- implement this expire soon code on all versions needed -->
 <a href="#expiresoon" class="openexpiresoon"></a>
 <div style="display: none">
-<div id="expiresoon" style="width: 563px;
-	height: 449px;
-	background: #fff;
-	padding: 30px;
-	border: 9px solid #5375b6;">
-<iframe height="470" frameborder="0" width="580" scrolling="no" src="OfferChange.aspx"></iframe>
+<div id="expiresoon">
+<iframe height="500" frameborder="0" width="620" scrolling="no" src="OfferChange.aspx"></iframe>
 </div>
 </div>
 <!-- END implement this expire soon code on all versions needed -->

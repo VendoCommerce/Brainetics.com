@@ -676,7 +676,9 @@
     <Content Include="Content\Images\btn_submit.png" />
     <Content Include="Content\Images\c2\terms_overlay.png" />
     <Content Include="Content\Images\card.jpg" />
+    <Content Include="Content\Images\d2\btn_continue.png" />
     <Content Include="Content\Images\d2\cart_product_pic.jpg" />
+    <Content Include="Content\Images\d2\expire_arrow.png" />
     <Content Include="Content\Images\d2\home_leftside.png" />
     <Content Include="Content\Images\d2\included.png" />
     <Content Include="Content\Images\d2\site_bottom.jpg" />
@@ -719,6 +721,7 @@
     <Content Include="Content\Images\mobile\asotv.png" />
     <Content Include="Content\Images\mobile\bg_header.png" />
     <Content Include="Content\Images\mobile\btn_continue.png" />
+    <Content Include="Content\Images\mobile\btn_continue2.png" />
     <Content Include="Content\Images\mobile\btn_ordernow.png" />
     <Content Include="Content\Images\mobile\btn_ordernow_big.png" />
     <Content Include="Content\Images\mobile\btn_return.png" />
@@ -731,6 +734,7 @@
     <Content Include="Content\Images\mobile\cta - Copy.jpg" />
     <Content Include="Content\Images\mobile\cta.jpg" />
     <Content Include="Content\Images\mobile\cvv_cards.jpg" />
+    <Content Include="Content\Images\mobile\expire_arrow.png" />
     <Content Include="Content\Images\mobile\hdr_brainetics_enhanced.png" />
     <Content Include="Content\Images\mobile\hdr_more_amazing_stories.png" />
     <Content Include="Content\Images\mobile\hdr_whatyouget.png" />
@@ -1333,6 +1337,7 @@
     <Content Include="Scripts\placeholder.js" />
     <Content Include="Scripts\placeholder2.js" />
     <Content Include="Scripts\PopUp.js" />
+    <Content Include="Scripts\PopUp_mobile.js" />
     <Content Include="Scripts\qzy1qcz.js" />
     <Content Include="Scripts\snippet.js" />
     <Content Include="Scripts\s_code.js" />
@@ -1343,6 +1348,7 @@
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\cart_styles.css" />
     <Content Include="Styles\expirestyles.css" />
+    <Content Include="Styles\expirestyles_mobile.css" />
     <Content Include="Styles\fontawesome\css\font-awesome-ie7.css" />
     <Content Include="Styles\fontawesome\css\font-awesome-ie7.min.css" />
     <Content Include="Styles\fontawesome\css\font-awesome.css" />
