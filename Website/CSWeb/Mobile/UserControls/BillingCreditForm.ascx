@@ -173,10 +173,7 @@
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
             </div>
             
-            <!-- delete form_line div once implemented -->
-            <div class="form_line">
-            <a href="javascript:void(0);" onclick="open_expire_soon();">OPEN EXPIRE SOON OVERLAY</a>
-            </div>
+            
           
       </div>
   

@@ -8,9 +8,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <meta name="viewport" content="width=640px, initial-scale=.5, maximum-scale=.5" />
-<title>Kyrobak - Order Confirmation</title>
-<meta name="description" content="Kyrobak - Guaranteed to Relieve Back Pain!  Doctor Recommended - As Seen on TV!"/>
-<meta name="keywords" content="Kyrobak, Kyro, Back Pain Relief, 100% Risk Free, Continuous Passive Motion, CPM, Oscillation Therapy, Doctor Recommended, 60 Day Trial"/>
+<title>Brainetics® by Mike Byster-Award Winning-Guaranteed!</title>
+
 <script type="text/javascript" src="/scripts/NoBack.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
