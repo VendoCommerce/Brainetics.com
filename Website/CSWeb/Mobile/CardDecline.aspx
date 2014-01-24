@@ -1,4 +1,4 @@
-<%@Page Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.aspx.cs" Inherits=" CSWeb.Mobile.Store.CardDecline" EnableSessionState="True" %>
+﻿<%@Page Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.aspx.cs" Inherits=" CSWeb.Mobile.Store.CardDecline" EnableSessionState="True" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 <%@ Register Src="UserControls/CardDecline.ascx" TagName="Form" TagPrefix="uc1" %>
 <!doctype html>
@@ -20,7 +20,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-<div class="container">
+<div class="container"> 
 <!--#include file="popups.html"-->
 <!--#include file="header_upsell.html"-->
 
