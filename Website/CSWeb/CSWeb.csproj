@@ -1266,6 +1266,8 @@
     <Content Include="PS_C2\UserControls\ShippingForm.ascx" />
     <Content Include="PS_C2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="PS_C2\UserControls\TrackingPixels.ascx" />
+    <Content Include="Rebate\rebate.aspx" />
+    <Content Include="Rebate\index.aspx" />
     <Content Include="receipt.aspx" />
     <Content Include="receipt_friendly.aspx" />
     <Content Include="Scripts\autoTab.js" />
@@ -4084,6 +4086,20 @@
     </Compile>
     <Compile Include="PS_C2\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Rebate\rebate.aspx.cs">
+      <DependentUpon>rebate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rebate\rebate.aspx.designer.cs">
+      <DependentUpon>rebate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rebate\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rebate\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="receipt.aspx.cs">
       <DependentUpon>receipt.aspx</DependentUpon>

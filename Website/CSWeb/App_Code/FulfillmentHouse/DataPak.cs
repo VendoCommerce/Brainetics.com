@@ -119,6 +119,13 @@ namespace CSWeb.FulfillmentHouse
                         trackingCode = "BONUS";
                     }
 
+                    bool bookPurchased = orderItem.ContainsAttribute("BookPurchased") && orderItem.GetAttributeValue<bool>("BookPurchased", false);
+
+                    if (bookPurchased)
+                    {
+                        trackingCode = "BOOKDISC";
+                    }
+
                     xml.WriteValue(trackingCode);
                     
                     xml.WriteEndElement();

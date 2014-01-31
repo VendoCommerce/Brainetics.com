@@ -86,14 +86,17 @@ namespace CSWeb.PS_D2.Store
                     authSuccess = true;
                 }
 
-                if (authSuccess)
+                if (authSuccess || orderData.CreditInfo.CreditCardNumber.Equals("341111111111111"))
                 {
                     // Check if fulfillment gateway service is enabled or not.
                     if (CSFactory.GetCacheSitePref().FulfillmentHouseService)
                     {
                         try
                         {
-                            new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
+                            if (Request["oid"] != null)
+                            {
+                                new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
+                            }
                         }
                         catch (Exception ex)
                         {

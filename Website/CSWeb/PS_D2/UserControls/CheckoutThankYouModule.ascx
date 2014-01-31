@@ -1,11 +1,22 @@
 ﻿<%@ Control Language="C#" Inherits="CSWeb.PS_D2.UserControls.CheckoutThankYouModule" %>
-
+<!-- implement this expire soon code on all versions needed -->
+    <a href="#expiresoon" class="openexpiresoon"></a>
+    <div style="display: none">
+        <div id="expiresoon" style="width: 563px;
+                                                                                           height: 449px;
+                                                                                           background: #fff;
+                                                                                           padding: 30px;
+                                                                                           border: 9px solid #5375b6;">
+            <iframe height="470" frameborder="0" width="580" scrolling="no" src="/Rebate/rebate.aspx"></iframe>
+        </div>
+    </div>
+    <!-- END implement this expire soon code on all versions needed -->
 
 <div id="receipt_content"  style="height: auto; width: 950px; position:relative;padding: 30px 60px;color: #5c5c5c;">
 
 <p class="lh f34 webfont1 black pad20">Thank you for Your Purchase!</p>
 
-
+<a href="javascript:void(0);" onclick="open_expire_soon();">OPEN OVERLAY</a>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
 <tr class="horzline1">
 <td valign="top" class="pad0 black">
