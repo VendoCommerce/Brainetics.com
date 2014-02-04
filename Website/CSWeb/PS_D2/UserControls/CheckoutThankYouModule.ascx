@@ -16,7 +16,7 @@
 
 <p class="lh f34 webfont1 black pad20">Thank you for Your Purchase!</p>
 
-<a href="javascript:void(0);" onclick="open_expire_soon();">OPEN OVERLAY</a>
+<a href="javascript:void(0);" onclick="open_expire_soon();"><img src="/content/images/d2/receipt_rebatecall.jpg"></a>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
 <tr class="horzline1">
 <td valign="top" class="pad0 black">

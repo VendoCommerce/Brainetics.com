@@ -2,11 +2,7 @@
 <!-- implement this expire soon code on all versions needed -->
     <a href="#expiresoon" class="openexpiresoon"></a>
     <div style="display: none">
-        <div id="expiresoon" style="width: 563px;
-                                                                                           height: 449px;
-                                                                                           background: #fff;
-                                                                                           padding: 30px;
-                                                                                           border: 9px solid #5375b6;">
+        <div id="expiresoon">
             <iframe height="470" frameborder="0" width="580" scrolling="no" src="/Rebate/rebate.aspx"></iframe>
         </div>
     </div>
@@ -16,7 +12,17 @@
 
 <p class="lh f34 webfont1 black pad20">Thank you for Your Purchase!</p>
 
-<a href="javascript:void(0);" onclick="open_expire_soon();">OPEN OVERLAY</a>
+<img src="/content/images/e2/receipt_rebatecall.jpg" usemap="#receipt_offer">
+<map name="receipt_offer" id="receipt_offer">
+	<area shape="rect" coords="24,209,120,238" href="https://itunes.apple.com/us/book/the-power-of-forgetting/id468751842?mt=11" target="_blank" />
+	<area shape="rect" coords="125,209,222,238" href="http://www.barnesandnoble.com/w/the-power-of-forgetting-mike-byster/1115378322?ean=9780307985873" target="_blank" />
+	<area shape="rect" coords="227,209,324,238" href="http://books.google.com/books?id=2vaI2Vynx44C&dq=mike+byster&hl=en&sa=X&ei=GDvwUqrtFovzoATN-4DIBw&ved=0CFIQ6AEwAg" target="_blank" />
+    
+    <area shape="rect" coords="24,243,120,272" href="http://www.amazon.com/The-Power-Forgetting-Essential-Sharpest/dp/0307985873/ref=sr_1_1?ie=UTF8&qid=1391475182&sr=8-1&keywords=mike+byster+power+of+forgetting" target="_blank" />
+    <area shape="rect" coords="125,243,222,272" href="http://www.indiebound.org/book/9780307985873" target="_blank" />
+	
+    <area shape="rect" coords="513,303,736,366" href="javascript:void(0)" onclick="open_expire_soon();" />
+</map>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
 <tr class="horzline1">
 <td valign="top" class="pad0 black">

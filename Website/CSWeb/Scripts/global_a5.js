@@ -44,6 +44,21 @@ $(function() {
 
 
 /* overlays */
+   $(".fancynowrap").fancybox({
+        wrapCSS: 'nowrapper', 
+        padding: 0,
+        closeBtn: false,
+        scrolling: 'no',
+        closeClick: false,
+        helpers: {
+            overlay: {
+				locked: false,
+				css : {
+					'background' : 'rgba(255,255,255,.8)'
+					}
+            }
+        }
+   });
    
     $(".fancybox").fancybox();
 

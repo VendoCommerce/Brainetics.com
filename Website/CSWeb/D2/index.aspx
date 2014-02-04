@@ -17,7 +17,7 @@
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
 <script src="/Scripts/global_A5.js"></script>
-<link href="../Styles/global_A5.css" rel="stylesheet" type="text/css" />
+<link href="../Styles/global_d2.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -31,7 +31,8 @@
 <div class="home_left"><img src="../Content/images/d2/home_leftside.png" width="667" height="1155" style="margin-left: -32px" usemap="#Maphometop" />
 <map name="Maphometop">
     <area shape="circle" coords="329,356,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
-  </map>
+
+</map>
 <div class="hometoptext gray">
 <ul>
 <li>Turbo charge your memory for better performance!</li>

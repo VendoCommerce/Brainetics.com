@@ -24,16 +24,18 @@ function open_expire_soon() {
 $(".openexpiresoon").fancybox({
     fitToView: false,
     closeBtn: false,
-    width: 740,
-    height: 500,
-    padding: 30,
+    width: 524,
+    height: 304,
+    padding: 0,
     scrolling: 'no',
     autoSize: false,
     wrapCSS: 'nowrapper',
     modal: true,
     helpers: {
         overlay: {
-            opacity: 0.6
+		css : {
+		'background' : 'rgba(255,255,255,.8)'
+		}
         }
     },
 afterClose: function () {
