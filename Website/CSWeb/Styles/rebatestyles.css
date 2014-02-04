@@ -1,0 +1,144 @@
+﻿/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;	
+	font-family: arial, sans-serif;
+}
+
+body.rebatepage {
+	background: #0062a8;
+}
+
+div {
+	position:relative;	
+}
+
+.container {
+	width: 974px;
+	height: 577px;
+	margin: 0 auto;	
+	background: url(/content/images/rebate/lp.png) no-repeat;
+}
+
+.footer {
+	color: #fff;
+	font-size: 12px;
+	width: 974px;
+	margin: 0 auto;	
+	padding-top: 60px;
+	text-align:left;
+	padding-bottom: 20px;	
+}
+.clear {clear:both;}
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.block {
+	display: block;	
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+.receiptrebateform {
+	width: 464px;
+	color: #242424;
+	height: 221px;
+	background: url(/content/images/d2/receipt_rebate_overlay.png) no-repeat;
+	padding: 86px 30px 10px;
+}
+
+.receiptrebateform .formline {
+  margin: 0 auto;
+  padding-bottom: 9px;
+  width: 386px;
+}
+
+.receiptrebateform #calendericon {
+	float:left;
+}
+
+.receiptrebateform .text1 {
+	width: 159px;
+	padding: 3px;
+	float:left;
+}
+
+.receiptrebateform .error {
+	margin-left: 182px;
+	font-size: 11px;
+	color: red;
+}
+
+.receiptrebateform label {
+	width: 167px;
+	font-size: 15px;
+	margin-right: 15px;
+	text-align:right;
+	float:left;
+}
+
+.receiptrebateform .message {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 50px auto;
+  width: 480px;
+  text-align: center;
+}
+
+/* landing page rebate form */
+
+.landingrebateform {
+  color: #242424;
+  height: 221px;
+  padding: 226px 30px 10px;
+  width: 394px;
+}
+
+.landingrebateform .formline {
+  margin: 0 auto;
+  padding-bottom: 9px;
+  width: 386px;
+}
+
+.landingrebateform #calendericon {
+	float:left;
+}
+
+.landingrebateform .text1 {
+	width: 159px;
+	padding: 3px;
+	float:left;
+}
+
+.landingrebateform .error {
+	margin-left: 182px;
+	font-size: 11px;
+	color: red;
+}
+
+.landingrebateform label {
+	width: 167px;
+	font-size: 15px;
+	margin-right: 15px;
+	text-align:right;
+	float:left;
+}
+
+.landingrebateform .message {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 70px 0 0 30px;
+  text-align: center;
+  width: 280px;
+}
+
+.submitrebatebtn {
+	margin-right:30px;
+}	
