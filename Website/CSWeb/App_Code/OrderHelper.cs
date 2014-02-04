@@ -233,6 +233,8 @@ namespace CSWeb
                 //Body Translation
                 String BodyTemplate = emailTemplate.Body.Replace("&", "&amp;");
 
+                BodyTemplate = BodyTemplate.Replace("{OrderID}", orderData.OrderId.ToString());
+
                 BodyTemplate = BodyTemplate.Replace("{SUBTOTAL}", string.Format (orderSubtotal,"N2"));
                 BodyTemplate = BodyTemplate.Replace("{SHIPPING_HANDLING}", string.Format (orderShipping,"N2"));
                 BodyTemplate = BodyTemplate.Replace("{TAX}", string.Format (orderTax,"N2"));
