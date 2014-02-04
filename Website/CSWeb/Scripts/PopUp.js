@@ -21,6 +21,10 @@ function open_expire_soon() {
     $(".openexpiresoon").trigger('click');
 };
 
+function open_book_rebate() {
+    $(".openbookrebate").trigger('click');
+};
+
 $(".openexpiresoon").fancybox({
     fitToView: false,
     closeBtn: false,
@@ -41,6 +45,26 @@ $(".openexpiresoon").fancybox({
 afterClose: function () {
     parent.location.reload(true);
 }
+
+}); 
+
+$(".openbookrebate").fancybox({
+    fitToView: false,
+    closeBtn: false,
+    width: 524,
+    height: 304,
+    padding: 0,
+    scrolling: 'no',
+    autoSize: false,
+    wrapCSS: 'nowrapper',
+    modal: true,
+    helpers: {
+        overlay: {
+		css : {
+		'background' : 'rgba(255,255,255,.8)'
+		}
+        }
+    }
 
 }); 
 

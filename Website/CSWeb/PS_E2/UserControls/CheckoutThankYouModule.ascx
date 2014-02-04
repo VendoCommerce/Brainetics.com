@@ -1,8 +1,9 @@
 ﻿<%@ Control Language="C#" Inherits="CSWeb.PS_E2.UserControls.CheckoutThankYouModule" %>
 <!-- implement this expire soon code on all versions needed -->
-    <a href="#expiresoon" class="openexpiresoon"></a>
+
+    <a href="#bookrebate" class="openbookrebate"></a>
     <div style="display: none">
-        <div id="expiresoon">
+        <div id="bookrebate">
             <iframe height="470" frameborder="0" width="580" scrolling="no" src="/Rebate/rebate.aspx"></iframe>
         </div>
     </div>
@@ -21,7 +22,7 @@
     <area shape="rect" coords="24,243,120,272" href="http://www.amazon.com/The-Power-Forgetting-Essential-Sharpest/dp/0307985873/ref=sr_1_1?ie=UTF8&qid=1391475182&sr=8-1&keywords=mike+byster+power+of+forgetting" target="_blank" />
     <area shape="rect" coords="125,243,222,272" href="http://www.indiebound.org/book/9780307985873" target="_blank" />
 	
-    <area shape="rect" coords="513,303,736,366" href="javascript:void(0)" onclick="open_expire_soon();" />
+    <area shape="rect" coords="513,303,736,366" href="javascript:void(0)" onclick="open_book_rebate();" />
 </map>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
 <tr class="horzline1">

@@ -16,7 +16,7 @@
         
         <a style="position:absolute; width: 70px;height: 30px; right: 0; top: 0;" href="javascript:void(0);" onclick="parent.$.fancybox.close();"></a>
         
-        <asp:Panel ID="pnlRebateForm" runat="server">
+        <asp:Panel ID="pnlRebateForm" runat="server" Visible="False">
 <div class="formline clearfix">
 <div class="error">
             <asp:RequiredFieldValidator runat="server" ID="rfBookStore" ControlToValidate="ddlBookStore" ValidationGroup="group1" Display="Dynamic" ErrorMessage="* This field is required"></asp:RequiredFieldValidator>
@@ -62,7 +62,7 @@
         
         
         
-        <asp:Panel ID="pnlNotEligible" runat="server" Visible="False">
+        <asp:Panel ID="pnlNotEligible" runat="server">
     <div class="message">
          <asp:Literal runat="server" ID="ltMessage" Text="You have passed the time limit for purchasing the book. <br>Thank You!"></asp:Literal>   
 </div>
