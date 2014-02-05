@@ -459,6 +459,17 @@ padding: 9px 0 3px 0;
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
+                                <tr>
+                                    <td class="tbl_cola">
+                                               <asp:Literal runat="server" Text="Orders With Book Rebate"></asp:Literal>
+                                            </td>
+                                            <td class="tbl_colb">
+                                                <asp:Literal ID="ltBookRebate" runat="server" Text="Orders With Book Rebate"></asp:Literal>
+                                            </td>
+                                            <td class="tbl_colc">
+                                               
+                                            </td>
+                                </tr>
                             </table>
                         </div>
                     </div>

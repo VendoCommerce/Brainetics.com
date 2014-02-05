@@ -121,6 +121,15 @@ namespace CSWeb.Admin {
         protected global::System.Web.UI.WebControls.Repeater rptTotals;
         
         /// <summary>
+        /// ltBookRebate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltBookRebate;
+        
+        /// <summary>
         /// rptTotalsItem control.
         /// </summary>
         /// <remarks>

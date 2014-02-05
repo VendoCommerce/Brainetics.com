@@ -14,6 +14,7 @@ using CSBusiness.PostSale;
 using CSCore.Utils;
 using System.Web.UI;
 using CSData;
+using CSWebBase;
 
 namespace CSWeb.Admin
 {
@@ -100,6 +101,13 @@ namespace CSWeb.Admin
 
             List<Triplet<string, string, string>> itemList = new List<Triplet<string, string, string>>();
 
+            using (SqlDataReader drresult1 = new SiteBasePage().GetOrderBookSummary(dte1, dte2, versionId, pathId))
+            {
+                while (drresult1.Read())
+                {
+                    ltBookRebate.Text = drresult1["TotalOrders"].ToString();
+                }
+            }
 
             using (SqlDataReader drResult = new OrderManager().GetOrderSummary(dte1, dte2, versionId, pathId))
             {

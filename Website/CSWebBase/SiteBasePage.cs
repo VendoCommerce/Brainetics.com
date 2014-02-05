@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using CSBusiness.Web;
@@ -12,7 +13,9 @@ using CSBusiness.Resolver;
 using CSBusiness.ShoppingManagement;
 using CSBusiness.OrderManagement;
 using CSBusiness.Preference;
+using CSCore.DataHelper;
 using CSData;
+using CSData.Order;
 
 
 namespace CSWebBase
@@ -579,7 +582,25 @@ namespace CSWebBase
                     }
                 }
             }
-        }        
+        }
+
+        public SqlDataReader GetOrderBookSummary(DateTime? startDate, DateTime? endDate, int versionId, int pathId)
+        {
+            return GetOrderBookRebateSummary(startDate, endDate, versionId, pathId);
+        }
+
+
+        public static SqlDataReader GetOrderBookRebateSummary(DateTime? startDate, DateTime? endDate, int versionId, int pathId)
+        {
+            string connectionString = ConfigHelper.GetDBConnection();
+            String ProcName = "pr_report_order_rebate";
+            SqlParameter[] ParamVal = new SqlParameter[4];
+            ParamVal[0] = new SqlParameter("@startDate", startDate);
+            ParamVal[1] = new SqlParameter("@endDate", endDate);
+            ParamVal[2] = new SqlParameter("@version", versionId);
+            ParamVal[3] = new SqlParameter("@pathId", pathId);
+            return BaseSqlHelper.ExecuteReader(connectionString, ProcName, ParamVal);
+        }
     }
 }
 
