@@ -123,7 +123,13 @@ namespace CSWeb.FulfillmentHouse
 
                     if (bookPurchased)
                     {
-                        trackingCode = "BOOKDISC";
+                        trackingCode = "BOOKDIS";
+                    }
+
+
+                    if (orderItem.SkuItems.FirstOrDefault(x => { return (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.CinchyGray) || (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.CinchyPink); }) != null)
+                    {
+                        trackingCode = "CINCH";
                     }
 
                     xml.WriteValue(trackingCode);

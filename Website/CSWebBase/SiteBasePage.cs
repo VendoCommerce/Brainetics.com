@@ -44,7 +44,9 @@ namespace CSWebBase
             Enhanced4MultiPay = 64,
             Enhanced4OnePay = 65,
             Accelerated4MultiPay = 66,
-            Accelerated4OnePay = 67
+            Accelerated4OnePay = 67,
+            CinchyGray = 69,
+            CinchyPink = 70
         }
 
         #region Properties
