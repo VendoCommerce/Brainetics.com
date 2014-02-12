@@ -1033,6 +1033,59 @@
     <Content Include="email\images\index_05.jpg" />
     <Content Include="email\index.html" />
     <Content Include="Mobile\OfferChange.aspx" />
+    <Content Include="Mobile_B2\about.aspx" />
+    <Content Include="Mobile_B2\AddProduct.aspx" />
+    <Content Include="Mobile_B2\AuthorizeOrder.aspx" />
+    <Content Include="Mobile_B2\bottomcta.html" />
+    <Content Include="Mobile_B2\CardDecline.aspx" />
+    <Content Include="Mobile_B2\Cart.aspx" />
+    <Content Include="Mobile_B2\Cart2.aspx" />
+    <Content Include="Mobile_B2\CheckoutExpired.aspx" />
+    <Content Include="Mobile_B2\CheckoutSessionExpired.aspx" />
+    <Content Include="Mobile_B2\CheckoutThankYou.aspx" />
+    <Content Include="Mobile_B2\CheckoutThankYouPrint.aspx" />
+    <Content Include="Mobile_B2\contact.aspx" />
+    <Content Include="Mobile_B2\error.aspx" />
+    <Content Include="Mobile_B2\faq.aspx" />
+    <Content Include="Mobile_B2\footer.html" />
+    <Content Include="Mobile_B2\footer_upsell.html" />
+    <Content Include="Mobile_B2\header.html" />
+    <Content Include="Mobile_B2\header_cart.html" />
+    <Content Include="Mobile_B2\header_home.html" />
+    <Content Include="Mobile_B2\header_receipt.html" />
+    <Content Include="Mobile_B2\header_upsell.html" />
+    <Content Include="Mobile_B2\howitworks.aspx" />
+    <Content Include="Mobile_B2\index.aspx" />
+    <Content Include="Mobile_B2\OfferChange.aspx" />
+    <Content Include="Mobile_B2\popups.html" />
+    <Content Include="Mobile_B2\PostSale.aspx" />
+    <Content Include="Mobile_B2\privacy.aspx" />
+    <Content Include="Mobile_B2\receipt.aspx" />
+    <Content Include="Mobile_B2\receipt_friendly.aspx" />
+    <Content Include="Mobile_B2\ReviewOrder.aspx" />
+    <Content Include="Mobile_B2\terms.aspx" />
+    <Content Include="Mobile_B2\testimonials.aspx" />
+    <Content Include="Mobile_B2\upsells.aspx" />
+    <Content Include="Mobile_B2\UserControls\BillingCreditForm.ascx" />
+    <Content Include="Mobile_B2\UserControls\BillingForm.ascx" />
+    <Content Include="Mobile_B2\UserControls\BillingShippingCreditForm.ascx" />
+    <Content Include="Mobile_B2\UserControls\CardDecline.ascx" />
+    <Content Include="Mobile_B2\UserControls\CheckoutSummary.ascx" />
+    <Content Include="Mobile_B2\UserControls\CheckoutThankYouModule.ascx" />
+    <Content Include="Mobile_B2\UserControls\CheckoutThankYouModule2.ascx" />
+    <Content Include="Mobile_B2\UserControls\CheckoutThankYouModulePrint2.ascx" />
+    <Content Include="Mobile_B2\UserControls\ContactUs.ascx" />
+    <Content Include="Mobile_B2\UserControls\Footer.ascx" />
+    <Content Include="Mobile_B2\UserControls\Footer_Cart.ascx" />
+    <Content Include="Mobile_B2\UserControls\Footer_Upsell.ascx" />
+    <Content Include="Mobile_B2\UserControls\Header.ascx" />
+    <Content Include="Mobile_B2\UserControls\Header_Home.ascx" />
+    <Content Include="Mobile_B2\UserControls\Header_Upsell.ascx" />
+    <Content Include="Mobile_B2\UserControls\ShippingCreditForm.ascx" />
+    <Content Include="Mobile_B2\UserControls\ShippingForm.ascx" />
+    <Content Include="Mobile_B2\UserControls\ShoppingCartControl.ascx" />
+    <Content Include="Mobile_B2\UserControls\TrackingPixels.ascx" />
+    <Content Include="Mobile_B2\why_brainetics.aspx" />
     <Content Include="PS_D2\aboutmike.aspx" />
     <Content Include="PS_D2\AddProduct.aspx" />
     <Content Include="PS_D2\AuthorizeOrder.aspx" />
@@ -3383,6 +3436,159 @@
       <DependentUpon>OfferChange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Mobile_B2\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\AuthorizeOrder.aspx.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\AuthorizeOrder.aspx.designer.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CardDecline.aspx.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CardDecline.aspx.designer.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\Cart2.aspx.cs">
+      <DependentUpon>Cart2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CheckoutExpired.aspx.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CheckoutExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CheckoutThankYou.aspx.cs">
+      <DependentUpon>CheckoutThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CheckoutThankYouPrint.aspx.cs">
+      <DependentUpon>CheckoutThankYouPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\CheckoutThankYouPrint.aspx.designer.cs">
+      <DependentUpon>CheckoutThankYouPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\OfferChange.aspx.cs">
+      <DependentUpon>OfferChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\PostSale.aspx.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\PostSale.aspx.designer.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\receipt.aspx.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\receipt_friendly.aspx.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\ReviewOrder.aspx.cs">
+      <DependentUpon>ReviewOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\ReviewOrder.aspx.designer.cs">
+      <DependentUpon>ReviewOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\BillingCreditForm.ascx.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\BillingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\BillingForm.ascx.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\BillingForm.ascx.designer.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CardDecline.ascx.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CardDecline.ascx.designer.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CheckoutSummary.ascx.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CheckoutSummary.ascx.designer.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModule.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModule2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModulePrint2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ContactUs.ascx.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ContactUs.ascx.designer.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ShippingCreditForm.ascx.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ShoppingCartControl.ascx.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\ShoppingCartControl.ascx.designer.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\TrackingPixels.ascx.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_B2\UserControls\TrackingPixels.ascx.designer.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
     <Compile Include="PS_D2\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4747,6 +4953,7 @@
     <Folder Include="D2\Store\" />
     <Folder Include="E2\Store\" />
     <Folder Include="Mobile\Store\" />
+    <Folder Include="Mobile_B2\Store\" />
     <Folder Include="obj\" />
     <Folder Include="PS_A5\Store\" />
     <Folder Include="PS_B2\Store\" />
