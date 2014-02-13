@@ -73,7 +73,7 @@ Ever wanted to get good at memorizing names, faces, dates, birthdays, and meetin
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <div class="lh20">
-<img src="../Content/images/A5/product_detail_bottom.jpg" width="950" height="1886" />
+<img src="../Content/images/E2/product_detail_bottom.jpg" width="950" height="1562" />
 <div class="detail1">
   <p><span class="pink f15 webfont1 block">Playbook - A MUST-HAVE!</span>
     The Brainetics Playbook is a full-color 86 page interactive book to help you practice as well as master the Brainetics secrets. You'll want to take it with you anywhere you go so you can always brush up on your new learned skills and use them when you need them most!</p>
@@ -98,10 +98,6 @@ Ever wanted to get good at memorizing names, faces, dates, birthdays, and meetin
 <div class="detail6">
   <p><span class="pink f15 webfont1 block">Challenge Game: Have a Brainetics Tournament at Home with the Family</span>
     Competitive family tournaments are so much fun! So we were inspired to create the Brainetics Challenge Game! This game with bring together everything you've learned from Brainetics and will test you on it. Now you can challenge your family and friends to a Brainetics tournament at home. Complete with cards, rule book, markers and a timer. All you'll need is your brain!</p>
-</div>
-<div class="detail7">
-  <p><span class="pink f15 webfont1 block">Brainetics® Online Language Lab Powered by Livemocha</span>
-    Globalization is a growing trend and knowing multiple languages is a powerful skill to have! You or your child can start speaking a different language in just a few days! Choose between 38 different languages in our newest, most effective and affordable Language Lab yet! Powered by Livemocha.</p>
 </div>
 <div class="detail8">
   <p><span class="pink f15 webfont1 block">Quick Card Set</span>

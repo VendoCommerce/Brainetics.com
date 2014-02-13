@@ -332,6 +332,7 @@ body {
 	width: 340px;
 }
 
+
 .detail1 {
 	position: absolute;
 	left: 60px;
@@ -375,9 +376,9 @@ body {
 .detail6 {
 	position: absolute;
 	left: 92px;
-	top: 1212px;
-	height: 216px;
-	width: 296px;
+	top: 1216px;
+	height: 292px;
+	width: 235px;
 }
 
 .detail7 {
@@ -390,18 +391,18 @@ body {
 
 .detail8 {
 	position: absolute;
-	left: 100px;
-	top: 1629px;
-	height: 174px;
-	width: 313px;
+	left: 365px;
+	top: 1216px;
+	height: 234px;
+	width: 245px;
 }
 
 .detail9 {
 	position: absolute;
-	left: 515px;
-	top: 1630px;
-	width: 318px;
-	height: 173px;
+	left: 654px;
+	top: 1216px;
+	width: 244px;
+	height: 276px;
 }
 
 /* testimonial styles */
@@ -1159,3 +1160,85 @@ body {
     background-color: rgba(156, 156, 156, .6);
 }
 
+
+.selected_color {
+  border: 1px solid #B4252D;
+  float: left;
+  height: 56px;
+  margin-left: 10px;
+  width: 56px;
+}
+.color_radio {
+  background: url("/content/images/color_radio_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: table;
+  float: left;
+  height: 58px;
+  width: 101px;
+  padding:  12px 8px;
+}
+.color_radio span input {
+	opacity: 0;	
+}
+.color_radio label {
+  cursor: pointer;
+  display: table-cell;
+  margin-right: 5px;
+}
+
+.color_radio span.bordered {
+	border: 2px solid #b4252d !important;	
+}
+.select_blue {
+  background: url("/content/images/Swatch_Blue.jpg") no-repeat;
+  background-size:  31px 31px !important;
+  display: inline-block;
+  height: 31px;
+  width: 31px;
+  border: 2px solid transparent;
+  box-sizing: content-box;
+}
+
+.select_gray {
+  background: url("/content/images/Swatch_Grey.jpg") no-repeat;
+  background-size:  31px 31px !important;
+  display: inline-block;
+  height: 31px;
+  width: 31px;
+  border: 2px solid transparent;
+  box-sizing: content-box;
+}
+.select_peacock {
+  background: url("/content/images/Swatch_Green.jpg") no-repeat;
+  background-size:  31px 31px !important;
+  display: inline-block;
+  height: 31px;
+  width: 31px;
+  border: 2px solid transparent;
+  box-sizing: content-box;
+}
+.select_pink {
+  background: url("/content/images/Swatch_Pink.jpg") no-repeat;
+  background-size:  31px 31px !important;
+  display: inline-block;
+  height: 31px;
+  width: 31px;
+  border: 2px solid transparent;
+  box-sizing: content-box;
+}
+.select_owl {
+  background: url("/content/images/Swatch_Owl.jpg") no-repeat;
+  background-size:  31px 31px !important;
+  display: inline-block;
+  height: 31px;
+  width: 31px;
+  border: 2px solid transparent;
+  box-sizing: content-box;
+}
+.selected_color img {
+	width: 54px;
+	height: 54px;
+}
+
+.upsell_error {
+	margin-left: 146px;	
+}
