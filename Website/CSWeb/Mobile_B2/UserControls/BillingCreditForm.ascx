@@ -29,7 +29,7 @@
 </div>
 </div>
 <!-- END implement this expire soon code on all versions needed -->
-  <img src="/Content/Images/mobile/cart2_top.png" alt="Brainetics&reg;" style="margin-bottom: 20px" id="cart2_img" />
+  <img src="/Content/Images/mobile/cart2_top2.jpg" alt="Brainetics&reg;" style="margin-bottom: 20px" id="cart2_img" />
    <uc:ShoppingCartControl ID="ShoppingCartControl1" runat="server" OnUpdateShipping="Shipping_OnUpdateShipping"></uc:ShoppingCartControl>     
    <img src="/Content/Images/mobile/paymentinfo.png" alt="Payment Information" style="margin-bottom: 20px" />
 <div class="cart_mobile">
