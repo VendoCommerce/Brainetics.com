@@ -223,11 +223,122 @@ $(".showhow2").bind("click touch", function(e){
   });		
 	e.preventDefault();
 });	
-	
-	
-	
-	
+
+  	jwplayer('demo1').setup({
+    file: "/content/video/cinchydemo1.mp4",
+	autostart: false,
+	image: "/content/images/upsell_cinchy_poster1.png",
+    primary: "flash",   
+	controls: true,
+    width: 259, height: 146,
+	stretching: 'exactfit',
+	skin: '/scripts/jwplayer/five.xml',
+	events:{
+	onPlay: function() {
+   	jwplayer('demo2').stop();
+   	jwplayer('demo3').stop();
+	}}
   });
+
+
+  	jwplayer('demo2').setup({
+    file: "/content/video/cinchydemo2.mp4",
+	autostart: false,
+	image: "/content/images/upsell_cinchy_poster2.png",
+    primary: "flash",   
+	controls: true,
+    width: 259, height: 146,
+	stretching: 'exactfit',
+	skin: '/scripts/jwplayer/five.xml',
+	events:{
+	onPlay: function() {
+   	jwplayer('demo1').stop();
+   	jwplayer('demo3').stop();
+	}}
+  });
+
+ 	jwplayer('demo3').setup({
+    file: "/content/video/cinchydemo5.mp4",
+	autostart: false,
+	image: "/content/images/upsell_cinchy_poster3.png",
+    primary: "flash",   
+	controls: true,
+    width: 259, height: 146,
+	stretching: 'exactfit',
+	skin: '/scripts/jwplayer/five.xml',
+	events:{
+	onPlay: function() {
+   	jwplayer('demo2').stop();
+   	jwplayer('demo1').stop();
+	}}
+  });
+  
+  
+	
+	
+
+$('.color_radio input:radio').change(function(){
+    if($('.select_blue input:radio').is(":checked")) {
+        $('.select_blue').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Blue.jpg');
+    } else  $('.select_blue').removeClass("bordered");
+
+
+    if($('.select_gray input:radio').is(":checked")) {
+        $('.select_gray').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Grey.jpg');
+    } else  $('.select_gray').removeClass("bordered");
+	
+	    if($('.select_pink input:radio').is(":checked")) {
+        $('.select_pink').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Pink.jpg');
+    } else  $('.select_pink').removeClass("bordered");
+	
+	    if($('.select_peacock input:radio').is(":checked")) {
+        $('.select_peacock').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Green.jpg');
+    } else  $('.select_peacock').removeClass("bordered");
+	
+	    if($('.select_owl input:radio').is(":checked")) {
+        $('.select_owl').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Owl.jpg');
+    } else  $('.select_owl').removeClass("bordered");
+});
+}); // end document ready
+
+
+//trigger the color selector outlines
+function pageLoad() //use to resolve postback issues
+{
+
+    if($('.select_blue input:radio').is(":checked")) {
+        $('.select_blue').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Blue.jpg');
+    }
+
+    if($('.select_gray input:radio').is(":checked")) {
+        $('.select_gray').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Grey.jpg');
+    }
+	
+	    if($('.select_pink input:radio').is(":checked")) {
+        $('.select_pink').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Pink.jpg');
+    }
+	
+	    if($('.select_peacock input:radio').is(":checked")) {
+        $('.select_peacock').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Green.jpg');
+    }
+	
+	    if($('.select_owl input:radio').is(":checked")) {
+        $('.select_owl').addClass("bordered");
+		$('.selected_color img').attr('src', '/content/images/Swatch_Owl.jpg');
+    }
+
+
+} //end page load function
+
 
   WebFontConfig = {
     google: { families: [ 'Nunito:400,700:latin' ] }

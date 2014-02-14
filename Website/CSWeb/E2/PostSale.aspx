@@ -15,10 +15,20 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><link rel="stylesheet" type="text/css" href="/Scripts/fancybox/jquery.fancybox.css">
 <script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="/Scripts/jquery.cycle.all.js"></script>
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
 <script src="/Scripts/global_A5.js"></script>
 <link href="../Styles/global_e2.css" rel="stylesheet" type="text/css" />
+<script>
+	  $('.slides').cycle({
+                fx: 'fade',
+                timeout: 3500,
+                speed: 500,
+                cleartypeNoBg: true
+     });
+</script>
 </head>
 <body>
 <!--#include file="popups.html"-->
