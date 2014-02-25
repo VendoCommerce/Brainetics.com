@@ -184,29 +184,36 @@ namespace CSWeb.E2.UserControls
 
         private void BindCart()
         {
-            List<Sku> skus = ((CSWebBase.SiteBasePage)Page).ClientOrderData.CartInfo.CartItems;
-
-            Sku currentSku = skus.FirstOrDefault(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
-
-            if (currentSku == null)
-                Response.Redirect("index.aspx?empcart=true", true);
-
-            txtQuantity.Text = currentSku.Quantity.ToString();
-
-            ClientCartContext clientData = ((CSWebBase.SiteBasePage)Page).ClientOrderData;
-
-            if (clientData.CustomerInfo.ShippingAddress.CountryId == 46 ||
-                (clientData.CustomerInfo.ShippingAddress.CountryId == 231
-                    && "|AK|HI|PR|GU|VI|".Contains(StateManager.GetCacheStates().First(x =>
-                    {
-                        return x.StateProvinceId == clientData.CustomerInfo.ShippingAddress.StateProvinceId;
-                    }).Abbreviation.Trim().ToUpper())))
+            try
             {
-                clientData.CartInfo.AddOrUpdate((int)CSWebBase.SiteBasePage.SkuEnum.Surcharge, 1, true, false, false);
-                clientData.CartInfo.Compute();
-            }
+                List<Sku> skus = ((CSWebBase.SiteBasePage) Page).ClientOrderData.CartInfo.CartItems;
 
-            ((CSWebBase.SiteBasePage)Page).ClientOrderData = clientData;
+                Sku currentSku = skus.FirstOrDefault(x => { return CSWebBase.SiteBasePage.IsMainSku(x.SkuId); });
+
+                //if (currentSku == null)
+                //Response.Redirect("index.aspx?empcart=true", true);
+
+                txtQuantity.Text = currentSku.Quantity.ToString();
+
+                ClientCartContext clientData = ((CSWebBase.SiteBasePage) Page).ClientOrderData;
+
+                if (clientData.CustomerInfo.ShippingAddress.CountryId == 46 ||
+                    (clientData.CustomerInfo.ShippingAddress.CountryId == 231
+                     && "|AK|HI|PR|GU|VI|".Contains(StateManager.GetCacheStates().First(x =>
+                         {
+                             return x.StateProvinceId == clientData.CustomerInfo.ShippingAddress.StateProvinceId;
+                         }).Abbreviation.Trim().ToUpper())))
+                {
+                    clientData.CartInfo.AddOrUpdate((int) CSWebBase.SiteBasePage.SkuEnum.Surcharge, 1, true, false,
+                                                    false);
+                    clientData.CartInfo.Compute();
+                }
+
+                ((CSWebBase.SiteBasePage) Page).ClientOrderData = clientData;
+            }
+            catch
+            {
+            }
         }
 
         public void lbUpdate_Click(object sender, EventArgs e)
