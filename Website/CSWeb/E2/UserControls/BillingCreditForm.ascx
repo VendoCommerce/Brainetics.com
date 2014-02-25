@@ -219,6 +219,9 @@
                 <label class="label-2">
                 I agree to the <a href="#terms" class="terms">Terms and Conditions and Privacy Policy</a>.</label>
             </div>
+                   <div id="cart_offdet">
+
+            </div>
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png"
                                  CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
