@@ -1483,6 +1483,7 @@
     <None Include="Content\Images\a1\getthawteseal" />
     <None Include="Content\Images\df012ffe779e4009a614e93a6aa04a81" />
     <None Include="Content\Images\getthawteseal" />
+    <Content Include="Register\web.config" />
     <None Include="Service References\HitLinks\CSWeb.HitLinks.Data.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
