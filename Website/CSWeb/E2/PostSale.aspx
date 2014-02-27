@@ -22,12 +22,65 @@
 <script src="/Scripts/global_A5.js"></script>
 <link href="../Styles/global_e2.css" rel="stylesheet" type="text/css" />
 <script>
+
+$(document).ready(function () {
 	  $('.slides').cycle({
                 fx: 'fade',
                 timeout: 3500,
                 speed: 500,
                 cleartypeNoBg: true
      });
+	 
+	   	jwplayer('demo1').setup({
+    file: "/content/video/cinchydemo1.mp4",
+	autostart: false,
+	image: "/content/images/upsell_cinchy_poster1.png",
+    primary: "flash",   
+	controls: true,
+    width: 259, height: 146,
+	stretching: 'exactfit',
+	skin: '/scripts/jwplayer/five.xml',
+	events:{
+	onPlay: function() {
+   	jwplayer('demo2').stop();
+   	jwplayer('demo3').stop();
+	}}
+  });
+
+
+  	jwplayer('demo2').setup({
+    file: "/content/video/cinchydemo2.mp4",
+	autostart: false,
+	image: "/content/images/upsell_cinchy_poster2.png",
+    primary: "flash",   
+	controls: true,
+    width: 259, height: 146,
+	stretching: 'exactfit',
+	skin: '/scripts/jwplayer/five.xml',
+	events:{
+	onPlay: function() {
+   	jwplayer('demo1').stop();
+   	jwplayer('demo3').stop();
+	}}
+  });
+
+ 	jwplayer('demo3').setup({
+    file: "/content/video/cinchydemo5.mp4",
+	autostart: false,
+	image: "/content/images/upsell_cinchy_poster3.png",
+    primary: "flash",   
+	controls: true,
+    width: 259, height: 146,
+	stretching: 'exactfit',
+	skin: '/scripts/jwplayer/five.xml',
+	events:{
+	onPlay: function() {
+   	jwplayer('demo2').stop();
+   	jwplayer('demo1').stop();
+	}}
+  });
+	 
+     });	 
 </script>
 </head>
 <body>

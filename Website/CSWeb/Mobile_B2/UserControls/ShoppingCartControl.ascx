@@ -57,8 +57,7 @@
             <div class="cart_totals_right">
                 <asp:Literal runat="server" ID='lblSubtotal'></asp:Literal><br />
                 <asp:Literal runat="server" ID="lblShipping"></asp:Literal><br />
-                <asp:Literal runat="server" ID="lblTax"></asp:Literal>
-                <br />
+                <asp:Literal runat="server" ID="lblTax"></asp:Literal><br />
                 <asp:Literal runat="server" ID="lblOrderTotal"></asp:Literal>
                 <asp:Literal runat="server" ID="lblRushShipping" Visible="false"></asp:Literal>
                 <table>

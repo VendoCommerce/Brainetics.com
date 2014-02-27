@@ -224,54 +224,7 @@ $(".showhow2").bind("click touch", function(e){
 	e.preventDefault();
 });	
 
-  	jwplayer('demo1').setup({
-    file: "/content/video/cinchydemo1.mp4",
-	autostart: false,
-	image: "/content/images/upsell_cinchy_poster1.png",
-    primary: "flash",   
-	controls: true,
-    width: 259, height: 146,
-	stretching: 'exactfit',
-	skin: '/scripts/jwplayer/five.xml',
-	events:{
-	onPlay: function() {
-   	jwplayer('demo2').stop();
-   	jwplayer('demo3').stop();
-	}}
-  });
 
-
-  	jwplayer('demo2').setup({
-    file: "/content/video/cinchydemo2.mp4",
-	autostart: false,
-	image: "/content/images/upsell_cinchy_poster2.png",
-    primary: "flash",   
-	controls: true,
-    width: 259, height: 146,
-	stretching: 'exactfit',
-	skin: '/scripts/jwplayer/five.xml',
-	events:{
-	onPlay: function() {
-   	jwplayer('demo1').stop();
-   	jwplayer('demo3').stop();
-	}}
-  });
-
- 	jwplayer('demo3').setup({
-    file: "/content/video/cinchydemo5.mp4",
-	autostart: false,
-	image: "/content/images/upsell_cinchy_poster3.png",
-    primary: "flash",   
-	controls: true,
-    width: 259, height: 146,
-	stretching: 'exactfit',
-	skin: '/scripts/jwplayer/five.xml',
-	events:{
-	onPlay: function() {
-   	jwplayer('demo2').stop();
-   	jwplayer('demo1').stop();
-	}}
-  });
   
   
 	
