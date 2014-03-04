@@ -107,16 +107,16 @@
   
     <div class="form_line_btn">
         <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png" OnClick="imgBtn_OnClick" />
-   </div>
-      <div id="offerdet">
-
-   </div>
-     <div class="form_line_guarantee">
+    </div>
+    <div id="offerdet" style="display:none;">
+	    <p><strong>Offer Details:</strong> As part of our special TV Offer you can try Brainetics in the comfort of your home for only $14.95 plus FREE shipping and handling. If you decide to keep the system, simply do nothing and beginning 30 days following the date of your purchase you will be charged 4 easy monthly payments of only $49.95, plus tax. A single payment option is also available after you make your purchase (trial fee is waived).  All orders are backed by our 60-Day "No Questions Asked" <span style="white-space: nowrap;">Money-Back Guarantee!</span></p>
+    </div>
+    <div class="form_line_guarantee">
         <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a>
-        </div>
+    </div>
         
-         <div class="form_line_guarantee">
-         	<div class="norton_ssl_cart"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script><br />
+    <div class="form_line_guarantee">
+        <div class="norton_ssl_cart"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script><br />
 <a href="http://www.symantec.com/ssl-certificates" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a></div>
-         </div>
+     </div>
 </div>
