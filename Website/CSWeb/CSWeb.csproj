@@ -3465,153 +3465,183 @@
     </Compile>
     <Compile Include="Mobile_B2\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\AuthorizeOrder.aspx.cs">
       <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\AuthorizeOrder.aspx.designer.cs">
       <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\CardDecline.aspx.cs">
       <DependentUpon>CardDecline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\CardDecline.aspx.designer.cs">
       <DependentUpon>CardDecline.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\Cart2.aspx.cs">
       <DependentUpon>Cart2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\CheckoutExpired.aspx.cs">
       <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\CheckoutExpired.aspx.designer.cs">
       <DependentUpon>CheckoutExpired.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\CheckoutSessionExpired.aspx.cs">
       <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\CheckoutSessionExpired.aspx.designer.cs">
       <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\CheckoutThankYou.aspx.cs">
       <DependentUpon>CheckoutThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\CheckoutThankYouPrint.aspx.cs">
       <DependentUpon>CheckoutThankYouPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\CheckoutThankYouPrint.aspx.designer.cs">
       <DependentUpon>CheckoutThankYouPrint.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\OfferChange.aspx.cs">
       <DependentUpon>OfferChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\PostSale.aspx.cs">
       <DependentUpon>PostSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\PostSale.aspx.designer.cs">
       <DependentUpon>PostSale.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\receipt.aspx.cs">
       <DependentUpon>receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\receipt_friendly.aspx.cs">
       <DependentUpon>receipt_friendly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\ReviewOrder.aspx.cs">
       <DependentUpon>ReviewOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\ReviewOrder.aspx.designer.cs">
       <DependentUpon>ReviewOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\BillingCreditForm.ascx.cs">
       <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\BillingCreditForm.ascx.designer.cs">
       <DependentUpon>BillingCreditForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\BillingForm.ascx.cs">
       <DependentUpon>BillingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\BillingForm.ascx.designer.cs">
       <DependentUpon>BillingForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\BillingShippingCreditForm.ascx.cs">
       <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\BillingShippingCreditForm.ascx.designer.cs">
       <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CardDecline.ascx.cs">
       <DependentUpon>CardDecline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CardDecline.ascx.designer.cs">
       <DependentUpon>CardDecline.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CheckoutSummary.ascx.cs">
       <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CheckoutSummary.ascx.designer.cs">
       <DependentUpon>CheckoutSummary.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModule.ascx.cs">
       <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModule2.ascx.cs">
       <DependentUpon>CheckoutThankYouModule2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModulePrint2.ascx.cs">
       <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
       <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ContactUs.ascx.cs">
       <DependentUpon>ContactUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ContactUs.ascx.designer.cs">
       <DependentUpon>ContactUs.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\Header.ascx.cs">
       <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ShippingCreditForm.ascx.cs">
       <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ShippingCreditForm.ascx.designer.cs">
       <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ShippingForm.ascx.cs">
       <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ShippingForm.ascx.designer.cs">
       <DependentUpon>ShippingForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ShoppingCartControl.ascx.cs">
       <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\ShoppingCartControl.ascx.designer.cs">
       <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\TrackingPixels.ascx.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_B2\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
