@@ -21,27 +21,28 @@
  <form runat="server" id="fm1">
 <div class="container_upsell">
 <div class="page_upsell">
-<div class="upsell_head"><img src="../Content/images/A5/upsell_top.jpg" width="902" height="149" class="block" /></div>
-
+<div style="position:absolute; top: 50px; left: 300px; z-index: 1000; color: #ff6c00;" class="f60 webfont1">Our Best Value!</div>
+<div class="upsell_head"><img width="902" height="149" src="../Content/images/a2/upsell_top.jpg" class="block" /></div>
 <div class="upsell_txt">
-<h2>Upgrade to the Accelerated Package</h2>
-<div class="upsell_left">
-  <p>Morbi luctus tristique mollis. Duis faucibus nulla vel vestibulum convallis. Sed tempus nibh vel elit facilisis pharetra. Vivamus commodo tellus at elit laoreet, sit amet ornare libero dictum. Integer egestas arcu ipsum, dapibus sollicitudin mi condimentum id.    </p>
-  <p>Vivamus commodo tellus at elit laoreet, sit amet ornare libero dictum. Integer egestas arcu ipsum, dapibus sollicitudin mi condimentum id. </p>
-</div>
-<div class="upsell_right"><img src="../Content/images/A5/upsell_accelerated.jpg" width="391" height="353" />
-</div>
+<h2>Try Brainetics Accelerated Package <br>
+  at No Additional Cost <span style="position:relative;"><img src="/content/images/e2/upsell_underline.png" style="position:absolute; bottom: -6px; left: -3px;">Today!</span></h2>
+<div class="upsell_left" style="width: 400px">  
+<p>Try our Accelerated Package at <strong>47% savings</strong> which includes 
+all these extras:</p>  
+<ul class="ul_upsell f14">
+<li>The <strong>Challenge Board Game</strong> for Brainetics tournaments in 
+  your own home.</li>
+<li><strong>30 Quick Learning Cards</strong> where Mike teaches you 5 different 
+  learning skills.</li>
+<li><strong>Digital Experience:</strong> Access Brainetics on tablets or smart 
+  phones 24/7, anywhere!</li></ul>
+<p>Act now to get these bonuses for only <strong>4 additional payments of $24<sup>.95</sup></strong> 
+you'll have the <strong>Brainetics Accelerated Package</strong>! Rest assured, you're 
+still covered by our <strong class="pink">60-day Money-Back Guarantee</strong>! </p></div>
+<div class="upsell_right"><img width="411" height="339" src="../Content/images/e2/upsell_accelerated.jpg" />
+<div class="comparison_link"><a href="#comparison" class="comparison f12 bold" style="color: #00a7e9">See Comparison Chart</a></div></div>
 <div class="clear"></div>
-
-<span class="ask">Would you like to take advantage of this special offer?
-<span class="btns"><a><img src="../Content/images/A5/nothanks_btn.png" width="74" height="39" /></a><a><img src="../Content/images/A5/yes_btn.png" width="113" height="39" /></a></span>
-</span>
-
-
-</div>
-
-
-</div>
+<span class="ask">Would you like to take advantage of this special offer?<span class="btns"><a href="javascript:void(0)" bind="no"><img width="74" height="39" src="../Content/images/a2/nothanks_btn.png" /></a><a href="javascript:void(0)" bind="yes"><img width="113" height="39" src="../Content/images/a2/yes_btn.png" /></a></span></span></div></div>
 
 
 

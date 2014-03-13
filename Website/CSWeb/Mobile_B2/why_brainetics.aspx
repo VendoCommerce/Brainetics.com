@@ -62,7 +62,7 @@
       <p>Brainetics is made up of fun games and creative exercises that improve concentration and focus by teaching kids how to process and retain more information. Your Brainetics kit includes:</p>
       <ul>
           <li>Brainetics<sup>®</sup> Complete DVD Set (Levels 1-5)</li>
-          <li>86-Page Interactive Playbooks</li>
+          <li>Interactive Playbook</li>
           <li>Flash and Play Cards</li>
           <li>Quick Start Guide</li>
       </ul>
