@@ -45,7 +45,7 @@ namespace Com.ConversionSystems
                         if (version.ToUpper() == "/A1")
                             version = string.Empty;
 
-                        CommonHelper.HttpPost(Helper.AppSettings["SiteUrl"] + version + "/authorizeorder.aspx?oid=" + orderItem.OrderId, "");                        
+                        CommonHelper.HttpPost(Helper.AppSettings["SiteUrl"] + "/authorizeorder.aspx?oid=" + orderItem.OrderId, "");                        
                     }
                     catch (Exception e)
                     {   
