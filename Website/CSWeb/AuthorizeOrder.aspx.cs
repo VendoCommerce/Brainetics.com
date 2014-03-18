@@ -117,11 +117,11 @@ namespace CSWeb.Store
 
                         if (Request.QueryString != null)
                         {
-                            Response.Redirect("receipt.aspx?" + Request.QueryString);
+                            //Response.Redirect("receipt.aspx?" + Request.QueryString);
                         }
                         else
                         {
-                            Response.Redirect("receipt.aspx");
+                            //Response.Redirect("receipt.aspx");
                         }
                     }
                 }
@@ -131,7 +131,7 @@ namespace CSWeb.Store
                 }
                 
             }
-            Response.Redirect("receipt.aspx");
+            //Response.Redirect("receipt.aspx");
 
         }
     }
