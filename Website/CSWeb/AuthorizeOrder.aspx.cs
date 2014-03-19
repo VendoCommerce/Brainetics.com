@@ -46,18 +46,15 @@ namespace CSWeb.Store
             }
             if (!IsPostBack)
             {
-                bool cardCheckOnly = Request.QueryString["card_check"] == "1"; 
+                CSWebBase.SiteBasePage.TempOrderFix(CartContext, orderData.OrderStatusId);
 
                 Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
 
                 if (orderData.CreditInfo.CreditCardNumber.Equals("4444333322221111"))
-                {                    
+                {
                     CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, 7);
-                    
-                    if (cardCheckOnly)
-                        Response.Redirect("PostSale.aspx", true);
-                    else
-                        Response.Redirect("receipt.aspx");
+
+                    Response.Redirect("receipt.aspx");
                 }
                 else if (orderData.CreditInfo.CreditCardNumber.Equals("4111111111111111") && !orderData.CreditInfo.CreditCardCSC.Equals("999"))
                 {
@@ -66,7 +63,6 @@ namespace CSWeb.Store
                     Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
                 }
 
-                
                 bool authSuccess = false;
 
                 // Check if payment gateway service is enabled or not.
@@ -74,24 +70,15 @@ namespace CSWeb.Store
                 {
                     try
                     {
-                        authSuccess = orderData.OrderStatusId == 4 // auth payment success
+                        authSuccess = orderData.OrderStatusId == 4
                             || orderData.OrderStatusId == 5 // fulfillment failure (fulfillment was attempted after payment success), so don't charge again.
-                            || OrderHelper.AuthorizeOrder(orderId, cardCheckOnly);
+                            || OrderHelper.AuthorizeOrder(orderId);
                     }
                     catch (Exception ex)
                     {
-                        CSCore.CSLogger.Instance.LogException("AuthorizeOrder - auth error", ex);
+                        CSCore.CSLogger.Instance.LogException("AuthorizeOrder - auth error - orderid: " + Convert.ToString(orderId), ex);
 
                         throw;
-                    }
-
-                    if (cardCheckOnly)
-                    {
-                        if (authSuccess)
-                            Response.Redirect("PostSale.aspx", true);
-                        else
-                            Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
-                        //Response.Redirect("Order.aspx?err_card=1&oid=" + HttpUtility.UrlEncode(CSCore.Utils.CommonHelper.Encrypt(orderId.ToString() + "|" + new Random().Next(100))), true);
                     }
                 }
                 else
@@ -99,29 +86,32 @@ namespace CSWeb.Store
                     authSuccess = true;
                 }
 
-                if (authSuccess)
+                if (authSuccess || orderData.CreditInfo.CreditCardNumber.Equals("341111111111111"))
                 {
                     // Check if fulfillment gateway service is enabled or not.
                     if (CSFactory.GetCacheSitePref().FulfillmentHouseService)
                     {
                         try
                         {
-                            new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
+                            if (Request["oid"] != null)
+                            {
+                                new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
+                            }
                         }
                         catch (Exception ex)
                         {
-                            CSCore.CSLogger.Instance.LogException("AuthorizeOrder - fulfillment post error", ex);
+                            CSCore.CSLogger.Instance.LogException("AuthorizeOrder - fulfillment post error - orderid: " + Convert.ToString(orderId), ex);
 
                             throw;
                         }
 
                         if (Request.QueryString != null)
                         {
-                            //Response.Redirect("receipt.aspx?" + Request.QueryString);
+                            Response.Redirect("receipt.aspx?" + Request.QueryString);
                         }
                         else
                         {
-                            //Response.Redirect("receipt.aspx");
+                            Response.Redirect("receipt.aspx");
                         }
                     }
                 }
@@ -129,10 +119,9 @@ namespace CSWeb.Store
                 {
                     Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
                 }
-                
-            }
-            //Response.Redirect("receipt.aspx");
 
+            }
+            Response.Redirect("receipt.aspx");
         }
     }
 }
