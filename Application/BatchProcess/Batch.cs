@@ -42,10 +42,12 @@ namespace Com.ConversionSystems
                     {
                         string version = "/" + orderItem.VersionName;
 
-                        if (version.ToUpper() == "/A1")
+                        if (version.ToUpper() == "/E2")
                             version = string.Empty;
 
-                        CommonHelper.HttpPost(Helper.AppSettings["SiteUrl"] + "/authorizeorder.aspx?oid=" + orderItem.OrderId, "");                        
+                        version = "/E2";
+
+                        CommonHelper.HttpPost(Helper.AppSettings["SiteUrl"] + version + "/authorizeorder.aspx?oid=" + orderItem.OrderId, "");                        
                     }
                     catch (Exception e)
                     {   
