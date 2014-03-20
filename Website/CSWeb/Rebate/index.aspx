@@ -17,7 +17,7 @@
 <div class="error">
             <asp:RequiredFieldValidator runat="server" ID="rfBookStore" ControlToValidate="ddlBookStore" ValidationGroup="group1" Display="Dynamic" ErrorMessage="* This field is required"></asp:RequiredFieldValidator>
 </div>
-<label>Where did you pre-order 
+<label>Where did you purchase
 <br />The Power of Forgetting:</label>
   <asp:DropDownList runat="server" ID="ddlBookStore" CssClass="text1">
                 <asp:ListItem Text="" Value="" Selected="True"></asp:ListItem>
