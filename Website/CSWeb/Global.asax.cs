@@ -38,7 +38,7 @@ namespace CSWeb
             XmlNodeList xnResults = doc.SelectNodes("/Url/Redirect");
             foreach (XmlNode node in xnResults)
             {
-                if (Request.Url.AbsoluteUri.Contains (node.Attributes["originalVersion"].Value))
+                if (Request.Url.AbsoluteUri.EndsWith (node.Attributes["originalVersion"].Value))
                     return Request.Url.AbsoluteUri.Replace(Request.Url.Host+ node.Attributes["originalVersion"].Value ,string.Format("{0}{1}",host,node.Attributes["originalVersion"].Value ));
             }
 
