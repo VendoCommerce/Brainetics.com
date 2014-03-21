@@ -15,13 +15,13 @@ namespace CSWeb
 
             if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
             {
-                 Response.Redirect("/e2?" + Request.QueryString + "&referrer=" + Request.Url);
+                 Response.Redirect("/g2?" + Request.QueryString + "&referrer=" + Request.Url);
             }
 
             else
             
             {
-                 Response.Redirect("/e2?referrer=" + Request.Url);
+                 Response.Redirect("/g2?referrer=" + Request.Url);
             }
 
            
