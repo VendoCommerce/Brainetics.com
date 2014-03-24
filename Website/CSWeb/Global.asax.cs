@@ -9,7 +9,7 @@ using System.Configuration;
 using CSBusiness;
 using CSBusiness.Preference;
 using System.Xml;
-
+using System.Text.RegularExpressions;
 
 
 namespace CSWeb
@@ -19,6 +19,11 @@ namespace CSWeb
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
+            //Ignore if a file is requsted.
+            Regex regex=new Regex(@".(txt|gif|pdf|doc|docx|jpg|pdf|js|png|mp4|aspx|asp|html|htm|css|scss|less|eot|svg|ttf|woff|otf|xml)$");
+            if (regex.IsMatch(Request.Url.AbsoluteUri) ) return;
+
+            //Continue with redirection
             SitePreference sitePref = CSFactory.GetCacheSitePref();
             //if (!sitePref.AttributeValuesLoaded) 
             sitePref.LoadAttributeValues();
