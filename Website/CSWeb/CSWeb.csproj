@@ -1592,9 +1592,7 @@
     <Content Include="Scripts\s_code.js" />
     <Content Include="Scripts\tracker\track.min.js" />
     <Content Include="Scripts\window-popup.js" />
-    <Content Include="SQL\DB_Updates.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="SQL\DB_Updates.sql" />
     <Content Include="Styles\A1\reset.css" />
     <Content Include="Styles\A1\style.css" />
     <Content Include="Styles\admin.css" />
