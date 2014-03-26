@@ -860,16 +860,6 @@
     <Content Include="Content\Images\write_to_mike.png" />
     <Content Include="Content\Images\yes_cinchy.png" />
     <Content Include="Content\Images\yes_continue_btn.jpg" />
-    <Content Include="Content\Video\2020_how1.mp4" />
-    <Content Include="Content\Video\cinchydemo1.mp4" />
-    <Content Include="Content\Video\cinchydemo2.mp4" />
-    <Content Include="Content\Video\cinchydemo5.mp4" />
-    <Content Include="Content\Video\ctavideo1.mp4" />
-    <Content Include="Content\Video\ctavideo1_440x298.mp4" />
-    <Content Include="Content\Video\ctavideo1_60day.mp4" />
-    <Content Include="Content\Video\ctavideo1_old.mp4" />
-    <Content Include="Content\Video\ctavideo_1213.mp4" />
-    <Content Include="Content\Video\how2.mp4" />
     <Content Include="A3\AddProduct.aspx" />
     <Content Include="A3\AuthorizeOrder.aspx" />
     <Content Include="A3\bottomcta.html" />
@@ -5250,6 +5240,7 @@
     <Folder Include="C2\Store\" />
     <Folder Include="Content\Flash\_notes\" />
     <Folder Include="Content\Images\_notes\" />
+    <Folder Include="Content\Video\" />
     <Folder Include="D2\Store\" />
     <Folder Include="E2\Store\" />
     <Folder Include="G2\Store\" />
