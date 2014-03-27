@@ -183,7 +183,7 @@ $(".showhow1").bind("click touch", function(e){
 	jwplayer('howvideo1').setup({
     file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
 	autostart: true,
-	image: "//d1f7jvrzd4fora.cloudfront.net/images/a5/2020.jpg",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/a5/2020.JPG",
     primary: "flash",   
 	controls: true,
     width: 476, height: 370,
