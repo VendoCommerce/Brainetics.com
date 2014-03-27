@@ -21,7 +21,7 @@
  <form runat="server" id="fm1">
 <div class="container_upsell">
 <div class="page_upsell">
-<div class="upsell_head"><img src="../Content/images/A4/upsell_top.jpg" width="902" height="149" class="block" /></div>
+<div class="upsell_head"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/upsell_top.jpg" width="902" height="149" class="block" /></div>
 
 <div class="upsell_txt">
 <h2>Upgrade to the Accelerated Package</h2>
@@ -29,12 +29,12 @@
   <p>Morbi luctus tristique mollis. Duis faucibus nulla vel vestibulum convallis. Sed tempus nibh vel elit facilisis pharetra. Vivamus commodo tellus at elit laoreet, sit amet ornare libero dictum. Integer egestas arcu ipsum, dapibus sollicitudin mi condimentum id.    </p>
   <p>Vivamus commodo tellus at elit laoreet, sit amet ornare libero dictum. Integer egestas arcu ipsum, dapibus sollicitudin mi condimentum id. </p>
 </div>
-<div class="upsell_right"><img src="../Content/images/A4/upsell_accelerated.jpg" width="391" height="353" />
+<div class="upsell_right"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/upsell_accelerated.jpg" width="391" height="353" />
 </div>
 <div class="clear"></div>
 
 <span class="ask">Would you like to take advantage of this special offer?
-<span class="btns"><a><img src="../Content/images/A4/nothanks_btn.png" width="74" height="39" /></a><a><img src="../Content/images/A4/yes_btn.png" width="113" height="39" /></a></span>
+<span class="btns"><a><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/nothanks_btn.png" width="74" height="39" /></a><a><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/yes_btn.png" width="113" height="39" /></a></span>
 </span>
 
 

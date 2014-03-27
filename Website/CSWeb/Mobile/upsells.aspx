@@ -30,12 +30,12 @@
 <div class="page_upsell">
 <div class="upsell_txt">
 <h2 class="f48 webfont1" style="line-height: 54px;">SAVE BIG with One <br>EASY Payment!</h2>
-<img width="606" height="392" src="../Content/images//mobile/upsell_new_singlepay_v1.jpg" alt="We'll drop the trial fee and one whole payment - With 1-Pay, you'll only pay, 149.85" class="block" />
+<img width="606" height="392" src="//d1f7jvrzd4fora.cloudfront.net/images//mobile/upsell_new_singlepay_v1.jpg" alt="We'll drop the trial fee and one whole payment - With 1-Pay, you'll only pay, 149.85" class="block" />
 <div class="ask ask_arrow">
 Would you like to take advantage of this special offer?
 <span class="btns" style="margin-right: 50px;">
-<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="../Content/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
-<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="../Content/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
+<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
+<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
 </span></div>
 </div></div><!-- END page_upsell -->
 
@@ -56,13 +56,13 @@ Accelerated Package!</h2>
 <li>Access to the Online Language Lab and the Complete Brainetics      Digital Experience which allows you to access Brainetics anywhere! </li></ul>
 <p>If you are not fully satisfied send it back within 30 days and you will not be charged another dime.  If you love it simply do nothing and your card will be billed with 4 easy payments of $74.90!  </p>
 <br>
-<img width="610" height="481" src="../Content/images/mobile/upsell_accelerated.jpg" class="block" />
+<img width="610" height="481" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/upsell_accelerated.jpg" class="block" />
 
 <div class="ask ask_arrow">
 Would you like The Brainetics Accelerated package?
 <span class="btns" style="margin-right: 50px;">
-<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="../Content/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
-<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="../Content/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
+<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
+<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
 </span></div>
 </div></div>
 
@@ -84,13 +84,13 @@ Accelerated Package!</h2>
 <li>Access to the Online Language Lab and the Complete Brainetics      Digital Experience which allows you to access Brainetics anywhere! </li></ul>
 <p>If you are not fully satisfied send it back within 30 days and you will not be charged another dime.  </p>
 <br>
-<img width="610" height="481" src="../Content/images/mobile/upsell_accelerated_1pay.jpg" class="block" />
+<img width="610" height="481" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/upsell_accelerated_1pay.jpg" class="block" />
 
 <div class="ask ask_arrow">
 Would you like The Brainetics Accelerated package?
 <span class="btns" style="margin-right: 50px;">
-<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="../Content/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
-<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="../Content/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
+<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
+<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
 </span></div>
 </div></div>
 
@@ -107,14 +107,14 @@ Would you like The Brainetics Accelerated package?
 on the Brainetics Kick!</h2>
 <p>Don't let your child have any excuses – get an extra Brainetics Playbook, so you're always prepared! Keep one in the car, at a neighbor's house, or to take on vacation – never be without your Brainetics Playbook so your child gets the full effect of Brainetics!</p>
 <br>
-<img width="572" height="297" src="../Content/images/mobile/upsell_playbook.jpg" class="block" />
+<img width="572" height="297" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/upsell_playbook.jpg" class="block" />
 
 
 <div class="ask ask_arrow">
 Would you like to get an extra playbook?
 <span class="btns" style="margin-right: 50px;">
-<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="../Content/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
-<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="../Content/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
+<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
+<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
 </span></div>
 </div></div>
 
@@ -132,13 +132,13 @@ Best Learning Environment <br />
 
 <p>Studies show that the right music can enhance the learning process. That's why Brainetics is offering you this opportunity to get Sound Health, the study-friendly music CD by Advanced Brain Technologies. Your child focuses better and retains information better when he or she is learning in the right environment.</p>
 <p>Get Sound Health now through this special savings offer for only $29.95 (Regularly $39.95) + FREE Shipping and Handling. But this offer is only available right now, so don't wait – make your child's study experience the best it can be and get the Sound Health CD now!</p>
-<img width="561" height="402" src="../Content/images/mobile/upsell_soundhealth_cd.jpg" class="block" />
+<img width="561" height="402" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/upsell_soundhealth_cd.jpg" class="block" />
  
 <div class="ask ask_arrow">
 Would you like to get this <br>special offer?
 <span class="btns" style="margin-right: 50px;">
-<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="../Content/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
-<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="../Content/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
+<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
+<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
 </span></div>
 </div></div>
 
@@ -160,13 +160,13 @@ as quickly as you can –  upgrade to<br>
 rush priority shipping now!<br>
 </strong></p></div>
 <p class="blue" style="padding-bottom: 16px;"><strong style="color: #0a65a0;">Make Your Selection:</strong></p>
-<div style='background: url("/content/images/mobile/upsell_radio_btn_box.png") no-repeat scroll 0px 0px transparent; width: 585px; height: 120px; position: relative; padding: 28px 0px 0px 15px; color: #000;'><input type="hidden" name="addsku" id="addsku" required="true" error="Please select an item." />   <input type="radio" name="skuitem" value="one" onclick="updateUpsellSku(this)" /> <strong>2 Day Shipping ($39.95)</strong> &nbsp; &nbsp;<input type="radio" name="skuitem" value="two" onclick="updateUpsellSku(this)" /> <strong>Overnight ($79.96)</strong></div>
+<div style='background: url("//d1f7jvrzd4fora.cloudfront.net/images/mobile/upsell_radio_btn_box.png") no-repeat scroll 0px 0px transparent; width: 585px; height: 120px; position: relative; padding: 28px 0px 0px 15px; color: #000;'><input type="hidden" name="addsku" id="addsku" required="true" error="Please select an item." />   <input type="radio" name="skuitem" value="one" onclick="updateUpsellSku(this)" /> <strong>2 Day Shipping ($39.95)</strong> &nbsp; &nbsp;<input type="radio" name="skuitem" value="two" onclick="updateUpsellSku(this)" /> <strong>Overnight ($79.96)</strong></div>
  
  <div class="ask ask_arrow">
 Would you like to upgrade to Rush Shipping?
 <span class="btns" style="margin-right: 50px;">
-<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="../Content/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
-<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="../Content/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
+<a href="javascript:void(0)" bind="no"><img width="117" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
+<a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
 </span></div>
 <style>#addsku_error {position: absolute; top: 5px; left: 8px; font-style: italic; color: red;}</style>
 </div></div>

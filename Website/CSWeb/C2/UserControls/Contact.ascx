@@ -95,7 +95,7 @@
     </div>
     
     <p style="padding-left: 440px;">
-        <asp:ImageButton ID="imgBtn" runat="server" ValidationGroup="test" ImageUrl="/content/images/btn_submit.png"
+        <asp:ImageButton ID="imgBtn" runat="server" ValidationGroup="test" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/btn_submit.png"
             OnClick="imgBtn_OnClick" /></p>
 
 </div>

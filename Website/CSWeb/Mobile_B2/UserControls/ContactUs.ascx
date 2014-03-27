@@ -74,7 +74,7 @@
       </td>
     </tr>
   <tr>
-    <td colspan="2" align="right"><asp:ImageButton ID="ImageButtonSubmit" src="/content/images/cs/btn_submit.gif"
+    <td colspan="2" align="right"><asp:ImageButton ID="ImageButtonSubmit" src="//d1f7jvrzd4fora.cloudfront.net/images/cs/btn_submit.gif"
                                     ValidationGroup="Group1"   runat="server" OnClick="btnContactSubmit" /></td>
   </tr>
  

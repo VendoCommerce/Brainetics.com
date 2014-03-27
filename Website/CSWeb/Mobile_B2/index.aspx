@@ -31,12 +31,12 @@
 
 <div class="hometop"><img src="<%= GetDynamicVersionData("homepageimage")%>" width="640" height="927" usemap="#Maphome1" class="block" alt="Brainetics" />
   <map name="Maphome1">
-    <area shape="rect" coords="421,172,618,298" href="/content/video/ctavideo_1213.mp4" alt="Watch Video" target="_blank">
+    <area shape="rect" coords="421,172,618,298" href="https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo_1213.mp4" alt="Watch Video" target="_blank">
     <area shape="rect" coords="320,715,614,794" href="cart.aspx" alt="Order Now" accesskey="1">
     <area shape="circ" coords="560,384,63" href="#mgb" class="mgb" alt="60 Day Money-Back Guarantee">
   </map>
   
-  <img src="../content/images/mobile/nav2.png" width="640" height="812" usemap="#Maphome2" class="block" />
+  <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nav2.png" width="640" height="812" usemap="#Maphome2" class="block" />
   <%-- Removed Terms of Service (we're waiting on that)
   <map name="Maphome2">
     <area shape="rect" coords="0,3,640,90" href="tel:1<%= GetCleanPhoneNumber(GetDynamicVersionData("phone"))%>" accesskey="2">

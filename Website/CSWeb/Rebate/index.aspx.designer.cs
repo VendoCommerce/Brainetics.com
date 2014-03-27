@@ -67,6 +67,15 @@ namespace CSWeb.Rebate {
         protected global::System.Web.UI.WebControls.DropDownList ddlBookStore;
         
         /// <summary>
+        /// valRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequired;
+        
+        /// <summary>
         /// textboxDate control.
         /// </summary>
         /// <remarks>
@@ -92,15 +101,6 @@ namespace CSWeb.Rebate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender calendarExtenderDate;
-        
-        /// <summary>
-        /// valRequired control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator valRequired;
         
         /// <summary>
         /// RequiredFieldValidator3 control.

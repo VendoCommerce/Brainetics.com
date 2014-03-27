@@ -28,11 +28,11 @@
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
 <!--#include file="header_main.html"-->
 <div class="container">
-<div class="page" style="background: url(../content/images/a4/page_bg.jpg) repeat-x top #fff">
+<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a4/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>These People Got the Brainetics Advantage and Love It!</h2>
 <div class="testleft clearfix">
-<div class="testpic"><img src="../Content/images/A4/testimonial1.jpg" /></div>
+<div class="testpic"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/testimonial1.jpg" /></div>
 <div class="testtext"><div class="testtext_inner1">
   <p class="pad0">I was really surprised that I liked it – math isn't my favorite subject, so I wasn't expecting it to be super fun!
  </p>
@@ -42,7 +42,7 @@
 </div>
 
 <div class="testleft clearfix">
-<div class="testpic"><img src="../Content/images/A4/testimonial2.jpg" /></div>
+<div class="testpic"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/testimonial2.jpg" /></div>
 <div class="testtext"><div class="testtext_inner2">
   <p class="pad0">The transition to college was made that much easier by the fact that I was a step ahead of everyone!
 </p>
@@ -51,7 +51,7 @@
 </div>
 
 <div class="testleft clearfix">
-<div class="testpic"><img src="../Content/images/A4/testimonial3.jpg" /></div>
+<div class="testpic"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/testimonial3.jpg" /></div>
 <div class="testtext"><div class="testtext_inner3">
   <p class="pad0">There's not only one way to learn, and there's not only one way to arrive at the answer to a problem!
 </p>
@@ -65,7 +65,7 @@
 <div class="clear"></div>
 <div class="lh20">
 <div class="morestories">
-<div class="storiesheader"><img src="../Content/images/A2/more_amazing_stories.png" width="574" height="63" /></div>
+<div class="storiesheader"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a2/more_amazing_stories.png" width="574" height="63" /></div>
 <div class="stories_block"><div class="open_quote">
 <div class="testtext2_inner">
  <p class="pad25 blue f16 webfont1">The biggest benefit is the confidence my son now has about math. If you have a child who is struggling in math, giving them Brainetics is one of the smartest things you can do for them, and yourself.
@@ -109,7 +109,7 @@
 
 
 <div class="teachers">
-<div class="teachersheader text-center"><img src="../Content/images/A4/teachersaying.png" width="663" height="66" /></div>
+<div class="teachersheader text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/teachersaying.png" width="663" height="66" /></div>
 <div class="stories_block"><div class="open_quote">
 <div class="testtext2_inner">
 <p class="pad25 blue f16 webfont1" style="padding-right: 20px;">I have used Mike Byster's Brainetics in my classroom for the past 4 years. I have seen how it excites and motivates students to excel... It empowers them …and gives them the tools to succeed in any setting.
@@ -149,7 +149,7 @@ Teacher</p>
 <div class="clear"></div>
 
 </div>
-<img src="../Content/images/A4/testimonial_bottompic.jpg" width="950" height="275" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/testimonial_bottompic.jpg" width="950" height="275" class="block" />
 
 </div>
 <!--#include file="bottomcta.html"-->

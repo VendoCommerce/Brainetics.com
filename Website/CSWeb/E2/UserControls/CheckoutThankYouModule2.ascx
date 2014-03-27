@@ -10,7 +10,7 @@
     <div class="page_receipt">
         <div class="printfriendly">
             <a href="receipt_friendly.aspx" target="_blank">
-                <img src="../Content/Images/printer_icon.jpg" />Printer Friendly Version</a></div>
+                <img src="//d1f7jvrzd4fora.cloudfront.net/images/printer_icon.jpg" />Printer Friendly Version</a></div>
         <h2>
             Order Confirmation</h2>
         <div class="shoppingmain clearfix">

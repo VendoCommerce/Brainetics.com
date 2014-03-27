@@ -1,6 +1,6 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.PS_E2.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
 <a name="tryitnow" id="tryitnow"></a>
-<div class="cartB"><img src="/Content/images/a5/form_top.png" />
+<div class="cartB"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/form_top.png" />
     <div class="form_line clearfix" style="padding-top: 10px">
         <div class="error-1">
             <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
@@ -106,7 +106,7 @@
    
   
     <div class="form_line_btn">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png" OnClick="imgBtn_OnClick" />
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/a5/btn_ordernow.png" OnClick="imgBtn_OnClick" />
    </div>
      <div class="form_line_guarantee">
         <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a>

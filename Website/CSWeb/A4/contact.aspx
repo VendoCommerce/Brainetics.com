@@ -28,7 +28,7 @@
 <!--#include file="header_main.html"-->
 <div class="container">
 
-<div class="page" style="background: url(../content/images/a4/page_bg.jpg) repeat-x top #fff">
+<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a4/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Contact Us</h2>
   <p>We are committed to providing the best products and friendliest customer service. If you should have any questions about ordering or about any of our great products, please feel free to contact us via the information provided below:</p>

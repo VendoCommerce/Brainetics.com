@@ -25,8 +25,8 @@
 <div class="container">
 <!--#include file="headernav.html"-->
 <!--#include file="header.html"-->
-<div class="page" style="background: url(../content/images/a3/home_top_bg.jpg) repeat-x bottom #fff">
-<div class="home_left"><img src="../Content/images/A3/home_leftside.png" width="664" height="913" usemap="#Map" style="margin-left: -25px"/>
+<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a3/home_top_bg.jpg) repeat-x bottom #fff">
+<div class="home_left"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a3/home_leftside.png" width="664" height="913" usemap="#Map" style="margin-left: -25px"/>
   <map name="Map">
     <area shape="rect" coords="502,136,647,264" href="video_2020.html" class="video2020">
   </map>
@@ -34,7 +34,7 @@
   <div id="ctavideo"></div>
   <script type='text/javascript'>
   	jwplayer('ctavideo').setup({
-    file: "/content/video/ctavideo1_440x298.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_440x298.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
@@ -64,7 +64,7 @@
 
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div></div>
-<div class="home_bottom"><img src="../Content/images/A3/home_bottom.jpg" width="950" height="1541" usemap="#Maphomebtm" style="display: block;" />
+<div class="home_bottom"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a3/home_bottom.jpg" width="950" height="1541" usemap="#Maphomebtm" style="display: block;" />
   <map name="Maphomebtm">
     <area shape="rect" coords="574,1442,795,1505" href="#tryitnow" class="try">
     <area shape="rect" coords="681,329,931,401" href="#tryitnow" class="try">

@@ -31,7 +31,7 @@ body {
 /* header */
 .header-wr {
 	min-width: 1100px;
-	background: url(../Content/images/bg-header.jpg) no-repeat 50% 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-header.jpg) no-repeat 50% 0;
 }
 	.header {
 		width: 960px;
@@ -118,7 +118,7 @@ body {
 .media-wr {
 	min-width: 1100px;
 	height: 422px;
-	background: url(../Content/images/bg-media.jpg) no-repeat 50% 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-media.jpg) no-repeat 50% 0;
 	overflow: hidden;
 }
 	.media {
@@ -196,7 +196,7 @@ body {
 				width: 467px;
 				height: 71px;
 				overflow: hidden;
-				background: url(../Content/images/btns.png) no-repeat 0 -226px;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/btns.png) no-repeat 0 -226px;
 				text-align: center;
 				color: #fff;
 				margin: 0 0 0 8px;
@@ -244,14 +244,14 @@ body {
 @media only screen and (max-width: 568px) {
 	.media-wr {
 		min-width: 100%; 
-		background: #0AC2FE url(../content/images/bg-media-wr-mobile.jpg) 0 0 repeat-x;
+		background: #0AC2FE url(//d1f7jvrzd4fora.cloudfront.net/images/bg-media-wr-mobile.jpg) 0 0 repeat-x;
 		height: auto;
 	}
-		.extra-mobile-bg{ background: url(../content/images/bg-media-mobile.jpg) 100% 0 no-repeat;}
+		.extra-mobile-bg{ background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-media-mobile.jpg) 100% 0 no-repeat;}
 		
 			.media{ 
 				width: 320px;
-				background: url(../content/images/bg-media-girk.png) 100% 0 no-repeat;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-media-girk.png) 100% 0 no-repeat;
 				padding: 0;
 			}
 			
@@ -305,7 +305,7 @@ body {
 					margin: 38px auto 0;
 					width: 298px;
 					height: auto;
-					background: url(../content/images/btn-4.png) no-repeat;
+					background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-4.png) no-repeat;
 					background-size: 298px auto;
 				}
 					.btn-media-try .money-text {
@@ -350,7 +350,7 @@ body {
 .pricing-wr {
 	min-width: 1100px;
 	position: relative;
-	background: url(../Content/images/bg-kit.jpg) no-repeat 50% 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-kit.jpg) no-repeat 50% 0;
 }
 	.pricing {
 		margin: 0 auto;
@@ -493,7 +493,7 @@ body {
 		width: 226px;
 		height: 58px;
 		text-align: center;
-		background: url(../content/images/btn-2.png) no-repeat;
+		background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-2.png) no-repeat;
 		color: #FFF;
 		text-transform: uppercase;
 		font-weight: 700;
@@ -576,7 +576,7 @@ body {
 			width: 226px;
 			height: 58px;
 			text-align: center;
-			background: url(../content/images/btn-2.png) no-repeat;
+			background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-2.png) no-repeat;
 			color: #FFF;
 			text-transform: uppercase;
 			font-weight: 700;
@@ -696,7 +696,7 @@ body {
 				}
 				.tab-content-list li {
 					padding: 0 0 0 30px;
-					background: url(../Content/images/list-bull.png) no-repeat 0 0;
+					background: url(//d1f7jvrzd4fora.cloudfront.net/images/list-bull.png) no-repeat 0 0;
 				}
 					.tab-content-list li + li { margin: 5px 0 0 0; }
 			
@@ -721,7 +721,7 @@ body {
 					width: 226px;
 					height: 58px;
 					text-align: center;
-					background: url(../Content/images/btns.png) no-repeat;
+					background: url(//d1f7jvrzd4fora.cloudfront.net/images/btns.png) no-repeat;
 					color: #fff;
 					text-transform: uppercase;
 					font-size: 25px;
@@ -865,7 +865,7 @@ body {
 						height: 30px;
 						text-align: center;
 
-						background: url(../content/images/btn-9.png) no-repeat;
+						background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-9.png) no-repeat;
 						color: #fff;
 						text-transform: uppercase;
 						font-size: 12px;
@@ -874,7 +874,7 @@ body {
 					.accelerated .tab-line-header .btn-now {
 						width: 128px;
 						height: 34px;
-						background: url(../Content/images/btn-12.jpg) no-repeat;
+						background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-12.jpg) no-repeat;
 						line-height: 34px;
 
 
@@ -925,7 +925,7 @@ body {
 				width: 28px;
 				height: 22px;
 				margin: 0;
-				background: url(../Content/images/list-bull.png) no-repeat;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/list-bull.png) no-repeat;
 			}
 				.accelerated .tab-line-body .icon-check {
 					margin: 3px 0;
@@ -1052,7 +1052,7 @@ body {
 									margin: 0 0 0 7px;
 									width: 23px;
 									height: 19px;
-									background: url(../content/images/arrow-next-back.jpg) 100% 0 no-repeat;
+									background: url(//d1f7jvrzd4fora.cloudfront.net/images/arrow-next-back.jpg) 100% 0 no-repeat;
 									vertical-align: bottom;
 								}
 							
@@ -1080,7 +1080,7 @@ body {
 								height: 53px;
 								line-height: 53px;
 								margin: 15px 0 0 0;
-								background: url(../content/images/btn-2-mobile.png) no-repeat;
+								background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-2-mobile.png) no-repeat;
 								background-size: 100%;
 							}
 							.tab-action .btn-now:hover {
@@ -1103,7 +1103,7 @@ body {
 							.tab-info { display: none !important; }
 								.tab-content-list li {
 									font-size: 10px;
-									background: url(../content/images/list-bull-mobile.png) no-repeat 0 0;
+									background: url(//d1f7jvrzd4fora.cloudfront.net/images/list-bull-mobile.png) no-repeat 0 0;
 								}
 							
 /* details-pages */
@@ -1168,10 +1168,10 @@ body {
 			
 				.details-wr .tab-content-list li{
 					padding: 3px 0 3px 36px;
-					background: #fff url(../content/images/list-bull-mobile.png) no-repeat 5px 6px;
+					background: #fff url(//d1f7jvrzd4fora.cloudfront.net/images/list-bull-mobile.png) no-repeat 5px 6px;
 				}
 				
-					.details-wr .tab-content-list li:nth-child(2n+2){ background: #F2F2F2 url(../content/images/list-bull-mobile.png) no-repeat 5px 6px; }
+					.details-wr .tab-content-list li:nth-child(2n+2){ background: #F2F2F2 url(//d1f7jvrzd4fora.cloudfront.net/images/list-bull-mobile.png) no-repeat 5px 6px; }
 					
 					.accelerated .tab-content-list li.arrow-li{ line-height: 1.2; }
 						.accelerated .arrow-li span{ color: #C50097; }
@@ -1219,14 +1219,14 @@ body {
 	min-width: 1100px;
 	
 }
-	.about-wr .second-bg { background: #fff url(../Content/images/shadow.png) repeat-x 0 -1px; }
+	.about-wr .second-bg { background: #fff url(//d1f7jvrzd4fora.cloudfront.net/images/shadow.png) repeat-x 0 -1px; }
 	.about {
 		width: 960px;
 		min-height: 550px;
 		margin: 0 auto;
 		padding: 90px 45px 0;
 		position: relative;
-		background: url(../Content/images/bg-about.jpg) no-repeat 285px 100%;
+		background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-about.jpg) no-repeat 285px 100%;
 		border-bottom: 5px solid #fff;
 	}
 		.about-award {
@@ -1259,7 +1259,7 @@ body {
 					font: 0px/0 s;
 					margin: -20px 0 0 11px;
 					color: transparent;
-					background: url(../Content/images/a-plus.png) no-repeat;
+					background: url(//d1f7jvrzd4fora.cloudfront.net/images/a-plus.png) no-repeat;
 				}
 			.about-text {
 				color: #2C2C2C;
@@ -1291,7 +1291,7 @@ body {
 					.about-list li{
 						padding: 0 0 0 23px;
 						white-space: nowrap;
-						background: url(../Content/images/about-bull.png) no-repeat 2px 10px;
+						background: url(//d1f7jvrzd4fora.cloudfront.net/images/about-bull.png) no-repeat 2px 10px;
 					}
 				.about-guarantee {
 					width: 332px;
@@ -1308,7 +1308,7 @@ body {
 				width: 256px;
 				height: 66px;
 				text-align: center;
-				background: url(../Content/images/btns.png) no-repeat 0 -69px;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/btns.png) no-repeat 0 -69px;
 				color: #fff;
 				text-transform: uppercase;
 				font-weight: 700;
@@ -1337,7 +1337,7 @@ body {
 .divider-wr  {
 	width: 1100px;
 	margin: 0 auto 60px auto;
-	background: #F99B1D url(../Content/images/devider.png) repeat -9px -5px;
+	background: #F99B1D url(//d1f7jvrzd4fora.cloudfront.net/images/devider.png) repeat -9px -5px;
 }
 	.divider {
 		width: 960px;
@@ -1411,7 +1411,7 @@ body {
 						font-size: 9px;
 					}
 					.about-list li {
-						background: url(../Content/images/about-bull.png) no-repeat 2px 3px;
+						background: url(//d1f7jvrzd4fora.cloudfront.net/images/about-bull.png) no-repeat 2px 3px;
 						background-size: auto 3px;
 						padding: 0 0 0 13px;
 						margin: 5px 0 0 0;
@@ -1422,7 +1422,7 @@ body {
 						margin: 15px auto 0;
 					}
 			.btn-about-try {
-				background: url(../content/images/btn-2-mobile.png) no-repeat;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-2-mobile.png) no-repeat;
 				background-size: 100%;
 				width: 300px;
 				height: 53px;
@@ -1456,7 +1456,7 @@ body {
 		padding: 12px 0 10px 0;
 		font-size: 11px;
 		line-height: 1.2;
-		background: #F99B1D url(../content/images/devider-mobile.png) repeat -9px 9px;
+		background: #F99B1D url(//d1f7jvrzd4fora.cloudfront.net/images/devider-mobile.png) repeat -9px 9px;
 	}
 		.divider a { display: inline-block; }
 
@@ -1465,7 +1465,7 @@ body {
 
 /* footer */
 .footer-wr {
-	background: #000 url(../Content/images/bg-footer.jpg) no-repeat 50% 0;
+	background: #000 url(//d1f7jvrzd4fora.cloudfront.net/images/bg-footer.jpg) no-repeat 50% 0;
 	min-width: 1100px;
 }
 	.footer {
@@ -1488,7 +1488,7 @@ body {
 		width: 276px;
 		height: 71px;
 		text-align: center;
-		background: url(../Content/images/btns.png) no-repeat 0 -145px;
+		background: url(//d1f7jvrzd4fora.cloudfront.net/images/btns.png) no-repeat 0 -145px;
 		color: #fff;
 		text-transform: uppercase;
 		font-weight: 500;
@@ -1547,7 +1547,7 @@ body {
 			font: 0px/0 s;
 			color: transparent;
 			text-shadow: none;
-			background: url(../Content/images/social.png) no-repeat;
+			background: url(//d1f7jvrzd4fora.cloudfront.net/images/social.png) no-repeat;
 		}
 		.footer-social a:first-child { margin-left: 0; }
 		.footer-social .fb { background-position: 0 0; }
@@ -1556,7 +1556,7 @@ body {
 	
 @media only screen and (max-width: 568px) {
 .footer-wr {
-	background: #000 url(../Content/images/bg-footer.jpg) repeat-x 50% 0;
+	background: #000 url(//d1f7jvrzd4fora.cloudfront.net/images/bg-footer.jpg) repeat-x 50% 0;
 	min-width: 100%;
 	background-size: auto 320px;
 }
@@ -1580,7 +1580,7 @@ body {
 		}
 		
 			.btn-footer-try {
-				background: url(../content/images/btn-2-mobile.png) no-repeat;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-2-mobile.png) no-repeat;
 				background-size: 100%;
 				width: 300px;
 				height: 53px;
@@ -1624,7 +1624,7 @@ body {
 				font: 0px/0 s;
 				color: transparent;
 				text-shadow: none;
-				background: url(../Content/images/social.png) no-repeat;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/social.png) no-repeat;
 				background-size: auto 32px;
 			}
 			.footer-social .fb { background-position: 0 0; }
@@ -1640,12 +1640,12 @@ body {
 }
 
 /* checkout */
-.checkout { background: url(../content/images/bg-checkout-2.png) repeat; }
+.checkout { background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-checkout-2.png) repeat; }
 	
 /* header-checkout */		
 .checkout .header-wr {
 	min-width: 770px;
-	background: url(../Content/images/bg-header.jpg) no-repeat 50% 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-header.jpg) no-repeat 50% 0;
 }
 	.checkout .header {
 		width: 770px;
@@ -1653,7 +1653,7 @@ body {
 	}
 		.header-second-wr {
 			min-width: 967px;
-			background: url(../content/images/bg-header-2.jpg) no-repeat 50% 0;
+			background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-header-2.jpg) no-repeat 50% 0;
 		}
 			.header-second {
 				width: 937px;
@@ -1755,7 +1755,7 @@ body {
 			height: 32px;
 			*height: 21px;
 			line-height: 15px;
-			background: #fff url(../content/images/select.png) no-repeat 100% 50%;
+			background: #fff url(//d1f7jvrzd4fora.cloudfront.net/images/select.png) no-repeat 100% 50%;
 			*background: #fff;
 		}
 	
@@ -1800,7 +1800,7 @@ body {
 	.checkout-form hr {
 		height: 33px;
 		border: 0;
-		background: url(../content/images/hr-2.png) no-repeat;
+		background: url(//d1f7jvrzd4fora.cloudfront.net/images/hr-2.png) no-repeat;
 	}
 
 /* $send-form */
@@ -1829,7 +1829,7 @@ body {
 	padding: 1px 2px 50px 1px;
 	width: 312px;
 	margin: 55px 0 0 20px;
-	background: url(../content/images/btn-5.png) no-repeat;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-5.png) no-repeat;
 }
 	.compline-btn a {
 		display: block;
@@ -1915,7 +1915,7 @@ body {
 /* $thank */
 .thank .header-wr {
 	min-width: 900px;
-	background: url(../Content/images/bg-header.jpg) no-repeat 50% 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-header.jpg) no-repeat 50% 0;
 }
 	.thank .header {
 		width: 870px;
@@ -1923,7 +1923,7 @@ body {
 	}
 		.thank .header-second-wr {
 			min-width: 900px;
-			background: url(../content/images/bg-header-2.jpg) no-repeat 50% 0;
+			background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-header-2.jpg) no-repeat 50% 0;
 		}
 			.thank .header-second {
 				width: 870px;
@@ -2025,7 +2025,7 @@ body {
 .upsell .media-wr {
 	min-width: 960px;
 	height: auto;
-	background: url(../Content/images/bg-media-2.jpg) no-repeat 50% 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-media-2.jpg) no-repeat 50% 0;
 }
 	.upsell .media {
 		width: 960px;
@@ -2051,7 +2051,7 @@ body {
 /* upsell-content */
 .upsell-content-wr {
 	min-width: 960px;
-	background: url(../content/images/bg-upsell.jpg) no-repeat 50% 100%;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/bg-upsell.jpg) no-repeat 50% 100%;
 }
 	.upsell-content {
 		width: 960px;
@@ -2127,7 +2127,7 @@ body {
 				font-weight: 700;
 				margin: 0 auto 20px auto;
 				text-align: center;
-				background: url(../content/images/btn-10.png) no-repeat;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-10.png) no-repeat;
 				color: #fff;
 				text-transform: uppercase;
 				font-size: 27px;
@@ -2136,7 +2136,7 @@ body {
 				text-shadow: 0 4px 0 rgba(234, 0, 163, .75);
 			}
 				.accelerated .btn-yes {
-					background: url(../content/images/btn-10.png) no-repeat;
+					background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-10.png) no-repeat;
 				}
 			.btn-no {
 				font-size: 16px;
@@ -2183,7 +2183,7 @@ body {
 /* $upsell-footer */
 .upsell .footer-wr {
 	min-width: 960px;
-	background: #000 url(../Content/images/bg-footer-2.jpg) no-repeat 50% 0;
+	background: #000 url(//d1f7jvrzd4fora.cloudfront.net/images/bg-footer-2.jpg) no-repeat 50% 0;
 }
 	.upsell .footer {
 		height: auto;
@@ -2194,7 +2194,7 @@ body {
 /* $subpage-content */
 .subpage-content-wr {
 	min-width: 960px;
-	background: url(../Content/images/subpages-bg.jpg) no-repeat 50% 100%;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/subpages-bg.jpg) no-repeat 50% 100%;
 }
 .subpage-content {
 	width: 940px;
@@ -2215,7 +2215,7 @@ body {
 	}
 		.subpage-box-wr {
 			padding: 0 0 35px 0;
-			background: url(../Content/images/box-shadow.png) no-repeat 50% 100%;
+			background: url(//d1f7jvrzd4fora.cloudfront.net/images/box-shadow.png) no-repeat 50% 100%;
 		}
 			.subpage-box {
 				background: #f9feff;
@@ -2284,7 +2284,7 @@ body {
 		.subpage-links-wr {
 			padding: 15px 15px 33px;
 			height: 555px;
-			background: url(../Content/images/subpages-aside.jpg) no-repeat 50% 0;
+			background: url(//d1f7jvrzd4fora.cloudfront.net/images/subpages-aside.jpg) no-repeat 50% 0;
 		}
 			.subpage-link {
 				display: block;
@@ -2305,7 +2305,7 @@ body {
 				width: 237px;
 				height: 61px;
 				text-align: center;
-				background: url(../Content/images/btns.png) no-repeat 0 -307px;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/btns.png) no-repeat 0 -307px;
 				color: #fff;
 				text-transform: uppercase;
 				font-weight: 700;
@@ -2348,7 +2348,7 @@ body {
 		.subpage-videos-wr {
 			padding: 23px 15px 33px;
 			height: 470px;
-			background: url(../Content/images/subpages-aside-2.jpg) no-repeat 50% 0;
+			background: url(//d1f7jvrzd4fora.cloudfront.net/images/subpages-aside-2.jpg) no-repeat 50% 0;
 		}
 			.subpage-video {
 				height: 210px;
@@ -2628,7 +2628,7 @@ body {
 				border: 0;
 				line-height: 36px;
 				color: #fff;
-				background: url(../content/images/btn-11.jpg) no-repeat center center;
+				background: url(//d1f7jvrzd4fora.cloudfront.net/images/btn-11.jpg) no-repeat center center;
 				float: right;
 				margin: 7px 0 0 0;
 			}
@@ -2690,7 +2690,7 @@ body {
 				font-size: 20px;
 			}
 				.accelerated .tab-content-list li.arrow-li {
-					background: url(../Content/images/down-arrow-1.png) no-repeat 35px 0px;
+					background: url(//d1f7jvrzd4fora.cloudfront.net/images/down-arrow-1.png) no-repeat 35px 0px;
 					padding: 4px 0 0 67px;
 					font-style: italic;
 				}

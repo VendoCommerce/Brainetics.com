@@ -27,8 +27,8 @@
 <div class="container">
 
 
-<div class="page" style="background: url(../content/images/a4/home_bg.jpg) no-repeat #fff">
-<div class="home_left"><img src="../Content/images/A4/home_leftside.png" width="667" height="1206" style="margin-left: -32px" usemap="#Maphometop" />
+<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a4/home_bg.jpg) no-repeat #fff">
+<div class="home_left"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/home_leftside.png" width="667" height="1206" style="margin-left: -32px" usemap="#Maphometop" />
 <map name="Maphometop">
     <area shape="circle" coords="351,387,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
   </map>
@@ -45,9 +45,9 @@
 <div id="video2020"></div>
   <script type='text/javascript'>
   	jwplayer('video2020').setup({
-    file: "/content/video/2020_how1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
 	autostart: false,
-	image: "/content/images/A4/2020.jpg",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/a4/2020.jpg",
     primary: "flash",   
 	controls: true,
     width: 351, height: 263,
@@ -66,7 +66,7 @@
 <div id="ctavideo"></div>
   <script type='text/javascript'>
   	jwplayer('ctavideo').setup({
-    file: "/content/video/ctavideo1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
@@ -82,11 +82,11 @@
 </div>
 
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />
- <p class="text-center" style="padding-top: 100px;"><img src="../Content/images/a4/underform_certs.png" width="263" height="171" /></p>
+ <p class="text-center" style="padding-top: 100px;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/underform_certs.png" width="263" height="171" /></p>
  
  </div>
 <div class="clear"></div>
-<div class="home_bottom"><img src="../Content/images/A4/home_bottom.png" usemap="#Maphomebtm" class="block" />
+<div class="home_bottom"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a4/home_bottom.png" usemap="#Maphomebtm" class="block" />
   <map name="Maphomebtm">
     <area shape="rect" coords="579,1036,791,1095" href="#tryitnow" class="try">
   </map>

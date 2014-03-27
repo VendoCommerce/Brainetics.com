@@ -26,7 +26,7 @@
 <!--#include file="headernav.html"-->
 <!--#include file="header.html"-->
 <div class="page">
-<div class="home_left"><img src="../Content/images/a2/home_leftside.png" width="664" height="994" style="margin-left: -25px" usemap="#Maphometop" />
+<div class="home_left"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a2/home_leftside.png" width="664" height="994" style="margin-left: -25px" usemap="#Maphometop" />
 <map name="Maphometop">
     <area shape="circle" coords="595,114,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
   </map>
@@ -49,9 +49,9 @@ Best of all, you’ll be able to memorize ANYTHING. </p>
 <div id="video2020"></div>
   <script type='text/javascript'>
   	jwplayer('video2020').setup({
-    file: "/content/video/2020_how1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
 	autostart: false,
-	image: "/content/images/a2/2020.jpg",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/a2/2020.jpg",
     primary: "flash",   
 	controls: true,
     width: 351, height: 263,
@@ -70,7 +70,7 @@ Best of all, you’ll be able to memorize ANYTHING. </p>
 <div id="ctavideo"></div>
   <script type='text/javascript'>
   	jwplayer('ctavideo').setup({
-    file: "/content/video/ctavideo1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
@@ -87,7 +87,7 @@ Best of all, you’ll be able to memorize ANYTHING. </p>
 
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
-<div class="home_bottom"><img src="../Content/images/a2/home_bottom.jpg" width="950" height="1532" usemap="#Maphomebtm" />
+<div class="home_bottom"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a2/home_bottom.jpg" width="950" height="1532" usemap="#Maphomebtm" />
   <map name="Maphomebtm">
     <area shape="rect" coords="574,1430,795,1480" href="#tryitnow" class="try">
     <area shape="rect" coords="681,320,931,401" href="#tryitnow" class="try">

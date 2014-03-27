@@ -31,7 +31,7 @@
     <div class="cart_right">
         
        
-        <div class="cartB"><img src="/Content/images/A5/cart_form_top.jpg" width="293" height="56" />
+        <div class="cartB"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/cart_form_top.jpg" width="293" height="56" />
            
            <div class="form_line clearfix" style="width: 200px; padding: 10px 0 20px" runat="server" visible="false">
 
@@ -57,7 +57,7 @@
            </div>
             
            
-           <div class="form_line text-center"><img src="/Content/images/A5/cards.jpg" width="246" height="41" /></div>
+           <div class="form_line text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/cards.jpg" width="246" height="41" /></div>
            
             <div class="form_line clearfix" style="padding: 10px 0">
          <asp:CheckBox ID="cbBillingDifferent" runat="server" CssClass="checkbox-left" OnCheckedChanged="cbBillingDifferent_CheckedChanged"
@@ -169,7 +169,7 @@
                     Card Verification 
                 </label>
                
-                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-2" MaxLength="4"></asp:TextBox><a class="cvv" onclick="javascript:void(0);" href="/content/images/A5/cvv.png">What's this?</a>
+                <asp:TextBox ID="txtCvv" runat="server" CssClass="text-2" MaxLength="4"></asp:TextBox><a class="cvv" onclick="javascript:void(0);" href="//d1f7jvrzd4fora.cloudfront.net/images/a5/cvv.png">What's this?</a>
             </div>
             <div class="form_line clearfix"> <div class="error-1">
                 <asp:RequiredFieldValidator ID="rfvExpMonth" runat="server" Display="Dynamic"
@@ -220,7 +220,7 @@
                 I agree to the <a href="#terms" class="terms">Terms and Conditions and Privacy Policy</a>.</label>
             </div>
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/A5/btn_ordernow.png"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/a5/btn_ordernow.png"
                     CssClass="form_line_center" OnClick="imgBtn_OnClick" OnClientClick="MM_showHideLayers('mask', '', 'show');" />
             </div>
             <div class="form_line_guarantee"><a href="#guarantee" onclick="javascript:void(0);" class="guarantee">60-Day Money-Back Guarantee!</a></div>

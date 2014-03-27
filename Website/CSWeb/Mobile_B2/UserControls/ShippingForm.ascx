@@ -5,7 +5,7 @@
 <asp:UpdatePanel ID="upBillingForm" runat="server">
     <ContentTemplate>
         <%--<img src="<%= GetDynamicVersionData("cartimage")%>" alt="Brainetics&reg;" />--%>
-        <img src="/content/images/mobile/cart_top2.png" alt="Brainetics" id="cart1_img" />
+        <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/cart_top2.png" alt="Brainetics" id="cart1_img" />
 
         <div class="cart_mobile">
      
@@ -110,7 +110,7 @@
                    
                      
                     </div>
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/btn_continue.png" OnClick="imgBtn_OnClick" />
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_continue.png" OnClick="imgBtn_OnClick" />
                
             </div>
  

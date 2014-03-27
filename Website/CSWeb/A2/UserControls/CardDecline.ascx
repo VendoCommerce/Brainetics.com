@@ -347,7 +347,7 @@
                 <input type="checkbox" checked="checked" class="checkbox-right" />
             </div>
             <div class="form_line_btn" style="text-align: left; width: 100%;">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/a2/tryitnow_btn.png"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/a2/tryitnow_btn.png"
                   OnClick="imgBtn_OnClick" />
             </div>
             <div class="form_line_guarantee" style="display:none"><a href="#">View 30-Day Guarantee</a></div>

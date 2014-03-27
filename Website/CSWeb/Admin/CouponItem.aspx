@@ -83,7 +83,7 @@
                     </td>
                     <td nowrap align="center" width="5%">
                         <asp:LinkButton ID="lbRemove" runat="server" CausesValidation="False" CommandName="Delete">
-                            <asp:Image ID="Image2" runat="server" ImageUrl="/Content/images/admin/delete.gif"
+                            <asp:Image ID="Image2" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/admin/delete.gif"
                                 BorderWidth="0" ToolTip='Delete' /></asp:LinkButton>
                     </td>
                 </tr>

@@ -17,7 +17,7 @@ div {
 	width: 974px;
 	height: 577px;
 	margin: 0 auto;	
-	background: url(/content/images/rebate/lp.png) no-repeat;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/rebate/lp.png) no-repeat;
 }
 
 .footer {
@@ -50,7 +50,7 @@ div {
 	width: 464px;
 	color: #242424;
 	height: 221px;
-	background: url(/content/images/d2/receipt_rebate_overlay.png) no-repeat;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/d2/receipt_rebate_overlay.png) no-repeat;
 	padding: 86px 30px 10px;
 }
 

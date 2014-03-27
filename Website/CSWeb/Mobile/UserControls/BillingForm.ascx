@@ -103,7 +103,7 @@
     </div>
    
     <div class="form_line_btn">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/yes_btn.png" OnClick="imgBtn_OnClick" />
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/yes_btn.png" OnClick="imgBtn_OnClick" />
     </div>
     <div class="form_line_guarantee">
         <a href="#guarantee" class="guarantee">View 30-Day Guarantee</a></div>

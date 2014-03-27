@@ -189,9 +189,9 @@ $(".showhow1").bind("click touch", function(e){
 	$("#howvid1").show();
 	$("#howvid2").hide();
 	jwplayer('howvideo1').setup({
-    file: "/content/video/2020_how1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
 	autostart: true,
-	image: "/content/images/a5/2020.jpg",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/a5/2020.jpg",
     primary: "flash",   
 	controls: true,
     width: 448, height: 336,
@@ -209,7 +209,7 @@ $(".showhow2").bind("click touch", function(e){
 	$("#howvid2").show();
 	$("#howvid1").hide();
 		jwplayer('howvideo2').setup({
-    file: "/content/video/how2.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/how2.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
@@ -233,28 +233,28 @@ $(".showhow2").bind("click touch", function(e){
 $('.color_radio input:radio').change(function(){
     if($('.select_blue input:radio').is(":checked")) {
         $('.select_blue').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Blue.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Blue.jpg');
     } else  $('.select_blue').removeClass("bordered");
 
 
     if($('.select_gray input:radio').is(":checked")) {
         $('.select_gray').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Grey.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Grey.jpg');
     } else  $('.select_gray').removeClass("bordered");
 	
 	    if($('.select_pink input:radio').is(":checked")) {
         $('.select_pink').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Pink.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Pink.jpg');
     } else  $('.select_pink').removeClass("bordered");
 	
 	    if($('.select_peacock input:radio').is(":checked")) {
         $('.select_peacock').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Green.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Green.jpg');
     } else  $('.select_peacock').removeClass("bordered");
 	
 	    if($('.select_owl input:radio').is(":checked")) {
         $('.select_owl').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Owl.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Owl.jpg');
     } else  $('.select_owl').removeClass("bordered");
 });
 }); // end document ready
@@ -266,27 +266,27 @@ function pageLoad() //use to resolve postback issues
 
     if($('.select_blue input:radio').is(":checked")) {
         $('.select_blue').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Blue.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Blue.jpg');
     }
 
     if($('.select_gray input:radio').is(":checked")) {
         $('.select_gray').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Grey.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Grey.jpg');
     }
 	
 	    if($('.select_pink input:radio').is(":checked")) {
         $('.select_pink').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Pink.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Pink.jpg');
     }
 	
 	    if($('.select_peacock input:radio').is(":checked")) {
         $('.select_peacock').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Green.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Green.jpg');
     }
 	
 	    if($('.select_owl input:radio').is(":checked")) {
         $('.select_owl').addClass("bordered");
-		$('.selected_color img').attr('src', '/content/images/Swatch_Owl.jpg');
+		$('.selected_color img').attr('src', '//d1f7jvrzd4fora.cloudfront.net/images/Swatch_Owl.jpg');
     }
 
 

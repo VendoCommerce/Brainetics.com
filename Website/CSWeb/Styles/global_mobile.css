@@ -94,7 +94,7 @@ body {
 .header {
 	width: 640px;
 	height: 102px;
-	background: url(../content/images/mobile/bg_header.png) repeat-x 0 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/mobile/bg_header.png) repeat-x 0 0;
 }
 
 .nav-logo {
@@ -220,19 +220,19 @@ body {
 }
 
 .content .quote1 {
-	background: url(/content/images/openquotelarge.png) no-repeat 0 0,url(/content/images/closequotelarge.png) no-repeat bottom right;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/openquotelarge.png) no-repeat 0 0,url(//d1f7jvrzd4fora.cloudfront.net/images/closequotelarge.png) no-repeat bottom right;
 	padding: 20px 60px 0 60px;
 	margin-bottom: 30px;
 	color: #7f8754;
 }	
 
-.content .greenquote {	background: url(/content/images/openquotegreen.png) no-repeat 0 0,url(/content/images/closequotegreen.png) no-repeat bottom right;
+.content .greenquote {	background: url(//d1f7jvrzd4fora.cloudfront.net/images/openquotegreen.png) no-repeat 0 0,url(//d1f7jvrzd4fora.cloudfront.net/images/closequotegreen.png) no-repeat bottom right;
 	margin: 0 15px 30px;
 	padding: 10px 30px;	font-size: 28px;
 	line-height: 36px;
 }
 
-.content .redquote {	background: url(/content/images/openquotered.png) no-repeat 0 0,url(/content/images/closequotered.png) no-repeat bottom right;
+.content .redquote {	background: url(//d1f7jvrzd4fora.cloudfront.net/images/openquotered.png) no-repeat 0 0,url(//d1f7jvrzd4fora.cloudfront.net/images/closequotered.png) no-repeat bottom right;
 	margin: 0 15px 30px;
 	padding: 10px 30px;	font-size: 28px;
 	line-height: 36px;
@@ -671,7 +671,7 @@ padding-bottom: 20px;
 }
 
 .rush_bg {
-	background: url(/content/images/mobile/rush_bg.jpg) no-repeat right bottom;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/mobile/rush_bg.jpg) no-repeat right bottom;
 	margin-bottom: 40px;
 }
 
@@ -702,7 +702,7 @@ padding-bottom: 20px;
 
 .ask_arrow {
 	padding-right: 30px;
-	background: url("../content/images/mobile/ask_arrow.png") no-repeat 487px bottom;
+	background: url("//d1f7jvrzd4fora.cloudfront.net/images/mobile/ask_arrow.png") no-repeat 487px bottom;
 }
 
 .page_upsell label {

@@ -332,7 +332,7 @@
             </div>
             <div class="form_line clearfix">
                 <label class="label-3">
-                    Card Verification #* <a class="cvv" href="/content/images/a4/cvv.png" style="display:none">what's this?</a>
+                    Card Verification #* <a class="cvv" href="//d1f7jvrzd4fora.cloudfront.net/images/a4/cvv.png" style="display:none">what's this?</a>
                 </label>
                 <div class="error-2">
                     <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />
@@ -347,7 +347,7 @@
                 <input type="checkbox" checked="checked" class="checkbox-right" />
             </div>
             <div class="form_line_btn" style="text-align: left; width: 100%;">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/try_it_now_btn.gif"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/try_it_now_btn.gif"
                   OnClick="imgBtn_OnClick" />
             </div>
             <div class="form_line_guarantee" style="display:none"><a href="#">View 30-Day Guarantee</a></div>

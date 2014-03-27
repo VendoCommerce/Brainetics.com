@@ -105,7 +105,7 @@
    
   
     <div class="form_line_btn">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/ordernow_btn.jpg" OnClick="imgBtn_OnClick" />
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/ordernow_btn.jpg" OnClick="imgBtn_OnClick" />
    </div>
      <div class="form_line_guarantee">
         <a href="#guarantee" class="guarantee">60-Day Money-Back Guarantee!</a>

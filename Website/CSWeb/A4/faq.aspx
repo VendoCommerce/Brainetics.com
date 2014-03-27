@@ -31,7 +31,7 @@
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
 <!--#include file="header_main.html"-->
 <div class="container">
-<div class="page" style="background: url(../content/images/a4/page_bg.jpg) repeat-x top #fff">
+<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a4/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Frequently Asked Questions</h2>
  <div class="accordion" id="faq_list">

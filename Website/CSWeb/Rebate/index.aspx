@@ -38,7 +38,7 @@
        <label>Date:</label>                 
             <asp:TextBox ID="textboxDate" runat="server" MaxLength="10" Columns="12" autocomplete="off" CssClass="text1" />
 
-             <asp:Image runat="server" ID="calendericon" ToolTip="Calendar" ImageUrl="/Content/Images/admin/calendar.gif" />
+             <asp:Image runat="server" ID="calendericon" ToolTip="Calendar" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/admin/calendar.gif" />
             <ajaxToolkit:CalendarExtender ID="calendarExtenderDate" runat="server" TargetControlID="textboxDate"/>
                      
            </div>         
@@ -51,7 +51,7 @@
            </div>            
    
      <div class="formline" style="text-align:right;">        
-            <asp:ImageButton runat="server" ID="imgButton" OnClick="imgbtnOnClick" ValidationGroup="group1" ImageUrl="/content/images/d2/submit_rebate_btn.jpg" CssClass="submitrebatebtn" />
+            <asp:ImageButton runat="server" ID="imgButton" OnClick="imgbtnOnClick" ValidationGroup="group1" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/d2/submit_rebate_btn.jpg" CssClass="submitrebatebtn" />
 </div>
         </asp:Panel>
         <asp:Panel ID="pnlNotEligible" runat="server" Visible="False">

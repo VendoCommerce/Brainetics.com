@@ -32,7 +32,7 @@
 <h1>How It Works</h1>
 
 <div style="margin-left: 10px;">
-<img src="../Content/images/mobile/how1.jpg" width="612" height="392" alt="" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/how1.jpg" width="612" height="392" alt="" usemap="#Map" class="block" />
 <map name="Map">
   <area shape="rect" coords="6,29,107,130" href="javascript:void(0);" class="showhow1">
   <area shape="rect" coords="6,136,107,238" href="javascript:void(0);" class="showhow2">
@@ -43,10 +43,10 @@
 <div id="howvideo1"></div>
   <script type='text/javascript'>
   	jwplayer('howvideo1').setup({
-    file: "/content/video/2020_how1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
 	autostart: false,
     primary: "flash",   
-	image: "/content/images/A5/2020.jpg",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/a5/2020.jpg",
 	controls: true,
     width: 476, height: 370,
 	stretching: 'exactfit',
@@ -62,7 +62,7 @@
 <div id="howvideo2"></div>
   <script type='text/javascript'>
   	jwplayer('howvideo2').setup({
-    file: "/content/video/how2.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/how2.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
@@ -109,10 +109,10 @@ and grades!</p>
     </div>
 </div>
 
-<img src="../Content/images/mobile/how2.png" width="640" height="925" alt="Processing plus Storage = Increased Mental Capacity" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/how2.png" width="640" height="925" alt="Processing plus Storage = Increased Mental Capacity" usemap="#Map" class="block" />
 
 <p class="webfont1 f48" style="padding-top: 84px;">How It Works</p>
-<img src="../Content/images/mobile/how3.png" width="640" height="992" alt="Watch the DVDs, Read the Books, Play the Games" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/how3.png" width="640" height="992" alt="Watch the DVDs, Read the Books, Play the Games" usemap="#Map" class="block" />
 
 <!--#include file="bottomcta.html"-->
 

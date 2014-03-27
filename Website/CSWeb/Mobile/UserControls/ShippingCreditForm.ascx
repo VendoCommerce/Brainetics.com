@@ -9,8 +9,8 @@
 
      
 
-<img src="/Content/Images/CS/mobile/form2_top.png" style="z-index: 20;position:relative;" />
-<div class="cartB" style="border: none; background: url(../content/images/cs/mobile/form2_bg.jpg) repeat-x #4c7ab8; margin-top: -13px; z-index: 4;"> 
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/CS/mobile/form2_top.png" style="z-index: 20;position:relative;" />
+<div class="cartB" style="border: none; background: url(//d1f7jvrzd4fora.cloudfront.net/images/cs/mobile/form2_bg.jpg) repeat-x #4c7ab8; margin-top: -13px; z-index: 4;"> 
 
                 <div class="form_line clearfix">
                 <div class="error-2">
@@ -164,7 +164,7 @@
                 
             </div>
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/cs/mobile/try_it_now_btn.png"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/cs/mobile/try_it_now_btn.png"
                     CssClass="form_line_center" OnClick="imgBtn_OnClick" />
             </div>
            

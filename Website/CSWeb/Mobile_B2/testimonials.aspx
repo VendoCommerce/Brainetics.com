@@ -32,13 +32,13 @@
 <h1>Testimonials</h1>
 <p class="webfont1 f34" style="color: #ff6c00; padding-left: 36px; line-height: 44px;">These People Got the Brainetics Advantage and Love It!</p>
 <div class="clearfix">
-	<div class="fleft" style="width: 227px;"><img src="../Content/images/mobile/test1.jpg" width="227" height="771" alt="" usemap="#Map" class="block" /></div>
-    <div class="fleft" style="width: 413px;"><img src="../Content/images/mobile/test2.png" width="413" height="771" alt="" usemap="#Map" class="block" /></div>
+	<div class="fleft" style="width: 227px;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test1.jpg" width="227" height="771" alt="" usemap="#Map" class="block" /></div>
+    <div class="fleft" style="width: 413px;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test2.png" width="413" height="771" alt="" usemap="#Map" class="block" /></div>
 </div>
-<img src="../Content/images/mobile/hdr_more_amazing_stories.png" width="640" height="99" alt="" usemap="#Map" class="block" />
-<img src="../Content/images/mobile/test3.png" width="640" height="1245" alt="" usemap="#Map" class="block" />
-<img src="../Content/images/mobile/test4.png" width="640" height="1545" alt="" usemap="#Map" class="block" />
-<img src="../Content/images/mobile/test5.jpg" width="640" height="309" alt="" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/hdr_more_amazing_stories.png" width="640" height="99" alt="" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test3.png" width="640" height="1245" alt="" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test4.png" width="640" height="1545" alt="" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test5.jpg" width="640" height="309" alt="" usemap="#Map" class="block" />
 
 
 

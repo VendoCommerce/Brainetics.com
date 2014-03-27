@@ -20,36 +20,36 @@
  <form runat="server" id="fm1">
 <div class="container_upsell">
 <div class="page_upsell"><script type="text/javascript">function updateUpsellSku(fld) { document.getElementById('addsku').value = fld.value; }</script>  
-<div class="upsell_head"><img src="../Content/images/A5/upsell_top.jpg" width="902" height="149" class="block" /><h2 style="position: absolute; top: 49px; left: 254px; width: 550px; line-height: 42px;">Get the Most Versatile Bag You'll Ever Own!</h2></div>
+<div class="upsell_head"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/upsell_top.jpg" width="902" height="149" class="block" /><h2 style="position: absolute; top: 49px; left: 254px; width: 550px; line-height: 42px;">Get the Most Versatile Bag You'll Ever Own!</h2></div>
 
 <div class="upsell_txt">
 <p class="f23 bold">Cinchy – You CAN Take it With You – Fast & Easy!</p>
 <div class="upsell_left" style="width: 550px;">
   <p>As a special offer for our customers you can order a Cinchy bag! The most versatile bag you'll ever own, it quickly transforms from a bag into a mat and back.</p>
   <p>Today for only $19<sup>.99</sup> plus <strong>FREE</strong> shipping and handling, add a Cinchy bag to your order plus we'll include two free gifts! Choose from any of the 5 fashionable patterns below.</p>
-  <p class="fleft" style="margin: 0 20px 20px 0; display: inline-block;"><img src="../Content/images/upsell_cinchy_pic.png" width="292" height="226"  /></p>
+  <p class="fleft" style="margin: 0 20px 20px 0; display: inline-block;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_pic.png" width="292" height="226"  /></p>
   <ul class="pad20 f13" style="display: inline-block">
-    <li style="list-style: none; background: url(/content/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">Use it at the beach</li>
-    <li style="list-style: none; background: url(/content/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;"> For a picnic in the park</li>
-    <li style="list-style: none; background: url(/content/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">At sporting events</li>
-    <li style="list-style: none; background: url(/content/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">Pack an overnight bag <br>in just seconds</li>
-    <li style="list-style: none; background: url(/content/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">Organize toys, clothes – anything!</li>
+    <li style="list-style: none; background: url(//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">Use it at the beach</li>
+    <li style="list-style: none; background: url(//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;"> For a picnic in the park</li>
+    <li style="list-style: none; background: url(//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">At sporting events</li>
+    <li style="list-style: none; background: url(//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">Pack an overnight bag <br>in just seconds</li>
+    <li style="list-style: none; background: url(//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_check.png) no-repeat; padding-left: 27px; padding-bottom: 16px;">Organize toys, clothes – anything!</li>
     </ul>
   <p class="f17">Cinchy has more uses 
     than you can even think of!</p>
     <div class="clear"></div>
     <p class="pad6" style="margin-left: 310px"><strong>SELECT YOUR PATTERN</strong></p>
-  <img src="/content/images/upsell_cinchy_freeshipcall.png" width="136" height="52" class="fleft" style="margin-right: 10px; margin-left: 165px;"/>  
+  <img src="//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_freeshipcall.png" width="136" height="52" class="fleft" style="margin-right: 10px; margin-left: 165px;"/>  
     <div class="upsell_error"><input type="hidden" name="addsku" id="addsku" required="true" error="Please select an item." /></div>                             
 <div class="color_radio"><label for="radio2"><span class="select_gray"><input type="radio" name="skuitem1" value="gray" onclick="updateUpsellSku(this)" id="radio2" /></span></label><label for="radio3"><span class="select_peacock"><input type="radio" name="skuitem1" value="peacock" onclick="updateUpsellSku(this)" id="radio3" /></span></label></div>
 
-<div class="selected_color"><img src="/content/images/swatch_blank.jpg" /></div>
+<div class="selected_color"><img src="//d1f7jvrzd4fora.cloudfront.net/images/swatch_blank.jpg" /></div>
 <div class="clear"></div>
 
 
 
-<span class="btns" style="text-align:left; margin-left: 50px; position:relative; margin-top: 20px;"><a href="javascript:void(0)" bind="no"><img src="/Content/images/A2/nothanks2_btn.png" width="100" height="39" /></a><a href="javascript:void(0)" bind="yes"><img src="/Content/images/yes_cinchy.png" width="314" height="37" /></a>
-<img src="/Content/images/upsell_cinchy_arrow.jpg" width="61" height="78" style="margin-top: -6px; position: absolute; left: 433px; top: -30px;" />
+<span class="btns" style="text-align:left; margin-left: 50px; position:relative; margin-top: 20px;"><a href="javascript:void(0)" bind="no"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a2/nothanks2_btn.png" width="100" height="39" /></a><a href="javascript:void(0)" bind="yes"><img src="//d1f7jvrzd4fora.cloudfront.net/images/yes_cinchy.png" width="314" height="37" /></a>
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_arrow.jpg" width="61" height="78" style="margin-top: -6px; position: absolute; left: 433px; top: -30px;" />
 </span>
   </div>
 <div class="upsell_right" style="width: 259px">
@@ -58,9 +58,9 @@
   <div id="demo1"></div>
   <script type='text/javascript'>
   	jwplayer('demo1').setup({
-    file: "/content/video/cinchydemo1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/cinchydemo1.mp4",
 	autostart: false,
-	image: "/content/images/upsell_cinchy_poster1.png",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_poster1.png",
     primary: "flash",   
 	controls: true,
     width: 259, height: 146,
@@ -79,9 +79,9 @@
       <div id="demo2"></div>
   <script type='text/javascript'>
   	jwplayer('demo2').setup({
-    file: "/content/video/cinchydemo2.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/cinchydemo2.mp4",
 	autostart: false,
-	image: "/content/images/upsell_cinchy_poster2.png",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_poster2.png",
     primary: "flash",   
 	controls: true,
     width: 259, height: 146,
@@ -100,9 +100,9 @@
       <div id="demo3"></div>
   <script type='text/javascript'>
   	jwplayer('demo3').setup({
-    file: "/content/video/cinchydemo5.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/cinchydemo5.mp4",
 	autostart: false,
-	image: "/content/images/upsell_cinchy_poster3.png",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/upsell_cinchy_poster3.png",
     primary: "flash",   
 	controls: true,
     width: 259, height: 146,

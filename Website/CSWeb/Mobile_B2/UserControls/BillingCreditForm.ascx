@@ -29,9 +29,9 @@
 </div>
 </div>
 <!-- END implement this expire soon code on all versions needed -->
-  <img src="/Content/Images/mobile/cart2_top2.jpg" alt="Brainetics&reg;" style="margin-bottom: 20px" id="cart2_img" />
+  <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/cart2_top2.jpg" alt="Brainetics&reg;" style="margin-bottom: 20px" id="cart2_img" />
    <uc:ShoppingCartControl ID="ShoppingCartControl1" runat="server" OnUpdateShipping="Shipping_OnUpdateShipping"></uc:ShoppingCartControl>     
-   <img src="/Content/Images/mobile/paymentinfo.png" alt="Payment Information" style="margin-bottom: 20px" />
+   <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/paymentinfo.png" alt="Payment Information" style="margin-bottom: 20px" />
 <div class="cart_mobile">
 
             <div class="form_line clearfix">
@@ -110,7 +110,7 @@
   <a href="http://www.symantec.com/ssl-certificates" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a>
   </div>
               
-              <div class="form_cards"><img src="/Content/Images/mobile/cards.jpg" alt="Accepted Credit Cards" /></div>
+              <div class="form_cards"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/cards.jpg" alt="Accepted Credit Cards" /></div>
             
             </div>
             <div class="form_line clearfix" runat="server" Visible="False" >
@@ -170,7 +170,7 @@
                     <asp:Label ID="lblValidation" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                      
                     </div>
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
             </div>
             
             

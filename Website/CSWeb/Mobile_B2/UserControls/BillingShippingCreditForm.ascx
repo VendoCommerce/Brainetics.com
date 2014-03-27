@@ -4,7 +4,7 @@
 <asp:UpdatePanel ID="upBillingForm" runat="server">
     <ContentTemplate>    
     <a name="tryitnow" id="tryitnow"></a>
-        <div class="cartA"><img src="/Content/Images/a1/form_top.jpg" width="279" height="117" />        
+        <div class="cartA"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a1/form_top.jpg" width="279" height="117" />        
             <div class="form_line clearfix">
                 <div class="error-1">
                     <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" Display="Dynamic"
@@ -319,7 +319,7 @@ Special Offers from Contour!
 </label>          
             </div>
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/Content/images/a1/ordernow_btn.jpg" OnClick="imgBtn_OnClick" />
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/a1/ordernow_btn.jpg" OnClick="imgBtn_OnClick" />
             </div>
            
             <div class="form_line_guarantee"><a href="returns.aspx" target="_blank">View 30-Day Guarantee</a></div>

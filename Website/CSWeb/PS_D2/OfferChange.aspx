@@ -20,7 +20,7 @@
  <p>Dear Customer, <br />
    The card you have entered is a <strong>prepaid credit card</strong>. To take advantage of our <strong>special installment offer,</strong> a regular credit card with a valid expiration date must be used. Otherwise a prepaid card may only be used to pay in full today.
  </p>
- <h3><img src="/content/images/d2/expire_arrow.png" width="31" height="28" style="float:left; margin-top: 8px; margin-left: 2px;" />&nbsp;Please select your preference:</h3>
+ <h3><img src="//d1f7jvrzd4fora.cloudfront.net/images/d2/expire_arrow.png" width="31" height="28" style="float:left; margin-top: 8px; margin-left: 2px;" />&nbsp;Please select your preference:</h3>
  
     <div class="formline_expire clearfix">
         <asp:RadioButtonList runat="server" ID="rblPaymentOption">
@@ -29,7 +29,7 @@
         </asp:RadioButtonList>
        
     </div>
- <div class="formline_expire"> <asp:ImageButton runat="server" ImageUrl="/content/images/d2/btn_continue.png" width="195" height="53" OnClick="BindSkus"/> 
+ <div class="formline_expire"> <asp:ImageButton runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/d2/btn_continue.png" width="195" height="53" OnClick="BindSkus"/> 
  </div>
 </div>  
  

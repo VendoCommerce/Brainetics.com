@@ -24,7 +24,7 @@
  <form runat="server" id="fm1"><!--#include file="popups.html"-->
 <!--#include file="header_main.html"-->
 <div class="container">
-<div class="page" style="background: url(../content/images/A5/page_bg.jpg) repeat-x top #fff">
+<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Privacy Policy</h2>
   <p>For each visitor to our Web page, our Web server automatically recognizes only the consumer's domain name, but not the e-mail address (where possible).</p>

@@ -32,7 +32,7 @@
 <div class="left">
 <h2>Product Details</h2>
 <div>
-<img src="../Content/images/A3/product_details_left.jpg" width="253" height="1641" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/a3/product_details_left.jpg" width="253" height="1641" />
 <div class="step1">
 <p><span class="pink f15 webfont1 block">Focus & Concentration DVD (Level 1)</span>
 Are you constantly distracted by Facebook or your mobile phone while at work or doing homework? In today's "always on" world, getting distracted is easier than ever. The Brainetics Focus & Concentration DVD has everything you'll need to improve your focus and concentration! Get your work done faster and more accurately than you ever thought possible!</p>
@@ -74,7 +74,7 @@ Ever wanted to get good at memorizing names, faces, dates, birthdays, and meetin
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <div class="lh20">
-<img src="../Content/images/A3/product_detail_bottom.jpg" width="950" height="1886" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/a3/product_detail_bottom.jpg" width="950" height="1886" />
 <div class="detail1">
   <p><span class="pink f15 webfont1 block">Playbook - A MUST-HAVE!</span>
     The Brainetics Playbook is a full-color 86 page interactive book to help you practice as well as master the Brainetics secrets. You'll want to take it with you anywhere you go so you can always brush up on your new learned skills and use them when you need them most!</p>

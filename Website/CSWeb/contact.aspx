@@ -56,7 +56,7 @@
       <textarea class="address_input2" cols="" rows=""></textarea></td>
     </tr>
   <tr>
-    <td colspan="2" align="right"><input name="" type="image" src="/Content/images/btn_submit.gif" /></td>
+    <td colspan="2" align="right"><input name="" type="image" src="//d1f7jvrzd4fora.cloudfront.net/images/btn_submit.gif" /></td>
   </tr>
  
   </table>

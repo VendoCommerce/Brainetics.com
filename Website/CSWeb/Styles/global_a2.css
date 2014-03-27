@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document...Conversion Systems */
 
 /* REF FONT STUFF */
@@ -105,7 +105,7 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 .header_nav {
 	width: 950px;
 	height: 64px;	
-	background: url(/content/images/a2/nav_bg.png) repeat-x #ffffff;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/nav_bg.png) repeat-x #ffffff;
 }
 
 .nav {
@@ -403,13 +403,13 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 	margin-top: 50px;
 	margin-right: 40px;
 	color: #7f7f7f;
-	/*background: url(/content/images/a2/openquote_orange.jpg) no-repeat top left, url(/content/images/a2/closequote_orange.jpg) no-repeat bottom right;*/
-	background: url(/content/images/a2/openquote_orange.jpg) no-repeat top left;
+	/*background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/openquote_orange.jpg) no-repeat top left, url(//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_orange.jpg) no-repeat bottom right;*/
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/openquote_orange.jpg) no-repeat top left;
 }
 
-.testtext_inner1 {background: url(/content/images/a2/closequote_orange.jpg) no-repeat 130px 45px;}
-.testtext_inner2 {background: url(/content/images/a2/closequote_orange.jpg) no-repeat 100px 45px;}
-.testtext_inner3 {background: url(/content/images/a2/closequote_orange.jpg) no-repeat 150px 45px;}
+.testtext_inner1 {background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_orange.jpg) no-repeat 130px 45px;}
+.testtext_inner2 {background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_orange.jpg) no-repeat 100px 45px;}
+.testtext_inner3 {background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_orange.jpg) no-repeat 150px 45px;}
 
 .morestories {
 	border: 5px solid #0e81c0;
@@ -434,14 +434,14 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 
 }
 .stories_block .open_quote {	
-	/*background: url(/content/images/a2/openquote_blue.png) no-repeat top left, url(/content/images/a2/closequote_blue.png) no-repeat bottom right;*/
-	background: url(/content/images/a2/openquote_blue.png) no-repeat top left;	
+	/*background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/openquote_blue.png) no-repeat top left, url(//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_blue.png) no-repeat bottom right;*/
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/openquote_blue.png) no-repeat top left;	
 	padding: 12px 15px 12px 46px;
 
 }
 
-.testtext2_inner {background: url(/content/images/a2/closequote_blue.png) no-repeat 240px 122px;}
-.stories_block_blue .testtext2_inner {background: url(/content/images/a2/closequote_light.jpg) no-repeat 220px 128px;}
+.testtext2_inner {background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_blue.png) no-repeat 240px 122px;}
+.stories_block_blue .testtext2_inner {background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_light.jpg) no-repeat 220px 128px;}
 
 .stories_block_blue {
 	float:left;
@@ -455,8 +455,8 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 }
 
 .stories_block_blue div.open_quote {
- /* background: url("/content/images/a2/openquote_light.jpg") no-repeat scroll left top, url("/content/images/a2/closequote_light.jpg") no-repeat scroll right bottom #0E81C0;*/
-  background: url("/content/images/a2/openquote_light.jpg") no-repeat scroll left top;
+ /* background: url("//d1f7jvrzd4fora.cloudfront.net/images/a2/openquote_light.jpg") no-repeat scroll left top, url("//d1f7jvrzd4fora.cloudfront.net/images/a2/closequote_light.jpg") no-repeat scroll right bottom #0E81C0;*/
+  background: url("//d1f7jvrzd4fora.cloudfront.net/images/a2/openquote_light.jpg") no-repeat scroll left top;
   padding: 12px 15px 12px 46px;
 }
 
@@ -583,7 +583,7 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 	margin-bottom: 0;	
 }
 .hometoptext li {
-	background: url(/content/images/a2/pink_check.png) no-repeat;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/pink_check.png) no-repeat;
 	padding-left: 40px;
 	list-style: none;
 	font-size: 16px;
@@ -680,7 +680,7 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 
 .ul_cart li {
 	padding: 0 0 2px 8px;
-	background: url(/content/images/li_dot_gray_sm.png) no-repeat 0 6px;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/li_dot_gray_sm.png) no-repeat 0 6px;
 }
 
 .ul_upsell {
@@ -691,7 +691,7 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 
 .ul_upsell li {
 	padding: 0 0 22px 16px;
-	background: url(/content/images/li_dot_gray_sm2.png) no-repeat 7px 6px;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/li_dot_gray_sm2.png) no-repeat 7px 6px;
 }
 
 .cart_table {
@@ -1048,7 +1048,7 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 	line-height: normal;
 	display: inline-block;	
 	padding-right: 40px;
-	background: url(/content/images/upsell_arrow.png) no-repeat right 12px;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/upsell_arrow.png) no-repeat right 12px;
 	min-height: 90px;
 }
 
@@ -1058,7 +1058,7 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 	line-height: normal;
 	display: inline-block;	
 	padding-right: 35px;
-	background: url(/content/images/a2/upsell_arrow_pink.png) no-repeat right 12px;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/a2/upsell_arrow_pink.png) no-repeat right 12px;
 	min-height: 90px;
 }
 
@@ -1090,7 +1090,7 @@ h1.seo, h2.seo, h3.seo {position: absolute; top: 0; left: -9999px; height: 0;}
 #write_to_mike {
 	width: 777px;
 	height: 547px;
-	background: url(/content/images/write_to_mike.png) no-repeat 0 0;
+	background: url(//d1f7jvrzd4fora.cloudfront.net/images/write_to_mike.png) no-repeat 0 0;
 }
 
 #write_to_mike span.error-1 {

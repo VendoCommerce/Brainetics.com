@@ -28,11 +28,11 @@
 <!--#include file="header.html"-->
 
 <div class="content">
-<img src="../content/images/mobile/why1.png" width="640" height="133" class="block" alt="Why Brainetics?" />
-<img src="../content/images/mobile/why2.png" width="640" height="575" class="block" alt="Top 5 Reasons To Try Brainetics" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/why1.png" width="640" height="133" class="block" alt="Why Brainetics?" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/why2.png" width="640" height="575" class="block" alt="Top 5 Reasons To Try Brainetics" />
 
 <div style="padding-bottom: 37px;">
-  <img src="../content/images/mobile/why3.png" width="640" height="874" class="block" alt="Award Winning System That Everyone is Talking About!" />
+  <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/why3.png" width="640" height="874" class="block" alt="Award Winning System That Everyone is Talking About!" />
   <div class="why3">
       <p style="width: 380px;"><strong>Brainetics TRAINS two 
   different parts of the MIND</strong> to 
@@ -52,12 +52,12 @@
 </div>
 
 <div class="why4">
-	<a href="/content/video/2020_how1.mp4"><img src="../content/images/mobile/why4.jpg" width="593" height="527" class="block" alt="As Seen On ABC's 20/20" /></a>
+	<a href="https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/why4.jpg" width="593" height="527" class="block" alt="As Seen On ABC's 20/20" /></a>
 </div>
 
 <div class="why5">
-	<img src="../content/images/mobile/hdr_whatyouget.png" width="640" height="36" class="block" alt="What You Get" />
-	<img src="../content/images/mobile/hdr_brainetics_enhanced.png" width="640" height="91" class="block" alt="Brainetics&reg; Enhanced Package" />
+	<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/hdr_whatyouget.png" width="640" height="36" class="block" alt="What You Get" />
+	<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/hdr_brainetics_enhanced.png" width="640" height="91" class="block" alt="Brainetics&reg; Enhanced Package" />
     <div style="padding-left: 13px;">
       <p>Brainetics is made up of fun games and creative exercises that improve concentration and focus by teaching kids how to process and retain more information. Your Brainetics kit includes:</p>
       <ul>
@@ -75,7 +75,7 @@
       </ul>
       <p class="hotpink f30 webfont1 lh36">PLUS our 30-Day Money Back Guarantee!</p>
     </div>
-    <img src="../content/images/mobile/why5.jpg" width="640" height="566" class="block" alt="What You Get" />
+    <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/why5.jpg" width="640" height="566" class="block" alt="What You Get" />
 </div>
   
 

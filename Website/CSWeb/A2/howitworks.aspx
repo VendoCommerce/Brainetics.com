@@ -34,7 +34,7 @@
 <h2 style="padding-bottom: 5px; padding-left: 92px;">Get the Brainetics Advantage <br>
 for School, Work – For Life!</h2>
 <div>
-<img src="../Content/images/a2/howitworks_top.jpg" width="627" height="714" usemap="#Map" style="margin-left: -34px" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/a2/howitworks_top.jpg" width="627" height="714" usemap="#Map" style="margin-left: -34px" />
 <map name="Map">
   <area shape="rect" coords="16,35,125,140" href="javascript:void(0);" class="showhow1">
   <area shape="rect" coords="17,145,125,247" href="javascript:void(0);" class="showhow2">
@@ -45,10 +45,10 @@ for School, Work – For Life!</h2>
 <div id="howvideo1"></div>
   <script type='text/javascript'>
   	jwplayer('howvideo1').setup({
-    file: "/content/video/2020_how1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
 	autostart: false,
     primary: "flash",   
-	image: "/content/images/a2/2020.jpg",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/a2/2020.jpg",
 	controls: true,
     width: 380, height: 285,
 	stretching: 'exactfit',
@@ -64,7 +64,7 @@ for School, Work – For Life!</h2>
 <div id="howvideo2"></div>
   <script type='text/javascript'>
   	jwplayer('howvideo2').setup({
-    file: "/content/video/how2.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/how2.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,
@@ -101,7 +101,7 @@ confidence... and grades!</span>
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <div class="lh20">
-<img src="../Content/images/a2/howitworks_bottom.jpg" width="950" height="1561" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/a2/howitworks_bottom.jpg" width="950" height="1561" />
 <div class="how2">
   <p class="f14"><span class="webfont1 gray2 f24 block pad6 lh">Muscle Memory</span>
     With Brainetics, you're practicing tricks for doing math quickly and correctly in a way that becomes second nature. In time, you're rattling off answers to math problems you never thought possible – all because you've practiced Brainetics techniques!

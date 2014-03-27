@@ -90,7 +90,7 @@ $('html, body').animate({
 			
   jwplayer('videotest1').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_1.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_1.mp4',
 	autostart: true,    
 	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
@@ -135,7 +135,7 @@ $('html, body').animate({
 	jwplayer('videotest1').stop();
   jwplayer('videotest2').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_2.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_2.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -179,7 +179,7 @@ $('html, body').animate({
 	jwplayer('videotest2').stop();
   jwplayer('videotest3').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_3.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_3.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -224,7 +224,7 @@ $('html, body').animate({
 
   jwplayer('videotest4').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_4.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_4.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -270,7 +270,7 @@ $('html, body').animate({
 
   jwplayer('videotest5').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_5.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_5.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -315,7 +315,7 @@ $('html, body').animate({
 
   jwplayer('videotest6').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_6.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_6.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -360,7 +360,7 @@ $('html, body').animate({
 			
   jwplayer('videotest7').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_7.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_7.mp4',
 	autostart: true,    
 	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
@@ -406,7 +406,7 @@ $('html, body').animate({
 	
   jwplayer('videotest8').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_8.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_8.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -450,7 +450,7 @@ $('html, body').animate({
 	
   jwplayer('videotest9').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_9.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_9.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -494,7 +494,7 @@ $('html, body').animate({
 
   jwplayer('videotest10').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_10.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_10.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -539,7 +539,7 @@ $('html, body').animate({
 
   jwplayer('videotest11').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_11.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_11.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {
@@ -583,7 +583,7 @@ $('html, body').animate({
 
   jwplayer('videotest12').setup({
     flashplayer: '/scripts/jwplayer/player.swf',
-	file: '/content/video/testimonial_12.mp4',
+	file: 'https://d1f7jvrzd4fora.cloudfront.net/video/testimonial_12.mp4',
 	autostart: true,	controlbar: 'bottom', width: 485,    height: 286,
 	stretching: 'exactfit',	skin: '/scripts/jwplayer/glow2.zip',
 	events: {

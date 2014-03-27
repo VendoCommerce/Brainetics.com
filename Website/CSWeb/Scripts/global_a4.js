@@ -151,9 +151,9 @@ $(".showhow1").bind("click touch", function(e){
 	$("#howvid1").show();
 	$("#howvid2").hide();
 	jwplayer('howvideo1').setup({
-    file: "/content/video/2020_how1.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
 	autostart: true,
-	image: "/content/images/a4/2020.jpg",
+	image: "//d1f7jvrzd4fora.cloudfront.net/images/a4/2020.jpg",
     primary: "flash",   
 	controls: true,
     width: 448, height: 336,
@@ -171,7 +171,7 @@ $(".showhow2").bind("click touch", function(e){
 	$("#howvid2").show();
 	$("#howvid1").hide();
 		jwplayer('howvideo2').setup({
-    file: "/content/video/how2.mp4",
+    file: "https://d1f7jvrzd4fora.cloudfront.net/video/how2.mp4",
 	autostart: true,
     primary: "flash",   
 	controls: true,

@@ -350,7 +350,7 @@ body {
             </div>
          
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
             </div>
            
         </div>
