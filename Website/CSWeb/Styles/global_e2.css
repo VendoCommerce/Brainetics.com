@@ -596,7 +596,7 @@ body {
 	position: absolute;
 	left: 22px;
 	top: 165px;
-	height: 162px;
+	height: auto;
 	width: 410px;
 }
 .hometoptext ul {

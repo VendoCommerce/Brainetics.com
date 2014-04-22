@@ -15,7 +15,7 @@
         <p class="lh f34 webfont1 black pad20">Thank you for Your Purchase!</p>
         
         
-        <img src="//d1f7jvrzd4fora.cloudfront.net/images/e2/receipt_rebatecall.jpg" usemap="#receipt_offer">
+        <%--<img src="//d1f7jvrzd4fora.cloudfront.net/images/e2/receipt_rebatecall.jpg" usemap="#receipt_offer">
 <map name="receipt_offer" id="receipt_offer">
 	<area shape="rect" coords="24,209,120,238" href="https://itunes.apple.com/us/book/the-power-of-forgetting/id468751842?mt=11" target="_blank" />
 	<area shape="rect" coords="125,209,222,238" href="http://www.barnesandnoble.com/w/the-power-of-forgetting-mike-byster/1115378322?ean=9780307985873" target="_blank" />
@@ -25,7 +25,7 @@
     <area shape="rect" coords="125,243,222,272" href="http://www.indiebound.org/book/9780307985873" target="_blank" />
 	
     <area shape="rect" coords="513,303,736,366" href="javascript:void(0)" onclick="open_book_rebate();" />
-</map>
+</map> --%>
 
         <table width="100%" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
             <tr class="horzline1">
