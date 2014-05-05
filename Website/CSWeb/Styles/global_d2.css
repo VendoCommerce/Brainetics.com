@@ -1242,3 +1242,11 @@ body {
 .upsell_error {
 	margin-left: 146px;	
 }
+
+#offerdet {
+	width: 265px;
+	margin: 0 auto;
+	padding: 15px 0 15px 10px;
+	font-size: 12px;
+	line-height: 18px;
+}
