@@ -11,7 +11,7 @@
         </asp:DropDownList><div class="clear"></div>
         <div class="helper" style="display: none">A $10 Shipping Fee Applies</div>
     </div>
-    <div class="form_line clearfix">
+    <div class="form_line clearfix"> 
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" Display="Dynamic" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
             <asp:Label ID="lblFirstNameError" runat="server" Visible="false">
