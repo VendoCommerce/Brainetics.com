@@ -16,4 +16,3 @@
 	OnServerValidate="rangeVal_Validate" />
 <asp:RangeValidator CssClass="error" Text="*" ID="rangeValidatorMinMax" Type="Date"
 	Display="dynamic" ControlToValidate="textboxDate" runat="server" EnableClientScript="true"/>
-<a href="/Content/">../Content/</a>
