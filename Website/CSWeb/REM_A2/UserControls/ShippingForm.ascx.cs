@@ -281,7 +281,7 @@ namespace CSWeb.REM_A2.UserControls
             if (!validateInput())
             {
                 SaveData();
-                Response.Redirect(RedirectUrl + "?PId=64&CId=" + (int)CSBusiness.ShoppingManagement.ShoppingCartType.ShippingCreditCheckout);
+                Response.Redirect(RedirectUrl + "?PId=73&CId=" + (int)CSBusiness.ShoppingManagement.ShoppingCartType.ShippingCreditCheckout);
             }
         }
         public void SaveData()

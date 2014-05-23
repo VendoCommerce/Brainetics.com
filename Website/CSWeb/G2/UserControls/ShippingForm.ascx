@@ -74,11 +74,16 @@
         <div class="error-1">            
             <asp:RequiredFieldValidator ID="rfvPhone" runat="server" Display="Dynamic" ControlToValidate="txtPhone"></asp:RequiredFieldValidator>
             <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
+            <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhone" EnableClientScript="true"  ErrorMessage="Please enter your phone like this xxx-xxx-xxxx"
+                Display="Dynamic" ValidationExpression="\d{3}-\d{3}-\d{4}" />
         <label class="label-1">
             Phone*</label>
-        <asp:TextBox ID="txtPhone" runat="server" MaxLength="10" CssClass="text-1"></asp:TextBox>
+        <asp:TextBox ID="txtPhone" runat="server" MaxLength="12" CssClass="text-1"></asp:TextBox>
+     
     </div>
-    <div class="form_line clearfix">
+        <div class="error-1">            
+            xxx-xxx-xxxx
+        </div>       <div class="form_line clearfix">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvEmail" runat="server" Display="Dynamic" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
