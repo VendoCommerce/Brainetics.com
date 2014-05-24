@@ -61,6 +61,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 revEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailValidationErrorMsg");
                 rfvPhoneNumber.ErrorMessage = ResourceHelper.GetResoureValue("PhoneNumberErrorMsg");
                 rfvShippingState.ErrorMessage = ResourceHelper.GetResoureValue("ShippingStateErrorMsg");
+                revPhone.ErrorMessage = ResourceHelper.GetResoureValue("PhoneValidationErrorMsg");
             }
 
             if (!IsPostBack)

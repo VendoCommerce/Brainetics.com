@@ -82,10 +82,15 @@
                     <asp:RequiredFieldValidator ID="rfvPhoneNumber" runat="server" Display="Dynamic"
                                                 ControlToValidate="txtPhoneNumber"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblShippingPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
-                
+             <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhoneNumber" EnableClientScript="true"
+                Display="Dynamic" ValidationExpression="\d{3}-\d{3}-\d{4}" />
+               
                 <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone"></asp:TextBox>
             </div>
-          
+                     <div class="error-1">            
+            xxx-xxx-xxxx
+        </div>
+ 
             <asp:Panel ID="pnlQuantity" runat="server" Visible="false">
                 <div class="form_line clearfix">
                     <div class="error-1">
