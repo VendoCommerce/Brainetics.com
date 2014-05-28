@@ -85,7 +85,7 @@
              <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhoneNumber" EnableClientScript="true"
                 Display="Dynamic" ValidationExpression="\d{3}-\d{3}-\d{4}" />
                
-                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone" value="e.g. xxx-xxx-xxxx"></asp:TextBox>
+                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone e.g. xxx-xxx-xxxx"></asp:TextBox>
             </div>
                      <div class="error-1">            
             <span id="phoneeg" style="margin-left: 25px; color: #333; display: none;">Eg.xxx-xxx-xxxx</span>
