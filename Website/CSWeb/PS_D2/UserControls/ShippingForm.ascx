@@ -81,7 +81,7 @@
         <asp:TextBox ID="txtPhone" runat="server" MaxLength="12" CssClass="text-1"></asp:TextBox>
     </div>
             <div class="error-1">            
-            xxx-xxx-xxxx
+            <span id="phoneeg" style="margin-left: 25px; color: #333;">Eg.xxx-xxx-xxxx</span>
         </div>
     <div class="form_line clearfix">
         <div class="error-1">

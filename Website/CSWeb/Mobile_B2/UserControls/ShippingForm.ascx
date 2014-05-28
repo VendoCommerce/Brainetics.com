@@ -88,7 +88,7 @@
                 <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone"></asp:TextBox>
             </div>
                      <div class="error-1">            
-            xxx-xxx-xxxx
+            <span id="phoneeg" style="margin-left: 25px; color: #333;">Eg.xxx-xxx-xxxx</span>
         </div>
  
             <asp:Panel ID="pnlQuantity" runat="server" Visible="false">
