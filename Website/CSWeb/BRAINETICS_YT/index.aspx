@@ -28,7 +28,7 @@
 
 
 <div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/home_bg.jpg) no-repeat #fff">
-<div class="home_left"><img src="//d1f7jvrzd4fora.cloudfront.net/images/d2/home_leftside.png" width="667" height="1155" style="margin-left: -32px" usemap="#Maphometop" />
+<div class="home_left"><img src="//d1f7jvrzd4fora.cloudfront.net/images/home_leftside_june6.png" width="667" height="1155" style="margin-left: -32px" usemap="#Maphometop" />
 <map name="Maphometop">
     <area shape="circle" coords="325,350,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
         <%-- <area shape="rect" coords="422,584,659,705" href="#newbook" class="fancynowrap"> --%>
