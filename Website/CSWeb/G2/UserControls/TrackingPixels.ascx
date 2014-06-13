@@ -9,6 +9,26 @@
 
 <asp:Panel ID="pnlAllPages" runat="server" Visible="false">
 
+<!-- AdRoll Retargeting Pixel - 6-13-2014 -->
+    <script type="text/javascript">
+        adroll_adv_id = "N7DMRUYYZ5CIFCNCMGHOAP";
+        adroll_pix_id = "FDWNHPELWFAGFNTPCLQHJJ";
+        (function () {
+            var oldonload = window.onload;
+            window.onload = function(){
+                __adroll_loaded=true;
+                var scr = document.createElement("script");
+                var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                scr.setAttribute('async', 'true');
+                scr.type = "text/javascript";
+                scr.src = host + "/j/roundtrip.js";
+                ((document.getElementsByTagName('head') || [null])[0] ||
+                 document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+                if(oldonload){oldonload()}};
+        }());
+</script>
+
+
 <script type="text/javascript">
     var newPageName = '/' +
     <%=versionNameClientFunction %> + window.location.pathname +
@@ -78,6 +98,29 @@ var google_remarketing_only = true;
 </asp:Panel>
 
 <asp:Panel ID="pnlReceiptPage" runat="server" Visible="false">
+
+    <!-- AdRoll Retargeting Pixel - Conversion - 6-13-2014 -->
+    <script type="text/javascript">
+        adroll_conversion_value_in_dollars = '<%= CurrentOrder.FullPriceSubTotal.ToString() %>';
+        adroll_custom_data = {"ORDER_ID": "<%= CurrentOrder.OrderId.ToString() %>"};
+
+        adroll_adv_id = "N7DMRUYYZ5CIFCNCMGHOAP";
+        adroll_pix_id = "FDWNHPELWFAGFNTPCLQHJJ";
+        (function () {
+            var oldonload = window.onload;
+            window.onload = function(){
+                __adroll_loaded=true;
+                var scr = document.createElement("script");
+                var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                scr.setAttribute('async', 'true');
+                scr.type = "text/javascript";
+                scr.src = host + "/j/roundtrip.js";
+                ((document.getElementsByTagName('head') || [null])[0] ||
+                 document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+                if(oldonload){oldonload()}};
+        }());
+    </script>
+
     <!-- HitsLink.com tracking script -->
 <script type="text/javascript" id="wa_u" defer></script>
 <script type="text/javascript" async>//<![CDATA[
