@@ -1133,6 +1133,8 @@
     <Content Include="REM_A2\UserControls\ShippingForm.ascx" />
     <Content Include="REM_A2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="REM_A2\UserControls\TrackingPixels.ascx" />
+    <Content Include="SCA_Email_1\index.html" />
+    <Content Include="SCA_Email_2\index.html" />
     <Content Include="Scripts\autoTab.js" />
     <Content Include="Scripts\bootstrap-collapse.js" />
     <Content Include="Scripts\bootstrap-transition.js" />
