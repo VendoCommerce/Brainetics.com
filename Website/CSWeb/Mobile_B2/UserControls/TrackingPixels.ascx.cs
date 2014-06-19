@@ -156,21 +156,21 @@ namespace CSWeb.Mobile_B2.UserControls
                 SetCurrentOrder();
                 WriteGAPixel();
                 MDGConfirmPixel();
-                string[] testCreditCards;
+                pnlReceiptPage.Visible = true;
 
-                testCreditCards = ResourceHelper.GetResoureValue("TestCreditCard").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries); ;
+                //////string[] testCreditCards;
+                ////testCreditCards = ResourceHelper.GetResoureValue("TestCreditCard").Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries); ;
 
-                foreach (string word in testCreditCards)
-                {
-                    if (CurrentOrder.CreditInfo.CreditCardNumber.Equals(word))
-                    {
-                        pnlReceiptPage.Visible = false;
-                    }
-                    else
-                    {
-                        pnlReceiptPage.Visible = true;
-                    }
-                }
+                ////foreach (string word in testCreditCards)
+                ////{
+                ////    if (CurrentOrder.CreditInfo.CreditCardNumber.Equals(word))
+                ////    {
+                ////        pnlReceiptPage.Visible = false;
+                ////    }
+                ////    else
+                ////    {
+                ////    }
+                ////}
                 SetConversionListrakPixel();
                 SetTotalsForAdwardsAndBing();
                 //reset entire Context object
