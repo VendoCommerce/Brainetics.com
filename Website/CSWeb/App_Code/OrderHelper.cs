@@ -185,6 +185,10 @@ namespace CSWeb
             OrderManager orderMgr = new OrderManager();
             Order orderData = orderMgr.GetOrderDetails(orderId);
             string orderSubtotal = "", orderShipping = "", orderTax = "", orderTotal = "";
+            string BilledFuture = "0.00", EmailPaymentsMultipay = "", EmailPaymentsOnepay = "", NumberOfPayments = "", FirstPayment30day = "0.00";   // BILLEDFUTURE
+            decimal FutureBill = 0;
+            string skuNumberOfPayments = "1", skuFirstPayment30day = "0";
+            NumberOfPayments = skuNumberOfPayments;
             // added to customize the confirmation mail to match the customized reciept page
            
 
@@ -204,6 +208,14 @@ namespace CSWeb
                         }
 
                         sku.TotalPrice = totalPrice;
+                        sku.LoadAttributeValues();
+                        skuNumberOfPayments = sku.GetAttributeValue("NumberOfPayments", "1");
+                        skuFirstPayment30day = sku.GetAttributeValue("FirstPayment30day", "");
+                        if (!skuFirstPayment30day.Equals("") && !skuNumberOfPayments.Equals("") && Convert.ToInt32(skuNumberOfPayments) > 1)
+                        {
+                            FirstPayment30day = skuFirstPayment30day;
+                            NumberOfPayments = skuNumberOfPayments;                            
+                        }
                     }
                 }
 
@@ -223,7 +235,23 @@ namespace CSWeb
                 //{
                 //    orderPromotionalAmount = String.Format("(${0:0.00})", orderData.DiscountAmount);
                 //}
-
+                FutureBill = Math.Round(orderData.FullPriceSubTotal - orderData.SubTotal, 2);  // orderData.Total;
+                SitePreference sitePrefCache = CSFactory.GetCacheSitePref();                
+                if (sitePrefCache.GetAttributeValue("EmailPaymentsOnePay").ToString() != null)
+                {
+                    EmailPaymentsOnepay = sitePrefCache.GetAttributeValue("EmailPaymentsOnePay").ToString();
+                }
+                
+                if (FutureBill>0 && sitePrefCache.GetAttributeValue("EmailPaymentsMultiPay").ToString() != null)
+                {
+                    EmailPaymentsMultipay = sitePrefCache.GetAttributeValue("EmailPaymentsMultiPay").ToString();
+                    BilledFuture = FutureBill.ToString();
+                }
+                else
+                {
+                    EmailPaymentsMultipay = "";
+                    BilledFuture = "0.00";
+                }
             
             if (emailTemplate.Body != null)
             {
@@ -235,6 +263,11 @@ namespace CSWeb
 
                 BodyTemplate = BodyTemplate.Replace("{OrderID}", orderData.OrderId.ToString());
 
+                BodyTemplate = BodyTemplate.Replace("{EMAILPAYMENTSONEPAY}", EmailPaymentsOnepay);
+                BodyTemplate = BodyTemplate.Replace("{EMAILPAYMENTSMULTIPAY}", EmailPaymentsMultipay);
+                BodyTemplate = BodyTemplate.Replace("{BILLEDFUTURE}", BilledFuture);
+                BodyTemplate = BodyTemplate.Replace("{BILLED30DAYS}", FirstPayment30day);
+                BodyTemplate = BodyTemplate.Replace("{NUMBEROFPAYMENTS}", NumberOfPayments);
                 BodyTemplate = BodyTemplate.Replace("{SUBTOTAL}", string.Format (orderSubtotal,"N2"));
                 BodyTemplate = BodyTemplate.Replace("{SHIPPING_HANDLING}", string.Format (orderShipping,"N2"));
                 BodyTemplate = BodyTemplate.Replace("{TAX}", string.Format (orderTax,"N2"));
@@ -245,6 +278,7 @@ namespace CSWeb
                 BodyTemplate = BodyTemplate.Replace("{ORDER_NUMBER}", orderData.OrderId.ToString());
                 BodyTemplate = BodyTemplate.Replace("{ORDER_DATE}", orderData.CreatedDate.ToString("dd MMM yyyy hh:mm:ss"));
 
+                
                 //BodyTemplate = BodyTemplate.Replace("{SUBTOTAL}", orderData.SubTotal.ToString("N2"));
                 //BodyTemplate = BodyTemplate.Replace("{SHIPPING_HANDLING}", orderData.ShippingCost.ToString("N2"));
                 //BodyTemplate = BodyTemplate.Replace("{TAX}", orderData.Tax.ToString("N2"));
