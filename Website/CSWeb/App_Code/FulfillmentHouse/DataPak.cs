@@ -114,7 +114,9 @@ namespace CSWeb.FulfillmentHouse
                         }
                     }
 
-                    if (orderItem.SkuItems.FirstOrDefault(x => { return (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.DestinationReward) || (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.Accelerated4OnePay) || (x.SkuId == (int) CSWebBase.SiteBasePage.SkuEnum.Enhanced4OnePay); }) != null)
+                    if (orderItem.SkuItems.FirstOrDefault(x => { return (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.DestinationReward) || (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.Accelerated4OnePay) || (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.Enhanced4OnePay) || (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.Enhanced4OnePayV6)
+                         || (x.SkuId == (int)CSWebBase.SiteBasePage.SkuEnum.AcceleratedOnePayV6);
+                    }) != null)
                     {
                         trackingCode = "BONUS";
                     }

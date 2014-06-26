@@ -28,6 +28,8 @@ namespace CSWebBase
             EnhancedOnePay = 46,
             AcceleratedMultiPay = 47,
             AcceleratedOnePay = 52,
+            Enhanced4OnePayV6 = 71,
+            AcceleratedOnePayV6 =75,
             Surcharge = 58,
             Trial = 59,
             BrainBoosting = 45,

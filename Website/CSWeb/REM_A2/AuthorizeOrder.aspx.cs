@@ -93,7 +93,7 @@ namespace CSWeb.REM_A2.Store
                     {
                         try
                         {
-                            if (Request["oid"] != null)
+                            //if (Request["oid"] != null)
                             {
                                 new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
                             }
