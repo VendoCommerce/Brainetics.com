@@ -17,7 +17,9 @@ namespace CSWeb.G2.UserControls
         public string versionNameReferrer = "";
         public string versionNameClientFunction = ""; 
         public decimal cartTotal = 0;
-        private ClientCartContext CartContext
+        public StringBuilder rejoinerPixel = new StringBuilder();
+
+        public ClientCartContext CartContext
         {
             get
             {
@@ -41,6 +43,7 @@ namespace CSWeb.G2.UserControls
             SetHomePagePnl();
             SetHomeAndSubPagesPnl();
             SetCartPagePnl();
+            SetPostSalePnl();
             SetAllPagesPnl();
             SetReceiptPagePnl();
         }
@@ -85,13 +88,29 @@ namespace CSWeb.G2.UserControls
                 pnlHomePage.Visible = false;
             }
         }
+
+        private void SetPostSalePnl()
+        {
+            string url = Request.Url.AbsolutePath.ToLower();
+
+            if (url.EndsWith("/postsale.aspx"))
+            {
+                pnlPoseSale.Visible = true;
+            }
+            else
+            {
+                pnlPoseSale.Visible = false;
+            }
+        }        
+        
         private void SetCartPagePnl()
         {
             string url = Request.Url.AbsolutePath.ToLower();
 
-            if (url.EndsWith("/cart2.aspx"))
+            if (url.EndsWith("/cart.aspx"))
             {
-                SetCartListrakPixel();
+                SetRejoinerPixel();
+                //SetCartListrakPixel();
                 pnlCartPages.Visible = true;
 
             }
@@ -200,7 +219,25 @@ namespace CSWeb.G2.UserControls
             sbListrakPixel.AppendLine("_ltk.SCA.Submit();");
             sbListrakPixel.AppendLine("</script>");
             //ltlCartListTrakPixel.Text = sbListrakPixel.ToString();
+
         }
+
+        private void SetRejoinerPixel()
+        {
+            foreach (Sku s in CartContext.CartInfo.CartItems)
+            {
+                rejoinerPixel.AppendLine("_rejoiner.push(['setCartItem', {");
+                rejoinerPixel.AppendLine(string.Format("'product_id': '{0}',", s.SkuCode));
+                rejoinerPixel.AppendLine(string.Format("'qty_price': '{0}',", Math.Round(s.FullPrice, 2)));
+                rejoinerPixel.AppendLine(string.Format("'name': '{0}',", s.Title));
+                rejoinerPixel.AppendLine(string.Format("'description': '{0}',", s.Title));
+                rejoinerPixel.AppendLine(string.Format("'price': '{0}',", Math.Round(s.FullPrice * s.Quantity, 2).ToString()));
+                rejoinerPixel.AppendLine(string.Format("'image_url': 'https://www.brainetics.com/{0}',", s.ImagePath, 2));
+                rejoinerPixel.AppendLine("}]);");
+            }
+
+        }
+
         private void SetTotalsForAdwardsAndBing()
         {
             try
