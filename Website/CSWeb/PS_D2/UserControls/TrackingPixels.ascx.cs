@@ -19,7 +19,7 @@ namespace CSWeb.PS_D2.UserControls
         public decimal cartTotal = 0;
         public StringBuilder rejoinerPixel = new StringBuilder();
 
-        private ClientCartContext CartContext
+        public ClientCartContext CartContext
         {
             get
             {
