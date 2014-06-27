@@ -93,9 +93,10 @@ namespace CSWeb.G2.UserControls
         {
             string url = Request.Url.AbsolutePath.ToLower();
 
-            if (url.EndsWith("/postsale.aspx"))
+            if (url.EndsWith("/postsale.aspx") && ViewState["RejoinerVisible"]== null)
             {
                 pnlPoseSale.Visible = true;
+                ViewState["RejoinerVisible"] = "Viewed";
             }
             else
             {
