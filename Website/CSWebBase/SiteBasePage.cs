@@ -48,7 +48,8 @@ namespace CSWebBase
             Accelerated4MultiPay = 66,
             Accelerated4OnePay = 67,
             CinchyGray = 69,
-            CinchyPink = 70
+            CinchyPink = 70,
+            EnhancedPackageMulti3Pay = 73
         }
 
         #region Properties
@@ -159,6 +160,7 @@ namespace CSWebBase
                 case SkuEnum.Accelerated4OnePay:
                 case SkuEnum.Enhanced4MultiPay:
                 case SkuEnum.Enhanced4OnePay:
+                case SkuEnum.EnhancedPackageMulti3Pay:
                     return true;
             }
 
