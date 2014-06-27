@@ -229,11 +229,11 @@ namespace CSWeb.G2.UserControls
             {
                 rejoinerPixel.AppendLine("_rejoiner.push(['setCartItem', {");
                 rejoinerPixel.AppendLine(string.Format("'product_id': '{0}',", s.SkuCode));
-                rejoinerPixel.AppendLine(string.Format("'qty_price': '{0}',", Math.Round(s.FullPrice, 2)));
+                rejoinerPixel.AppendLine(string.Format("'qty_price': '{0}',", Math.Round(s.FullPrice, 2).ToString().Replace(".", "")));
                 rejoinerPixel.AppendLine(string.Format("'name': '{0}',", s.Title));
                 rejoinerPixel.AppendLine(string.Format("'description': '{0}',", s.Title));
-                rejoinerPixel.AppendLine(string.Format("'price': '{0}',", Math.Round(s.FullPrice * s.Quantity, 2).ToString()));
-                rejoinerPixel.AppendLine(string.Format("'image_url': 'https://www.brainetics.com/{0}',", s.ImagePath, 2));
+                rejoinerPixel.AppendLine(string.Format("'price': '{0}',", Math.Round(s.FullPrice * s.Quantity, 2).ToString().Replace(".","")));
+                rejoinerPixel.AppendLine(string.Format("'image_url': 'https://www.brainetics.com{0}',", s.ImagePath, 2));
                 rejoinerPixel.AppendLine("}]);");
             }
 

@@ -132,7 +132,7 @@ var google_remarketing_only = true;
     </script>
     <script type='text/javascript'>
         _rejoiner.push(['setCartData', {
-            'value': '<%= CartContext.CartInfo.SubTotalFullPrice.ToString() %>',
+            'value': '<%=  Math.Round(CartContext.CartInfo.SubTotalFullPrice, 2).ToString().Replace(".", "") %>',
             'totalItems': '<%= CartContext.CartInfo.ItemCount.ToString() %>',
             'returnUrl': 'https://www.brainetics.com/rem_a2/'
         }]);
