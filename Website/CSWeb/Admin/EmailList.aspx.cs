@@ -39,8 +39,8 @@ namespace CSWeb.Admin
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 Label lblBody = (Label)e.Item.FindControl("lblBody");
-                lblBody.Text = (Item.Body.Length <= 100) ? Item.Body : String.Format("{0}.....",Item.Body.Substring(0, 100));
-                lblBody.ToolTip = Item.Body;
+                lblBody.Text = "";//  (Item.Body.Length <= 100) ? Item.Body : String.Format("{0}.....", Item.Body.Substring(0, 100));
+                lblBody.ToolTip = ""; // Item.Body;
             }
         }
 
