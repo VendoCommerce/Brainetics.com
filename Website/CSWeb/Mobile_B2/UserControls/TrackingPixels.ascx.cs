@@ -272,5 +272,10 @@ namespace CSWeb.Mobile_B2.UserControls
             catch { }
         }
 
+
+        public string GetVersionName()
+        {
+            return versionName;
+        }
     }
 }
