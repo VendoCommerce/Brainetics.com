@@ -53,7 +53,7 @@ namespace CSWeb.Admin
                     item.Subject = CommonHelper.fixquotesAccents(txtSubject.Text);
                     item.FromAddress = CommonHelper.fixquotesAccents(txtfromAddress.Text);
                     item.ToAddress = CommonHelper.fixquotesAccents(txtToAddress.Text);
-                    item.Body = CommonHelper.fixquotesAccents(EmailBodyDesc.Content);
+                    item.Body = EmailBodyDesc.Content; // CommonHelper.fixquotesAccents(EmailBodyDesc.Content);
 
                     EmailManager.SaveEmail(item);
 
