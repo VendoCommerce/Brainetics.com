@@ -7,6 +7,29 @@
     
 </asp:Panel>
 
+<asp:Panel ID="pnlPoseSale" runat="server" Visible="false">
+<!-- Rejoiner Conversion -->
+<script type='text/javascript'>
+    var _rejoiner = _rejoiner || [];
+    _rejoiner.push(['setAccount', '53ac7676281cb7211fde64a9']);
+    _rejoiner.push(['setDomain', '.brainetics.com']);
+    _rejoiner.push(['sendConversion']);
+    (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://s3.amazonaws.com/rejoiner/js/v3/t.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<script type='text/javascript'>
+    _rejoiner.push(['setCartData', {'customer_order_number': '<%= CartContext.OrderId.ToString() %>'}]);
+</script>
+<!-- End Rejoiner Conversion -->
+    
+</asp:Panel>
+
 <asp:Panel ID="pnlAllPages" runat="server" Visible="false">
 
 <script type="text/javascript">
@@ -73,7 +96,30 @@ var google_remarketing_only = true;
 
 </asp:Panel>
 <asp:Panel ID="pnlCartPages" runat="server" Visible="false">
-    
+  <!-- Rejoiner Tracking -->
+    <script type='text/javascript'>
+        var _rejoiner = _rejoiner || [];
+        _rejoiner.push(['setAccount', '53ac7676281cb7211fde64a9']);
+        _rejoiner.push(['setDomain', '.brainetics.com']);
+        (function() {
+            var s = document.createElement('script'); s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://s3.amazonaws.com/rejoiner/js/v3/t.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <script type='text/javascript'>
+        _rejoiner.push(['setCartData', {
+            'value': '<%=  Math.Round(CartContext.CartInfo.SubTotalFullPrice, 2).ToString().Replace(".", "") %>',
+            'totalItems': '<%= CartContext.CartInfo.ItemCount.ToString() %>',
+            'returnUrl': 'https://www.brainetics.com/<%=GetVersionName() %>/'
+        }]);
+        
+        <%= rejoinerPixel %>
+    </script>
+<!-- End Rejoiner Tracking -->
+
   
 </asp:Panel>
 
