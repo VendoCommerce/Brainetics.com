@@ -25,6 +25,7 @@ namespace CSWeb.PS_D2.Store
         {
             base.Page_Load(sender, e);
 
+            Response.Redirect("/ps_g2/?"+Request.QueryString);
             //Hashtable htAdditinalInfo = new Hashtable();
             //Hashtable htAdditinalInfoResponse = new Hashtable();
 
