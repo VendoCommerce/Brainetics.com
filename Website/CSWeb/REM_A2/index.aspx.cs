@@ -41,15 +41,15 @@ namespace CSWeb.REM_A2.Store
 
                 SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
                 
-                if (!sitePrefCache.GeoLocationService)
-                {
-                    string GeoCoountry = "";
-                    GeoCoountry = CommonHelper.GetGeoTargetLocation(CommonHelper.IpAddress(HttpContext.Current));
-                    if (GeoCoountry.Equals("canada"))
-                    {
-                        //Response.Redirect("https://www.plugnsafe.com/canada/?" + Request.QueryString);
-                    }
-                }
+                //if (!sitePrefCache.GeoLocationService)
+                //{
+                //    string GeoCoountry = "";
+                //    GeoCoountry = CommonHelper.GetGeoTargetLocation(CommonHelper.IpAddress(HttpContext.Current));
+                //    if (GeoCoountry.Equals("canada"))
+                //    {
+                //        //Response.Redirect("https://www.plugnsafe.com/canada/?" + Request.QueryString);
+                //    }
+                //}
 
                 if (Request.Headers["X-HTTPS"] != null)
                 {

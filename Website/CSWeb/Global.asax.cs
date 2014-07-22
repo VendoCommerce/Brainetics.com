@@ -22,6 +22,7 @@ namespace CSWeb
             //Ignore if a file is requsted.
             Regex regex=new Regex(@".(txt|gif|pdf|doc|docx|jpg|pdf|js|png|mp4|aspx|asp|html|htm|css|scss|less|eot|svg|ttf|woff|otf|xml)$");
             if (regex.IsMatch(Request.Url.AbsoluteUri) ) return;
+            if (Request.Url.AbsoluteUri.ToLower().Contains("/rem_a2")) return;
 
             //Continue with redirection
             SitePreference sitePref = CSFactory.GetCacheSitePref();
