@@ -12,6 +12,7 @@ using CSBusiness.Resolver;
 using CSBusiness.Preference;
 using CSWebBase;
 using CSBusiness.Attributes;
+using System.Text.RegularExpressions;
 
 namespace CSWeb.G2.UserControls
 {
@@ -169,6 +170,28 @@ namespace CSWeb.G2.UserControls
             }
             else
                 lblAddress1Error.Visible = false;
+
+            if (CommonHelper.EnsureNotNull(txtAddress1.Text) == String.Empty)
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingAddress1ErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else if (!OrderHelper.ValidatePOBox(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else if (!OrderHelper.ValidateAddress(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ValidShippingAddressErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else
+                lblAddress1Error.Visible = false;
+
 
             if (CommonHelper.EnsureNotNull(txtCity.Text) == String.Empty)
             {

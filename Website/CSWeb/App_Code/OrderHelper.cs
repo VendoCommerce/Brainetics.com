@@ -21,6 +21,7 @@ using CSBusiness.Attributes;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CSWebBase;
+using System.Text.RegularExpressions;
 
 
 /// <summary>
@@ -1216,6 +1217,27 @@ namespace CSWeb
                 }
             }
             return result;
+        }
+
+        public static bool ValidateAddress(string address)
+        {
+            address = address.ToLower();
+            string resultString = Regex.Match(address, @"\d+").Value;
+            if (resultString.Length > 0)
+                return true;
+            return false;
+        }
+
+        public static bool ValidatePOBox(string address)
+        {
+            address = address.ToLower();
+            if (address.Contains("box") | address.Contains("p. o.") | address.Contains("p o box") | address.Contains("post office") | address.Contains("p.o."))
+            {
+                string resultString = Regex.Match(address, @"\d+").Value;
+                if (resultString.Length < 2)
+                    return false;
+            }
+            return true;
         }
     }
 

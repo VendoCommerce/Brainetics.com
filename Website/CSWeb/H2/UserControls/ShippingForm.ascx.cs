@@ -161,9 +161,22 @@ namespace CSWeb.H2.UserControls
             else
                 lblLastNameError.Visible = false;
 
+
             if (CommonHelper.EnsureNotNull(txtAddress1.Text) == String.Empty)
             {
                 lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingAddress1ErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else if (!OrderHelper.ValidatePOBox(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else if (!OrderHelper.ValidateAddress(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ValidShippingAddressErrorMsg");
                 lblAddress1Error.Visible = true;
                 _bError = true;
             }

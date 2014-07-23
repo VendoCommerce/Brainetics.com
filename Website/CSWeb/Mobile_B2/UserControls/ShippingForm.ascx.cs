@@ -163,6 +163,18 @@ namespace CSWeb.Mobile_B2.UserControls
                 lblShippingAddress1Error.Visible = true;
                 _bError = true;
             }
+            else if (!OrderHelper.ValidatePOBox(txtShippingAddress1.Text))
+            {
+                lblShippingAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
+                lblShippingAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else if (!OrderHelper.ValidateAddress(txtShippingAddress1.Text))
+            {
+                lblShippingAddress1Error.Text = ResourceHelper.GetResoureValue("ValidShippingAddressErrorMsg");
+                lblShippingAddress1Error.Visible = true;
+                _bError = true;
+            }
             else
                 lblShippingAddress1Error.Visible = false;
 

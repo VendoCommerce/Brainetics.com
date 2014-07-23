@@ -168,27 +168,20 @@ namespace CSWeb.REM_A2.UserControls
                 lblAddress1Error.Visible = true;
                 _bError = true;
             }
+            else if (!OrderHelper.ValidatePOBox(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else if (!OrderHelper.ValidateAddress(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ValidShippingAddressErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
             else
                 lblAddress1Error.Visible = false;
-
-            string address=txtAddress1.Text.ToLower();
-            if (address.Contains("box") | address.Contains("p. o.") | address.Contains("p o box") | address.Contains("post office") | address.Contains("p o b"))
-            {
-                //if (chkPOBox.Checked)
-                //{
-                string resultString = Regex.Match(address, @"\d+").Value;
-                //int pobox = 0;
-                //if (!(int.TryParse(txtAddress1.Text, out pobox) || pobox > 0))
-                if (resultString.Length < 2)
-                {
-                    lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
-                    lblAddress1Error.Visible = true;
-                    _bError = true;
-                }
-                else
-                    lblAddress1Error.Visible = false;
-
-            }
 
             if (CommonHelper.EnsureNotNull(txtCity.Text) == String.Empty)
             {
@@ -355,13 +348,13 @@ namespace CSWeb.REM_A2.UserControls
 
         #endregion General Methods
 
-        protected void chkPOBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkPOBox.Checked)
-                lblAddress.Text = "PO Box #*";
-            else
-                lblAddress.Text = "Address*";
-        }
+        //protected void chkPOBox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chkPOBox.Checked)
+        //        lblAddress.Text = "PO Box #*";
+        //    else
+        //        lblAddress.Text = "Address*";
+        //}
 
     }
 }
