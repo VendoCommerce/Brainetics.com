@@ -167,6 +167,18 @@ namespace CSWeb.BRAINETICS_YT.UserControls
                 lblAddress1Error.Visible = true;
                 _bError = true;
             }
+            else if (!OrderHelper.ValidatePOBox(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
+            else if (!OrderHelper.ValidateAddress(txtAddress1.Text))
+            {
+                lblAddress1Error.Text = ResourceHelper.GetResoureValue("ValidShippingAddressErrorMsg");
+                lblAddress1Error.Visible = true;
+                _bError = true;
+            }
             else
                 lblAddress1Error.Visible = false;
 
