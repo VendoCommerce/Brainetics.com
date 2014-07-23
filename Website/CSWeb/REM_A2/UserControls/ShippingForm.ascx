@@ -31,13 +31,18 @@
             Last Name*</label>
         <asp:TextBox ID="txtLastName" runat="server" MaxLength="14" CssClass="text-1"></asp:TextBox>
     </div>
-    <asp:UpdatePanel runat="server">
+    <asp:UpdatePanel runat="server" Visible="false">
         <ContentTemplate>
     <div class="form_line clearfix">
         <label class="label-1">
             This is a P.O. Box</label>
             <asp:CheckBox ID="chkPOBox" runat="server" Width="100px" AutoPostBack="True" OnCheckedChanged="chkPOBox_CheckedChanged"/>
     </div>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="chkPOBox" EventName="CheckedChanged" />
+        </Triggers>
+    </asp:UpdatePanel>
     <div class="form_line clearfix">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvAddress1" runat="server" Display="Dynamic" ControlToValidate="txtAddress1"></asp:RequiredFieldValidator>
@@ -45,11 +50,6 @@
         <asp:Label class="label-1" Text="Address*" runat="server" ID="lblAddress"/>
         <asp:TextBox ID="txtAddress1" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
-        </ContentTemplate>
-        <Triggers>
-            <asp:AsyncPostBackTrigger ControlID="chkPOBox" EventName="CheckedChanged" />
-        </Triggers>
-    </asp:UpdatePanel>
     <div class="form_line clearfix" runat="server" visible="false">
         <div class="error-1">
         </div>

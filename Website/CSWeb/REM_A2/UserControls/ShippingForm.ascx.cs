@@ -12,6 +12,7 @@ using CSBusiness.Resolver;
 using CSBusiness.Preference;
 using CSWebBase;
 using CSBusiness.Attributes;
+using System.Text.RegularExpressions;
 
 namespace CSWeb.REM_A2.UserControls
 {
@@ -170,10 +171,15 @@ namespace CSWeb.REM_A2.UserControls
             else
                 lblAddress1Error.Visible = false;
 
-            if (chkPOBox.Checked)
+            string address=txtAddress1.Text.ToLower();
+            if (address.Contains("box") | address.Contains("p. o.") | address.Contains("p o box") | address.Contains("post office") | address.Contains("p o b"))
             {
-                int pobox = 0;
-                if (!(int.TryParse(txtAddress1.Text, out pobox) || pobox > 0))
+                //if (chkPOBox.Checked)
+                //{
+                string resultString = Regex.Match(address, @"\d+").Value;
+                //int pobox = 0;
+                //if (!(int.TryParse(txtAddress1.Text, out pobox) || pobox > 0))
+                if (resultString.Length < 2)
                 {
                     lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
                     lblAddress1Error.Visible = true;
