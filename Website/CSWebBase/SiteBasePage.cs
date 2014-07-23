@@ -571,6 +571,9 @@ namespace CSWebBase
         {
             if (!Page.IsPostBack)
             {
+                //ignore redirection for rem_a2 version
+                if (Request.Url.AbsoluteUri.ToLower().Contains("/rem_a2")) return;
+
                 if (ClientDeviceType == CSBusiness.Enum.DeviceType.Mobile)
                 {
                     CSBusiness.Version currentVersion = (CSFactory.GetCacheSitePref()).VersionItems.FirstOrDefault(x => { return x.VersionId == currentVersionId; });
