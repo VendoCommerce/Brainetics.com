@@ -170,6 +170,20 @@ namespace CSWeb.REM_A2.UserControls
             else
                 lblAddress1Error.Visible = false;
 
+            if (chkPOBox.Checked)
+            {
+                int pobox = 0;
+                if (!(int.TryParse(txtAddress1.Text, out pobox) || pobox > 0))
+                {
+                    lblAddress1Error.Text = ResourceHelper.GetResoureValue("ShippingPOBoxErrorMsg");
+                    lblAddress1Error.Visible = true;
+                    _bError = true;
+                }
+                else
+                    lblAddress1Error.Visible = false;
+
+            }
+
             if (CommonHelper.EnsureNotNull(txtCity.Text) == String.Empty)
             {
                 lblCityError.Text = ResourceHelper.GetResoureValue("ShippingCityErrorMsg");
@@ -334,6 +348,14 @@ namespace CSWeb.REM_A2.UserControls
         }
 
         #endregion General Methods
+
+        protected void chkPOBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPOBox.Checked)
+                lblAddress.Text = "PO Box #*";
+            else
+                lblAddress.Text = "Address*";
+        }
 
     }
 }

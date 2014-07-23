@@ -1,4 +1,5 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.REM_A2.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 <a name="tryitnow" id="tryitnow"></a>
 <div class="cartB"><img src="//d1f7jvrzd4fora.cloudfront.net/images/header__top_june19.jpg" />
     <div class="form_line clearfix" style="padding-top: 10px">
@@ -30,14 +31,25 @@
             Last Name*</label>
         <asp:TextBox ID="txtLastName" runat="server" MaxLength="14" CssClass="text-1"></asp:TextBox>
     </div>
+    <asp:UpdatePanel runat="server">
+        <ContentTemplate>
+    <div class="form_line clearfix">
+        <label class="label-1">
+            This is a P.O. Box</label>
+            <asp:CheckBox ID="chkPOBox" runat="server" Width="100px" AutoPostBack="True" OnCheckedChanged="chkPOBox_CheckedChanged"/>
+    </div>
     <div class="form_line clearfix">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvAddress1" runat="server" Display="Dynamic" ControlToValidate="txtAddress1"></asp:RequiredFieldValidator>
             <asp:Label ID="lblAddress1Error" runat="server" Visible="false"></asp:Label></div>
-        <label class="label-1">
-            Address*</label>
+        <asp:Label class="label-1" Text="Address*" runat="server" ID="lblAddress"/>
         <asp:TextBox ID="txtAddress1" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="chkPOBox" EventName="CheckedChanged" />
+        </Triggers>
+    </asp:UpdatePanel>
     <div class="form_line clearfix" runat="server" visible="false">
         <div class="error-1">
         </div>
