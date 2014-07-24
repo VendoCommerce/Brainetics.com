@@ -1231,7 +1231,7 @@ namespace CSWeb
         public static bool ValidatePOBox(string address)
         {
             address = address.ToLower();
-            if (address.Contains("box") | address.Contains("p. o.") | address.Contains("p o box") | address.Contains("post office") | address.Contains("p.o."))
+            if (address.Contains("box") | address.Contains("p. o.") | address.Contains("p o box") | address.Contains("post office") | address.Contains("p.o") | address.Contains("p.o.") | address.Trim().StartsWith("po"))
             {
                 string resultString = Regex.Match(address, @"\d+").Value;
                 if (resultString.Length < 2)
