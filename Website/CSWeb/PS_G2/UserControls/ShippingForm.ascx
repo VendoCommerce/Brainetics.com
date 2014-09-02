@@ -117,6 +117,10 @@
      <div class="form_line_guarantee">
         <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">30-Day Money-Back Guarantee!</a>
         </div>
+
+    <div class="form_line_guarantee" id="link_amazonprime" style="padding-top: 12px;">
+        
+    </div>
         
          <div class="form_line_guarantee">
          	<div class="norton_ssl_cart"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script><br />
