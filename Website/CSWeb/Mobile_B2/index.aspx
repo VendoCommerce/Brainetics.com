@@ -29,11 +29,17 @@
 
 <div class="content">
 
-<div class="hometop"><img src="<%= GetDynamicVersionData("homepageimage")%>" width="640" height="927" usemap="#Maphome1" class="block" alt="Brainetics" />
+<div class="hometop"><img src="<%= GetDynamicVersionData("homepageimage")%>" width="640" height="906" id="homeimage_amazon" usemap="#Maphome1" class="block" alt="Brainetics" />
   <map name="Maphome1">
-    <area shape="rect" coords="421,172,618,298" href="https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_30day.mp4" alt="Watch Video" target="_blank">
-    <area shape="rect" coords="320,715,614,794" href="cart.aspx" alt="Order Now" accesskey="1">
-    <area shape="circ" coords="560,384,63" href="#mgb" class="mgb" alt="60 Day Money-Back Guarantee">
+    <area shape="rect" coords="421,150,618,288" href="https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_30day.mp4" alt="Watch Video" target="_blank">
+    <area shape="rect" coords="320,695,614,790" href="cart.aspx" alt="Order Now" accesskey="1">
+    <area shape="circ" coords="560,364,63" href="#mgb" class="mgb" alt="60 Day Money-Back Guarantee">
+  </map>
+  <map name="Maphome2">
+    <area shape="rect" coords="421,150,618,288" href="https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_30day.mp4" alt="Watch Video" target="_blank">
+    <area shape="rect" coords="320,695,614,790" href="cart.aspx" alt="Order Now" accesskey="1">
+    <area shape="circ" coords="560,364,63" href="#mgb" class="mgb" alt="60 Day Money-Back Guarantee">
+    <area shape="rect" coords="360,830,616,906" href="http://www.amazon.com/NEW-Brainetics-Enhanced-Includes-Exclusive/dp/B00JVUF0GY/ref=sr_1_1?ie=UTF8&qid=1409084938&sr=8-1&keywords=brainetics" alt="Buy on Amazon Prime" target="_blank">
   </map>
   
   <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nav2.png" width="640" height="812" usemap="#Maphome2" class="block" />
