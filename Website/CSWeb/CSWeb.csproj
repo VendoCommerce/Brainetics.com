@@ -221,6 +221,7 @@
     <Content Include="Admin\VersionCategoryList.aspx" />
     <Content Include="Admin\VersionList.aspx" />
     <Content Include="Admin\VersionReport.aspx" />
+    <Content Include="amazonTracker.aspx" />
     <Content Include="AuthorizeOrder.aspx" />
     <Content Include="B2\aboutmike.aspx" />
     <Content Include="B2\AddProduct.aspx" />
@@ -1916,6 +1917,13 @@
     </Compile>
     <Compile Include="Admin\VersionReport.aspx.designer.cs">
       <DependentUpon>VersionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="amazonTracker.aspx.cs">
+      <DependentUpon>amazonTracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="amazonTracker.aspx.designer.cs">
+      <DependentUpon>amazonTracker.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\FulfillmentHouse\Acmg.cs" />
     <Compile Include="App_Code\FulfillmentHouse\Chargify.cs" />
