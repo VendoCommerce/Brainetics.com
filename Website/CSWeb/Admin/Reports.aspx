@@ -360,7 +360,8 @@ padding: 9px 0 3px 0;
             <div id="report_nav">
                 <a href="VersionReport.aspx">
                     Version Report</a> | <span class="current">Standard Report</span> | <a href="SIDReport.aspx">SID Report</a> 
-                
+ | <a href="AmazonLinkReport.aspx">
+                    Amazon Link Report</a> 
             </div>
             <div id="header" class="text_replace">
                 CONVERSION SYSTEMS - Maximize Your Online Revenue

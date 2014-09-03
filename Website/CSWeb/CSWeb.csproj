@@ -204,6 +204,7 @@
     <Content Include="Admin\Reports.aspx" />
     <Content Include="Admin\ResourceList.aspx" />
     <Content Include="Admin\Shipping.aspx" />
+    <Content Include="Admin\AmazonLinkReport.aspx" />
     <Content Include="Admin\SIDReport.aspx" />
     <Content Include="Admin\SitePrefItem.aspx" />
     <Content Include="Admin\SKUItem.aspx" />
@@ -1798,6 +1799,13 @@
     </Compile>
     <Compile Include="Admin\Shipping.aspx.designer.cs">
       <DependentUpon>Shipping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AmazonLinkReport.aspx.cs">
+      <DependentUpon>AmazonLinkReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AmazonLinkReport.aspx.designer.cs">
+      <DependentUpon>AmazonLinkReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\SIDReport.aspx.cs">
       <DependentUpon>SIDReport.aspx</DependentUpon>
