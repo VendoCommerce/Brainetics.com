@@ -37,7 +37,7 @@
             <div id="report_nav">
                 <span class="current">Version Report</span> | <a href="Reports.aspx">
                     Standard Report</a> | <a href="SIDReport.aspx">SID Report</a> | <a href="AmazonLinkReport.aspx">
-                    Amazon Link Report</a>              
+                    Amazon Button Clicks</a>              
             </div>
             <div id="log_link">
                 <a id="lnk_logout" href="Logout.aspx">Logout</a></div>
