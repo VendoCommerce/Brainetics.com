@@ -159,7 +159,7 @@ namespace CSWeb.FulfillmentHouse
             string res = CommonHelper.HttpPost(config.Attributes["transactionUrl"].Value, "UserName=" + config.Attributes["login"].Value + "&Password=" + config.Attributes["password"].Value + "&GroupCode=" + config.Attributes["GroupCode"].Value + "&UniqueId=" + orderItem.OrderId.ToString() + "&ClNo=" + config.Attributes["CL_NO"].Value + "&Project=" + config.Attributes["Project"].Value + "&XMLFormatCode=" + config.Attributes["XMLFormatCode"].Value + "&OrdXML=" + req);
             
 
-               
+                
             
             
             Dictionary<string, AttributeValue> orderAttributes =  new Dictionary<string, AttributeValue>();
