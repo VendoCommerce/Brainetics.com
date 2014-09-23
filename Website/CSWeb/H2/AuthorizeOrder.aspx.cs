@@ -44,7 +44,7 @@ namespace CSWeb.H2.Store
                 // this means that  customer clicked back, so should be directed to receipt page.
                 Response.Redirect("receipt.aspx");
             }
-            if (!IsPostBack)
+          if (!IsPostBack)
             {
                 CSWebBase.SiteBasePage.TempOrderFix(CartContext, orderData.OrderStatusId);
 

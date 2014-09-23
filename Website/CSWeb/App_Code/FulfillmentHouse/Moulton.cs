@@ -166,16 +166,16 @@ namespace CSWeb.FulfillmentHouse
             orderAttributes.Add("Request", new CSBusiness.Attributes.AttributeValue(req));
             orderAttributes.Add("Response", new CSBusiness.Attributes.AttributeValue(res));
 
-            if (res.ToLower().Contains("good"))
+            if (res.ToLower().Contains("success"))
             {
                 CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderId,orderAttributes,2);
                 result = true;
             }
-            else if (orderItem.CreditInfo.CreditCardNumber.Equals("4111111111111111"))
-            {   
-                CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderId, orderAttributes, 5);
-                result = true;
-            }
+            //else if (orderItem.CreditInfo.CreditCardNumber.Equals("4111111111111111"))
+            //{   
+            //    CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderId, orderAttributes, 5);
+            //    result = true;
+            //}
             else
             {
                 CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderId, orderAttributes, 5);
