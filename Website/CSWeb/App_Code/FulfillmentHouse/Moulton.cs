@@ -82,6 +82,14 @@ namespace CSWeb.FulfillmentHouse
                     {
                         cmpCode = "";
                     }
+                    string nop = "1";
+                    foreach (Sku sku in orderItem.SkuItems)
+                    {
+                        sku.LoadAttributeValues();
+                        if (sku.ContainsAttribute("numberofpayments"))
+                            if (sku.AttributeValues["numberofpayments"] != null && sku.AttributeValues["numberofpayments"].Value.Length > 0)
+                                nop = sku.AttributeValues["numberofpayments"].Value;
+                    }
                     xml.WriteStartElement("Order");
                     xml.WriteAttributeString("version", "2.00");
                         xml.WriteStartElement("OrderHeader");
@@ -93,8 +101,8 @@ namespace CSWeb.FulfillmentHouse
                             xml.WriteElementString("CREDCD", orderItem.CreditInfo.CreditCardNumber);
                             xml.WriteElementString("EXPDT", orderItem.CreditInfo.CreditCardExpired.ToString("MMyy")); 
                             xml.WriteElementString("PROJECT", config.Attributes["Project"].Value); 
-                            xml.WriteElementString("PAY_TYPE", config.Attributes["PayType"].Value); 
-                            xml.WriteElementString("NUM_PYMNTS", "1");
+                            xml.WriteElementString("PAY_TYPE", config.Attributes["PayType"].Value);
+                            xml.WriteElementString("NUM_PYMNTS", nop);
                             xml.WriteElementString("EMAIL", orderItem.CustomerInfo.BillingAddress.Email); 
                             xml.WriteElementString("COMPANY", "");
                             xml.WriteElementString("F_NAME", orderItem.CustomerInfo.ShippingAddress.FirstName);
@@ -132,7 +140,7 @@ namespace CSWeb.FulfillmentHouse
                             xml.WriteElementString("QUANTITY_ORDERED", s.Quantity.ToString());
                             xml.WriteElementString("OFFER_CODE", s.SkuCode);
                             xml.WriteElementString("OFFER_DESCRIPTION", s.SkuCode);//"DMDR191-01");
-                            xml.WriteElementString("TAXABLE_FLAG", config.Attributes["TAXABLE_FLAG"].Value);
+                            //xml.WriteElementString("TAXABLE_FLAG", config.Attributes["TAXABLE_FLAG"].Value);
                             //xml.WriteElementString("CONTINUITY_FLAG", config.Attributes["CONTINUITY_FLAG"].Value);
                             xml.WriteEndElement();
                         
