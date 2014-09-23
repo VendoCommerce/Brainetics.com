@@ -45,11 +45,11 @@ namespace CSWeb.H2.Store
                         clientData = (ClientCartContext)Session["ClientOrderData"];
                         cartObject = new Cart();
                         cartObject.AddItem(skuId, qId, true, false);
-                        //if (dId > 0)
-                        //{
-                        //    bool settingVal = Convert.ToBoolean(ConfigHelper.ReadAppSetting("DisCountCardDisplay", "false"));
-                        //    cartObject.AddItem(dId, qId, settingVal, false);
-                        //}
+                        if (dId > 0)
+                        {
+                            bool settingVal = Convert.ToBoolean(ConfigHelper.ReadAppSetting("DisCountCardDisplay", "false"));
+                            cartObject.AddItem(dId, qId, settingVal, false);
+                        }
 
                         cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
                         cartObject.Compute();
@@ -72,11 +72,11 @@ namespace CSWeb.H2.Store
                         clientData = (ClientCartContext)Session["ClientOrderData"];
                         cartObject = new Cart();
                         cartObject.AddItem(skuId, qId, true, false);
-                        //if (dId > 0)
-                        //{
-                        //    bool settingVal = Convert.ToBoolean(ConfigHelper.ReadAppSetting("DisCountCardDisplay", "false"));
-                        //    cartObject.AddItem(dId, qId, settingVal, false);
-                        //}
+                        if (dId > 0)
+                        {
+                            bool settingVal = Convert.ToBoolean(ConfigHelper.ReadAppSetting("DisCountCardDisplay", "false"));
+                            cartObject.AddItem(dId, qId, settingVal, false);
+                        }
 
                         //CSWebBase.SiteBasePage.AddAdditionalItems(cartObject);
 

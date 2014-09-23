@@ -50,7 +50,7 @@ namespace CSWeb.Store
                             cartObject.AddItem(dId, qId, settingVal, false);
                         }
 
-                        CSWebBase.SiteBasePage.AddAdditionalItems(clientData.CartInfo);
+                        //CSWebBase.SiteBasePage.AddAdditionalItems(clientData.CartInfo);
 
                         cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
                         cartObject.Compute();

@@ -230,7 +230,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 cartItem.Quantity = OldQuantity;
             }
 
-            CSWebBase.SiteBasePage.AddAdditionalItems(CartContext.CartInfo);
+            //CSWebBase.SiteBasePage.AddAdditionalItems(cartContext.CartInfo);
             CartContext.CartInfo.Compute();
             BindControls();
             if (UpdateCart != null)

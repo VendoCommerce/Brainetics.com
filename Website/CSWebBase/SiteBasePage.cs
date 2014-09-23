@@ -203,75 +203,76 @@ namespace CSWebBase
             return sku.GetAttributeValue("RushSku", false);
         }
 
-        public static bool AddAdditionalItems(CSBusiness.ShoppingManagement.Cart cart)
-        {
-            bool updated = false;
-            Sku sku;
+        //public static bool AddAdditionalItems(CSBusiness.ShoppingManagement.Cart cart)
+        //{
+            
+        //    bool updated = false;
+        //    Sku sku;
 
-            // Enhanced Multi Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.EnhancedMultiPay) || (x.SkuId == (int)SkuEnum.Enhanced4MultiPay); });
-            if (sku != null) 
-            {
-                if (AddIfDoesNotExist(cart, SkuEnum.Trial, sku.Quantity))
-                    updated = true;
+        //    // Enhanced Multi Pay
+        //    sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.EnhancedMultiPay) || (x.SkuId == (int)SkuEnum.Enhanced4MultiPay); });
+        //    if (sku != null) 
+        //    {
+        //        if (AddIfDoesNotExist(cart, SkuEnum.Trial, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
-                    updated = true;
-            }
+        //        if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
+        //            updated = true;
+        //    }
 
-            // Accelerated Multi Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.AcceleratedMultiPay) || (x.SkuId == (int)SkuEnum.Accelerated4MultiPay); });
-            if (sku != null)
-            {
-                if (AddIfDoesNotExist(cart, SkuEnum.Trial, sku.Quantity))
-                    updated = true;
+        //    // Accelerated Multi Pay
+        //    sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.AcceleratedMultiPay) || (x.SkuId == (int)SkuEnum.Accelerated4MultiPay); });
+        //    if (sku != null)
+        //    {
+        //        if (AddIfDoesNotExist(cart, SkuEnum.Trial, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
-                    updated = true;
+        //        if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.DigitalPowerLicense, sku.Quantity))
-                    updated = true;
+        //        if (AddIfDoesNotExist(cart, SkuEnum.DigitalPowerLicense, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.ChallengeGameMultiPay, sku.Quantity))
-                    updated = true;
+        //        if (AddIfDoesNotExist(cart, SkuEnum.ChallengeGameMultiPay, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.QuickCardSet, sku.Quantity))
-                    updated = true;
+        //        if (AddIfDoesNotExist(cart, SkuEnum.QuickCardSet, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.OnlineLanguageBundle, sku.Quantity))
-                    updated = true;
-            }
+        //        if (AddIfDoesNotExist(cart, SkuEnum.OnlineLanguageBundle, sku.Quantity))
+        //            updated = true;
+        //    }
 
-            // Enhanced One Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.EnhancedOnePay) || (x.SkuId == (int)SkuEnum.Enhanced4OnePay); });
-            if (sku != null)
-            {
-                if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
-                    updated = true;
-            }
+        //    // Enhanced One Pay
+        //    sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.EnhancedOnePay) || (x.SkuId == (int)SkuEnum.Enhanced4OnePay); });
+        //    if (sku != null)
+        //    {
+        //        if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
+        //            updated = true;
+        //    }
 
-            // Accelerated One Pay
-            sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.AcceleratedOnePay) || (x.SkuId == (int)SkuEnum.Accelerated4OnePay); });
-            if (sku != null)
-            {
-                if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
-                    updated = true;
+        //    // Accelerated One Pay
+        //    sku = cart.CartItems.FirstOrDefault(x => { return (x.SkuId == (int)SkuEnum.AcceleratedOnePay) || (x.SkuId == (int)SkuEnum.Accelerated4OnePay); });
+        //    if (sku != null)
+        //    {
+        //        if (AddIfDoesNotExist(cart, SkuEnum.BrainBoosting, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.DigitalPowerLicense, sku.Quantity))
-                    updated = true;
+        //        if (AddIfDoesNotExist(cart, SkuEnum.DigitalPowerLicense, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.ChallengeGameSinglePay, sku.Quantity))
-                    updated = true;
+        //        if (AddIfDoesNotExist(cart, SkuEnum.ChallengeGameSinglePay, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.QuickCardSet, sku.Quantity))
-                    updated = true;
+        //        if (AddIfDoesNotExist(cart, SkuEnum.QuickCardSet, sku.Quantity))
+        //            updated = true;
 
-                if (AddIfDoesNotExist(cart, SkuEnum.OnlineLanguageBundle, sku.Quantity))
-                    updated = true;
-            }
+        //        if (AddIfDoesNotExist(cart, SkuEnum.OnlineLanguageBundle, sku.Quantity))
+        //            updated = true;
+        //    }
 
-            return updated;
-        }
+        //    return updated;
+        //}
 
         public static bool AddIfDoesNotExist(CSBusiness.ShoppingManagement.Cart cart, SkuEnum skuEnum, int quantity)
         {

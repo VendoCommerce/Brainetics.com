@@ -224,7 +224,7 @@ namespace CSWeb.PS_C2.UserControls
 
             cartContext.CartInfo.AddOrUpdate(currentSku.SkuId, quantity, true, false, false);
 
-            CSWebBase.SiteBasePage.AddAdditionalItems(cartContext.CartInfo);
+            //CSWebBase.SiteBasePage.AddAdditionalItems(cartContext.CartInfo);
 
             cartContext.CartInfo.Compute();
 

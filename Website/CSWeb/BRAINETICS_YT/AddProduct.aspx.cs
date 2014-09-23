@@ -78,7 +78,7 @@ namespace CSWeb.BRAINETICS_YT.Store
                             cartObject.AddItem(dId, qId, settingVal, false);
                         }
 
-                        CSWebBase.SiteBasePage.AddAdditionalItems(cartObject);
+                        //CSWebBase.SiteBasePage.AddAdditionalItems(cartObject);
 
                         cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
                         CSWebBase.SiteBasePage.CallCartCompute(cartObject);
