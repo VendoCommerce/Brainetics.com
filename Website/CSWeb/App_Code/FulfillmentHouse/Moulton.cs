@@ -182,7 +182,7 @@ namespace CSWeb.FulfillmentHouse
                 result = false;
             }          
             //Prepaid Check
-            GetPrepiadResponse(orderId, orderItem.CreditInfo.CreditCardNumber.Substring(0, 13));
+            //GetPrepiadResponse(orderId, orderItem.CreditInfo.CreditCardNumber.Substring(0, 13));
 
             return result;
         }

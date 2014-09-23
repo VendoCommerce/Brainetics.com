@@ -1207,6 +1207,7 @@
     <Content Include="Scripts\jwplayer\glow2.zip" />
     <Content Include="appsettings.config.token" />
     <Content Include="Register\web.config" />
+    <None Include="Properties\PublishProfiles\210.pubxml" />
     <None Include="Service References\HitLinks\CSWeb.HitLinks.Data.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
