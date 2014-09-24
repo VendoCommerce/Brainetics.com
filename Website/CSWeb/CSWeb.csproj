@@ -488,6 +488,10 @@
     <Content Include="A5\UserControls\ShippingForm.ascx" />
     <Content Include="A5\UserControls\ShoppingCartControl.ascx" />
     <Content Include="A5\UserControls\TrackingPixels.ascx" />
+    <Content Include="Content\Images\b2\upsell_m_warranty.jpg" />
+    <Content Include="Content\Images\b2\upsell_new_singlepay_v2.jpg" />
+    <Content Include="Content\Images\b2\upsell_new_singlepay_v5.jpg" />
+    <Content Include="Content\Images\b2\upsell_warranty.jpg" />
     <Content Include="D2\aboutmike.aspx" />
     <Content Include="D2\AddProduct.aspx" />
     <Content Include="D2\AuthorizeOrder.aspx" />
