@@ -13,7 +13,7 @@
 <link href="/Scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="/Scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript" src="/Scripts/global_mobile.js"></script>
-<link href="/styles/global_mobile.css" rel="stylesheet" type="text/css" />
+<link href="../styles/global_mobile.css" rel="stylesheet" type="text/css" />
 
 </head>
  
@@ -25,12 +25,31 @@
 
 <div class="content">
 
+<!-- 5yr warranty  -->
+
+<div class="page_upsell">
+<div class="upsell_txt">
+<h2 class="f32 webfont1 lh">Protect all your DVDs with our<br>
+  5-YEAR WARRANTY PROTECTION!</h2>
+<p><img width="617" height="261" src="../content/images/b2/upsell_m_warranty.jpg" alt="We'll drop the trial fee and one whole payment - With 1-Pay, you'll only pay, 149.85" class="block" style="margin-left: -10px;" /></p>
+<p>You'll want to protect all your DVDs from normal wear and tear with our 5-Year Warranty Protection. It would cost $30 to replace just one DVD but today you can protect all 7 DVDs for 5 years for just <strong>$3.75 a month for 4 months</strong> ... so if any of your DVDs are EVER damaged, simply contact customer service and we'll send you a <strong>FREE REPLACEMENT RIGHT AWAY!</strong></p>
+<div class="ask ask_arrow">
+  Would you like to take advantage of this special offer?
+  <span class="btns" style="margin-right: 50px;">
+  <a href="javascript:void(0)" bind="no"><img width="117" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nothanks_btn.png" alt="No, thanks" /></a>
+  <a href="javascript:void(0)" bind="yes"><img width="336" height="56" src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/yes_continue_btn.png" alt="Yes! Continue" /></a>
+</span></div>
+</div></div><!-- END page_upsell -->
+
+
+
+
 <!-- additional 1p -->
 
 <div class="page_upsell">
 <div class="upsell_txt">
 <h2 class="f48 webfont1" style="line-height: 54px;">SAVE BIG with One <br>EASY Payment!</h2>
-<img width="606" height="392" src="//d1f7jvrzd4fora.cloudfront.net/images//mobile/upsell_new_singlepay_v1.jpg" alt="We'll drop the trial fee and one whole payment - With 1-Pay, you'll only pay, 149.85" class="block" />
+<img width="610" height="374" src="../content/images/b2/upsell_new_singlepay_v2.jpg" alt="We'll drop the trial fee and one whole payment - With 1-Pay, you'll only pay, 149.85" class="block" />
 <div class="ask ask_arrow">
 Would you like to take advantage of this special offer?
 <span class="btns" style="margin-right: 50px;">
@@ -160,7 +179,7 @@ as quickly as you can –  upgrade to<br>
 rush priority shipping now!<br>
 </strong></p></div>
 <p class="blue" style="padding-bottom: 16px;"><strong style="color: #0a65a0;">Make Your Selection:</strong></p>
-<div style='background: url("//d1f7jvrzd4fora.cloudfront.net/images/mobile/upsell_radio_btn_box.png") no-repeat scroll 0px 0px transparent; width: 585px; height: 120px; position: relative; padding: 28px 0px 0px 15px; color: #000;'><input type="hidden" name="addsku" id="addsku" required="true" error="Please select an item." />   <input type="radio" name="skuitem" value="one" onclick="updateUpsellSku(this)" /> <strong>2 Day Shipping ($39.95)</strong> &nbsp; &nbsp;<input type="radio" name="skuitem" value="two" onclick="updateUpsellSku(this)" /> <strong>Overnight ($79.96)</strong></div>
+<div style='background: url("//d1f7jvrzd4fora.cloudfront.net/images/mobile/upsell_radio_btn_box.png") no-repeat scroll 0px 0px transparent; width: 585px; height: 120px; position: relative; padding: 28px 0px 0px 15px; color: #000;'><input type="hidden" name="addsku" id="addsku" required error="Please select an item." />   <input type="radio" name="skuitem" value="one" onclick="updateUpsellSku(this)" /> <strong>2 Day Shipping ($39.95)</strong> &nbsp; &nbsp;<input type="radio" name="skuitem" value="two" onclick="updateUpsellSku(this)" /> <strong>Overnight ($79.96)</strong></div>
  
  <div class="ask ask_arrow">
 Would you like to upgrade to Rush Shipping?
