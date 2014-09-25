@@ -1185,6 +1185,52 @@
     <Content Include="REM_A2\UserControls\ShippingForm.ascx" />
     <Content Include="REM_A2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="REM_A2\UserControls\TrackingPixels.ascx" />
+    <Content Include="RETARGETING\aboutmike.aspx" />
+    <Content Include="RETARGETING\AddProduct.aspx" />
+    <Content Include="RETARGETING\AuthorizeOrder.aspx" />
+    <Content Include="RETARGETING\bottomcta.html" />
+    <Content Include="RETARGETING\CardDecline.aspx" />
+    <Content Include="RETARGETING\Cart.aspx" />
+    <Content Include="RETARGETING\CheckoutSessionExpired.aspx" />
+    <Content Include="RETARGETING\contact.aspx" />
+    <Content Include="RETARGETING\faq.aspx" />
+    <Content Include="RETARGETING\footer.html" />
+    <Content Include="RETARGETING\footer_cart.html" />
+    <Content Include="RETARGETING\footer_receipt.html" />
+    <Content Include="RETARGETING\footer_upsell.html" />
+    <Content Include="RETARGETING\header.html" />
+    <Content Include="RETARGETING\headernav.html" />
+    <Content Include="RETARGETING\header_main.html" />
+    <Content Include="RETARGETING\header_nonav.html" />
+    <Content Include="RETARGETING\howitworks.aspx" />
+    <Content Include="RETARGETING\index.aspx" />
+    <Content Include="RETARGETING\OfferChange.aspx" />
+    <Content Include="RETARGETING\popups.html" />
+    <Content Include="RETARGETING\PostSale.aspx" />
+    <Content Include="RETARGETING\privacy.aspx" />
+    <Content Include="RETARGETING\productdetails.aspx" />
+    <Content Include="RETARGETING\receipt.aspx" />
+    <Content Include="RETARGETING\receipt_friendly.aspx" />
+    <Content Include="RETARGETING\send_email.aspx" />
+    <Content Include="RETARGETING\terms.aspx" />
+    <Content Include="RETARGETING\testimonials.aspx" />
+    <Content Include="RETARGETING\upsells.aspx" />
+    <Content Include="RETARGETING\UserControls\BillingCreditForm.ascx" />
+    <Content Include="RETARGETING\UserControls\BillingForm.ascx" />
+    <Content Include="RETARGETING\UserControls\BillingShippingCreditForm.ascx" />
+    <Content Include="RETARGETING\UserControls\CardDecline.ascx" />
+    <Content Include="RETARGETING\UserControls\CheckoutSummary.ascx" />
+    <Content Include="RETARGETING\UserControls\CheckoutThankYouModule.ascx" />
+    <Content Include="RETARGETING\UserControls\CheckoutThankYouModule2.ascx" />
+    <Content Include="RETARGETING\UserControls\CheckoutThankYouModulePrint2.ascx" />
+    <Content Include="RETARGETING\UserControls\Contact.ascx" />
+    <Content Include="RETARGETING\UserControls\Footer.ascx" />
+    <Content Include="RETARGETING\UserControls\Header.ascx" />
+    <Content Include="RETARGETING\UserControls\LoaderOverlay.ascx" />
+    <Content Include="RETARGETING\UserControls\ShippingCreditForm.ascx" />
+    <Content Include="RETARGETING\UserControls\ShippingForm.ascx" />
+    <Content Include="RETARGETING\UserControls\ShoppingCartControl.ascx" />
+    <Content Include="RETARGETING\UserControls\TrackingPixels.ascx" />
     <Content Include="SCA_Email_1\index.html" />
     <Content Include="SCA_Email_2\index.html" />
     <Content Include="Scripts\autoTab.js" />
@@ -5621,6 +5667,180 @@
     <Compile Include="REM_A2\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
     </Compile>
+    <Compile Include="RETARGETING\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\AuthorizeOrder.aspx.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\AuthorizeOrder.aspx.designer.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\CardDecline.aspx.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\CardDecline.aspx.designer.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\OfferChange.aspx.cs">
+      <DependentUpon>OfferChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\PostSale.aspx.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\PostSale.aspx.designer.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\receipt.aspx.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\receipt.aspx.designer.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\receipt_friendly.aspx.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\receipt_friendly.aspx.designer.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\send_email.aspx.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\send_email.aspx.designer.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\BillingCreditForm.ascx.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\BillingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\BillingForm.ascx.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\BillingForm.ascx.designer.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CardDecline.ascx.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CardDecline.ascx.designer.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CheckoutSummary.ascx.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CheckoutSummary.ascx.designer.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CheckoutThankYouModule.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CheckoutThankYouModule2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CheckoutThankYouModulePrint2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\LoaderOverlay.ascx.cs">
+      <DependentUpon>LoaderOverlay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\LoaderOverlay.ascx.designer.cs">
+      <DependentUpon>LoaderOverlay.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\ShippingCreditForm.ascx.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\ShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\ShoppingCartControl.ascx.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\ShoppingCartControl.ascx.designer.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\TrackingPixels.ascx.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RETARGETING\UserControls\TrackingPixels.ascx.designer.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\HitLinks\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -5810,6 +6030,7 @@
     <Folder Include="PS_E2\Store\" />
     <Folder Include="PS_G2\Store\" />
     <Folder Include="REM_A2\Store\" />
+    <Folder Include="RETARGETING\Store\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
