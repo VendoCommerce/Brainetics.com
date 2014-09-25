@@ -37,7 +37,7 @@
     PO Box 48<br>
     Howell, MI 48844<br>
     Phone: 877-444-3776</p>
-  <p>Customer service is available Monday through Friday from 8:00am to 10:00pm Eastern Time. If you have any questions regarding your order that can not be answered by going to www.customerstatus.com, please feel free to email us <a href="mailto:brainetics@datapakservices.com">brainetics@datapakservices.com</a>.</p>
+  <p>Customer service is available Monday-Friday between 5:00 AM and  5:00 PM PST if you have any questions regarding your order that can not be answered by going to www.customerstatus.com, please feel free to email us <a href="mailto:brainetics@webcsr.info">brainetics@webcsr.info</a>.</p>
   <p>Please allow 24-48 hours for customer service to have information on your order.<br>
     Your Credit Card will not be charged until your order ships.</p>
   <p>For your convenience, please have your order information handy.</p>

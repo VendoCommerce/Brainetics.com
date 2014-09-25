@@ -23,7 +23,9 @@ namespace CSWeb.REM_A2.Store
 
         protected override void Page_Load(object sender, EventArgs e)
         {
+            Response.Redirect("/" + Request.QueryString);
             base.Page_Load(sender, e);
+             
 
             //Hashtable htAdditinalInfo = new Hashtable();
             //Hashtable htAdditinalInfoResponse = new Hashtable();
