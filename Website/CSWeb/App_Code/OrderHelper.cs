@@ -550,6 +550,24 @@ namespace CSWeb
             return null;
         }
 
+        public static XmlNode GetDataPakFulFillmentHouseConfig()
+        {
+            XmlDocument doc = new XmlDocument();
+            List<FulfillmentHouseProviderSetting> allSettings = FulfillmentHouseProviderManger.GetAllProvidersFromDB(true);
+            int totalSettings = allSettings.Count;
+
+            for (int i = 0; i < totalSettings; i++)
+            {
+                FulfillmentHouseProviderSetting settings = allSettings[i];
+                if (settings.Title == "DataPak")
+                {
+                    doc.LoadXml(settings.ProviderXML);
+                    return doc.FirstChild;
+                }
+            }
+            return null;
+        }
+
         public static XmlNode GetDefaultFulFillmentHouseConfig(string title)
         {
             XmlDocument doc = new XmlDocument();

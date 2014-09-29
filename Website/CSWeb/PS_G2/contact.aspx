@@ -20,7 +20,7 @@
 <script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
 <script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
 <script src="/Scripts/global_A5.js"></script>
-<link href="../Styles/global_d2.css" rel="stylesheet" type="text/css" />
+<link href="../Styles/global_e2.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -31,16 +31,12 @@
 <div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/page_bg.jpg) repeat-x top #fff">
 <div class="left">
 <h2>Contact Us</h2>
-  <p>We are committed to providing the best products and friendliest customer service. If you should have any questions about ordering or about any of our great products, please feel free to contact us via the information provided below:</p>
-  <p><strong>Send checks or money orders to:</strong><br>
-    Brainetics<br>
-    PO Box 48<br>
-    Howell, MI 48844<br>
-    Phone: 877-444-3776</p>
-  <p>Customer service is available Monday-Friday between 5:00 AM and  5:00 PM PST if you have any questions regarding your order that can not be answered by going to www.customerstatus.com, please feel free to email us <a href="mailto:brainetics@webcsr.info">brainetics@webcsr.info</a>.</p>
-  <p>Please allow 24-48 hours for customer service to have information on your order.<br>
-    Your Credit Card will not be charged until your order ships.</p>
-  <p>For your convenience, please have your order information handy.</p>
+  <p>We are committed to providing excellent customer service to all of our important customers.  </p>
+<p><a href="https://trackmyorderstatus.com/(S(wfbd5b2qmcsugw55sx2kkmb0))/Introduction.aspx" target="_blank"><strong>To Track or Check the Status of your order, please click here.</strong></a></p>
+<p>Please note:  there may be a 24-48 hour delay from the time you place your order until it becomes visible here. </p>
+<p><strong>If you have a product question:</strong><br>
+Please email us at <a href="mailto:brainetics@webcsr.info">brainetics@webcsr.info</a> or call customer at 1-877-444-3776 Monday-Friday between 5:00 AM and  5:00 PM PST.</p>
+
 </div>
 <div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>

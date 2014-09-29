@@ -147,10 +147,11 @@ namespace CSWeb.FulfillmentHouse
                         }
                         
                     xml.WriteEndElement();
-                     xml.WriteStartElement("Financial");
-                     xml.WriteElementString("CVV2_ID", orderItem.CreditInfo.CreditCardCSC); 
-                         xml.WriteElementString("TRANSACTION_ID", config.Attributes["GroupCode"].Value); 
-                    xml.WriteEndElement();
+                    //TODO enable when fullfilment was enabled:
+                    //////// xml.WriteStartElement("Financial");
+                    //////// xml.WriteElementString("CVV2_ID", orderItem.CreditInfo.CreditCardCSC); 
+                    ////////     xml.WriteElementString("TRANSACTION_ID", config.Attributes["GroupCode"].Value); 
+                    ////////xml.WriteEndElement();
                 xml.WriteEndElement();
   
                     ////flush results to string object
