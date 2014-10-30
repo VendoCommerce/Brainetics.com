@@ -48,7 +48,9 @@ namespace CSWeb.H2.Store
             {
                 CSWebBase.SiteBasePage.TempOrderFix(CartContext, orderData.OrderStatusId);
 
-                Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
+                //new CSWeb.FulfillmentHouse.DataPakTax().CalculateTax(orderId);
+                
+              Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
 
                 if (orderData.CreditInfo.CreditCardNumber.Equals("4444333322221111"))
                 {

@@ -48,6 +48,8 @@ namespace CSWeb.H3.Store
             {
                 CSWebBase.SiteBasePage.TempOrderFix(CartContext, orderData.OrderStatusId);
 
+                //new CSWeb.FulfillmentHouse.DataPakTax().CalculateTax(orderId);
+                
                 Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
 
                 if (orderData.CreditInfo.CreditCardNumber.Equals("4444333322221111"))
@@ -93,10 +95,10 @@ namespace CSWeb.H3.Store
                     {
                         try
                         {
-                            if (Request["oid"] != null)
-                            {
-                                new CSWeb.FulfillmentHouse.DataPak().PostOrderToDataPak(orderId);
-                            }
+                            //if (Request["oid"] != null)
+                            //{
+                            new CSWeb.FulfillmentHouse.Moulton().PostOrder(orderId);
+                            //}
                         }
                         catch (Exception ex)
                         {
