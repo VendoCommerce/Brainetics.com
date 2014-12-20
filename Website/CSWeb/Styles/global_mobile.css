@@ -868,3 +868,43 @@ padding-bottom: 20px;
 
 #receipt #footer_phone {display: none;}
 p.basket_title {display: none;}
+
+
+.reviews {
+    margin: 40px 0 60px 0;
+}
+
+.reviews h2 {
+    padding: 0;
+    margin: 0 0 60px 0;
+    border-bottom: #0e81c0 solid 5px;
+    font-family: 'Nunito', sans-serif; 
+    font-size: 54px;
+}
+.reviews h2 span {
+    display: inline-block;
+    background: #fff;
+    padding: 0 25px;
+    position: relative;
+    top: 36px;
+    margin: -20px 0 0 0;
+}
+
+.reviews ul {
+    list-style: none;
+    margin: -5px 0 0 25px;
+}
+.reviews ul li {
+    padding-bottom: 14px;
+    font-size: 26px;
+    line-height: 32px;
+    color: #7f7f7f;
+}
+.reviews ul li:before {
+    content: '\2022';
+    float: left;
+    width: 16px;
+    margin-left: -16px;
+    font-size: 22px;
+    color: #0e81c0;
+}

@@ -59,6 +59,12 @@
 </div></div>
 </div>
 
+    <div class="reviews">
+        <h2 class="text-center">Brainetics Reviews</h2>
+        <ul>
+            <li><a href="http://helpkidsbreakth.hubpages.com/hub/brainetics-review-math-memory-sysytem" target="_blank">HubPages - December 11, 2014</a></li>
+        </ul>
+    </div>
 </div>
 <div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>

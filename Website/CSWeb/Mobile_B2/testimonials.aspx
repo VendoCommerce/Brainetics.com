@@ -35,6 +35,14 @@
 	<div class="fleft" style="width: 227px;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test1.jpg" width="227" height="771" alt="" usemap="#Map" class="block" /></div>
     <div class="fleft" style="width: 413px;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test2.png" width="413" height="771" alt="" usemap="#Map" class="block" /></div>
 </div>
+
+    <div class="reviews">
+        <h2 class="text-center"><span>Brainetics Reviews</span></h2>
+        <ul>
+            <li><a href="http://helpkidsbreakth.hubpages.com/hub/brainetics-review-math-memory-sysytem" target="_blank">HubPages - December 11, 2014</a></li>
+        </ul>
+    </div>
+
 <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/hdr_more_amazing_stories.png" width="640" height="99" alt="" usemap="#Map" class="block" />
 <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test3.png" width="640" height="1245" alt="" usemap="#Map" class="block" />
 <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/test4.png" width="640" height="1545" alt="" usemap="#Map" class="block" />
