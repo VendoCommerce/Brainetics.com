@@ -42,7 +42,7 @@
     <area shape="rect" coords="360,830,616,906" href="http://www.amazon.com/NEW-Brainetics-Enhanced-Includes-Exclusive/dp/B00JVUF0GY/ref=sr_1_1?ie=UTF8&qid=1409084938&sr=8-1&keywords=brainetics" alt="Buy on Amazon Prime" target="_blank">
   </map>
   
-  <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nav2.png" width="640" height="812" usemap="#Maphome2" class="block" />
+  <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nav2.png" width="640" height="812" usemap="#Maphomenav" class="block" />
   <%-- Removed Terms of Service (we're waiting on that)
   <map name="Maphome2">
     <area shape="rect" coords="0,3,640,90" href="tel:1<%= GetCleanPhoneNumber(GetDynamicVersionData("phone"))%>" accesskey="2">
@@ -56,7 +56,7 @@
     <area shape="rect" coords="0,718,640,805" href="http://secure.datapakservices.com/OrderTrackingPortal/?comp_num=204&proj_num=003" target="_blank" alt="Track My Order">
     <area shape="rect" coords="0,808,640,901" href="mailto:[enter your email address]?subject=Email Reminder from Brainetics&body=Just sending you a reminder to order Brainetics! Simply visit http://www.brainetics.com to order the Award Winning System that works!" alt="Email a Reminder">
   </map>--%>
-  <map name="Maphome2">
+  <map name="Maphomenav">
     <area shape="rect" coords="0,3,640,90" href="tel:1<%= GetCleanPhoneNumber(GetDynamicVersionData("phone"))%>" accesskey="2">
     <area shape="rect" coords="0,93,640,180" href="why_brainetics.aspx" alt="Why Brainetics">
     <area shape="rect" coords="0,183,640,268" href="howitworks.aspx" alt="How It Works">
