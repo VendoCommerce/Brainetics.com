@@ -2550,6 +2550,7 @@
     <Compile Include="A5\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\Simpova.cs" />
     <Compile Include="AuthorizeOrder.aspx.cs">
       <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

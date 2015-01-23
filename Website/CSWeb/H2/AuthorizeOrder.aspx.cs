@@ -13,6 +13,7 @@ using CSBusiness.OrderManagement;
 using CSBusiness.Resolver;
 using CSBusiness.ShoppingManagement;
 using CSBusiness.Attributes;
+using CSWeb.App_Code;
 
 namespace CSWeb.H2.Store
 {
@@ -44,13 +45,16 @@ namespace CSWeb.H2.Store
                 // this means that  customer clicked back, so should be directed to receipt page.
                 Response.Redirect("receipt.aspx");
             }
-          if (!IsPostBack)
+            if (!IsPostBack)
             {
                 CSWebBase.SiteBasePage.TempOrderFix(CartContext, orderData.OrderStatusId);
 
+                //Calculate order tax
+                Simpova.CalculateTax(orderId);
+
                 //new CSWeb.FulfillmentHouse.DataPakTax().CalculateTax(orderId);
-                
-              Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
+
+                Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
 
                 if (orderData.CreditInfo.CreditCardNumber.Equals("4444333322221111"))
                 {
@@ -97,7 +101,7 @@ namespace CSWeb.H2.Store
                         {
                             //if (Request["oid"] != null)
                             //{
-                                new CSWeb.FulfillmentHouse.Moulton().PostOrder(orderId);
+                            new CSWeb.FulfillmentHouse.Moulton().PostOrder(orderId);
                             //}
                         }
                         catch (Exception ex)
