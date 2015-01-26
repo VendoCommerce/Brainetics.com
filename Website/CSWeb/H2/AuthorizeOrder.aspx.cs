@@ -13,7 +13,7 @@ using CSBusiness.OrderManagement;
 using CSBusiness.Resolver;
 using CSBusiness.ShoppingManagement;
 using CSBusiness.Attributes;
-using CSWeb.App_Code;
+//using CSWeb.App_Code;
 
 namespace CSWeb.H2.Store
 {
@@ -50,7 +50,7 @@ namespace CSWeb.H2.Store
                 CSWebBase.SiteBasePage.TempOrderFix(CartContext, orderData.OrderStatusId);
 
                 //Calculate order tax
-                Simpova.CalculateTax(orderId);
+               // Simpova.CalculateTax(orderId);
 
                 //new CSWeb.FulfillmentHouse.DataPakTax().CalculateTax(orderId);
 
