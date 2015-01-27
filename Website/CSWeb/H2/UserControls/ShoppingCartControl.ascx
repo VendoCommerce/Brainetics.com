@@ -52,7 +52,7 @@
             <div class="cart_totals_left">
                 Subtotal<br />
                 Shipping & Handling<br />
-                Tax<br />
+                Est. Tax<br />
                 Total</div>
             <div class="cart_totals_right">
                 <asp:Literal runat="server" ID='lblSubtotal'></asp:Literal><br />
