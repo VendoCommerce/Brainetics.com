@@ -67,7 +67,7 @@ namespace CSWebBase
             //    }
             //}
             double taxRate = Simpova.GetTaxRate(cart.ShippingAddress.ZipPostalCode, cart.ShippingAddress.StateProvinceId);
-            return (decimal)taxRate * (cart.SubTotalFullPrice);// + orderItem.ShippingCost - orderItem.DiscountAmount)
+            return (decimal)taxRate * (cart.SubTotalFullPrice + cart.SubTotal + cart.ShippingCost - cart.DiscountAmount);
 
             //return Math.Round(taxToReturn, 2);
         }
