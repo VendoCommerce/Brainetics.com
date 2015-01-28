@@ -49,7 +49,7 @@ namespace CSWeb
             _request.CardCvv = orderData.CreditInfo.CreditCardCSC;
             _request.CurrencyCode = "$";
             _request.ExpireDate = orderData.CreditInfo.CreditCardExpired;
-            _request.Amount = cardCheckOnly ? (double)1.00 : (double)orderData.Total;
+            _request.Amount = (double)(Math.Round(orderData.Total,2));
             _request.FirstName = orderData.CustomerInfo.BillingAddress.FirstName;
             _request.LastName = orderData.CustomerInfo.BillingAddress.LastName;
             _request.Address1 = orderData.CustomerInfo.BillingAddress.Address1;
