@@ -197,8 +197,6 @@
                 </asp:DropDownList>
                 <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-2">
                     <asp:ListItem Value="" Text="">Year</asp:ListItem>                    
-                    <asp:ListItem Value="2013">2013</asp:ListItem>
-                    <asp:ListItem Value="2014">2014</asp:ListItem>
                     <asp:ListItem Value="2015">2015</asp:ListItem>
                     <asp:ListItem Value="2016">2016</asp:ListItem>
                     <asp:ListItem Value="2017">2017</asp:ListItem>

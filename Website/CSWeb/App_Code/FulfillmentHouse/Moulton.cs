@@ -110,7 +110,7 @@ namespace CSWeb.FulfillmentHouse
                             xml.WriteElementString("ADDR_1", orderItem.CustomerInfo.ShippingAddress.Address1);
                             xml.WriteElementString("ADDR_2", orderItem.CustomerInfo.ShippingAddress.Address2);
                             xml.WriteElementString("CITY", orderItem.CustomerInfo.ShippingAddress.City);
-                            xml.WriteElementString("ST", "CA");
+                            xml.WriteElementString("ST", GetState(orderItem.CustomerInfo.ShippingAddress.StateProvinceId).Abbreviation.Trim());
                             xml.WriteElementString("ZIP", orderItem.CustomerInfo.ShippingAddress.ZipPostalCode);
                             xml.WriteElementString("PHONE", orderItem.CustomerInfo.ShippingAddress.PhoneNumber);                             
                             xml.WriteElementString("COUNTRY_CODE", orderItem.CustomerInfo.ShippingAddress.CountryCode.Trim());
@@ -122,7 +122,7 @@ namespace CSWeb.FulfillmentHouse
                             xml.WriteElementString("BILL_TO_ADDR_1", orderItem.CustomerInfo.BillingAddress.Address1);
                             xml.WriteElementString("BILL_TO_ADDR_2", orderItem.CustomerInfo.BillingAddress.Address2);
                             xml.WriteElementString("BILL_TO_CITY", orderItem.CustomerInfo.BillingAddress.City);
-                            xml.WriteElementString("BILL_TO_ST", "CA");
+                            xml.WriteElementString("BILL_TO_ST", GetState(orderItem.CustomerInfo.BillingAddress.StateProvinceId).Abbreviation.Trim());
                             xml.WriteElementString("BILL_TO_ZIP", orderItem.CustomerInfo.BillingAddress.ZipPostalCode);
                             xml.WriteElementString("BILL_TO_COUNTRY_CODE", orderItem.CustomerInfo.BillingAddress.CountryCode.Trim());
                             xml.WriteElementString("UNIQUE-ID", orderItem.OrderId.ToString());
@@ -229,6 +229,13 @@ namespace CSWeb.FulfillmentHouse
         private XmlNode GetConfig()
         {
             return OrderHelper.GetDefaultFulFillmentHouseConfig();
+        }
+
+        public static StateProvince GetState(int stateId)
+        {
+            List<StateProvince> list = StateManager.GetAllStates(0);
+            StateProvince item = list.FirstOrDefault(x => x.StateProvinceId == stateId);
+            return item;
         }
     }
 }
