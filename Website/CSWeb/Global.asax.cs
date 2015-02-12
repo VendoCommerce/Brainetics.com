@@ -16,6 +16,11 @@ namespace CSWeb
 {
     public class Global : CSBusiness.Web.CSBaseGlobal
     {
+        public override void Application_Start(object sender, EventArgs e)
+        {
+            Routing.RegisterRoutes();
+            base.Application_Start(sender, e);
+        }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {

@@ -79,9 +79,15 @@ namespace CSWeb.PS_G2.UserControls
             {
                 BindCountries(true);
                 BindRegions();
-
+                SetPhoneValidation();
             }
 
+        }
+
+        private void SetPhoneValidation()
+        {
+            if (CSWeb.OrderHelper.GetVersionName().ToLower() == "ps_j2")
+                revPhone.Enabled = false;
         }
 
         protected override void OnPreRender(EventArgs e)

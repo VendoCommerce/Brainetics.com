@@ -79,9 +79,15 @@ namespace CSWeb.H2.UserControls
             {
                 BindCountries(true);
                 BindRegions();
-
+                SetPhoneValidation();
             }
 
+        }
+
+        private void SetPhoneValidation()
+        {
+            if (CSWeb.OrderHelper.GetVersionName().ToLower() == "j2")
+                revPhone.Enabled = false;
         }
 
         protected override void OnPreRender(EventArgs e)
