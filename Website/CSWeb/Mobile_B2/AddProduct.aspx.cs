@@ -9,7 +9,6 @@ using CSBusiness.ShoppingManagement;
 using CSBusiness.CustomerManagement;
 using CSBusiness.Resolver;
 using CSBusiness.OrderManagement;
-using CSWeb.B2.Store;
 using CSCore.DataHelper;
 using CSWebBase;
 
