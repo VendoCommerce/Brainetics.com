@@ -371,6 +371,7 @@
     <Content Include="H2\UserControls\ShippingForm.ascx" />
     <Content Include="H2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="H2\UserControls\TrackingPixels.ascx" />
+    <Content Include="keepalive.htm" />
     <Content Include="Mobile_B2\about.aspx" />
     <Content Include="Mobile_B2\AddProduct.aspx" />
     <Content Include="Mobile_B2\AuthorizeOrder.aspx" />
@@ -491,6 +492,7 @@
     <Content Include="Rebate\index.aspx" />
     <Content Include="receipt.aspx" />
     <Content Include="receipt_friendly.aspx" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\autoTab.js" />
     <Content Include="Scripts\bootstrap-collapse.js" />
     <Content Include="Scripts\bootstrap-transition.js" />

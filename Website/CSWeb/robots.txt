@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /a3/
+Disallow: /A3/
+Disallow: /a4/
+Disallow: /A4/
+Disallow: /a2/
+Disallow: /A2/
+Disallow: /PS_A5/
+Disallow: /ps_a5/
+Disallow: /PS_B2/
+Disallow: /ps_b2/
+Disallow: /c2/
+Disallow: /C2/
+Disallow: /PS_C2/
+Disallow: /ps_c2/
+Disallow: /PS_E2/
+Disallow: /ps_e2/
