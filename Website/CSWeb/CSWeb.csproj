@@ -315,6 +315,11 @@
     <Content Include="Content\Images\d2\upsell_accelerated.jpg" />
     <Content Include="Content\Images\d2\upsell_comparison.png" />
     <Content Include="Content\Images\d2\upsell_singlepay_accel_rev.jpg" />
+    <Content Include="Content\Images\e2\upsell_accelerated.jpg" />
+    <Content Include="Content\Images\e2\upsell_underline.png" />
+    <Content Include="Content\Images\spacer.png" />
+    <Content Include="Content\Images\upsell_playbook.jpg" />
+    <Content Include="Content\Images\upsell_rush.jpg" />
     <Content Include="email\images\index_01.jpg" />
     <Content Include="email\images\index_02.jpg" />
     <Content Include="email\images\index_04.jpg" />
