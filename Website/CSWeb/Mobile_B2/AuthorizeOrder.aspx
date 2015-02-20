@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
     <asp:Panel ID="pnlManual" runat="server">
-    
+        <asp:Label ID="lblMessage" runat="server" ForeColor="Red" /><br />
         Please wait while we authorize your order. Please do not hit back or refresh. Thanks You!
 
     </asp:Panel>

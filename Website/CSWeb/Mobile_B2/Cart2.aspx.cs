@@ -20,7 +20,13 @@ namespace CSWeb.Mobile_B2.Store
         {
             return OrderHelper.GetCleanPhoneNumber(data);
         }
-
+        protected override bool SkipCartInitialization
+        {
+            get
+            {
+                return Request.QueryString["ppsend"] == "1" || Request.QueryString["ppsubmit"] == "1" || Request.QueryString["Token"] != null || Request.QueryString["PayerID"] != null;
+            }
+        }
 
 
         public string GetDynamicVersionData(string data)

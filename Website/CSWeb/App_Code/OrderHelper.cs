@@ -22,7 +22,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CSWebBase;
 using System.Text.RegularExpressions;
-
+using CSBusiness.CustomerManagement;
 
 /// <summary>
 /// Summary description for OrderHelper
@@ -632,7 +632,7 @@ namespace CSWeb
             return true;
         }
 
-        public static bool AuthorizeOrderWithPayPalExpressCheckout(ClientCartContext context, Hashtable RequestData, out Hashtable ResponseData)
+        public static CSPaymentProvider.Response AuthorizeOrderWithPayPalExpressCheckout(ClientCartContext context, Hashtable RequestData, out Hashtable ResponseData)
         {
             string strMethod = "";
             string strInvoiceNumber = "";
@@ -663,6 +663,12 @@ namespace CSWeb
                         string strLname = string.Empty;
                         string strLamt = string.Empty;
                         string strLqty = string.Empty;
+
+                        SitePreference sitePreference = CSFactory.GetCacheSitePref();
+                        if (sitePreference.GetAttributeValue<bool>("BillingAgreementPayPal", false))
+                        {
+                            RequestData["L_BILLINGTYPE0"] = "MerchantInitiatedBilling";
+                        }
                         foreach (Sku skuItem in context.CartInfo.CartItems)
                         {
                             strLname = "L_PAYMENTREQUEST_0_NAME";
@@ -689,7 +695,7 @@ namespace CSWeb
                             RequestData[strLqty] = "1";
                         }
                         RequestData["PAYMENTREQUEST_0_ITEMAMT"] = (context.CartInfo.SubTotal - context.CartInfo.DiscountAmount).ToString("N2");
-                        RequestData["PAYMENTREQUEST_0_SHIPPINGAMT"] = context.CartInfo.ShippingCost.ToString("N2");
+                        RequestData["PAYMENTREQUEST_0_SHIPPINGAMT"] = (context.CartInfo.ShippingCost + context.CartInfo.AdditionalShippingCharge).ToString("N2");
                         RequestData["PAYMENTREQUEST_0_TAXAMT"] = context.CartInfo.TaxCost.ToString("N2");
                         break;
                     }
@@ -731,56 +737,66 @@ namespace CSWeb
                             RequestData[strLqty] = "1";
                         }
                         RequestData["PAYMENTREQUEST_0_ITEMAMT"] = (context.CartInfo.SubTotal - context.CartInfo.DiscountAmount).ToString("N2");
-                        RequestData["PAYMENTREQUEST_0_SHIPPINGAMT"] = context.CartInfo.ShippingCost.ToString("N2");
+                        RequestData["PAYMENTREQUEST_0_SHIPPINGAMT"] = (context.CartInfo.ShippingCost + context.CartInfo.AdditionalShippingCharge).ToString("N2");
                         RequestData["PAYMENTREQUEST_0_TAXAMT"] = context.CartInfo.TaxCost.ToString("N2");
+
                         _request.InvoiceNumber = strInvoiceNumber;
                         //Save the AUTHCODE, TRANSACTION CODE.
                         break;
                     }
-
             }
 
-
-
-
+            RequestData["SOLUTIONTYPE"] = "Sole";
 
             _request.AdditionalInfo = RequestData;
 
-
             Response _response = PaymentProviderRepository.Instance.Get(PaymentProviderType.PayPalExpressCheckout).PerformRequest(_request);
 
-            //#region Log Request/Response
-            //try
-            //{
-            //    Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
-            //    string logRequest = _response.GatewayRequestRaw; // TODO: we are not capturing this in base. Once updated there, we will begin saving request as well as response.
-            //    string logResponse = _response.GatewayResponseRaw;
+            #region Log Request/Response
+            try
+            {
+                Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
+                string logRequest = _response.GatewayRequestRaw;
+                string logResponse = _response.GatewayResponseRaw;
+                try
+                {
+                    if (_response.AdditionalInfo.ContainsKey("BILLINGAGREEMENTID"))
+                    {
+                        orderAttributes.Add("BillingAgreementID", new CSBusiness.Attributes.AttributeValue(_response.AdditionalInfo["BILLINGAGREEMENTID"].ToString()));
+                    }
+                }
+                catch
+                {
 
-            //    // the attributes we save to depends on the type of call
-            //    if (RequestData.ContainsKey("ActionType") && RequestData["ActionType"].ToString() == "SetPaymentOptions")
-            //    {
-            //        orderAttributes.Add("PayPalSetPaymentRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
-            //        orderAttributes.Add("PayPalSetPaymentResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
-            //    }
-            //    else if (RequestData.ContainsKey("ActionType") && RequestData["ActionType"].ToString() == "GetShippingAddresses")
-            //    {
-            //        orderAttributes.Add("PayPalGetAddrRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
-            //        orderAttributes.Add("PayPalGetAddrResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
-            //    }
-            //    else
-            //    {
-            //        orderAttributes.Add("PayPalRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
-            //        orderAttributes.Add("PayPalResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
-            //    }
 
-            //    CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, null);
-            //}
-            //catch (Exception ex)
-            //{
-            //    CSCore.CSLogger.Instance.LogException(ex.Message, ex.InnerException);
-            //}
+                }
 
-            //#endregion
+
+
+                // the attributes we save to depends on the type of call
+                if (RequestData.ContainsKey("Method") && RequestData["Method"].ToString() == "SetExpressCheckout")
+                {
+                    orderAttributes.Add("PayPalSetPaymentRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
+                    orderAttributes.Add("PayPalSetPaymentResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
+                }
+                else if (RequestData.ContainsKey("Method") && RequestData["Method"].ToString() == "GetExpressCheckoutDetails")
+                {
+                    orderAttributes.Add("PayPalGetAddrRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
+                    orderAttributes.Add("PayPalGetAddrResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
+                }
+                else
+                {
+                    orderAttributes.Add("PayPalRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
+                    orderAttributes.Add("PayPalResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
+                }
+
+                CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(context.OrderId, orderAttributes, null);
+            }
+            catch (Exception ex)
+            {
+                CSCore.CSLogger.Instance.LogException(ex.Message, ex.InnerException);
+            }
+            #endregion
 
             ResponseData = _response.AdditionalInfo;
 
@@ -789,9 +805,157 @@ namespace CSWeb
                 ResponseData.Add("RedirectUrl", _response.MerchantDefined1);
             }
 
-            return true;
+            return _response;
         }
 
+        public static string InitializePayPal(int orderId)
+        {
+            ClientCartContext clientData = SiteBasePage.CartContext;  // ClientOrderData;
+
+            Hashtable htAdditinalInfo = new Hashtable();
+            Hashtable htAdditinalInfoResponse = new Hashtable();
+
+            htAdditinalInfo.Add("Method", "SetExpressCheckout");
+            //If you comment below 3 credentials then default payments will be used from config. So for testing we can comment it.
+            //htAdditinalInfo.Add("APIUser", DocFields["api_login"]);
+            //htAdditinalInfo.Add("APIPassword", DocFields["paypal_password"]);
+            //htAdditinalInfo.Add("APISignature", DocFields["api_signature"]);
+            HttpRequest request13 = HttpContext.Current.Request;
+            CSBusiness.Version version = (CSFactory.GetCacheSitePref()).VersionItems.Single(x => { return x.VersionId == clientData.VersionId; });
+
+            string subPath = request13.Url.AbsolutePath; //version.Title.ToUpper() == "A1" ? string.Empty : "/" + version.Title.ToLower();
+
+            SitePreference sitePreference = CSFactory.GetCacheSitePref();
+            htAdditinalInfo.Add("ReturnUrl", string.Format(sitePreference.GetAttributeValue("PayPalReturnURL"), subPath,
+                clientData.OrderId.ToString()));
+            htAdditinalInfo.Add("CancelUrl", string.Format(sitePreference.GetAttributeValue("PayPalCancelURL"), subPath));
+
+
+            if (OrderHelper.AuthorizeOrderWithPayPalExpressCheckout(clientData, htAdditinalInfo, out htAdditinalInfoResponse).ResponseType == TransactionResponseType.Approved)
+            {
+                string strRedirectUrl = "";
+                if (htAdditinalInfoResponse.ContainsKey("RedirectUrl"))
+                {
+                    strRedirectUrl = htAdditinalInfoResponse["RedirectUrl"].ToString();
+                }
+
+                if (htAdditinalInfoResponse.ContainsKey("TOKEN"))
+                {
+                    Dictionary<string, AttributeValue> attributes = new Dictionary<string, AttributeValue>();
+                    attributes.AddAttributeValue("PayPalToken", new AttributeValue(htAdditinalInfoResponse["TOKEN"].ToString()));
+
+                    CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderId, attributes, null);
+                }
+
+                if (!string.IsNullOrEmpty(strRedirectUrl))
+                {
+                    HttpContext.Current.Response.Redirect(strRedirectUrl, true);
+                    return null;
+                }
+                else
+                {
+                    return "We're sorry, there was an error processing your request. Please try again later.";
+                }
+            }
+            else
+            {
+                return "We're sorry, there was an error processing your request.";
+            }
+        }
+
+        public static string GetAddressFromPayPal(ClientCartContext cartContext)
+        {
+            List<StateProvince> states = StateManager.GetAllStates(0);
+            List<Country> countries = CountryManager.GetAllCountry();
+            Customer customer = new Customer();
+            Address address = new Address();
+
+            Hashtable htAdditinalInfo = new Hashtable();
+            Hashtable htAdditinalInfoResponse = new Hashtable();
+            htAdditinalInfo.Add("Method", "GetExpressCheckoutDetails");
+
+            if (HttpContext.Current.Request["Token"] != null)
+            {
+                SiteBasePage.PayPalToken = HttpContext.Current.Request["Token"].ToString();
+            }
+            if (HttpContext.Current.Request["PayerID"] != null)
+            {
+                SiteBasePage.PayPalInvoice = HttpContext.Current.Request["PayerID"].ToString();
+            }
+            htAdditinalInfo.Add("Token", SiteBasePage.PayPalToken);
+
+            if (OrderHelper.AuthorizeOrderWithPayPalExpressCheckout(cartContext, htAdditinalInfo, out htAdditinalInfoResponse).ResponseType == TransactionResponseType.Approved)
+            {
+                customer.FirstName = htAdditinalInfoResponse["FIRSTNAME"].ToString();
+                customer.LastName = htAdditinalInfoResponse["LASTNAME"].ToString();
+                customer.Email = htAdditinalInfoResponse["EMAIL"].ToString();
+                customer.Username = customer.Email;
+                customer.PhoneNumber = "";
+
+                address.FirstName = customer.FirstName;
+                address.LastName = customer.LastName;
+                address.Email = customer.Email;
+                address.Address1 = htAdditinalInfoResponse["SHIPTOSTREET"].ToString();
+                address.Address2 = "";
+                address.City = htAdditinalInfoResponse["SHIPTOCITY"].ToString();
+                address.StateProvinceId = states.Find(x => x.Abbreviation.Trim() == htAdditinalInfoResponse["SHIPTOSTATE"].ToString()).StateProvinceId;
+                address.ZipPostalCode = htAdditinalInfoResponse["SHIPTOZIP"].ToString();
+                address.CountryId = countries.Find(x => x.Code.Trim() == htAdditinalInfoResponse["SHIPTOCOUNTRYCODE"].ToString()).CountryId;
+
+                customer.ShippingAddress = address;
+                customer.BillingAddress = address;
+
+                cartContext.CustomerInfo = customer;
+                //cartContext.PaymentInfo = order.CreditInfo; Update payment
+
+                return null;
+            }
+            else
+            {
+                return "We're sorry, there was an error processing your request.";
+            }
+        }
+
+        public static string FinalizePayPalTransaction(ClientCartContext clientData)
+        {
+            Hashtable htAdditinalInfo = new Hashtable();
+            Hashtable htAdditinalInfoResponse = new Hashtable();
+
+            htAdditinalInfo.Add("Method", "DoExpressCheckoutPayment");
+            //If you comment below 3 credentials then default payments will be used from config. So for testing we can comment it.
+            //htAdditinalInfo.Add("APIUser", customDiscountCode.ApiLogin);
+            //htAdditinalInfo.Add("APIPassword", customDiscountCode.PayPalPassword);
+            //htAdditinalInfo.Add("APISignature", customDiscountCode.ApiSignature);
+
+            htAdditinalInfo.Add("InvoiceNumber", SiteBasePage.PayPalInvoice);
+            htAdditinalInfo.Add("Token", SiteBasePage.PayPalToken);
+
+            if (OrderHelper.AuthorizeOrderWithPayPalExpressCheckout(clientData, htAdditinalInfo, out htAdditinalInfoResponse).ResponseType == TransactionResponseType.Approved)
+            {
+                string strTransactionID = SiteBasePage.PayPalToken;
+                if (htAdditinalInfoResponse["PAYMENTINFO_0_TRANSACTIONID"] != null)
+                {
+                    strTransactionID = htAdditinalInfoResponse["PAYMENTINFO_0_TRANSACTIONID"].ToString();
+                }
+
+                if ((clientData.CustomerInfo.ShippingAddress.FirstName.ToLower() == "test"
+                    && clientData.CustomerInfo.ShippingAddress.LastName.ToLower() == "test")
+                    || clientData.CustomerInfo.Email.Trim().ToLower() == "buyer_1340127461_per@conversionsystems.com") // testing flags
+                    CSResolve.Resolve<IOrderService>().SaveOrder(clientData.OrderId, strTransactionID, SiteBasePage.PayPalInvoice, 7);
+                else
+                {
+                    CSResolve.Resolve<IOrderService>().SaveOrder(clientData.OrderId, strTransactionID, SiteBasePage.PayPalInvoice, 4);
+                }
+
+                OrderHelper.SendOrderCompletedEmail(clientData.OrderId);
+
+                return null;
+            }
+            else
+            {
+                return "We're sorry, there was an error processing your request.";
+            }
+        }
         public static bool RefundOrderWithLitle(int orderID, string transactionid)
         {
             Request _request = new Request();

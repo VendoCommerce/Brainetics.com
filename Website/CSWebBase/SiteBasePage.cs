@@ -98,7 +98,7 @@ namespace CSWebBase
             }
         }
 
-        public ClientCartContext CartContext
+        public static ClientCartContext CartContext
         {
             get
             {
@@ -106,9 +106,35 @@ namespace CSWebBase
             }
             set { HttpContext.Current.Session["ClientOrderData"] = value; }
         }
-
+        
+        public static string PayPalToken
+        {
+            get
+            {
+                return Convert.ToString(HttpContext.Current.Session["PayPalToken"] ?? string.Empty);
+            }
+            set
+            {
+                HttpContext.Current.Session["PayPalToken"] = value;
+            }
+        }
+        public static string PayPalInvoice
+        {
+            get
+            {
+                return Convert.ToString(HttpContext.Current.Session["PayPalInvoice"] ?? string.Empty);
+            }
+            set
+            {
+                HttpContext.Current.Session["PayPalInvoice"] = value;
+            }
+        }
         #endregion
-
+        public static void ResetPayPal()
+        {
+            SiteBasePage.PayPalInvoice = "";
+            SiteBasePage.PayPalToken = "";
+        }
         protected override void Page_Load(object sender, EventArgs e)
         {
             if (EnableEmptySessionRedirect)

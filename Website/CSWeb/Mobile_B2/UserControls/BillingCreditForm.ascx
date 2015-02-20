@@ -104,7 +104,23 @@
                 </div>
             </asp:Panel>
               
-            <div class="form_line clearfix" style="padding-top: 20px;">
+    <div class="form_line clearfix">
+        <div class="error-1">                        
+            <asp:RequiredFieldValidator ID="rfvPaymentMethod" runat="server" Display="Dynamic"
+                                        ControlToValidate="ddlPaymentMethod"></asp:RequiredFieldValidator>
+        </div>
+        <label class="label-1">
+            Payment Method*</label>
+        <asp:DropDownList ID="ddlPaymentMethod" runat="server" CssClass="text-1" size="1" AutoPostBack="true" OnSelectedIndexChanged="ddlPaymentMethod_SelectedIndexChanged">
+            <asp:ListItem Value="">- Select -</asp:ListItem>
+            <asp:ListItem Value="1">PayPal</asp:ListItem>
+            <asp:ListItem Value="2">Credit Card</asp:ListItem>
+        </asp:DropDownList>
+        <asp:Label ID="lblPaymentMethod" runat="server" Visible="false" />
+    </div>
+
+    <asp:Panel ID="pnlCreditCard" runat="server">        
+    <div class="form_line clearfix" style="padding-top: 20px;">
               
               <div class="form_ssl"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=NO&amp;use_transparent=YES&amp;lang=en"></script><br />
   <a href="http://www.symantec.com/ssl-certificates" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a>
@@ -165,17 +181,25 @@
               
 
             </div>
+
+            </asp:Panel>
+          
+            <asp:Panel ID="pnlPayPal" runat="server" Visible="false">
+            </asp:Panel>
+
             <div class="form_line_btn" style="padding-bottom: 70px;">
                 <div class="error-2">
+                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red" /><br />
+                    <asp:Label ID="lblBtnMessage" runat="server" ForeColor="Red" />
+                    <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red" />
                     <asp:Label ID="lblValidation" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                      
                     </div>
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
             </div>
             
-            
-          
-      </div>
+        
+    </div>
   
 
 

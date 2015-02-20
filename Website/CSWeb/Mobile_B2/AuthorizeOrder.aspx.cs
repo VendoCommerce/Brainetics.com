@@ -13,6 +13,7 @@ using CSBusiness.OrderManagement;
 using CSBusiness.Resolver;
 using CSBusiness.ShoppingManagement;
 using CSBusiness.Attributes;
+using CSWebBase;
 
 namespace CSWeb.Mobile_B2.Store
 {
@@ -63,6 +64,22 @@ namespace CSWeb.Mobile_B2.Store
                     CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, 7);
 
                     Response.Redirect(string.Format("carddecline.aspx?returnUrl={0}", string.Concat("/", string.Join("/", parts, 0, parts.Length - 1), "/receipt.aspx")), true);
+                }
+
+                if (orderData.CreditInfo.CreditCardNumber.Equals("1111222233334444"))
+                {
+                    string message = OrderHelper.FinalizePayPalTransaction((ClientCartContext)Session["ClientOrderData"]);
+
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        lblMessage.Text = message;
+                    }
+                    else
+                    {
+                        lblMessage.Text = string.Empty;
+                        SiteBasePage.ResetPayPal();
+                        Response.Redirect("receipt.aspx", true);
+                    }
                 }
 
                 bool authSuccess = false;
