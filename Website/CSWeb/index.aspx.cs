@@ -12,19 +12,13 @@ namespace CSWeb
         protected override void Page_Load(object sender, EventArgs e)
         {
             base.Page_Load(sender, e);
-
-            if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
-            {
-                 Response.Redirect("/h2?" + Request.QueryString + "&referrer=" + Request.Url);
-            }
-
-            else
+            //!CSBusiness.DynamicVersion.VersionManager.LandingUrl.ToLower().Contains("/a2"))
             
-            {
-                 Response.Redirect("/h2?referrer=" + Request.Url);
-            }
-
-           
+                if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
+                    Response.Redirect("/j2/?" + Request.QueryString + "&referrer=" + Request.Url);
+                else
+                    Response.Redirect("/j2/?referrer=" + Request.Url);
+            
         }
     }
 }

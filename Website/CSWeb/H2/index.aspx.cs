@@ -66,6 +66,18 @@ namespace CSWeb.H2.Store
                     }
                 }
 
+                if (CSWeb.OrderHelper.GetVersionName().ToLower() == "h2")
+                {
+                    if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
+                    {
+                        Response.Redirect("/j2/?" + Request.QueryString + "&referrer=" + Request.Url);
+                    }
+                    else
+                    {
+                        Response.Redirect("/j2/?referrer=" + Request.Url);
+                    }
+                }
+
             }
 
         }
