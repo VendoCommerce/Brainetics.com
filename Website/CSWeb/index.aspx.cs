@@ -13,11 +13,11 @@ namespace CSWeb
         {
             base.Page_Load(sender, e);
             //!CSBusiness.DynamicVersion.VersionManager.LandingUrl.ToLower().Contains("/a2"))
-            
-                if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
-                    Response.Redirect("/j2/?" + Request.QueryString + "&referrer=" + Request.Url);
-                else
-                    Response.Redirect("/j2/?referrer=" + Request.Url);
+
+            if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
+                Response.Redirect("/j2/?" + Request.QueryString );// + "&referrer=" + Request.Url);
+            else
+                Response.Redirect("/j2/");//?referrer=" + Request.Url);
             
         }
     }
