@@ -137,7 +137,7 @@ namespace CSWebBase
         /// <returns></returns>
         private static bool IsTaxState(int stateId)
         {
-            if (stateId == 6 || stateId == 17 || stateId == 22 || stateId == 31)
+            if (stateId == 6 || stateId == 17 || stateId == 31)
                 return true;
             return false;
         }
