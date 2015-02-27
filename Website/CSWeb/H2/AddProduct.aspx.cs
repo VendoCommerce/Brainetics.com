@@ -61,7 +61,7 @@ namespace CSWeb.H2.Store
                             int orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
 
                             clientData.OrderId = orderId;
-                            clientData.ResetData();
+                            //clientData.ResetData();
                             Session["ClientOrderData"] = clientData;
                         }
 

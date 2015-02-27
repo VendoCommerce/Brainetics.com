@@ -83,7 +83,7 @@
                                                 ControlToValidate="txtPhoneNumber"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblShippingPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
              <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhoneNumber" EnableClientScript="true"
-                Display="Dynamic" ValidationExpression="\d{3}-\d{3}-\d{4}" />
+                Display="Dynamic" ValidationExpression="\d{3}-\d{3}-\d{4}" Enabled="False" />
                
                 <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone e.g. xxx-xxx-xxxx"></asp:TextBox>
             </div>
