@@ -141,7 +141,10 @@ namespace CSWeb.K2.UserControls
             if (!validateInput())
             {
                 SaveData();
-                Response.Redirect("Cart.aspx");
+                //Response.Redirect("Cart.aspx");
+                string pid = "64";
+                Response.Redirect(string.Format("AddProduct.aspx?PId={0}&CId={1}",
+        pid, Convert.ToString((int)CSBusiness.ShoppingManagement.ShoppingCartType.SingleCheckout)));
             }
         }
         public void SaveData()

@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BillingCreditForm.ascx.cs"
     Inherits="CSWeb.H2.UserControls.BillingCreditForm" %>
-<%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl"
-    TagPrefix="uc" %>
+<%@ Register Src="ShoppingCartControl.ascx" TagName="ShoppingCartControl" TagPrefix="uc" %>
 <%@ Register TagPrefix="uc" TagName="LoaderOverlay" Src="LoaderOverlay.ascx" %>
 
 <asp:ScriptManager runat="server">

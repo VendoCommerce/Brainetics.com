@@ -1,6 +1,14 @@
 <%@Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.K2.UserControls.BillingShippingCreditForm" CodeBehind="BillingShippingCreditForm.ascx.cs" %>
+<%@ Register Src="/H2/UserControls/ShoppingCartControl.ascx" TagName="ShoppingCartControl" TagPrefix="uc" %>
 <asp:ScriptManager runat="server" ID="sm1">
 </asp:ScriptManager>
+    <div class="cart_left">
+        <h2>Cart</h2>
+
+        
+        <uc:ShoppingCartControl ID="ShoppingCartControl1" runat="server" OnUpdateShipping="Shipping_OnUpdateShipping"></uc:ShoppingCartControl>     
+    </div>
+
     <a name="tryitnow" id="tryitnow"></a>
         <div class="cartA"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/form_top.jpg" width="279" height="117" />        
             <div class="form_line clearfix">
@@ -87,9 +95,7 @@
                     <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
                 <label class="label-1">
                     Phone*</label>
-                <asp:TextBox ID="txtPhoneNumber1" runat="server" MaxLength="3" CssClass="text-4"></asp:TextBox>
-                <asp:TextBox ID="txtPhoneNumber2" runat="server" MaxLength="3" CssClass="text-4"></asp:TextBox>
-                <asp:TextBox ID="txtPhoneNumber3" runat="server" MaxLength="4" CssClass="text-4"></asp:TextBox>                
+                <asp:TextBox ID="txtPhoneNumber1" runat="server" MaxLength="15"></asp:TextBox>
             </div>
               <div class="form_line clearfix" style="padding-bottom: 0">
             <label class="label-1"></label>

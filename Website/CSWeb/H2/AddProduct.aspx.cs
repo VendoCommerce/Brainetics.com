@@ -52,20 +52,20 @@ namespace CSWeb.H2.Store
                         }
 
                         cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
-                        cartObject.Compute();
+                        //cartObject.Compute();
                         cartObject.ShowQuantity = false;
                         clientData.CartInfo = cartObject;
 
-                        if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess)
-                        {
-                            int orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
+                        //if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess)
+                        //{
+                        //    int orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
 
-                            clientData.OrderId = orderId;
-                            //clientData.ResetData();
-                            Session["ClientOrderData"] = clientData;
-                        }
+                        //    clientData.OrderId = orderId;
+                        //    //clientData.ResetData();
+                        //    Session["ClientOrderData"] = clientData;
+                        //}
 
-                        Response.Redirect("PostSale.aspx");
+                        Response.Redirect("Cart.aspx");
                     }
                     else if(cId == (int)ShoppingCartType.ShippingCreditCheckout)
                     {

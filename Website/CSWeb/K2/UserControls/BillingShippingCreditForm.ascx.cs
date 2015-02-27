@@ -12,6 +12,7 @@ using CSBusiness.Resolver;
 using CSBusiness.CreditCard;
 using System.Web.UI.WebControls;
 using CSBusiness.Payment;
+using CSBusiness.OrderManagement;
 
 namespace CSWeb.K2.UserControls
 {
@@ -93,9 +94,9 @@ namespace CSWeb.K2.UserControls
             ScriptManager.RegisterClientScriptInclude(Page, Page.GetType(), "jquery", Page.ResolveUrl("~/Scripts/jquery-1.6.4.min.js"));
             ScriptManager.RegisterClientScriptInclude(Page, Page.GetType(), "jquery.autotab", Page.ResolveUrl("~/Scripts/jquery.autotab-1.1b.js"));
 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "autotab" + this.ClientID,
-            String.Format(@"$(function() {{$('#{0}, #{1}, #{2}').autotab_magic().autotab_filter('numeric')}});",
-                    txtPhoneNumber1.ClientID, txtPhoneNumber2.ClientID, txtPhoneNumber3.ClientID), true);
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "autotab" + this.ClientID,
+            //String.Format(@"$(function() {{$('#{0}, #{1}, #{2}').autotab_magic().autotab_filter('numeric')}});",
+            //        txtPhoneNumber1.ClientID, txtPhoneNumber2.ClientID, txtPhoneNumber3.ClientID), true);
 
             //  ScriptManager.RegisterStartupScript(this, this.GetType(), "autotab" + this.ClientID,
             //String.Format(@"$(function() {{$('#{0}, #{1}, #{2},#{3}').autotab_magic().autotab_filter('numeric')}});",
@@ -228,7 +229,7 @@ namespace CSWeb.K2.UserControls
             else
                 lblStateError.Visible = false;
 
-            string strPhoneNum = txtPhoneNumber1.Text + txtPhoneNumber2.Text + txtPhoneNumber3.Text;
+            string strPhoneNum = txtPhoneNumber1.Text;// +txtPhoneNumber2.Text + txtPhoneNumber3.Text;
 
             if (!CommonHelper.IsValidPhone(strPhoneNum))
             {
@@ -480,10 +481,12 @@ namespace CSWeb.K2.UserControls
                 SaveData();
                 //SaveAdditionaInfo();
                 //int qId = 1;
-                string pid = "64";
-                Response.Redirect(string.Format("AddProduct.aspx?PId={0}&CId={1}",
-                    pid, Convert.ToString((int)CSBusiness.ShoppingManagement.ShoppingCartType.SingleCheckout)));
+                //string pid = "64";
+                //Response.Redirect(string.Format("AddProduct.aspx?PId={0}&CId={1}",
+                //    pid, Convert.ToString((int)CSBusiness.ShoppingManagement.ShoppingCartType.SingleCheckout)));
                 //Response.Redirect("store/addproduct.aspx" + "?PId=30&CId=" + (int)CSBusiness.ShoppingManagement.ShoppingCartType.ShippingCreditCheckout);
+                Response.Redirect("PostSale.aspx");
+
             }
 
 
@@ -517,7 +520,7 @@ namespace CSWeb.K2.UserControls
 
                 CustData.FirstName = CommonHelper.fixquotesAccents(txtFirstName.Text);
                 CustData.LastName = CommonHelper.fixquotesAccents(txtLastName.Text);
-                CustData.PhoneNumber = txtPhoneNumber1.Text + txtPhoneNumber2.Text + txtPhoneNumber3.Text;
+                CustData.PhoneNumber = txtPhoneNumber1.Text;// +txtPhoneNumber2.Text + txtPhoneNumber3.Text;
                 //CustData.Email = CommonHelper.fixquotesAccents(txtEmail.Text);
                 //CustData.Username = CommonHelper.fixquotesAccents(txtEmail.Text);
                 CustData.BillingAddress = billingAddress;
@@ -559,10 +562,25 @@ namespace CSWeb.K2.UserControls
                 ClientOrderData = clientData;
 
 
+
                 //Set the Client Order objects
                 ClientCartContext contextData = (ClientCartContext)Session["ClientOrderData"];
                 contextData.CustomerInfo = CustData;
                 contextData.CartAbandonmentId = CSResolve.Resolve<ICustomerService>().InsertCartAbandonment(CustData, contextData);
+
+                contextData.CartInfo.ShippingAddress = clientData.CustomerInfo.BillingAddress;
+                contextData.CartInfo.Compute();
+                contextData.CartInfo.ShowQuantity = false;
+                //clientData.CartInfo = cartObject;
+
+                //Save Order information before upsale process
+                int orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
+
+                if (orderId > 1)
+                {
+                    clientData.OrderId = orderId;
+                }
+
                 Session["ClientOrderData"] = contextData;
             }
         }
