@@ -28,7 +28,7 @@
 
 
 <div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/home_bg.jpg) no-repeat #fff">
-<div class="home_left"><img src="//d1f7jvrzd4fora.cloudfront.net/images/BRAIN003_DR_Home_30Day_bg6.png" width="667" height="1155" style="margin-left: -32px" usemap="#Maphometop" />
+<div class="home_left"><img src="//d1f7jvrzd4fora.cloudfront.net/images/BRAIN003_DR_Home_30Day_bg7.png" width="667" height="1062" style="margin-left: -32px" usemap="#Maphometop" />
 <map name="Maphometop">
     <area shape="circle" coords="325,350,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
         <%-- <area shape="rect" coords="422,584,659,705" href="#newbook" class="fancynowrap"> --%>
@@ -49,7 +49,7 @@
 </div>
 
 
-<div class="video2020">
+<div class="video2020" style="top: 742px;">
 <div id="video2020"></div>
   <script type='text/javascript'>
   	jwplayer('video2020').setup({
@@ -90,7 +90,7 @@
 </div>
 
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />
- <p class="text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/underform_certs.png" width="263" height="171" /></p>
+ <p style="margin-top: 100px; margin-left: -9px;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/k2/underform_certs_big.png" width="314" height="292" alt="" /></p>
  
  </div>
 <div class="clear"></div>

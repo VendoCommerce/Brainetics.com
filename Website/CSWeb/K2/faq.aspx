@@ -102,7 +102,7 @@
 </div>
 <div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
-<div class="clear"></div>
+<div class="clear" style="height: 100px;"></div>
 <!--#include file="bottomcta.html"-->
 </div>
 

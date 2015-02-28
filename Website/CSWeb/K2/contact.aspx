@@ -38,9 +38,9 @@
 Please email us at <a href="mailto:brainetics@webcsr.info">brainetics@webcsr.info</a> or call customer at 1-877-444-3776 Monday-Friday between 5:00 AM and  5:00 PM PST.</p>
 
 </div>
-<div class="right" style="padding-top: 30px">
+<div class="right" style="padding-top: 36px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
-<div class="clear"></div>
+<div class="clear" style="height: 30px;"></div>
 <!--#include file="bottomcta.html"-->
 </div>
 
