@@ -587,5 +587,20 @@ namespace CSWeb.K2.UserControls
 
         #endregion General Methods
 
+        protected void ddlState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ClientOrderData.CartInfo.ShippingAddress == null)
+                ClientOrderData.CartInfo.ShippingAddress = new Address();
+            ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
+            ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
+            ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtZipCode.Text;
+            ClientOrderData.CartInfo.DiscountAmount = (decimal)14.95;
+            ClientOrderData.CartInfo.CalculateDiscount();
+            ClientOrderData.CartInfo.Compute();
+            ClientOrderData.CartInfo.ShippingCost = 0;
+            ShoppingCartControl1.BindControls();
+
+        }
+
     }
 }

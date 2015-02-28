@@ -66,7 +66,7 @@
                 <label class="label-1">
                     State*</label>
                 <asp:DropDownList ID="ddlState" runat="server" DataTextField="Abbreviation" CssClass="text-1"
-                    size="1">
+                    size="1" AutoPostBack="True" OnSelectedIndexChanged="ddlState_SelectedIndexChanged">
                 </asp:DropDownList>
             </div>
                   <div class="form_line clearfix">
