@@ -297,7 +297,7 @@
 
             <div id="offerdet" style="display:block;"><p><strong>Offer Details:</strong>  As part of this special TV Offer you are getting to try Brainetics in the comfort of your home for a trial fee of $14.95 plus FREE shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 4 easy monthly payments of $49.95, plus tax. All orders are backed by our 30-Day Money-Back Guarantee!</p></div>
            
-            <div class="form_line_guarantee"><a href="returns.aspx" target="_blank">View 30-Day Guarantee</a></div>
+            <div class="form_line_guarantee"><a href="#guarantee" class="guarantee">View 30-Day Guarantee</a></div>
             <div class="form_line_guarantee">
                 <div class="norton_ssl_cart">
                     <script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script>
