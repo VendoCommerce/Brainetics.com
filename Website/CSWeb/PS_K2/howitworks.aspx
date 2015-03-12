@@ -93,14 +93,14 @@ confidence... and grades!</span>
     faster than anyone, because you've got the Brainetics secret!
   </p>
 </div>
-
+    <img src="//d1f7jvrzd4fora.cloudfront.net/images/k2/how_brain.png" width="277" height="440" alt="" style="position: absolute; top: 530px; left: 625px; z-index: 10;" />
 </div>
 </div>
 <div class="right" style="padding-top: 30px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <div class="lh20">
-<img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/howitworks_bottom.jpg" width="950" height="1561" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/k2/howitworks_bottom.jpg" width="950" height="1561" />
 <div class="how2">
   <p class="f14"><span class="webfont1 gray2 f24 block pad6 lh">Muscle Memory</span>
     With Brainetics, you're practicing tricks for doing math quickly and correctly in a way that becomes second nature. In time, you're rattling off answers to math problems you never thought possible – all because you've practiced Brainetics techniques!

@@ -59,11 +59,11 @@
 </div></div>
 </div>
 
-    <div class="reviews">
-        <h2 class="text-center">Brainetics Reviews</h2>
-        <ul>
+    <div class="reviews" style="width: 878px;">
+        <h2 style="margin-left: 250px;">Brainetics Reviews</h2>
+        <ul style="margin-left: 290px;">
             <li><a href="http://helpkidsbreakth.hubpages.com/hub/brainetics-review-math-memory-sysytem" target="_blank">HubPages - December 11, 2014</a></li>
-              <li><a href="http://www.gosureviews.com/brainetics-review/" target="_blank">Gosu Reviews - January 13, 2013</a></li>
+            <li><a href="http://www.gosureviews.com/brainetics-review/" target="_blank">Gosu Reviews - January 13, 2013</a></li>
             <li><a href="http://raisingsparks.com/brainetics-review/" target="_blank">Raising Sparks - December 5, 2012</a></li>
             <li><a href="http://over30mommy.blogspot.com/2011/06/brainetics-review.html" target="_blank">Over Thirty Mommy - June 2011</a></li>
             <li><a href="http://www.familycorner.com/parents/brainetics-a-breakthrough-math-memory-system.html" target="_blank">Family Corner - June 29, 2011</a></li>

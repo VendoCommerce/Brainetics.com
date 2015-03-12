@@ -589,15 +589,6 @@ namespace CSWeb.PS_K2.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtCvv;
         
         /// <summary>
-        /// cbOffers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbOffers;
-        
-        /// <summary>
         /// divTerms control.
         /// </summary>
         /// <remarks>

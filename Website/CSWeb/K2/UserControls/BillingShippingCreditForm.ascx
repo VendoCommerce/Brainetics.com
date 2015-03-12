@@ -4,8 +4,6 @@
 </asp:ScriptManager>
     <div class="cart_left">
         <h2>Cart</h2>
-
-        
         <uc:ShoppingCartControl ID="ShoppingCartControl1" runat="server" OnUpdateShipping="Shipping_OnUpdateShipping"></uc:ShoppingCartControl>     
     </div>
 

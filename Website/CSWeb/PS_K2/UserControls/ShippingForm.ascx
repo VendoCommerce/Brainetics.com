@@ -1,7 +1,7 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.PS_K2.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
 <a name="tryitnow" id="tryitnow"></a>
-<div class="cartB"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/form_top.png" />
-    <div class="form_line clearfix">
+<div class="cartB"><img src="//d1f7jvrzd4fora.cloudfront.net/images/k2/30_form_top.png" />
+    <div class="form_line clearfix" style="padding-top: 16px; padding-bottom: 14px;">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvEmail" runat="server" Display="Dynamic" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
@@ -28,10 +28,9 @@
     </div>
    
   
-    <div class="form_line_btn">
+    <div class="form_line_btn" style="padding-bottom: 10px;">
         <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/a5/btn_ordernow.png" OnClick="imgBtn_OnClick" />
    </div>
-    <div id="offerdet"><p><strong>Offer Details:</strong> As part of this special TV Offer you are getting to try Brainetics in the comfort of your home for a trial fee of $14.95 plus FREE shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 4 easy monthly payments of $49.95, plus tax. All orders are backed by our 30-Day  <span style="white-space: nowrap;">Money-Back Guarantee!</span></p></div>
      <div class="form_line_guarantee">
         <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">30-Day Money-Back Guarantee!</a>
         </div>
