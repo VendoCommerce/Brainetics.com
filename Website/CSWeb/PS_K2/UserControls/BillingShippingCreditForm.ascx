@@ -205,7 +205,7 @@
                         <asp:Label ID="lblShippingStateError" runat="server" Visible="false"></asp:Label></div>
                     <label class="label-1">
                         State*</label>
-                    <asp:DropDownList ID="ddlShippingState" runat="server" DataTextField="Abbreviation" CssClass="text-1" size="1" AutoPostBack="true">
+                    <asp:DropDownList ID="ddlShippingState" runat="server" DataTextField="Abbreviation" CssClass="text-1" size="1" AutoPostBack="true" OnSelectedIndexChanged="ddlState_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
                 <div class="form_line clearfix">

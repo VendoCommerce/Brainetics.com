@@ -471,7 +471,10 @@ namespace CSWeb.K2.UserControls
             if (!cbShippingSame.Checked)
                 pnlShippingAddress.Visible = true;
             else
+            {                
                 pnlShippingAddress.Visible = false;
+                CartTax();
+            }
         }
 
         protected void imgBtn_OnClick(object sender, ImageClickEventArgs e)
@@ -589,15 +592,28 @@ namespace CSWeb.K2.UserControls
 
         protected void ddlState_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CartTax();
+        }
+        private void CartTax()
+        {
             if (ClientOrderData.CartInfo.ShippingAddress == null)
                 ClientOrderData.CartInfo.ShippingAddress = new Address();
-            ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
-            ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
-            ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtZipCode.Text;
+            if (cbShippingSame.Checked)
+            {
+                ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
+                ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
+                ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtZipCode.Text;
+            }
+            else
+            {
+                ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlShippingState.SelectedValue);
+                ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlShippingCountry.SelectedValue);
+                ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtShippingZipCode.Text;
+            }
             ClientOrderData.CartInfo.DiscountAmount = (decimal)14.95;
             ClientOrderData.CartInfo.CalculateDiscount();
-            ClientOrderData.CartInfo.Compute();
             ClientOrderData.CartInfo.ShippingCost = 0;
+            ClientOrderData.CartInfo.Compute();            
             ShoppingCartControl1.BindControls();
 
         }
