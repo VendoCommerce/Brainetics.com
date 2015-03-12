@@ -506,6 +506,26 @@
     <Content Include="PS_G2\UserControls\ShippingForm.ascx" />
     <Content Include="PS_G2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="PS_G2\UserControls\TrackingPixels.ascx" />
+    <Content Include="PS_K2\bottomcta.html" />
+    <Content Include="PS_K2\Cart.aspx" />
+    <Content Include="PS_K2\contact.aspx" />
+    <Content Include="PS_K2\faq.aspx" />
+    <Content Include="PS_K2\footer.html" />
+    <Content Include="PS_K2\footer_cart.html" />
+    <Content Include="PS_K2\footer_receipt.html" />
+    <Content Include="PS_K2\footer_upsell.html" />
+    <Content Include="PS_K2\header.html" />
+    <Content Include="PS_K2\headernav.html" />
+    <Content Include="PS_K2\header_main.html" />
+    <Content Include="PS_K2\header_nonav.html" />
+    <Content Include="PS_K2\howitworks.aspx" />
+    <Content Include="PS_K2\index.aspx" />
+    <Content Include="PS_K2\popups.html" />
+    <Content Include="PS_K2\privacy.aspx" />
+    <Content Include="PS_K2\terms.aspx" />
+    <Content Include="PS_K2\testimonials.aspx" />
+    <Content Include="PS_K2\UserControls\BillingShippingCreditForm.ascx" />
+    <Content Include="PS_K2\UserControls\ShippingForm.ascx" />
     <Content Include="Rebate\rebate.aspx" />
     <Content Include="Rebate\index.aspx" />
     <Content Include="receipt.aspx" />
@@ -1950,6 +1970,24 @@
     </Compile>
     <Compile Include="PS_G2\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PS_K2\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PS_K2\UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PS_K2\UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PS_K2\UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PS_K2\UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Rebate\rebate.aspx.cs">
       <DependentUpon>rebate.aspx</DependentUpon>

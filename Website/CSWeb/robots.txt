@@ -15,3 +15,5 @@ Disallow: /PS_C2/
 Disallow: /ps_c2/
 Disallow: /PS_E2/
 Disallow: /ps_e2/
+Disallow: /PS_K2/
+Disallow: /ps_k2/
