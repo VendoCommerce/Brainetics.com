@@ -385,6 +385,7 @@
     <Content Include="K2\index.aspx" />
     <Content Include="K2\popups.html" />
     <Content Include="K2\privacy.aspx" />
+    <Content Include="K2\productdetails.aspx" />
     <Content Include="K2\terms.aspx" />
     <Content Include="K2\testimonials.aspx" />
     <Content Include="K2\UserControls\BillingShippingCreditForm.ascx" />
@@ -522,6 +523,7 @@
     <Content Include="PS_K2\index.aspx" />
     <Content Include="PS_K2\popups.html" />
     <Content Include="PS_K2\privacy.aspx" />
+    <Content Include="PS_K2\productdetails.aspx" />
     <Content Include="PS_K2\terms.aspx" />
     <Content Include="PS_K2\testimonials.aspx" />
     <Content Include="PS_K2\UserControls\BillingShippingCreditForm.ascx" />
