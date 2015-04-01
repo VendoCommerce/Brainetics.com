@@ -70,7 +70,7 @@ namespace CSWeb.H2.Store
                 {
                     //if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
                     //{
-                        Response.Redirect("/j2/index?" + Request.QueryString);
+                        Response.Redirect("/k2/index?" + Request.QueryString);
                         //Response.Redirect("/j2/index?" + Request.QueryString + "&referrer=" + Request.Url);
                     //}
                     //else
