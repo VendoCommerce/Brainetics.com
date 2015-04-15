@@ -100,7 +100,7 @@ confidence... and grades!</span>
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
 <div class="clear"></div>
 <div class="lh20">
-<img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/howitworks_bottom.jpg" width="950" height="1561" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/k2/howitworks_bottom_4_15_15.jpg" width="950" height="1561" />
 <div class="how2">
   <p class="f14"><span class="webfont1 gray2 f24 block pad6 lh">Muscle Memory</span>
     With Brainetics, you're practicing tricks for doing math quickly and correctly in a way that becomes second nature. In time, you're rattling off answers to math problems you never thought possible – all because you've practiced Brainetics techniques!

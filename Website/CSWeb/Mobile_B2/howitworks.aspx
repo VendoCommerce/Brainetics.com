@@ -112,7 +112,7 @@ and grades!</p>
 <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/how2.png" width="640" height="925" alt="Processing plus Storage = Increased Mental Capacity" usemap="#Map" class="block" />
 
 <p class="webfont1 f48" style="padding-top: 84px;">How It Works</p>
-<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/how3.png" width="640" height="992" alt="Watch the DVDs, Read the Books, Play the Games" usemap="#Map" class="block" />
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/how3_4_15_15.png" width="640" height="992" alt="Watch the DVDs, Read the Books, Play the Games" usemap="#Map" class="block" />
 
 <!--#include file="bottomcta.html"-->
 

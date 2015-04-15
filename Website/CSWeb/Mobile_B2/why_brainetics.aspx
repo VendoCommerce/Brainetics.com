@@ -75,7 +75,7 @@
       </ul>
       <p class="hotpink f30 webfont1 lh36">PLUS our 30-Day Money Back Guarantee!</p>
     </div>
-    <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/why5.jpg" width="640" height="566" class="block" alt="What You Get" />
+    <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/why5_4_15_15.jpg" width="640" height="566" class="block" alt="What You Get" />
 </div>
   
 

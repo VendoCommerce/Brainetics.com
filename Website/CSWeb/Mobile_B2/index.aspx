@@ -29,7 +29,7 @@
 
 <div class="content">
 
-<div class="hometop"><img src="<%= GetDynamicVersionData("homepageimage")%>" width="640" height="906" id="homeimage_amazon" usemap="#Maphome1" class="block" alt="Brainetics" />
+<div class="hometop"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/mobile_Home_4_15_15.jpg" width="640" height="906" id="homeimage_amazon" usemap="#Maphome1" class="block" alt="Brainetics" />
   <map name="Maphome1">
     <area shape="rect" coords="421,150,618,288" href="https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_30day.mp4" alt="Watch Video" target="_blank">
     <area shape="rect" coords="320,695,614,790" href="cart.aspx" alt="Order Now" accesskey="1">

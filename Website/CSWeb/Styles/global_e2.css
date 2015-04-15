@@ -595,7 +595,7 @@ body {
 .hometoptext {
 	position: absolute;
 	left: 22px;
-	top: 165px;
+	top: 145px;
 	height: auto;
 	width: 410px;
 }
@@ -613,8 +613,8 @@ body {
 
 .whatsincluded {
 	position: absolute;
-	left: 43px;
-	top: 541px;
+	left: 33px;
+	top: 561px;
 	width: 113px;
 	height: 27px;
 	font-size: 12px;
