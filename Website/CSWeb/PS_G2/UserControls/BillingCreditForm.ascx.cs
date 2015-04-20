@@ -170,6 +170,7 @@ namespace CSWeb.PS_G2.UserControls
             ddlState.DataSource = list;
             ddlState.DataValueField = "StateProvinceId";
             ddlState.DataBind();
+            ddlState.Items.Insert(0, new ListItem("- Select -", "select"));
         }
 
         protected void BindPackageOptions()
@@ -440,7 +441,7 @@ namespace CSWeb.PS_G2.UserControls
 
                 if (ddlState.SelectedValue.Equals("select"))
                 {
-                    lblStateError.Text = ResourceHelper.GetResoureValue("StateErrorMsg");
+                    lblStateError.Text = ResourceHelper.GetResoureValue("BillingStateErrorMsg");
                     lblStateError.Visible = true;
                     _bError = true;
                 }

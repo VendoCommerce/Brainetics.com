@@ -145,6 +145,7 @@ namespace CSWeb.K2.UserControls
             ddlState.DataSource = list;
             ddlState.DataValueField = "StateProvinceId";
             ddlState.DataBind();
+            ddlState.Items.Insert(0, new ListItem("- Select -", "select"));
         }
 
         private void BindCreditCard()
@@ -166,6 +167,7 @@ namespace CSWeb.K2.UserControls
             ddlShippingState.DataSource = list;
             ddlShippingState.DataValueField = "StateProvinceId";
             ddlShippingState.DataBind();
+            ddlShippingState.Items.Insert(0, new ListItem("- Select -", "select"));
         }
 
 
@@ -222,7 +224,7 @@ namespace CSWeb.K2.UserControls
 
             if (ddlState.SelectedValue.Equals("select"))
             {
-                lblStateError.Text = ResourceHelper.GetResoureValue("StateErrorMsg");
+                lblStateError.Text = ResourceHelper.GetResoureValue("BillingStateErrorMsg");
                 lblStateError.Visible = true;
                 _bError = true;
             }
@@ -316,7 +318,7 @@ namespace CSWeb.K2.UserControls
 
                 if (ddlShippingState.SelectedValue.Equals("select"))
                 {
-                    lblShippingStateError.Text = ResourceHelper.GetResoureValue("StateErrorMsg");
+                    lblShippingStateError.Text = ResourceHelper.GetResoureValue("ShippingStateErrorMsg");
                     lblShippingStateError.Visible = true;
                     _bError = true;
                 }
@@ -596,26 +598,31 @@ namespace CSWeb.K2.UserControls
         }
         private void CartTax()
         {
-            if (ClientOrderData.CartInfo.ShippingAddress == null)
-                ClientOrderData.CartInfo.ShippingAddress = new Address();
-            if (cbShippingSame.Checked)
+            if (ddlState.SelectedIndex > 0)
             {
-                ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
-                ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
-                ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtZipCode.Text;
+                if (ClientOrderData.CartInfo.ShippingAddress == null)
+                    ClientOrderData.CartInfo.ShippingAddress = new Address();
+                if (cbShippingSame.Checked)
+                {
+                    ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
+                    ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
+                    ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtZipCode.Text;
+                }
+                else
+                {
+                    if (ddlShippingState.SelectedIndex > 0)
+                    {
+                        ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlShippingState.SelectedValue);
+                        ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlShippingCountry.SelectedValue);
+                        ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtShippingZipCode.Text;
+                    }
+                }
+                ClientOrderData.CartInfo.DiscountAmount = (decimal)14.95;
+                ClientOrderData.CartInfo.CalculateDiscount();
+                ClientOrderData.CartInfo.ShippingCost = 0;
+                ClientOrderData.CartInfo.Compute();
+                ShoppingCartControl1.BindControls();
             }
-            else
-            {
-                ClientOrderData.CartInfo.ShippingAddress.StateProvinceId = Convert.ToInt32(ddlShippingState.SelectedValue);
-                ClientOrderData.CartInfo.ShippingAddress.CountryId = Convert.ToInt32(ddlShippingCountry.SelectedValue);
-                ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode = txtShippingZipCode.Text;
-            }
-            ClientOrderData.CartInfo.DiscountAmount = (decimal)14.95;
-            ClientOrderData.CartInfo.CalculateDiscount();
-            ClientOrderData.CartInfo.ShippingCost = 0;
-            ClientOrderData.CartInfo.Compute();            
-            ShoppingCartControl1.BindControls();
-
         }
 
     }

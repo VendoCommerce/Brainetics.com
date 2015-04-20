@@ -12,6 +12,7 @@ using CSBusiness.Resolver;
 using CSBusiness.Preference;
 using CSWebBase;
 using CSBusiness.Attributes;
+using System.Web.UI.WebControls;
 
 namespace CSWeb.PS_G2.UserControls
 {
@@ -137,6 +138,7 @@ namespace CSWeb.PS_G2.UserControls
             ddlState.DataSource = list;
             ddlState.DataValueField = "StateProvinceId";
             ddlState.DataBind();
+            ddlState.Items.Insert(0, new ListItem("- Select -", "select"));
         }
 
 
@@ -200,7 +202,7 @@ namespace CSWeb.PS_G2.UserControls
 
             if (ddlState.SelectedValue.Equals("select"))
             {
-                lblStateError.Text = ResourceHelper.GetResoureValue("ShppingStateErrorMsg");
+                lblStateError.Text = ResourceHelper.GetResoureValue("ShippingStateErrorMsg");
                 lblStateError.Visible = true;
                 _bError = true;
             }
