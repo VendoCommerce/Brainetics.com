@@ -109,6 +109,7 @@ var google_remarketing_only = true;
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-42891472-2', 'brainetics.com');
+        ga('require', 'displayfeatures');
         ga('send', 'pageview', { 'page': newPageName });
 
     </script>
