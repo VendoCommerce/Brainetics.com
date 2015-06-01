@@ -151,7 +151,7 @@ namespace CSWeb.FulfillmentHouse
         private bool IsTaxState(Order orderItem)
         {
             int stateId = orderItem.CustomerInfo.ShippingAddress.StateProvinceId;
-            if (stateId == 6 || stateId == 17 || stateId == 22 || stateId == 41)
+            if (stateId == 6 || stateId == 22 || stateId == 41)//stateId == 17 || KENTUCKY
                 return true;
             return false;
         }
