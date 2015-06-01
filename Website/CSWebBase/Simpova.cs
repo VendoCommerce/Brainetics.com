@@ -137,7 +137,7 @@ namespace CSWebBase
         /// <returns></returns>
         private static bool IsTaxState(int stateId)
         {
-            if (stateId == 6 || stateId == 17 || stateId == 31)
+            if (stateId == 6 ||  stateId == 31)//stateId == 17 || Kentucky
                 return true;
             return false;
         }
