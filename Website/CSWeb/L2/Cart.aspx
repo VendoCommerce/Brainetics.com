@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.H2.Store.cart" EnableSessionState="True" %>
 <%@ Register Src="/h2/UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
-<%@ Register Src="/k2/UserControls/BillingShippingCreditForm.ascx" TagName="BillingCreditForm"
+<%@ Register Src="/h2/UserControls/BillingShippingCreditForm.ascx" TagName="BillingCreditForm"
     TagPrefix="uc" %>
 
 <!doctype html>
