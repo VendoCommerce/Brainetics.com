@@ -22,6 +22,15 @@ namespace CSWeb.H2.UserControls {
         protected global::System.Web.UI.ScriptManager sm1;
         
         /// <summary>
+        /// ShoppingCartControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CSWeb.H2.UserControls.ShoppingCartControl ShoppingCartControl1;
+        
+        /// <summary>
         /// rfvFirstName control.
         /// </summary>
         /// <remarks>
@@ -229,24 +238,6 @@ namespace CSWeb.H2.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber1;
         
         /// <summary>
-        /// txtPhoneNumber2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber2;
-        
-        /// <summary>
-        /// txtPhoneNumber3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber3;
-        
-        /// <summary>
         /// rfvEmail control.
         /// </summary>
         /// <remarks>
@@ -281,42 +272,6 @@ namespace CSWeb.H2.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
-        /// <summary>
-        /// pnlQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlQuantity;
-        
-        /// <summary>
-        /// lblQuantityList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantityList;
-        
-        /// <summary>
-        /// ddlQuantityList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlQuantityList;
-        
-        /// <summary>
-        /// ddlSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSize;
         
         /// <summary>
         /// cbShippingSame control.
@@ -650,6 +605,24 @@ namespace CSWeb.H2.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox xyz;
+        
+        /// <summary>
+        /// lblAgreeError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAgreeError;
+        
+        /// <summary>
+        /// chkAgree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAgree;
         
         /// <summary>
         /// imgBtn control.

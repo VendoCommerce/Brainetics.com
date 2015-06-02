@@ -1,6 +1,8 @@
 <%@Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.H2.UserControls.BillingShippingCreditForm" CodeBehind="BillingShippingCreditForm.ascx.cs" %>
+<%@ Register src="ShoppingCartControl.ascx" tagname="ShoppingCartControl" tagprefix="uc1" %>
 <asp:ScriptManager runat="server" ID="sm1">
 </asp:ScriptManager>
+    <uc1:ShoppingCartControl ID="ShoppingCartControl1" runat="server" />
     <a name="tryitnow" id="tryitnow"></a>
         <div class="cartA"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/form_top.jpg" width="279" height="117" />        
             <div class="form_line clearfix">
@@ -87,9 +89,7 @@
                     <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
                 <label class="label-1">
                     Phone*</label>
-                <asp:TextBox ID="txtPhoneNumber1" runat="server" MaxLength="3" CssClass="text-4"></asp:TextBox>
-                <asp:TextBox ID="txtPhoneNumber2" runat="server" MaxLength="3" CssClass="text-4"></asp:TextBox>
-                <asp:TextBox ID="txtPhoneNumber3" runat="server" MaxLength="4" CssClass="text-4"></asp:TextBox>                
+                <asp:TextBox ID="txtPhoneNumber1" runat="server" MaxLength="15"></asp:TextBox>
             </div>
             <div class="form_line clearfix">
                 <div class="error-1">
@@ -103,52 +103,8 @@
             </div>
               <div class="form_line clearfix" style="padding-bottom: 0">
             <label class="label-1"></label>
-            <p class="text-1" style="text-align:center"><em></em></p>
-            </div>
-            <asp:Panel ID="pnlQuantity" runat="server" Visible="false">
-                <div class="form_line clearfix">
-                    <div class="error-1">
-                        <asp:Label ID="lblQuantityList" runat="server" Visible="false"></asp:Label></div>
-                    <label class="label-1">
-                        Quantity*</label>
-                    <asp:DropDownList ID="ddlQuantityList" runat="server" CssClass="text-1">
-                        <asp:ListItem Value="select" Text="Select"></asp:ListItem>
-                        <asp:ListItem Value="1" Text="1"></asp:ListItem>
-                        <asp:ListItem Value="2" Text="2"></asp:ListItem>
-                        <asp:ListItem Value="3" Text="3"></asp:ListItem>
-                        <asp:ListItem Value="4" Text="4"></asp:ListItem>
-                        <asp:ListItem Value="5" Text="5"></asp:ListItem>
-                        <asp:ListItem Value="6" Text="6"></asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-            </asp:Panel>
-            <div class="form_line clearfix">
-                <div class="error-1">
-                    </div>
-                <label class="label-1">
-                    Select Size*</label>
-                    <%--try Dropdown --%>
-               <asp:DropDownList ID="ddlSize" runat="server" CssClass="text-1">                       
-                       
-                        <asp:ListItem Value="47" Selected="True" Text="Small/Medium"></asp:ListItem>
-                        <asp:ListItem Value="49" Text="Medium/Large"></asp:ListItem>
-                                               
-                    </asp:DropDownList>
-<p style="margin-left: 170px;"><a href="#sizechart" class="sizechart">View Sizing Chart</a></p>
-                    <%-- Buy DropDown --%>
-
-                     <%--<asp:DropDownList ID="ddlSize" runat="server" CssClass="text-1">                        
-                        
-                        <asp:ListItem Value="61" Selected="True" Text="Small/Medium"></asp:ListItem>
-                        <asp:ListItem Value="63" Text="Medium/Large"></asp:ListItem>
-                                               
-                    </asp:DropDownList>--%>
-
-
             </div>
             <div class="form_line clearfix" style="padding: 10px 0 16px 0">
-                <div class="error-2">
-                    </div>
                       
                    <%-- <asp:RadioButtonList ID="rblShippingDifferent" runat="server" OnSelectedIndexChanged="rblShippingDifferent_CheckedChanged"
         CssClass="text-5" AutoPostBack="true" RepeatDirection="Horizontal" TabIndex="124">
@@ -274,9 +230,6 @@
                 </asp:DropDownList>
                 <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-3">
                     <asp:ListItem Value="" Text=""></asp:ListItem>
-                    <asp:ListItem Value="2012">2012</asp:ListItem>
-                    <asp:ListItem Value="2013">2013</asp:ListItem>
-                    <asp:ListItem Value="2014">2014</asp:ListItem>
                     <asp:ListItem Value="2015">2015</asp:ListItem>
                     <asp:ListItem Value="2016">2016</asp:ListItem>
                     <asp:ListItem Value="2017">2017</asp:ListItem>
@@ -315,6 +268,14 @@
                 Send me new Product Updates and 
 Special Offers from Contour!
 </label>          
+            </div>
+            <div class="form_line clearfix" style="padding: 10px 0 0 0">
+                <div class="error-2">
+                    <asp:Label ID="lblAgreeError" runat="server" Visible="false"></asp:Label>
+                </div>
+                <asp:CheckBox ID="chkAgree" runat="server" CssClass="checkbox-left" /><label class="label-3" for="bcfBillingCreditInfo_chkAgree">
+                    I have read and agree to the terms and conditions of the checkout.
+                </label>
             </div>
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/a5/ordernow_btn.jpg" OnClick="imgBtn_OnClick" />

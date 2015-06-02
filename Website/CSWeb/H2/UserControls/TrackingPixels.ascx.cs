@@ -94,7 +94,7 @@ namespace CSWeb.H2.UserControls
 
             if (url.EndsWith("/cart.aspx"))
             {
-                SetCartListrakPixel();
+                //SetCartListrakPixel();
                 pnlCartPages.Visible = true;
 
             }

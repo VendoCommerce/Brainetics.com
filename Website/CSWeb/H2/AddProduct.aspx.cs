@@ -51,7 +51,7 @@ namespace CSWeb.H2.Store
                             cartObject.AddItem(dId, qId, settingVal, false);
                         }
 
-                        cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
+                        //cartObject.ShippingAddress = clientData.CustomerInfo.BillingAddress;
                         //cartObject.Compute();
                         cartObject.ShowQuantity = false;
                         clientData.CartInfo = cartObject;

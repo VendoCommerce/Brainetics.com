@@ -89,14 +89,14 @@
 </script>
 </div>
 
- <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />
+ <%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />--%>
  <p class="text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/underform_certs.png" width="263" height="171" /></p>
  
  </div>
 <div class="clear"></div>
 <div class="home_bottom"><img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/home_bottom.png" usemap="#Maphomebtm" class="block" />
   <map name="Maphomebtm">
-    <area shape="rect" coords="579,1036,791,1095" href="#tryitnow" class="try">
+    <area shape="rect" coords="579,1036,791,1095" href="AddProduct.aspx?pid=64&cid=1" class="try">
   </map>
   <div class="homebtmtext black f14 lh20">
     <p><strong>Brainetics TRAINS two different parts of the MIND</strong> to work simultaneously yet independently of each other. One part of your mind memorizes information while another part is sorting and processing new information. The mind will begin to work more efficiently and become more powerful <strong>giving Brainetics kids a huge advantage</strong> throughout their academic lives 

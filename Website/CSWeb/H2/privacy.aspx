@@ -54,7 +54,7 @@
     This Privacy Policy may be changed at any time. Visitors should check the Privacy Policy each time they visit the Website. Use of the Website constitutes acceptance of the Privacy Policy and changes. The last update was made on April 15, 2010.</p>
 </div>
 <div class="right" style="padding-top: 30px">
- <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
+ <%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />--%></div>
 <div class="clear"></div>
 <!--#include file="bottomcta.html"-->
 </div>
