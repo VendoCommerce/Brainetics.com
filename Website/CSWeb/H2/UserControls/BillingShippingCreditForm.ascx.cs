@@ -574,6 +574,9 @@ namespace CSWeb.H2.UserControls
                 //Set the Client Order objects
                 ClientCartContext contextData = (ClientCartContext)Session["ClientOrderData"];
                 contextData.CustomerInfo = CustData;
+                contextData.CartInfo.ShippingAddress = clientData.CustomerInfo.BillingAddress;
+                contextData.CartInfo.Compute();
+                contextData.CartInfo.ShowQuantity = false;
                 contextData.CartAbandonmentId = CSResolve.Resolve<ICustomerService>().InsertCartAbandonment(CustData, contextData);
                 int orderId = CSResolve.Resolve<IOrderService>().SaveOrder(contextData);
 
