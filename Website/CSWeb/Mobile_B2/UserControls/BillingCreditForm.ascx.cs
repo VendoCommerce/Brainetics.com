@@ -66,13 +66,24 @@ namespace CSWeb.Mobile_B2.UserControls
                 return shippingClientIds;
             }
         }
-        private ClientCartContext CartContext
+        //private ClientCartContext CartContext
+        //{
+        //    get
+        //    {
+        //        return Session["ClientOrderData"] as ClientCartContext;
+        //    }
+        //}
+        public ClientCartContext ClientOrderData
         {
             get
             {
-                return Session["ClientOrderData"] as ClientCartContext;
+                return (ClientCartContext) Session["ClientOrderData"];
             }
-        }        
+            set
+            {
+                Session["ClientOrderData"] = value;
+            }
+        }
         #endregion Variable and Events Declaration
 
         #region Page Events
@@ -333,15 +344,15 @@ namespace CSWeb.Mobile_B2.UserControls
 
         public void BindCartSummary()
         {
-            if (CartContext.CartInfo.ItemCount > 0)
+            if (ClientOrderData.CartInfo.ItemCount > 0)
             {
                 if (ddlState.SelectedValue != "")
-                    CartContext.CustomerInfo.BillingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
+                    ClientOrderData.CustomerInfo.BillingAddress.StateProvinceId = Convert.ToInt32(ddlState.SelectedValue);
                 else
-                    CartContext.CustomerInfo.BillingAddress.StateProvinceId = 0;
-                CartContext.CustomerInfo.BillingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
+                    ClientOrderData.CustomerInfo.BillingAddress.StateProvinceId = 0;
+                ClientOrderData.CustomerInfo.BillingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
 
-                CartContext.CartInfo.Compute();
+                ClientOrderData.CartInfo.Compute();
 
                 //if (UpdateShipping != null)
                 //{
@@ -449,17 +460,17 @@ namespace CSWeb.Mobile_B2.UserControls
                     
                     billingAddress.CountryId = Convert.ToInt32(ddlCountry.SelectedValue);
                     billingAddress.ZipPostalCode = txtZipCode.Text;
-                    CartContext.CustomerInfo.BillingAddress = billingAddress;
+                    ClientOrderData.CustomerInfo.BillingAddress = billingAddress;
                 }
                 else
                 {
-                    CartContext.CartInfo.ShippingAddress = CartContext.CustomerInfo.ShippingAddress;
-                    ddlCountry.SelectedValue = CartContext.CartInfo.ShippingAddress.CountryId.ToString();
+                    ClientOrderData.CartInfo.ShippingAddress = ClientOrderData.CustomerInfo.ShippingAddress;
+                    ddlCountry.SelectedValue = ClientOrderData.CartInfo.ShippingAddress.CountryId.ToString();
 
-                    if (CartContext.CartInfo.ShippingAddress.StateProvinceId != 0 &&
-                        ddlState.Items.FindByValue(CartContext.CartInfo.ShippingAddress.StateProvinceId.ToString()) != null)
+                    if (ClientOrderData.CartInfo.ShippingAddress.StateProvinceId != 0 &&
+                        ddlState.Items.FindByValue(ClientOrderData.CartInfo.ShippingAddress.StateProvinceId.ToString()) != null)
                     {
-                        ddlState.SelectedValue = CartContext.CartInfo.ShippingAddress.StateProvinceId.ToString();
+                        ddlState.SelectedValue = ClientOrderData.CartInfo.ShippingAddress.StateProvinceId.ToString();
                     }
                 }
            
@@ -1249,7 +1260,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 paymentDataInfo.CreditCardCSC = string.Empty;
             }
 
-            CartContext.PaymentInfo = paymentDataInfo;
+            clientData.PaymentInfo = paymentDataInfo;
 
             Session["ClientOrderData"] = clientData;
 
@@ -1263,20 +1274,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "popup", "open_expire_soon();", true);
             }
             else
-            {
-                if (ddlPaymentMethod.SelectedValue == "1") // paypal express checkout path
-                {
-                    if (!string.IsNullOrEmpty(SiteBasePage.PayPalInvoice) && !string.IsNullOrEmpty(SiteBasePage.PayPalToken))
-                    {
-                        Response.Redirect("Cart2.aspx?ppsubmit=1");
-                    }
-                    else
-                    {
-                        Response.Redirect("Cart2.aspx?ppsend=1");
-                    }
-                }
-                else // standard checkout
-                { 
+            { 
                     int orderId = 0;
 
                     if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
@@ -1297,15 +1295,29 @@ namespace CSWeb.Mobile_B2.UserControls
                         if (orderId > 1)
                         {
                             clientData.OrderId = orderId;
-                            Session["ClientOrderData"] = clientData;
-
-                            if (rId == 1)
-                                Response.Redirect("PostSale.aspx");
-                            else
-                                Response.Redirect("CardDecline.aspx");
+                            Session["ClientOrderData"] = clientData;                            
+                            if (ddlPaymentMethod.SelectedValue == "1") // paypal express checkout path
+                            {
+                                if (!string.IsNullOrEmpty(SiteBasePage.PayPalInvoice) && !string.IsNullOrEmpty(SiteBasePage.PayPalToken))
+                                {
+                                    Response.Redirect("Cart2.aspx?ppsubmit=1");
+                                }
+                                else
+                                {
+                                    Response.Redirect("Cart2.aspx?ppsend=1");
+                                    // Response.Redirect(string.Format("AddProduct.aspx?PId={0}&CId={1}&redir={2}",
+                                    // 0 , Convert.ToString((int)CSBusiness.ShoppingManagement.ShoppingCartType.SingleCheckout), "Cart2.aspx?ppsend=1"));
+                                }
+                            }
+                            else  // standard checkout
+                            {
+                                if (rId == 1)
+                                    Response.Redirect("PostSale.aspx");
+                                else
+                                    Response.Redirect("CardDecline.aspx");
+                            }
                         }
-                    }
-                }
+                    }                
             }
         }
 

@@ -1,4 +1,4 @@
-﻿<%@Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.Mobile_B2.Store.cart" EnableSessionState="True" MaintainScrollPositionOnPostback="true" %>
+﻿<%@Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.Mobile_B2.Store.cart2" EnableSessionState="True" MaintainScrollPositionOnPostback="true" %>
 <%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 <%@ Register Src="UserControls/BillingCreditForm.ascx" TagName="ShippingCreditForm"
     TagPrefix="uc" %>
