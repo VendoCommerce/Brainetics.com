@@ -904,8 +904,9 @@ namespace CSWeb
 
                 customer.ShippingAddress = address;
                 customer.BillingAddress = address;
+                cartContext.CartInfo.ShippingAddress = address;
 
-                cartContext.CustomerInfo = customer;
+                cartContext.CustomerInfo = customer;                
                 //cartContext.PaymentInfo = order.CreditInfo; Update payment
 
                 return null;

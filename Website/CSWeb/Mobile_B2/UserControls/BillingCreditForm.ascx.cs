@@ -234,6 +234,13 @@ namespace CSWeb.Mobile_B2.UserControls
                         order.GetAttributeValue<string>("PayPalToken").ToUpper() == Request.QueryString["token"].ToUpper())
                     {
                         cartContext.OrderId = orderId;
+                        if(cartContext.CartInfo.ItemCount==0)
+                        {
+                            foreach (Sku s1 in order.SkuItems)
+                            {
+                                cartContext.CartInfo.AddItem(s1.SkuId, 1, true, false);
+                            }
+                        }
                     }
                     else
                         order = null;
@@ -275,7 +282,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 //else
                 //    txtPhoneNumber1.Text = txtPhoneNumber2.Text = txtPhoneNumber3.Text = string.Empty;
 
-                // UpdateCosts(false);
+                UpdateCosts(false);
 
                 ddlPaymentMethod.SelectedIndex = ddlPaymentMethod.Items.IndexOf(ddlPaymentMethod.Items.FindByValue("1"));
                 ddlPaymentMethod.Visible = false;
@@ -286,8 +293,23 @@ namespace CSWeb.Mobile_B2.UserControls
                 imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png"; // "/content/images/a3/ordernow_btn.png";
 
                 // phSubmitMsg.Visible = true;
+                pnlCreditCard.Visible = false;
             }
         }
+        private void UpdateCosts(bool justZipChanged)
+        {
+            // don't waste time computing if zip hasn't changed since last compute (... good for multiple postbacks by javascript).
+            if (justZipChanged && txtZipCode.Text == ClientOrderData.CartInfo.ShippingAddress.ZipPostalCode)
+            {
+                return;
+            }
+            ClientCartContext cartContext = ClientOrderData;
+            CSWebBase.SiteBasePage.CallCartCompute(cartContext.CartInfo);
+            // cartContext.CartInfo.Compute();
+            ClientOrderData = cartContext;
+            //BindControls();
+        }
+
         protected void ddlPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (ddlPaymentMethod.SelectedValue)
@@ -557,6 +579,12 @@ namespace CSWeb.Mobile_B2.UserControls
         public bool validateInput()
         {
             //_bError = false;
+
+            if (Request["Token"] != null && pnlCreditCard.Visible==false)
+            {
+                return false;
+            }
+
             if (cbBillingDifferent.Checked)
             {
                 if (CommonHelper.EnsureNotNull(txtFirstName.Text) == String.Empty)
@@ -1209,6 +1237,14 @@ namespace CSWeb.Mobile_B2.UserControls
         {
             ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
 
+            if (ddlPaymentMethod.SelectedValue == "1" && clientData.OrderId > 1) // paypal express checkout path
+            {
+                if (!string.IsNullOrEmpty(SiteBasePage.PayPalInvoice) && !string.IsNullOrEmpty(SiteBasePage.PayPalToken))
+                {
+                    Response.Redirect("Cart2.aspx?ppsubmit=1");
+                }
+            }
+
             // attribute save example            
             //clientData.OrderAttributeValues = new Dictionary<string, CSBusiness.Attributes.AttributeValue>();
             //clientData.OrderAttributeValues.Add("ref_url", new CSBusiness.Attributes.AttributeValue("http://www.google.com"));
@@ -1283,13 +1319,16 @@ namespace CSWeb.Mobile_B2.UserControls
                     {
                         //Save Order information before upsale process
 
-                        if (rId == 1)
-                            orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
-                        else
+                        if (clientData.OrderId == 0)
                         {
-                            //update order with modified customer shipping and billing and credit card information
-                            orderId = clientData.OrderId;
-                            CSResolve.Resolve<IOrderService>().UpdateOrder(orderId, clientData);
+                            if (rId == 1)
+                                orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
+                            else
+                            {
+                                //update order with modified customer shipping and billing and credit card information
+                                orderId = clientData.OrderId;
+                                CSResolve.Resolve<IOrderService>().UpdateOrder(orderId, clientData);
+                            }
                         }
 
                         if (orderId > 1)
