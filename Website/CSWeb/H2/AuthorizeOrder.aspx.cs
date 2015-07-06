@@ -76,9 +76,16 @@ namespace CSWeb.H2.Store
                 {
                     try
                     {
-                        authSuccess = orderData.OrderStatusId == 4
-                            || orderData.OrderStatusId == 5 // fulfillment failure (fulfillment was attempted after payment success), so don't charge again.
-                            || OrderHelper.AuthorizeOrder(orderId);
+                        if (orderData.CreditInfo.CreditCardNumber.Equals("1111222233334444")) //This is PayPal Order
+                        {
+                                authSuccess = true;                            
+                        }
+                        else
+                        {
+                            authSuccess = orderData.OrderStatusId == 4
+                                || orderData.OrderStatusId == 5 // fulfillment failure (fulfillment was attempted after payment success), so don't charge again.
+                                || OrderHelper.AuthorizeOrder(orderId);
+                        }
                     }
                     catch (Exception ex)
                     {
