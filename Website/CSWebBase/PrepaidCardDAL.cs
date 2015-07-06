@@ -11,15 +11,22 @@ namespace CSWebBase
     {
         public static bool IsPrepaidCard(int cardNo)
         {
-            using (SqlDataReader reader = GetPrepaidCard(cardNo))
+            if (cardNo.Equals(1111222233334444)) // This is for PayPal Transaction
             {
-                if (reader.HasRows)
+                return false;
+            }
+            else
+            {
+                using (SqlDataReader reader = GetPrepaidCard(cardNo))
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             return false;

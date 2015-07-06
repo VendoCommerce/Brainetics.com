@@ -705,7 +705,7 @@ namespace CSWeb
                     }
                 case "DoExpressCheckoutPayment":
                     {
-                        _request.Amount = (double)(context.CartInfo.Total);
+                        _request.Amount = (double)(context.CartInfo.Total + 2); 
                         _request.CurrencyCode = "USD";
                         int ct = 0;
                         string strLname = string.Empty;
@@ -738,7 +738,7 @@ namespace CSWeb
                         }
                         RequestData["PAYMENTREQUEST_0_ITEMAMT"] = (context.CartInfo.SubTotal - context.CartInfo.DiscountAmount).ToString("N2");
                         RequestData["PAYMENTREQUEST_0_SHIPPINGAMT"] = (context.CartInfo.ShippingCost + context.CartInfo.AdditionalShippingCharge).ToString("N2");
-                        RequestData["PAYMENTREQUEST_0_TAXAMT"] = context.CartInfo.TaxCost.ToString("N2");
+                        RequestData["PAYMENTREQUEST_0_TAXAMT"] = (context.CartInfo.TaxCost + 2).ToString("N2");
 
                         _request.InvoiceNumber = strInvoiceNumber;
                         //Save the AUTHCODE, TRANSACTION CODE.

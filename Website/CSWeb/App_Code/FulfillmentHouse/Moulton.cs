@@ -27,7 +27,7 @@ namespace CSWeb.FulfillmentHouse
         {
             String strXml = String.Empty;
             string lineItems = String.Empty;
-            orderItem.LoadAttributeValues();
+            orderItem.LoadAttributeValues();            
             using (StringWriter str = new StringWriter())
             {
 
@@ -98,7 +98,14 @@ namespace CSWeb.FulfillmentHouse
                             xml.WriteElementString("CL_NO", config.Attributes["CL_NO"].Value);
                             xml.WriteElementString("CSOURCE", config.Attributes["CSOURCE"].Value);
                             xml.WriteElementString("CMEDIA", afid);
-                            xml.WriteElementString("CREDCD", orderItem.CreditInfo.CreditCardNumber);
+                            if (orderItem.CreditInfo.CreditCardNumber.Equals("1111222233334444")) // This is PayPal Order
+                            {
+                                xml.WriteElementString("CREDCD", "PAYPAL");
+                            }
+                            else
+                            {
+                                xml.WriteElementString("CREDCD", orderItem.CreditInfo.CreditCardNumber);
+                            }
                             xml.WriteElementString("EXPDT", orderItem.CreditInfo.CreditCardExpired.ToString("MMyy")); 
                             xml.WriteElementString("PROJECT", config.Attributes["Project"].Value); 
                             xml.WriteElementString("PAY_TYPE", config.Attributes["PayType"].Value);
@@ -149,8 +156,23 @@ namespace CSWeb.FulfillmentHouse
                     xml.WriteEndElement();
                     //TODO enable when fullfilment was enabled:
                     xml.WriteStartElement("Financial");
-                    xml.WriteElementString("CVV2_ID", orderItem.CreditInfo.CreditCardCSC);
-                    xml.WriteElementString("TRANSACTION_ID", orderItem.CreditInfo.TransactionCode);
+                                                                            
+                    if (orderItem.CreditInfo.CreditCardNumber.Equals("1111222233334444")) // This is PayPal Order
+                    {
+                        string TRANSACTION_ID = "";
+                        if (orderItem.ContainsAttribute("BillingAgreementID"))
+                        {
+                            TRANSACTION_ID = orderItem.GetAttributeValue("BillingAgreementID", "");
+                            xml.WriteElementString("TRANSACTION_ID", TRANSACTION_ID);
+                            xml.WriteElementString("AUTHORIZATION_SOURCE_ID", orderItem.CreditInfo.AuthorizationCode);  
+                        }                                               
+                    }
+                    else
+                    {
+                        xml.WriteElementString("CVV2_ID", orderItem.CreditInfo.CreditCardCSC);
+                        xml.WriteElementString("TRANSACTION_ID", orderItem.CreditInfo.TransactionCode);
+                    }                    
+                    
                     xml.WriteEndElement();
                 xml.WriteEndElement();
   
@@ -164,6 +186,20 @@ namespace CSWeb.FulfillmentHouse
         {
             bool result = false;
             Order orderItem = new OrderManager().GetBatchProcessOrders(orderId);
+
+            if (orderItem.CreditInfo.CreditCardNumber.Equals("1111222233334444")) // This is PayPal Order
+            {
+                orderItem.LoadAttributeValues();
+                if (orderItem.ContainsAttribute("BillingAgreementID"))
+                {                    
+                }
+                else
+                {
+                    CSResolve.Resolve<IOrderService>().UpdateOrderStatus(orderItem.OrderId, 7);
+                    return false;
+                }
+            }
+            
             string req = new Moulton().GetRequest(orderItem);            
             string res = CommonHelper.HttpPost(config.Attributes["transactionUrl"].Value, "UserName=" + config.Attributes["login"].Value + "&Password=" + config.Attributes["password"].Value + "&GroupCode=" + config.Attributes["GroupCode"].Value + "&UniqueId=" + orderItem.OrderId.ToString() + "&ClNo=" + config.Attributes["CL_NO"].Value + "&Project=" + config.Attributes["Project"].Value + "&XMLFormatCode=" + config.Attributes["XMLFormatCode"].Value + "&OrdXML=" + req);
             

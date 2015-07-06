@@ -1240,7 +1240,8 @@ namespace CSWeb.Mobile_B2.UserControls
             if (ddlPaymentMethod.SelectedValue == "1" && clientData.OrderId > 1) // paypal express checkout path
             {
                 if (!string.IsNullOrEmpty(SiteBasePage.PayPalInvoice) && !string.IsNullOrEmpty(SiteBasePage.PayPalToken))
-                {
+                {                    
+                    CSResolve.Resolve<IOrderService>().UpdateOrder(clientData.OrderId, clientData);                                  
                     Response.Redirect("Cart2.aspx?ppsubmit=1");
                 }
             }
