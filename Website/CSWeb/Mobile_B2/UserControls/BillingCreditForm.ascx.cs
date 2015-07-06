@@ -124,7 +124,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 txtCCNumber1.Attributes.Add("onkeyup", "return autoTab(this, 16, event);");
                 
                 PopulateExpiryYear();
-
+                lblErrorMessage.Visible = false;
                 if (rId == 0)
                 {
                     //ReloadCartData();
@@ -291,7 +291,10 @@ namespace CSWeb.Mobile_B2.UserControls
                 lblPaymentMethod.Visible = true;
 
                 imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png"; // "/content/images/a3/ordernow_btn.png";
-
+                imgBtn.Focus();
+                lblErrorMessage.Text = ResourceHelper.GetResoureValue("PayPalCompleteOrder");
+                lblErrorMessage.Visible = true;
+                
                 // phSubmitMsg.Visible = true;
                 pnlCreditCard.Visible = false;
             }
@@ -315,16 +318,35 @@ namespace CSWeb.Mobile_B2.UserControls
             switch (ddlPaymentMethod.SelectedValue)
             {
                 case "1": // PayPal
+                    AddProductToShoppingCart(71);
                     pnlCreditCard.Visible = false;
                     pnlPayPal.Visible = true;
                     imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/btn_xpressCheckout.gif";
+                    lblErrorMessage.Text = ResourceHelper.GetResoureValue("PayPalOnePayOnly");
+                    lblErrorMessage.Visible = true;
                     break;
                 case "2": // Credit Card
+                    AddProductToShoppingCart(64);
                     pnlCreditCard.Visible = true;
                     pnlPayPal.Visible = false;
                     imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png";
+                    lblErrorMessage.Visible = false;
                     break;
-            }
+            }            
+        }
+        private void AddProductToShoppingCart(int skuID)
+        {            
+            ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
+            clientData.CartInfo.CartItems.Clear();
+            clientData.CartInfo.AddOrUpdate(skuID, 1, true, false, false);            
+            CSWebBase.SiteBasePage.CallCartCompute(clientData.CartInfo);
+            Session["ClientOrderData"] = clientData;
+            refreshShoppingCart();
+        }
+        private void refreshShoppingCart()
+        {
+            ShoppingCartControl scc = (ShoppingCartControl)this.FindControl("ShoppingCartControl1");
+            scc.BindControls();
         }
         public void PopulateExpiryYear()
         {
@@ -1162,24 +1184,31 @@ namespace CSWeb.Mobile_B2.UserControls
         {
             ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
 
-
-            if (OrderHelper.IsMainKit() && OrderHelper.IsOnePay())
+            
+            if (Request.QueryString["ppsubmit"] == "1" || Request.QueryString["ppsend"] == "1" || Request["Token"] != null || Request["PayerID"] != null)
             {
-                int orderId = 0;
-
-                if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
-                    || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder)
+                // Its PayPal Order
+            }
+            else
+            {
+                if (OrderHelper.IsMainKit() && OrderHelper.IsOnePay())
                 {
-                    //Save Order information before upsale process
+                    int orderId = 0;
 
-
-                    orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
-
-                    if (orderId > 1)
+                    if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess
+                        || CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.EnableReviewOrder)
                     {
-                        clientData.OrderId = orderId;
-                        Session["ClientOrderData"] = clientData;
-                        Response.Redirect("PostSale.aspx");
+                        //Save Order information before upsale process
+
+
+                        orderId = CSResolve.Resolve<IOrderService>().SaveOrder(clientData);
+
+                        if (orderId > 1)
+                        {
+                            clientData.OrderId = orderId;
+                            Session["ClientOrderData"] = clientData;
+                            Response.Redirect("PostSale.aspx");
+                        }
                     }
                 }
             }

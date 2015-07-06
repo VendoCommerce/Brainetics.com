@@ -191,7 +191,7 @@
                 <div class="error-2">
                     <asp:Label ID="lblMessage" runat="server" ForeColor="Red" /><br />
                     <asp:Label ID="lblBtnMessage" runat="server" ForeColor="Red" />
-                    <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red" />
+                    <asp:Label ID="lblErrorMessage" runat="server" Visible="false" ForeColor="Red" />
                     <asp:Label ID="lblValidation" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                      
                     </div>
