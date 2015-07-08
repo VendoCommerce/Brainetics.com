@@ -121,8 +121,15 @@ namespace CSWeb.FulfillmentHouse
                             xml.WriteElementString("ZIP", orderItem.CustomerInfo.ShippingAddress.ZipPostalCode);
                             xml.WriteElementString("PHONE", orderItem.CustomerInfo.ShippingAddress.PhoneNumber);                             
                             xml.WriteElementString("COUNTRY_CODE", orderItem.CustomerInfo.ShippingAddress.CountryCode.Trim());
-                            xml.WriteElementString("SRC_CD", config.Attributes["SRC_CD"].Value);
-                            xml.WriteElementString("CVV2", orderItem.CreditInfo.CreditCardCSC); 
+                            if (orderItem.CreditInfo.CreditCardNumber.Equals("1111222233334444")) // This is PayPal Order
+                            {
+                                // REMOVE  SRC_CD  and  CVV2
+                            }
+                            else
+                            {
+                                xml.WriteElementString("SRC_CD", config.Attributes["SRC_CD"].Value);
+                                xml.WriteElementString("CVV2", orderItem.CreditInfo.CreditCardCSC);
+                            }
                             xml.WriteElementString("BILL_TO_COMPANY", "");
                             xml.WriteElementString("BILL_TO_L_NAME", orderItem.CustomerInfo.BillingAddress.LastName);
                             xml.WriteElementString("BILL_TO_F_NAME", orderItem.CustomerInfo.BillingAddress.FirstName);
