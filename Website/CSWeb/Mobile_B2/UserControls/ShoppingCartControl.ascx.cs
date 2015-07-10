@@ -143,7 +143,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 btnRemoveItem.CommandArgument = cartItem.SkuId.ToString();
 
                 txtQuantity.Attributes["onchange"] = Page.ClientScript.GetPostBackEventReference(refresh, "");
-                QuantityMode = ShoppingCartQuanityMode.Editable;
+                QuantityMode = ShoppingCartQuanityMode.Readonly;
                 switch (QuantityMode)
                 {
                     case ShoppingCartQuanityMode.Hidden:

@@ -55,7 +55,7 @@ $(document).ready(function () {
                 <p class="basket_description">
                     <asp:Label runat="server" ID='lblSkuDescription'></asp:Label></p>
             </div>
-            <div class="cart_select" style="padding-left: 40px;">
+            <div class="cart_select" >
            
                 <asp:TextBox runat="server" ID="txtQuantity" Text='1' MaxLength="3"
                     Columns="2" OnTextChanged="OnTextChanged_Changed" CssClass="text_qty"></asp:TextBox>
