@@ -113,8 +113,8 @@
             <asp:RequiredFieldValidator ID="rfvPaymentMethod" runat="server" Display="Dynamic"
                                         ControlToValidate="ddlPaymentMethod"></asp:RequiredFieldValidator>
         </div>
-        <label class="label-1">
-            Payment Method*</label>
+        <%--<label class="label-1">
+            Payment Method*</label>--%>
         <asp:DropDownList ID="ddlPaymentMethod" runat="server" CssClass="text-1" size="1" AutoPostBack="true" OnSelectedIndexChanged="ddlPaymentMethod_SelectedIndexChanged">
             <asp:ListItem Value="">- Select -</asp:ListItem>
             <asp:ListItem Value="1">PayPal</asp:ListItem>

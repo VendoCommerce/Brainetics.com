@@ -1,6 +1,34 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppingCartControl.ascx.cs" Inherits="CSWeb.Mobile_B2.UserControls.ShoppingCartControl" %>
 
-<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/cart2_june6.jpg" alt="Brainetics&reg;" style="margin-bottom: 20px" id="cart2_img" />
+
+
+<div id="carttopimg"></div>
+
+<script>
+$(document).ready(function () {
+
+    $.urlParam = function (name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results == null) {
+            return null;
+        }
+        else {
+            return results[1] || 0;
+        }
+    }
+
+    var paymentType = $.urlParam('OrderType');
+    paymentType = paymentType.toLowerCase();
+
+    if (paymentType == 'pp') {
+        $("#carttopimg").replaceWith("<div id=\"carttopimg\"><img src=\"//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/cart2_top_20150710_paypal.png\" alt=\"Brainetics&reg;\" style=\"margin-bottom: 10px\" id=\"cart2_img\" /></div>");
+    } else {
+        $("#carttopimg").replaceWith("<div id=\"carttopimg\"><img src=\"//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/cart2_top_20150710.png\" alt=\"Brainetics&reg;\" style=\"margin-bottom: 10px\" id=\"cart2_img\" /></div>");
+    }
+    
+});
+</script>
+
 <asp:LinkButton ID="refresh" runat="server" CausesValidation="false"></asp:LinkButton>
 <asp:Repeater runat="server" ID="rptShoppingCart" OnItemDataBound="rptShoppingCart_OnItemDataBound"
     OnItemCommand="rptShoppingCart_OnItemCommand">
