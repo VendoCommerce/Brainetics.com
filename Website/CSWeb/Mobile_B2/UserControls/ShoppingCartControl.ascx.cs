@@ -113,7 +113,7 @@ namespace CSWeb.Mobile_B2.UserControls
 
                 Sku cartItem = e.Item.DataItem as Sku;
 
-                lblSkuDescription.Text = cartItem.Title;
+                lblSkuDescription.Text = cartItem.LongDescription;
                 lblQuantity.Text = txtQuantity.Text = cartItem.Quantity.ToString();
                 decimal initialPrice = cartItem.InitialPrice;
 
