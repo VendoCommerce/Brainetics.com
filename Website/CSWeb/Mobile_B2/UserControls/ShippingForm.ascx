@@ -5,11 +5,14 @@
 <asp:UpdatePanel ID="upBillingForm" runat="server">
     <ContentTemplate>
         <%--<img src="<%= GetDynamicVersionData("cartimage")%>" alt="Brainetics&reg;" />--%>
-        <img src="http://d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/BRAIN004_Mobile_Cart_head.jpg" style="max-width: 642px;" alt="Brainetics" id="cart1_img" />
-
+        
         <div class="cart_mobile">
      
-           <div class="form_line clearfix" runat="server">
+           <div class="form_line clearfix" runat="server">                
+                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/paypal_checkout.png" OnClick="imgBtn_OnClickPayPal" CausesValidation="false" />
+           </div>
+
+            <div class="form_line clearfix" runat="server">
                 <div class="error-1">
                     <asp:Label ID="lblShippingCountryError" runat="server" Visible="false"></asp:Label></div>
                 <asp:DropDownList ID="ddlShippingCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID" AutoPostBack="true" OnSelectedIndexChanged="ShippingCountry_SelectedIndexChanged" CssClass="text-1">
@@ -85,7 +88,7 @@
              <asp:RegularExpressionValidator ID="revPhone" runat="server" ControlToValidate="txtPhoneNumber" EnableClientScript="true"
                 Display="Dynamic" ValidationExpression="\d{3}-\d{3}-\d{4}" Enabled="False" />
                
-                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="14" CssClass="text-1" placeholder="Phone e.g. xxx-xxx-xxxx"></asp:TextBox>
+                <asp:TextBox ID="txtPhoneNumber" runat="server" MaxLength="10" CssClass="text-1" placeholder="Phone"></asp:TextBox> 
             </div>
                      <div class="error-1">            
             <span id="phoneeg" style="margin-left: 25px; color: #333; display: none;">Eg.xxx-xxx-xxxx</span>

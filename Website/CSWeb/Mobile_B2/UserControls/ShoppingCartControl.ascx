@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShoppingCartControl.ascx.cs" Inherits="CSWeb.Mobile_B2.UserControls.ShoppingCartControl" %>
 
-
+<img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/cart2_june6.jpg" alt="Brainetics&reg;" style="margin-bottom: 20px" id="cart2_img" />
 <asp:LinkButton ID="refresh" runat="server" CausesValidation="false"></asp:LinkButton>
 <asp:Repeater runat="server" ID="rptShoppingCart" OnItemDataBound="rptShoppingCart_OnItemDataBound"
     OnItemCommand="rptShoppingCart_OnItemCommand">

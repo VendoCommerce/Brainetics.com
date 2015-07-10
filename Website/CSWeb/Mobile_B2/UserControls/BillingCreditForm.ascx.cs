@@ -167,6 +167,19 @@ namespace CSWeb.Mobile_B2.UserControls
                 SiteBasePage.PayPalInvoice = Request["PayerID"].ToString();
             }
 
+            if (IsPayPalOrder())
+            {
+                ddlPaymentMethod.SelectedValue = "1";
+                PaymentMethodChanged(false);
+                lblPayPalBuyNow.Text = ResourceHelper.GetResoureValue("PayPalClickButton");
+                lblPayPalBuyNow.Visible = true;
+            }
+            else
+            {
+                ddlPaymentMethod.SelectedValue = "";
+                ddlPaymentMethod.Visible = true;
+            }
+
             if (Request.QueryString["ppsend"] == "1")
             {
                 ClientCartContext cartContext = (ClientCartContext)Session["ClientOrderData"];
@@ -177,6 +190,8 @@ namespace CSWeb.Mobile_B2.UserControls
             }
             else if (Request.QueryString["ppsubmit"] == "1")
             {
+                ClientCartContext cartContext = (ClientCartContext)Session["ClientOrderData"];
+                CSResolve.Resolve<IOrderService>().UpdateOrderStatus(cartContext.OrderId, 1); 
                 Response.Redirect("postsale.aspx", true);
                 //string message = OrderHelper.FinalizePayPalTransaction((ClientCartContext)Session["ClientOrderData"]);
 
@@ -289,12 +304,13 @@ namespace CSWeb.Mobile_B2.UserControls
 
                 lblPaymentMethod.Text = "PayPal";
                 lblPaymentMethod.Visible = true;
-
+               
                 imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png"; // "/content/images/a3/ordernow_btn.png";
                 imgBtn.Focus();
                 lblErrorMessage.Text = ResourceHelper.GetResoureValue("PayPalCompleteOrder");
-                lblErrorMessage.Visible = true;
-                
+                lblErrorMessage.Visible = true;                
+                lblPayPalBuyNow.Text = ResourceHelper.GetResoureValue("PayPalClickButton");
+                lblPayPalBuyNow.Visible = true;
                 // phSubmitMsg.Visible = true;
                 pnlCreditCard.Visible = false;
             }
@@ -313,35 +329,45 @@ namespace CSWeb.Mobile_B2.UserControls
             //BindControls();
         }
 
-        protected void ddlPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddlPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)  
+        {
+            PaymentMethodChanged(true);
+        }
+        protected void PaymentMethodChanged(bool AddProduct)
         {
             switch (ddlPaymentMethod.SelectedValue)
             {
                 case "1": // PayPal
-                    AddProductToShoppingCart(71);
+                    AddProductToShoppingCart(71, AddProduct);
                     pnlCreditCard.Visible = false;
                     pnlPayPal.Visible = true;
-                    imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/btn_xpressCheckout.gif";
+                    imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/paypal_buy-logo-large.png";
                     lblErrorMessage.Text = ResourceHelper.GetResoureValue("PayPalOnePayOnly");
                     lblErrorMessage.Visible = true;
+                    lblPayPalBuyNow.Text = ResourceHelper.GetResoureValue("PayPalClickButton");
+                    lblPayPalBuyNow.Visible = true;
                     break;
                 case "2": // Credit Card
-                    AddProductToShoppingCart(64);
+                    AddProductToShoppingCart(64, AddProduct);
                     pnlCreditCard.Visible = true;
                     pnlPayPal.Visible = false;
                     imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png";
                     lblErrorMessage.Visible = false;
+                    lblPayPalBuyNow.Visible = false;
                     break;
             }            
         }
-        private void AddProductToShoppingCart(int skuID)
-        {            
-            ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
-            clientData.CartInfo.CartItems.Clear();
-            clientData.CartInfo.AddOrUpdate(skuID, 1, true, false, false);            
-            CSWebBase.SiteBasePage.CallCartCompute(clientData.CartInfo);
-            Session["ClientOrderData"] = clientData;
-            refreshShoppingCart();
+        private void AddProductToShoppingCart(int skuID, bool AddProduct)
+        {
+            if (AddProduct)
+            {
+                ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
+                clientData.CartInfo.CartItems.Clear();
+                clientData.CartInfo.AddOrUpdate(skuID, 1, true, false, false);
+                CSWebBase.SiteBasePage.CallCartCompute(clientData.CartInfo);
+                Session["ClientOrderData"] = clientData;
+                refreshShoppingCart();
+            }
         }
         private void refreshShoppingCart()
         {
@@ -1180,12 +1206,23 @@ namespace CSWeb.Mobile_B2.UserControls
         //}
 
 
+        public bool IsPayPalOrder()
+        {
+            bool IsPayPalOrder = false;
+            if (Request.QueryString["OrderType"] != null)
+            {
+                if (Request.QueryString["OrderType"].ToString().Equals("pp"))
+                {
+                    IsPayPalOrder = true;
+                }
+            }
+            return IsPayPalOrder;
+        }
         public void ReloadCartData()
         {
             ClientCartContext clientData = (ClientCartContext)Session["ClientOrderData"];
 
-            
-            if (Request.QueryString["ppsubmit"] == "1" || Request.QueryString["ppsend"] == "1" || Request["Token"] != null || Request["PayerID"] != null)
+            if (IsPayPalOrder() || Request.QueryString["ppsubmit"] == "1" || Request.QueryString["ppsend"] == "1" || Request["Token"] != null || Request["PayerID"] != null)
             {
                 // Its PayPal Order
             }
@@ -1368,7 +1405,7 @@ namespace CSWeb.Mobile_B2.UserControls
                             if (ddlPaymentMethod.SelectedValue == "1") // paypal express checkout path
                             {
                                 if (!string.IsNullOrEmpty(SiteBasePage.PayPalInvoice) && !string.IsNullOrEmpty(SiteBasePage.PayPalToken))
-                                {
+                                {                                    
                                     Response.Redirect("Cart2.aspx?ppsubmit=1");
                                 }
                                 else

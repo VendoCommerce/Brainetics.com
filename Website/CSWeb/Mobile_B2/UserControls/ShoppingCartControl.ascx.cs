@@ -127,7 +127,7 @@ namespace CSWeb.Mobile_B2.UserControls
                     }
                 }
 
-                lblSkuInitialPrice.Text = String.Format("${0:0.##}", initialPrice);
+                lblSkuInitialPrice.Text = String.Format("${0:0.00}", initialPrice);
                 if (cartItem.ImagePath.Length > 0)
                 {
                     imgProduct.ImageUrl = cartItem.ImagePath;

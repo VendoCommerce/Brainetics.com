@@ -13,6 +13,9 @@ using CSWeb.Mobile_B2.Store;
 using System.Web;
 using CSBusiness.Resolver;
 using CSWebBase;
+using CSBusiness.CreditCard;
+using CSBusiness.OrderManagement;
+using CSBusiness.Payment;
 
 namespace CSWeb.Mobile_B2.UserControls
 {
@@ -314,12 +317,54 @@ namespace CSWeb.Mobile_B2.UserControls
 
         }
 
+        protected void imgBtn_OnClickPayPal(object sender, ImageClickEventArgs e)
+        {
+            ClientCartContext contextData = (ClientCartContext)Session["ClientOrderData"];
+            if (contextData == null) // indicates session timeout
+            {
+                Response.Redirect("CheckoutSessionExpired.aspx?page=index.aspx", true);
+            }
+
+            Address shippingAddress = new Address();
+
+            shippingAddress.FirstName = "Void";
+            shippingAddress.LastName = "Test";
+            shippingAddress.Address1 = "1840 Century Park East";
+            shippingAddress.Address2 = "Suite 550";
+            shippingAddress.City = "Los Angeles";
+            shippingAddress.StateProvinceId = 5;
+            shippingAddress.CountryId = 231;
+            shippingAddress.ZipPostalCode = "90067";
+                        
+            Customer CustData = new Customer();
+            CustData.FirstName = "Void";
+            CustData.LastName = "Test";
+            CustData.PhoneNumber = "3103103100";
+            CustData.Email = "paypal@conversionsystems.com";
+            CustData.Username = CustData.Email;
+            CustData.BillingAddress = shippingAddress;
+            CustData.ShippingAddress = shippingAddress;
+            contextData.CustomerInfo = CustData; 
+
+            string CardNumber = "1111222233334444";
+            PaymentInformation paymentDataInfo = new PaymentInformation();
+            paymentDataInfo.CreditCardNumber = CommonHelper.Encrypt(CardNumber);
+            paymentDataInfo.CreditCardType = (int)CreditCardTypeEnum.VISA;
+            paymentDataInfo.CreditCardName = CreditCardTypeEnum.VISA.ToString();
+            paymentDataInfo.CreditCardExpired = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            paymentDataInfo.CreditCardCSC = string.Empty;
+            contextData.PaymentInfo = paymentDataInfo;
+                                   
+            Session["ClientOrderData"] = contextData;
+            // Add One Pay Offer SKU for PayPal
+            Response.Redirect(RedirectUrl + "?PId=71&OrderType=pp&CId=" + (int)CSBusiness.ShoppingManagement.ShoppingCartType.ShippingCreditCheckout);
+        }
         protected void imgBtn_OnClick(object sender, ImageClickEventArgs e)
         {
             if (!validateInput())
             {
                 SaveData();
-                Response.Redirect(RedirectUrl + "?PId=64&CId=" + (int)CSBusiness.ShoppingManagement.ShoppingCartType.ShippingCreditCheckout);
+                Response.Redirect(RedirectUrl + "?PId=64&OrderType=cc&CId=" + (int)CSBusiness.ShoppingManagement.ShoppingCartType.ShippingCreditCheckout);
             }
 
 

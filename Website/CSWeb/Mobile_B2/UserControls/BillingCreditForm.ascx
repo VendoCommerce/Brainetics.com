@@ -29,11 +29,12 @@
 </div>
 </div>
 <!-- END implement this expire soon code on all versions needed -->
-  <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/cart2_june6.jpg" alt="Brainetics&reg;" style="margin-bottom: 20px" id="cart2_img" />
+  
    <uc:ShoppingCartControl ID="ShoppingCartControl1" runat="server" OnUpdateShipping="Shipping_OnUpdateShipping"></uc:ShoppingCartControl>     
    <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/paymentinfo.png" alt="Payment Information" style="margin-bottom: 20px" />
 <div class="cart_mobile">
 
+    <asp:Panel ID="pnlCreditCard" runat="server">   
             <div class="form_line clearfix">
                 <div class="error-2">
               </div>
@@ -104,6 +105,9 @@
                 </div>
             </asp:Panel>
               
+    
+
+         
     <div class="form_line clearfix">
         <div class="error-1">                        
             <asp:RequiredFieldValidator ID="rfvPaymentMethod" runat="server" Display="Dynamic"
@@ -119,7 +123,6 @@
         <asp:Label ID="lblPaymentMethod" runat="server" Visible="false" />
     </div>
 
-    <asp:Panel ID="pnlCreditCard" runat="server">        
     <div class="form_line clearfix" style="padding-top: 20px;">
               
               <div class="form_ssl"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=NO&amp;use_transparent=YES&amp;lang=en"></script><br />
@@ -187,15 +190,20 @@
             <asp:Panel ID="pnlPayPal" runat="server" Visible="false">
             </asp:Panel>
 
-            <div class="form_line_btn" style="padding-bottom: 70px;">
+            <div class="form_line_btn" style="padding-bottom: 10px;">
                 <div class="error-2">
-                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red" /><br />
+                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red" />
                     <asp:Label ID="lblBtnMessage" runat="server" ForeColor="Red" />
-                    <asp:Label ID="lblErrorMessage" runat="server" Visible="false" ForeColor="Red" />
+                    <asp:Label ID="lblErrorMessage" runat="server" Visible="false" ForeColor="Red" />                    
                     <asp:Label ID="lblValidation" runat="server" Visible="false" ForeColor="Red"></asp:Label>
                      
                     </div>
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
+                <div > 
+                    <div style="padding-top: 20px; padding-bottom:20px;">
+                        <asp:Label ID="lblPayPalBuyNow" runat="server" Visible="false" CssClass="error-2" />
+                    </div>
+                    <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png" OnClick="imgBtn_OnClick" />
+                </div>
             </div>
             
         

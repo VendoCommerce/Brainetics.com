@@ -40,6 +40,15 @@ namespace CSWeb.Mobile_B2.UserControls {
         protected global::CSWeb.Mobile_B2.UserControls.ShoppingCartControl ShoppingCartControl1;
         
         /// <summary>
+        /// pnlCreditCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCreditCard;
+        
+        /// <summary>
         /// cbBillingDifferent control.
         /// </summary>
         /// <remarks>
@@ -274,15 +283,6 @@ namespace CSWeb.Mobile_B2.UserControls {
         protected global::System.Web.UI.WebControls.Label lblPaymentMethod;
         
         /// <summary>
-        /// pnlCreditCard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlCreditCard;
-        
-        /// <summary>
         /// lblCCType control.
         /// </summary>
         /// <remarks>
@@ -479,6 +479,15 @@ namespace CSWeb.Mobile_B2.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblValidation;
+        
+        /// <summary>
+        /// lblPayPalBuyNow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPayPalBuyNow;
         
         /// <summary>
         /// imgBtn control.

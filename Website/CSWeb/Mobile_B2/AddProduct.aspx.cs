@@ -17,6 +17,7 @@ namespace CSWeb.Mobile_B2.Store
     public partial class AddProduct : SiteBasePage
     {
         protected int skuId, cId, dId = 0, qId = 1;
+        protected string OrderType = "cc";
         protected Cart cartObject;
         public ClientCartContext clientData;
         protected override void Page_Load(object sender, EventArgs e)
@@ -35,7 +36,9 @@ namespace CSWeb.Mobile_B2.Store
 
                 if (Request.Params["QId"] != null)
                     qId = Convert.ToInt32(Request.Params["QId"]);
-
+                if (Request.Params["OrderType"] != null)
+                    OrderType = Request.Params["OrderType"].ToString().ToLower();
+                
                 if (skuId > 0)
                 {
 
@@ -85,7 +88,7 @@ namespace CSWeb.Mobile_B2.Store
                         cartObject.ShowQuantity = false;
                         clientData.CartInfo = cartObject;
                         Session["ClientOrderData"] = clientData;
-                        Response.Redirect("cart2.aspx");
+                        Response.Redirect("cart2.aspx?OrderType=" + OrderType);
                     }
 
                     else
