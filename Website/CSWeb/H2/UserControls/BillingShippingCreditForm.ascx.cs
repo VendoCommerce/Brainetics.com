@@ -460,12 +460,12 @@ namespace CSWeb.H2.UserControls
 
             #endregion
 
-            if (!chkAgree.Checked)
-            {
-                lblAgreeError.Text = ResourceHelper.GetResoureValue("AgreeTermsErrorMsg");
-                lblAgreeError.Visible = true;
-                _bError = true;
-            }
+            //if (!chkAgree.Checked)
+            //{
+            //    lblAgreeError.Text = ResourceHelper.GetResoureValue("AgreeTermsErrorMsg");
+            //    lblAgreeError.Visible = true;
+            //    _bError = true;
+            //}
 
             return _bError;
 

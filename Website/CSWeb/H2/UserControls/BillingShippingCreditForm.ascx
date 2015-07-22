@@ -267,13 +267,13 @@
                 <label class="label-2">
                   I would like to get product updates and special offers</label>
             </div>
-            <div class="form_line clearfix" runat="server">
+<%--            <div class="form_line clearfix" runat="server">
                <div class="error-2">                     
                     <asp:Label ID="lblAgreeError" runat="server" ></asp:Label></div>
             <asp:CheckBox ID="chkAgree" runat="server"  CssClass="checkbox-left" />            
                 <label class="label-2">
                 I agree to the <a href="#terms" class="terms">Terms and Conditions and Privacy Policy</a>.</label>
-            </div>
+            </div>--%>
         
             <div class="form_line_btn">
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/a5/btn_ordernow.png" OnClick="imgBtn_OnClick" />

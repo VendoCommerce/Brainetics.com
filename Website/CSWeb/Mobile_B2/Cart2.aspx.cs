@@ -14,6 +14,8 @@ namespace CSWeb.Mobile_B2.Store
         protected override void Page_Load(object sender, EventArgs e)
         {
             base.Page_Load(sender, e);
+            OrderHelper.SetDynamicLandingPageVersion("mobile", (ClientCartContext)Session["ClientOrderData"]);
+
         }
 
         public string GetCleanPhoneNumber(string data)

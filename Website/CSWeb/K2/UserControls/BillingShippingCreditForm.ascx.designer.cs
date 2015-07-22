@@ -589,33 +589,6 @@ namespace CSWeb.K2.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtCvv;
         
         /// <summary>
-        /// divTerms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTerms;
-        
-        /// <summary>
-        /// lblTermsError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTermsError;
-        
-        /// <summary>
-        /// cbTerms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbTerms;
-        
-        /// <summary>
         /// imgBtn control.
         /// </summary>
         /// <remarks>
