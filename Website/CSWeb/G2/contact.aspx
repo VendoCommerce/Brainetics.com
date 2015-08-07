@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.G2.Store.index" EnableSessionState="True" %>
-<%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.H2.Store.index" EnableSessionState="True" %>
+<%@ Register Src="/H2/UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 <%@ Register Src="UserControls/ShippingForm.ascx" TagName="ShippingFormControl" TagPrefix="uc" %>
 
 
@@ -32,24 +32,15 @@
 <div class="left">
 <h2>Contact Us</h2>
   <p>We are committed to providing excellent customer service to all of our important customers.  </p>
-<p><a href="http://secure.datapakservices.com/OrderTrackingPortal/?comp_num=204&proj_num=003" target="_blank"><strong>To Track or Check the Status of your order, please click here.</strong></a></p>
+<p><a href="https://trackmyorderstatus.com/(S(wfbd5b2qmcsugw55sx2kkmb0))/Introduction.aspx" target="_blank"><strong>To Track or Check the Status of your order, please click here.</strong></a></p>
 <p>Please note:  there may be a 24-48 hour delay from the time you place your order until it becomes visible here. </p>
 <p><strong>If you have a product question:</strong><br>
-Please email us at <a href="mailto:Brainetics@datapakservices.com">Brainetics@datapakservices.com</a> or call customer at 1-877-444-3776 Monday-Friday between 8:00 AM and 8:00 PM Eastern time and Saturday 9:00 AM to 6:00 PM Eastern time.</p>
+Please email us at <a href="mailto:brainetics@webcsr.info">brainetics@webcsr.info</a> or call customer at 1-877-444-3776 Monday-Friday between 5:00 AM and  5:00 PM PST.</p>
 
-<p><strong>To order By Mail:</strong><br>
-
-Please send a check or money order for the amount of $214.75 PLUS applicable taxes to:
-</p>
-
-<p>Brainetics<br>
-PO Box 48<br>
-Howell, MI 48844
-</p>
 </div>
-<div class="right" style="padding-top: 30px">
+<div class="right" style="padding-top: 36px">
  <uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /></div>
-<div class="clear"></div>
+<div class="clear" style="height: 30px;"></div>
 <!--#include file="bottomcta.html"-->
 </div>
 

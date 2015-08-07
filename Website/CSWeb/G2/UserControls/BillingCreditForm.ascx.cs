@@ -68,7 +68,6 @@ namespace CSWeb.G2.UserControls
                 rfvExpMonth.ErrorMessage = ResourceHelper.GetResoureValue("ExpDateMonthErrorMsg") + "<br/>";
                 rfvExpYear.ErrorMessage = ResourceHelper.GetResoureValue("ExpDateYearErrorMsg");
                 rfvCVV.ErrorMessage = ResourceHelper.GetResoureValue("CVVErrorMsg");
-                lblTermsError.Text = ResourceHelper.GetResoureValue("TermsErrorMsg");
                 if (rId == 0)
                 {
                     //ReloadCartData();
@@ -593,14 +592,6 @@ namespace CSWeb.G2.UserControls
                 }
 
             }
-
-            if (!cbTerms.Checked)
-            {
-                lblTermsError.Visible = true;
-                _bError = true;
-            }
-            else
-                lblTermsError.Visible = false;
 
             return _bError;
         }

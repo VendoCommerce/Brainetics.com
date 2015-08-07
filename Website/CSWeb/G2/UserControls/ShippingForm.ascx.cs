@@ -73,7 +73,6 @@ namespace CSWeb.G2.UserControls
                 rfvPhone.ErrorMessage = ResourceHelper.GetResoureValue("PhoneNumberErrorMsg");
                 rfvEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailErrorMsg");
                 revEmail.ErrorMessage = ResourceHelper.GetResoureValue("EmailValidationErrorMsg");
-                revPhone.ErrorMessage = ResourceHelper.GetResoureValue("PhoneValidationErrorMsg");
             }
 
             if (!IsPostBack)

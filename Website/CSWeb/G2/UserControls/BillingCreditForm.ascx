@@ -208,16 +208,9 @@
                     <asp:ListItem Value="2021">2021</asp:ListItem>
                 </asp:DropDownList>
             </div>
-              <div class="form_line clearfix" style="padding: 10px 0"><input type="checkbox"  class="checkbox-left" />
+              <div class="form_line clearfix" style="padding: 10px 0"><input type="checkbox"  class="checkbox-left" checked="checked" />
                 <label class="label-2">
                   I would like to get product updates and special offers</label>
-            </div>
-            <div class="form_line clearfix" style="padding: 10px 0" id="divTerms" runat="server">
-               <div class="error-2">                     
-                    <asp:Label ID="lblTermsError" runat="server" Visible="false"></asp:Label></div>
-            <asp:CheckBox ID="cbTerms" runat="server"  CssClass="checkbox-left" />            
-                <label class="label-2">
-                I agree to the <a href="#terms" class="terms">Terms and Conditions and Privacy Policy</a>.</label>
             </div>
                    <div id="cart_offdet">
 
