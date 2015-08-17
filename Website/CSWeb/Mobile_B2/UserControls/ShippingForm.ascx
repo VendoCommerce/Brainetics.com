@@ -58,10 +58,10 @@ display: none;
                     </div>
                </div>
                <div class="form_line clearfix text-center" runat="server" style="padding-top: 3em;">
-                   <p style="text-align: left; padding-left: 0;">To check out with your PayPal account, please click on the button below:</p>
+                  
                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/paypal_checkout.png" OnClick="imgBtn_OnClickPayPal" CausesValidation="false" />                                      
-                   <p class="pad0" style="text-align: left; padding-top: 1em; padding-left: 0;">Or, if you'd like to check out using your Credit Card, please fill out the form below:</p>
-                   <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_continue.png" OnClick="imgBtn_OnClickCreditCard" CausesValidation="false" />
+                   <div class="or"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/brainetics_or.png"></div>
+                   <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/brainetics_checkout.png" OnClick="imgBtn_OnClickCreditCard" CausesValidation="false" />
                </div>
            </asp:Panel>
             <asp:Panel ID="pnlCreditCardCheckout" runat="server" Visible="false">

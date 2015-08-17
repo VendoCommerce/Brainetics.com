@@ -825,7 +825,7 @@ padding-bottom: 20px;
 	display: block;
 	position: relative;
 	font-size: 30px;
-	width: 624px;
+	width: 600px;
 	color: #000;
 	padding-bottom: 30px;
 	font-weight: bold;
@@ -834,7 +834,7 @@ padding-bottom: 20px;
 .cart_totals_left {
   float: left;
   position: relative;
-  width: 440px;
+  width: 400px;
 	text-align: right;
 }
 
@@ -954,4 +954,9 @@ p.basket_title {display: none;}
 
 .paypaldrop {
 	font-size: 13px;
+}
+
+.or {
+	margin: 10px auto 15px;
+	text-align:center;
 }
