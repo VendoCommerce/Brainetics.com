@@ -41,10 +41,11 @@ display: none;
     <ContentTemplate>
         <%--<img src="<%= GetDynamicVersionData("cartimage")%>" alt="Brainetics&reg;" />--%>
         
-        <div class="cart_mobile">
+        
+        <div class="cart_mobile2">
            <asp:Panel ID="pnlCartCheckoutSummary" runat="server" >
-              <div class="form_line clearfix text-center" runat="server" style="padding-top: 3em;">
-              <p style="text-align:center; text-transform: uppercase; font-size: 35px;">ORDER SUMMARY</p>
+              <div class="form_line clearfix text-center" runat="server">
+              <p style="text-align:center; text-transform: uppercase; font-size: 35px; background: rgba(255,255,255,.7); padding: 20px 0;">ORDER SUMMARY</p>
               <div class="divider"></div>
               
                    <div class="tablecart">
@@ -180,6 +181,10 @@ display: none;
             </div>
  
             </asp:Panel>
+            
+            <div class="cards">
+            <img src="//d39hwjxo88pg52.cloudfront.net/images/mobile/cards.png">
+            </div>
         </div>
         
         

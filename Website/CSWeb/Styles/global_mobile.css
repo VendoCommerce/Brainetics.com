@@ -973,6 +973,7 @@ p.basket_title {display: none;}
 	width: 100%;
 	table-layout:fixed;
 	font-size: 20px;
+	margin-bottom: 20px;
 }
 
 .trow {
@@ -982,4 +983,22 @@ p.basket_title {display: none;}
 	display:table-cell;
 	padding: 10px 30px;
 	border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.cart_mobile2 {
+	
+	margin: 40px auto;
+	background:rgba(204,204,204,.2);
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 8px;
+	width: 90%;
+
+}
+
+.cards {
+	margin-top: 20px;
+	border-top: 1px solid rgba(0,0,0,.1);
+	background: rgba(255,255,255,.7);
+	 padding: 20px 0;
+	 text-align:center;
 }
