@@ -1,5 +1,40 @@
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="CSWeb.Mobile_B2.UserControls.ShippingForm" CodeBehind="ShippingForm.ascx.cs" %>
 
+<style>
+.displayNone
+{
+display: none;
+}
+</style> 
+
+<!-- ***************jquery popup stuff*************** -->
+<a href="#openPaypal" class="openPaypal displayNone">Open Paypal</a>
+<div class="displayNone">
+    <div class="modalPopup" id="openPaypal">
+        <!-- <a href="javascript:void(0)" onclick="$.fancybox.close();" class="paypalclosebtn">x close</a>-->
+        <asp:LinkButton ID="LinkButton1" CssClass="paypalclosebtn" runat="server" CausesValidation="false" OnClick="btnCancelModalPopup_Click">x close</asp:LinkButton>
+        <div class="modal_contain">
+            <p><img src="//d39hwjxo88pg52.cloudfront.net/images/paypal_logo.jpg"> </p>
+            <p>PayPal orders will be automatically converted to one payment of $164.80. Please click the button below to convert your order to One Payment.</p>
+            <p>
+                <asp:LinkButton ID="LinkButton2" Text="" runat="server" CausesValidation="false"
+                    OnClick="ImageButtonOnePay_Click" CssClass="paypal_yesbtn">YES, PLEASE CONVERT MY <br> ORDER TO ONE PAYMENT!</asp:LinkButton>
+            </p>
+            <p>
+                <strong>
+                    <asp:LinkButton ID="btnCancelModalPopup" CssClass="paypal_no" runat="server" CausesValidation="false" OnClick="btnCancelModalPopup_Click">
+                        No Thanks, I will select a different <br>payment method.</asp:LinkButton>
+                </strong>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- *************** /jquery popup stuff*************** -->
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
+<asp:LinkButton ID="btn" runat="server" Style="visibility: hidden;" />
+<ajaxtoolkit:ModalPopupExtender runat="server" ID="mpePopup" TargetControlID="btn" BehaviorID="mpePopUpID"
+    PopupControlID="PanelConvert" PopupDragHandleControlID="pnlModalPopUpPanel" BackgroundCssClass="modalBackground" />
+
 <asp:ScriptManager runat="server" ID="sm1">
 </asp:ScriptManager>
 <asp:UpdatePanel ID="upBillingForm" runat="server">

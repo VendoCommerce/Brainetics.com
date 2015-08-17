@@ -908,3 +908,50 @@ p.basket_title {display: none;}
     font-size: 22px;
     color: #0e81c0;
 }
+
+.modalPopup {
+	width: 378px;
+}
+
+.modal_contain {
+	background: #fff;
+	padding: 30px;
+}
+
+.modal_contain p {
+	padding-bottom: 20px;
+}
+
+.paypal_yesbtn {
+	background: #ec1d78;
+	box-shadow: 2px 2px 5px 0 rgba(0,0,0,.6);
+	color: #fff;
+	font-weight: bold;
+	text-align:center;
+	font-size: 17px;
+	display: block;
+	line-height: normal;
+	padding: 6px 35px;
+	text-decoration: none;
+}
+
+.paypal_no {
+	color: #58585A;
+	text-decoration: underline;
+}
+
+.modalBackground {
+	background: rgba(0,0,0,.7);
+}
+
+.paypalclosebtn {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding-bottom: 5px;
+	text-align:right;
+}
+
+.paypaldrop {
+	font-size: 13px;
+}

@@ -2,7 +2,29 @@
 
 $(document).ready(function () {
 
-   $('.showcard,#mikecard').hover(function(){
+    //paypal open	
+    $(".openPaypal").fancybox({
+        closeBtn: false,
+        fitToView: false,
+        wrapCSS: 'nowrapper',
+        padding: 0,
+        width: 387,
+        height: 406,
+        autoSize: false,
+        closeClick: false,
+        scrolling: 'no',
+        helpers: {
+            overlay: {
+                locked: false,
+                css: {
+                    'background': 'rgba(0,0,0,.7)'
+                }
+            }
+        }
+    });
+
+
+    $('.showcard,#mikecard').hover(function () {
 	$('#mikecard').toggle();
 });
 /* faq functionality */
@@ -243,4 +265,8 @@ $(".showhow2").bind("click touch", function(e){
             if (obj.style) { obj = obj.style; v = (v == 'show') ? 'visible' : (v == 'hide') ? 'hidden' : v; }
             obj.visibility = v;
         }
+    }
+
+    function paypal_open() {
+        $(".openPaypal").trigger('click');
     }

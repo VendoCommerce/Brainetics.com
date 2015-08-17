@@ -319,6 +319,13 @@ namespace CSWeb.Mobile_B2.UserControls
 
         protected void imgBtn_OnClickPayPal(object sender, ImageClickEventArgs e)
         {
+            StringBuilder script = new StringBuilder("<script type='text/javascript'>");
+            script.AppendLine("paypal_open();");
+            script.AppendLine("</script>");
+            ScriptManager.RegisterStartupScript(pnlCartCheckoutSummary, this.GetType(), "popup", script.ToString(), false);            
+        }
+        private void ProcessPayPal()
+        {
             ClientCartContext contextData = (ClientCartContext)Session["ClientOrderData"];
             if (contextData == null) // indicates session timeout
             {
@@ -419,6 +426,15 @@ namespace CSWeb.Mobile_B2.UserControls
             }
         }
 
+        protected void btnCancelModalPopup_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(pnlCartCheckoutSummary, this.GetType(), "popup", "$.fancybox.close();", true);
+            mpePopup.Hide();
+        }
+        protected void ImageButtonOnePay_Click(object sender, EventArgs e)
+        {
+            ProcessPayPal();
+        }
         #endregion General Methods
 
     }
