@@ -27,6 +27,7 @@ img {
 /* close commented backslash hack */
 
 /* FONT VARIANTS */
+.text-left {text-align:left !important;}
 .text-center {text-align:center !important;}
 .text-right {text-align:right !important;}
 .bold {font-weight: bold !important;}
@@ -959,4 +960,26 @@ p.basket_title {display: none;}
 .or {
 	margin: 10px auto 15px;
 	text-align:center;
+}
+
+.divider {
+	height: 1px; 
+	width: 100%;
+	background: rgba(0,0,0,.2);
+}
+
+.tablecart {
+	display: table;
+	width: 100%;
+	table-layout:fixed;
+	font-size: 20px;
+}
+
+.trow {
+	display:table-row;
+}
+.tcell {
+	display:table-cell;
+	padding: 10px 30px;
+	border-bottom: 1px solid rgba(0,0,0,.2);
 }

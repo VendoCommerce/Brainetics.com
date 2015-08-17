@@ -44,26 +44,30 @@ display: none;
         <div class="cart_mobile">
            <asp:Panel ID="pnlCartCheckoutSummary" runat="server" >
               <div class="form_line clearfix text-center" runat="server" style="padding-top: 3em;">
-                    <div class="cart_totals clearfix">
-                        <div class="cart_totals_left">
-                            Subtotal<br />
-                            Shipping & Handling<br />                 
-                            Total
-                        </div>
-                        <div class="cart_totals_right">
-                            $14.95<br />
-                            $0.00<br />                
-                            $14.95                 
-                        </div>
-                    </div>
+              <p style="text-align:center; text-transform: uppercase; font-size: 35px;">ORDER SUMMARY</p>
+              <div class="divider"></div>
+              
+                   <div class="tablecart">
+                   		<div class="trow">	
+                           <div class="tcell text-left">Subtotal:</div><div class="tcell text-right">$14.95</div>
+                           </div>
+                          <div class="trow">	
+                           <div class="tcell text-left">Shipping & Handling:</div><div class="tcell text-right">$0.00 </div>            
+                             </div>
+                          <div class="trow">	
+                           <div class="tcell text-left"><strong>Total:</strong></div><div class="tcell text-right"><strong>$14.95</strong></div>    
+                     </div>
+                   </div>    
                </div>
-               <div class="form_line clearfix text-center" runat="server" style="padding-top: 3em;">
+               <div class="form_line clearfix text-center" runat="server">
                   
                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/paypal_checkout.png" OnClick="imgBtn_OnClickPayPal" CausesValidation="false" />                                      
                    <div class="or"><img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/brainetics_or.png"></div>
                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/brainetics_checkout.png" OnClick="imgBtn_OnClickCreditCard" CausesValidation="false" />
                </div>
            </asp:Panel>
+           
+           
             <asp:Panel ID="pnlCreditCardCheckout" runat="server" Visible="false">
             <div class="form_line clearfix" runat="server">
                 <div class="error-1">
