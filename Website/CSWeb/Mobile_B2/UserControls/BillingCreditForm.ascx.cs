@@ -166,20 +166,22 @@ namespace CSWeb.Mobile_B2.UserControls
             {
                 SiteBasePage.PayPalInvoice = Request["PayerID"].ToString();
             }
-
+            
             if (IsPayPalOrder())
             {
                 ddlPaymentMethod.SelectedValue = "1";
                 PaymentMethodChanged(false);
                 lblPayPalBuyNow.Text = ResourceHelper.GetResoureValue("PayPalClickButton");
                 lblPayPalBuyNow.Visible = true;
+                ProcessOrder();  // Process the PayPal Orders Right Now
             }
             else
             {
-                ddlPaymentMethod.SelectedValue = "";
-                ddlPaymentMethod.Visible = true;
+                ddlPaymentMethod.SelectedValue = "2";                
+                PaymentMethodChanged(false);
+                // ddlPaymentMethod.Visible = true;
             }
-
+            ddlPaymentMethod.Visible = false;  // Hide it always
             if (Request.QueryString["ppsend"] == "1")
             {
                 ClientCartContext cartContext = (ClientCartContext)Session["ClientOrderData"];
@@ -1514,6 +1516,10 @@ namespace CSWeb.Mobile_B2.UserControls
         //}
 
         protected void imgBtn_OnClick(object sender, ImageClickEventArgs e)
+        {
+            ProcessOrder();
+        }
+        private void ProcessOrder()
         {
             if (!validateInput())
             {

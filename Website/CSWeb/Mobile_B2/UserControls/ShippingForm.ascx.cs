@@ -359,6 +359,11 @@ namespace CSWeb.Mobile_B2.UserControls
             // Add One Pay Offer SKU for PayPal
             Response.Redirect(RedirectUrl + "?PId=71&OrderType=pp&CId=" + (int)CSBusiness.ShoppingManagement.ShoppingCartType.ShippingCreditCheckout);
         }
+        protected void imgBtn_OnClickCreditCard(object sender, ImageClickEventArgs e)
+        {
+            pnlCartCheckoutSummary.Visible = false;
+            pnlCreditCardCheckout.Visible = true;
+        }
         protected void imgBtn_OnClick(object sender, ImageClickEventArgs e)
         {
             if (!validateInput())
