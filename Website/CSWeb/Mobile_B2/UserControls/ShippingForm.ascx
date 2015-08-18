@@ -5,6 +5,18 @@
 {
 display: none;
 }
+.cart_mobile {
+    width: 100%;
+}
+.cart_mobile .form_line {
+    width: 100%;
+}
+.cart_mobile .text-1 {
+    width: 100%;
+}
+.cart_mobile .form_line_btn {
+    width: 100%;
+}
 </style> 
 
 <!-- ***************jquery popup stuff*************** -->
@@ -42,7 +54,7 @@ display: none;
         <%--<img src="<%= GetDynamicVersionData("cartimage")%>" alt="Brainetics&reg;" />--%>
         
         
-        <div class="cart_mobile2">
+        <div class="cart_mobile2"> <div class="cart_mobile">
            <asp:Panel ID="pnlCartCheckoutSummary" runat="server" >
               <div class="form_line clearfix text-center" runat="server">
               <p style="text-align:center; text-transform: uppercase; font-size: 35px; background: rgba(255,255,255,.7); padding: 20px 0;">ORDER SUMMARY</p>
@@ -187,6 +199,6 @@ display: none;
             </div>
         </div>
         
-        
+        </div>
 </ContentTemplate>
 </asp:UpdatePanel>
