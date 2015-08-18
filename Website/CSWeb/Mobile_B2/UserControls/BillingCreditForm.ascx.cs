@@ -194,7 +194,8 @@ namespace CSWeb.Mobile_B2.UserControls
             {
                 ClientCartContext cartContext = (ClientCartContext)Session["ClientOrderData"];
                 CSResolve.Resolve<IOrderService>().UpdateOrderStatus(cartContext.OrderId, 1); 
-                Response.Redirect("postsale.aspx", true);
+                // Response.Redirect("postsale.aspx", true);
+                Response.Redirect("AuthorizeOrder.aspx", true);   // Disable Upsell path for PayPal customers as per Client
                 //string message = OrderHelper.FinalizePayPalTransaction((ClientCartContext)Session["ClientOrderData"]);
 
                 //if (!string.IsNullOrEmpty(message))
