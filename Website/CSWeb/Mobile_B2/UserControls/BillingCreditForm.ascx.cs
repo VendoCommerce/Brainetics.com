@@ -306,13 +306,14 @@ namespace CSWeb.Mobile_B2.UserControls
 
                 lblPaymentMethod.Text = "PayPal";
                 lblPaymentMethod.Visible = true;
-               
+
+                imgPaymentInfo.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/confirmpaypal.png";
                 imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png"; // "/content/images/a3/ordernow_btn.png";
                 imgBtn.Focus();
                 lblErrorMessage.Text = ResourceHelper.GetResoureValue("PayPalCompleteOrder");
-                lblErrorMessage.Visible = true;                
+                lblErrorMessage.Visible = false;                
                 lblPayPalBuyNow.Text = ResourceHelper.GetResoureValue("PayPalClickButton");
-                lblPayPalBuyNow.Visible = true;
+                lblPayPalBuyNow.Visible = false;                
                 // phSubmitMsg.Visible = true;
                 pnlCreditCard.Visible = false;
             }
