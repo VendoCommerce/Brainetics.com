@@ -309,7 +309,7 @@ namespace CSWeb.Mobile_B2.UserControls
                 lblPaymentMethod.Visible = true;
 
                 imgPaymentInfo.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/confirmpaypal.png";
-                imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png"; // "/content/images/a3/ordernow_btn.png";
+                imgBtn.ImageUrl = "//d1f7jvrzd4fora.cloudfront.net/images/mobile_b2/Button_Confirm-Now.jpg"; // "//d1f7jvrzd4fora.cloudfront.net/images/mobile/btn_ordernow_big.png"; // "/content/images/a3/ordernow_btn.png";
                 imgBtn.Focus();
                 lblErrorMessage.Text = ResourceHelper.GetResoureValue("PayPalCompleteOrder");
                 lblErrorMessage.Visible = false;                
