@@ -170,9 +170,15 @@ namespace CSWeb.FulfillmentHouse
                         if (orderItem.ContainsAttribute("BillingAgreementID"))
                         {
                             TRANSACTION_ID = orderItem.GetAttributeValue("BillingAgreementID", "");
-                            xml.WriteElementString("TRANSACTION_ID", TRANSACTION_ID);
-                            xml.WriteElementString("AUTHORIZATION_SOURCE_ID", orderItem.CreditInfo.AuthorizationCode);  
-                        }                                               
+                        }
+                        string ALTERNATE_ACCOUNT_NUMBER = "";
+                        if (orderItem.ContainsAttribute("PayPalToken"))
+                        {
+                            ALTERNATE_ACCOUNT_NUMBER = orderItem.GetAttributeValue("PayPalToken", "");
+                        }
+                        xml.WriteElementString("TRANSACTION_ID", TRANSACTION_ID);
+                        xml.WriteElementString("ALTERNATE_ACCOUNT_NUMBER", ALTERNATE_ACCOUNT_NUMBER);
+                        xml.WriteElementString("AUTHORIZATION_SOURCE_ID", orderItem.CreditInfo.AuthorizationCode);                                                                         
                     }
                     else
                     {
