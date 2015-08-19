@@ -68,17 +68,23 @@ namespace CSWeb.Mobile_B2.Store
 
                 if (orderData.CreditInfo.CreditCardNumber.Equals("1111222233334444"))
                 {
-                    string message = OrderHelper.FinalizePayPalTransaction((ClientCartContext)Session["ClientOrderData"]);
-
-                    if (!string.IsNullOrEmpty(message))
-                    {
-                        lblMessage.Text = message;
+                    if (orderData.OrderStatusId == 4)
+                    {                        
                     }
                     else
                     {
-                        lblMessage.Text = string.Empty;
-                        SiteBasePage.ResetPayPal();
-                        Response.Redirect("receipt.aspx", true);
+                        string message = OrderHelper.FinalizePayPalTransaction((ClientCartContext)Session["ClientOrderData"]);
+
+                        if (!string.IsNullOrEmpty(message))
+                        {
+                            lblMessage.Text = message;
+                        }
+                        else
+                        {
+                            lblMessage.Text = string.Empty;
+                            SiteBasePage.ResetPayPal();
+                            Response.Redirect("receipt.aspx", true);
+                        }
                     }
                 }
 

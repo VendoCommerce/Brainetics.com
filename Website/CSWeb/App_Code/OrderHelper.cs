@@ -43,8 +43,12 @@ namespace CSWeb
         {
             Request _request = new Request();
 
-            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderID, true);           
+            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderID, true);
 
+            if (orderData.CreditInfo.CreditCardNumber.Equals("1111222233334444"))
+            {
+                return true; // PayPal Order
+            }
             _request.CardNumber = orderData.CreditInfo.CreditCardNumber;
             _request.CardCvv = orderData.CreditInfo.CreditCardCSC;
             _request.CurrencyCode = "$";
