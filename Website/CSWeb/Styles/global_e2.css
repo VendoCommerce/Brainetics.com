@@ -1285,3 +1285,17 @@ body {
     font-size: 22px;
     color: #0e81c0;
 }
+
+#amazonlink {
+    position: absolute;
+    top: 18px;
+    left: 360px;
+    width: 140px;
+    height: 40px;
+    display: none;
+}
+
+#amazonlink img {
+    width: 140px;
+    height: auto;
+}
