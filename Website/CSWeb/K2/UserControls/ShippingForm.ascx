@@ -34,9 +34,7 @@
     <div class="form_line_guarantee">
         <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">30-Day Money-Back Guarantee!</a>
     </div>
-    <div class="form_line_guarantee" id="link_amazonprime" style="padding-top: 12px;">
-        
-    </div>
+    <div class="form_line_guarantee" id="link_amazonprime" style="padding-top: 12px;"><div class="bold" style="color: #ff6c02; padding-bottom: 6px;">Also available from</div><a href="http://www.amazon.com/NEW-Brainetics-Enhanced-Includes-Exclusive/dp/B00JVUF0GY/ref=sr_1_1?ie=UTF8&qid=1409084938&sr=8-1&keywords=brainetics" target="_blank"><img src="//d1f7jvrzd4fora.cloudfront.net/images/btn_amazonprime.png" alt="Buy on Amazon Prime" /></a></div>
         
     <div class="form_line_guarantee">
         <div class="norton_ssl_cart"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script><br />
