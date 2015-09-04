@@ -34,7 +34,10 @@
     <div class="form_line_guarantee">
         <a href="#guarantee" onclick="javascript:void(0);" class="guarantee">30-Day Money-Back Guarantee!</a>
     </div>
-    <div class="form_line_guarantee" id="link_amazonprime" style="padding-top: 12px;"><div class="bold" style="color: #ff6c02; padding-bottom: 6px;">Also available from</div><a href="/amazonTracker.aspx?vid=48&url=http%3A%2F%2Fwww.amazon.com%2Fdp%2FB00WVE0JIG%2Fref%3Dsr_ph%3Fie%3DUTF8%26qid%3D1441236725%26sr%3D1%26keywords%3Dbrainetics" target="_blank"><img src="//d1f7jvrzd4fora.cloudfront.net/images/btn_amazonprime.png" alt="Buy on Amazon Prime" /></a></div>
+    <%--<div class="form_line_guarantee" id="link_amazonprime" style="padding-top: 12px;">
+        <div class="bold" style="color: #ff6c02; padding-bottom: 6px;">Also available from</div>
+        <a href="/amazonTracker.aspx?vid=48&url=http%3A%2F%2Fwww.amazon.com%2Fdp%2FB00WVE0JIG%2Fref%3Dsr_ph%3Fie%3DUTF8%26qid%3D1441236725%26sr%3D1%26keywords%3Dbrainetics" target="_blank">
+            <img src="//d1f7jvrzd4fora.cloudfront.net/images/btn_amazonprime.png" alt="Buy on Amazon Prime" /></a></div>--%>
         
     <div class="form_line_guarantee">
         <div class="norton_ssl_cart"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.brainetics.com&amp;size=S&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script><br />
