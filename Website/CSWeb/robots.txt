@@ -21,3 +21,5 @@ Disallow: /g2/
 Disallow: /G2/
 Disallow: /k2/
 Disallow: /K2/
+Disallow: /PS_M2/
+Disallow: /ps_m2/
