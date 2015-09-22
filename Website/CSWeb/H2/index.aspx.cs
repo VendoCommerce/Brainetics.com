@@ -66,11 +66,11 @@ namespace CSWeb.H2.Store
                     }
                 }
 
-                if (CSWeb.OrderHelper.GetVersionName().ToLower() == "h2")
+                if (CSWeb.OrderHelper.GetVersionName().ToLower().Equals("h2") || CSWeb.OrderHelper.GetVersionName().ToLower().Equals("k2"))
                 {
                     //if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
                     //{
-                        Response.Redirect("/k2/index?" + Request.QueryString);
+                        Response.Redirect("/m2/index?" + Request.QueryString);
                         //Response.Redirect("/j2/index?" + Request.QueryString + "&referrer=" + Request.Url);
                     //}
                     //else

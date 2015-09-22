@@ -437,6 +437,25 @@
     <Content Include="K2\UserControls\BillingShippingCreditForm.ascx" />
     <Content Include="K2\UserControls\ShippingForm.ascx" />
     <Content Include="keepalive.htm" />
+    <Content Include="M2\bottomcta.html" />
+    <Content Include="M2\Cart.aspx" />
+    <Content Include="M2\contact.aspx" />
+    <Content Include="M2\faq.aspx" />
+    <Content Include="M2\footer.html" />
+    <Content Include="M2\footer_cart.html" />
+    <Content Include="M2\footer_receipt.html" />
+    <Content Include="M2\footer_upsell.html" />
+    <Content Include="M2\header.html" />
+    <Content Include="M2\header_main.html" />
+    <Content Include="M2\howitworks.aspx" />
+    <Content Include="M2\index.aspx" />
+    <Content Include="M2\popups.html" />
+    <Content Include="M2\privacy.aspx" />
+    <Content Include="M2\productdetails.aspx" />
+    <Content Include="M2\terms.aspx" />
+    <Content Include="M2\testimonials.aspx" />
+    <Content Include="M2\UserControls\BillingShippingCreditForm.ascx" />
+    <Content Include="M2\UserControls\ShippingForm.ascx" />
     <Content Include="Mobile_B2\about.aspx" />
     <Content Include="Mobile_B2\AddProduct.aspx" />
     <Content Include="Mobile_B2\AuthorizeOrder.aspx" />
@@ -1742,6 +1761,24 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="K2\UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="M2\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="M2\UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="M2\UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="M2\UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="M2\UserControls\ShippingForm.ascx.designer.cs">
       <DependentUpon>ShippingForm.ascx</DependentUpon>
     </Compile>
     <Compile Include="Mobile_B2\AddProduct.aspx.cs">
