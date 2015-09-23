@@ -63,6 +63,7 @@ sub { top: 0.4em; }
 .white {color: #fff !important;}
 .black {color: #000 !important;}
 .blue {color: #0e81c0 !important;}
+.yellow {color: #ffff00 !important;}
 .gray {color: #717171 !important;}
 .gray2 {color: #242424 !important;}
 .green {color: #50b948 !important;}
@@ -164,7 +165,7 @@ body {
 .nav_certs2 {
 	position: absolute;
 	right: 0;
-	width: 500px;
+	width: 700px;
 	top: 14px;
 	text-align: right;
 }
@@ -595,8 +596,8 @@ body {
 .hometoptext {
 	position: absolute;
 	left: 22px;
-	top: 165px;
-	height: 162px;
+	top: 145px;
+	height: auto;
 	width: 410px;
 }
 .hometoptext ul {
@@ -613,8 +614,8 @@ body {
 
 .whatsincluded {
 	position: absolute;
-	left: 43px;
-	top: 541px;
+	left: 33px;
+	top: 561px;
 	width: 113px;
 	height: 27px;
 	font-size: 12px;
@@ -622,7 +623,7 @@ body {
 .video2020 {
 	position: absolute;
 	left: 237px;
-	top: 836px;
+	top: 742px;
 	width: 351px;
 	height: 263px;
 }
@@ -1284,4 +1285,18 @@ body {
     margin-left: -16px;
     font-size: 22px;
     color: #0e81c0;
+}
+
+
+#amazonlink {
+    position: absolute;
+    top: 18px;
+    left: 360px;
+    width: 140px;
+    height: 40px;
+}
+
+#amazonlink img {
+    width: 140px;
+    height: auto;
 }

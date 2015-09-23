@@ -49,7 +49,7 @@
 </div>
 
 
-<div class="video2020" style="top: 742px;">
+<div class="video2020">
 <div id="video2020"></div>
   <script type='text/javascript'>
   	jwplayer('video2020').setup({
