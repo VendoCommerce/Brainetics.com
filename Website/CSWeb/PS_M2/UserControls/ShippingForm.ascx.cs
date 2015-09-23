@@ -87,7 +87,7 @@ namespace CSWeb.PS_M2.UserControls
 
         private void SetPhoneValidation()
         {
-            if (CSWeb.OrderHelper.GetVersionName().ToLower() == "ps_j2")
+            // if (CSWeb.OrderHelper.GetVersionName().ToLower() == "ps_j2")
                 revPhone.Enabled = false;
         }
 
