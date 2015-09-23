@@ -34,7 +34,7 @@
     <area shape="rect" coords="421,170,618,300" href="https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_30day.mp4" alt="Watch Video" target="_blank">
     <area shape="rect" coords="320,717,614,794" href="cart.aspx" alt="Order Now" accesskey="1">
     <area shape="circ" coords="576,376,58" href="#mgb" class="mgb" alt="30 Day Money-Back Guarantee">
-    <area shape="rect" coords="362,852,614,926" href="/amazonTracker.aspx?vid=44&url=http%3A%2F%2Fwww.amazon.com%2Fdp%2FB00WVE0JIG%2Fref%3Dsr_ph%3Fie%3DUTF8%26qid%3D1441236725%26sr%3D1%26keywords%3Dbrainetics" alt="Also available from Amazon.com" accesskey="2">
+    <area shape="rect" coords="362,852,614,926" href="/amazonTracker.aspx?vid=46&url=http%3A%2F%2Fwww.amazon.com%2Fdp%2FB00WVE0JIG%2Fref%3Dsr_ph%3Fie%3DUTF8%26qid%3D1441236725%26sr%3D1%26keywords%3Dbrainetics" alt="Also available from Amazon.com" accesskey="2">
   </map>
   
   <img src="//d1f7jvrzd4fora.cloudfront.net/images/mobile/nav2.png" width="640" height="812" usemap="#Maphomenav" class="block" />
