@@ -519,6 +519,59 @@
     <Content Include="cvv.html" />
     <Content Include="A1_index.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="Mobile_D2\about.aspx" />
+    <Content Include="Mobile_D2\AddProduct.aspx" />
+    <Content Include="Mobile_D2\AuthorizeOrder.aspx" />
+    <Content Include="Mobile_D2\bottomcta.html" />
+    <Content Include="Mobile_D2\CardDecline.aspx" />
+    <Content Include="Mobile_D2\Cart.aspx" />
+    <Content Include="Mobile_D2\Cart2.aspx" />
+    <Content Include="Mobile_D2\CheckoutExpired.aspx" />
+    <Content Include="Mobile_D2\CheckoutSessionExpired.aspx" />
+    <Content Include="Mobile_D2\CheckoutThankYou.aspx" />
+    <Content Include="Mobile_D2\CheckoutThankYouPrint.aspx" />
+    <Content Include="Mobile_D2\contact.aspx" />
+    <Content Include="Mobile_D2\error.aspx" />
+    <Content Include="Mobile_D2\faq.aspx" />
+    <Content Include="Mobile_D2\footer.html" />
+    <Content Include="Mobile_D2\footer_upsell.html" />
+    <Content Include="Mobile_D2\header.html" />
+    <Content Include="Mobile_D2\header_cart.html" />
+    <Content Include="Mobile_D2\header_home.html" />
+    <Content Include="Mobile_D2\header_receipt.html" />
+    <Content Include="Mobile_D2\header_upsell.html" />
+    <Content Include="Mobile_D2\howitworks.aspx" />
+    <Content Include="Mobile_D2\index.aspx" />
+    <Content Include="Mobile_D2\OfferChange.aspx" />
+    <Content Include="Mobile_D2\popups.html" />
+    <Content Include="Mobile_D2\PostSale.aspx" />
+    <Content Include="Mobile_D2\privacy.aspx" />
+    <Content Include="Mobile_D2\receipt.aspx" />
+    <Content Include="Mobile_D2\receipt_friendly.aspx" />
+    <Content Include="Mobile_D2\ReviewOrder.aspx" />
+    <Content Include="Mobile_D2\terms.aspx" />
+    <Content Include="Mobile_D2\testimonials.aspx" />
+    <Content Include="Mobile_D2\upsells.aspx" />
+    <Content Include="Mobile_D2\UserControls\BillingCreditForm.ascx" />
+    <Content Include="Mobile_D2\UserControls\BillingForm.ascx" />
+    <Content Include="Mobile_D2\UserControls\BillingShippingCreditForm.ascx" />
+    <Content Include="Mobile_D2\UserControls\CardDecline.ascx" />
+    <Content Include="Mobile_D2\UserControls\CheckoutSummary.ascx" />
+    <Content Include="Mobile_D2\UserControls\CheckoutThankYouModule.ascx" />
+    <Content Include="Mobile_D2\UserControls\CheckoutThankYouModule2.ascx" />
+    <Content Include="Mobile_D2\UserControls\CheckoutThankYouModulePrint2.ascx" />
+    <Content Include="Mobile_D2\UserControls\ContactUs.ascx" />
+    <Content Include="Mobile_D2\UserControls\Footer.ascx" />
+    <Content Include="Mobile_D2\UserControls\Footer_Cart.ascx" />
+    <Content Include="Mobile_D2\UserControls\Footer_Upsell.ascx" />
+    <Content Include="Mobile_D2\UserControls\Header.ascx" />
+    <Content Include="Mobile_D2\UserControls\Header_Home.ascx" />
+    <Content Include="Mobile_D2\UserControls\Header_Upsell.ascx" />
+    <Content Include="Mobile_D2\UserControls\ShippingCreditForm.ascx" />
+    <Content Include="Mobile_D2\UserControls\ShippingForm.ascx" />
+    <Content Include="Mobile_D2\UserControls\ShoppingCartControl.ascx" />
+    <Content Include="Mobile_D2\UserControls\TrackingPixels.ascx" />
+    <Content Include="Mobile_D2\why_brainetics.aspx" />
     <Content Include="oldindex.aspx" />
     <Content Include="appsettings.config">
       <SubType>Designer</SubType>
@@ -2062,6 +2115,189 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\AuthorizeOrder.aspx.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\AuthorizeOrder.aspx.designer.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\CardDecline.aspx.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\CardDecline.aspx.designer.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\Cart2.aspx.cs">
+      <DependentUpon>Cart2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\CheckoutExpired.aspx.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\CheckoutExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\CheckoutThankYou.aspx.cs">
+      <DependentUpon>CheckoutThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\CheckoutThankYouPrint.aspx.cs">
+      <DependentUpon>CheckoutThankYouPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\CheckoutThankYouPrint.aspx.designer.cs">
+      <DependentUpon>CheckoutThankYouPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\OfferChange.aspx.cs">
+      <DependentUpon>OfferChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\PostSale.aspx.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\PostSale.aspx.designer.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\receipt.aspx.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\receipt_friendly.aspx.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\ReviewOrder.aspx.cs">
+      <DependentUpon>ReviewOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\ReviewOrder.aspx.designer.cs">
+      <DependentUpon>ReviewOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\BillingCreditForm.ascx.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\BillingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\BillingForm.ascx.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\BillingForm.ascx.designer.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CardDecline.ascx.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CardDecline.ascx.designer.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CheckoutSummary.ascx.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CheckoutSummary.ascx.designer.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CheckoutThankYouModule.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CheckoutThankYouModule2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CheckoutThankYouModulePrint2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ContactUs.ascx.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ContactUs.ascx.designer.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ShippingCreditForm.ascx.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ShoppingCartControl.ascx.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\ShoppingCartControl.ascx.designer.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\TrackingPixels.ascx.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile_D2\UserControls\TrackingPixels.ascx.designer.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
     </Compile>
     <Compile Include="oldindex.aspx.cs">
       <DependentUpon>oldindex.aspx</DependentUpon>
