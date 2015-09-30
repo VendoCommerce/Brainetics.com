@@ -507,6 +507,27 @@
     <Content Include="Mobile_D2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="Mobile_D2\UserControls\TrackingPixels.ascx" />
     <Content Include="Mobile_D2\why_brainetics.aspx" />
+    <Content Include="N2\aboutmike.aspx" />
+    <Content Include="N2\bottomcta.html" />
+    <Content Include="N2\Cart.aspx" />
+    <Content Include="N2\contact.aspx" />
+    <Content Include="N2\faq.aspx" />
+    <Content Include="N2\footer.html" />
+    <Content Include="N2\footer_cart.html" />
+    <Content Include="N2\footer_receipt.html" />
+    <Content Include="N2\footer_upsell.html" />
+    <Content Include="N2\header.html" />
+    <Content Include="N2\headernav.html" />
+    <Content Include="N2\header_main.html" />
+    <Content Include="N2\header_nonav.html" />
+    <Content Include="N2\howitworks.aspx" />
+    <Content Include="N2\index.aspx" />
+    <Content Include="N2\popups.html" />
+    <Content Include="N2\privacy.aspx" />
+    <Content Include="N2\productdetails.aspx" />
+    <Content Include="N2\send_email.aspx" />
+    <Content Include="N2\terms.aspx" />
+    <Content Include="N2\testimonials.aspx" />
     <Content Include="oldindex.aspx" />
     <Content Include="appsettings.config">
       <SubType>Designer</SubType>

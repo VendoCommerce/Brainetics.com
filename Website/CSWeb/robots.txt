@@ -25,3 +25,5 @@ Disallow: /PS_M2/
 Disallow: /ps_m2/
 Disallow: /mobile_d2/
 Disallow: /MOBILE_D2/
+Disallow: /n2/
+Disallow: /N2/
