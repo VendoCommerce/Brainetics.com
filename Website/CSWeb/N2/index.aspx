@@ -28,13 +28,13 @@
 
 
 <div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/home_bg.jpg) no-repeat #fff">
-<div class="home_left" style="width: 100%; padding-top: 20px;"><img src="http://d1f7jvrzd4fora.cloudfront.net/images/l2/home_top.png" usemap="#Maphometop" />
+<div class="home_left" style="width: 100%; padding-top: 20px;"><img src="//d1f7jvrzd4fora.cloudfront.net/images/home_top_n2.png" usemap="#Maphometop" />
 <map name="Maphometop">
-    <area shape="circle" coords="511,282,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
+    <area shape="circle" coords="511,304,58" href="#guarantee" class="guarantee" onclick="javascript:void(0);">
         <%-- <area shape="rect" coords="422,584,659,705" href="#newbook" class="fancynowrap"> --%>
-        <area shape="rect" coords="680,591,863,643" href="AddProduct.aspx?pid=64&cid=1">
+        <area shape="rect" coords="683,632,866,684" href="AddProduct.aspx?pid=64&cid=1">
 </map>
-<div class="hometoptext gray" style="top: 157px">
+<div class="hometoptext gray" style="top: 177px">
 <ul style="margin-bottom: 0;">
 <li>Turbo charge your memory for better performance!</li>
 <li>Increase confidence which translates into <br>better grades</li>
@@ -42,9 +42,9 @@
 <li style="padding-bottom: 0;">Improve Focus and Concentration to make <br>learning more fun!</li>
 </ul>
 </div>
-<div class="whatsincluded"  style="left: 828px; top: 434px"><a href="#included" onclick="javascript:void(0);" class="included  black scored">What's Included?</a></div>
+<div class="whatsincluded"  style="left: 827px; top: 455px"><a href="#included" onclick="javascript:void(0);" class="included  black scored">What's Included?</a></div>
 
-<div class="aboutmike" style="left: 21px; top: 343px; height: 202px; width: 190px;">
+<div class="aboutmike" style="left: 21px; top: 360px; height: 202px; width: 190px;">
 <p class="white f31 webfont1" style="line-height: 1.1">Mike Byster</p>
   <p class="white lh20 f13">is the creator of the entertaining and engaging multi-disk 
     DVD program to build increased mental capacity called Brainetics, winner of the 2008 Parent’s Choice Award & 2012 Mom’s Best Award. <br>
@@ -52,7 +52,7 @@
 </div>
 
 
-<div class="video2020" style="left: 384px; top: 740px">
+<div class="video2020" style="left: 384px; top: 773px">
 <div id="video2020"></div>
   <script type='text/javascript'>
   	jwplayer('video2020').setup({
