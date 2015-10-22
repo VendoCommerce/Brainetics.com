@@ -27,3 +27,5 @@ Disallow: /mobile_d2/
 Disallow: /MOBILE_D2/
 Disallow: /n2/
 Disallow: /N2/
+Disallow: /o2/
+Disallow: /O2/

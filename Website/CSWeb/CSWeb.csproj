@@ -528,6 +528,52 @@
     <Content Include="N2\send_email.aspx" />
     <Content Include="N2\terms.aspx" />
     <Content Include="N2\testimonials.aspx" />
+    <Content Include="O2\aboutmike.aspx" />
+    <Content Include="O2\AddProduct.aspx" />
+    <Content Include="O2\AuthorizeOrder.aspx" />
+    <Content Include="O2\bottomcta.html" />
+    <Content Include="O2\CardDecline.aspx" />
+    <Content Include="O2\Cart.aspx" />
+    <Content Include="O2\CheckoutSessionExpired.aspx" />
+    <Content Include="O2\contact.aspx" />
+    <Content Include="O2\faq.aspx" />
+    <Content Include="O2\footer.html" />
+    <Content Include="O2\footer_cart.html" />
+    <Content Include="O2\footer_receipt.html" />
+    <Content Include="O2\footer_upsell.html" />
+    <Content Include="O2\header.html" />
+    <Content Include="O2\headernav.html" />
+    <Content Include="O2\header_main.html" />
+    <Content Include="O2\header_nonav.html" />
+    <Content Include="O2\howitworks.aspx" />
+    <Content Include="O2\index.aspx" />
+    <Content Include="O2\OfferChange.aspx" />
+    <Content Include="O2\popups.html" />
+    <Content Include="O2\PostSale.aspx" />
+    <Content Include="O2\privacy.aspx" />
+    <Content Include="O2\productdetails.aspx" />
+    <Content Include="O2\receipt.aspx" />
+    <Content Include="O2\receipt_friendly.aspx" />
+    <Content Include="O2\send_email.aspx" />
+    <Content Include="O2\terms.aspx" />
+    <Content Include="O2\testimonials.aspx" />
+    <Content Include="O2\upsells.aspx" />
+    <Content Include="O2\UserControls\BillingCreditForm.ascx" />
+    <Content Include="O2\UserControls\BillingForm.ascx" />
+    <Content Include="O2\UserControls\BillingShippingCreditForm.ascx" />
+    <Content Include="O2\UserControls\CardDecline.ascx" />
+    <Content Include="O2\UserControls\CheckoutSummary.ascx" />
+    <Content Include="O2\UserControls\CheckoutThankYouModule.ascx" />
+    <Content Include="O2\UserControls\CheckoutThankYouModule2.ascx" />
+    <Content Include="O2\UserControls\CheckoutThankYouModulePrint2.ascx" />
+    <Content Include="O2\UserControls\Contact.ascx" />
+    <Content Include="O2\UserControls\Footer.ascx" />
+    <Content Include="O2\UserControls\Header.ascx" />
+    <Content Include="O2\UserControls\LoaderOverlay.ascx" />
+    <Content Include="O2\UserControls\ShippingCreditForm.ascx" />
+    <Content Include="O2\UserControls\ShippingForm.ascx" />
+    <Content Include="O2\UserControls\ShoppingCartControl.ascx" />
+    <Content Include="O2\UserControls\TrackingPixels.ascx" />
     <Content Include="oldindex.aspx" />
     <Content Include="appsettings.config">
       <SubType>Designer</SubType>
@@ -2061,6 +2107,180 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Mobile_D2\UserControls\TrackingPixels.ascx.designer.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\AuthorizeOrder.aspx.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\AuthorizeOrder.aspx.designer.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\CardDecline.aspx.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\CardDecline.aspx.designer.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\OfferChange.aspx.cs">
+      <DependentUpon>OfferChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\PostSale.aspx.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\PostSale.aspx.designer.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\receipt.aspx.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\receipt.aspx.designer.cs">
+      <DependentUpon>receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\receipt_friendly.aspx.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\receipt_friendly.aspx.designer.cs">
+      <DependentUpon>receipt_friendly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\send_email.aspx.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\send_email.aspx.designer.cs">
+      <DependentUpon>send_email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\BillingCreditForm.ascx.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\BillingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\BillingForm.ascx.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\BillingForm.ascx.designer.cs">
+      <DependentUpon>BillingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\BillingShippingCreditForm.ascx.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\BillingShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\CardDecline.ascx.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\CardDecline.ascx.designer.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\CheckoutSummary.ascx.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\CheckoutSummary.ascx.designer.cs">
+      <DependentUpon>CheckoutSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\CheckoutThankYouModule.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\CheckoutThankYouModule2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\CheckoutThankYouModulePrint2.ascx.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\CheckoutThankYouModulePrint2.ascx.designer.cs">
+      <DependentUpon>CheckoutThankYouModulePrint2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\LoaderOverlay.ascx.cs">
+      <DependentUpon>LoaderOverlay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\LoaderOverlay.ascx.designer.cs">
+      <DependentUpon>LoaderOverlay.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\ShippingCreditForm.ascx.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\ShippingCreditForm.ascx.designer.cs">
+      <DependentUpon>ShippingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\ShoppingCartControl.ascx.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\ShoppingCartControl.ascx.designer.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="O2\UserControls\TrackingPixels.ascx.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="O2\UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
     </Compile>
     <Compile Include="oldindex.aspx.cs">
