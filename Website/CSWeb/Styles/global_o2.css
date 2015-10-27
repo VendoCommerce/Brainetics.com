@@ -1444,27 +1444,30 @@ ul.ul_cart {font-size: 14px;}
 }
 
 
-#receipt {
-
+body#receipt {
+    background: #fff;
 }
 #receipt_table1 td, #receipt_table2 td {
 	padding: 20px;	
-	line-height: 20px;
+	line-height: 24px;
+    vertical-align: top;
 }
 
 #receipt_table1 .horzline1 td {
-	border-bottom: 1px solid #ff6c00;	
+	border-bottom: 1px solid #dbdbdb;	
 }
 
 #receipt_table1 .horzline2 td {
-	border-top: 1px solid #ff6c00;	
+	border-top: 1px solid #dbdbdb;	
 }
 
 
 #receipt_table2 {
 	background: #f2f2f2;	
-	width: 719px;
+	width: 84%;
 	margin: 0 auto;
 	border-radius: 20px;
 	-webkit-border-radius:20px;
 }
+
+.pad0 {padding-bottom: 0 !important;}

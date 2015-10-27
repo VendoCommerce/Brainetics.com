@@ -10,7 +10,7 @@
     </div>
     <!-- END implement this expire soon code on all versions needed -->
 
-    <div id="receipt_content"  style="height: auto; width: 950px; position:relative;padding: 30px 60px;color: #5c5c5c;">
+    <div id="receipt_content">
 
         <h1>Thank you for Your Purchase!</h1>
         
@@ -65,7 +65,7 @@
 
            
             <asp:Literal ID="LiteralTableRows" runat="server"></asp:Literal>
-            <tr><td colspan="4"><p>As part of this special TV Offer you are getting to try Brainetics in the comfort of your home for a trial fee of $14.95 plus FREE shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 4 easy monthly payments of $49.95, plus tax. All orders are backed by our 30-Day Money-Back Guarantee!</p></td></tr>
+            <tr><td colspan="4"><p style="width: 75%; font-size: 14px;">As part of this special TV Offer you are getting to try Brainetics in the comfort of your home for a trial fee of $14.95 plus FREE shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 4 easy monthly payments of $49.95, plus tax. All orders are backed by our 30-Day Money-Back Guarantee!</p></td></tr>
             <tr class="horzline2">
                 <td valign="top">&nbsp;
                     
@@ -100,6 +100,9 @@
                 </td>
             </tr>
         </table>
+
+        <div style="height: 2em;"></div>
+
         <table border="0" cellspacing="0" cellpadding="0" id="receipt_table2">
             <tr>
                 <td colspan="2" valign="top" class="caps pink f16 pad0">
@@ -110,7 +113,7 @@
                 </td>
             </tr>
             <tr>
-                <td width="158" valign="top">
+                <td width="16%" valign="top">
                     Name:
                     <br />
                     Address:
@@ -127,7 +130,7 @@
                     <br />
                     Email Address:
                 </td>
-                <td width="206" valign="top">
+                <td width="29%" valign="top">
                     <strong><asp:Literal ID="LiteralName" runat="server"></asp:Literal><br />
                         <asp:Literal ID="LiteralAddress" runat="server"></asp:Literal><br />
                         <asp:Literal ID="LiteralAddress2" runat="server"></asp:Literal><br />
@@ -137,7 +140,7 @@
                         <asp:Literal ID="LiteralCountry" runat="server"></asp:Literal><br />
                         <asp:Literal ID="LiteralEmail" runat="server"></asp:Literal></strong>
                 </td>
-                <td width="189" valign="top">
+                <td width="16%" valign="top">
                     Name:
                     <br />
                     Address:
@@ -151,7 +154,7 @@
                     Zip Code:<br />
                     Country:
                 </td>
-                <td width="266" valign="top">
+                <td width="29%" valign="top">
                     <strong><asp:Literal ID="LiteralName_b" runat="server">
                             </asp:Literal><br />
                         <asp:Literal ID="LiteralAddress_b" runat="server"></asp:Literal><br />
@@ -167,3 +170,4 @@
     </div>
 
 
+<div style="height: 2em;"></div>
