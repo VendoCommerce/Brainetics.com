@@ -65,9 +65,9 @@
                 <div class="mike">
                     <div class="awards">
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_braintoy.png" alt="" />
-                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_drtoy.png" alt="" />
-                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_mombest.png" alt="" />
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_parentchoice.png" alt="" />
+                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_mombest.png" alt="" />
+                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_drtoy.png" alt="" />
                     </div>
                     <div class="triangle">
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/triangle.png" alt="" />
@@ -112,12 +112,12 @@
                         <br>
                     </div>
                 </div>
-                <div class="row award_wining text-center">
+                <div class="row award_wining">
                     <div class="col sm-4">
                         <a href="#included" class="included button">See what's included</a>
                     </div>
                     <div class="col sm-4"></div>
-                    <div class="col sm-4">
+                    <div class="col sm-4 text-center">
                         <a href="AddProduct.aspx?pid=64&cid=1" class="button">Order yours today!</a>
                     </div>
                 </div>

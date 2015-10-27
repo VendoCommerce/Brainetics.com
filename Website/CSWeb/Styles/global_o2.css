@@ -245,10 +245,22 @@ footer .copyright {
 #bottom_cta  .familyfun {
     position: absolute;
     top: 88px;
-    left: 705px;
+    left: 720px;
     width: 140px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
+    color: #ef59a1;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+#bottom_cta  .familyfun_o3 {
+    position: absolute;
+    top: 140px;
+    left: 650px;
+    width: 140px;
+    text-align: center;
+    font-size: 21px;
     color: #ef59a1;
     font-style: italic;
     line-height: 1.1;
@@ -293,12 +305,9 @@ footer .copyright {
 }
 
 #top_cta ul li {
-    margin: 10px 0;
+    padding: 10px 0 10px 40px;
     list-style-type: none;
-    background-image: url('//d1f7jvrzd4fora.cloudfront.net/images/o2/bullet_check.gif');
-    background-repeat: no-repeat;
-    background-position: 0px center;
-    padding-left: 40px;
+    background: url('//d1f7jvrzd4fora.cloudfront.net/images/o2/bullet_check.gif') no-repeat 0 6px;
 }
 
 #top_cta .slogan {
@@ -329,6 +338,10 @@ footer .copyright {
     position: relative;
     padding-top: 1em;
 }
+.index_o3 #top_cta .images {
+    position: relative;
+    padding-top: 0;
+}
 
 #top_cta .images .familyfun {
     position: absolute;
@@ -348,10 +361,14 @@ footer .copyright {
 }
 
 #top_cta .images .product {
-    width: 380px;
+    width: 400px;
     position: absolute;
     right: 0;
     top: 20px;
+}
+
+.index_o3 #top_cta .images .product {
+    width: 420px;
 }
 
 #top_cta .images .product > div {
@@ -367,7 +384,7 @@ footer .copyright {
 #top_cta .images .link {
   position: absolute;
   bottom: -10px;
-  left: 130px;
+  left: 180px;
 }
 
 #top_cta .images .link a {
@@ -385,7 +402,7 @@ footer .copyright {
 
 #top_cta .images .product a.button {
     color: white;
-    padding: 20px 32px;
+    padding: 20px 50px;
     background-color: #EF59A1;
     float: right;
     font-size: 26px;
@@ -698,6 +715,15 @@ h1 {
     color: #0AE;
     font-size: 48px;
     font-weight: bold;
+}
+
+.index_o3 h1 {
+    font-size: 46px;
+    font-weight: 500;
+    margin-top: -15px;
+}
+.index_o3 header {
+    margin-bottom: 24px;
 }
 
 #cartpage h1 {
@@ -1090,7 +1116,7 @@ h4 {
 }
 
 #index .award_wining .button {
-    text-tranform: uppercase;
+    text-transform: uppercase;
     border: 2px solid #EF59A1;
     color: #EF59A1;
     padding: 8px 16px;
@@ -1119,6 +1145,13 @@ h4 {
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 28px;
+}
+
+.index_o3 #index .award_wining p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000;
 }
 
 #index .reviews {

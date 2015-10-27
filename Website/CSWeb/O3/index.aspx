@@ -15,32 +15,28 @@
 <!--#include file="/o2/scripts.html"-->
 
 </head>
-<body>
+<body class="index_o3">
  <form runat="server" id="fm1">
  
 <!--#include file="/o2/header.html"-->
 <div id="index">
             <div  class="container">
-                <h1>Have FUN Becoming a Genius!</h1>
 
-                <div id="top_cta">
+                <div id="top_cta" class="bis">
     <div class="container">
         <div class="row">
-            <div class="col sm-7" style="padding-left: 4px;">
-                <div class="subtitle">Brainetics is Both FUN and Challenging!</div>
+                <div class="video" style="float:right; margin-top: 4em;"><iframe width="418" height="230" src="https://www.youtube.com/embed/QbAIoUU95uw" frameborder="0" allowfullscreen></iframe></div>
+
+                <h1>Be an Academic-Superstar... <br />and Have FUN Too!</h1>
+                <div class="subtitle">It All Happens With Brainetics</div>
+                <div class="money_back_bis"><a href="#guarantee" class="guarantee"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/30_day_money_back.png" alt="" title="30 day money-day back guarantee" class="block" /></a></div>
                 <ul>
-                    <li>Your kids will get better grades!</li>
-                    <li>Your kids will be smarter in school and beyond!</li>
-                    <li>For all ages 9-99</li>
+                    <li>Turbo charge your memory for better performance!</li>
+                    <li>Increase confidence which translates into <br />better grades</li>
+                    <li>Improve focus and concentration to make learning <br />more fun! </li>
                 </ul>
-                <div class="slogan">Turn your kids into Whizkids!</div>
-                <div class="money_back"><a href="#guarantee" class="guarantee"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/30_day_money_back.png" alt="" title="30 day money-day back guarantee" /></a></div>
-            </div>
-            <div class="col sm-5">
-                <div class="video"><iframe width="424" height="232" src="https://www.youtube.com/embed/QbAIoUU95uw" frameborder="0" allowfullscreen></iframe></div>
             </div>
         </div>
-        <br>
         <div class="images">
             <p class="familyfun">Fun for the<br />                <strong>Whole Family</strong><br />                to learn!</p>
             <div class="product">
@@ -50,24 +46,25 @@
                     <div class="link"><a href="#included" class="included whats_included">See What's Included!</a></div>
                 </div>
                 <div>
-                    <a class="button" href="AddProduct.aspx?pid=64&cid=1">Order now</a>
+                    <a class="button" href="#">Order now</a>
                     <div class="price">Only <small>$</small>14<small>.95</small></div>
                     <div class="free">+ FREE S&amp;H!</div>
                 </div>
             </div>
-            <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/family.png" alt="" class="block" style="margin-left: -2em;"/>
+            <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/family.png" alt="" class="block" />
             <div class="demi_circle"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/orange_circle.png" alt=""/></div>
         </div>
     </div>
-</div>
+
+
 
 
                 <div class="mike">
                     <div class="awards">
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_braintoy.png" alt="" />
-                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_drtoy.png" alt="" />
-                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_mombest.png" alt="" />
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_parentchoice.png" alt="" />
+                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_mombest.png" alt="" />
+                        <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/circle_drtoy.png" alt="" />
                     </div>
                     <div class="triangle">
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/triangle.png" alt="" />
@@ -91,10 +88,15 @@
                 <br><br>
 
                 <div class="row award_wining">
-                    <div class="col sm-4">
-                        <p>Brainetics is a fun and cool way to turbocharge your child's learning skills. It can even be done together with the whole family at once - making it a great way to spend time together!</p>
-                        <p>The training and tools provided by Brainetics help your mind work more efficiently by training it to get better at processing information while also memorizing the information simultaneously -even though these are two completely independent skills.</p>
-                        <p>With the tools provided by Brainetics the mind can begin to work more efficiently and become more powerful - giving your kids a HUGE advantage throughout their academic lives and beyond!</p>
+                    <div class="col sm-4" style="padding-right: 10px;">
+                        <p><strong>Brainetics TRAINS two different parts of the MIND</strong> to work simultaneously yet independently of each other.
+                           One part of your mind memorizes information while another part is sorting and processing new information.
+                           The mind will begin to work more efficiently and become more powerful <strong>giving Brainetics kids a huge
+                           advantage</strong> throughout their academic lives and beyond.</p>
+                        <p><strong>Your child HAS THE POTENTIAL to SUCCEED</strong>, and Brainetics unlocks that hidden cognitive ability!
+                           The Brainetics® Complete System increases your child's <strong>Comprehension and Memory</strong>, and <strong>re-introduces
+                           learning</strong> through an increasingly challenging step- by- step program, enabling progress with a fun and
+                           easy to use process.</p>
                     </div>
                     <div class="col sm-4 text-center">
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/brain.png" alt="" />
@@ -112,12 +114,12 @@
                         <br>
                     </div>
                 </div>
-                <div class="row award_wining text-center">
+                <div class="row award_wining">
                     <div class="col sm-4">
                         <a href="#included" class="included button">See what's included</a>
                     </div>
                     <div class="col sm-4"></div>
-                    <div class="col sm-4">
+                    <div class="col sm-4 text-center">
                         <a href="AddProduct.aspx?pid=64&cid=1" class="button">Order yours today!</a>
                     </div>
                 </div>
@@ -178,7 +180,7 @@
         </div>
 
 
-<!--#include file="/o2/bottomcta.html"-->
+<!--#include file="bottomcta.html"-->
 
 
 <!--#include file="/o2/footer.html"-->

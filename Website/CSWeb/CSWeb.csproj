@@ -576,6 +576,7 @@
     <Content Include="O2\UserControls\ShippingForm.ascx" />
     <Content Include="O2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="O2\UserControls\TrackingPixels.ascx" />
+    <Content Include="O3\bottomcta.html" />
     <Content Include="O3\index.aspx" />
     <Content Include="oldindex.aspx" />
     <Content Include="appsettings.config">
