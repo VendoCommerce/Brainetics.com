@@ -12,7 +12,7 @@
 
     <div id="receipt_content"  style="height: auto; width: 950px; position:relative;padding: 30px 60px;color: #5c5c5c;">
 
-        <p class="lh f34 webfont1 black pad20">Thank you for Your Purchase!</p>
+        <h1>Thank you for Your Purchase!</h1>
         
         
         <%--<img src="//d1f7jvrzd4fora.cloudfront.net/images/e2/receipt_rebatecall.jpg" usemap="#receipt_offer">

@@ -531,6 +531,7 @@
     <Content Include="O2\aboutmike.aspx" />
     <Content Include="O2\AddProduct.aspx" />
     <Content Include="O2\AuthorizeOrder.aspx" />
+    <Content Include="O2\sidecta.html" />
     <Content Include="O2\bottomcta.html" />
     <Content Include="O2\CardDecline.aspx" />
     <Content Include="O2\Cart.aspx" />
@@ -538,6 +539,7 @@
     <Content Include="O2\contact.aspx" />
     <Content Include="O2\faq.aspx" />
     <Content Include="O2\footer.html" />
+    <Content Include="O2\scripts.html" />
     <Content Include="O2\footer_cart.html" />
     <Content Include="O2\footer_receipt.html" />
     <Content Include="O2\footer_upsell.html" />
@@ -690,6 +692,7 @@
     <Content Include="Scripts\global_a2.js" />
     <Content Include="Scripts\global_a3.js" />
     <Content Include="Scripts\global_a4.js" />
+    <Content Include="Scripts\global_o2.js" />
     <Content Include="Scripts\global_a5.js" />
     <Content Include="Scripts\global_mobile.js" />
     <Content Include="Scripts\jquery.cookie.min.js" />
@@ -807,12 +810,15 @@
     <Content Include="Styles\global_a4.css" />
     <Content Include="Styles\global_a5.css" />
     <Content Include="Styles\global_d2.css" />
+    <Content Include="Styles\global_o2.css" />
     <Content Include="Styles\global_e2.css" />
     <Content Include="Styles\global_mobile.css" />
     <Content Include="Styles\midstyles.css" />
     <Content Include="Styles\rebatestyles.css" />
     <Content Include="Styles\reset.css" />
     <Content Include="Styles\Site.css" />
+    <Content Include="Styles\skyblue\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Styles\skyblue\skyblue.min.css" />
     <Content Include="Styles\style.css" />
     <Content Include="sub-faq.aspx" />
     <Content Include="sub-features.aspx" />
@@ -946,6 +952,9 @@
     <Content Include="web.config.token">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Styles\skyblue\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Styles\skyblue\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Styles\skyblue\fonts\Pe-icon-7-stroke.woff" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddProduct.aspx.cs">
@@ -2847,6 +2856,8 @@
   <ItemGroup>
     <Folder Include="obj\" />
     <Folder Include="PS_G2\Store\" />
+    <Folder Include="Styles\skyblue\fonts\_notes\" />
+    <Folder Include="Styles\skyblue\_notes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

@@ -12,21 +12,18 @@
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><link rel="stylesheet" type="text/css" href="/Scripts/fancybox/jquery.fancybox.css">
-<script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
-<script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_A5.js"></script>
-<link href="../Styles/global_e2.css" rel="stylesheet" type="text/css" />
+<!--#include file="scripts.html"-->
 
 </head>
 <body>
- <form runat="server" id="fm1"><!--#include file="popups.html"-->
-<!--#include file="header_main.html"-->
-<div class="container">
-<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/page_bg.jpg) repeat-x top #fff">
-<div class="left">
-<h2>Privacy Policy</h2>
+ <form runat="server" id="fm1">
+<!--#include file="header.html"-->
+<div id="">
+         <div class="container">
+
+             <!--#include file="sidecta.html"-->
+             <div style="margin-right: 400px;">
+<h1>Privacy Policy</h1>
   <p>For each visitor to our Web page, our Web server automatically recognizes only the consumer's domain name, but not the e-mail address (where possible).</p>
   <p>We collect the domain name and e-mail address (where possible) of visitors to our Web page, the e-mail addresses of those who post messages to our bulletin board, the e-mail addresses of those who communicate with us via e-mail, the e-mail addresses of those who make postings to our chat areas, aggregate information on what pages consumers access or visit, information volunteered by the consumer, such as survey information and/or site registrations, name and address, telephone number.</p>
   <p>The information we collect is used to improve the content of our Web page, used to customize the content and/or layout of our page for each individual visitor, used by us to contact consumers for marketing purposes, shared with other reputable organizations to help them contact consumers for marketing purposes, disclosed when legally required to do so, at the request of governmental authorities conducting an investigation, to verify or enforce compliance with the policies governing our Website and applicable laws or to protect against misuse or unauthorized use of our Website.</p>
@@ -52,18 +49,19 @@
   <p>If you feel that this site is not following its stated information policy, you may contact us at the above addresses or phone number.</p>
   <p><strong>Changes</strong><br>
     This Privacy Policy may be changed at any time. Visitors should check the Privacy Policy each time they visit the Website. Use of the Website constitutes acceptance of the Privacy Policy and changes. The last update was made on April 15, 2010.</p>
-</div>
-<div class="right" style="padding-top: 30px">
- <%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />--%></div>
-<div class="clear"></div>
+
+             </div>
+         </div>
+
+
+
+
+     </div>
+
+<%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />--%>
 <!--#include file="bottomcta.html"-->
-</div>
-
-
-
-</div>
-
 <!--#include file="footer.html"-->
+<!--#include file="popups.html"-->
 
   <uc:TrackingPixels ID="TrackingPixels" runat="server" />
  </form>

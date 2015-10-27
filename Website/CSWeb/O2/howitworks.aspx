@@ -3,10 +3,6 @@
 <%@ Register Src="UserControls/ShippingForm.ascx" TagName="ShippingFormControl" TagPrefix="uc" %>
 
 
-
-
-
-
 <!doctype html>
 <html>
 <head runat="server">
@@ -16,132 +12,92 @@
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><link rel="stylesheet" type="text/css" href="/Scripts/fancybox/jquery.fancybox.css">
-<script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
-<script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_A5.js"></script>
-<link href="../Styles/global_e2.css" rel="stylesheet" type="text/css" />
+<!--#include file="scripts.html"-->
 
 </head>
 <body>
- <form runat="server" id="fm1"><!--#include file="popups.html"-->
-<!--#include file="header_main.html"-->
-<div class="container">
-<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/page_bg.jpg) repeat-x top #fff">
-<div class="left">
-<h2 style="padding-bottom: 5px; padding-left: 84px;">Get the Brainetics Advantage <br>
-  for School, Work – For Life!</h2>
-<div>
-<img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/howitworks_top.png" usemap="#Map" style="margin-left: -34px" />
-<map name="Map">
-  <area shape="rect" coords="16,35,125,140" href="javascript:void(0);" class="showhow1">
-  <area shape="rect" coords="17,145,125,247" href="javascript:void(0);" class="showhow2">
-</map>
+ <form runat="server" id="fm1">
+<!--#include file="header.html"-->
+<div id="how_it_works">
+            <div  class="container">
+                <div class="videos">
 
-<div class="howvid">
-<div id="howvid1">
-<div id="howvideo1"></div>
-  <script type='text/javascript'>
-  	jwplayer('howvideo1').setup({
-    file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
-	autostart: false,
-    primary: "flash",   
-	image: "//d1f7jvrzd4fora.cloudfront.net/images/a5/2020.JPG",
-	controls: true,
-    width: 448, height: 336,
-	stretching: 'exactfit',
-	skin: '/scripts/jwplayer/five.xml',
-	events:{
-	onPlay: function() {
-   	jwplayer('howvideo2').stop();
-	}}
-  });
-</script>
-</div>
-<div id="howvid2" style="display: none">
-<div id="howvideo2"></div>
-  <script type='text/javascript'>
-  	jwplayer('howvideo2').setup({
-    file: "https://d1f7jvrzd4fora.cloudfront.net/video/how2.mp4",
-	autostart: true,
-    primary: "flash",   
-	controls: true,
-    width: 448, height: 336,
-	stretching: 'exactfit',
-	skin: '/scripts/jwplayer/five.xml',
-	events:{
-	onPlay: function() {
-   	jwplayer('howvideo1').stop();
-	}}
-  });
-</script>
-</div>
-</div>
-<div class="how_intro">
-  <p class="f14"><span class="webfont1 blue f24 block pad6 lh">Brainetics is athletics for your brain!</span>
-   Brainetics teaches you to use your brain more efficiently to process and memorize information so you can do amazing things with math and memory!
-  </p>
-</div>
-<div class="how1">
-  <p class="f14"><span class="webfont1 gray2 f24 block pad6 lh">Brainetics is the key to soaring 
-confidence... and grades!</span>
-    You're getting an edge on every other student in the <br>
-    classroom and every other co-worker in your office with <br>
-    Brainetics! That's because <strong>Brainetics techniques are not <br>
-    taught in classrooms</strong>, so you're processing information <br>
-    faster than anyone, because you've got the Brainetics secret!
-  </p>
-</div>
+                    <!--#include file="sidecta.html"-->
 
-</div>
-</div>
-<div class="right" style="padding-top: 30px">
- <%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /> --%></div>
-<div class="clear"></div>
-<div class="lh20">
-<img src="//d1f7jvrzd4fora.cloudfront.net/images/a5/howitworks_bottom.jpg" width="950" height="1561" />
-<div class="how2">
-  <p class="f14"><span class="webfont1 gray2 f24 block pad6 lh">Muscle Memory</span>
-    With Brainetics, you're practicing tricks for doing math quickly and correctly in a way that becomes second nature. In time, you're rattling off answers to math problems you never thought possible – all because you've practiced Brainetics techniques!
-  </p>
-</div>
+                    <h1>Get the Brainetics Advantage for School, Work - For Life!</h1>
 
-<div class="how3">
-  <p class="f14"><span class="webfont1 gray2 f24 block pad6 lh">Get Your Brain Working Fast!</span>
-    By learning Brainetics techniques, you're training 2 parts of your brain to work independently yet at the same time, so while one part is memorizing, the other part of your brain is processing new information. Your brain is more powerful this way because it's working so efficiently – giving you an edge for life!
-  </p>
-</div>
-<div class="how4">
-  <p class="webfont1 gray2 f34 block pad6 lh">How It Works</p>
-</div>
-<div class="how5">
-  <p class="f14">
-    The Brainetics DVD's are a fun and easy way to learn how to concentrate, improve your memory, overcome learning anxieties and develop skills that will help you succeed in school, at work and in life!
-  </p>
-</div>
-<div class="how6">
-  <p class="f14">
-    The Brainetics, full color, interactive, playbook helps you practice as well as master the Brainetics secrets.
-  </p>
-</div>
-<div class="how7">
-  <p class="f14">
-    The Brainetics Games can be fun for the whole family. 
-You can practice and learn while you're having fun!
-  </p>
-</div>
+                    <div class="videos">
+                        <iframe width="760" height="430" frameborder="0" allowfullscreen
+                                src="https://www.youtube.com/embed/videoseries?list=PLAa2xEQdnBI8wPQcxfLdGYB0k4qA4E6va">
+                        </iframe>
+                    </div>
+                </div>
 
-</div>
+                <div class="athletics">
+                    <h3>Brainetics is athletics for your brain!</h3>
+
+                    <p class="text-center">Brainetcis teaches you to use your brain more efficiently to process and memorize information so you can do amazing things with math and memory!</p>
+
+                    <br>
+
+                    <div class="box orange">
+                        <div class="bignumber one">1</div>
+                        <div class="title">Brainetics is the key to soaring <br> confidence... and grades!</div>
+                        <p>You're getting an edge on every other student in the classroom and every other co-worker in your office with Brainetics! That's because Brainetics techniques are not taught In classrooms, so you're processing information faster than anyone, because you've got the Bran.. secret!</p>
+                    </div>
+
+                    <div class="box cyan">
+                        <div class="bignumber two">2</div>
+                        <div class="title">Muscle memory</div>
+                        <p>With Brainetics, you're practicing tricks for doing math quickly and correctly in a way that becomes second nature. In time, you're rattling off answers to math problems you never thought possible - all because you've practiced Brainetics techniques!</p>
+                    </div>
+
+                    <div class="box green">
+                        <div class="bignumber three">3</div>
+                        <div class="title">Get your brain working fast!</div>
+                        <p>By learning Brainetics techniques, you're training2 parts of your brain to work independently yet at the same time, so while one peals memorizing, the other part of your brain is processing new information. Your brain is more powerful this way becausa it's working so efficiently- giving you an edge for life!</p>
+                    </div>
+
+                </div>
+
+                <div class="how_it_works">
+                    <h2>How it works</h2>
+
+                    <div class="row">
+                        <div class="col md-4">
+                            <div>
+                                <div class="text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/how_it_works/dvds.png" alt="" /></div>
+                                <div class="title">Watch the DVD's</div>
+                                <div class="text">The Brainetics DVD's are a fun and easy way to learn how to concentrate, improve your memory, overcome learning anxieties and develop skills that will help you succeed in school, at work and in life!</div>
+                            </div>
+                        </div>
+                        <div class="col md-4">
+                            <div>
+                                <div class="text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/how_it_works/playbook.png" alt="" /></div>
+                                <div class="title">Read the books</div>
+                                <div class="text">The Brainetics, full color IMeractive, playbook helps you practice as well as master the Brainetics secrets.</div>
+                            </div>
+                        </div>
+                        <div class="col md-4">
+                            <div>
+                                <div class="text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/how_it_works/cards.png" alt="" /></div>
+                                <div class="title">Play the games</div>
+                                <div class="text">The Brainetics Games can be fun for the whole family. You can practice and leam while you're having fun!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+        </div>
+
+
+
+ <%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" /> --%>
+
 <!--#include file="bottomcta.html"-->
-</div>
-
-
-
-</div>
 
 <!--#include file="footer.html"-->
-
+<!--#include file="popups.html"-->
   <uc:TrackingPixels ID="TrackingPixels" runat="server" />
  </form>
 </body>

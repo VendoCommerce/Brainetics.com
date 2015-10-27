@@ -11,21 +11,20 @@
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><link rel="stylesheet" type="text/css" href="/Scripts/fancybox/jquery.fancybox.css">
-<script src="/Scripts/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="/scripts/jwplayer/jwplayer.js"></script>
-<script type="text/javascript">jwplayer.key="JEtVDryJGkO9Q215yroU+Wz4oLeTJGMccGU/Wb3Kv9s=";</script>
-<script src="/Scripts/global_A5.js"></script>
-<link href="../Styles/global_e2.css" rel="stylesheet" type="text/css" />
+<!--#include file="scripts.html"-->
 
 </head>
 <body>
- <form runat="server" id="fm1"><!--#include file="popups.html"-->
-<!--#include file="header_main.html"-->
-<div class="container">
-<div class="page" style="background: url(//d1f7jvrzd4fora.cloudfront.net/images/a5/page_bg.jpg) repeat-x top #fff">
-<div class="left">
-<h2>Terms of Use</h2>a
+ <form runat="server" id="fm1">
+<!--#include file="header.html"-->
+     <div id="">
+         <div class="container">
+
+             <!--#include file="sidecta.html"-->
+             <div style="margin-right: 400px;">
+
+
+<h1>Terms of Use</h1>
   <p class="f16"><strong>Brainetics Terms and Conditions of Use</strong></p>
   <p> PLEASE CAREFULLY READ THESE TERMS AND CONDITIONS OF USE (collectively with any amendments hereto, &quot;TERMS AND CONDITIONS&quot;). BY USING THIS WEBSITE YOU AGREE TO BE BOUND AND ABIDE BY THESE TERMS AND CONDITIONS AND ANY AMENDMENTS THERETO, AND AGREE THAT YOU ARE AT LEAST 13 YEARS OF AGE AND ELIGIBLE TO USE THIS SITE AND PLACE AN ORDER FOR BRAINETICS’S PRODUCTS AND SERVICES.<br>
     IF YOU ARE 13 TO 17 YEARS OF AGE, YOU MUST USE THIS SITE AND/OR PURCHASE AND USE BRAINETICS’S PRODUCTS OR SERVICES ONLY WITH THE INVOLVEMENT OF YOUR PARENT OR GUARDIAN.</p>
@@ -140,19 +139,20 @@
   <p><strong>Other important terms</strong><br>
     These Terms and Conditions supersede any other terms and conditions previously published by us and any other representations or statements made by us to you, whether oral, written, or otherwise. We may assign, transfer, or sub-contract any of our rights or obligations under these Terms and Conditions to any third party at our discretion. No delay by us in exercising any right or remedy under these Terms and Conditions shall operate as waiver of that right or remedy or shall affect our ability to subsequently exercise that right or remedy. Any waiver must be agreed by us in writing.</p>
   <p> <em>Updated: December 12, 2013</em></p>
-</div>
-<div class="right" style="padding-top: 30px">
- <%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />--%></div>
-<div class="clear"></div>
+
+             </div>
+         </div>
+
+
+
+
+     </div>
+
+
+<%--<uc:ShippingFormControl runat="server" RedirectUrl="AddProduct.aspx" />--%>
 <!--#include file="bottomcta.html"-->
-</div>
-
-
-
-</div>
-
 <!--#include file="footer.html"-->
-
+<!--#include file="popups.html"-->
   <uc:TrackingPixels ID="TrackingPixels" runat="server" />
  </form>
 </body>

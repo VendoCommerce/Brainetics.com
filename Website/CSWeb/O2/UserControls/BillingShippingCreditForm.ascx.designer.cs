@@ -22,15 +22,6 @@ namespace CSWeb.O2.UserControls {
         protected global::System.Web.UI.ScriptManager sm1;
         
         /// <summary>
-        /// ShoppingCartControl1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CSWeb.O2.UserControls.ShoppingCartControl ShoppingCartControl1;
-        
-        /// <summary>
         /// rfvFirstName control.
         /// </summary>
         /// <remarks>
@@ -211,33 +202,6 @@ namespace CSWeb.O2.UserControls {
         protected global::System.Web.UI.WebControls.TextBox txtZipCode;
         
         /// <summary>
-        /// rfvPhoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhoneNumber;
-        
-        /// <summary>
-        /// lblPhoneNumberError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhoneNumberError;
-        
-        /// <summary>
-        /// txtPhoneNumber1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber1;
-        
-        /// <summary>
         /// rfvEmail control.
         /// </summary>
         /// <remarks>
@@ -272,6 +236,33 @@ namespace CSWeb.O2.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// rfvPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhoneNumber;
+        
+        /// <summary>
+        /// lblPhoneNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPhoneNumberError;
+        
+        /// <summary>
+        /// txtPhoneNumber1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber1;
         
         /// <summary>
         /// cbShippingSame control.
@@ -499,6 +490,33 @@ namespace CSWeb.O2.UserControls {
         protected global::System.Web.UI.WebControls.DropDownList ddlCCType;
         
         /// <summary>
+        /// lblCCNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCCNumberError;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
+        /// txtCCNumber1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCCNumber1;
+        
+        /// <summary>
         /// rfvExpMonth control.
         /// </summary>
         /// <remarks>
@@ -544,33 +562,6 @@ namespace CSWeb.O2.UserControls {
         protected global::System.Web.UI.WebControls.DropDownList ddlExpYear;
         
         /// <summary>
-        /// lblCCNumberError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCCNumberError;
-        
-        /// <summary>
-        /// RequiredFieldValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-        
-        /// <summary>
-        /// txtCCNumber1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCCNumber1;
-        
-        /// <summary>
         /// rfvCVV control.
         /// </summary>
         /// <remarks>
@@ -605,5 +596,14 @@ namespace CSWeb.O2.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imgBtn;
+        
+        /// <summary>
+        /// ShoppingCartControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CSWeb.O2.UserControls.ShoppingCartControl ShoppingCartControl1;
     }
 }

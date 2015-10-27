@@ -5,21 +5,22 @@
 <asp:Repeater runat="server" ID="rptShoppingCart" OnItemDataBound="rptShoppingCart_OnItemDataBound"
     OnItemCommand="rptShoppingCart_OnItemCommand">
     <HeaderTemplate>
-    <div class="cart_table clearfix bold">
+    <%--<div class="cart_table clearfix bold">
     <div class="cart_image">Item</div>
     <div class="cart_text">&nbsp;</div>
     <div class="cart_select">Quantity</div>
     <div class="product_price">Price</div>
-    <div class="clear"></div>
+    <div class="clear"></div>--%>
     <div class="horizontal_dots"></div>
     </div>
     </HeaderTemplate>
     <ItemTemplate>
     
-        <div class="cart_table clearfix">
+        <div class="cart_table">
         
             <div class="cart_image">
-                <asp:Image runat="server" ID="imgProduct" />
+                <asp:Image runat="server" ID="imgProduct" Visible="false" />
+                <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/cart/products.jpg" />
             </div>
             <div class="cart_text">
                 <p class="basket_title">
@@ -27,7 +28,7 @@
                 <p class="basket_description">
                     <asp:Label runat="server" ID='lblSkuDescription'></asp:Label></p>
             </div>
-            <div class="cart_select">
+            <div class="cart_select" runat="server" visible="false">
            
                 <asp:TextBox runat="server" ID="txtQuantity" Text='1' MaxLength="3"
                     Columns="2" OnTextChanged="OnTextChanged_Changed"></asp:TextBox>
@@ -46,19 +47,18 @@
 </asp:Repeater>
 <asp:Panel ID="pnlTotal" runat="server">
     <asp:PlaceHolder runat="server" ID="holderTaxAndShipping">
-        <div class="horizontal_dots">
+        <div class="horizontal_dots" style="clear: left; margin-top: 1em;">
         </div>
-        <div class="cart_totals clearfix">
+        <div class="cart_totals">
             <div class="cart_totals_left">
-                Subtotal<br />
-                Shipping & Handling<br />
-                Est. Tax<br />
-                Total</div>
+                Subtotal:<br />
+                Shipping & Handling:<br />
+                Est. Tax:<br />
+                Total:</div>
             <div class="cart_totals_right">
                 <asp:Literal runat="server" ID='lblSubtotal'></asp:Literal><br />
                 <asp:Literal runat="server" ID="lblShipping"></asp:Literal><br />
-                <asp:Literal runat="server" ID="lblTax"></asp:Literal>
-                <br />
+                <asp:Literal runat="server" ID="lblTax"></asp:Literal><br />
                 <asp:Literal runat="server" ID="lblOrderTotal"></asp:Literal>
                 <asp:Literal runat="server" ID="lblRushShipping" Visible="false"></asp:Literal>
                 <table>
@@ -80,6 +80,7 @@
         </div>
     </asp:PlaceHolder>
 </asp:Panel>
+<div style="clear: left;"></div>
   <div class="cart_offer">
             <%--<strong>Offer Details:</strong> As part of our special TV Offer you can try Brainetics in the comfort of your home for only $14.95 plus free shipping and handling. If you decide to keep the system, simply do nothing and beginning in 30 days following the date of your purchase you will be charged 5 easy monthly payments of $39.95, plus tax. All orders are backed by our 60-Day Money-Back Guarantee!<br>
 <br>--%>
