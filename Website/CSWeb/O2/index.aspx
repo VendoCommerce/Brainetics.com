@@ -75,7 +75,7 @@
                     <div class="author">
                         <strong>Mike  Byster</strong>
                         is the creator of the entertaining and engaging multi-disk DVD program to build increased mental capacity called Brainetics, winner of the 2008 Parent, Choice Award and the 2012 Mom's <span class="iblock">Best Award.</span>
-                        <a href="#">Read more...</a>
+                        <a href="aboutmike.aspx">Read more...</a>
                         <div class="photo">
                             <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/mike.png" alt="" class="block" />
                         </div>

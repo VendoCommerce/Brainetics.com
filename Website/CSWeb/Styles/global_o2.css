@@ -4,6 +4,7 @@
 .block {display: block;}
 .iblock {display: inline-block;}
 sup {line-height: 0; font-size: 60%; vertical-align: super;}
+.fright {float: right;}
 /* --- Header --- */
 
 header {
