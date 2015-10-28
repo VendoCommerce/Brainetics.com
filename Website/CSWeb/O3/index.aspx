@@ -12,13 +12,13 @@
 <meta name="description" content="Brainetics improves your focus, concentration, memory, and math skills in as little as 2 weeks. Feel your confidence soar!">
 <meta name="keywords" content="Brainetics, Brain Boosting, Memory, Child Learning, Memory Challenge">
 
-<!--#include file="/o2/scripts.html"-->
+<!--#include file="scripts.html"-->
 
 </head>
 <body class="index_o3">
  <form runat="server" id="fm1">
  
-<!--#include file="/o2/header.html"-->
+<!--#include file="header.html"-->
 <div id="index">
             <div  class="container">
 
@@ -183,8 +183,8 @@
 <!--#include file="bottomcta.html"-->
 
 
-<!--#include file="/o2/footer.html"-->
-     <!--#include file="/o2/popups.html"-->
+<!--#include file="footer.html"-->
+     <!--#include file="popups.html"-->
 
   <uc:TrackingPixels ID="TrackingPixels" runat="server" />
  </form>

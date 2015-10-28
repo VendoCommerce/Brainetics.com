@@ -576,8 +576,27 @@
     <Content Include="O2\UserControls\ShippingForm.ascx" />
     <Content Include="O2\UserControls\ShoppingCartControl.ascx" />
     <Content Include="O2\UserControls\TrackingPixels.ascx" />
+    <Content Include="O3\aboutmike.aspx" />
     <Content Include="O3\bottomcta.html" />
+    <Content Include="O3\contact.aspx" />
+    <Content Include="O3\faq.aspx" />
+    <Content Include="O3\footer.html" />
+    <Content Include="O3\footer_cart.html" />
+    <Content Include="O3\footer_receipt.html" />
+    <Content Include="O3\footer_upsell.html" />
+    <Content Include="O3\header.html" />
+    <Content Include="O3\headernav.html" />
+    <Content Include="O3\header_main.html" />
+    <Content Include="O3\header_nonav.html" />
+    <Content Include="O3\howitworks.aspx" />
     <Content Include="O3\index.aspx" />
+    <Content Include="O3\popups.html" />
+    <Content Include="O3\privacy.aspx" />
+    <Content Include="O3\productdetails.aspx" />
+    <Content Include="O3\scripts.html" />
+    <Content Include="O3\sidecta.html" />
+    <Content Include="O3\terms.aspx" />
+    <Content Include="O3\testimonials.aspx" />
     <Content Include="oldindex.aspx" />
     <Content Include="appsettings.config">
       <SubType>Designer</SubType>
@@ -2898,7 +2917,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64504</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
