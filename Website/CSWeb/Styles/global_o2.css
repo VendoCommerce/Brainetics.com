@@ -64,8 +64,8 @@ header .contact .asotv {
 header .contact .norton_ssl {
     position: relative;
     top: 16px;
+    display: inline-block;
 }
-
 
 .norton_ssl img {
     width: 66px;
