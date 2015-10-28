@@ -40,21 +40,38 @@ header .contact {
     height: 38px;
 }
 
+
 #cartpage header .contact {
     margin-top: 40px;
 }
 
-header .contact span {
+header .contact .contact_inner {
     position: relative;
     bottom: 12px;
     margin-left: 8px;
     display: inline-block;
+    font-size: 15px;
 }
 
-header .contact span img {
+header .contact .asotv {
     position: relative;
     top: 6px;
     margin-left: 8px;
+}
+
+
+header .contact .norton_ssl {
+    position: relative;
+    top: 10px;
+}
+
+
+.norton_ssl img {
+    width: 66px;
+    height: 48px;
+}
+.norton_ssl a {
+    display: none;
 }
 
 header nav {
@@ -1471,11 +1488,6 @@ ul.ul_cart {font-size: 14px;}
     font-size: 12px;
 }
 
-
-.norton_ssl img {
-    width: 66px;
-    height: 29px;
-}
 
 
 body#receipt {
