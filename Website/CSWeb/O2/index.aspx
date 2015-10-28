@@ -37,7 +37,25 @@
                 <div class="money_back"><a href="#guarantee" class="guarantee"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/30_day_money_back.png" alt="" title="30 day money-day back guarantee" /></a></div>
             </div>
             <div class="col sm-5">
-                <div class="video"><iframe width="424" height="232" src="https://www.youtube.com/embed/QbAIoUU95uw" frameborder="0" allowfullscreen></iframe></div>
+                <div class="video" style="float: right; width: 90%;margin-top: -1em;">
+                    <div id="ctavideo"></div>
+  <script type='text/javascript'>
+      jwplayer('ctavideo').setup({
+          file: "https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_30day.mp4",
+          autostart: true,
+          primary: "flash",
+          controls: true,
+          width: 380, height: 286,
+          stretching: 'exactfit',
+          skin: '/scripts/jwplayer/five.xml',
+          events: {
+              onPlay: function () {
+                  jwplayer('video2020').stop();
+              }
+          }
+      });
+</script>
+                </div>
             </div>
         </div>
         <br>

@@ -25,7 +25,26 @@
                 <div id="top_cta" class="bis">
     <div class="container">
         <div class="row">
-                <div class="video" style="float:right; margin-top: 4em;"><iframe width="418" height="230" src="https://www.youtube.com/embed/QbAIoUU95uw" frameborder="0" allowfullscreen></iframe></div>
+                <div class="video" style="float: right; width: 34%; margin-top: 2em;">
+                    <div id="ctavideo"></div>
+  <script type='text/javascript'>
+      jwplayer('ctavideo').setup({
+          file: "https://d1f7jvrzd4fora.cloudfront.net/video/ctavideo1_30day.mp4",
+          autostart: true,
+          primary: "flash",
+          controls: true,
+          width: 380, height: 286,
+          stretching: 'exactfit',
+          skin: '/scripts/jwplayer/five.xml',
+          events: {
+              onPlay: function () {
+                  jwplayer('video2020').stop();
+              }
+          }
+      });
+</script>
+
+                </div>
 
                 <h1>Be an Academic-Superstar... <br />and Have FUN Too!</h1>
                 <div class="subtitle">It All Happens With Brainetics</div>
