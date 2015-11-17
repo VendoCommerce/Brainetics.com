@@ -36,7 +36,7 @@
                 <div class="slogan">Turn your kids into Whizkids!</div>
                 <div class="money_back"><a href="#guarantee" class="guarantee"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/30_day_money_back.png" alt="" title="30 day money-day back guarantee" /></a></div>
             </div>
-            <div class="col sm-5">
+            <div class="col sm-5" style="margin-top: -3em;">
                 <div class="video" style="float: right; width: 90%;margin-top: -1em;">
                     <div id="ctavideo"></div>
   <script type='text/javascript'>
@@ -58,7 +58,6 @@
                 </div>
             </div>
         </div>
-        <br>
         <div class="images">
             <p class="familyfun">Fun for the<br />                <strong>Whole Family</strong><br />                to learn!</p>
             <div class="product">
@@ -73,8 +72,8 @@
                     <div class="free">+ FREE S&amp;H!</div>
                 </div>
             </div>
-            <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/family.png" alt="" class="block" style="margin-left: -2em;"/>
-            <div class="demi_circle"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/orange_circle.png" alt=""/></div>
+            <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/family2.jpg" alt="" class="block" style="margin-left: -2em;"/>
+            <div class="demi_circle"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/orange_circle.png" style="display: block;" alt=""/></div>
         </div>
     </div>
 </div>

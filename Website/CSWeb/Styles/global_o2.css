@@ -8,9 +8,11 @@ sup {line-height: 0; font-size: 60%; vertical-align: super;}
 /* --- Header --- */
 
 header {
+    display: block;
     border-bottom: 3px solid #86C333;
     text-align: right;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    background: #fafcff;
 }
 
 #cartpage header {margin-bottom: 0;}
@@ -42,21 +44,24 @@ header .contact {
 
 
 #cartpage header .contact {
-    margin-top: 40px;
+    margin-top: 10px;
+    height: 28px;
 }
 
 header .contact .contact_inner {
     position: relative;
     bottom: 12px;
-    margin-left: 8px;
+    margin-left: 40px;
     display: inline-block;
     font-size: 15px;
+    font-weight: bold;
+    color: #999;
 }
 
 header .contact .asotv {
     position: relative;
     top: 6px;
-    margin-right: 6px;
+    margin-right: 12px;
     margin-left: 8px;
 }
 
@@ -99,6 +104,29 @@ header nav a.ordernow, header nav a.ordernow:hover {
     color: #fff;
     background-color: #ef59a1;
 }
+
+.carthdrs {display: none;}
+#cartpage .carthdrs {
+    display: block;
+    float: left;
+    width: 82%;
+    text-align: left;
+    margin-left: 50px;
+}
+
+#cartpage .carthdrs h1  {
+    font-size: 42px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+#cartpage .carthdrs h2  {
+    font-size: 26px;
+    text-align: left;
+    padding: 0 0 12px 0;
+    margin: 0;
+}
+
 
 /* --- Footer --- */
 
@@ -324,7 +352,7 @@ footer .copyright {
 }
 
 #top_cta ul li {
-    padding: 10px 0 10px 40px;
+    padding: 10px 0 6px 40px;
     list-style-type: none;
     background: url('//d1f7jvrzd4fora.cloudfront.net/images/o2/bullet_check.gif') no-repeat 0 6px;
 }
@@ -334,7 +362,7 @@ footer .copyright {
     font-size: 32px;
     font-weight: bold;
     font-style: italic;
-    margin: 30px 0;
+    margin: 30px 0 5px 0;
 }
 
 #top_cta .money_back {
@@ -355,7 +383,7 @@ footer .copyright {
 
 #top_cta .images {
     position: relative;
-    padding-top: 1em;
+    padding-top: .2em;
 }
 .index_o3 #top_cta .images {
     position: relative;
@@ -364,8 +392,8 @@ footer .copyright {
 
 #top_cta .images .familyfun {
     position: absolute;
-    top: 0;
-    left: 685px;
+    top: 6px;
+    left: 680px;
     width: 140px;
     text-align: center;
     font-size: 18px;
@@ -383,7 +411,7 @@ footer .copyright {
     width: 400px;
     position: absolute;
     right: 0;
-    top: 20px;
+    top: 5px;
 }
 
 .index_o3 #top_cta .images .product {
@@ -415,13 +443,13 @@ footer .copyright {
 #top_cta .images .sold_200 {
     position: absolute;
     left: 10px;
-    top: 50px;
+    top: 68px;
     width: 110px;
 }
 
 #top_cta .images .product a.button {
     color: white;
-    padding: 20px 50px;
+    padding: 18px 50px;
     background-color: #EF59A1;
     float: right;
     font-size: 26px;
@@ -1518,3 +1546,21 @@ body#receipt {
 }
 
 .pad0 {padding-bottom: 0 !important;}
+
+.clear {clear:both;}
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.block {
+	display: block;	
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
