@@ -160,7 +160,7 @@
     </script>
 
 
-<!--#include file="header_cart.html"-->
+<!--#include file="header.html"-->
 <div id="cart">
     <div class="container">
  <uc:BillingCreditForm runat="server" RedirectUrl="AddProduct.aspx" />

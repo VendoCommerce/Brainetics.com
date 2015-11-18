@@ -36,6 +36,9 @@ header .logo {
     display: block;
     margin: 4px 0;
 }
+#cartpage header .logo {
+    margin-top: 16px;
+}
 
 header .contact {
     margin-top: 6px;
@@ -44,7 +47,7 @@ header .contact {
 
 
 #cartpage header .contact {
-    margin-top: 10px;
+    margin-top: 0;
     height: 28px;
 }
 
@@ -111,11 +114,12 @@ header nav a.ordernow, header nav a.ordernow:hover {
     float: left;
     width: 82%;
     text-align: left;
+    margin-top: 18px;
     margin-left: 50px;
 }
 
 #cartpage .carthdrs h1  {
-    font-size: 42px;
+    font-size: 38px;
     text-align: left;
     padding: 0;
     margin: 0;
