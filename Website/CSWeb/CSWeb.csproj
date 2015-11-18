@@ -531,6 +531,7 @@
     <Content Include="O2\aboutmike.aspx" />
     <Content Include="O2\AddProduct.aspx" />
     <Content Include="O2\AuthorizeOrder.aspx" />
+    <Content Include="O2\header_cart.html" />
     <Content Include="O2\sidecta.html" />
     <Content Include="O2\bottomcta.html" />
     <Content Include="O2\CardDecline.aspx" />
