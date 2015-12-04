@@ -44,7 +44,7 @@
                         <div>
                             <div class="photo"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/testimonials/britanny.png" alt=""/></div>
                             <div class="text">
-                                "I was really surprised that I liked Brainetics — math isn't my favorite subject, so I wasn't expecting it to be super fun!"
+                                "I was really surprised that I liked it — math isn't my favorite subject, so I wasn't expecting it to be super fun!"
                                 <div class="author">- Brittany B.</div>
                             </div>
                         </div>
