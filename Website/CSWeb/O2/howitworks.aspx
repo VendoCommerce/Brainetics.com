@@ -36,7 +36,7 @@
                 <div class="athletics">
                     <h3>Brainetics is athletics for your brain!</h3>
 
-                    <p class="text-center">Brainetcis teaches you to use your brain more efficiently to process and memorize information so you can do amazing things with math and memory!</p>
+                    <p class="text-center">Brainetics teaches you to use your brain more efficiently to process and memorize information so you can do amazing things with math and memory!</p>
 
                     <br>
 

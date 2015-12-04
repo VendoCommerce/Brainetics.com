@@ -30,7 +30,7 @@
                         <div class="column">
                             <div class="photo"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/testimonials/woody.png" alt=""/></div>
                             <div class="text">
-                                "There's not only one may to learn, and there's not only one way to arrive at the answer to a problem,"
+                                "There's not only one way to learn, and there's not only one way to arrive at the answer to a problem,"
                                 <div class="author">- Woody G.</div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                         <div>
                             <div class="photo"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/testimonials/britanny.png" alt=""/></div>
                             <div class="text">
-                                "I was really surprised that I liked ,— math isn't my favorite subject, so I wasn't expecting it to be super fun!"
+                                "I was really surprised that I liked Brainetics — math isn't my favorite subject, so I wasn't expecting it to be super fun!"
                                 <div class="author">- Brittany B.</div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                             <li><a href="#">Raising Sparks - December 5, 2012</a></li>
                             <li><a href="#">Over Thirty Mommy - June 2011</a></li>
                             <li><a href="#">Family Corner - June 29, 2011</a></li>
-                            <li><a href="#">Mommy PR-Mae 8, 2011</a></li>
+                            <li><a href="#">Mommy PR-May 8, 2011</a></li>
                         </ul>
                         <div class="title">Brainetics <br> Reviews</div>
 
