@@ -396,11 +396,11 @@ footer .copyright {
 
 #top_cta .images .familyfun {
     position: absolute;
-    top: 6px;
-    left: 680px;
+    top: -5px;
+    left: 690px;
     width: 140px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     color: #00aeef;
     font-style: italic;
     line-height: 1.1;
@@ -415,7 +415,7 @@ footer .copyright {
     width: 400px;
     position: absolute;
     right: 0;
-    top: 5px;
+    top: -5px;
 }
 
 .index_o3 #top_cta .images .product {
@@ -425,11 +425,11 @@ footer .copyright {
 #top_cta .images .product > div {
     position: relative;
     text-align: right;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 #top_cta .images .product > div:first-child {
-    padding-left: 70px;
+    padding-left: 140px;
 }
 
 #top_cta .images .link {
@@ -446,9 +446,9 @@ footer .copyright {
 
 #top_cta .images .sold_200 {
     position: absolute;
-    left: 10px;
-    top: 68px;
-    width: 110px;
+    left: 20px;
+    top: 60px;
+    width: 100px;
 }
 
 #top_cta .images .product a.button {

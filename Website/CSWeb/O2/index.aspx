@@ -37,7 +37,7 @@
                 <div class="money_back"><a href="#guarantee" class="guarantee"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/30_day_money_back.png" alt="" title="30 day money-day back guarantee" /></a></div>
             </div>
             <div class="col sm-5" style="margin-top: -3em;">
-                <div class="video" style="float: right; width: 90%;margin-top: -1em;">
+                <div class="video" style="float: right; width: 85%;margin-top: -1em;">
                     <div id="ctavideo"></div>
   <script type='text/javascript'>
       jwplayer('ctavideo').setup({
@@ -45,7 +45,7 @@
           autostart: true,
           primary: "flash",
           controls: true,
-          width: 380, height: 286,
+          width: 360, height: 271,
           stretching: 'exactfit',
           skin: '/scripts/jwplayer/five.xml',
           events: {
