@@ -66,18 +66,18 @@ namespace CSWeb.O2.Store
                     }
                 }
 
-                //if (CSWeb.OrderHelper.GetVersionName().ToLower().Equals("h2") || CSWeb.OrderHelper.GetVersionName().ToLower().Equals("k2"))
-                //{
+                if (CSWeb.OrderHelper.GetVersionName().ToLower().Equals("o3") ) //  || CSWeb.OrderHelper.GetVersionName().ToLower().Equals("k2"))
+                {
                     //if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
                     //{
-                        //Response.Redirect("/m2/index?" + Request.QueryString);
+                        Response.Redirect("/o2/index?" + Request.QueryString);
                         //Response.Redirect("/j2/index?" + Request.QueryString + "&referrer=" + Request.Url);
                     //}
                     //else
                     //{
                     //    Response.Redirect("/j2/?referrer=" + Request.Url);
                     //}
-                //}
+                }
 
             }
 

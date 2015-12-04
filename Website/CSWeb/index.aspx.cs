@@ -15,9 +15,9 @@ namespace CSWeb
             //!CSBusiness.DynamicVersion.VersionManager.LandingUrl.ToLower().Contains("/a2"))
 
             if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
-                Response.Redirect("/m2/?" + Request.QueryString );// + "&referrer=" + Request.Url);
+                Response.Redirect("/o2/?" + Request.QueryString );// + "&referrer=" + Request.Url);
             else
-                Response.Redirect("/m2/");//?referrer=" + Request.Url);
+                Response.Redirect("/o2/");//?referrer=" + Request.Url);
             
         }
     }
