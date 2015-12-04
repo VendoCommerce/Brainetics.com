@@ -31,7 +31,7 @@
                 <ul>
                     <li>Your kids will get better grades!</li>
                     <li>Your kids will be smarter in school and beyond!</li>
-                    <li>For all ages 9-99</li>
+                    <li>For ages 9-99</li>
                 </ul>
                 <div class="slogan">Turn your kids into Whizkids!</div>
                 <div class="money_back"><a href="#guarantee" class="guarantee"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/30_day_money_back.png" alt="" title="30 day money-day back guarantee" /></a></div>
@@ -168,7 +168,7 @@
 
                             <div class="reason">
                                 Gives your child<br>
-                                and edge<br>
+                                an edge<br>
                                 over students.
                             </div>
 

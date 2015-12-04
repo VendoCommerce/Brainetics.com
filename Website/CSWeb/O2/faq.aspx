@@ -25,7 +25,7 @@
 
                 <ul>
                     <li class="clicked">
-                        Does Brainetics just help with math
+                        Does Brainetics just help with math?
                     	<div>No - Brainetics techniques can apply to all aspects of your life. Try Brainetics and see for yourself how much it can improve many different parts of your life!</div>
                     </li>
                     <li>
@@ -53,7 +53,7 @@
                         <div>Brainetics was created by one of the world's fastest mathematical minds, Mike Byster. With Brainetics techinques, Mike is teaching kids all over how to do complex math in their head faster than ever!</div>
                     </li>
                     <li>
-                        How do teachers fell about Brainetics?
+                        How do teachers feel about Brainetics?
                        <div>Teachers love Brainetics because it gets kids motivated to learn and practice math, which is often the most challenging part of the teaching process.</div>
                     </li>
                 </ul>

@@ -43,7 +43,7 @@
                     <div class="box orange">
                         <div class="bignumber one">1</div>
                         <div class="title">Brainetics is the key to soaring <br> confidence... and grades!</div>
-                        <p>You're getting an edge on every other student in the classroom and every other co-worker in your office with Brainetics! That's because Brainetics techniques are not taught In classrooms, so you're processing information faster than anyone, because you've got the Bran.. secret!</p>
+                        <p>You're getting an edge on every other student in the classroom and every other co-worker in your office with Brainetics! That's because Brainetics techniques are not taught In classrooms, so you're processing information faster than anyone, because you've got the Brainetics secret!</p>
                     </div>
 
                     <div class="box cyan">
@@ -55,7 +55,7 @@
                     <div class="box green">
                         <div class="bignumber three">3</div>
                         <div class="title">Get your brain working fast!</div>
-                        <p>By learning Brainetics techniques, you're training2 parts of your brain to work independently yet at the same time, so while one peals memorizing, the other part of your brain is processing new information. Your brain is more powerful this way becausa it's working so efficiently- giving you an edge for life!</p>
+                        <p>By learning Brainetics techniques, you're training parts of your brain to work independently yet at the same time, so while one peals memorizing, the other part of your brain is processing new information. Your brain is more powerful this way because it's working more efficiently- giving you an edge for life!</p>
                     </div>
 
                 </div>

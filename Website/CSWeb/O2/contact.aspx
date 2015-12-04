@@ -29,7 +29,7 @@
                  <p>Please note:  there may be a 24-48 hour delay from the time you place your order until it becomes visible here. </p>
                  <p>
                      <strong>If you have a product question:</strong><br>
-                     Please email us at <a href="mailto:brainetics@webcsr.info">brainetics@webcsr.info</a> or call customer at 1-877-444-3776 Monday-Friday between 5:00 AM and  5:00 PM PST.
+                     Please email us at <a href="mailto:brainetics@webcsr.info">brainetics@webcsr.info</a> or call customer service at 1-877-444-3776 Monday-Friday between 5:00 AM and  5:00 PM PST.
                  </p>
              </div>
          </div>
