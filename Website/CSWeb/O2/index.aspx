@@ -101,7 +101,7 @@
 
                 <br>
 
-                <h3 style="font-size: 28px;">The award winning system that everone is talking about</h3>
+                <h3 style="font-size: 28px;">The award winning system that everyone is talking about</h3>
 
                 <div class="text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/blue-line.png" alt="" /></div>
 
