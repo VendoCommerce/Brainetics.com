@@ -43,7 +43,7 @@
                     <div class="box orange">
                         <div class="bignumber one">1</div>
                         <div class="title">Brainetics is the key to soaring <br> confidence... and grades!</div>
-                        <p>You're getting an edge on every other student in the classroom and every other co-worker in your office with Brainetics! That's because Brainetics techniques are not taught In classrooms, so you're processing information faster than anyone, because you've got the Brainetics secret!</p>
+                        <p>You're getting an edge on every other student in the classroom and every other co-worker in your office with Brainetics! That's because Brainetics techniques are not taught in classrooms, so you're processing information faster than anyone, because you've got the Brainetics secret!</p>
                     </div>
 
                     <div class="box cyan">
@@ -75,7 +75,7 @@
                             <div>
                                 <div class="text-center"><img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/how_it_works/playbook.png" alt="" /></div>
                                 <div class="title">Read the books</div>
-                                <div class="text">The Brainetics, full color IMeractive, playbook helps you practice as well as master the Brainetics secrets.</div>
+                                <div class="text">The Brainetics, full color Interactive, playbook helps you practice as well as master the Brainetics secrets.</div>
                             </div>
                         </div>
                         <div class="col md-4">
