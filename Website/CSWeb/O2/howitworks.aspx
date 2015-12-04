@@ -55,7 +55,7 @@
                     <div class="box green">
                         <div class="bignumber three">3</div>
                         <div class="title">Get your brain working fast!</div>
-                        <p>By learning Brainetics techniques, you're training parts of your brain to work independently yet at the same time, so while one peals memorizing, the other part of your brain is processing new information. Your brain is more powerful this way because it's working more efficiently- giving you an edge for life!</p>
+                        <p>By learning Brainetics techniques, you're training parts of your brain to work independently yet at the same time, so while one part is memorizing, the other part of your brain is processing new information. Your brain is more powerful this way because it's working more efficiently- giving you an edge for life!</p>
                     </div>
 
                 </div>
