@@ -119,7 +119,27 @@
                     <div class="col sm-4 text-center">
                         <img src="//d1f7jvrzd4fora.cloudfront.net/images/o2/home/as_seen_2020.png" alt="" />
                         <br>
-                        <div class="video"><iframe width="344" height="194" src="https://www.youtube.com/embed/Y7OQGyQUez0" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video">
+                            <%--<iframe width="344" height="194" src="https://www.youtube.com/embed/Y7OQGyQUez0" frameborder="0" allowfullscreen></iframe>--%>
+                            <div id="video2020"></div>
+  <script type='text/javascript'>
+      jwplayer('video2020').setup({
+          file: "https://d1f7jvrzd4fora.cloudfront.net/video/2020_how1.mp4",
+          autostart: false,
+          image: "//d1f7jvrzd4fora.cloudfront.net/images/a5/2020.JPG",
+          primary: "flash",
+          controls: true,
+          width: 351, height: 263,
+          stretching: 'exactfit',
+          skin: '/scripts/jwplayer/five.xml',
+          events: {
+              onPlay: function () {
+                  jwplayer('ctavideo').stop();
+              }
+          }
+      });
+</script>
+                        </div>
                         <div class="sign">
                             Your child <br>
                             <strong style="text-decoration: underline;">HAS THE POTENTIAL to SUCCEED</strong>, <br>
