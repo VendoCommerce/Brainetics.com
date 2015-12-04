@@ -66,11 +66,11 @@ namespace CSWeb.PS_G2.Store
                     }
                 }
 
-                if (CSWeb.OrderHelper.GetVersionName().ToLower() == "ps_g2" || Request.RawUrl.Contains( "/ps/"))
+                if (CSWeb.OrderHelper.GetVersionName().ToLower() == "ps_g2" || Request.RawUrl.Contains("/ps/") || Request.RawUrl.Contains("/ps_j2/"))
                 {
                     //if (Request.QueryString != null && Request.QueryString.ToString().Length > 1)
                     //{
-                        Response.Redirect("/ps_j2/index?" + Request.QueryString );
+                        Response.Redirect("/ps_o2/index?" + Request.QueryString );
                     //}
                     //else
                     //{
