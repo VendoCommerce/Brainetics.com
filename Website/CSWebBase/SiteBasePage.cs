@@ -607,10 +607,20 @@ namespace CSWebBase
 
                     if (currentVersion != null && !currentVersion.Title.ToUpper().Contains("MOBILE")) // mobile device not viewing the mobile version
                     {
-                        if (Request.QueryString.Count > 0)
-                            Response.Redirect("/mobile_b2?" + Request.QueryString, true);
+                        if (currentVersion.Title.ToUpper().Contains("NATIVE") && currentVersion.Title.ToUpper().Equals("MOBILE_NATIVE")==false)
+                        {
+                            if (Request.QueryString.Count > 0)
+                                Response.Redirect("/mobile_native?" + Request.QueryString, true);
+                            else
+                                Response.Redirect("/mobile_native", true);
+                        }
                         else
-                            Response.Redirect("/mobile_b2", true);
+                        {
+                            if (Request.QueryString.Count > 0)
+                                Response.Redirect("/mobile_b2?" + Request.QueryString, true);
+                            else
+                                Response.Redirect("/mobile_b2", true);
+                        }
                     }
                     else if (currentVersion == null)
                     {
