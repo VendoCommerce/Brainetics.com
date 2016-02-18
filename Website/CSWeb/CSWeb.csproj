@@ -582,7 +582,9 @@
     <Content Include="N2\terms.aspx" />
     <Content Include="N2\testimonials.aspx" />
     <Content Include="NATIVE\aboutmike.aspx" />
+    <Content Include="NATIVE\AuthorizeOrder.aspx" />
     <Content Include="NATIVE\bottomcta.html" />
+    <Content Include="NATIVE\Cart.aspx" />
     <Content Include="NATIVE\contact.aspx" />
     <Content Include="NATIVE\faq.aspx" />
     <Content Include="NATIVE\footer.html" />
@@ -598,6 +600,7 @@
     <Content Include="NATIVE\index.aspx" />
     <Content Include="NATIVE\OfferChange.aspx" />
     <Content Include="NATIVE\popups.html" />
+    <Content Include="NATIVE\PostSale.aspx" />
     <Content Include="NATIVE\privacy.aspx" />
     <Content Include="NATIVE\productdetails.aspx" />
     <Content Include="NATIVE\receipt.aspx" />

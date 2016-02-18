@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TrackingPixels.ascx.cs" Inherits="CSWeb.NATIVE.UserControls.TrackingPixels" %>
 <!-- All Pixels Here -->
 
+<script type="text/javascript">var ssaUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'centro.pixel.ad/iap/2730300013d9e249';new Image().src = ssaUrl;</script>
 
 <asp:Panel ID="pnlHomePage" runat="server" Visible="false">
     
@@ -111,7 +112,6 @@
         ga('send', 'pageview', { 'page': newPageName });
 
     </script>
-<script type="text/javascript">var ssaUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'centro.pixel.ad/iap/2730300013d9e249';new Image().src = ssaUrl;</script>
 </asp:Panel>
 <asp:Panel ID="pnlHomeAndSubPages" runat="server" Visible="false">
 

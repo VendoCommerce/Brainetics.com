@@ -2,6 +2,7 @@
 <!-- All Pixels Here -->
 
 
+<script type="text/javascript">var ssaUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'centro.pixel.ad/iap/2730300013d9e249';new Image().src = ssaUrl;</script>
 <asp:Panel ID="pnlHomePage" runat="server" Visible="false">
     
     
@@ -113,7 +114,6 @@ var google_remarketing_only = true;
         ga('send', 'pageview', { 'page': newPageName });
 
     </script>
-<script type="text/javascript">var ssaUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'centro.pixel.ad/iap/2730300013d9e249';new Image().src = ssaUrl;</script>
 
 </asp:Panel>
 <asp:Panel ID="pnlHomeAndSubPages" runat="server" Visible="false">
