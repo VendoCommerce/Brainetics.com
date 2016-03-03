@@ -18,6 +18,8 @@ namespace CSWeb.O2.UserControls
         public string versionNameClientFunction = ""; 
         public decimal cartTotal = 0;
         public StringBuilder rejoinerPixel = new StringBuilder();
+        public int TotalQty = 0;
+        public string ProductID = "";
 
         public ClientCartContext CartContext
         {
@@ -65,11 +67,25 @@ namespace CSWeb.O2.UserControls
                CurrentOrder.OrderId.ToString(), "", Math.Round(CurrentOrder.Total, 2), Math.Round(CurrentOrder.Tax, 2), Math.Round(CurrentOrder.ShippingCost, 2),
                GetEncodedJS(CurrentOrder.CustomerInfo.BillingAddress.City), GetEncodedJS(CurrentOrder.CustomerInfo.BillingAddress.StateProvinceName), CurrentOrder.CustomerInfo.BillingAddress.CountryCode);
 
+            int counter = 0;
+            ProductID = "";
+            TotalQty = 0;
             foreach (Sku sku in CurrentOrder.SkuItems)
             {
                 sbGAPixel.AppendFormat("pageTracker._addItem('{0}','{1}','{2}','{3}','{4}','{5}');\n",
                     CurrentOrder.OrderId.ToString(), GetEncodedJS(sku.SkuCode), GetEncodedJS(sku.LongDescription), "",
                     Math.Round(Convert.ToDouble(sku.InitialPrice), 2), sku.Quantity.ToString());
+                
+                TotalQty = TotalQty + sku.Quantity;
+                if (counter == 0)
+                {
+                    ProductID = ProductID + GetEncodedJS(sku.SkuCode);
+                }
+                else
+                {
+                    ProductID = ProductID + "," + GetEncodedJS(sku.SkuCode);
+                }
+                counter = counter + 1;
             }
 
 

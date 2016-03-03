@@ -2,7 +2,16 @@
 <!-- All Pixels Here -->
 
 
-<script type="text/javascript">var ssaUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'centro.pixel.ad/iap/2730300013d9e249';new Image().src = ssaUrl;</script>
+<script type='text/javascript'>
+    var ebRand = Math.random()+'';
+    ebRand = ebRand * 1000000;
+    //<![CDATA[ 
+    document.write('<scr'+'ipt src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=764090&amp;rnd=' + ebRand + '"></scr' + 'ipt>');
+    //]]>
+</script>
+<noscript>
+<img width="1" height="1" style="border:0" src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=764090&amp;ns=1"/>
+</noscript>
 <asp:Panel ID="pnlHomePage" runat="server" Visible="false">
     
     

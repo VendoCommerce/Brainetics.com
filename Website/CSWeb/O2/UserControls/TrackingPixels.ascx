@@ -2,6 +2,16 @@
 <!-- All Pixels Here -->
 
 
+<script type='text/javascript'>
+    var ebRand = Math.random()+'';
+    ebRand = ebRand * 1000000;
+    //<![CDATA[ 
+    document.write('<scr'+'ipt src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=764090&amp;rnd=' + ebRand + '"></scr' + 'ipt>');
+    //]]>
+</script>
+<noscript>
+<img width="1" height="1" style="border:0" src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=764090&amp;ns=1"/>
+</noscript>
 <asp:Panel ID="pnlHomePage" runat="server" Visible="false">
     
     
@@ -245,5 +255,20 @@
     <!-- Bing Conversion Pixel -->
     <script type="text/javascript">    if (!window.mstag) mstag = { loadTag: function () { }, time: (new Date()).getTime() };</script> <script id="mstag_tops" type="text/javascript" src="//flex.msn.com/mstag/site/818483c7-c4a9-4546-8395-99eb37baf5aa/mstag.js"></script> <script type="text/javascript">                                                                                                                                                                                                                                                                              mstag.loadTag("analytics", { dedup: "1", domainId: "1263508", type: "1", revenue: "", actionid: "36417" })</script> <noscript> <iframe src="//flex.msn.com/mstag/tag/818483c7-c4a9-4546-8395-99eb37baf5aa/analytics.html?dedup=1&domainId=1263508&type=1&revenue=&actionid=36417" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"> </iframe> </noscript>
 
+<script type='text/javascript'>
+    var ebRev = '<%=cartTotal.ToString("N2") %>';
+    var ebOrderID = '<%= CurrentOrder.OrderId.ToString() %>';
+    var ebProductID = '<%= ProductID %>';
+    var ebProductInfo = '<%= ProductID %>';
+    var ebQuantity = '<%= TotalQty.ToString() %>';
+    var ebRand = Math.random()+'';
+    ebRand = ebRand * 1000000;
+    //<![CDATA[ 
+    document.write('<scr'+'ipt src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=739313&amp;rnd=' + ebRand + '&amp;Value='+ebRev+'&amp;OrderID='+ebOrderID+'&amp;ProductID='+ebProductID+'&amp;ProductInfo='+ebProductInfo+'&amp;Quantity='+ebQuantity+'"></scr' + 'ipt>');
+    //]]>
+</script>
+<noscript>
+    <img width="1" height="1" style="border:0" src="HTTPS://bs.serving-sys.com/Serving/ActivityServer.bs?cn=as&amp;ActivityID=739313&amp;Value=<%=cartTotal.ToString("N2") %>&amp;OrderID=<%= CurrentOrder.OrderId.ToString() %>&amp;ProductID=<%= ProductID %>&amp;ProductInfo=<%= ProductID %>&amp;Quantity=<%= TotalQty.ToString() %>&amp;ns=1"/>
+</noscript>
 </asp:Panel>
 
